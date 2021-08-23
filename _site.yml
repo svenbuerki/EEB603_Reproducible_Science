@@ -1,0 +1,13 @@
+name: "Reproducible Science"
+output_dir: "."
+navbar:
+  title: "Reproducible Science"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Chapters"
+      href: Chapters.html
+    - text: "Timetable"
+      href: Timetable.html
+    - text: "Resources"
+      href: Resources.html

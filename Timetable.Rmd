@@ -1,0 +1,111 @@
+---
+title: "Tutorials"
+date: "`r Sys.Date()`"
+output:
+#  bookdown::pdf_document2:
+#    toc: FALSE
+  bookdown::html_document2: 
+    toc: FALSE
+    toc_float: TRUE
+link-citations: yes
+fontsize: 12pt
+urlcolor: blue
+csl: AmJBot.csl
+bibliography: Bibliography_Reproducible_Science_2.bib
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{js logo-js, echo=FALSE}
+$(document).ready(function() {
+  $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" style=\"position:absolute; top:4; right:0; padding:10px; height:120px\"></div>');
+  $('#header').css('margin-right', '120px')
+});
+```
+
+```{r packages, echo=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+library(rmarkdown)
+library(bookdown)
+#library(distill)
+library(knitcitations)
+library(formatR)
+library(devtools)
+library(kfigr)
+library(dplyr)
+library(kableExtra)
+library(tufte)
+
+#Generate BibTex citation file for all R packages used to produce report
+knitr::write_bib(.packages(), file = 'packages.bib')
+```
+
+The tentative timetable for this course is available in Table \@ref(tab:timetab). The instructor wants to warn students that he might adjust the timetable to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
+
+```{r timetab, echo=FALSE}
+###~~~
+# Build a data frame with all dates from beginning to end of Fall semester
+###~~~
+dates <- data.frame(seq.Date(from=as.Date("2021/08/23"), to=as.Date("2021/12/10"), by="day"))
+#Assign a name to the col (allows using $)
+colnames(dates) <- "Date"
+
+###~~~
+# Find weekdays associated to dates
+###~~~
+#Add a col to dataframe with weekday
+dates$Weekday <- weekdays(dates$Date)
+
+###~~~
+# Classes only take place on Tuesday and Thursday. So, extract dates matching class weekdays
+###~~~
+#Subset dates based on selected weedays
+datesclass <- subset(dates, dates$Weekday %in% c("Tuesday", "Thursday"))
+
+###~~~
+# Add week ID (from 1 to 16) to object from step 4
+###~~~
+#Create weekID vector and add it in front of dataframe
+datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=16, by=1), 2)), datesclass)
+
+###~~~
+# Exclude dates falling during holiday break
+###~~~
+#Establish vector of dates related to holidays
+holiday <- seq.Date(from=as.Date("2021/11/22"), to=as.Date("2021/11/28"), by="day")
+
+#Find and exclude holidays
+datesclass <- datesclass[-which(datesclass$Date %in% holiday),]
+
+###~~~
+#Read in csv with topics and tasks
+###~~~
+topic <- read.csv("Data/Timetable_EEB603_topic_tasks.csv") 
+
+###~~~
+#Produce final timetable
+###~~~
+
+timetable <- data.frame(datesclass, topic)
+#Some editing to better print table in pdf doc
+timetable <- as.matrix(timetable)
+rownames(timetable) <- rep("", nrow(timetable))
+colnames(timetable)[5] <- "Task/Deadline"
+###~~~
+#Plot timetable in doc
+###~~~
+knitr::kable(timetable,  caption = "Tentative timetable for the Reproducible Science course during the Fall semester 2021.") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+#PDF
+#landscape(knitr::kable(timetable, caption = "Tentative timetable for the Reproducible Science course during the #Fall semester 2021.", booktabs = T, "latex") %>% kable_styling(latex_options = c("striped","scale_down"))
+#          )
+
+
+#landscape, stripped and fit width of page
+#landscape(knitr::kable(timetable, caption = "Tentative timetable for EEB603 during the Fall semester 2020. #\\label{tab:tab_gg}", booktabs = T, "latex") %>% kable_styling(latex_options = c("striped","scale_down"))
+#          )
+```
+
+

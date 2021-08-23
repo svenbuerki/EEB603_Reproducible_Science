@@ -1,0 +1,128 @@
+---
+title: "EEB 603 -- Reproducible Science"
+subtitle: "Resources"
+author: "Sven Buerki - Boise State University"
+date: "`r Sys.Date()`"
+output:
+#  bookdown::pdf_document2:
+#    toc: TRUE
+  bookdown::html_document2: 
+    toc: TRUE
+    toc_float: TRUE
+    self_contained: TRUE
+link-citations: yes
+fontsize: 12pt
+urlcolor: blue
+csl: AmJBot.csl
+bibliography: Bibliography_Reproducible_Science_2.bib
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{js logo-js, echo=FALSE}
+$(document).ready(function() {
+  $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" style=\"position:absolute; top:0; right:0; padding:10px; height:120px\"></div>');
+  $('#header').css('margin-right', '120px')
+});
+```
+
+```{r packages, echo=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+library(rmarkdown)
+library(bookdown)
+#library(distill)
+library(knitcitations)
+library(formatR)
+library(devtools)
+library(kfigr)
+library(dplyr)
+library(kableExtra)
+library(tufte)
+
+#Generate BibTex citation file for all R packages used to produce report
+knitr::write_bib(.packages(), file = 'packages.bib')
+```
+
+<div style="text-align: right"> [Download pdf version](Resources.pdf) </div>
+
+# Introduction
+
+The field of reproducible science as implemented in [RStudio](https://rstudio.com/) is moving very fast and it is hard to keep up with new R packages and tools. The instructor is attempting at providing students with relevant online resources to complement class materials.   
+
+# Podcast
+
+The challenge of reproducing results from ten-year-old code:
+
+  - https://www.nature.com/articles/d41586-020-02484-1
+
+# Library of open-access books
+
+Please find [here](https://bookdown.org) a suite of open-access books written with the R [*bookdown* package](https://github.com/rstudio/bookdown), which are relevant to the EEB603 - Reproducible Science course.
+
+# R Markdown
+
+Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. Please find below additional key resources on this topic:
+
+- **R Markdown: The Definitive Guide:** https://bookdown.org/yihui/rmarkdown/
+
+# Writing books and complex/large documents
+
+R Markdown can be used to produce basic HTML, PDF, and Word documents; however, more complex and larger projects can become difficult to manage in a single R Markdown file. The *bookdown* package addresses this limitation, and offers several key improvements:
+
+- Books and reports can be built from multiple R Markdown files.
+- Additional formatting features are added, such as cross-referencing, and numbering of figures, equations, and tables.
+- Documents can easily be exported in a range of formats suitable for publishing, including PDF, e-books and HTML websites.
+
+A book dedicated to this topic can be accessed [here](https://bookdown.org/yihui/bookdown/) and the package can be downloaded [here](https://CRAN.R-project.org/package=bookdown).
+
+# Notebook
+
+An R Notebook is an R Markdown document with chunks that can be executed independently and interactively, with output visible immediately beneath the input.
+
+You can create a new notebook in RStudio with the menu command `File -> New File -> R Notebook`, or by using the `html_notebook` output type in your document’s YAML metadata.
+
+# Homework assignments on RPubs
+
+A huge number of homework assignments have been published to the website https://RPubs.com (a free publishing platform provided by RStudio), which shows that R Markdown is easy and convenient enough for students to do their homework assignments. As a TA or GA, you might even consider asking your students to complete their homework using R Markdown and publishing them on RPubs!
+
+# Journals
+
+Submitting scientific manuscripts written in R Markdown is still challenging; however the R [*rticles* package](https://cran.r-project.org/web/packages/rticles/index.html) was designed to simplify the creation of documents that conform to submission standards for academic journals. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:
+
+- Biometrics articles
+- Elsevier journal submissions
+- Frontiers articles
+- MDPI journal submissions
+- PeerJ articles
+- PNAS articles
+- Royal Society Open Science journal submissions
+- Sage journal submissions
+- Springer journal submissions
+- The R Journal articles
+- Taylor & Francis articles
+
+# Interactive tutorials
+
+The R [*learnr* package](https://cran.r-project.org/web/packages/learnr/index.html) allows to turn R Markdown documents into interactive tutorials. Tutorials consist of content along with interactive components for checking and reinforcing understanding. Tutorials can include any or all of the following:
+
+- Narrative, figures, illustrations, and equations.
+- Code exercises (R code chunks that users can edit and execute directly).
+- Quiz questions.
+- Videos (currently supported services include YouTube and Vimeo).
+- Interactive Shiny components.
+
+Please see the full documentation (with examples) at this url: https://rstudio.github.io/learnr/
+
+<div id="refs"></div>
+
+# Appendix 1 {.appendix}
+
+Citations of all R packages used to generate this report. 
+
+```{r generateBibliography, eval = T, results="asis", cache = F, echo=F, warning = FALSE, message=FALSE}
+library("knitcitations")
+cleanbib()
+options("citation_format" = "pandoc")
+read.bibtex(file = "packages.bib")
+``` 
