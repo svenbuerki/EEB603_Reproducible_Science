@@ -1,13 +1,13 @@
 ﻿Topic,Task Deadline
 Syllabus,
-Example of a bioinformatic tutorial,
-Chap. 1 - R Markdown part A,Work on bioinfo. tutorials
-Chap. 1 - R Markdown part B,Work on bioinfo. tutorials
-Chap. 1 - R Markdown part C,Work on bioinfo. tutorials
-Chap. 1 - User-defined functions,Work on bioinfo. tutorials
-Chap. 1 - Wrap-up,Work on bioinfo. tutorials
-Chap. 2,Read Baker (2016) and prepare for discussing outcome of study
-Chap. 3,Work on bioinfo. tutorials
+Chap. 1: Interactive tutorial (learnr),
+Chap. 1: RMarkdown part A,Work on bioinfo. tutorials
+Chap. 1: RMarkdown part B,Work on bioinfo. tutorials
+Chap. 1: RMarkdown part C,Work on bioinfo. tutorials
+Chap. 1: User-defined functions,Work on bioinfo. tutorials
+Chap. 1: Recap and Q&A,Work on bioinfo. tutorials
+Chap. 2: The reproducibility crisis,Read Baker (2016) and prepare for discussing outcome of study
+Chap. 3: A road map to implement reproducible science in Ecology & Evolution,Work on bioinfo. tutorials
 Chap. 4: Data management,Work on bioinfo. tutorials
 Chap. 4: Reproducible code,Work on bioinfo. tutorials
 Chap. 5: Getting published,Work on bioinfo. tutorials
