@@ -1,5 +1,5 @@
 ---
-title: "Tutorials"
+title: "Timetable"
 date: "`r Sys.Date()`"
 output:
 #  bookdown::pdf_document2:
@@ -95,7 +95,7 @@ colnames(timetable)[5] <- "Task/Deadline"
 ###~~~
 #Plot timetable in doc
 ###~~~
-knitr::kable(timetable,  caption = "Tentative timetable for the Reproducible Science course during the Fall semester 2021.") %>%
+knitr::kable(timetable,  caption = "Tentative timetable for the Reproducible Science course during the 2021 Fall semester.") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
 #PDF
