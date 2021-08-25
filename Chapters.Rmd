@@ -52,7 +52,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Interactive tutorials
 
-The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
+The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
 
 The interactive tutorial presented here is subdivided into five topics:
 
