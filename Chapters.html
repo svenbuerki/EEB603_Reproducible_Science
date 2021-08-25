@@ -407,7 +407,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
-<h3 class="subtitle">Resources</h3>
+<h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
 <h4 class="date">2021-08-25</h4>
 
@@ -420,84 +420,81 @@ $(document).ready(function() {
   $('#header').css('margin-right', '120px')
 });
 </script>
-<div style="text-align: right">
-<a href="Resources.pdf">Download pdf version</a>
+<div id="chapter-1" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Chapter 1</h1>
+<div id="interactive-tutorials" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Interactive tutorials</h2>
+<p>The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (PART 2). Here, students will have an overview of the tools implemented in the R package <a href="https://rstudio.github.io/learnr/index.html"><em>learnr</em></a>, which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).</p>
+<p>The interactive tutorial presented here is subdivided into five topics:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Introduction</strong>: This part sets the scene and provides some background information on the tutorial.</li>
+<li><strong>Exercise</strong>: The aim of the exercise is presented together with a pseudocode (with associated R functions) outlying steps to design and implement an R code to complete the exercise. Students are asked to develop their R codes and execute them in the code chunk. You can type your code directly in the window/console and execute it using the <code>R Code</code> button. The instructor has also provided the solution to the exercise, which could be accessed by pressing the <code>Solution</code> button available in the top banner of the code chunk window.</li>
+<li><strong>Questions</strong>: These questions are designed to test students’ knowledge of the code.</li>
+<li><strong>Solution</strong>: A commented solution proposed by the instructor is available in a code chunk. Students can execute the code and inspect outputs produced to generate the final answer.</li>
+<li><strong>YouTube tutorial</strong>: Here, a short YouTube video presents the procedure to launch a <em>learn</em> interactive tutorial and briefly presents the exercise. The main objective of this video is to show students that it is quite easy to integrate a video into their tutorials.</li>
+</ol>
+<p>Finally, the instructor wants to stress that students are not obliged to design their tutorials using <em>learnr</em>. You can also use the R Markdown language/syntax and output tutorials in HTML or PDF formats (more on this subject in Chapter 1).</p>
+<p>This document highlights steps to execute the interactive tutorial designed by the instructor.</p>
+<div id="installation-of-required-package" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Installation of required package</h3>
+<p>Open RStudio and install the <em>learnr</em> package from CRAN by typing the following command in the console:</p>
+<pre class="r"><code>install.packages(&quot;learnr&quot;)</code></pre>
 </div>
-<div id="introduction" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Introduction</h1>
-<p>The field of reproducible science as implemented in <a href="https://rstudio.com/">RStudio</a> is moving very fast and it is hard to keep up with new R packages and tools. The instructor is attempting at providing students with relevant online resources to complement class materials.</p>
-</div>
-<div id="podcast" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Podcast</h1>
-<p>The challenge of reproducing results from ten-year-old code:</p>
+<div id="files-location-description" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> File(s) location &amp; description</h3>
+<p>Files associated to this tutorial are deposited on the <a href="https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=sharing">Google Drive</a> under this path:
+<code>Reproducible_Science -&gt; Bioinformatic_tutorials -&gt; Intro_interactive_tutorial</code></p>
+<p>There are two main files:</p>
 <ul>
-<li><a href="https://www.nature.com/articles/d41586-020-02484-1" class="uri">https://www.nature.com/articles/d41586-020-02484-1</a></li>
+<li><code>README.html</code>: The documentation to install R package and run interactive tutorial.</li>
+<li><code>EEB603_Interactive_tutorial.Rmd</code>: The interactive tutorial written in R Markdown, but requiring functions from <em>learnr</em>.</li>
 </ul>
 </div>
-<div id="library-of-open-access-books" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Library of open-access books</h1>
-<p>Please find <a href="https://bookdown.org">here</a> a suite of open-access books written with the R <a href="https://github.com/rstudio/bookdown"><em>bookdown</em> package</a>, which are relevant to the EEB603 - Reproducible Science course.</p>
-</div>
-<div id="r-markdown" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> R Markdown</h1>
-<p>Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>. Please find below additional key resources on this topic:</p>
+<div id="youtube-video" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> YouTube video</h3>
+<p>The instructor has made a video explaining the procedure to launch the interactive tutorial (based on option 1; see below) as well as some additional explanations related to the exercise.</p>
 <ul>
-<li><strong>R Markdown: The Definitive Guide:</strong> <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></li>
+<li><a href="https://youtu.be/ALSpVwymZbM" class="uri">https://youtu.be/ALSpVwymZbM</a></li>
 </ul>
 </div>
-<div id="writing-books-and-complexlarge-documents" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Writing books and complex/large documents</h1>
-<p>R Markdown can be used to produce basic HTML, PDF, and Word documents; however, more complex and larger projects can become difficult to manage in a single R Markdown file. The <em>bookdown</em> package addresses this limitation, and offers several key improvements:</p>
+<div id="running-tutorial" class="section level3" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Running tutorial</h3>
+<ol style="list-style-type: decimal">
+<li>Download the <code>Intro_interactive_tutorial</code> folder and save it on your local computer.</li>
+<li>Set working directory to location of <code>EEB603_Interactive_tutorial.Rmd</code>.</li>
+</ol>
 <ul>
-<li>Books and reports can be built from multiple R Markdown files.</li>
-<li>Additional formatting features are added, such as cross-referencing, and numbering of figures, equations, and tables.</li>
-<li>Documents can easily be exported in a range of formats suitable for publishing, including PDF, e-books and HTML websites.</li>
+<li>This can be done as follows in RStudio: <code>Session -&gt; Set Working Directory -&gt; Choose Directory...</code>.</li>
+<li>You can also use the <code>setwd()</code> function to set your working directory (e.g. <code>setwd("~/Documents/Course_Reproducible_Science/Timetable/Intro_interactive_tutorial")</code>).</li>
 </ul>
-<p>A book dedicated to this topic can be accessed <a href="https://bookdown.org/yihui/bookdown/">here</a> and the package can be downloaded <a href="https://CRAN.R-project.org/package=bookdown">here</a>.</p>
-</div>
-<div id="notebook" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Notebook</h1>
-<p>An R Notebook is an R Markdown document with chunks that can be executed independently and interactively, with output visible immediately beneath the input.</p>
-<p>You can create a new notebook in RStudio with the menu command <code>File -&gt; New File -&gt; R Notebook</code>, or by using the <code>html_notebook</code> output type in your document’s YAML metadata.</p>
-</div>
-<div id="homework-assignments-on-rpubs" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Homework assignments on RPubs</h1>
-<p>A huge number of homework assignments have been published to the website <a href="https://RPubs.com" class="uri">https://RPubs.com</a> (a free publishing platform provided by RStudio), which shows that R Markdown is easy and convenient enough for students to do their homework assignments. As a TA or GA, you might even consider asking your students to complete their homework using R Markdown and publishing them on RPubs!</p>
-</div>
-<div id="journals" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Journals</h1>
-<p>Submitting scientific manuscripts written in R Markdown is still challenging; however the R <a href="https://cran.r-project.org/web/packages/rticles/index.html"><em>rticles</em> package</a> was designed to simplify the creation of documents that conform to submission standards for academic journals. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Running tutorial. There are two options to run the integrative tutorial:</li>
+</ol>
 <ul>
-<li>Biometrics articles</li>
-<li>Elsevier journal submissions</li>
-<li>Frontiers articles</li>
-<li>MDPI journal submissions</li>
-<li>PeerJ articles</li>
-<li>PNAS articles</li>
-<li>Royal Society Open Science journal submissions</li>
-<li>Sage journal submissions</li>
-<li>Springer journal submissions</li>
-<li>The R Journal articles</li>
-<li>Taylor &amp; Francis articles</li>
+<li><strong>Option 1:</strong> Open <code>EEB603_Interactive_tutorial.Rmd</code> in RStudio and press the <code>Run Document</code> button on the upper side bar to launch the tutorial. It will appear in the <code>Viewer</code> panel (on right bottom corner). You can open the interactive tutorial in your web browser by clicking on the third icon at the top of the viewer panel. This procedure is also explained in the <a href="https://youtu.be/ALSpVwymZbM">Youtube video</a>.</li>
+<li><strong>Option 2:</strong> Type the following command in the console. This will open a window in RStudio. You can also open the tutorial in your web browser by pressing the <code>Open in Browser</code> button.</li>
 </ul>
+<pre class="r"><code>rmarkdown::run(&quot;EEB603_Interactive_tutorial.Rmd&quot;)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Enjoy going through the tutorial!</li>
+</ol>
 </div>
-<div id="interactive-tutorials" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Interactive tutorials</h1>
-<p>The R <a href="https://cran.r-project.org/web/packages/learnr/index.html"><em>learnr</em> package</a> allows to turn R Markdown documents into interactive tutorials. Tutorials consist of content along with interactive components for checking and reinforcing understanding. Tutorials can include any or all of the following:</p>
+<div id="learning-syntax-to-develop-interactive-tutorials" class="section level3" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Learning syntax to develop interactive tutorials</h3>
+<p>The procedure to develop interactive tutorials using <em>learnr</em> is presented <a href="https://rstudio.github.io/learnr/index.html">here</a>. To learn more about the syntax, the instructor encourages you to open <code>EEB603_Interactive_tutorial.Rmd</code> in RStudio and inspect the document. This will allow learning syntax and associated procedures to:</p>
 <ul>
-<li>Narrative, figures, illustrations, and equations.</li>
-<li>Code exercises (R code chunks that users can edit and execute directly).</li>
-<li>Quiz questions.</li>
-<li>Videos (currently supported services include YouTube and Vimeo).</li>
-<li>Interactive Shiny components.</li>
+<li>Design exercises (with embedded R code chunks and associated solutions).</li>
+<li>Include multiple choices questions.</li>
+<li>Embed a YouTube video.</li>
 </ul>
-<p>Please see the full documentation (with examples) at this url: <a href="https://rstudio.github.io/learnr/" class="uri">https://rstudio.github.io/learnr/</a></p>
 <div id="refs">
 
 </div>
 </div>
-<div id="appendix-1" class="section level1 appendix" number="10">
-<h1><span class="header-section-number">10</span> Appendix 1</h1>
+</div>
+</div>
+<div id="appendix-1" class="section level1 appendix" number="2">
+<h1><span class="header-section-number">2</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
 <p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
 Documents for R</em>. R package version 2.6. 2020. &lt;URL:
@@ -539,16 +536,13 @@ Hall/CRC, 2014. &lt;URL:
 <p>[13] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
 Generation in R</em>. R package version 1.30. 2020. &lt;URL:
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>&gt;.</p>
-<p>[14] Y. Xie and J. Allaire. <em>tufte: Tufte’s Styles for R Markdown
-Documents</em>. R package version 0.9. 2020. &lt;URL:
-<a href="https://github.com/rstudio/tufte" class="uri">https://github.com/rstudio/tufte</a>&gt;.</p>
-<p>[15] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
+<p>[14] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
 Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
 2018. &lt;URL: <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>&gt;.</p>
-<p>[16] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
+<p>[15] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
 9780367563837. Boca Raton, Florida: Chapman and Hall/CRC, 2020. &lt;URL:
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>&gt;.</p>
-<p>[17] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
+<p>[16] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>&gt;.</p>
 </div>
