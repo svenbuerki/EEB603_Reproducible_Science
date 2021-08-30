@@ -1,0 +1,56 @@
+---
+title: "Exercises chapter 1"
+author: "Sven Buerki"
+date: "9/1/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+# Lists
+
+## Unrecorded
+
+* unored
+* item 2
+  - sub1
+  - sub2
+  
+## Ordered
+
+Here is the sum: `r 4+2`.
+
+1. item 1
+  - sub 1
+  - sub 2
+2. item 2
+3. item 3
+
+# Italic
+
+*gsgsgsgs*
+
+# Bold
+
+**bold**
+
+# Hyperlink
+
+[Zoom](https://boisestate.zoom.us) 
+
+```{r}
+#Load package
+library(ape)
+
+
+
+```
+
