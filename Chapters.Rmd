@@ -64,6 +64,16 @@ In this chapter, we will introduce the bioinformatic tools to write and dissemin
 knitr::include_graphics("Figures/Fig1.png")
 ```
 
+### Learning outcomes
+
+This chapter provides students with opportunities to learn procedures to:
+
+- Install R Markdown on your computer. 
+- Create and render (or knitting) your first R Markdown document.
+- Execute basic R Markdown syntax and protocols.
+- Develop pseudocode and implementing it in R.
+- Create your own functions (referred to as user-defined functions).
+
 ### Files supporting this tutorial
 
 Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive at this path: 
