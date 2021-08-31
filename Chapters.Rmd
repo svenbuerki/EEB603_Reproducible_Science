@@ -193,12 +193,15 @@ There are two types of lists:
 #### Syntax for unordered lists
 
 Syntax:
+
 ```{r eval=FALSE}
 * unordered list
 * item 2
   + sub-item 1
   + sub-item 2
 ```
+
+**Note:** For each sub-level include two tabs to create the hierarchy.
 
 Output:
 
