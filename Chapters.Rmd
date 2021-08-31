@@ -71,7 +71,7 @@ This chapter provides students with opportunities to learn procedures to:
 - Install R Markdown on your computer. 
 - Create and render (or knitting) your first R Markdown document.
 - Execute basic R Markdown syntax and protocols.
-- Develop pseudocode and implementing it in R.
+- Develop pseudocode and implement it using the R language.
 - Create your own functions (referred to as user-defined functions).
 
 ### Files supporting this tutorial
