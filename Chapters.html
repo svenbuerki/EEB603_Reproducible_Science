@@ -710,7 +710,7 @@ Figure 1.6: Example of code chunks.
 </div>
 <div id="part-b-tables-figures-and-references" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> PART B: Tables, Figures and References</h2>
-<p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
+<p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2020a</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
 <div id="learning-outcomes-1" class="section level3" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
@@ -771,7 +771,7 @@ Figure 1.7: Snapshot of the MikTex Console showing the procedure to always insta
 </div>
 <div id="yaml-metadata-section" class="section level4" number="1.3.3.3">
 <h4><span class="header-section-number">1.3.3.3</span> YAML metadata section</h4>
-<p>The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-R-knitr" role="doc-biblioref"><strong>R-knitr?</strong></a>; <a href="#ref-knitr2015" role="doc-biblioref"><strong>knitr2015?</strong></a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> to define (field names as declared in the YAML metadata section are provided between parenthesis):</p>
+<p>The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2020b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2020a</a>)</span> to define (field names as declared in the YAML metadata section are provided between parenthesis):</p>
 <ol style="list-style-type: decimal">
 <li>Title (<code>title</code>).</li>
 <li>Subtitle (<code>subtitle</code>).</li>
@@ -1427,7 +1427,13 @@ csl: AmJBot.csl
 <span class="smallcaps">Xie, Y.</span> 2016. Bookdown: Authoring books and technical documents with <span>R</span> markdown. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
 </div>
 <div id="ref-R-bookdown" class="csl-entry">
-<span class="smallcaps">Xie, Y.</span> 2020. Bookdown: Authoring books and technical documents with r markdown. Available at: <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+<span class="smallcaps">Xie, Y.</span> 2020a. Bookdown: Authoring books and technical documents with r markdown. Available at: <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+</div>
+<div id="ref-knitr2015" class="csl-entry">
+<span class="smallcaps">Xie, Y.</span> 2015. Dynamic documents with <span>R</span> and knitr. 2nd ed. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry">
+<span class="smallcaps">Xie, Y.</span> 2020b. Knitr: A general-purpose package for dynamic report generation in r. Available at: <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.
 </div>
 <div id="ref-rmarkdown2018" class="csl-entry">
 <span class="smallcaps">Xie, Y.</span>, <span class="smallcaps">J.J. Allaire</span>, and <span class="smallcaps">G. Grolemund</span>. 2018. R markdown: The definitive guide. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
