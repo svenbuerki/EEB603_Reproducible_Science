@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2021-08-31" />
+<meta name="date" content="2021-09-05" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -28,6 +28,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -409,7 +411,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2021-08-31</h4>
+<h4 class="date">2021-09-05</h4>
 
 </div>
 
@@ -449,7 +451,7 @@ Figure 1.1: The spectrum of reproducibility.
 <li>Create your own functions (referred to as user-defined functions).</li>
 </ul>
 </div>
-<div id="files-supporting-this-tutorial" class="section level3" number="1.1.2">
+<div id="Files" class="section level3" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Files supporting this tutorial</h3>
 <p>Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive at this path:</p>
 <ul>
@@ -706,8 +708,646 @@ Figure 1.6: Example of code chunks.
 <p>To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).</p>
 </div>
 </div>
-<div id="part-e-interactive-tutorials" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> PART E: Interactive tutorials</h2>
+<div id="part-b-tables-figures-and-references" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> PART B: Tables, Figures and References</h2>
+<p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
+<div id="learning-outcomes-1" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Learning outcomes</h3>
+<p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
+<ul>
+<li>Set your R Markdown environment:
+<ul>
+<li>Install dependencies.</li>
+<li>YAML metadata section.</li>
+<li>Load required R packages.</li>
+<li>Generate citation file of R packages used to produce the report.</li>
+<li>Generate Appendix with citations for all R packages.</li>
+<li>Generate Appendix with R package versions used to produce report.</li>
+</ul></li>
+<li>Insert tables and figures in R Markdown document.</li>
+<li>Cross-reference tables and figures in the text.</li>
+<li>Cite references in the text and add a bibliography/references section.</li>
+<li>Format citations to journal styles.</li>
+</ul>
+</div>
+<div id="associated-files-supporting-this-tutorial" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Associated files supporting this tutorial</h3>
+<p>Please refer to <a href="#Files">section</a> for more details on supporting files and their locations on the shared Google Drive.</p>
+</div>
+<div id="set-your-r-markdown-environment" class="section level3" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Set your R Markdown environment</h3>
+<div id="install-dependencies" class="section level4" number="1.3.3.1">
+<h4><span class="header-section-number">1.3.3.1</span> Install dependencies</h4>
+<p>To execute this tutorial the following R packages have to be installed on your computer using code provided below:</p>
+<pre class="r"><code>install.packages(c(&quot;knitr&quot;, &quot;rmarkdown&quot;, &quot;bookdown&quot;, &quot;formattable&quot;, 
+    &quot;kableExtra&quot;, &quot;dplyr&quot;, &quot;magrittr&quot;, &quot;prettydoc&quot;, &quot;htmltools&quot;, 
+    &quot;knitcitations&quot;))</code></pre>
+</div>
+<div id="tex-distribution" class="section level4" number="1.3.3.2">
+<h4><span class="header-section-number">1.3.3.2</span> TeX distribution</h4>
+<p>If you are planning to create <code>PDF</code> documents, you will need to install a <code>TeX</code> distribution on your computers. Please refer to this website for more details: <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a></p>
+<div id="set-miktex-for-compiling-pdf-documents-on-windows-computers" class="section level5" number="1.3.3.2.1">
+<h5><span class="header-section-number">1.3.3.2.1</span> Set MiKTeX for compiling PDF documents on Windows computers</h5>
+<p>Several students working on Windows computers shared difficulties in compiling <code>PDF</code> documents in RStudio. This issue is associated to <code>MiKTeX</code> preventing RStudio to install or update <code>TeX</code> packages required to knit your documents.</p>
+<p>To solve this issue apply the following procedure:</p>
+<ol style="list-style-type: decimal">
+<li>Start <code>MiKTeX</code> console by searching and clicking <code>MiKTeX Console</code> in the application launcher.</li>
+<li>Enable automatic package installation by:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Clicking on <code>Settings</code> tab.</li>
+<li>Ticking the radio button <code>Always install missing packages on-the-fly</code> under the “You can choose whether missing packages are to be installed on-the-fly” header ().</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>Restarting <code>RStudio</code> and you should be able to knit <code>pdf</code> documents.</li>
+</ol>
+<div class="figure"><span id="fig:MikTex"></span>
+<img src="Figures/MikTex.png" alt="Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly." width="100%" />
+<p class="caption">
+Figure 1.7: Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly.
+</p>
+</div>
+</div>
+</div>
+<div id="yaml-metadata-section" class="section level4" number="1.3.3.3">
+<h4><span class="header-section-number">1.3.3.3</span> YAML metadata section</h4>
+<p>The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-R-knitr" role="doc-biblioref"><strong>R-knitr?</strong></a>; <a href="#ref-knitr2015" role="doc-biblioref"><strong>knitr2015?</strong></a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> to define (field names as declared in the YAML metadata section are provided between parenthesis):</p>
+<ol style="list-style-type: decimal">
+<li>Title (<code>title</code>).</li>
+<li>Subtitle (<code>subtitle</code>).</li>
+<li>Author(s) (<code>author</code>).</li>
+<li>Date (<code>date</code>).</li>
+<li>Output format(s) (<code>output</code>).</li>
+<li>Citations link (<code>link-citations</code>).</li>
+<li>Font size (<code>fontsize</code>).</li>
+<li>Bibliography file(s) (<code>bibliography</code>).</li>
+<li>Format for citations to follow journal styles (<code>csl</code>).</li>
+</ol>
+<p>The YAML code provided below outputs either an <code>HTML</code> or <code>PDF</code> document (see <code>output</code> field) with a table of content (see <code>toc</code> field) and generates in text citations and bibliography section as declared in the <code>AmJBot.csl</code> file (under the <code>csl</code> field).</p>
+<pre class="r"><code>--- 
+title: &#39;Your title&#39;
+subtitle: &quot;Your subtitle&quot;
+author: &quot;Your name&quot;
+date: &quot;`r Sys.Date()`&quot;
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+link-citations: yes
+fontsize: 12pt
+bibliography: [Bibliography_Reproducible_Science_2.bib, packages.bib] 
+csl: AmJBot.csl
+---</code></pre>
+<p><strong>Warning:</strong> <code>.bib</code> and <code>.csl</code> files have to be stored in the same working directory as your <code>.Rmd</code> file.</p>
+<div id="step-by-step-procedure" class="section level5" number="1.3.3.3.1">
+<h5><span class="header-section-number">1.3.3.3.1</span> Step-by-step procedure</h5>
+<p>Do the following to set your YAML metadata section:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new R Markdown document.</li>
+<li>Save the <code>.Rmd</code> document into a new project folder in <code>Reproducible_Science/Chapters/Chapter_1/</code>.</li>
+<li>Copy <code>Bibliography_Reproducible_Science_2.bib</code> and <code>AmJBot.csl</code> in your project folder. These files are available on the Shared Google Drive folder:</li>
+</ol>
+<ul>
+<li><code>Reproducible_Science/Chapters/Chapter_1/Tutorial_files</code></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Edit the YAML metadata section as shown in the above code.</li>
+</ol>
+<p><strong>Note:</strong></p>
+<ul>
+<li>You can use <code>R</code> functions in the YAML metadata section using inline R code (see part A for more details). Here, we use <code>Sys.Date()</code> to automatically date the output document.</li>
+<li>The <code>bibliography</code> field includes two <code>BibTeX</code> files, the first contains your regular citations (of publications cited in the text; see <a href="#the-bibliography-file">The bibliography file</a>), whereas the second is generated by <code>knitr::write_bib()</code> and contains citations for all R packages used to generate this report (see below for more details).</li>
+</ul>
+</div>
+</div>
+<div id="knitting-procedure" class="section level4" number="1.3.3.4">
+<h4><span class="header-section-number">1.3.3.4</span> Knitting procedure</h4>
+<p>Since you have declared two output documents in the YAML metadata section and that those are specific to <code>bookdown</code> functions, you will have to select which output format you want to use to compile your document by clicking on the drop-down list on the left side of the <code>Knit</code> button (see Figure <a href="#fig:knitout">1.8</a>). To use <code>bookdown</code> functions, please make sure to select one of the following options (see Figure <a href="#fig:knitout">1.8</a>): <code>Knit to html_document2</code> or <code>Knit to pdf_document2</code>.</p>
+<div class="figure" style="text-align: center"><span id="fig:knitout"></span>
+<img src="Figures/knit_drop_down.png" alt="Snapshot of RStudio console showing the drop-down list associated to Knit button." width="100%" />
+<p class="caption">
+Figure 1.8: Snapshot of RStudio console showing the drop-down list associated to Knit button.
+</p>
+</div>
+</div>
+<div id="load-required-r-packages" class="section level4" number="1.3.3.5">
+<h4><span class="header-section-number">1.3.3.5</span> Load required R packages</h4>
+<p>It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report. This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!</p>
+<div id="step-by-step-procedure-1" class="section level5" number="1.3.3.5.1">
+<h5><span class="header-section-number">1.3.3.5.1</span> Step-by-step procedure</h5>
+<ol style="list-style-type: decimal">
+<li>Include an R code chunk directly under your YAML metadata section.</li>
+<li>Name code chunk <code>packages</code> and set options line as follows:</li>
+</ol>
+<ul>
+<li><code>echo=FALSE</code>,</li>
+<li><code>warning=FALSE</code>,</li>
+<li><code>include=FALSE</code>.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Add the following code to load required packages to produce your report:</li>
+</ol>
+<pre><code>#Load packages
+library(knitr)
+library(rmarkdown)
+library(bookdown)
+library(formattable)
+library(kableExtra)
+library(dplyr)
+library(magrittr)
+library(prettydoc)
+library(htmltools)
+library(knitcitations)
+library(devtools)</code></pre>
+</div>
+</div>
+<div id="generate-citation-file-of-r-packages-used-to-produce-the-report" class="section level4" number="1.3.3.6">
+<h4><span class="header-section-number">1.3.3.6</span> Generate citation file of R packages used to produce the report</h4>
+<p>I don’t know about you, but I am always struggling to properly cite R packages in my publications. If you want to retrieve the citation for an R package, you can use the base R function <code>citation()</code>. For instance, citations for <em>knitr</em> can be obtained as follow:</p>
+<pre class="r"><code># Generate citation for knitr
+citation(&quot;knitr&quot;)</code></pre>
+<pre><code>## 
+## To cite the &#39;knitr&#39; package in publications use:
+## 
+##   Yihui Xie (2020). knitr: A General-Purpose Package for Dynamic Report
+##   Generation in R. R package version 1.30.
+## 
+##   Yihui Xie (2015) Dynamic Documents with R and knitr. 2nd edition.
+##   Chapman and Hall/CRC. ISBN 978-1498716963
+## 
+##   Yihui Xie (2014) knitr: A Comprehensive Tool for Reproducible
+##   Research in R. In Victoria Stodden, Friedrich Leisch and Roger D.
+##   Peng, editors, Implementing Reproducible Computational Research.
+##   Chapman and Hall/CRC. ISBN 978-1466561595
+## 
+## To see these entries in BibTeX format, use &#39;print(&lt;citation&gt;,
+## bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
+## &#39;options(citation.bibtex.max=999)&#39;.</code></pre>
+<p>If you want to generate those latter citation entries in <a href="#bibtex-format">BibTeX format</a>, you can pass the returned object of <code>citation()</code> to <code>toBibtex()</code> as follows:</p>
+<pre class="r"><code># Generate citation for knitr in BibTex format Note that
+# there is no citation identifiers. Those will be
+# automatically generated in our next code.
+toBibtex(citation(&quot;knitr&quot;))</code></pre>
+<pre><code>## @Manual{,
+##   title = {knitr: A General-Purpose Package for Dynamic Report Generation in R},
+##   author = {Yihui Xie},
+##   year = {2020},
+##   note = {R package version 1.30},
+##   url = {https://yihui.org/knitr/},
+## }
+## 
+## @Book{,
+##   title = {Dynamic Documents with {R} and knitr},
+##   author = {Yihui Xie},
+##   publisher = {Chapman and Hall/CRC},
+##   address = {Boca Raton, Florida},
+##   year = {2015},
+##   edition = {2nd},
+##   note = {ISBN 978-1498716963},
+##   url = {https://yihui.org/knitr/},
+## }
+## 
+## @InCollection{,
+##   booktitle = {Implementing Reproducible Computational Research},
+##   editor = {Victoria Stodden and Friedrich Leisch and Roger D. Peng},
+##   title = {knitr: A Comprehensive Tool for Reproducible Research in {R}},
+##   author = {Yihui Xie},
+##   publisher = {Chapman and Hall/CRC},
+##   year = {2014},
+##   note = {ISBN 978-1466561595},
+##   url = {http://www.crcpress.com/product/isbn/9781466561595},
+## }</code></pre>
+<p>To use citation entries generated from <code>toBibtex()</code>, you have to copy the output to a <code>.bib</code> file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by adding the following code to your <code>packages</code> R code chunk:</p>
+<pre class="r"><code># Generate BibTex citation file for all R packages used to
+# produce report
+knitr::write_bib(.packages(), file = &quot;packages.bib&quot;)</code></pre>
+<p>The <code>.packages()</code> argument returns the names of all packages loaded in the current R session. This makes sure all packages being used will have their citation entries written to the <code>.bib</code> file. Finally, to be able to cite those references (see <a href="#citation-identifier">Citation identifier</a>) in your text, the <a href="#yaml-metadata-section">YAML metadata section</a> has to be edited. See <a href="#appendix-1">Appendix 1</a> for a full list of references associated to the R packages used to generate this report.</p>
+</div>
+<div id="generate-appendix-with-citations-for-all-r-packages" class="section level4" number="1.3.3.7">
+<h4><span class="header-section-number">1.3.3.7</span> Generate Appendix with citations for all R packages</h4>
+<p>Although a bibliography/references section will be provided at the end of your document to cite in text references (see <a href="#references">References</a>), it is customed to add citations for all R packages used to generate the research in <a href="#appendix-1">Appendix 1</a>. We will learn here the procedure to assemble such Appendix.</p>
+<div id="step-by-step-procedure-2" class="section level5" number="1.3.3.7.1">
+<h5><span class="header-section-number">1.3.3.7.1</span> Step-by-step procedure</h5>
+<ol style="list-style-type: decimal">
+<li>Include Appendix after bibliography/references section.</li>
+</ol>
+<ul>
+<li>This is done by using <code>&lt;div id="refs"&gt;&lt;/div&gt;</code> as shown below:</li>
+</ul>
+<pre class="r"><code># References
+
+&lt;div id=&quot;refs&quot;&gt;&lt;/div&gt;
+
+# (APPENDIX) Appendix {-}
+
+# Appendix 1</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Insert an R code chunk directly under <code># Appendix</code> to read in and print citations saved in <code>packages.bib</code>. This is done as follows:</li>
+</ol>
+<pre class="r"><code>### Load R package
+library(&quot;knitcitations&quot;)
+### Process and print citations in packages.bib Clear all
+### bibliography that could be in the cash
+cleanbib()
+# Set pandoc as the default output option for bib
+options(citation_format = &quot;pandoc&quot;)
+# Read and print bib from file
+read.bibtex(file = &quot;packages.bib&quot;)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Edit your R code chunk options line as follows to correctly print out references:
+<code>{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}</code></li>
+<li>Knit your code to check that it produces the right output (see <a href="#knitting-procedure">Knitting procedure</a>). See <a href="#appendix-1">Appendix 1</a> to get an idea of the output.</li>
+</ol>
+</div>
+</div>
+<div id="generate-appendix-with-r-package-versions-used-to-produce-report" class="section level4" number="1.3.3.8">
+<h4><span class="header-section-number">1.3.3.8</span> Generate Appendix with R package versions used to produce report</h4>
+<p>In addition to providing citations to R packages, you might also would like to provide full information on R package versions and your operating systems. With R, the simplest (but a useful and important) approach to document your R environment is to report the output of <code>sessionInfo()</code> (or <code>devtools::session_info()</code>). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
+wants to recreate your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of <code>sessionInfo()</code> showing the R version and packages that I used to create this document:</p>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Mojave 10.14.6
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] kableExtra_1.2.1     dplyr_1.0.2          kfigr_1.2           
+##  [4] devtools_2.3.2       usethis_2.0.0        formatR_1.7         
+##  [7] knitcitations_1.0.10 bookdown_0.21        rmarkdown_2.6       
+## [10] knitr_1.30          
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.1.0  xfun_0.20         remotes_2.2.0     purrr_0.3.4      
+##  [5] colorspace_2.0-0  generics_0.1.0    vctrs_0.3.6       testthat_3.0.1   
+##  [9] viridisLite_0.3.0 htmltools_0.5.0   yaml_2.2.1        rlang_0.4.10     
+## [13] pkgbuild_1.2.0    pillar_1.4.7      glue_1.4.2        withr_2.3.0      
+## [17] sessioninfo_1.1.1 lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
+## [21] munsell_0.5.0     rvest_0.3.6       memoise_1.1.0     evaluate_0.14    
+## [25] callr_3.5.1       ps_1.5.0          fansi_0.4.1       highr_0.8        
+## [29] Rcpp_1.0.6        scales_1.1.1      desc_1.2.0        pkgload_1.1.0    
+## [33] webshot_0.5.2     jsonlite_1.7.2    fs_1.5.0          digest_0.6.27    
+## [37] stringi_1.5.3     processx_3.4.5    rprojroot_2.0.2   bibtex_0.4.2.3   
+## [41] cli_2.2.0         tools_3.6.1       magrittr_2.0.1    tibble_3.0.4     
+## [45] RefManageR_1.2.12 crayon_1.3.4      pkgconfig_2.0.3   ellipsis_0.3.1   
+## [49] xml2_1.3.2        prettyunits_1.1.1 lubridate_1.7.9.2 assertthat_0.2.1 
+## [53] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          compiler_3.6.1</code></pre>
+<p>I have also used the approach described above to add this information in <a href="#appendix-2">Appendix 2</a>.</p>
+</div>
+</div>
+<div id="all-set-good-to-go" class="section level3" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> All set, good to go!</h3>
+<p>We have now set our R Markdown environment and can start populating it! This means that you will be inserting your text and other code chunks directly under the <code>packages</code> code chunk. The <a href="#references">References</a> section constitutes the end of the main body of your document. If you want to add Appendices, do so under <a href="#appendix-1">Appendix 1</a>, appendices will be labelled differently from the main body of the document.</p>
+</div>
+<div id="insert-tables-and-figures-in-r-markdown-document" class="section level3" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Insert tables and figures in R Markdown document</h3>
+<div id="tables" class="section level4" number="1.3.5.1">
+<h4><span class="header-section-number">1.3.5.1</span> Tables</h4>
+<p>There will be more details about figures in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:</p>
+<ul>
+<li>Creating a table in R.</li>
+<li>Assigning a table caption.</li>
+<li>Providing a unique label to the R code chunk allowing further cross-referencing in the text.</li>
+<li>Displaying the table in the document.</li>
+</ul>
+<div id="step-by-step-protocol" class="section level5" number="1.3.5.1.1">
+<h5><span class="header-section-number">1.3.5.1.1</span> Step-by-step protocol</h5>
+<p>Here, you will learn the R Markdown syntax and R code required to replicate the grading scale presented in the Syllabus (see Table <a href="#tab:tabgrades">1.1</a>):</p>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tabgrades">Table 1.1: </span>Grading scale applied in this class.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Percentage
+</th>
+<th style="text-align:left;">
+Grade
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+100-98
+</td>
+<td style="text-align:left;">
+A+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97.9-93
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+92.9-90
+</td>
+<td style="text-align:left;">
+A-
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+89.9-88
+</td>
+<td style="text-align:left;">
+B+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+87.9-83
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+82.9-80
+</td>
+<td style="text-align:left;">
+B-
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+79.9-78
+</td>
+<td style="text-align:left;">
+C+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+77.9-73
+</td>
+<td style="text-align:left;">
+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+72.9-70
+</td>
+<td style="text-align:left;">
+C-
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+69.9-68
+</td>
+<td style="text-align:left;">
+D+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67.9-60
+</td>
+<td style="text-align:left;">
+D
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+59.9-0
+</td>
+<td style="text-align:left;">
+F
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>Use the same <code>.Rmd</code> document as above to practice working with tables.</li>
+<li>Add a first-level header entitled <code>Tables</code>.</li>
+<li>Insert an R code chunk under your header by clicking on the <code>Insert</code> button <img src="Figures/insert.png" /> in the editor toolbar.</li>
+<li>Write the following R code in the code chunk:</li>
+</ol>
+<pre class="r"><code>grades &lt;- data.frame(Percentage = c(&quot;100-98&quot;, &quot;97.9-93&quot;, &quot;92.9-90&quot;, 
+    &quot;89.9-88&quot;, &quot;87.9-83&quot;, &quot;82.9-80&quot;, &quot;79.9-78&quot;, &quot;77.9-73&quot;, &quot;72.9-70&quot;, 
+    &quot;69.9-68&quot;, &quot;67.9-60&quot;, &quot;59.9-0&quot;), Grade = c(&quot;A+&quot;, &quot;A&quot;, &quot;A-&quot;, 
+    &quot;B+&quot;, &quot;B&quot;, &quot;B-&quot;, &quot;C+&quot;, &quot;C&quot;, &quot;C-&quot;, &quot;D+&quot;, &quot;D&quot;, &quot;F&quot;))
+knitr::kable(grades, caption = &quot;Grading scale applied in this class.&quot;) %&gt;% 
+    kable_styling(c(&quot;striped&quot;, &quot;scale_down&quot;))</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):</li>
+</ol>
+<ul>
+<li><code>echo=FALSE</code></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Add the unique label <code>tabgrades</code> in the chunk options line (just after <code>{r</code>) to enable further cross-referencing.</li>
+<li>Test your code to check that it produces the expected table (using the <code>Run</code> button).</li>
+<li>Knit your document using the <code>Knit</code> button <img src="Figures/knit_2.png" /> on the editor toolbar (remember to select your output format; Figure <a href="#fig:knitout">1.8</a>).</li>
+</ol>
+</div>
+</div>
+<div id="figures" class="section level4" number="1.3.5.2">
+<h4><span class="header-section-number">1.3.5.2</span> Figures</h4>
+<p>There will be more details about figures in chapter 10; however this tutorial introduces key concepts related to figure making in R Markdown, more specifically on the following topics:</p>
+<ul>
+<li>Creating a figure in R (based on the <code>cars</code> dataset; Figure <a href="#fig:cars">1.9</a>).</li>
+<li>Assigning a figure caption.</li>
+<li>Providing a unique label to the R code chunk allowing further cross-referencing in the text.</li>
+<li>Displaying the figure in the document.</li>
+</ul>
+<div class="figure"><span id="fig:cars"></span>
+<img src="Chapters_files/figure-html/cars-1.png" alt="Plot of cars' speed in relation to distance." width="100%" />
+<p class="caption">
+Figure 1.9: Plot of cars’ speed in relation to distance.
+</p>
+</div>
+<div id="step-by-step-protocol-1" class="section level5" number="1.3.5.2.1">
+<h5><span class="header-section-number">1.3.5.2.1</span> Step-by-step protocol</h5>
+<p>Here, you will learn the R Markdown syntax and R code required to replicate Figure <a href="#fig:cars">1.9</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Use the same <code>.Rmd</code> document as above to practice working with figures.</li>
+<li>Add a first-level header entitled <code>Figures</code>.</li>
+<li>Insert an R code chunk under your header by clicking on the <code>Insert</code> button <img src="Figures/insert.png" /> in the editor toolbar.</li>
+<li>Write the following R code in the code chunk:</li>
+</ol>
+<pre class="r"><code>summary(cars)
+plot(cars)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):</li>
+</ol>
+<ul>
+<li><code>echo=FALSE</code></li>
+<li><code>results="hide"</code></li>
+<li><code>fig.cap="Plot of cars' speed in relation to distance."</code></li>
+<li><code>out.width = '100%'</code></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Add the unique label <code>cars</code> in the chunk options line (just after <code>{r</code>) to enable further cross-referencing.</li>
+<li>Test your code to check that it produces the expected plot (using the <code>Run</code> button).</li>
+<li>Knit your document using the <code>Knit</code> button <img src="Figures/knit_2.png" /> on the editor toolbar (remember to select your output format; Figure <a href="#fig:knitout">1.8</a>).</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="cross-reference-tables-and-figures-in-the-text" class="section level3" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Cross-reference tables and figures in the text</h3>
+<p>Cross-referencing tables and figures in the main body of your R Markdown document can easily be done using the <code>\@ref()</code> function implemented in the <em>bookdown</em> package.</p>
+<div id="general-syntax" class="section level4" number="1.3.6.1">
+<h4><span class="header-section-number">1.3.6.1</span> General syntax</h4>
+<p>The general syntax is as follows:</p>
+<pre class="r"><code># Cross-referencing tables in main body of text
+\@ref(tab:code_chunk_ID)
+
+# Cross-referencing figures in main body of text
+\@ref(fig:code_chunk_ID)</code></pre>
+</div>
+<div id="step-by-step-procedure-3" class="section level4" number="1.3.6.2">
+<h4><span class="header-section-number">1.3.6.2</span> Step-by-step procedure</h4>
+<p>To cross-reference the <code>tabgrades</code> table type:</p>
+<p><code>\@ref(tab:tabgrades)</code>, which translates into <a href="#tab:tabgrades">1.1</a>.</p>
+<p>To cross-reference the <code>cars</code> figure type:</p>
+<p><code>\@ref(fig:cars)</code>, which translates into <a href="#fig:cars">1.9</a>.</p>
+<p>Note the this syntax doesn’t automatically include the <code>Table</code> or <code>Figure</code> handles in front of the cross-reference. You will have to manually add <code>Table</code> or <code>Figure</code> in front of your <code>\@ref()</code> function.</p>
+</div>
+</div>
+<div id="citing-references-in-text-and-adding-a-bibliographyreferences-section" class="section level3" number="1.3.7">
+<h3><span class="header-section-number">1.3.7</span> Citing references in text and adding a bibliography/references section</h3>
+<div id="the-bibliography-file" class="section level4" number="1.3.7.1">
+<h4><span class="header-section-number">1.3.7.1</span> The bibliography file</h4>
+<p>To cite references in the R Markdown document those have to be saved in a bibliography file using the <code>BibTeX</code> format. Other formats can be used, but the <code>BibTeX</code> format is open-source and easy to edit. Please see this webpage for more details on other formats: <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html" class="uri">https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html</a></p>
+<p>Most journals allow saving citation of publications directly in <code>BibTeX</code> format, but when this feature is not available formats can be converted using online services (e.g. EndNote to BibTeX: <a href="https://www.bruot.org/ris2bib/" class="uri">https://www.bruot.org/ris2bib/</a>).</p>
+<div id="procedure-to-do-prior-to-citing-references-in-an-r-markdown-document" class="section level5" number="1.3.7.1.1">
+<h5><span class="header-section-number">1.3.7.1.1</span> Procedure to do prior to citing references in an R Markdown document</h5>
+<ol style="list-style-type: decimal">
+<li>Save all your <code>BibTeX</code> references in a text file and make sure to add the <code>.bib</code> extension.</li>
+<li>This file has to be deposited in the same folder as your <code>.Rmd</code> file.</li>
+<li>You will be inserting the name of your references file in the <a href="#yaml-metadata-section">YAML metadata section</a>.</li>
+<li>You can visit this <a href="https://academic.oup.com/botlinnean/article/186/4/435/4736317?searchresult=1">webpage</a> and click on the <code>Cite</code> icon to download a citation in <code>.bibtex</code> format. More details on the <code>BibTeX</code> format is provided below.</li>
+<li>References formatted in <code>BibTeX</code> format are available in associated file:</li>
+</ol>
+<ul>
+<li><code>Bibliography_Reproducible_Science_2.bib</code>.</li>
+</ul>
+</div>
+</div>
+<div id="specifying-a-bibliography-in-the-r-markdown-file" class="section level4" number="1.3.7.2">
+<h4><span class="header-section-number">1.3.7.2</span> Specifying a bibliography in the R Markdown file</h4>
+<p>The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles. In order to use this feature, you need to specify a bibliography file in the <a href="#yaml-metadata-section">YAML metadata section</a>.</p>
+</div>
+<div id="bibtex-format" class="section level4" number="1.3.7.3">
+<h4><span class="header-section-number">1.3.7.3</span> BibTeX format</h4>
+<p>Please find below an example of a reference formatted in <code>BibTeX</code> format:</p>
+<pre class="r"><code># Example of BibTex format for Baker (2016) published in Nature
+@Article{Baker_2016,
+  doi = {10.1038/533452a},
+  url = {https://doi.org/10.1038/533452a},
+  year = {2016},
+  month = {may},
+  publisher = {Springer Nature},
+  volume = {533},
+  number = {7604},
+  pages = {452--454},
+  author = {Monya Baker},
+  title = {1,500 scientists lift the lid on reproducibility},
+  journal = {Nature},
+}</code></pre>
+</div>
+<div id="citation-identifier" class="section level4" number="1.3.7.4">
+<h4><span class="header-section-number">1.3.7.4</span> Citation identifier</h4>
+<p>The unique citation identifier of a reference (<code>Baker_2016</code> in the example above) is set by the user in the <code>BibTeX</code> citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the bibliography/references section.</p>
+</div>
+<div id="citing-references" class="section level4" number="1.3.7.5">
+<h4><span class="header-section-number">1.3.7.5</span> Citing references</h4>
+<p>Citations go inside square brackets (<code>[]</code>) and are separated by semicolons. Each citation must have a key, composed of <code>@</code> + the citation identifier (see above) as stored into the <code>BibTeX</code> file.</p>
+<p>Please find below some examples on citation protocols:</p>
+<pre class="r"><code>#Syntax
+Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
+Blah blah [@Baker_2016; @Smith2016].</code></pre>
+<p>Once knitted (using the <img src="Figures/knit_2.png" /> button), the above code/syntax turns into:</p>
+<p>Blah blah <span class="citation">(see <a href="#ref-Baker_2016" role="doc-biblioref">Baker, 2016 pp. 33–35</a>; also <a href="#ref-Smith2016" role="doc-biblioref">Smith et al., 2016</a>, ch. 1)</span>.</p>
+<p>Blah blah <span class="citation">(<a href="#ref-Baker_2016" role="doc-biblioref">Baker, 2016</a>; <a href="#ref-Smith2016" role="doc-biblioref">Smith et al., 2016</a>)</span>.</p>
+<p>A minus sign (-) before the <code>@</code> will suppress mention of the author in the citation. This can be useful when the author is already mentioned in the text:</p>
+<pre class="r"><code>#Syntax
+Baker says blah blah [-@Baker_2016].</code></pre>
+<p>Once knitted, the above code/syntax turns into:</p>
+<p>Baker says blah blah <span class="citation">(<a href="#ref-Baker_2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>You can also write an in-text citation, as follows:</p>
+<pre class="r"><code>#Syntax
+@Baker_2016 says blah.
+@Baker_2016 [p. 1] says blah.</code></pre>
+<p>Once knitted, the above code/syntax turns into:</p>
+<p><span class="citation"><a href="#ref-Baker_2016" role="doc-biblioref">Baker</a> (<a href="#ref-Baker_2016" role="doc-biblioref">2016</a>)</span> says blah.</p>
+<p><span class="citation"><a href="#ref-Baker_2016" role="doc-biblioref">Baker</a> (<a href="#ref-Baker_2016" role="doc-biblioref">2016 p. 1</a>)</span> says blah.</p>
+<div id="practice-citing-references" class="section level5" number="1.3.7.5.1">
+<h5><span class="header-section-number">1.3.7.5.1</span> Practice citing references</h5>
+<p>Students have to use their <code>.Rmd</code> document to practice citing references in the text using procedures described above. To clearly define where you practice citing references, please do so under a <code>Citing references</code> header.</p>
+</div>
+</div>
+</div>
+<div id="adding-a-bibliographyreferences-section" class="section level3" number="1.3.8">
+<h3><span class="header-section-number">1.3.8</span> Adding a bibliography/references section</h3>
+<p>Upon knitting, a bibliography/references section will be automatically generated at the end of the document. Usually, we recommend adding a References header just after the last paragraph of the document as displayed below:</p>
+<pre class="r"><code>last paragraph...
+
+# References</code></pre>
+<p>The bibliography will be inserted after this header (please see References section of this tutorial for more details).</p>
+<div id="formatting-citations-to-journal-styles" class="section level4" number="1.3.8.1">
+<h4><span class="header-section-number">1.3.8.1</span> Formatting citations to journal styles</h4>
+<p>In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a citation style file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.</p>
+</div>
+<div id="what-is-the-citation-style-language-csl" class="section level4" number="1.3.8.2">
+<h4><span class="header-section-number">1.3.8.2</span> What is the citation style language (CSL)?</h4>
+<p>The <strong>C</strong>itation <strong>S</strong>tyle <strong>L</strong>anguage (CSL) was developed by an open-source project and aims at facilitating scholarly publishing by automating the formatting of citations and bibliographies. This project has developed the CSL and maintains a crowd sourced repository with over 8000 free CSL citation styles. Please see the following website for more details: <a href="https://citationstyles.org" class="uri">https://citationstyles.org</a></p>
+</div>
+<div id="csl-repositories" class="section level4" number="1.3.8.3">
+<h4><span class="header-section-number">1.3.8.3</span> CSL repositories</h4>
+<p>There are two main CSL repositories:</p>
+<ul>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/citation-style-language/styles" class="uri">https://github.com/citation-style-language/styles</a></li>
+<li><strong>Zotero Style Repository:</strong> <a href="https://www.zotero.org/styles" class="uri">https://www.zotero.org/styles</a></li>
+</ul>
+</div>
+<div id="how-to-use-a-csl-file-in-an-r-markdown-to-format-citations-and-bibliography" class="section level4" number="1.3.8.4">
+<h4><span class="header-section-number">1.3.8.4</span> How to use a CSL file in an R Markdown to format citations and bibliography?</h4>
+<p>Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file:</p>
+<ol style="list-style-type: decimal">
+<li>Download the CSL file using repositories provided above. Some journals provide their CSL files on their websites (one has been made available for you to use in the associated files: <code>AmJBot.csl</code>).</li>
+<li>Save the CSL file in the same working directory as the <code>.Rmd</code> file.</li>
+<li>Edit the YAML metadata section as follows to specify the CSL file:</li>
+</ol>
+<pre class="r"><code># Add a &quot;csl&quot; argument and provide name of the CSL file (here AmJBot.csl) 
+---
+title: &quot;Sample Document&quot;
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+bibliography: bibliography.bib
+csl: AmJBot.csl
+---</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Knit the R Markdown document using the <code>Knit</code> <img src="Figures/knit_2.png" /> button. The Pandoc program will use the information stored in the YAML metadata section to format the bibliography (citations and bibliography section) following the citation style provided in the CSL file. Do not forget to add a <code>References</code> header at the end of your <code>.Rmd</code> document.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="part-e-interactive-tutorials" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> PART E: Interactive tutorials</h2>
 <p>The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package <a href="https://rstudio.github.io/learnr/index.html"><em>learnr</em></a>, which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).</p>
 <p>The interactive tutorial presented here is subdivided into five topics:</p>
 <ol style="list-style-type: decimal">
@@ -719,13 +1359,13 @@ Figure 1.6: Example of code chunks.
 </ol>
 <p>Finally, the instructor wants to stress that students are not obliged to design their tutorials using <em>learnr</em>. You can also use the R Markdown language/syntax and output tutorials in HTML or PDF formats (more on this subject in Chapter 1).</p>
 <p>This document highlights steps to execute the interactive tutorial designed by the instructor.</p>
-<div id="installation-of-required-package" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Installation of required package</h3>
+<div id="installation-of-required-package" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Installation of required package</h3>
 <p>Open RStudio and install the <em>learnr</em> package from CRAN by typing the following command in the console:</p>
 <pre class="r"><code>install.packages(&quot;learnr&quot;)</code></pre>
 </div>
-<div id="files-location-description" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Files location &amp; description</h3>
+<div id="files-location-description" class="section level3" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Files location &amp; description</h3>
 <p>Files associated to this tutorial are deposited on the <a href="https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=sharing">Google Drive</a> under this path:
 <code>Reproducible_Science -&gt; Bioinformatic_tutorials -&gt; Intro_interactive_tutorial</code></p>
 <p>There are two main files:</p>
@@ -734,15 +1374,15 @@ Figure 1.6: Example of code chunks.
 <li><code>EEB603_Interactive_tutorial.Rmd</code>: The interactive tutorial written in R Markdown, but requiring functions from <em>learnr</em>.</li>
 </ul>
 </div>
-<div id="youtube-video" class="section level3" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> YouTube video</h3>
+<div id="youtube-video" class="section level3" number="1.4.3">
+<h3><span class="header-section-number">1.4.3</span> YouTube video</h3>
 <p>The instructor has made a video explaining the procedure to launch the interactive tutorial (based on option 1; see below) as well as some additional explanations related to the exercise.</p>
 <ul>
 <li><a href="https://youtu.be/ALSpVwymZbM" class="uri">https://youtu.be/ALSpVwymZbM</a></li>
 </ul>
 </div>
-<div id="running-tutorial" class="section level3" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Running tutorial</h3>
+<div id="running-tutorial" class="section level3" number="1.4.4">
+<h3><span class="header-section-number">1.4.4</span> Running tutorial</h3>
 <ol style="list-style-type: decimal">
 <li>Download the <code>Intro_interactive_tutorial</code> folder and save it on your local computer.</li>
 <li>Set working directory to location of <code>EEB603_Interactive_tutorial.Rmd</code>.</li>
@@ -763,22 +1403,42 @@ Figure 1.6: Example of code chunks.
 <li>Enjoy going through the tutorial!</li>
 </ol>
 </div>
-<div id="learning-syntax-to-develop-interactive-tutorials" class="section level3" number="1.3.5">
-<h3><span class="header-section-number">1.3.5</span> Learning syntax to develop interactive tutorials</h3>
+<div id="learning-syntax-to-develop-interactive-tutorials" class="section level3" number="1.4.5">
+<h3><span class="header-section-number">1.4.5</span> Learning syntax to develop interactive tutorials</h3>
 <p>The procedure to develop interactive tutorials using <em>learnr</em> is presented <a href="https://rstudio.github.io/learnr/index.html">here</a>. To learn more about the syntax, the instructor encourages you to open <code>EEB603_Interactive_tutorial.Rmd</code> in RStudio and inspect the document. This will allow learning syntax and associated procedures to:</p>
 <ul>
 <li>Design exercises (with embedded R code chunks and associated solutions).</li>
 <li>Include multiple choices questions.</li>
 <li>Embed a YouTube video.</li>
 </ul>
-<div id="refs">
-
 </div>
 </div>
 </div>
+<div id="references" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Baker_2016" class="csl-entry">
+<span class="smallcaps">Baker, M.</span> 2016. 1,500 scientists lift the lid on reproducibility. <em>Nature</em> 533: 452–454. Available at: <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
 </div>
-<div id="appendix-1" class="section level1 appendix" number="2">
-<h1><span class="header-section-number">2</span> Appendix 1</h1>
+<div id="ref-Smith2016" class="csl-entry">
+<span class="smallcaps">Smith, J.F.</span>, <span class="smallcaps">T.H. Parker</span>, <span class="smallcaps">S. Nakagawa</span>, <span class="smallcaps">J. Gurevitch</span>, <span class="smallcaps">Ecology</span>, and <span class="smallcaps">T.(Tools. for T. in Evolution) Working Group</span>. 2016. Promoting transparency in evolutionary biology and ecology. <em>Systematic Botany</em> 41: 495–497. Available at: <a href="http://www.bioone.org/doi/abs/10.1600/036364416X692262">http://www.bioone.org/doi/abs/10.1600/036364416X692262</a>.
+</div>
+<div id="ref-bookdown2016" class="csl-entry">
+<span class="smallcaps">Xie, Y.</span> 2016. Bookdown: Authoring books and technical documents with <span>R</span> markdown. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry">
+<span class="smallcaps">Xie, Y.</span> 2020. Bookdown: Authoring books and technical documents with r markdown. Available at: <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+</div>
+<div id="ref-rmarkdown2018" class="csl-entry">
+<span class="smallcaps">Xie, Y.</span>, <span class="smallcaps">J.J. Allaire</span>, and <span class="smallcaps">G. Grolemund</span>. 2018. R markdown: The definitive guide. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
+</div>
+</div>
+</div>
+<div id="appendix-appendices" class="section level1 unnumbered">
+<h1>Appendices</h1>
+</div>
+<div id="appendix-1" class="section level1" number="3">
+<h1><span class="header-section-number">A</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
 <p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
 Documents for R</em>. R package version 2.6. 2020. &lt;URL:
@@ -829,6 +1489,45 @@ Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
 <p>[16] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>&gt;.</p>
+</div>
+<div id="appendix-2" class="section level1" number="4">
+<h1><span class="header-section-number">B</span> Appendix 2</h1>
+<p>Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using <code>sessionInfo()</code>.</p>
+<pre><code>## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Mojave 10.14.6
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] kableExtra_1.2.1     dplyr_1.0.2          kfigr_1.2           
+##  [4] devtools_2.3.2       usethis_2.0.0        formatR_1.7         
+##  [7] knitcitations_1.0.10 bookdown_0.21        rmarkdown_2.6       
+## [10] knitr_1.30          
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.1.0  xfun_0.20         remotes_2.2.0     purrr_0.3.4      
+##  [5] colorspace_2.0-0  generics_0.1.0    vctrs_0.3.6       testthat_3.0.1   
+##  [9] viridisLite_0.3.0 htmltools_0.5.0   yaml_2.2.1        rlang_0.4.10     
+## [13] pkgbuild_1.2.0    pillar_1.4.7      glue_1.4.2        withr_2.3.0      
+## [17] sessioninfo_1.1.1 lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
+## [21] munsell_0.5.0     rvest_0.3.6       memoise_1.1.0     evaluate_0.14    
+## [25] callr_3.5.1       ps_1.5.0          fansi_0.4.1       highr_0.8        
+## [29] Rcpp_1.0.6        scales_1.1.1      desc_1.2.0        pkgload_1.1.0    
+## [33] webshot_0.5.2     jsonlite_1.7.2    fs_1.5.0          digest_0.6.27    
+## [37] stringi_1.5.3     processx_3.4.5    rprojroot_2.0.2   bibtex_0.4.2.3   
+## [41] cli_2.2.0         tools_3.6.1       magrittr_2.0.1    tibble_3.0.4     
+## [45] RefManageR_1.2.12 crayon_1.3.4      pkgconfig_2.0.3   ellipsis_0.3.1   
+## [49] xml2_1.3.2        prettyunits_1.1.1 lubridate_1.7.9.2 assertthat_0.2.1 
+## [53] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          compiler_3.6.1</code></pre>
 </div>
 
 

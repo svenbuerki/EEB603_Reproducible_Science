@@ -44,8 +44,23 @@ library(kableExtra)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, cache=FALSE, message = FALSE}
+# Chunk options: see http://yihui.name/knitr/options/ ###
+
+## Text results
+#opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
+
+## Code decoration
+opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60), highlight = TRUE)
+
+## Caching code
+#opts_chunk$set(cache = 2, cache.path = "cache/")
+
+## Plots
+#opts_chunk$set(fig.path = "Figures_MS/", dev=c('pdf', 'png'), dpi = 300)
+
+## Locate figures as close as possible to requested position (=code)
+knitr::opts_chunk$set(fig.pos = 'H')
 ```
 
 # Chapter 1
@@ -74,7 +89,7 @@ This chapter provides students with opportunities to learn procedures to:
 - Develop pseudocode and implement it using the R language.
 - Create your own functions (referred to as user-defined functions).
 
-### Files supporting this tutorial
+### Files supporting this tutorial {#Files}
 
 Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive at this path: 
   
@@ -313,6 +328,461 @@ Students will work individually to complete the following exercises:
 
 To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).
 
+## PART B: Tables, Figures and References
+
+The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and allied R packages (see [Appendix 1] for a full list). Unlike functions implemented in the R *rmarkdown* package [@rmarkdown2018, which was better suited to generating `PDF` reproducible reports], *bookdown* allows to use ONE unified set of functions to generate `HTML` and `PDF` documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).
+
+### Learning outcomes
+
+This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
+
+- Set your R Markdown environment:
+  + Install dependencies.
+  + YAML metadata section.
+  + Load required R packages.
+  + Generate citation file of R packages used to produce the report.
+  + Generate Appendix with citations for all R packages.
+  + Generate Appendix with R package versions used to produce report.
+- Insert tables and figures in R Markdown document. 
+- Cross-reference tables and figures in the text.
+- Cite references in the text and add a bibliography/references section.
+- Format citations to journal styles.
+
+### Associated files supporting this tutorial
+
+Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
+
+### Set your R Markdown environment
+
+#### Install dependencies
+
+To execute this tutorial the following R packages have to be installed on your computer using code provided below:
+
+```{r pck, eval=FALSE, tidy=TRUE}
+install.packages(c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations"))
+```
+
+#### TeX distribution
+
+If you are planning to create `PDF` documents, you will need to install a `TeX` distribution on your computers. Please refer to this website for more details: https://www.latex-project.org/get/
+
+##### Set MiKTeX for compiling PDF documents on Windows computers
+
+Several students working on Windows computers shared difficulties in compiling `PDF` documents in RStudio. This issue is associated to `MiKTeX` preventing RStudio to install or update `TeX` packages required to knit your documents.
+
+To solve this issue apply the following procedure:
+
+1. Start `MiKTeX` console by searching and clicking `MiKTeX Console` in the application launcher.
+2. Enable automatic package installation by:
+  a. Clicking on `Settings` tab.
+  b. Ticking the radio button `Always install missing packages on-the-fly` under the "You can choose whether missing packages are to be installed on-the-fly" header (\autoref{fig:MikTex}).
+3. Restarting `RStudio` and you should be able to knit `pdf` documents.
+
+```{r MikTex, echo=FALSE, fig.cap="Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly.", out.width = '100%'}
+knitr::include_graphics("Figures/MikTex.png")
+```
+
+#### YAML metadata section
+
+The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to define (field names as declared in the YAML metadata section are provided between parenthesis):
+
+1. Title (`title`).
+2. Subtitle (`subtitle`).
+3. Author(s) (`author`).
+4. Date (`date`).
+5. Output format(s) (`output`).
+6. Citations link (`link-citations`).
+7. Font size (`fontsize`).
+8. Bibliography file(s) (`bibliography`).
+9. Format for citations to follow journal styles (`csl`).
+
+The YAML code provided below outputs either an `HTML` or `PDF` document (see `output` field) with a table of content (see `toc` field) and generates in text citations and bibliography section as declared in the `AmJBot.csl` file (under the `csl` field).
+
+```{r YAML, eval=FALSE, echo=TRUE}
+--- 
+title: 'Your title'
+subtitle: "Your subtitle"
+author: "Your name"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+link-citations: yes
+fontsize: 12pt
+bibliography: [Bibliography_Reproducible_Science_2.bib, packages.bib] 
+csl: AmJBot.csl
+---
+```
+
+**Warning:** `.bib` and `.csl` files have to be stored in the same working directory as your `.Rmd` file.
+
+##### Step-by-step procedure
+
+Do the following to set your YAML metadata section:
+
+1. Create a new R Markdown document. 
+2. Save the `.Rmd` document into a new project folder in `Reproducible_Science/Chapters/Chapter_1/`. 
+3. Copy `Bibliography_Reproducible_Science_2.bib` and `AmJBot.csl` in your project folder. These files are available on the Shared Google Drive folder:
+  + `Reproducible_Science/Chapters/Chapter_1/Tutorial_files`
+4. Edit the YAML metadata section as shown in the above code.  
+
+**Note:** 
+
+- You can use `R` functions in the YAML metadata section using inline R code (see part A for more details). Here, we use `Sys.Date()` to automatically date the output document.
+- The `bibliography` field includes two `BibTeX` files, the first contains your regular citations (of publications cited in the text; see [The bibliography file]), whereas the second is generated by `knitr::write_bib()` and contains citations for all R packages used to generate this report (see below for more details).
+
+#### Knitting procedure
+
+Since you have declared two output documents in the YAML metadata section and that those are specific to `bookdown` functions, you will have to select which output format you want to use to compile your document by clicking on the drop-down list on the left side of the `Knit` button (see Figure \@ref(fig:knitout)). To use `bookdown` functions, please make sure to select one of the following options (see Figure \@ref(fig:knitout)): `Knit to html_document2` or `Knit to pdf_document2`.
+
+```{r knitout, echo=FALSE, fig.cap="Snapshot of RStudio console showing the drop-down list associated to Knit button.", out.width = "100%", fig.align='center', dpi=72, fig.pos= "H"}
+knitr::include_graphics("Figures/knit_drop_down.png")
+```
+
+#### Load required R packages
+
+It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report. This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
+
+##### Step-by-step procedure
+
+1. Include an R code chunk directly under your YAML metadata section.
+2. Name code chunk `packages` and set options line as follows:
+  + `echo=FALSE`, 
+  + `warning=FALSE`, 
+  + `include=FALSE`.
+3. Add the following code to load required packages to produce your report:
+
+```
+#Load packages
+library(knitr)
+library(rmarkdown)
+library(bookdown)
+library(formattable)
+library(kableExtra)
+library(dplyr)
+library(magrittr)
+library(prettydoc)
+library(htmltools)
+library(knitcitations)
+library(devtools)
+```
+#### Generate citation file of R packages used to produce the report
+
+I don't know about you, but I am always struggling to properly cite R packages in my publications. If you want to retrieve the citation for an R package, you can use the base R function `citation()`. For instance, citations for *knitr* can be obtained as follow:
+
+```{r cit, eval=T, echo=TRUE}
+#Generate citation for knitr
+citation("knitr")
+```
+
+If you want to generate those latter citation entries in [BibTeX format], you can pass the returned object of `citation()` to `toBibtex()` as follows:
+
+```{r cit2, eval=T, echo=TRUE}
+#Generate citation for knitr in BibTex format
+#Note that there is no citation identifiers. Those will be automatically generated in our next code. 
+toBibtex(citation("knitr"))
+```
+
+To use citation entries generated from `toBibtex()`, you have to copy the output to a `.bib` file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by adding the following code to your `packages` R code chunk:
+
+```{r cit3, eval=F, echo=TRUE}
+#Generate BibTex citation file for all R packages used to produce report
+knitr::write_bib(.packages(), file = 'packages.bib')
+```
+
+The `.packages()` argument returns the names of all packages loaded in the current R session. This makes sure all packages being used will have their citation entries written to the `.bib` file. Finally, to be able to cite those references (see [Citation identifier]) in your text, the [YAML metadata section] has to be edited. See [Appendix 1] for a full list of references associated to the R packages used to generate this report. 
+
+#### Generate Appendix with citations for all R packages
+
+Although a bibliography/references section will be provided at the end of your document to cite in text references (see [References]), it is customed to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
+
+##### Step-by-step procedure
+
+1. Include Appendix after bibliography/references section.
+  + This is done by using `<div id="refs"></div>` as shown below:
+```{r eval=FALSE}
+# References
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendix {-}
+
+# Appendix 1
+```
+2. Insert an R code chunk directly under `# Appendix` to read in and print citations saved in `packages.bib`. This is done as follows:
+```{r generateBibliography1, eval=FALSE, echo=TRUE, warning = FALSE, message=FALSE}
+###
+#Load R package
+###
+library("knitcitations")
+###
+#Process and print citations in packages.bib
+###
+# Clear all bibliography that could be in the cash
+cleanbib()
+# Set pandoc as the default output option for bib
+options("citation_format" = "pandoc")
+#Read and print bib from file
+read.bibtex(file = "packages.bib")
+``` 
+3. Edit your R code chunk options line as follows to correctly print out references:
+`{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}`
+4. Knit your code to check that it produces the right output (see [Knitting procedure]). See [Appendix 1] to get an idea of the output.
+
+#### Generate Appendix with R package versions used to produce report
+
+In addition to providing citations to R packages, you might also would like to provide full information on R package versions and your operating systems. With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
+wants to recreate your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
+
+```{r eval=T, echo=T}
+sessionInfo()
+```
+
+I have also used the approach described above to add this information in [Appendix 2]. 
+
+### All set, good to go!
+
+We have now set our R Markdown environment and can start populating it! This means that you will be inserting your text and other code chunks directly under the `packages` code chunk. The [References] section constitutes the end of the main body of your document. If you want to add Appendices, do so under [Appendix 1], appendices will be labelled differently from the main body of the document.   
+
+### Insert tables and figures in R Markdown document
+
+#### Tables
+
+There will be more details about figures in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:
+
+- Creating a table in R. 
+- Assigning a table caption.
+- Providing a unique label to the R code chunk allowing further cross-referencing in the text.
+- Displaying the table in the document.
+
+##### Step-by-step protocol
+
+Here, you will learn the R Markdown syntax and R code required to replicate the grading scale presented in the Syllabus (see Table \@ref(tab:tabgrades)):
+
+```{r tabgrades, echo=F, fig.align='center'}
+grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
+knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
+```
+
+1. Use the same `.Rmd` document as above to practice working with tables. 
+2. Add a first-level header entitled `Tables`.
+3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
+4. Write the following R code in the code chunk:
+```{r tabgrades2, eval=FALSE, echo=TRUE}
+grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
+knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
+```
+5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
+  - `echo=FALSE`
+6. Add the unique label `tabgrades` in the chunk options line (just after `{r`) to enable further cross-referencing.
+7. Test your code to check that it produces the expected table (using the `Run` button). 
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (remember to select your output format; Figure \@ref(fig:knitout)). 
+
+#### Figures
+
+There will be more details about figures in chapter 10; however this tutorial introduces key concepts related to figure making in R Markdown, more specifically on the following topics:
+
+- Creating a figure in R (based on the `cars` dataset; Figure \@ref(fig:cars)). 
+- Assigning a figure caption.
+- Providing a unique label to the R code chunk allowing further cross-referencing in the text.
+- Displaying the figure in the document.
+
+```{r cars, echo=FALSE, results="hide", fig.cap="Plot of cars' speed in relation to distance.", out.width = '100%'}
+summary(cars)
+plot(cars)
+```
+
+##### Step-by-step protocol
+
+Here, you will learn the R Markdown syntax and R code required to replicate Figure \@ref(fig:cars):
+
+1. Use the same `.Rmd` document as above to practice working with figures. 
+2. Add a first-level header entitled `Figures`.
+3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
+4. Write the following R code in the code chunk:
+```{r eval=FALSE}
+summary(cars)
+plot(cars)
+```
+5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
+  - `echo=FALSE`
+  - `results="hide"`
+  - `fig.cap="Plot of cars' speed in relation to distance."`
+  - `out.width = '100%'`
+6. Add the unique label `cars` in the chunk options line (just after `{r`) to enable further cross-referencing.
+7. Test your code to check that it produces the expected plot (using the `Run` button). 
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (remember to select your output format; Figure \@ref(fig:knitout)). 
+
+### Cross-reference tables and figures in the text
+
+Cross-referencing tables and figures in the main body of your R Markdown document can easily be done using the `\@ref()` function implemented in  the *bookdown* package. 
+
+#### General syntax
+
+The general syntax is as follows:
+
+```{r synt, eval=F}
+# Cross-referencing tables in main body of text
+\@ref(tab:code_chunk_ID)
+
+# Cross-referencing figures in main body of text
+\@ref(fig:code_chunk_ID)
+```
+
+#### Step-by-step procedure
+
+To cross-reference the `tabgrades` table type:
+
+`\@ref(tab:tabgrades)`, which translates into \@ref(tab:tabgrades).
+
+To cross-reference the `cars` figure type:
+
+`\@ref(fig:cars)`, which translates into \@ref(fig:cars).
+
+Note the this syntax doesn't automatically include the `Table` or `Figure` handles in front of the cross-reference. You will have to manually add `Table` or `Figure` in front of your `\@ref()` function.
+
+### Citing references in text and adding a bibliography/references section
+
+#### The bibliography file
+
+To cite references in the R Markdown document those have to be saved in a bibliography file using the `BibTeX` format. Other formats can be used, but the `BibTeX` format is open-source and easy to edit. Please see this webpage for more details on other formats: https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+ 
+Most journals allow saving citation of publications directly in `BibTeX` format, but when this feature is not available formats can be converted using online services (e.g. EndNote to BibTeX: https://www.bruot.org/ris2bib/).
+
+##### Procedure to do prior to citing references in an R Markdown document  
+
+1. Save all your `BibTeX` references in a text file and make sure to add the `.bib` extension. 
+2. This file has to be deposited in the same folder as your `.Rmd` file.
+3. You will be inserting the name of your references file in the [YAML metadata section].
+4. You can visit this [webpage](https://academic.oup.com/botlinnean/article/186/4/435/4736317?searchresult=1) and click on the `Cite` icon to download a citation in `.bibtex` format. More details on the `BibTeX` format is provided below.
+5. References formatted in `BibTeX` format are available in associated file: 
+  + `Bibliography_Reproducible_Science_2.bib`.
+
+#### Specifying a bibliography in the R Markdown file
+
+The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles. In order to use this feature, you need to specify a bibliography file in the [YAML metadata section]. 
+
+#### BibTeX format
+
+Please find below an example of a reference formatted in `BibTeX` format:
+
+```{r eval=FALSE}
+# Example of BibTex format for Baker (2016) published in Nature
+@Article{Baker_2016,
+  doi = {10.1038/533452a},
+  url = {https://doi.org/10.1038/533452a},
+  year = {2016},
+  month = {may},
+  publisher = {Springer Nature},
+  volume = {533},
+  number = {7604},
+  pages = {452--454},
+  author = {Monya Baker},
+  title = {1,500 scientists lift the lid on reproducibility},
+  journal = {Nature},
+}
+```
+
+#### Citation identifier
+
+The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the bibliography/references section. 
+
+#### Citing references
+
+Citations go inside square brackets (`[]`) and are separated by semicolons. Each citation must have a key, composed of `@` + the citation identifier (see above) as stored into the `BibTeX` file. 
+
+Please find below some examples on citation protocols:
+
+```{r eval=FALSE}
+#Syntax
+Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
+Blah blah [@Baker_2016; @Smith2016].
+```
+
+Once knitted (using the ![](Figures/knit_2.png) button), the above code/syntax turns into:
+
+Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
+
+Blah blah [@Baker_2016; @Smith2016].
+
+A minus sign (-) before the `@` will suppress mention of the author in the citation. This can be useful when the author is already mentioned in the text:
+```{r eval=FALSE}
+#Syntax
+Baker says blah blah [-@Baker_2016].
+```
+
+Once knitted, the above code/syntax turns into:
+
+Baker says blah blah [-@Baker_2016].
+
+You can also write an in-text citation, as follows:
+```{r eval=FALSE}
+#Syntax
+@Baker_2016 says blah.
+@Baker_2016 [p. 1] says blah.
+```
+
+Once knitted, the above code/syntax turns into:
+
+@Baker_2016 says blah.
+
+@Baker_2016 [p. 1] says blah.
+
+##### Practice citing references
+
+Students have to use their `.Rmd` document to practice citing references in the text using procedures described above. To clearly define where you practice citing references, please do so under a `Citing references` header. 
+
+### Adding a bibliography/references section
+
+Upon knitting, a bibliography/references section will be automatically generated at the end of the document. Usually, we recommend adding a References header just after the last paragraph of the document as displayed below:
+
+```{r eval=FALSE}
+last paragraph...
+
+# References
+```
+
+The bibliography will be inserted after this header (please see References section of this tutorial for more details).
+
+#### Formatting citations to journal styles
+
+In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a citation style file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.  
+
+#### What is the citation style language (CSL)?
+
+The **C**itation **S**tyle **L**anguage (CSL) was developed by an open-source project and aims at facilitating scholarly publishing by automating the formatting of citations and bibliographies. This project has developed the CSL and maintains a crowd sourced repository with over 8000 free CSL citation styles. Please see the following website for more details: https://citationstyles.org
+
+#### CSL repositories
+
+There are two main CSL repositories: 
+
+- **GitHub Repository:** https://github.com/citation-style-language/styles
+- **Zotero Style Repository:** https://www.zotero.org/styles
+
+#### How to use a CSL file in an R Markdown to format citations and bibliography?
+
+Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file:
+
+1. Download the CSL file using repositories provided above. Some journals provide their CSL files on their websites (one has been made available for you to use in the associated files: `AmJBot.csl`).
+2. Save the CSL file in the same working directory as the `.Rmd` file.
+3. Edit the YAML metadata section as follows to specify the CSL file:
+```{r eval=FALSE}
+# Add a "csl" argument and provide name of the CSL file (here AmJBot.csl) 
+---
+title: "Sample Document"
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+bibliography: bibliography.bib
+csl: AmJBot.csl
+---
+```
+4. Knit the R Markdown document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information stored in the YAML metadata section to format the bibliography (citations and bibliography section) following the citation style provided in the CSL file. Do not forget to add a `References` header at the end of your `.Rmd` document.
+
 ## PART E: Interactive tutorials
 
 The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
@@ -375,15 +845,27 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 - Include multiple choices questions.
 - Embed a YouTube video.
 
+# References
+
 <div id="refs"></div>
 
-# Appendix 1 {.appendix}
+# (APPENDIX) Appendices {-}
+
+# Appendix 1
 
 Citations of all R packages used to generate this report. 
 
-```{r generateBibliography, eval = T, results="asis", cache = F, echo=F, warning = FALSE, message=FALSE}
+```{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}
 library("knitcitations")
 cleanbib()
 options("citation_format" = "pandoc")
 read.bibtex(file = "packages.bib")
 ``` 
+
+# Appendix 2
+
+Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
+
+```{r eval=T, echo=F, warning = FALSE, message=FALSE}
+sessionInfo()
+```
