@@ -1012,6 +1012,7 @@ plot(x, y)
 ```
 
 To get there:
+
 1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) and set the following options and associated arguments:
 
 - `Plot`: Unique ID of code chunk.
@@ -1033,7 +1034,7 @@ plot(x, y)
 ```
 
 3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
-4. Go to step 5 above and complete the exercise.
+4. Go to step 5 in the above section and complete the exercise.
 
 ## PART E: Interactive tutorials
 
