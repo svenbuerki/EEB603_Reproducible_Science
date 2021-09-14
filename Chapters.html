@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2021-09-13" />
+<meta name="date" content="2021-09-14" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -411,7 +411,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2021-09-13</h4>
+<h4 class="date">2021-09-14</h4>
 
 </div>
 
@@ -1588,8 +1588,350 @@ plot(x, y)</code></pre>
 </ol>
 </div>
 </div>
-<div id="part-e-interactive-tutorials" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> PART E: Interactive tutorials</h2>
+<div id="part-duser-defined-functions-in-r" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> PART D:User Defined Functions in R</h2>
+<div id="learning-outcomes-3" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Learning outcomes</h3>
+<p>This tutorial provides students with opportunities to gain the following skills by:</p>
+<ul>
+<li>Defining what is a function and its applicability.</li>
+<li>Learning the syntax to implement user-defined functions in R.</li>
+<li>Learning R specific functions associated to producing and loading functions: <code>return()</code>, <code>source()</code>.</li>
+<li>Providing some background on R lists (<code>list()</code>) and their applicability to functions returning multiple values.</li>
+<li>Developing, implementing and applying user-defined functions returning single and multiple values.</li>
+<li>Learning protocols to implement defensive programming to your code.</li>
+</ul>
+</div>
+<div id="what-do-you-need-to-complete-this-tutorial" class="section level3" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> What do you need to complete this tutorial?</h3>
+<p>To complete part D, please create a new R script document (Figure <a href="#fig:Rscript">1.13</a>) and save it in your working directory. All the code and functions presented here should be reported in your R script.</p>
+<div class="figure"><span id="fig:Rscript"></span>
+<img src="Figures/R_script.png" alt="Snapshot of RStudio showing procedure to create a new R script document." width="100%" />
+<p class="caption">
+Figure 1.13: Snapshot of RStudio showing procedure to create a new R script document.
+</p>
+</div>
+</div>
+<div id="introduction-1" class="section level3" number="1.5.3">
+<h3><span class="header-section-number">1.5.3</span> Introduction</h3>
+<p>This tutorial aims at providing an introduction to functions, more specifically, we will be studying the user defined functions (UDFs) as implemented in R. UDFs allow users to write their own functions and make them available in the R Global Environment (using the <code>source()</code> function) or ultimately in <a href="https://r-pkgs.org">R packages</a>.</p>
+<p>To gain this knowledge, students will be conducting three exercises to learn about the following topics:</p>
+<ol style="list-style-type: decimal">
+<li>Develop, implement and apply function returning a single value.</li>
+<li>Develop, implement and apply function returning multiple values.</li>
+<li>Implement defensive programming to your code to support debugging.</li>
+</ol>
+<p>To show the broad applications of the teaching material, we will be using mathematical examples. Before delving into these topics, the instructor is providing some general context and touch upon what a function is and when it is best applied as well as best practices to write pseudocode/code (more during Chapter 4) and approaches to calling R functions.</p>
+</div>
+<div id="what-is-a-function" class="section level3" number="1.5.4">
+<h3><span class="header-section-number">1.5.4</span> What is a function?</h3>
+<p>In programming, you use functions to incorporate sets of instructions that you want to use repeatedly or that, because of their complexity, are better self-contained in a sub program and called when needed. <strong>A function is a piece of code written to carry out a specified task</strong>; it can or can not accept arguments or parameters and it can or can not return one or more values.</p>
+</div>
+<div id="functions-in-r" class="section level3" number="1.5.5">
+<h3><span class="header-section-number">1.5.5</span> Functions in R</h3>
+<p>There exist many terms to define and express functions, subroutines, procedures, method, etc., but for the purposes of this tutorial, you will ignore these distinctions, which are often semantic and reminiscent of other older programming languages (see here for more details on <a href="http://programmers.stackexchange.com/questions/123159/what-are-the-specific-meanings-of-the-terms-functions-methods-procedures-and?rq=1">semantics</a>). In our context, those definitions are less important, because in R we only have functions.</p>
+<div id="r-syntax-for-function" class="section level4" number="1.5.5.1">
+<h4><span class="header-section-number">1.5.5.1</span> R syntax for function</h4>
+<p>In R, according to the base documentation, you define a function with the following construct:</p>
+<pre class="r"><code>function(arglist) {
+    body
+}</code></pre>
+<p>The code between the curly braces is the <code>body</code> of the function.</p>
+<p>When you use built-in functions, the only thing you need to worry about is how to effectively communicate the correct input arguments (<code>arglist</code>) and manage the return value(s), if there are any. To know more about arguments associated with a specific function you can access its documentation by using the following syntax (entered in the R console):</p>
+<pre class="r"><code>#General syntax
+?function() 
+
+#Example with read.csv()
+?read.csv()</code></pre>
+</div>
+<div id="user-defined-functions-udfs-in-r" class="section level4" number="1.5.5.2">
+<h4><span class="header-section-number">1.5.5.2</span> User defined functions (UDFs) in R</h4>
+<p>R allows users to define their own functions, which are based on the following syntax:</p>
+<pre class="r"><code>function.name &lt;- function(arguments){
+   computations on the arguments
+   some more code
+   return values
+}</code></pre>
+<p>So, in most cases, a function has a name (here <code>function.name</code>), some arguments (here <code>arguments</code>) used as input to the function (declared within the <code>()</code> following the keyword ‘function’); a body, which is the code within the curly braces <code>{}</code>, where you carry out the computation; and can have one or more return values (the output). You define the function similarly to variables, by “assigning” the directive <code>function(arguments)</code> to the “variable” <code>function.name</code>, followed by the rest.</p>
+</div>
+</div>
+<div id="best-practice-to-writing-code" class="section level3" number="1.5.6">
+<h3><span class="header-section-number">1.5.6</span> Best practice to writing code</h3>
+<p>This topic will be covered in chapter 4, but here is an outline of the best practice to write code and functions in R. <strong>Before delving into code writing, we will usually work on developing a pseudocode, which aims at providing a high-level description of the tasks that will have to be performed by the function.</strong> Once this job done, we will then start writing the code by turning the tasks identified into the pseudocode into real R code. This will be done by searching for existing R functions allowing to execute each task described in the pseudocode and if they don’t exist develop new functions (this task might require some additional pseudocode). Please find below more detailed definitions of the two concepts described here.</p>
+<div id="writing-pseudocode" class="section level4" number="1.5.6.1">
+<h4><span class="header-section-number">1.5.6.1</span> Writing pseudocode</h4>
+<p>Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.</p>
+</div>
+<div id="writing-code" class="section level4" number="1.5.6.2">
+<h4><span class="header-section-number">1.5.6.2</span> Writing code</h4>
+<p>Writing clear, reproducible code has (at least) three main benefits. Firstly, it makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. Secondly, the results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. Thirdly, having clean and reproducible code available can encourage greater uptake of new methods that you have developed.</p>
+</div>
+</div>
+<div id="loading-and-calling-udfs" class="section level3" number="1.5.7">
+<h3><span class="header-section-number">1.5.7</span> Loading and calling UDFs</h3>
+<p>When you will be working on your project, it is highly likely that you will have developed multiple UDFs tailored to your research. In this case, it would be appropriate to create a new folder entitled <code>R_functions</code>, which will be located in the same directory as your R scripts (see Figure <a href="#fig:Structure">1.14</a>). Save all your UDFs as independent files (e.g. <code>check.install.pkg.R</code>) into the <code>R_functions</code> folder.</p>
+<div class="figure"><span id="fig:Structure"></span>
+<img src="Figures/Example_project_structure.png" alt="Example file structure of a simple analysis project. See Chapter 4 for more details" width="100%" />
+<p class="caption">
+Figure 1.14: Example file structure of a simple analysis project. See Chapter 4 for more details
+</p>
+</div>
+<div id="the-source-function-read-r-code-from-a-file" class="section level4" number="1.5.7.1">
+<h4><span class="header-section-number">1.5.7.1</span> The <code>source()</code> function: Read R code from a file</h4>
+<p>Once your project will be properly structured (see Figure <a href="#fig:Structure">1.14</a>), it will be easy to call specific UDFs into any R script by using the <code>source()</code> function.</p>
+<p>For instance, to load the <code>check.install.pkg()</code> (saved in <code>R_functions/check.install.pkg.R</code>) into the Global Environment enter the following code into the R console (see Figure <a href="#fig:sourceUDF">1.15</a>):</p>
+<pre class="r"><code>source(&quot;R_functions/check.install.pkg.R&quot;)</code></pre>
+<div class="figure"><span id="fig:sourceUDF"></span>
+<img src="Figures/source_view.png" alt="Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF." width="100%" />
+<p class="caption">
+Figure 1.15: Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.
+</p>
+</div>
+</div>
+</div>
+<div id="call-your-udfs" class="section level3" number="1.5.8">
+<h3><span class="header-section-number">1.5.8</span> Call your UDFs</h3>
+<p>Once loaded into your Global Environment (see Figure <a href="#fig:sourceUDF">1.15</a> for an example), you will be able to call your functions by typing their names directly into the console. For instance:</p>
+<pre class="r"><code># Check if ape package is installed, if not install it and
+# then load it
+check.install.pkg(pkg = c(&quot;knitr&quot;))</code></pre>
+<pre><code>## [1] &quot;Check if packages are installed&quot;
+## [1] &quot;Load packages&quot;</code></pre>
+<pre><code>## knitr 
+##  TRUE</code></pre>
+</div>
+<div id="exercise-1-develop-implement-and-apply-function-returning-a-single-value" class="section level3" number="1.5.9">
+<h3><span class="header-section-number">1.5.9</span> Exercise 1: Develop, implement and apply function returning a single value</h3>
+<p>In this exercise, we will be working on developing a function that returns a single value, but how do we tell our UDF to return the value? In R, this task is accomplished with the <code>return()</code> function.</p>
+<div id="aim" class="section level4" number="1.5.9.1">
+<h4><span class="header-section-number">1.5.9.1</span> Aim</h4>
+<p>Develop, implement and apply a UDF to calculate the square of a number.</p>
+<p>In math, the squared symbol (<span class="math inline">\(^2\)</span>) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.</p>
+</div>
+<div id="pseudocode" class="section level4" number="1.5.9.2">
+<h4><span class="header-section-number">1.5.9.2</span> Pseudocode</h4>
+<p>Although straightforward, the function will have to execute the following tasks:</p>
+<ol style="list-style-type: decimal">
+<li>Store number inputted by user into an object entitled <code>base</code> as part of the argument(s) of the function.<br />
+</li>
+<li>Infer square of <code>base</code> by multiplying number by itself.</li>
+<li>Save output of task 2 into an object called <code>sq</code>.</li>
+<li>Return <code>sq</code> object to user (here a single value). To return <code>sq</code>, we will be using the <code>return()</code> function.</li>
+</ol>
+<p>This also means that the class of the <strong>input</strong> provided by user has to be <strong>numeric</strong> and the <strong>output</strong> will also be <strong>numeric</strong>. We will further discuss this topic during the third exercise. The class of an object can be checked by using the <code>class()</code> function. Note: This function will be useful for implementing defensive programming.</p>
+</div>
+<div id="turning-your-pseudocode-into-a-function" class="section level4" number="1.5.9.3">
+<h4><span class="header-section-number">1.5.9.3</span> Turning your pseudocode into a function</h4>
+<p>In this section, we will implement the pseudocode proposed above into a function entitled <code>square_number()</code>. This function requires one argument from the user (<code>base</code>, which is a number) and returns the square of that number (here square of <code>base</code> = <code>base</code>*<code>base</code>).</p>
+<pre class="r"><code>## Create a UDF in R to calculate square number:
+# - argument: base (= one number)
+# - output: square of base (= one number)
+square_number &lt;- function(base) {
+    # Infer square of base and save it into object
+    sq &lt;- base * base
+    # Return sq
+    return(sq)
+}</code></pre>
+<p>Write the code associated to the <code>square_number</code> into your new R script (saved in your working directory) and load function by executing all lines associated to function. Please carry on populating this document with the rest of the exercises.</p>
+</div>
+<div id="loading-your-function-into-the-global-environment" class="section level4" number="1.5.9.4">
+<h4><span class="header-section-number">1.5.9.4</span> Loading your function into the Global Environment</h4>
+<p>Before being able to use your UDF, execute the code associated to the <code>square_number()</code> function in the console. The UDF should now be loaded in the Global Environment and therefore be available for use. To verify that the UDF is loaded, please check the Environment panel in RStudio (see Figure <a href="#fig:envir">1.16</a>).</p>
+<div class="figure"><span id="fig:envir"></span>
+<img src="Figures/Environment_RStudio.png" alt="Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used." width="100%" />
+<p class="caption">
+Figure 1.16: Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.
+</p>
+</div>
+</div>
+<div id="applying-your-function" class="section level4" number="1.5.9.5">
+<h4><span class="header-section-number">1.5.9.5</span> Applying your function</h4>
+<p>The R language is quite flexible and allows functions to be applied to a single value (e.g. <code>base = 2</code>) or a vector (e.g. <code>base = c(2,4,16,23,45)</code>). Please see below for more example:</p>
+<ol style="list-style-type: decimal">
+<li>Apply function to one value:</li>
+</ol>
+<pre class="r"><code># Square number of 2
+square_number(base = 2)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Apply function to a vector containing multiple values:</li>
+</ol>
+<pre class="r"><code># Create vector with numbers
+bases &lt;- c(2, 4, 16, 23, 45)
+# Apply function to vector
+square_number(base = bases)</code></pre>
+<pre><code>## [1]    4   16  256  529 2025</code></pre>
+</div>
+</div>
+<div id="exercise-2-develop-implement-and-apply-function-returning-multiple-values" class="section level3" number="1.5.10">
+<h3><span class="header-section-number">1.5.10</span> Exercise 2: Develop, implement and apply function returning multiple values</h3>
+<p>In our previous exercise we developed a function returning only one value. As part of your research, there will be multiple instances where you will be performing multiple actions onto your data, which will call for multiple values to be outputted by the function. To do so, we will be <strong>harvesting the different outputs of the function into a list, which will be returned to the users</strong> (using <code>return()</code>).</p>
+<div id="what-is-a-list-in-r" class="section level4" number="1.5.10.1">
+<h4><span class="header-section-number">1.5.10.1</span> What is a list in R?</h4>
+<p>Lists are R objects containing elements of different types such as numbers, strings, vectors or another list inside it. A list can also contain a matrix or a function as its elements. Lists are created using the <code>list()</code> function.</p>
+</div>
+<div id="creating-a-list" class="section level4" number="1.5.10.2">
+<h4><span class="header-section-number">1.5.10.2</span> Creating a list</h4>
+<p>Find below an example to create a list containing strings, numbers, vectors and a logical values:</p>
+<pre class="r"><code># Create a list containing strings, numbers, vectors and a
+# logical value
+list_data &lt;- list(&quot;Red&quot;, 51.3, 72, c(21, 32, 11), TRUE)
+# Print object
+print(list_data)</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;Red&quot;
+## 
+## [[2]]
+## [1] 51.3
+## 
+## [[3]]
+## [1] 72
+## 
+## [[4]]
+## [1] 21 32 11
+## 
+## [[5]]
+## [1] TRUE</code></pre>
+</div>
+<div id="naming-list-elements" class="section level4" number="1.5.10.3">
+<h4><span class="header-section-number">1.5.10.3</span> Naming list elements</h4>
+<p>The list elements can be given names and they can be accessed using these names (see below):</p>
+<pre class="r"><code># Create a list containing a vector, a matrix and a list
+list_data &lt;- list(c(&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;), matrix(c(3, 9, 5, 1, 
+    -2, 8), nrow = 2), list(&quot;green&quot;, 12.3))
+# Give names to the elements in the list
+names(list_data) &lt;- c(&quot;1st_Quarter&quot;, &quot;A_Matrix&quot;, &quot;An_inner_list&quot;)
+# Show the list
+print(list_data)</code></pre>
+<pre><code>## $`1st_Quarter`
+## [1] &quot;Jan&quot; &quot;Feb&quot; &quot;Mar&quot;
+## 
+## $A_Matrix
+##      [,1] [,2] [,3]
+## [1,]    3    5   -2
+## [2,]    9    1    8
+## 
+## $An_inner_list
+## $An_inner_list[[1]]
+## [1] &quot;green&quot;
+## 
+## $An_inner_list[[2]]
+## [1] 12.3</code></pre>
+</div>
+<div id="accessing-list-elements" class="section level4" number="1.5.10.4">
+<h4><span class="header-section-number">1.5.10.4</span> Accessing list elements</h4>
+<p>Elements of the list can be accessed by the index of the element in the list. In case of named lists it can also be accessed using the names. We use the same example as above to illustrate procedure to access list elements:</p>
+<pre class="r"><code># Create a list containing a vector, a matrix and a list
+list_data &lt;- list(c(&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;), matrix(c(3, 9, 5, 1, 
+    -2, 8), nrow = 2), list(&quot;green&quot;, 12.3))
+# Give names to the elements in the list
+names(list_data) &lt;- c(&quot;1st_Quarter&quot;, &quot;A_Matrix&quot;, &quot;An_inner_list&quot;)
+# Access the first element of the list
+print(list_data[1])</code></pre>
+<pre><code>## $`1st_Quarter`
+## [1] &quot;Jan&quot; &quot;Feb&quot; &quot;Mar&quot;</code></pre>
+<pre class="r"><code># Access the thrid element. As it is also a list, all its
+# elements will be printed
+print(list_data[3])</code></pre>
+<pre><code>## $An_inner_list
+## $An_inner_list[[1]]
+## [1] &quot;green&quot;
+## 
+## $An_inner_list[[2]]
+## [1] 12.3</code></pre>
+<pre class="r"><code># Access the list element using the name of the element
+print(list_data$A_Matrix)</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    3    5   -2
+## [2,]    9    1    8</code></pre>
+</div>
+<div id="lets-go-back-to-our-exercise" class="section level4" number="1.5.10.5">
+<h4><span class="header-section-number">1.5.10.5</span> Let’s go back to our exercise</h4>
+<p>Now that you have more knowledge about list objects, we will be working on an <strong>exercise aiming at developing and implementing a UDF to calculate the log and square of a number</strong>.</p>
+</div>
+<div id="pseudocode-and-associated-udf" class="section level4" number="1.5.10.6">
+<h4><span class="header-section-number">1.5.10.6</span> Pseudocode and associated UDF</h4>
+<p>Each student is tasked to:</p>
+<ol style="list-style-type: decimal">
+<li>Develop a pseudocode to execute the UDF.</li>
+<li>Implement the pseudocode into a UDF.</li>
+<li>Apply and test your code/function.</li>
+</ol>
+</div>
+<div id="solution-proposed-by-the-instructor" class="section level4" number="1.5.10.7">
+<h4><span class="header-section-number">1.5.10.7</span> Solution proposed by the instructor</h4>
+<p>Please find below the solution proposed by the instructor:</p>
+<pre class="r"><code>## Create a user defined function in R to calculate log and
+## square of a number:
+# argument: base (= one number)
+# output: log and square of base (= two numbers) returned in
+# a list
+my_log_square &lt;- function(base) {
+    # log (base 10)
+    log_value &lt;- log(base)
+    # Square of base
+    square_value &lt;- base^2
+    # Return both objects
+    return(list(log_val = log_value, square_val = square_value))
+}
+# Call the function
+my_log_square(base = 2)</code></pre>
+<pre><code>## $log_val
+## [1] 0.6931472
+## 
+## $square_val
+## [1] 4</code></pre>
+</div>
+</div>
+<div id="exercise-3-implement-defensive-programming-to-your-code-to-support-debugging" class="section level3" number="1.5.11">
+<h3><span class="header-section-number">1.5.11</span> Exercise 3: Implement defensive programming to your code to support debugging</h3>
+<div id="background-information-and-examples" class="section level4" number="1.5.11.1">
+<h4><span class="header-section-number">1.5.11.1</span> Background information and examples</h4>
+<p>Defensive programming is a technique to ensure that code fails with well-defined errors, i.e. where you know it should not work. <strong>The key here is to ‘fail fast’ and ensure that the code throws an error as soon as something unexpected happens</strong>. This creates a little more work for the programmer, but it makes debugging code a lot easier at a later date.</p>
+<p>In order to demonstrate how to apply defensive programming to your code, a new function will be defined:</p>
+<pre class="r"><code># Define a power function (exp_number): y = x^n
+# - Arguments: base (= x) and power (= n)
+# - Output: a number (y)
+exp_number &lt;- function(base, power) {
+    exp &lt;- base^power
+    return(exp)
+}
+# Call function
+exp_number(base = 2, power = 5)</code></pre>
+<pre><code>## [1] 32</code></pre>
+<p>You can employ defensive programming on the <code>exp_number</code> function defined above. The function requires that both arguments are of class numeric, if you were to provide a string (e.g. a word) as input, you would get an error:</p>
+<pre class="r"><code># Example where we don&#39;t respect the class associated with
+# the argument base
+exp_number(base = &quot;hello&quot;, power = 5)</code></pre>
+<pre><code>## Error in base^power: non-numeric argument to binary operator</code></pre>
+<p>If you add in a line of code to test the data type of the inputs, you get a more meaningful error.</p>
+<pre class="r"><code># Define a power function (exp_number): y = x ^n
+# - Arguments: base (= x) and power (= n)
+# - Output: a number (y)
+exp_number &lt;- function(base, power) {
+    # This if statement tests if classes of base and power are
+    # numeric.
+    # If one of them is not numeric it stops and return
+    # meaningful message
+    if (class(base) != &quot;numeric&quot; | class(power) != &quot;numeric&quot;) {
+        stop(&quot;Both base and power inputs must be numeric&quot;)
+    }
+    exp &lt;- base^power
+    return(exp)
+}
+# Call function
+exp_number(base = &quot;hello&quot;, power = 5)</code></pre>
+<pre><code>## Error in exp_number(base = &quot;hello&quot;, power = 5): Both base and power inputs must be numeric</code></pre>
+<p>Although in this case debugging the error would not have taken long, in more complicated functions you are likely to either have less meaningful error messages, or code that runs for some time before it fails. By applying defensive programming and adding in these checks to the code, you can find unexpected behavior sooner and with more meaningful error messages.</p>
+</div>
+<div id="your-turn-to-implement-defensive-programming" class="section level4" number="1.5.11.2">
+<h4><span class="header-section-number">1.5.11.2</span> Your turn to implement defensive programming</h4>
+<p>Update <code>my_log_square()</code> to verify the class of <code>base</code> argument and print a meaningful error message if the class is not numeric.</p>
+</div>
+</div>
+</div>
+<div id="part-e-interactive-tutorials" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> PART E: Interactive tutorials</h2>
 <p>The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package <a href="https://rstudio.github.io/learnr/index.html"><em>learnr</em></a>, which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).</p>
 <p>The interactive tutorial presented here is subdivided into five topics:</p>
 <ol style="list-style-type: decimal">
@@ -1601,13 +1943,13 @@ plot(x, y)</code></pre>
 </ol>
 <p>Finally, the instructor wants to stress that students are not obliged to design their tutorials using <em>learnr</em>. You can also use the R Markdown language/syntax and output tutorials in HTML or PDF formats (more on this subject in Chapter 1).</p>
 <p>This document highlights steps to execute the interactive tutorial designed by the instructor.</p>
-<div id="installation-of-required-package" class="section level3" number="1.5.1">
-<h3><span class="header-section-number">1.5.1</span> Installation of required package</h3>
+<div id="installation-of-required-package" class="section level3" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Installation of required package</h3>
 <p>Open RStudio and install the <em>learnr</em> package from CRAN by typing the following command in the console:</p>
 <pre class="r"><code>install.packages(&quot;learnr&quot;)</code></pre>
 </div>
-<div id="files-location-description" class="section level3" number="1.5.2">
-<h3><span class="header-section-number">1.5.2</span> Files location &amp; description</h3>
+<div id="files-location-description" class="section level3" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> Files location &amp; description</h3>
 <p>Files associated to this tutorial are deposited on the <a href="https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=sharing">Google Drive</a> under this path:
 <code>Reproducible_Science -&gt; Bioinformatic_tutorials -&gt; Intro_interactive_tutorial</code></p>
 <p>There are two main files:</p>
@@ -1616,15 +1958,15 @@ plot(x, y)</code></pre>
 <li><code>EEB603_Interactive_tutorial.Rmd</code>: The interactive tutorial written in R Markdown, but requiring functions from <em>learnr</em>.</li>
 </ul>
 </div>
-<div id="youtube-video" class="section level3" number="1.5.3">
-<h3><span class="header-section-number">1.5.3</span> YouTube video</h3>
+<div id="youtube-video" class="section level3" number="1.6.3">
+<h3><span class="header-section-number">1.6.3</span> YouTube video</h3>
 <p>The instructor has made a video explaining the procedure to launch the interactive tutorial (based on option 1; see below) as well as some additional explanations related to the exercise.</p>
 <ul>
 <li><a href="https://youtu.be/ALSpVwymZbM" class="uri">https://youtu.be/ALSpVwymZbM</a></li>
 </ul>
 </div>
-<div id="running-tutorial" class="section level3" number="1.5.4">
-<h3><span class="header-section-number">1.5.4</span> Running tutorial</h3>
+<div id="running-tutorial" class="section level3" number="1.6.4">
+<h3><span class="header-section-number">1.6.4</span> Running tutorial</h3>
 <ol style="list-style-type: decimal">
 <li>Download the <code>Intro_interactive_tutorial</code> folder and save it on your local computer.</li>
 <li>Set working directory to location of <code>EEB603_Interactive_tutorial.Rmd</code>.</li>
@@ -1645,8 +1987,8 @@ plot(x, y)</code></pre>
 <li>Enjoy going through the tutorial!</li>
 </ol>
 </div>
-<div id="learning-syntax-to-develop-interactive-tutorials" class="section level3" number="1.5.5">
-<h3><span class="header-section-number">1.5.5</span> Learning syntax to develop interactive tutorials</h3>
+<div id="learning-syntax-to-develop-interactive-tutorials" class="section level3" number="1.6.5">
+<h3><span class="header-section-number">1.6.5</span> Learning syntax to develop interactive tutorials</h3>
 <p>The procedure to develop interactive tutorials using <em>learnr</em> is presented <a href="https://rstudio.github.io/learnr/index.html">here</a>. To learn more about the syntax, the instructor encourages you to open <code>EEB603_Interactive_tutorial.Rmd</code> in RStudio and inspect the document. This will allow learning syntax and associated procedures to:</p>
 <ul>
 <li>Design exercises (with embedded R code chunks and associated solutions).</li>

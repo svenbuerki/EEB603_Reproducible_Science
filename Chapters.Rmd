@@ -1036,6 +1036,350 @@ plot(x, y)
 3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
 4. Go to step 5 in the above section and complete the exercise.
 
+## PART D:User Defined Functions in R
+
+### Learning outcomes
+
+This tutorial provides students with opportunities to gain the following skills by:
+
+- Defining what is a function and its applicability.
+- Learning the syntax to implement user-defined functions in R.
+- Learning R specific functions associated to producing and loading functions: `return()`, `source()`.
+- Providing some background on R lists (`list()`) and their applicability to functions returning multiple values.
+- Developing, implementing and applying user-defined functions returning single and multiple values.
+- Learning protocols to implement defensive programming to your code.
+
+### What do you need to complete this tutorial?
+
+To complete part D, please create a new R script document (Figure \@ref(fig:Rscript)) and save it in your working directory. All the code and functions presented here should be reported in your R script. 
+
+```{r Rscript, echo=FALSE, fig.cap="Snapshot of RStudio showing procedure to create a new R script document.", fig.show="asis", out.width = '100%'}
+knitr::include_graphics("Figures/R_script.png")
+```
+
+### Introduction
+
+This tutorial aims at providing an introduction to functions, more specifically, we will be studying the user defined functions (UDFs) as implemented in R. UDFs allow users to write their own functions and make them available in the R Global Environment (using the `source()` function) or ultimately in [R packages](https://r-pkgs.org). 
+
+To gain this knowledge, students will be conducting three exercises to learn about the following topics:
+
+1. Develop, implement and apply function returning a single value.
+2. Develop, implement and apply function returning multiple values.
+3. Implement defensive programming to your code to support debugging.
+
+To show the broad applications of the teaching material, we will be using mathematical examples. Before delving into these topics, the instructor is providing some general context and touch upon what a function is and when it is best applied as well as best practices to write pseudocode/code (more during Chapter 4) and approaches to calling R functions.
+
+### What is a function?
+
+In programming, you use functions to incorporate sets of instructions that you want to use repeatedly or that, because of their complexity, are better self-contained in a sub program and called when needed. **A function is a piece of code written to carry out a specified task**; it can or can not accept arguments or parameters and it can or can not return one or more values.
+
+### Functions in R
+
+There exist many terms to define and express functions, subroutines, procedures, method, etc., but for the purposes of this tutorial, you will ignore these distinctions, which are often semantic and reminiscent of other older programming languages (see here for more details on [semantics](http://programmers.stackexchange.com/questions/123159/what-are-the-specific-meanings-of-the-terms-functions-methods-procedures-and?rq=1)). In our context, those definitions are less important, because in R we only have functions.
+
+#### R syntax for function
+
+In R, according to the base documentation, you define a function with the following construct:
+
+```{r Rfuncsyntax, echo=TRUE, eval=FALSE}
+ function(arglist){
+   body
+   }
+```
+
+The code between the curly braces is the `body` of the function. 
+
+When you use built-in functions, the only thing you need to worry about is how to effectively communicate the correct input arguments (`arglist`) and manage the return value(s), if there are any. To know more about arguments associated with a specific function you can access its documentation by using the following syntax (entered in the R console):
+
+```{r echo=TRUE, eval=F, tidy=F}
+#General syntax
+?function() 
+
+#Example with read.csv()
+?read.csv()
+```
+
+#### User defined functions (UDFs) in R
+
+R allows users to define their own functions, which are based on the following syntax:
+
+```{r eval=FALSE, tidy = FALSE}
+function.name <- function(arguments){
+   computations on the arguments
+   some more code
+   return values
+}
+```
+
+So, in most cases, a function has a name (here `function.name`), some arguments (here `arguments`) used as input to the function (declared within the `()` following the keyword ‘function’); a body, which is the code within the curly braces `{}`, where you carry out the computation; and can have one or more return values (the output). You define the function similarly to variables, by “assigning” the directive `function(arguments)` to the “variable” `function.name`, followed by the rest.
+
+### Best practice to writing code
+
+This topic will be covered in chapter 4, but here is an outline of the best practice to write code and functions in R. **Before delving into code writing, we will usually work on developing a pseudocode, which aims at providing a high-level description of the tasks that will have to be performed by the function.** Once this job done, we will then start writing the code by turning the tasks identified into the pseudocode into real R code. This will be done by searching for existing R functions allowing to execute each task described in the pseudocode and if they don't exist develop new functions (this task might require some additional pseudocode). Please find below more detailed definitions of the two concepts described here. 
+
+#### Writing pseudocode
+
+Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.  
+
+#### Writing code
+
+Writing clear, reproducible code has (at least) three main benefits. Firstly, it makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. Secondly, the results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. Thirdly, having clean and reproducible code available can encourage greater uptake of new methods that you have developed.
+
+### Loading and calling UDFs
+
+When you will be working on your project, it is highly likely that you will have developed multiple UDFs tailored to your research. In this case, it would be appropriate to create a new folder entitled `R_functions`, which will be located in the same directory as your R scripts (see Figure \@ref(fig:Structure)). Save all your UDFs as independent files (e.g. `check.install.pkg.R`) into the `R_functions` folder.
+
+```{r Structure, echo=FALSE, fig.cap="Example file structure of a simple analysis project. See Chapter 4 for more details", fig.show="asis", out.width = '100%'}
+knitr::include_graphics("Figures/Example_project_structure.png")
+```
+
+#### The `source()` function: Read R code from a file
+
+Once your project will be properly structured (see Figure \@ref(fig:Structure)), it will be easy to call specific UDFs into any R script by using the `source()` function.
+
+For instance, to load the `check.install.pkg()` (saved in `R_functions/check.install.pkg.R`) into the Global Environment enter the following code into the R console (see Figure \@ref(fig:sourceUDF)):
+
+```{r echo=TRUE, eval=T}
+source("R_functions/check.install.pkg.R")
+```
+
+```{r sourceUDF, echo=FALSE, fig.cap="Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.", fig.show="asis", out.width = '100%'}
+knitr::include_graphics("Figures/source_view.png")
+```
+
+### Call your UDFs
+
+Once loaded into your Global Environment (see Figure \@ref(fig:sourceUDF) for an example), you will be able to call your functions by typing their names directly into the console. For instance:
+
+```{r echo=TRUE, eval=T}
+#Check if ape package is installed, if not install it and then load it
+check.install.pkg(pkg=c("knitr"))
+```
+
+### Exercise 1: Develop, implement and apply function returning a single value
+
+In this exercise, we will be working on developing a function that returns a single value, but how do we tell our UDF to return the value? In R, this task is accomplished with the `return()` function.
+
+#### Aim
+
+Develop, implement and apply a UDF to calculate the square of a number. 
+
+In math, the squared symbol ($^2$) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
+
+#### Pseudocode
+
+Although straightforward, the function will have to execute the following tasks:
+
+1. Store number inputted by user into an object entitled `base` as part of the argument(s) of the function.  
+2. Infer square of `base` by multiplying number by itself.
+3. Save output of task 2 into an object called `sq`.
+4. Return `sq` object to user (here a single value). To return `sq`, we will be using the `return()` function.
+
+This also means that the class of the **input** provided by user has to be **numeric** and the **output** will also be **numeric**. We will further discuss this topic during the third exercise. The class of an object can be checked by using the `class()` function. Note: This function will be useful for implementing defensive programming.
+
+#### Turning your pseudocode into a function
+
+In this section, we will implement the pseudocode proposed above into a function entitled `square_number()`. This function requires one argument from the user (`base`, which is a number) and returns the square of that number (here square of `base` = `base`*`base`). 
+
+```{r echo=TRUE, eval=T}
+## Create a UDF in R to calculate square number:
+
+# - argument: base (= one number)
+
+# - output: square of base (= one number)
+square_number <- function(base){
+  #Infer square of base and save it into object
+  sq <- base*base
+  
+  #Return sq
+  return(sq)
+}
+```
+
+Write the code associated to the `square_number` into your new R script (saved in your working directory) and load function by executing all lines associated to function. Please carry on populating this document with the rest of the exercises.
+
+#### Loading your function into the Global Environment
+
+Before being able to use your UDF, execute the code associated to the `square_number()` function in the console. The UDF should now be loaded in the Global Environment and therefore be available for use. To verify that the UDF is loaded, please check the Environment panel in RStudio (see Figure \@ref(fig:envir)).
+
+```{r envir, echo=FALSE, fig.cap="Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.", fig.show="asis", out.width = '100%'}
+knitr::include_graphics("Figures/Environment_RStudio.png")
+```
+
+#### Applying your function
+
+The R language is quite flexible and allows functions to be applied to a single value (e.g. `base = 2`) or a vector (e.g. `base = c(2,4,16,23,45)`). Please see below for more example:
+
+1. Apply function to one value:
+
+```{r echo=TRUE, eval=T}
+#Square number of 2
+square_number(base = 2)
+```
+
+2. Apply function to a vector containing multiple values:
+
+```{r echo=TRUE, eval=T}
+#Create vector with numbers
+bases <- c(2,4,16,23,45)
+
+#Apply function to vector
+square_number(base = bases)
+```
+
+### Exercise 2: Develop, implement and apply function returning multiple values
+
+In our previous exercise we developed a function returning only one value. As part of your research, there will be multiple instances where you will be performing multiple actions onto your data, which will call for multiple values to be outputted by the function. To do so, we will be **harvesting the different outputs of the function into a list, which will be returned to the users** (using `return()`).
+
+#### What is a list in R?
+
+Lists are R objects containing elements of different types such as numbers, strings, vectors or another list inside it. A list can also contain a matrix or a function as its elements. Lists are created using the `list()` function.
+
+#### Creating a list
+
+Find below an example to create a list containing strings, numbers, vectors and a logical values:
+
+```{r echo=TRUE, eval=T}
+#Create a list containing strings, numbers, vectors and a logical value
+list_data <- list("Red", 51.3, 72, c(21,32,11), TRUE)
+
+#Print object
+print(list_data)
+```
+
+#### Naming list elements
+
+The list elements can be given names and they can be accessed using these names (see below):
+
+```{r echo=TRUE, eval=T}
+# Create a list containing a vector, a matrix and a list
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2),
+   list("green",12.3))
+
+# Give names to the elements in the list
+names(list_data) <- c("1st_Quarter", "A_Matrix", "An_inner_list")
+
+# Show the list
+print(list_data)
+```
+
+#### Accessing list elements
+
+Elements of the list can be accessed by the index of the element in the list. In case of named lists it can also be accessed using the names. We use the same example as above to illustrate procedure to access list elements:
+
+```{r echo=TRUE, eval=T}
+# Create a list containing a vector, a matrix and a list
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2), list("green",12.3))
+
+# Give names to the elements in the list
+names(list_data) <- c("1st_Quarter", "A_Matrix", "An_inner_list")
+
+# Access the first element of the list
+print(list_data[1])
+
+# Access the thrid element. As it is also a list, all its elements will be printed
+print(list_data[3])
+
+# Access the list element using the name of the element
+print(list_data$A_Matrix)
+```
+
+#### Let's go back to our exercise
+
+Now that you have more knowledge about list objects, we will be working on an **exercise aiming at developing and implementing a UDF to calculate the log and square of a number**.
+
+#### Pseudocode and associated UDF
+
+Each student is tasked to:
+
+1. Develop a pseudocode to execute the UDF.
+2. Implement the pseudocode into a UDF.
+3. Apply and test your code/function.
+
+#### Solution proposed by the instructor
+
+Please find below the solution proposed by the instructor:
+
+```{r echo=TRUE, eval=T}
+##Create a user defined function in R to calculate log and square of a number:
+
+# argument: base (= one number)
+
+# output: log and square of base (= two numbers) returned in a list
+my_log_square <- function(base){
+  #log (base 10)
+  log_value <- log(base)
+  #Square of base
+  square_value <- base^2
+  
+  #Return both objects
+  return(list(log_val = log_value, square_val = square_value))
+}
+
+# Call the function
+my_log_square(base = 2)
+```
+
+### Exercise 3: Implement defensive programming to your code to support debugging
+
+#### Background information and examples
+
+Defensive programming is a technique to ensure that code fails with well-defined errors, i.e. where you know it should not work. **The key here is to ‘fail fast’ and ensure that the code throws an error as soon as something unexpected happens**. This creates a little more work for the programmer, but it makes debugging code a lot easier at a later date.
+
+In order to demonstrate how to apply defensive programming to your code, a new function will be defined:
+
+```{r echo=TRUE, eval=T}
+# Define a power function (exp_number): y = x^n
+
+# - Arguments: base (= x) and power (= n)
+
+# - Output: a number (y)
+exp_number <- function(base, power) {
+        exp <- base^power
+        return(exp)
+}
+
+# Call function
+exp_number(base = 2, power = 5)
+```
+
+You can employ defensive programming on the `exp_number` function defined above. The function requires that both arguments are of class numeric, if you were to provide a string (e.g. a word) as input, you would get an error:
+
+```{r echo=TRUE, eval=T, error=TRUE}
+#Example where we don't respect the class associated with the argument base
+exp_number(base = "hello", power = 5)
+```
+
+If you add in a line of code to test the data type of the inputs, you get a more meaningful error.
+
+```{r echo=TRUE, eval=T, error=TRUE}
+# Define a power function (exp_number): y = x ^n
+
+# - Arguments: base (= x) and power (= n)
+
+# - Output: a number (y)
+exp_number <- function(base, power) {
+    # This if statement tests if classes of base and power are numeric.
+  
+    # If one of them is not numeric it stops and return meaningful message
+    if(class(base) != "numeric" | class(power) != "numeric"){
+          stop("Both base and power inputs must be numeric")
+    }
+    exp <- base^power
+    return(exp)
+}
+
+# Call function
+exp_number(base = "hello", power = 5)
+```
+
+Although in this case debugging the error would not have taken long, in more complicated functions you are likely to either have less meaningful error messages, or code that runs for some time before it fails. By applying defensive programming and adding in these checks to the code, you can find unexpected behavior sooner and with more meaningful error messages.
+
+#### Your turn to implement defensive programming
+
+Update `my_log_square()` to verify the class of `base` argument and print a meaningful error message if the class is not numeric.
+
+
 ## PART E: Interactive tutorials
 
 The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
