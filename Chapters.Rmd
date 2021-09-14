@@ -69,11 +69,11 @@ knitr::opts_chunk$set(fig.pos = 'H')
 
 In this chapter, we will introduce the bioinformatic tools to write and disseminate reproducible reports as implemented in RStudio. More specifically, we will learn procedures to link and execute data and code into a unified environment (see Figure \@ref(fig:ReproScience)). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either `pdf`, `HTML` or `Word` formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:
 
-- **PART A:** Learning the basics.
-- **PART B:** Tables, Figures and References.
-- **PART C:** Advanced R Markdown settings.
-- **PART D:** User Defined Functions in R.
-- **PART E:** Interactive tutorials.
+- [**PART A:**](#partA) Learning the basics.
+- [**PART B:**](#partB) Tables, Figures and References.
+- [**PART C:**](#partC) Advanced R Markdown settings.
+- [**PART D:**](#partD) User Defined Functions in R.
+- [**PART E:**](#partE) Interactive tutorials.
 
 ```{r ReproScience, echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Fig1.png")
@@ -135,7 +135,7 @@ Please find below URLs to webpages that are providing key information for chapte
 - **Bibliographies and Citations in R Markdown:** https://RMarkdown.rstudio.com/authoring_bibliographies_and_citations.html
 - **Tutorial on knitr with R Markdown (by Karl Broman):** http://kbroman.org/knitr_knutshell/pages/RMarkdown.html
 
-## PART A: Learning the basics
+## PART A: Learning the basics {#partA}
 
 In this part, we will provide a survey of the procedures to create and render (or knitting) your first R Markdown document.
 
@@ -328,7 +328,7 @@ Students will work individually to complete the following exercises:
 
 To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).
 
-## PART B: Tables, Figures and References
+## PART B: Tables, Figures and References {#partB}
 
 The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and allied R packages (see [Appendix 1] for a full list). Unlike functions implemented in the R *rmarkdown* package [@rmarkdown2018, which was better suited to generating `PDF` reproducible reports], *bookdown* allows to use ONE unified set of functions to generate `HTML` and `PDF` documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).
 
@@ -783,7 +783,7 @@ csl: AmJBot.csl
 ```
 4. Knit the R Markdown document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information stored in the YAML metadata section to format the bibliography (citations and bibliography section) following the citation style provided in the CSL file. Do not forget to add a `References` header at the end of your `.Rmd` document.
 
-## PART C: Advanced R and R Markdown settings
+## PART C: Advanced R and R Markdown settings {#partC}
 
 ### Learning outcomes
 
@@ -1036,7 +1036,7 @@ plot(x, y)
 3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
 4. Go to step 5 in the above section and complete the exercise.
 
-## PART D:User Defined Functions in R
+## PART D: User Defined Functions in R {#partD}
 
 ### Learning outcomes
 
@@ -1380,7 +1380,7 @@ Although in this case debugging the error would not have taken long, in more com
 Update `my_log_square()` to verify the class of `base` argument and print a meaningful error message if the class is not numeric.
 
 
-## PART E: Interactive tutorials
+## PART E: Interactive tutorials {#partE}
 
 The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
 
