@@ -1450,7 +1450,9 @@ In this chapter, we are investigating the causes leading to irreproducible scien
 
 ## Teaching material
 
-The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf).
+The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf). The pdf of @Baker_2016 is available on our shared Google Drive at this path:
+
+`Reproducible_Science > Publications > Baker_Nature_2016.pdf`
 
 
 # References
