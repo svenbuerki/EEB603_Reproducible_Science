@@ -1442,6 +1442,17 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 - Include multiple choices questions.
 - Embed a YouTube video.
 
+# Chapter 2
+
+## Introduction
+
+In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
+
+## Teaching material
+
+The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf).
+
+
 # References
 
 <div id="refs"></div>
