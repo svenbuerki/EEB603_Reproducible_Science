@@ -1147,6 +1147,21 @@ source("R_functions/check.install.pkg.R")
 knitr::include_graphics("Figures/source_view.png")
 ```
 
+Below, you will find some R code allowing to load all your UDFs stored in `R_functions` folder. This code is very handy when you have several UDFs associated to your pipeline.
+
+```{r sourceallUDF, echo=T, eval=F}
+###
+#Load all UDFs stored in R_functions
+##
+
+#1. Create vector with names of UDF files in R_functions (with full path)
+files_source <- list.files("R_functions", full.names=T)
+
+#2. Iterative sourcing of all UDFs
+sapply(files_source, source)
+```
+
+
 ### Call your UDFs
 
 Once loaded into your Global Environment (see Figure \@ref(fig:sourceUDF) for an example), you will be able to call your functions by typing their names directly into the console. For instance:
@@ -1466,7 +1481,7 @@ knitr::include_graphics("Figures/Threats2reproducible_science.png")
 
 ## Scientific process in a nutshell
 
-The scientific process can be subdivided into six phases (\autoref{fig:ThreatReproSci}):
+The scientific process can be subdivided into six phases (Figure \@ref(fig:ThreatReproSci)):
 
 1. Ask a question, review literature and generate hypothesis[^1].
 2. Design study.
@@ -1481,7 +1496,7 @@ In order to facilitate the understanding of the material taught in this chapter,
 - Study: including phases 3 to 5.
 - Post-study: including phase 6.
 
-The distinction of those categories is very important to ensure the reproducibility and transparency of the study and to avoid falling into the traps described in \autoref{fig:ThreatReproSci}. For instance, considering the pre-study category as an independent step in the scientific process will promote study pre-registration and therefore avoid HARKing, P-hacking and publication bias (see \autoref{fig:ThreatReproSci} and the [Glossary](#gloss) section). The recognition of the post-study category is also very important since it encourages pre- and post-publication reviews therefore supporting a better dissemination and transparency of your research.    
+The distinction of those categories is very important to ensure the reproducibility and transparency of the study and to avoid falling into the traps described in Figure \@ref(fig:ThreatReproSci). For instance, considering the pre-study category as an independent step in the scientific process will promote study pre-registration and therefore avoid HARKing, P-hacking and publication bias (see Figure \@ref(fig:ThreatReproSci) and the [Glossary](#gloss) section). The recognition of the post-study category is also very important since it encourages pre- and post-publication reviews therefore supporting a better dissemination and transparency of your research.    
 
 ## Threats to the scientific process
 
@@ -1491,11 +1506,11 @@ i) **Apophenia:** the tendency to see patterns in random data.
 ii) **Confirmation bias:** the tendency to focus on evidence that is in line with our expectations or favored explanation.
 iii) **Hindsight bias (also known as knew-it-all-along effect):** the tendency to see an event as having been predictable only after it has occurred. 
 
-Those factors can easily lead us to false conclusions and therefore be threats to our scientific process. Some of these threats (e.g. HARKing, P-hacking) are displayed in \autoref{fig:ThreatReproSci} and definitions are provided in the Glossary section. 
+Those factors can easily lead us to false conclusions and therefore be threats to our scientific process. Some of these threats (e.g. HARKing, P-hacking) are displayed in Figure \@ref(fig:ThreatReproSci) and definitions are provided in the Glossary section. 
 
 ## Chapter content
 
-Our **objective is to tackle threats by providing measures to ensure reproducibility and transparency**. Following the approach proposed by @Munafo, the measures studied in this chapter to ensure research reproducibility and transparency are organized into five categories. In addition, when possible, categories contain specific working themes designed to minimize the threats discussed above (see \autoref{fig:ThreatReproSci}).
+Our **objective is to tackle threats by providing measures to ensure reproducibility and transparency**. Following the approach proposed by @Munafo, the measures studied in this chapter to ensure research reproducibility and transparency are organized into five categories. In addition, when possible, categories contain specific working themes designed to minimize the threats discussed above (see Figure \@ref(fig:ThreatReproSci)).
 
 1. **Methods**
     - Protecting against cognitive biases.
@@ -1595,7 +1610,7 @@ Please see the Glossary section for definitions of these concepts.
 
 **Pre-registration will improve discoverability of research, but discoverability does not guarantee usability.** Poor usability reflects difficulty in evaluating what was done, in reusing the methodology to assess reproducibility, and in incorporating the evidence into systematic reviews and meta-analyses. Improving the quality and transparency in the reporting of research is necessary to address this.
 
-#### The Transparency and Openness Promotion (TOP) guidelines: A mean to improve usability
+#### The Transparency and Openness Promotion (TOP) guidelines: A mean to improve usability {#TOP}
 
 TOP guidelines [published in @Nosek1422] offer standards as a basis for journals and funders to incentivize or require greater transparency in planning and reporting of research. More precisely, TOP guidelines include eight modular standards, each with three levels of increasing stringency (\autoref{fig:TOP}). Journals are selecting which of the eight transparency standards they wish to implement and also select a level of implementation for each. These features provide flexibility for adoption depending on disciplinary variation, but simultaneously establish community standards.
 
@@ -1695,6 +1710,382 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 [^1]: What is a Hypothesis? A hypothesis is a tentative, testable answer to a scientific question. Once a scientist has a scientific question they perform a literature review to find out what is already known on the topic. Then this information is used to form a tentative answer to the scientific question. Keep in mind, that the hypothesis also has to be testable since the next step is to do an experiment to determine whether or not the hypothesis is right! A hypothesis leads to one or more predictions that can be tested by experimenting. Predictions often take the shape of "If ____then ____" statements, but do not have to. Predictions should include both an independent variable (the factor you change in an experiment) and a dependent variable (the factor you observe or measure in an experiment). A single hypothesis can lead to multiple predictions.
 [^2]: GBIF — the Global Biodiversity Information Facility — is an international network and research infrastructure funded by the world’s governments and aimed at providing anyone, anywhere, open access to data about all types of life on Earth.
 [^3]: Postdiction involves explanation after the fact.
+
+# Chapter 4
+
+## Introduction
+
+This chapter is subdivided into two parts as follows:
+
+- [**PART A:**](#partDM) Data management.
+- **PART B:** Reproducible code.
+
+## Data management {#partDM}
+
+### Introduction
+
+Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see [TOP guidelines](#TOP) in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide DOIs to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse.
+
+This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.
+
+### Literature and web resources
+
+This chapter is based on:
+
+- @DataMan -- A Guide to Data Management in Ecology and Evolution published by the [British Ecological Society](https://www.britishecologicalsociety.org).
+- UK Managing and Sharing Research Data handbook: https://data-archive.ac.uk/media/2894/managingsharing.pdf
+- The companion website presenting material for UK Managing and Sharing Research Data handbook: https://www.ukdataservice.ac.uk/manage-data/handbook/
+
+### What are research data?
+
+**Research data are the factual pieces of information used to test research hypotheses.** Data can be classified into five categories:
+
+- **Observational:** Data which are tied to time and place and are irreplaceable (e.g. field observations, weather station readings, satellite data).
+- **Experimental:** Data generated in a controlled or partially controlled environment, which can be reproduced, although it may be expensive to do so (e.g. field plots or greenhouse experiments, chemical analyses).
+- **Simulation:** Data generated from models (e.g. climate or population modelling).
+- **Derived:** Data which are not collected directly but inferred from (an)other data file(s) (e.g. a population biomass which has been calculated from population density and average body size data).
+- **Metadata:** Data about data (more about this category later).
+
+A key challenge facing researchers today is the need to work with different data sources. It is not uncommon for projects to integrate any combination of data types into a single analysis, even drawing on data from disciplines outside Ecology and Evolution. As research becomes increasingly collaborative and interdisciplinary, issues surrounding data management are growing in prevalence.
+
+### The data life cycle
+
+Data have a longer lifespan than the project they were created for, as illustrated by the data life-cycle displayed in Figure \@ref(fig:LifeCycle).
+
+```{r LifeCycle, echo=FALSE, fig.align="center", fig.cap="The data lifecycle", out.width = '60%'}
+knitr::include_graphics("Figures/Data_lifecycle.png")
+```
+
+Some projects may only focus on certain parts of the data life-cycle, such as primary data creation, or reusing others’ data. Other projects may go through several revolutions of the cycle. Either way, most researchers will work with data at all stages throughout their career.
+
+### Why should I manage data?
+
+Data management concerns how you plan for all stages of the data life-cycle and implement this plan throughout the research project. Done effectively it will ensure that the data life-cycle is kept in motion. It will also keep the research process efficient and ensure that your data meet all the expectations set by you, funders, research institutions, legislation and publishers (e.g. copyright, data protection).
+
+In order to bring some perspective on this topic, ask yourself this question:
+
+> *Would a colleague be able to take over my project tomorrow if I disappeared, or make sense of the data without talking to me?* 
+
+If you can answer **YES**, then you are managing your data well!
+
+#### The benefits of good data management include:
+
+- Ensuring data are accurate, complete, authentic and reliable.
+- Increasing research efficiency.
+- Saving time and money in the long run -- ‘undoing’ mistakes is frustrating.
+- Meeting funder requirements.
+- Minimizing the risk of data loss.
+- Preventing duplication by others.
+- Facilitating data sharing.
+
+### Why should I share my data?
+
+It is increasingly common for funders and publishers to mandate data sharing wherever possible. In addition, some funding bodies require data managing and sharing plans as part of grant applications (e.g. NSF). Sharing data can be daunting, but data are valuable resources and their usefulness could extend beyond the original purpose for which they were created. Benefits of sharing data include:
+
+- Increasing the impact and visibility of research.
+- Encouraging collaborations and partnerships with other researchers.
+- Maximizing transparency and accountability.
+- Encouraging the improvement and validation of research methods.
+- Reducing costs of duplicating data collection.
+- Advancing science by letting others use data in innovative ways.
+
+#### There are circumstances where data can't be shared!
+
+- If the datasets contain sensitive information about endangered or threatened species.
+- If the data contain personal information – sharing them may be a breach of protocol (and even break the law).
+- If parts of the data are owned by others – you may not have the rights to share them.
+
+During the planning stages of your project determine which of your data can't and shouldn't be shared. Journal data archiving policies recognize these reasons for not sharing.
+
+### Planning data management
+
+Regardless of whether your funder requires you to have a data management or sharing plan as part of a grant application, having such a plan in place before you begin your research project will mean that you are prepared for any data management issues that may come your way (see the Data management checklist section below).
+
+#### Before you start planning
+
+Here are few things that you should consider before planning your data management workflow:
+
+- Check funder specifications for data management plans.
+- Consult with your institution (especially regarding resources and policies).
+- Consider your budget.
+- Talk to your supervisor, colleagues and collaborators.
+
+#### What are the key things to consider when planning?
+
+- **Time:** Writing a data management plan may well take a significant amount of time. It is not as simple as filling out a template or working through a checklist of things to include. Planning for data management should be thorough before the research project starts to ensure that data management is embedded throughout the research process.
+- **Design according to your needs:** Data management should be planned and implemented with the purpose of the research project in mind.
+- **Roles and responsibilities:** Creating a data management plan may be the responsibility of one single person, but data management implementation may involve various people at different stages. One of the major uses of a data management plan is to enable coordinated working and communication among researchers on a project.
+- **Review:** Plan how data management will be reviewed throughout the project and adapted if necessary; this will help to integrate data management into the research process and ensure that the best data management practices are being implemented. Reviewing will also help to catch any issues early on, before they turn into bigger problems.
+
+### Creating data
+
+In the data life-cycle (Figure \@ref(fig:LifeCycle)), creating datasets occurs as a researcher collects data in the field or lab, and digitizes them to end up with a raw dataset. 
+
+```
+# Workflow associated with creating data
+
+Collect data (in the field and/or lab) --> Digitize data --> Raw dataset
+
+!! Perform quality checks @ each step to validate data !!
+```
+
+**Quality control during data collection is important** because often there is only one opportunity to collect data from a given situation. Researchers should be critical of methods before collection begins – high-quality methods will result in high-quality data. Likewise, when collection is under way, detailed documentation of the collection process should be kept as evidence of quality.
+
+#### Key things to consider during data collection
+
+- Logistical issues in the field (what are the challenges associated with your fieldwork (e.g. no power to re-charge your batteries?).
+- Calibration of instruments (is the balance that I plan using accurate enough to weigh my samples?).
+- Taking multiple measurements/observations/samples (to e.g. ensure statistical accuracy or cover genetic variation within population).
+- Creating a template (and associated protocols) for use during data collection to ensure that all information is collected consistently, especially if there are multiple collectors.
+- Describing any conditions during data collection that might affect the quality of the data (e.g. impact of weather conditions, tropical storm, on wildlife observations).
+- Creating an accompanying questionnaire for multiple collectors, asking them any questions which may affect the quality of the data (this could account for slight differences observed during analytical phase of project. In other words, account for the effect of data collecting on analyses).
+- Widening the possible applications of data, and therefore increasing their impact, by adding variables and parameters to data. For instance, wider landscape variables, which will encourage reuse and potentially open up new avenues for research.
+
+### Data digitization
+
+Data may be collected directly in a digital form using devices that feed results straight into a computer/tablet or they may be collected as hand-written notes. Either way, there will be some level of processing involved to end up with a digital raw dataset.
+
+Key things to consider during data digitization include:
+
+- Designing a database structure to organize data and data files (i.e. making sure that observations have unique IDs).
+- Using a consistent format for each data file – e.g. one row represents a complete record and the columns represent all the parameters that make up that record (this is known as spreadsheet format).
+- Atomizing data – make sure that only one piece of data is in each entry (this greatly helps analyses).
+- Using plain text characters (e.g. ASCII, Unicode) to ensure data are readable by a maximum number of software programmes.
+- Using code – coding assigns a numerical value to variables and allows for statistical analysis of data. Keep coding simple.
+- Describing the contents of your data files in a `Readme.txt` file or even better in protocol files (later attached as appendixes of your manuscript), or other metadata standard, including a definition of each parameter, the units used and codes for missing values.
+- Keeping raw data raw.
+
+### Processing data
+
+**Data should be processed into a format that is suited to subsequent analyses and ensures long-term usability.** Data are at risk of being lost if the hardware and software originally used to create and process them are rendered obsolete. Therefore, data should be well organized, structured, named and versioned in standard formats that can be interpreted in the future (see the Data structure and organisation of files section below).
+
+Here are some guidelines to ensure best processing of data (Figure \@ref(fig:LifeCycle)):
+
+- **File formats:** Data should be written in *non-proprietary formats*, also known as open standard formats. These files can be used and implemented by anyone, as opposed to proprietary formats which can only be used by those with the correct software installed. The most common format used for spreadsheet data are comma-separated values files (`.csv`). Other non-proprietary formats include: plain text files (`.txt`) for text; and `GIF`, `JPEG` and `PNG` for images.
+- **File names and folders:** To keep track of data and know how to find them, digital files and folders should be structured and well organized. Use a folder hierarchy that fits the structure of the project and ensure that it is used consistently. Drawing a folder map which details where specific data are saved may be particularly useful if others will be accessing folders, or if there is simply a lot to navigate (store this information in the `Readme.txt` file).
+- **File names should be:**
+    - unique, 
+    - descriptive, 
+    - succinct, 
+    - naturally ordered and consistent, 
+    - describing the project, file contents, location, date, researcher’s initials and version. 
+- **File names should not** include spaces – these can cause problems with scripting and metadata.
+- **Quality assurance:** Checking that data have been edited, cleaned, verified and validated to create a reliable masterfile which will become the basis for further analyses (tyding up data so that they are ready for analyses). Use a scripting language, such as R, to process your data for quality checking so that all steps are documented.  
+**Assurance checks may include:**
+    - Identifying estimated values, missing values or double entries.
+    - Performing statistical analyses to check for questionable or impossible values and outliers (which may just be typos from data entry).
+    - Checking the format of the data for consistency across the dataset.
+    - Checking the data against similar data to identify potential problems.
+- **Version control:** Once the masterfile has been finalized, keeping track of ensuing versions of this file can be challenging, especially if working with collaborators in different locations. A version control strategy will help locate required versions, and clarify how versions differ from one another.  
+**Version control best practice includes:**
+    - Deciding how many and which versions to keep.
+    - Using a systematic file naming convention, using filenames that include the version number and status of the file (e.g. v1_draft, v2_internal, v3_final).
+    - Record what changes took place to create the version in a separate file (e.g. a version table).
+    - Mapping versions if they are stored in different locations.
+    - Synchronizing versions across different locations.
+    - Ensuring any cross-referenced information between files is also subject to version control.
+
+### Data structure and organisation of files
+
+Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project (see above). In UNIX, this can be easily achieved by using the *tree* package as shown in Figure \@ref(fig:TreeDir).
+
+```{r TreeDir, echo=FALSE, fig.align="center", fig.cap="Infer directory tree structure using the UNIX tree package.", out.width = '60%'}
+knitr::include_graphics("Figures/Tree_directory.png")
+```
+
+#### The UNIX *tree* package: A way to support data structure & organisation
+
+The UNIX *tree* package was used here to infer the directory structure of the folder `Project_ID/` and several arguments were set to obtain data on files that could be used to check for file names and location as well as version control:
+
+- `-s`: Print the size of each file in bytes along with the name.
+- `-D`: Print the date of the last modification time or if `-c`  is  used, the last status change time for the file listed.
+
+
+To install the *tree* package on your Mac, do the following:
+
+```{r eval = FALSE, echo = TRUE}
+#Install tree by typing the following code in a terminal
+brew install tree
+```
+
+### Documenting data
+
+Producing good documentation and metadata ensures that data can be understood and used in the long term (Figure \@ref(fig:LifeCycle)). Documentation (i.e. the manual associated with your data) describes the data, explains any manipulations and provides contextual information – no room should be left for others to misinterpret the data.
+
+All documentation requirements should be identified at the planning stages so you are prepared for it during all stages of the data life-cycle, particularly during data creation and processing. This will avoid having to perform a rescue mission in situations where you have forgotten what has happened or when a collaborator has left without leaving any key documentation behind.
+
+Data documentation includes information at project and data levels and should cover the following information.
+
+#### Project level
+
+- The project aim, objectives and hypotheses.
+- Personnel involved throughout the project, including who to contact with questions.
+- Details of sponsors.
+- Data collection methods, including details of instrumentation and environmental conditions during collection, copies of collection instructions if applicable.
+- Standards used.
+- Data structure and organisation of files (see Figure \@ref(fig:TreeDir)).
+- Software used to prepare and read the data.
+- Procedures used for data processing, including quality control and versioning and the dates these were carried out.
+- Known problems that may limit data use.
+- Instructions on how to cite the data.
+- Intellectual property rights and other licensing considerations.
+
+#### Data level
+
+- Names, labels and descriptions for variables.
+- Detailed explanation of codes used.
+- Definitions of acronyms or specialist terminology.
+- Reasons for missing values.
+- Derived data created from the raw file, including the code or algorithm used to create them. 
+
+If a software package such as R is used for processing data, much of the data level documentation will be created and embedded during analysis.
+
+**Metadata** help others discover data through searching and browsing online and enable machine-to-machine interoperability of data, which is necessary for data reuse. Metadata are created by using either a data center’s deposit form, a metadata editor, or a metadata creator tool, which can be searched for online. Metadata follow a standard structure and come in three forms:
+
+- Descriptive – fields such as title, author, abstract and keywords.
+- Administrative – rights and permissions and data on formatting.
+- Structural – explanations of e.g. tables within the data.
+
+### Preserving data
+
+To protect data from loss and to make sure data are securely stored, good data management should include a strategy for backing up and storing data effectively (see where this step fits in Figure \@ref(fig:LifeCycle)). It is recommended to keep three versions of your data: the original, external/local and external/remote. Talk with your thesis supervisor to isolate best procedure to ensure preservation of your data.
+
+#### Data backup 
+
+When designing a backup strategy, thought should be given to the possible means by which data loss could occur. These include:
+
+- Hardware failure.
+- Software faults.
+- Virus infection or hacking.
+- Power failure.
+- Human error.
+- Hardware theft or misplacement (especially common during fieldwork).
+- Hardware damage (e.g. fire, flood. Again common in the field).
+- Backups – good backups being overwritten with backups from corrupt data (this happen more often that you would imagine).
+
+An ideal backup strategy should provide protection against all the risks, but it can be sensible to consider which are the most likely to occur in any particular context and be aware of these when designing your backup strategy.
+
+##### Things to consider to establish a backup plan
+
+- Which files require backup.
+- Who is responsible for backups.
+- The frequency of backup needed, this will be affected by how regularly files are updated.
+- Whether full or incremental backups are needed – consider running a mix of frequent incremental backups (capturing recent data changes) along with periodic full backups (capturing a ‘snapshot’ of the state of all files).
+- Backup procedures for each location where data are held, e.g. tablets, home-based computers or remote drives.
+- How to organize and label backup files.
+
+### Data storage
+
+**Data storage, whether of the original or backed up data, needs to be robust.** This is true whether the data are stored on paper or electronically, but electronic storage raises particular issues. 
+
+#### Guidelines to ensure best practice for electronic storage of data
+
+- Use high-quality storage systems (e.g. media, devices).
+- Use non-proprietary formats for long-term software readability.
+- Migrate data files every two to five years to new storage – storage media such as CDs, DVDs and hard drives can degrade over time or become outdated (e.g. floppy disks).
+- Check stored data regularly to make sure nothing has been lost.
+- Use different forms of storage for the same data, this also acts as a method of backup, e.g. using remote storage, external hard drives and a network drive.
+- Label and organize stored files logically to make them easy to locate and access.
+- Think about encryption: sensitive data may be regarded as protected while on a password-protected computer, but when backed up onto a portable hard drive they may become accessible to anyone – backups may need to be encrypted or secured too.
+
+##### Storage and backing-up of data
+
+Data can be stored and backed up on:
+
+- **Network drives** which are managed by IT staff and are regularly backed up. They ensure secure storage and prohibit unauthorized access to files.
+- **Personal devices** such as laptops and tablets are convenient for short-term, temporary storage but should not be used for storing master files. They are at high risk of being lost, stolen or damaged.
+- **External devices** such as hard drives, USB sticks, CDs and DVDs are often convenient because of their cost and portability. However, they do not guarantee long-term preservation and can also be lost, stolen or damaged. High-quality external devices from reputable manufacturers should be used.
+- **Remote or online services** such as Google Drive or Dropbox use cloud technology to allow users to synchronize files across different computers. They provide some storage space for free but any extra space or functions will have to be bought.
+- **Paper!** If data files are not too big, do not overlook the idea of printing out a paper copy of important ones data files as a complement to electronic storage. It may not be convenient, but ink on paper has proven longevity and system independence (as long as you can remember where you put it)!
+
+### Sharing data
+
+Research data can be shared in many ways and each method of sharing will have advantages and disadvantages. Ways to share data include:
+
+- Using a disciplinary data center such as Dryad or GenBank.
+- Depositing data in your research funder’s data center.
+- Depositing data in university repositories.
+- Making data available online via open notebooks or project websites (e.g. Open Science Framework from the Center of Open Science).
+- Using virtual research environments such as SharePoint and Sakai.
+
+Institutions, funders and journals have specific policies associated with data sharing and you should read those prior to establishing a data sharing plan. Here we will discuss the advantages of archiving your data in data repositories. 
+
+#### Data repositories
+
+Archiving your data in a repository is a reliable method of sharing data. Data submitted to repositories will have to conform to submission guidelines, which may restrict which data you share via the repository. However, the advantages of sharing data through these centers include:
+
+- Assurance for others that the data meet quality standards.
+- Guaranteed long-term preservation.
+- Data are secure and access can be controlled.
+- Data are regularly backed up.
+- Chances of others discovering the data are improved.
+- Citation methods are specified.
+- Secondary usage of the data is monitored.
+
+### Reusing data
+
+**All aspects of data management lead up to data discovery and reuse by others.** Intellectual property rights, licenses and permissions, which concern reuse of data, should be explained in the data documentation and/or metadata.
+
+At this stage of the life-cycle it is important to **state your expectations for the reuse of your data**, e.g. terms of acknowledgment, citation and co-authorship. Likewise, it becomes the **responsibility of others to reuse data effectively**, credit the collectors of the original data, cite the original data and manage any subsequent research to the same effect. 
+
+When requesting to use someone else’s data it is important to clearly state the purpose of the request, including the idea you will be addressing and your expectations for co-authorship or acknowledgment. Co-authorship is a complex issue and should be discussed with any collaborators at the outset of a project. 
+
+**Increasing openness to data and ensuring long-term preservation of data fosters collaboration and transparency, furthering research that aims to answer the big questions in ecology and evolution.** By implementing good data management practices, researchers can ensure that high-quality data are preserved for the research community and will play a role in advancing science for future generations.
+
+### Data management checklist
+
+The data management checklist from the [UK Data Archive](https://www.ukdataservice.ac.uk/manage-data/plan/checklist) will help you design your own data management planning and data sharing. The text is available below:
+
+#### Planning
+
+- Who is responsible for which part of data management?
+- Are new skills required for any activities?
+- Do you need extra resources to manage data, such as people, time or hardware? 
+- Have you accounted for costs associated with depositing data for longer-term preservation and access?
+
+#### Documenting
+
+- Will others be able to understand your data and use them properly?
+- Are your structured data self-explanatory in terms of variable names, codes and abbreviations used?
+- Which descriptions and contextual documentation explain what your data mean, how they were collected and the methods used to create them?
+- How will you label and organize data, records and files?
+- Will you be consistent in how data are cataloged?
+
+#### Formatting
+
+- Are you using standardized and consistent procedures to collect, process, transcribe, check, validate and verify data, such as standard protocols, templates or input forms?
+- Which data formats will you use? Do formats and software enable sharing and long-term sustainability of data, such as non-proprietary software and software based on open standards?
+- When converting data across formats, do you check that no data, annotation or internal metadata have been lost or changed?
+
+#### Storing
+
+- Are your digital and non-digital data, and any copies, held in multiple safe and secure locations?
+- Do you need to securely store personal or sensitive data? If so, are they properly protected?
+- If data are collected with mobile devices, how will you transfer and store the data?
+- If data are held in multiple places, how will you keep track of versions?
+- Are your files backed up sufficiently and regularly and are backups stored safely?
+- Do you know which version of your data files is the master?
+- Who has access to which data during and after research? Is there a need for access restrictions? How will these be managed after you are dead?
+- How long will you store your data for and do you need to select which data to keep and which to destroy?
+ 
+#### Confidentiality, ethics and consent
+
+- Do your data contain confidential or sensitive information? If so, have you discussed data sharing with the respondents from whom you collected the data?
+- Are you gaining written consent from respondents to share data beyond your research?
+- Do you need to anonymise data, for example, to remove identifying information or personal data, during research or in preparation for sharing?
+
+#### Copyright
+
+- Have you established who owns the copyright in your data? Might there be joint copyright?
+- Have you considered which kind of license is appropriate for sharing your data and what, if any, restrictions there might be on re-use?
+- If you are purchasing or re-using someone else’s data sources have you considered how that data might be shareable, for example negotiating a new licence with the original supplier?
+- Can you preserve for the long-term, personal information so that it can be used in the future?
+
+#### Sharing
+
+- Do you intend to make all your data available for sharing or how will you select which data to preserve and share?
+- How and where will you preserve your research data for the longer-term?
+- How will you make your data accessible to future users?
 
 # References
 

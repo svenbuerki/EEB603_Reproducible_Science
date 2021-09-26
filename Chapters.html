@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2021-09-22" />
+<meta name="date" content="2021-09-26" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -411,7 +411,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2021-09-22</h4>
+<h4 class="date">2021-09-26</h4>
 
 </div>
 
@@ -1687,6 +1687,13 @@ Figure 1.14: Example file structure of a simple analysis project. See Chapter 4 
 Figure 1.15: Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.
 </p>
 </div>
+<p>Below, you will find some R code allowing to load all your UDFs stored in <code>R_functions</code> folder. This code is very handy when you have several UDFs associated to your pipeline.</p>
+<pre class="r"><code>### Load all UDFs stored in R_functions
+# 1. Create vector with names of UDF files in R_functions
+# (with full path)
+files_source &lt;- list.files(&quot;R_functions&quot;, full.names = T)
+# 2. Iterative sourcing of all UDFs
+sapply(files_source, source)</code></pre>
 </div>
 </div>
 <div id="call-your-udfs" class="section level3" number="1.5.8">
@@ -2024,7 +2031,7 @@ Figure 3.1: Overview of the scientific process and threats preventing reproducib
 </div>
 <div id="scientific-process-in-a-nutshell" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Scientific process in a nutshell</h2>
-<p>The scientific process can be subdivided into six phases ():</p>
+<p>The scientific process can be subdivided into six phases (Figure <a href="#fig:ThreatReproSci">3.1</a>):</p>
 <ol style="list-style-type: decimal">
 <li>Ask a question, review literature and generate hypothesis<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</li>
 <li>Design study.</li>
@@ -2039,7 +2046,7 @@ Figure 3.1: Overview of the scientific process and threats preventing reproducib
 <li>Study: including phases 3 to 5.</li>
 <li>Post-study: including phase 6.</li>
 </ul>
-<p>The distinction of those categories is very important to ensure the reproducibility and transparency of the study and to avoid falling into the traps described in . For instance, considering the pre-study category as an independent step in the scientific process will promote study pre-registration and therefore avoid HARKing, P-hacking and publication bias (see  and the <a href="#gloss">Glossary</a> section). The recognition of the post-study category is also very important since it encourages pre- and post-publication reviews therefore supporting a better dissemination and transparency of your research.</p>
+<p>The distinction of those categories is very important to ensure the reproducibility and transparency of the study and to avoid falling into the traps described in Figure <a href="#fig:ThreatReproSci">3.1</a>. For instance, considering the pre-study category as an independent step in the scientific process will promote study pre-registration and therefore avoid HARKing, P-hacking and publication bias (see Figure <a href="#fig:ThreatReproSci">3.1</a> and the <a href="#gloss">Glossary</a> section). The recognition of the post-study category is also very important since it encourages pre- and post-publication reviews therefore supporting a better dissemination and transparency of your research.</p>
 </div>
 <div id="threats-to-the-scientific-process" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Threats to the scientific process</h2>
@@ -2049,11 +2056,11 @@ Figure 3.1: Overview of the scientific process and threats preventing reproducib
 <li><strong>Confirmation bias:</strong> the tendency to focus on evidence that is in line with our expectations or favored explanation.</li>
 <li><strong>Hindsight bias (also known as knew-it-all-along effect):</strong> the tendency to see an event as having been predictable only after it has occurred.</li>
 </ol>
-<p>Those factors can easily lead us to false conclusions and therefore be threats to our scientific process. Some of these threats (e.g. HARKing, P-hacking) are displayed in  and definitions are provided in the Glossary section.</p>
+<p>Those factors can easily lead us to false conclusions and therefore be threats to our scientific process. Some of these threats (e.g. HARKing, P-hacking) are displayed in Figure <a href="#fig:ThreatReproSci">3.1</a> and definitions are provided in the Glossary section.</p>
 </div>
 <div id="chapter-content" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Chapter content</h2>
-<p>Our <strong>objective is to tackle threats by providing measures to ensure reproducibility and transparency</strong>. Following the approach proposed by <span class="citation"><a href="#ref-Munafo" role="doc-biblioref">Munafo et al.</a> (<a href="#ref-Munafo" role="doc-biblioref">2017</a>)</span>, the measures studied in this chapter to ensure research reproducibility and transparency are organized into five categories. In addition, when possible, categories contain specific working themes designed to minimize the threats discussed above (see ).</p>
+<p>Our <strong>objective is to tackle threats by providing measures to ensure reproducibility and transparency</strong>. Following the approach proposed by <span class="citation"><a href="#ref-Munafo" role="doc-biblioref">Munafo et al.</a> (<a href="#ref-Munafo" role="doc-biblioref">2017</a>)</span>, the measures studied in this chapter to ensure research reproducibility and transparency are organized into five categories. In addition, when possible, categories contain specific working themes designed to minimize the threats discussed above (see Figure <a href="#fig:ThreatReproSci">3.1</a>).</p>
 <ol style="list-style-type: decimal">
 <li><strong>Methods</strong>
 <ul>
@@ -2158,7 +2165,7 @@ Figure 3.1: Overview of the scientific process and threats preventing reproducib
 <div id="improving-the-quality-of-reporting" class="section level3" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Improving the quality of reporting</h3>
 <p><strong>Pre-registration will improve discoverability of research, but discoverability does not guarantee usability.</strong> Poor usability reflects difficulty in evaluating what was done, in reusing the methodology to assess reproducibility, and in incorporating the evidence into systematic reviews and meta-analyses. Improving the quality and transparency in the reporting of research is necessary to address this.</p>
-<div id="the-transparency-and-openness-promotion-top-guidelines-a-mean-to-improve-usability" class="section level4" number="3.6.2.1">
+<div id="TOP" class="section level4" number="3.6.2.1">
 <h4><span class="header-section-number">3.6.2.1</span> The Transparency and Openness Promotion (TOP) guidelines: A mean to improve usability</h4>
 <p>TOP guidelines <span class="citation">(published in <a href="#ref-Nosek1422" role="doc-biblioref">Nosek et al., 2015</a>)</span> offer standards as a basis for journals and funders to incentivize or require greater transparency in planning and reporting of research. More precisely, TOP guidelines include eight modular standards, each with three levels of increasing stringency (). Journals are selecting which of the eight transparency standards they wish to implement and also select a level of implementation for each. These features provide flexibility for adoption depending on disciplinary variation, but simultaneously establish community standards.</p>
 <div id="top-transparency-modular-standards" class="section level5" number="3.6.2.1.1">
@@ -2248,11 +2255,420 @@ Figure 3.3: Overview of the OSF workflow and connections with other widely used 
 <p><strong>Publication bias:</strong> also known as the file drawer problem, refers to the fact that many more studies are conducted than published. Studies that obtain positive and novel results are more likely to be published than studies that obtain negative results or report replications of prior results. The consequence is that the published literature indicates stronger evidence for findings than exists in reality.</p>
 </div>
 </div>
-<div id="references" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> References</h1>
+<div id="chapter-4" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Chapter 4</h1>
+<div id="introduction-3" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>This chapter is subdivided into two parts as follows:</p>
+<ul>
+<li><a href="#partDM"><strong>PART A:</strong></a> Data management.</li>
+<li><strong>PART B:</strong> Reproducible code.</li>
+</ul>
+</div>
+<div id="partDM" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data management</h2>
+<div id="introduction-4" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Introduction</h3>
+<p>Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see <a href="#TOP">TOP guidelines</a> in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide DOIs to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse.</p>
+<p>This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.</p>
+</div>
+<div id="literature-and-web-resources" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Literature and web resources</h3>
+<p>This chapter is based on:</p>
+<ul>
+<li><span class="citation"><a href="#ref-DataMan" role="doc-biblioref">British Ecological Society</a> (<a href="#ref-DataMan" role="doc-biblioref">2014</a>)</span> – A Guide to Data Management in Ecology and Evolution published by the <a href="https://www.britishecologicalsociety.org">British Ecological Society</a>.</li>
+<li>UK Managing and Sharing Research Data handbook: <a href="https://data-archive.ac.uk/media/2894/managingsharing.pdf" class="uri">https://data-archive.ac.uk/media/2894/managingsharing.pdf</a></li>
+<li>The companion website presenting material for UK Managing and Sharing Research Data handbook: <a href="https://www.ukdataservice.ac.uk/manage-data/handbook/" class="uri">https://www.ukdataservice.ac.uk/manage-data/handbook/</a></li>
+</ul>
+</div>
+<div id="what-are-research-data" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> What are research data?</h3>
+<p><strong>Research data are the factual pieces of information used to test research hypotheses.</strong> Data can be classified into five categories:</p>
+<ul>
+<li><strong>Observational:</strong> Data which are tied to time and place and are irreplaceable (e.g. field observations, weather station readings, satellite data).</li>
+<li><strong>Experimental:</strong> Data generated in a controlled or partially controlled environment, which can be reproduced, although it may be expensive to do so (e.g. field plots or greenhouse experiments, chemical analyses).</li>
+<li><strong>Simulation:</strong> Data generated from models (e.g. climate or population modelling).</li>
+<li><strong>Derived:</strong> Data which are not collected directly but inferred from (an)other data file(s) (e.g. a population biomass which has been calculated from population density and average body size data).</li>
+<li><strong>Metadata:</strong> Data about data (more about this category later).</li>
+</ul>
+<p>A key challenge facing researchers today is the need to work with different data sources. It is not uncommon for projects to integrate any combination of data types into a single analysis, even drawing on data from disciplines outside Ecology and Evolution. As research becomes increasingly collaborative and interdisciplinary, issues surrounding data management are growing in prevalence.</p>
+</div>
+<div id="the-data-life-cycle" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> The data life cycle</h3>
+<p>Data have a longer lifespan than the project they were created for, as illustrated by the data life-cycle displayed in Figure <a href="#fig:LifeCycle">4.1</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:LifeCycle"></span>
+<img src="Figures/Data_lifecycle.png" alt="The data lifecycle" width="60%" />
+<p class="caption">
+Figure 4.1: The data lifecycle
+</p>
+</div>
+<p>Some projects may only focus on certain parts of the data life-cycle, such as primary data creation, or reusing others’ data. Other projects may go through several revolutions of the cycle. Either way, most researchers will work with data at all stages throughout their career.</p>
+</div>
+<div id="why-should-i-manage-data" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Why should I manage data?</h3>
+<p>Data management concerns how you plan for all stages of the data life-cycle and implement this plan throughout the research project. Done effectively it will ensure that the data life-cycle is kept in motion. It will also keep the research process efficient and ensure that your data meet all the expectations set by you, funders, research institutions, legislation and publishers (e.g. copyright, data protection).</p>
+<p>In order to bring some perspective on this topic, ask yourself this question:</p>
+<blockquote>
+<p><em>Would a colleague be able to take over my project tomorrow if I disappeared, or make sense of the data without talking to me?</em></p>
+</blockquote>
+<p>If you can answer <strong>YES</strong>, then you are managing your data well!</p>
+<div id="the-benefits-of-good-data-management-include" class="section level4" number="4.2.5.1">
+<h4><span class="header-section-number">4.2.5.1</span> The benefits of good data management include:</h4>
+<ul>
+<li>Ensuring data are accurate, complete, authentic and reliable.</li>
+<li>Increasing research efficiency.</li>
+<li>Saving time and money in the long run – ‘undoing’ mistakes is frustrating.</li>
+<li>Meeting funder requirements.</li>
+<li>Minimizing the risk of data loss.</li>
+<li>Preventing duplication by others.</li>
+<li>Facilitating data sharing.</li>
+</ul>
+</div>
+</div>
+<div id="why-should-i-share-my-data" class="section level3" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> Why should I share my data?</h3>
+<p>It is increasingly common for funders and publishers to mandate data sharing wherever possible. In addition, some funding bodies require data managing and sharing plans as part of grant applications (e.g. NSF). Sharing data can be daunting, but data are valuable resources and their usefulness could extend beyond the original purpose for which they were created. Benefits of sharing data include:</p>
+<ul>
+<li>Increasing the impact and visibility of research.</li>
+<li>Encouraging collaborations and partnerships with other researchers.</li>
+<li>Maximizing transparency and accountability.</li>
+<li>Encouraging the improvement and validation of research methods.</li>
+<li>Reducing costs of duplicating data collection.</li>
+<li>Advancing science by letting others use data in innovative ways.</li>
+</ul>
+<div id="there-are-circumstances-where-data-cant-be-shared" class="section level4" number="4.2.6.1">
+<h4><span class="header-section-number">4.2.6.1</span> There are circumstances where data can’t be shared!</h4>
+<ul>
+<li>If the datasets contain sensitive information about endangered or threatened species.</li>
+<li>If the data contain personal information – sharing them may be a breach of protocol (and even break the law).</li>
+<li>If parts of the data are owned by others – you may not have the rights to share them.</li>
+</ul>
+<p>During the planning stages of your project determine which of your data can’t and shouldn’t be shared. Journal data archiving policies recognize these reasons for not sharing.</p>
+</div>
+</div>
+<div id="planning-data-management" class="section level3" number="4.2.7">
+<h3><span class="header-section-number">4.2.7</span> Planning data management</h3>
+<p>Regardless of whether your funder requires you to have a data management or sharing plan as part of a grant application, having such a plan in place before you begin your research project will mean that you are prepared for any data management issues that may come your way (see the Data management checklist section below).</p>
+<div id="before-you-start-planning" class="section level4" number="4.2.7.1">
+<h4><span class="header-section-number">4.2.7.1</span> Before you start planning</h4>
+<p>Here are few things that you should consider before planning your data management workflow:</p>
+<ul>
+<li>Check funder specifications for data management plans.</li>
+<li>Consult with your institution (especially regarding resources and policies).</li>
+<li>Consider your budget.</li>
+<li>Talk to your supervisor, colleagues and collaborators.</li>
+</ul>
+</div>
+<div id="what-are-the-key-things-to-consider-when-planning" class="section level4" number="4.2.7.2">
+<h4><span class="header-section-number">4.2.7.2</span> What are the key things to consider when planning?</h4>
+<ul>
+<li><strong>Time:</strong> Writing a data management plan may well take a significant amount of time. It is not as simple as filling out a template or working through a checklist of things to include. Planning for data management should be thorough before the research project starts to ensure that data management is embedded throughout the research process.</li>
+<li><strong>Design according to your needs:</strong> Data management should be planned and implemented with the purpose of the research project in mind.</li>
+<li><strong>Roles and responsibilities:</strong> Creating a data management plan may be the responsibility of one single person, but data management implementation may involve various people at different stages. One of the major uses of a data management plan is to enable coordinated working and communication among researchers on a project.</li>
+<li><strong>Review:</strong> Plan how data management will be reviewed throughout the project and adapted if necessary; this will help to integrate data management into the research process and ensure that the best data management practices are being implemented. Reviewing will also help to catch any issues early on, before they turn into bigger problems.</li>
+</ul>
+</div>
+</div>
+<div id="creating-data" class="section level3" number="4.2.8">
+<h3><span class="header-section-number">4.2.8</span> Creating data</h3>
+<p>In the data life-cycle (Figure <a href="#fig:LifeCycle">4.1</a>), creating datasets occurs as a researcher collects data in the field or lab, and digitizes them to end up with a raw dataset.</p>
+<pre><code># Workflow associated with creating data
+
+Collect data (in the field and/or lab) --&gt; Digitize data --&gt; Raw dataset
+
+!! Perform quality checks @ each step to validate data !!</code></pre>
+<p><strong>Quality control during data collection is important</strong> because often there is only one opportunity to collect data from a given situation. Researchers should be critical of methods before collection begins – high-quality methods will result in high-quality data. Likewise, when collection is under way, detailed documentation of the collection process should be kept as evidence of quality.</p>
+<div id="key-things-to-consider-during-data-collection" class="section level4" number="4.2.8.1">
+<h4><span class="header-section-number">4.2.8.1</span> Key things to consider during data collection</h4>
+<ul>
+<li>Logistical issues in the field (what are the challenges associated with your fieldwork (e.g. no power to re-charge your batteries?).</li>
+<li>Calibration of instruments (is the balance that I plan using accurate enough to weigh my samples?).</li>
+<li>Taking multiple measurements/observations/samples (to e.g. ensure statistical accuracy or cover genetic variation within population).</li>
+<li>Creating a template (and associated protocols) for use during data collection to ensure that all information is collected consistently, especially if there are multiple collectors.</li>
+<li>Describing any conditions during data collection that might affect the quality of the data (e.g. impact of weather conditions, tropical storm, on wildlife observations).</li>
+<li>Creating an accompanying questionnaire for multiple collectors, asking them any questions which may affect the quality of the data (this could account for slight differences observed during analytical phase of project. In other words, account for the effect of data collecting on analyses).</li>
+<li>Widening the possible applications of data, and therefore increasing their impact, by adding variables and parameters to data. For instance, wider landscape variables, which will encourage reuse and potentially open up new avenues for research.</li>
+</ul>
+</div>
+</div>
+<div id="data-digitization" class="section level3" number="4.2.9">
+<h3><span class="header-section-number">4.2.9</span> Data digitization</h3>
+<p>Data may be collected directly in a digital form using devices that feed results straight into a computer/tablet or they may be collected as hand-written notes. Either way, there will be some level of processing involved to end up with a digital raw dataset.</p>
+<p>Key things to consider during data digitization include:</p>
+<ul>
+<li>Designing a database structure to organize data and data files (i.e. making sure that observations have unique IDs).</li>
+<li>Using a consistent format for each data file – e.g. one row represents a complete record and the columns represent all the parameters that make up that record (this is known as spreadsheet format).</li>
+<li>Atomizing data – make sure that only one piece of data is in each entry (this greatly helps analyses).</li>
+<li>Using plain text characters (e.g. ASCII, Unicode) to ensure data are readable by a maximum number of software programmes.</li>
+<li>Using code – coding assigns a numerical value to variables and allows for statistical analysis of data. Keep coding simple.</li>
+<li>Describing the contents of your data files in a <code>Readme.txt</code> file or even better in protocol files (later attached as appendixes of your manuscript), or other metadata standard, including a definition of each parameter, the units used and codes for missing values.</li>
+<li>Keeping raw data raw.</li>
+</ul>
+</div>
+<div id="processing-data" class="section level3" number="4.2.10">
+<h3><span class="header-section-number">4.2.10</span> Processing data</h3>
+<p><strong>Data should be processed into a format that is suited to subsequent analyses and ensures long-term usability.</strong> Data are at risk of being lost if the hardware and software originally used to create and process them are rendered obsolete. Therefore, data should be well organized, structured, named and versioned in standard formats that can be interpreted in the future (see the Data structure and organisation of files section below).</p>
+<p>Here are some guidelines to ensure best processing of data (Figure <a href="#fig:LifeCycle">4.1</a>):</p>
+<ul>
+<li><strong>File formats:</strong> Data should be written in <em>non-proprietary formats</em>, also known as open standard formats. These files can be used and implemented by anyone, as opposed to proprietary formats which can only be used by those with the correct software installed. The most common format used for spreadsheet data are comma-separated values files (<code>.csv</code>). Other non-proprietary formats include: plain text files (<code>.txt</code>) for text; and <code>GIF</code>, <code>JPEG</code> and <code>PNG</code> for images.</li>
+<li><strong>File names and folders:</strong> To keep track of data and know how to find them, digital files and folders should be structured and well organized. Use a folder hierarchy that fits the structure of the project and ensure that it is used consistently. Drawing a folder map which details where specific data are saved may be particularly useful if others will be accessing folders, or if there is simply a lot to navigate (store this information in the <code>Readme.txt</code> file).</li>
+<li><strong>File names should be:</strong>
+<ul>
+<li>unique,</li>
+<li>descriptive,</li>
+<li>succinct,</li>
+<li>naturally ordered and consistent,</li>
+<li>describing the project, file contents, location, date, researcher’s initials and version.</li>
+</ul></li>
+<li><strong>File names should not</strong> include spaces – these can cause problems with scripting and metadata.</li>
+<li><strong>Quality assurance:</strong> Checking that data have been edited, cleaned, verified and validated to create a reliable masterfile which will become the basis for further analyses (tyding up data so that they are ready for analyses). Use a scripting language, such as R, to process your data for quality checking so that all steps are documented.<br />
+<strong>Assurance checks may include:</strong>
+<ul>
+<li>Identifying estimated values, missing values or double entries.</li>
+<li>Performing statistical analyses to check for questionable or impossible values and outliers (which may just be typos from data entry).</li>
+<li>Checking the format of the data for consistency across the dataset.</li>
+<li>Checking the data against similar data to identify potential problems.</li>
+</ul></li>
+<li><strong>Version control:</strong> Once the masterfile has been finalized, keeping track of ensuing versions of this file can be challenging, especially if working with collaborators in different locations. A version control strategy will help locate required versions, and clarify how versions differ from one another.<br />
+<strong>Version control best practice includes:</strong>
+<ul>
+<li>Deciding how many and which versions to keep.</li>
+<li>Using a systematic file naming convention, using filenames that include the version number and status of the file (e.g. v1_draft, v2_internal, v3_final).</li>
+<li>Record what changes took place to create the version in a separate file (e.g. a version table).</li>
+<li>Mapping versions if they are stored in different locations.</li>
+<li>Synchronizing versions across different locations.</li>
+<li>Ensuring any cross-referenced information between files is also subject to version control.</li>
+</ul></li>
+</ul>
+</div>
+<div id="data-structure-and-organisation-of-files" class="section level3" number="4.2.11">
+<h3><span class="header-section-number">4.2.11</span> Data structure and organisation of files</h3>
+<p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project (see above). In UNIX, this can be easily achieved by using the <em>tree</em> package as shown in Figure <a href="#fig:TreeDir">4.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:TreeDir"></span>
+<img src="Figures/Tree_directory.png" alt="Infer directory tree structure using the UNIX tree package." width="60%" />
+<p class="caption">
+Figure 4.2: Infer directory tree structure using the UNIX tree package.
+</p>
+</div>
+<div id="the-unix-tree-package-a-way-to-support-data-structure-organisation" class="section level4" number="4.2.11.1">
+<h4><span class="header-section-number">4.2.11.1</span> The UNIX <em>tree</em> package: A way to support data structure &amp; organisation</h4>
+<p>The UNIX <em>tree</em> package was used here to infer the directory structure of the folder <code>Project_ID/</code> and several arguments were set to obtain data on files that could be used to check for file names and location as well as version control:</p>
+<ul>
+<li><code>-s</code>: Print the size of each file in bytes along with the name.</li>
+<li><code>-D</code>: Print the date of the last modification time or if <code>-c</code> is used, the last status change time for the file listed.</li>
+</ul>
+<p>To install the <em>tree</em> package on your Mac, do the following:</p>
+<pre class="r"><code>#Install tree by typing the following code in a terminal
+brew install tree</code></pre>
+</div>
+</div>
+<div id="documenting-data" class="section level3" number="4.2.12">
+<h3><span class="header-section-number">4.2.12</span> Documenting data</h3>
+<p>Producing good documentation and metadata ensures that data can be understood and used in the long term (Figure <a href="#fig:LifeCycle">4.1</a>). Documentation (i.e. the manual associated with your data) describes the data, explains any manipulations and provides contextual information – no room should be left for others to misinterpret the data.</p>
+<p>All documentation requirements should be identified at the planning stages so you are prepared for it during all stages of the data life-cycle, particularly during data creation and processing. This will avoid having to perform a rescue mission in situations where you have forgotten what has happened or when a collaborator has left without leaving any key documentation behind.</p>
+<p>Data documentation includes information at project and data levels and should cover the following information.</p>
+<div id="project-level" class="section level4" number="4.2.12.1">
+<h4><span class="header-section-number">4.2.12.1</span> Project level</h4>
+<ul>
+<li>The project aim, objectives and hypotheses.</li>
+<li>Personnel involved throughout the project, including who to contact with questions.</li>
+<li>Details of sponsors.</li>
+<li>Data collection methods, including details of instrumentation and environmental conditions during collection, copies of collection instructions if applicable.</li>
+<li>Standards used.</li>
+<li>Data structure and organisation of files (see Figure <a href="#fig:TreeDir">4.2</a>).</li>
+<li>Software used to prepare and read the data.</li>
+<li>Procedures used for data processing, including quality control and versioning and the dates these were carried out.</li>
+<li>Known problems that may limit data use.</li>
+<li>Instructions on how to cite the data.</li>
+<li>Intellectual property rights and other licensing considerations.</li>
+</ul>
+</div>
+<div id="data-level" class="section level4" number="4.2.12.2">
+<h4><span class="header-section-number">4.2.12.2</span> Data level</h4>
+<ul>
+<li>Names, labels and descriptions for variables.</li>
+<li>Detailed explanation of codes used.</li>
+<li>Definitions of acronyms or specialist terminology.</li>
+<li>Reasons for missing values.</li>
+<li>Derived data created from the raw file, including the code or algorithm used to create them.</li>
+</ul>
+<p>If a software package such as R is used for processing data, much of the data level documentation will be created and embedded during analysis.</p>
+<p><strong>Metadata</strong> help others discover data through searching and browsing online and enable machine-to-machine interoperability of data, which is necessary for data reuse. Metadata are created by using either a data center’s deposit form, a metadata editor, or a metadata creator tool, which can be searched for online. Metadata follow a standard structure and come in three forms:</p>
+<ul>
+<li>Descriptive – fields such as title, author, abstract and keywords.</li>
+<li>Administrative – rights and permissions and data on formatting.</li>
+<li>Structural – explanations of e.g. tables within the data.</li>
+</ul>
+</div>
+</div>
+<div id="preserving-data" class="section level3" number="4.2.13">
+<h3><span class="header-section-number">4.2.13</span> Preserving data</h3>
+<p>To protect data from loss and to make sure data are securely stored, good data management should include a strategy for backing up and storing data effectively (see where this step fits in Figure <a href="#fig:LifeCycle">4.1</a>). It is recommended to keep three versions of your data: the original, external/local and external/remote. Talk with your thesis supervisor to isolate best procedure to ensure preservation of your data.</p>
+<div id="data-backup" class="section level4" number="4.2.13.1">
+<h4><span class="header-section-number">4.2.13.1</span> Data backup</h4>
+<p>When designing a backup strategy, thought should be given to the possible means by which data loss could occur. These include:</p>
+<ul>
+<li>Hardware failure.</li>
+<li>Software faults.</li>
+<li>Virus infection or hacking.</li>
+<li>Power failure.</li>
+<li>Human error.</li>
+<li>Hardware theft or misplacement (especially common during fieldwork).</li>
+<li>Hardware damage (e.g. fire, flood. Again common in the field).</li>
+<li>Backups – good backups being overwritten with backups from corrupt data (this happen more often that you would imagine).</li>
+</ul>
+<p>An ideal backup strategy should provide protection against all the risks, but it can be sensible to consider which are the most likely to occur in any particular context and be aware of these when designing your backup strategy.</p>
+<div id="things-to-consider-to-establish-a-backup-plan" class="section level5" number="4.2.13.1.1">
+<h5><span class="header-section-number">4.2.13.1.1</span> Things to consider to establish a backup plan</h5>
+<ul>
+<li>Which files require backup.</li>
+<li>Who is responsible for backups.</li>
+<li>The frequency of backup needed, this will be affected by how regularly files are updated.</li>
+<li>Whether full or incremental backups are needed – consider running a mix of frequent incremental backups (capturing recent data changes) along with periodic full backups (capturing a ‘snapshot’ of the state of all files).</li>
+<li>Backup procedures for each location where data are held, e.g. tablets, home-based computers or remote drives.</li>
+<li>How to organize and label backup files.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="data-storage" class="section level3" number="4.2.14">
+<h3><span class="header-section-number">4.2.14</span> Data storage</h3>
+<p><strong>Data storage, whether of the original or backed up data, needs to be robust.</strong> This is true whether the data are stored on paper or electronically, but electronic storage raises particular issues.</p>
+<div id="guidelines-to-ensure-best-practice-for-electronic-storage-of-data" class="section level4" number="4.2.14.1">
+<h4><span class="header-section-number">4.2.14.1</span> Guidelines to ensure best practice for electronic storage of data</h4>
+<ul>
+<li>Use high-quality storage systems (e.g. media, devices).</li>
+<li>Use non-proprietary formats for long-term software readability.</li>
+<li>Migrate data files every two to five years to new storage – storage media such as CDs, DVDs and hard drives can degrade over time or become outdated (e.g. floppy disks).</li>
+<li>Check stored data regularly to make sure nothing has been lost.</li>
+<li>Use different forms of storage for the same data, this also acts as a method of backup, e.g. using remote storage, external hard drives and a network drive.</li>
+<li>Label and organize stored files logically to make them easy to locate and access.</li>
+<li>Think about encryption: sensitive data may be regarded as protected while on a password-protected computer, but when backed up onto a portable hard drive they may become accessible to anyone – backups may need to be encrypted or secured too.</li>
+</ul>
+<div id="storage-and-backing-up-of-data" class="section level5" number="4.2.14.1.1">
+<h5><span class="header-section-number">4.2.14.1.1</span> Storage and backing-up of data</h5>
+<p>Data can be stored and backed up on:</p>
+<ul>
+<li><strong>Network drives</strong> which are managed by IT staff and are regularly backed up. They ensure secure storage and prohibit unauthorized access to files.</li>
+<li><strong>Personal devices</strong> such as laptops and tablets are convenient for short-term, temporary storage but should not be used for storing master files. They are at high risk of being lost, stolen or damaged.</li>
+<li><strong>External devices</strong> such as hard drives, USB sticks, CDs and DVDs are often convenient because of their cost and portability. However, they do not guarantee long-term preservation and can also be lost, stolen or damaged. High-quality external devices from reputable manufacturers should be used.</li>
+<li><strong>Remote or online services</strong> such as Google Drive or Dropbox use cloud technology to allow users to synchronize files across different computers. They provide some storage space for free but any extra space or functions will have to be bought.</li>
+<li><strong>Paper!</strong> If data files are not too big, do not overlook the idea of printing out a paper copy of important ones data files as a complement to electronic storage. It may not be convenient, but ink on paper has proven longevity and system independence (as long as you can remember where you put it)!</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="sharing-data" class="section level3" number="4.2.15">
+<h3><span class="header-section-number">4.2.15</span> Sharing data</h3>
+<p>Research data can be shared in many ways and each method of sharing will have advantages and disadvantages. Ways to share data include:</p>
+<ul>
+<li>Using a disciplinary data center such as Dryad or GenBank.</li>
+<li>Depositing data in your research funder’s data center.</li>
+<li>Depositing data in university repositories.</li>
+<li>Making data available online via open notebooks or project websites (e.g. Open Science Framework from the Center of Open Science).</li>
+<li>Using virtual research environments such as SharePoint and Sakai.</li>
+</ul>
+<p>Institutions, funders and journals have specific policies associated with data sharing and you should read those prior to establishing a data sharing plan. Here we will discuss the advantages of archiving your data in data repositories.</p>
+<div id="data-repositories" class="section level4" number="4.2.15.1">
+<h4><span class="header-section-number">4.2.15.1</span> Data repositories</h4>
+<p>Archiving your data in a repository is a reliable method of sharing data. Data submitted to repositories will have to conform to submission guidelines, which may restrict which data you share via the repository. However, the advantages of sharing data through these centers include:</p>
+<ul>
+<li>Assurance for others that the data meet quality standards.</li>
+<li>Guaranteed long-term preservation.</li>
+<li>Data are secure and access can be controlled.</li>
+<li>Data are regularly backed up.</li>
+<li>Chances of others discovering the data are improved.</li>
+<li>Citation methods are specified.</li>
+<li>Secondary usage of the data is monitored.</li>
+</ul>
+</div>
+</div>
+<div id="reusing-data" class="section level3" number="4.2.16">
+<h3><span class="header-section-number">4.2.16</span> Reusing data</h3>
+<p><strong>All aspects of data management lead up to data discovery and reuse by others.</strong> Intellectual property rights, licenses and permissions, which concern reuse of data, should be explained in the data documentation and/or metadata.</p>
+<p>At this stage of the life-cycle it is important to <strong>state your expectations for the reuse of your data</strong>, e.g. terms of acknowledgment, citation and co-authorship. Likewise, it becomes the <strong>responsibility of others to reuse data effectively</strong>, credit the collectors of the original data, cite the original data and manage any subsequent research to the same effect.</p>
+<p>When requesting to use someone else’s data it is important to clearly state the purpose of the request, including the idea you will be addressing and your expectations for co-authorship or acknowledgment. Co-authorship is a complex issue and should be discussed with any collaborators at the outset of a project.</p>
+<p><strong>Increasing openness to data and ensuring long-term preservation of data fosters collaboration and transparency, furthering research that aims to answer the big questions in ecology and evolution.</strong> By implementing good data management practices, researchers can ensure that high-quality data are preserved for the research community and will play a role in advancing science for future generations.</p>
+</div>
+<div id="data-management-checklist" class="section level3" number="4.2.17">
+<h3><span class="header-section-number">4.2.17</span> Data management checklist</h3>
+<p>The data management checklist from the <a href="https://www.ukdataservice.ac.uk/manage-data/plan/checklist">UK Data Archive</a> will help you design your own data management planning and data sharing. The text is available below:</p>
+<div id="planning" class="section level4" number="4.2.17.1">
+<h4><span class="header-section-number">4.2.17.1</span> Planning</h4>
+<ul>
+<li>Who is responsible for which part of data management?</li>
+<li>Are new skills required for any activities?</li>
+<li>Do you need extra resources to manage data, such as people, time or hardware?</li>
+<li>Have you accounted for costs associated with depositing data for longer-term preservation and access?</li>
+</ul>
+</div>
+<div id="documenting" class="section level4" number="4.2.17.2">
+<h4><span class="header-section-number">4.2.17.2</span> Documenting</h4>
+<ul>
+<li>Will others be able to understand your data and use them properly?</li>
+<li>Are your structured data self-explanatory in terms of variable names, codes and abbreviations used?</li>
+<li>Which descriptions and contextual documentation explain what your data mean, how they were collected and the methods used to create them?</li>
+<li>How will you label and organize data, records and files?</li>
+<li>Will you be consistent in how data are cataloged?</li>
+</ul>
+</div>
+<div id="formatting" class="section level4" number="4.2.17.3">
+<h4><span class="header-section-number">4.2.17.3</span> Formatting</h4>
+<ul>
+<li>Are you using standardized and consistent procedures to collect, process, transcribe, check, validate and verify data, such as standard protocols, templates or input forms?</li>
+<li>Which data formats will you use? Do formats and software enable sharing and long-term sustainability of data, such as non-proprietary software and software based on open standards?</li>
+<li>When converting data across formats, do you check that no data, annotation or internal metadata have been lost or changed?</li>
+</ul>
+</div>
+<div id="storing" class="section level4" number="4.2.17.4">
+<h4><span class="header-section-number">4.2.17.4</span> Storing</h4>
+<ul>
+<li>Are your digital and non-digital data, and any copies, held in multiple safe and secure locations?</li>
+<li>Do you need to securely store personal or sensitive data? If so, are they properly protected?</li>
+<li>If data are collected with mobile devices, how will you transfer and store the data?</li>
+<li>If data are held in multiple places, how will you keep track of versions?</li>
+<li>Are your files backed up sufficiently and regularly and are backups stored safely?</li>
+<li>Do you know which version of your data files is the master?</li>
+<li>Who has access to which data during and after research? Is there a need for access restrictions? How will these be managed after you are dead?</li>
+<li>How long will you store your data for and do you need to select which data to keep and which to destroy?</li>
+</ul>
+</div>
+<div id="confidentiality-ethics-and-consent" class="section level4" number="4.2.17.5">
+<h4><span class="header-section-number">4.2.17.5</span> Confidentiality, ethics and consent</h4>
+<ul>
+<li>Do your data contain confidential or sensitive information? If so, have you discussed data sharing with the respondents from whom you collected the data?</li>
+<li>Are you gaining written consent from respondents to share data beyond your research?</li>
+<li>Do you need to anonymise data, for example, to remove identifying information or personal data, during research or in preparation for sharing?</li>
+</ul>
+</div>
+<div id="copyright" class="section level4" number="4.2.17.6">
+<h4><span class="header-section-number">4.2.17.6</span> Copyright</h4>
+<ul>
+<li>Have you established who owns the copyright in your data? Might there be joint copyright?</li>
+<li>Have you considered which kind of license is appropriate for sharing your data and what, if any, restrictions there might be on re-use?</li>
+<li>If you are purchasing or re-using someone else’s data sources have you considered how that data might be shareable, for example negotiating a new licence with the original supplier?</li>
+<li>Can you preserve for the long-term, personal information so that it can be used in the future?</li>
+</ul>
+</div>
+<div id="sharing" class="section level4" number="4.2.17.7">
+<h4><span class="header-section-number">4.2.17.7</span> Sharing</h4>
+<ul>
+<li>Do you intend to make all your data available for sharing or how will you select which data to preserve and share?</li>
+<li>How and where will you preserve your research data for the longer-term?</li>
+<li>How will you make your data accessible to future users?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="references" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Baker_2016" class="csl-entry">
 <span class="smallcaps">Baker, M.</span> 2016. 1,500 scientists lift the lid on reproducibility. <em>Nature</em> 533: 452–454. Available at: <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
+</div>
+<div id="ref-DataMan" class="csl-entry">
+<span class="smallcaps">British Ecological Society</span> ed. 2014. A guide to data management in ecology and evolution. British Ecological Society.
 </div>
 <div id="ref-Kerr1998" class="csl-entry">
 <span class="smallcaps">Kerr, N.L.</span> 1998. HARKing: Hypothesizing after the results are known. <em>Personality and Social Psychology Review</em> 2: 196–217. Available at:<a href=" https://doi.org/10.1207/s15327957pspr0203_4"> https://doi.org/10.1207/s15327957pspr0203_4</a>.
@@ -2295,7 +2711,7 @@ Figure 3.3: Overview of the OSF workflow and connections with other widely used 
 <div id="appendix-appendices" class="section level1 unnumbered">
 <h1>Appendices</h1>
 </div>
-<div id="appendix-1" class="section level1" number="5">
+<div id="appendix-1" class="section level1" number="6">
 <h1><span class="header-section-number">A</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
 <p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
@@ -2348,7 +2764,7 @@ Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
 Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>&gt;.</p>
 </div>
-<div id="appendix-2" class="section level1" number="6">
+<div id="appendix-2" class="section level1" number="7">
 <h1><span class="header-section-number">B</span> Appendix 2</h1>
 <p>Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using <code>sessionInfo()</code>.</p>
 <pre><code>## R version 3.6.1 (2019-07-05)
