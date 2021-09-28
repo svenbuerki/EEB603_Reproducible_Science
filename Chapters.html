@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2021-09-28" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -30,6 +30,10 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="site_libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -411,7 +415,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2021-09-26</h4>
+<h4 class="date">2021-09-28</h4>
 
 </div>
 
@@ -981,26 +985,27 @@ wants to recreate your analysis, they will know which packages they will need to
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] kableExtra_1.2.1     dplyr_1.0.2          kfigr_1.2           
-##  [4] devtools_2.3.2       usethis_2.0.0        formatR_1.7         
-##  [7] knitcitations_1.0.10 bookdown_0.21        rmarkdown_2.6       
-## [10] knitr_1.30          
+##  [1] DiagrammeR_1.0.6.1   data.tree_1.0.0      kableExtra_1.2.1    
+##  [4] dplyr_1.0.2          kfigr_1.2            devtools_2.3.2      
+##  [7] usethis_2.0.0        formatR_1.7          knitcitations_1.0.10
+## [10] bookdown_0.21        rmarkdown_2.6        knitr_1.30          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.1.0  xfun_0.20         remotes_2.2.0     purrr_0.3.4      
-##  [5] colorspace_2.0-0  generics_0.1.0    vctrs_0.3.6       testthat_3.0.1   
-##  [9] viridisLite_0.3.0 htmltools_0.5.0   yaml_2.2.1        rlang_0.4.10     
-## [13] pkgbuild_1.2.0    pillar_1.4.7      glue_1.4.2        withr_2.3.0      
-## [17] sessioninfo_1.1.1 lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
-## [21] munsell_0.5.0     rvest_0.3.6       memoise_1.1.0     evaluate_0.14    
-## [25] callr_3.5.1       ps_1.5.0          fansi_0.4.1       highr_0.8        
-## [29] Rcpp_1.0.6        scales_1.1.1      desc_1.2.0        pkgload_1.1.0    
-## [33] webshot_0.5.2     jsonlite_1.7.2    fs_1.5.0          digest_0.6.27    
-## [37] stringi_1.5.3     processx_3.4.5    rprojroot_2.0.2   bibtex_0.4.2.3   
-## [41] cli_2.2.0         tools_3.6.1       magrittr_2.0.1    tibble_3.0.4     
-## [45] RefManageR_1.2.12 crayon_1.3.4      pkgconfig_2.0.3   ellipsis_0.3.1   
-## [49] xml2_1.3.2        prettyunits_1.1.1 lubridate_1.7.9.2 assertthat_0.2.1 
-## [53] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          compiler_3.6.1</code></pre>
+##  [1] tidyselect_1.1.0   xfun_0.20          remotes_2.2.0      purrr_0.3.4       
+##  [5] colorspace_2.0-0   generics_0.1.0     vctrs_0.3.6        testthat_3.0.1    
+##  [9] viridisLite_0.3.0  htmltools_0.5.0    yaml_2.2.1         rlang_0.4.10      
+## [13] pkgbuild_1.2.0     pillar_1.4.7       glue_1.4.2         withr_2.3.0       
+## [17] RColorBrewer_1.1-2 sessioninfo_1.1.1  lifecycle_0.2.0    plyr_1.8.6        
+## [21] stringr_1.4.0      munsell_0.5.0      rvest_0.3.6        visNetwork_2.0.9  
+## [25] htmlwidgets_1.5.3  memoise_1.1.0      evaluate_0.14      callr_3.5.1       
+## [29] ps_1.5.0           fansi_0.4.1        highr_0.8          Rcpp_1.0.6        
+## [33] scales_1.1.1       desc_1.2.0         pkgload_1.1.0      webshot_0.5.2     
+## [37] jsonlite_1.7.2     fs_1.5.0           digest_0.6.27      stringi_1.5.3     
+## [41] processx_3.4.5     rprojroot_2.0.2    bibtex_0.4.2.3     cli_2.2.0         
+## [45] tools_3.6.1        magrittr_2.0.1     tibble_3.0.4       RefManageR_1.2.12 
+## [49] crayon_1.3.4       pkgconfig_2.0.3    ellipsis_0.3.1     xml2_1.3.2        
+## [53] prettyunits_1.1.1  lubridate_1.7.9.2  assertthat_0.2.1   httr_1.4.2        
+## [57] rstudioapi_0.13    R6_2.5.0           compiler_3.6.1</code></pre>
 <p>I have also used the approach described above to add this information in <a href="#appendix-2">Appendix 2</a>.</p>
 </div>
 </div>
@@ -2262,7 +2267,7 @@ Figure 3.3: Overview of the OSF workflow and connections with other widely used 
 <p>This chapter is subdivided into two parts as follows:</p>
 <ul>
 <li><a href="#partDM"><strong>PART A:</strong></a> Data management.</li>
-<li><strong>PART B:</strong> Reproducible code.</li>
+<li><a href="#repcode"><strong>PART B:</strong></a> Reproducible code.</li>
 </ul>
 </div>
 <div id="partDM" class="section level2" number="4.2">
@@ -2276,7 +2281,7 @@ Figure 3.3: Overview of the OSF workflow and connections with other widely used 
 <h3><span class="header-section-number">4.2.2</span> Literature and web resources</h3>
 <p>This chapter is based on:</p>
 <ul>
-<li><span class="citation"><a href="#ref-DataMan" role="doc-biblioref">British Ecological Society</a> (<a href="#ref-DataMan" role="doc-biblioref">2014</a>)</span> – A Guide to Data Management in Ecology and Evolution published by the <a href="https://www.britishecologicalsociety.org">British Ecological Society</a>.</li>
+<li><span class="citation"><a href="#ref-DataMan" role="doc-biblioref">British Ecological Society</a> (<a href="#ref-DataMan" role="doc-biblioref">2014a</a>)</span> – A Guide to Data Management in Ecology and Evolution published by the <a href="https://www.britishecologicalsociety.org">British Ecological Society</a>.</li>
 <li>UK Managing and Sharing Research Data handbook: <a href="https://data-archive.ac.uk/media/2894/managingsharing.pdf" class="uri">https://data-archive.ac.uk/media/2894/managingsharing.pdf</a></li>
 <li>The companion website presenting material for UK Managing and Sharing Research Data handbook: <a href="https://www.ukdataservice.ac.uk/manage-data/handbook/" class="uri">https://www.ukdataservice.ac.uk/manage-data/handbook/</a></li>
 </ul>
@@ -2660,6 +2665,394 @@ brew install tree</code></pre>
 </div>
 </div>
 </div>
+<div id="repcode" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Reproducible code</h2>
+<div id="introduction-5" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Introduction</h3>
+<p>The following steps have to be fully integrated in order to produce a reproducible code:</p>
+<ul>
+<li><strong>Step 1:</strong> Establish a reproducible project workflow.</li>
+<li><strong>Step 2:</strong> Organize project for reproducibility.</li>
+<li><strong>Step 3:</strong> Ensure basic programming standards.</li>
+<li><strong>Step 4:</strong> Document and manage dependencies.</li>
+<li><strong>Step 5:</strong> Produce a reproducible report (with R Markdown).</li>
+<li><strong>Step 6:</strong> Implement a version control protocol (with Git).</li>
+<li><strong>Step 7:</strong> Ensure archiving and citation of code.</li>
+</ul>
+<p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 4 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 11.</p>
+</div>
+<div id="literature-and-web-resources-1" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Literature and web resources</h3>
+<p>This chapter is based on:</p>
+<ul>
+<li><span class="citation"><a href="#ref-RepCode" role="doc-biblioref">British Ecological Society</a> (<a href="#ref-RepCode" role="doc-biblioref">2014b</a>)</span> – <em>A Guide to Reproducible Code in Ecology and Evolution</em> published by the <a href="https://www.britishecologicalsociety.org">British Ecological Society</a>.</li>
+<li><span class="citation"><a href="#ref-wickham2014advanced" role="doc-biblioref">Wickham</a> (<a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span> – <em>Advanced R</em> by Hadley Wickham (<a href="https://adv-r.hadley.nz" class="uri">https://adv-r.hadley.nz</a>)</li>
+<li>Hadley Wickham’s R Style Guides: <a href="http://adv-r.had.co.nz/Style.html" class="uri">http://adv-r.had.co.nz/Style.html</a></li>
+<li>Absolute vs relative paths: <a href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths" class="uri">https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths</a></li>
+</ul>
+</div>
+<div id="draw-a-reproducible-project-workflow" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> “Draw” a reproducible project workflow</h3>
+<div class="figure" style="text-align: center"><span id="fig:ReproWorkflow"></span>
+<img src="Figures/Reproducible_code_workflow.png" alt="A simple reproducible project workflow." width="100%" />
+<p class="caption">
+Figure 4.3: A simple reproducible project workflow.
+</p>
+</div>
+<p>An example of a reproducible project workflow is displayed in Figure <a href="#fig:ReproWorkflow">4.3</a>. This workflow serves as a basis for the discussion presented in this chapter.</p>
+</div>
+<div id="organize-project-for-reproducibility" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Organize project for reproducibility</h3>
+<div id="the-repeatable-reproducible-analysis-workflow" class="section level4" number="4.3.4.1">
+<h4><span class="header-section-number">4.3.4.1</span> The repeatable, reproducible analysis workflow</h4>
+<p>The fundamental idea behind a robust, reproducible analysis is <strong>a clean, repeatable script-based workflow (i.e. the sequence of tasks from the start to the end of a project) linking raw data through to clean data and to final analysis outputs</strong>.</p>
+</div>
+<div id="principles-of-a-good-analysis-workflow" class="section level4" number="4.3.4.2">
+<h4><span class="header-section-number">4.3.4.2</span> Principles of a good analysis workflow</h4>
+<p>Please find below some key concepts associated with this task:</p>
+<ul>
+<li>Start your analysis from copies of your raw data.</li>
+<li>Any cleaning, merging, transforming, etc. of data should be done in scripts, not manually.</li>
+<li>Split your workflow (scripts) into logical thematic units. For example, you might separate your code into scripts that
+<ol style="list-style-type: lower-roman">
+<li>load, merge and clean data,</li>
+<li>analyse data,</li>
+<li>produce outputs like figures and tables.</li>
+</ol></li>
+<li>Eliminate code duplication by packaging up useful code into custom functions (see Step3 : Ensure basic programming standards). Make sure to <strong>comment your functions thoroughly, explaining their expected inputs and outputs (as well as the associated arguments and their options), and what they are doing and why</strong>.</li>
+<li>Document your code and data as comments in your scripts and by producing separate documentation (using the R Markdown format).</li>
+<li>Any intermediary outputs generated by your workflow should be kept separate from raw data.</li>
+<li>Keep your raw data raw.</li>
+</ul>
+</div>
+<div id="organizing-and-documenting-workflows" class="section level4" number="4.3.4.3">
+<h4><span class="header-section-number">4.3.4.3</span> Organizing and documenting workflows</h4>
+<p>The simplest and most effective way of documenting your workflow – its inputs and outputs – is through good file system organization, and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible on what a file contains, why it exists, and how it relates to other files in the project. These principles extend to all files in your project (not just scripts) and are also intimately linked to good research data management (see Chapter 4: Data management).</p>
+</div>
+<div id="file-system-structure" class="section level4" number="4.3.4.4">
+<h4><span class="header-section-number">4.3.4.4</span> File system structure</h4>
+<p>It is best to keep all files associated with a particular project in a single root directory. RStudio projects offer a great way to keep everything together in a self-contained and portable (i.e. so they can be moved from computer to computer) manner, allowing internal pathways to data and other scripts to remain valid even when shared or moved.</p>
+<div class="figure" style="text-align: center"><span id="fig:ProjStuct"></span>
+<img src="Figures/Example_project_structure.png" alt="Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered." width="100%" />
+<p class="caption">
+Figure 4.4: Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered.
+</p>
+</div>
+<p>There is no single best way to organize a file system. The key is to make sure that the structure of directories and location of files are consistent, informative and works for you. Please find below an example of basic project directory structure (Figure <a href="#fig:ProjStuct">4.4</a>):</p>
+<ul>
+<li>The <code>data</code> folder contains all input data (and metadata) used in the analysis.</li>
+<li>The <code>MS</code> folder contains the manuscript.</li>
+<li>The <code>Figures_&amp;_Tables</code> folder contains figures and tables generated by the analyses.</li>
+<li>The <code>Output</code> folder contains any type of intermediate or output files (e.g. simulation outputs, models, processed datasets, etc.). You might separate this and also have a <code>cleaned-data</code> folder.</li>
+<li>The <code>R_functions</code> folder contains R scripts with function definitions.</li>
+<li>The <code>Reports</code> folder contains RMarkdown files that document the analysis or report on results.</li>
+<li>The scripts (<code>*.R</code>) that actually do things are stored in the root directory together with the <code>README.md</code> file. If your project has too many scripts, you might consider organizing them in a separate folder.</li>
+</ul>
+</div>
+<div id="using-r-to-infer-data-structure-and-organization-of-files" class="section level4" number="4.3.4.5">
+<h4><span class="header-section-number">4.3.4.5</span> Using R to infer data structure and organization of files</h4>
+<p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions <em>list.files()</em> and <em>file.info()</em> can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure <a href="#fig:ProjStuct">4.4</a>.</p>
+<pre class="r"><code># Produce a list of all files in working directory
+# (Project-ID) together with info related to those files
+file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name = TRUE))</code></pre>
+<pre><code>##                                                         size isdir mode
+## Project_ID/Data/species_data.csv                           6 FALSE  644
+## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf  10282 FALSE  644
+## Project_ID/MS/MS_et_al.docx                            11705 FALSE  644
+## Project_ID/Output/DataStr_network.html                256368 FALSE  644
+## Project_ID/Output/DataStr_tree.pdf                      3611 FALSE  644
+## Project_ID/R_functions/check.install.pkg.R               684 FALSE  644
+## Project_ID/README.md                                      14 FALSE  644
+## Project_ID/Reports/Documentation.md                       14 FALSE  644
+## Project_ID/Scripts/01_download_data.R                     14 FALSE  644
+## Project_ID/Scripts/02_clean_data.R                        14 FALSE  644
+## Project_ID/Scripts/03_exploratory_analyses.R              14 FALSE  644
+## Project_ID/Scripts/04_fit_models.R                        14 FALSE  644
+## Project_ID/Scripts/05_generate_figures.R                  14 FALSE  644
+##                                                                     mtime
+## Project_ID/Data/species_data.csv                      2018-09-12 10:02:55
+## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf 2018-09-09 10:38:23
+## Project_ID/MS/MS_et_al.docx                           2019-09-23 11:51:58
+## Project_ID/Output/DataStr_network.html                2019-09-23 13:27:30
+## Project_ID/Output/DataStr_tree.pdf                    2019-09-23 13:04:03
+## Project_ID/R_functions/check.install.pkg.R            2019-09-10 09:54:03
+## Project_ID/README.md                                  2018-09-12 08:56:42
+## Project_ID/Reports/Documentation.md                   2018-09-12 08:56:42
+## Project_ID/Scripts/01_download_data.R                 2018-09-12 08:56:42
+## Project_ID/Scripts/02_clean_data.R                    2018-09-12 08:56:42
+## Project_ID/Scripts/03_exploratory_analyses.R          2018-09-12 08:56:42
+## Project_ID/Scripts/04_fit_models.R                    2018-09-12 08:56:42
+## Project_ID/Scripts/05_generate_figures.R              2018-09-12 08:56:42
+##                                                                     ctime
+## Project_ID/Data/species_data.csv                      2021-09-28 14:12:19
+## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf 2021-09-28 14:12:19
+## Project_ID/MS/MS_et_al.docx                           2021-09-28 14:12:19
+## Project_ID/Output/DataStr_network.html                2021-09-28 14:12:19
+## Project_ID/Output/DataStr_tree.pdf                    2021-09-28 14:12:19
+## Project_ID/R_functions/check.install.pkg.R            2021-09-28 14:12:19
+## Project_ID/README.md                                  2021-09-28 14:12:19
+## Project_ID/Reports/Documentation.md                   2021-09-28 14:12:19
+## Project_ID/Scripts/01_download_data.R                 2021-09-28 14:12:19
+## Project_ID/Scripts/02_clean_data.R                    2021-09-28 14:12:19
+## Project_ID/Scripts/03_exploratory_analyses.R          2021-09-28 14:12:19
+## Project_ID/Scripts/04_fit_models.R                    2021-09-28 14:12:19
+## Project_ID/Scripts/05_generate_figures.R              2021-09-28 14:12:19
+##                                                                     atime uid
+## Project_ID/Data/species_data.csv                      2021-09-23 01:07:26 502
+## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf 2021-09-23 01:07:26 502
+## Project_ID/MS/MS_et_al.docx                           2021-09-23 01:11:17 502
+## Project_ID/Output/DataStr_network.html                2021-09-23 01:07:47 502
+## Project_ID/Output/DataStr_tree.pdf                    2021-09-23 01:07:26 502
+## Project_ID/R_functions/check.install.pkg.R            2021-09-28 14:12:20 502
+## Project_ID/README.md                                  2021-09-28 14:12:20 502
+## Project_ID/Reports/Documentation.md                   2021-09-28 14:12:20 502
+## Project_ID/Scripts/01_download_data.R                 2021-09-28 14:12:21 502
+## Project_ID/Scripts/02_clean_data.R                    2021-09-28 14:12:21 502
+## Project_ID/Scripts/03_exploratory_analyses.R          2021-09-28 14:12:21 502
+## Project_ID/Scripts/04_fit_models.R                    2021-09-28 14:12:21 502
+## Project_ID/Scripts/05_generate_figures.R              2021-09-28 14:12:21 502
+##                                                       gid      uname grname
+## Project_ID/Data/species_data.csv                       20 svenbuerki  staff
+## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf  20 svenbuerki  staff
+## Project_ID/MS/MS_et_al.docx                            20 svenbuerki  staff
+## Project_ID/Output/DataStr_network.html                 20 svenbuerki  staff
+## Project_ID/Output/DataStr_tree.pdf                     20 svenbuerki  staff
+## Project_ID/R_functions/check.install.pkg.R             20 svenbuerki  staff
+## Project_ID/README.md                                   20 svenbuerki  staff
+## Project_ID/Reports/Documentation.md                    20 svenbuerki  staff
+## Project_ID/Scripts/01_download_data.R                  20 svenbuerki  staff
+## Project_ID/Scripts/02_clean_data.R                     20 svenbuerki  staff
+## Project_ID/Scripts/03_exploratory_analyses.R           20 svenbuerki  staff
+## Project_ID/Scripts/04_fit_models.R                     20 svenbuerki  staff
+## Project_ID/Scripts/05_generate_figures.R               20 svenbuerki  staff</code></pre>
+</div>
+<div id="pseudocode-and-associated-r-script" class="section level4" number="4.3.4.6">
+<h4><span class="header-section-number">4.3.4.6</span> Pseudocode and associated R script</h4>
+<p>The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let’s investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure <a href="#fig:plotProjStr">4.5</a>):</p>
+<ul>
+<li><strong>Step 1:</strong> Produce a list of all files in your working directory using <em>file.info</em> and <em>list.files</em> functions. The output of this code is a <code>data.frame</code></li>
+<li><strong>Step 2:</strong> Convert the <code>data.frame</code> into a <code>data.tree</code> class object. This is done using the <em>data.tree::as.Node</em> function from the <code>data.tree</code> package.</li>
+<li><strong>Step 3:</strong> Prepare and plot diagram of project structure. This is done using set of functions from <code>data.tree</code> and plotting the output using <code>DiagrammR</code> package.</li>
+</ul>
+<pre class="r"><code>### Step 1: Produce a list of all files in Project_ID
+filesInfo &lt;- file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, 
+    full.name = TRUE))
+### Step 2: Convert filesInfo into data.tree class
+myproj &lt;- data.tree::as.Node(data.frame(pathString = rownames(filesInfo)))
+# Inspect output
+print(myproj)</code></pre>
+<pre><code>##                            levelName
+## 1  Project_ID                       
+## 2   ¦--Data                         
+## 3   ¦   °--species_data.csv         
+## 4   ¦--Figures_&amp;_Tables             
+## 5   ¦   °--Fig_01_Data_lifecycle.pdf
+## 6   ¦--MS                           
+## 7   ¦   °--MS_et_al.docx            
+## 8   ¦--Output                       
+## 9   ¦   ¦--DataStr_network.html     
+## 10  ¦   °--DataStr_tree.pdf         
+## 11  ¦--R_functions                  
+## 12  ¦   °--check.install.pkg.R      
+## 13  ¦--README.md                    
+## 14  ¦--Reports                      
+## 15  ¦   °--Documentation.md         
+## 16  °--Scripts                      
+## 17      ¦--01_download_data.R       
+## 18      ¦--02_clean_data.R          
+## 19      ¦--03_exploratory_analyses.R
+## 20      ¦--04_fit_models.R          
+## 21      °--05_generate_figures.R</code></pre>
+<pre class="r"><code>### Step 3: Prepare and plot diagram of project structure (it
+### requires DiagrammeR)
+# Set general parameters related to graph
+data.tree::SetGraphStyle(myproj$root, rankdir = &quot;LR&quot;)
+# Set parameters for edges
+data.tree::SetEdgeStyle(myproj$root, arrowhead = &quot;vee&quot;, color = &quot;grey&quot;, 
+    penwidth = &quot;2px&quot;)
+# Set parameters for nodes
+data.tree::SetNodeStyle(myproj, style = &quot;rounded&quot;, shape = &quot;box&quot;)
+# Apply specific criteria only to children nodes of Scripts
+# and R_functions folders
+data.tree::SetNodeStyle(myproj$Scripts, style = &quot;box&quot;, penwidth = &quot;2px&quot;)
+data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = &quot;2px&quot;)
+# Plot diagram
+plot(myproj)</code></pre>
+<div class="figure"><span id="fig:plotProjStr"></span>
+<div id="htmlwidget-3bbdcb0276afb835a903" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3bbdcb0276afb835a903">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 4.5: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
+</p>
+</div>
+</div>
+<div id="informative-consistent-naming" class="section level4" number="4.3.4.7">
+<h4><span class="header-section-number">4.3.4.7</span> Informative, consistent naming</h4>
+<p>Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure <a href="#fig:ProjStuct">4.4</a> for examples and Chapter 4: Data management for more details).</p>
+</div>
+</div>
+<div id="ensure-basic-programming-standards" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Ensure basic programming standards</h3>
+<div id="writing-pseudocode-1" class="section level4" number="4.3.5.1">
+<h4><span class="header-section-number">4.3.5.1</span> Writing pseudocode</h4>
+<p>Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.</p>
+</div>
+<div id="writing-code-1" class="section level4" number="4.3.5.2">
+<h4><span class="header-section-number">4.3.5.2</span> Writing code</h4>
+<p>Writing clear, reproducible code has (at least) three main benefits:
+1. It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review.
+2. The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity.
+3. Having clean and reproducible code available can encourage greater uptake of new methods that you have developed.</p>
+<p>To write clear and reproducible code, it is recommended to follow the workflow depicted in Figure <a href="#fig:ReproWorkflow">4.3</a>. The following section explains each part of the workflow along with some tips for writing code. Although this workflow would be the ‘gold standard,’ just picking up some of the elements can help to make your code more effective and readable.</p>
+</div>
+<div id="style-guides" class="section level4" number="4.3.5.3">
+<h4><span class="header-section-number">4.3.5.3</span> Style guides</h4>
+<p>The foundation of writing readable code is to choose a logical and readable coding style, and to stick to it. Some key elements to consider when developing a coding style are:</p>
+<ul>
+<li>Using meaningful file names, and numbering these if they are in a sequence (see Figure <a href="#fig:ProjStuct">4.4</a> for examples and Chapter 4: Data management for more details).</li>
+</ul>
+<pre class="r"><code>### Naming files
+# Good
+fit-models.R
+utility-functions.R
+
+# Bad
+foo.r
+stuff.r</code></pre>
+<ul>
+<li>Concise and descriptive object names. Variable names should usually be nouns and function names verbs. Using names of existing variables or functions should be avoided.</li>
+</ul>
+<pre class="r"><code>### Naming objects
+# Good
+day_one
+day_1
+
+# Bad
+first_day_of_the_month
+DayOne
+dayone
+djm1</code></pre>
+<ul>
+<li>Spacing should be used to improve visual effect: use spaces around operators (<code>=</code>, <code>+</code>, <code>-</code>, <code>&lt;-</code>, etc.), and after commas (much like in a sentence).</li>
+</ul>
+<pre class="r"><code>### Spacing
+# Good
+average &lt;- mean(feet / 12 + inches, na.rm = TRUE)
+
+# Bad
+average&lt;-mean(feet/12+inches,na.rm=TRUE)</code></pre>
+<ul>
+<li>Indentation should be with two spaces, not tabs, and definitely not a mixture of tabs and spaces.</li>
+</ul>
+<pre class="r"><code>### Indentation
+long_function_name &lt;- function(a = &quot;a long argument&quot;, 
+                               b = &quot;another argument&quot;,
+                               c = &quot;another long argument&quot;) {
+  # As usual code is indented by two spaces.
+}</code></pre>
+<ul>
+<li>Assignment. Use <code>&lt;-</code>, not <code>=</code>, for assignment.</li>
+</ul>
+<pre class="r"><code>### Assignment
+# Good
+x &lt;- 5
+
+# Bad
+x = 5</code></pre>
+<p>The most important role of a style guide, however, is to introduce consistency to scripts.</p>
+</div>
+<div id="portable-code-absolute-vs.-relative-paths" class="section level4" number="4.3.5.4">
+<h4><span class="header-section-number">4.3.5.4</span> Portable code: Absolute vs. Relative paths</h4>
+<p>When working collaboratively, portability between machines is very important, i.e. will your code work on someone else’s computer? Portability is also important if code is being run on another server, for example a High Performance Cluster. One way to improve portability of code is to avoid using absolute paths and use only relative paths (see <a href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths" class="uri">https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths</a>).</p>
+<p><strong>An absolute path is one that gives the full address to a folder or file. A relative path gives the location of the file from the current working directory.</strong></p>
+<p>For example based on <code>species_data.csv</code> stored in the <code>Data</code> folder shown in Figure <a href="#fig:ProjStuct">4.4</a>:</p>
+<pre class="r"><code># Absolute path -----------------------------
+C:/Project_ID/Data/species_data.csv
+
+Project_ID = Project root folder = working directory
+
+# Relative path ------
+Data/species_data.csv</code></pre>
+<p>Relative paths are particularly useful when transferring between computers because while I may have stored my project folder in ‘C:/Project_ID/,’ you may have yours stored in ‘C:/Users/My Documents.’ Using relative paths and running from the project folder will ensure that <em>file-not-found errors</em> are avoided.</p>
+<p>RStudio is especially designed to help portability of code. For instance, you can easily set the working directory in RStudio by clicking:</p>
+<pre class="r"><code>Session &gt; Set Working Directory &gt; To Source File Location</code></pre>
+<p>or using the <em>setwd()</em> function. Please see chapter 1 for more details.</p>
+</div>
+<div id="commenting-code" class="section level4" number="4.3.5.5">
+<h4><span class="header-section-number">4.3.5.5</span> Commenting code</h4>
+<p>How often have you revisited an old script six months down the line and not been able to figure out what you had been doing? Or have taken on a script from a collaborator and not been able to understand what their code is doing and why? An easy win for making code more readable and reproducible is the liberal, and effective, use of comments. A comment is a line of code that is visible, but does not get run with the rest of the script. In R and Python this is signified by beginning the line with a #.</p>
+<p><strong>One good principle to adhere to is to comment the ‘why’ rather than the ‘what’</strong>. The code itself tells the reader what is being done, it is far more important to document the reasoning behind a particular section of code or, if it is doing something nonstandard or complicated, to take some time to describe that section of code.</p>
+<p>It is also good practice to use comments to add an overview at the beginning of a script, and commented lines of <code>---</code> to break up the script: e.g. in R</p>
+<pre class="r"><code># Load data -------</code></pre>
+</div>
+<div id="writing-functions" class="section level4" number="4.3.5.6">
+<h4><span class="header-section-number">4.3.5.6</span> Writing functions</h4>
+<p>Often when you are analyzing data, you need to repeat the same task many times. For example, you might have several files that all need loading and cleaning in the same way, or you might need to perform the same analysis for multiple species or parameters. The best way (by far) to handle those tasks is to write functions and store those in a specific folder (e.g. <code>R_functions</code> in <a href="#fig:ProjStuct">4.4</a>). Those functions will be loaded into the R environment (and therefore made available to users) by using the <code>source()</code> function, which will be placed at the top of your R script. Please see Chapter 1 part D for more details.</p>
+</div>
+<div id="testing-scientific-code" class="section level4" number="4.3.5.7">
+<h4><span class="header-section-number">4.3.5.7</span> Testing scientific code</h4>
+<p>In the experimental sciences, rigorous testing is applied to ensure that results are accurate, reproducible and reliable. Testing will show that the experimental setup is doing what it is meant to do and will quantify any systematic biases. Results of experiments will not be trusted without such tests; why should your code be any different? Testing scientific code allows you to be sure that it is working as intended and to understand and quantify any limitations of the code. Using tests can also help to speed up the code development process by finding errors early on.</p>
+<p>Although the instructor recognizes the importance of establishing protocols, those tests will be especially relevant if you were to design R packages. However, the instructor would recommend informal testing by loading functions that have been written by the students and running <em>ad hoc</em> tests in the command line to make sure that they perform as expected.</p>
+</div>
+</div>
+<div id="document-and-manage-dependencies" class="section level3" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Document and manage dependencies</h3>
+<p>Reproducibility is also about making sure someone else can re-use your code to obtain the same results as you (see <a href="#appendix-1">Appendix 1</a> for more details).</p>
+<p>For someone else to be able to reproduce the results included in your report, you need to provide more than the code and the data. You also need to document the exact versions of all the packages, libraries, and software you used, and potentially your operating system as well as your hardware.</p>
+<p>R itself is very stable, and the core team of developers takes backward compatibility (old code works with recent versions of R) very seriously. However, default values in some functions change, and new functions get introduced regularly. If you wrote your code on a recent version of R and give it to someone who has not upgraded recently, they may not be able to run your code. Code written for one version of a package may produce very different results with a more recent version.</p>
+<div id="reporting-r-packages-and-versions" class="section level4" number="4.3.6.1">
+<h4><span class="header-section-number">4.3.6.1</span> Reporting R packages and versions</h4>
+<p>With R, the simplest (but a useful and important) approach to document your dependencies is to report the output of <code>sessionInfo()</code> (or <code>devtools::session_info()</code>). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone wants to recreate your analysis, they will know which packages they will need to install. Please see <a href="#appendix-2">Appendix 2</a> for more details.</p>
+<p>For instance, here is the output of <code>sessionInfo()</code> showing the R version and packages that I used to create this document:</p>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Mojave 10.14.6
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] DiagrammeR_1.0.6.1   data.tree_1.0.0      kableExtra_1.2.1    
+##  [4] dplyr_1.0.2          kfigr_1.2            devtools_2.3.2      
+##  [7] usethis_2.0.0        formatR_1.7          knitcitations_1.0.10
+## [10] bookdown_0.21        rmarkdown_2.6        knitr_1.30          
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_1.0.6         lubridate_1.7.9.2  tidyr_1.1.2        prettyunits_1.1.1 
+##  [5] ps_1.5.0           visNetwork_2.0.9   assertthat_0.2.1   rprojroot_2.0.2   
+##  [9] digest_0.6.27      R6_2.5.0           plyr_1.8.6         evaluate_0.14     
+## [13] httr_1.4.2         highr_0.8          pillar_1.4.7       rlang_0.4.10      
+## [17] rstudioapi_0.13    callr_3.5.1        desc_1.2.0         webshot_0.5.2     
+## [21] RefManageR_1.2.12  stringr_1.4.0      htmlwidgets_1.5.3  munsell_0.5.0     
+## [25] compiler_3.6.1     xfun_0.20          pkgconfig_2.0.3    pkgbuild_1.2.0    
+## [29] htmltools_0.5.0    tidyselect_1.1.0   tibble_3.0.4       fansi_0.4.1       
+## [33] viridisLite_0.3.0  crayon_1.3.4       withr_2.3.0        jsonlite_1.7.2    
+## [37] lifecycle_0.2.0    magrittr_2.0.1     scales_1.1.1       bibtex_0.4.2.3    
+## [41] cli_2.2.0          stringi_1.5.3      fs_1.5.0           remotes_2.2.0     
+## [45] testthat_3.0.1     xml2_1.3.2         ellipsis_0.3.1     vctrs_0.3.6       
+## [49] generics_0.1.0     RColorBrewer_1.1-2 tools_3.6.1        glue_1.4.2        
+## [53] purrr_0.3.4        processx_3.4.5     pkgload_1.1.0      yaml_2.2.1        
+## [57] colorspace_2.0-0   sessioninfo_1.1.1  rvest_0.3.6        memoise_1.1.0</code></pre>
+</div>
+<div id="using-r-packages-to-help-managing-dependencies-and-recreate-setup" class="section level4" number="4.3.6.2">
+<h4><span class="header-section-number">4.3.6.2</span> Using R packages to help managing dependencies and recreate setup</h4>
+<p>This will not be covered in this class, but it is worth noting that there are at least two R packages allowing to better manage dependencies and recreate your setup. Those packages are:</p>
+<ul>
+<li><em>checkpoint</em>: <a href="https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html" class="uri">https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html</a></li>
+<li><em>packrat</em>: <a href="https://rstudio.github.io/packrat/" class="uri">https://rstudio.github.io/packrat/</a></li>
+</ul>
+<p>The instructor expects students to discuss with their supervisors to identify if those packages are potentially useful for their projects.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="references" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> References</h1>
@@ -2668,7 +3061,10 @@ brew install tree</code></pre>
 <span class="smallcaps">Baker, M.</span> 2016. 1,500 scientists lift the lid on reproducibility. <em>Nature</em> 533: 452–454. Available at: <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
 </div>
 <div id="ref-DataMan" class="csl-entry">
-<span class="smallcaps">British Ecological Society</span> ed. 2014. A guide to data management in ecology and evolution. British Ecological Society.
+<span class="smallcaps">British Ecological Society</span> ed. 2014a. A guide to data management in ecology and evolution. British Ecological Society.
+</div>
+<div id="ref-RepCode" class="csl-entry">
+<span class="smallcaps">British Ecological Society</span> ed. 2014b. A guide to reproducible code in ecology and evolution. British Ecological Society.
 </div>
 <div id="ref-Kerr1998" class="csl-entry">
 <span class="smallcaps">Kerr, N.L.</span> 1998. HARKing: Hypothesizing after the results are known. <em>Personality and Social Psychology Review</em> 2: 196–217. Available at:<a href=" https://doi.org/10.1207/s15327957pspr0203_4"> https://doi.org/10.1207/s15327957pspr0203_4</a>.
@@ -2690,6 +3086,9 @@ brew install tree</code></pre>
 </div>
 <div id="ref-Troudet2018" class="csl-entry">
 <span class="smallcaps">Troudet, J.</span>, <span class="smallcaps">R. Vignes-Lebbe</span>, <span class="smallcaps">P. Grandcolas</span>, and <span class="smallcaps">F. Legendre</span>. 2018. The increasing disconnection of primary biodiversity data from specimens: How does it happen and how to handle it? <em>Systematic Biology</em>syy044. Available at: <a href="http://dx.doi.org/10.1093/sysbio/syy044">http://dx.doi.org/10.1093/sysbio/syy044</a>.
+</div>
+<div id="ref-wickham2014advanced" class="csl-entry">
+<span class="smallcaps">Wickham, H.</span> 2014. <span>Advanced R</span>. Taylor &amp; Francis. Available at: <a href="https://books.google.com/books?id=PFHFNAEACAAJ">https://books.google.com/books?id=PFHFNAEACAAJ</a>.
 </div>
 <div id="ref-bookdown2016" class="csl-entry">
 <span class="smallcaps">Xie, Y.</span> 2016. Bookdown: Authoring books and technical documents with <span>R</span> markdown. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
@@ -2720,47 +3119,52 @@ Documents for R</em>. R package version 2.6. 2020. &lt;URL:
 <p>[2] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
 R package version 1.0.10. 2019. &lt;URL:
 <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
-<p>[3] M. C. Koohafkan. <em>kfigr: Integrated Code Chunk Anchoring and
+<p>[3] C. Glur. <em>data.tree: General Purpose Hierarchical Data Structure</em>.
+R package version 1.0.0. 2020. &lt;URL: <a href="http://github.com/gluc/data.tree" class="uri">http://github.com/gluc/data.tree</a>&gt;.</p>
+<p>[4] R. Iannone. <em>DiagrammeR: Graph/Network Visualization</em>. R package
+version 1.0.6.1. 2020. &lt;URL:
+<a href="https://github.com/rich-iannone/DiagrammeR" class="uri">https://github.com/rich-iannone/DiagrammeR</a>&gt;.</p>
+<p>[5] M. C. Koohafkan. <em>kfigr: Integrated Code Chunk Anchoring and
 Referencing for R Markdown Documents</em>. R package version 1.2. 2015.
 &lt;URL: <a href="https://github.com/mkoohafkan/kfigr" class="uri">https://github.com/mkoohafkan/kfigr</a>&gt;.</p>
-<p>[4] R Core Team. <em>R: A Language and Environment for Statistical
+<p>[6] R Core Team. <em>R: A Language and Environment for Statistical
 Computing</em>. R Foundation for Statistical Computing. Vienna, Austria,
 2019. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
-<p>[5] H. Wickham and J. Bryan. <em>usethis: Automate Package and Project
+<p>[7] H. Wickham and J. Bryan. <em>usethis: Automate Package and Project
 Setup</em>. R package version 2.0.0. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>&gt;.</p>
-<p>[6] H. Wickham, R. François, L. Henry, et al. <em>dplyr: A Grammar of
+<p>[8] H. Wickham, R. François, L. Henry, et al. <em>dplyr: A Grammar of
 Data Manipulation</em>. R package version 1.0.2. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>&gt;.</p>
-<p>[7] H. Wickham, J. Hester, and W. Chang. <em>devtools: Tools to Make
+<p>[9] H. Wickham, J. Hester, and W. Chang. <em>devtools: Tools to Make
 Developing R Packages Easier</em>. R package version 2.3.2. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=devtools" class="uri">https://CRAN.R-project.org/package=devtools</a>&gt;.</p>
-<p>[8] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
+<p>[10] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
 Markdown</em>. ISBN 978-1138700109. Boca Raton, Florida: Chapman and
 Hall/CRC, 2016. &lt;URL: <a href="https://github.com/rstudio/bookdown" class="uri">https://github.com/rstudio/bookdown</a>&gt;.</p>
-<p>[9] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
+<p>[11] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
 Markdown</em>. R package version 0.21. 2020. &lt;URL:
 <a href="https://github.com/rstudio/bookdown" class="uri">https://github.com/rstudio/bookdown</a>&gt;.</p>
-<p>[10] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
+<p>[12] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
 978-1498716963. Boca Raton, Florida: Chapman and Hall/CRC, 2015. &lt;URL:
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>&gt;.</p>
-<p>[11] Y. Xie. <em>formatR: Format R Code Automatically</em>. R package version
+<p>[13] Y. Xie. <em>formatR: Format R Code Automatically</em>. R package version
 1.7. 2019. &lt;URL: <a href="https://github.com/yihui/formatR" class="uri">https://github.com/yihui/formatR</a>&gt;.</p>
-<p>[12] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
+<p>[14] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
 R.” In: <em>Implementing Reproducible Computational Research</em>. Ed. by V.
 Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and
 Hall/CRC, 2014. &lt;URL:
 <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
-<p>[13] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
+<p>[15] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
 Generation in R</em>. R package version 1.30. 2020. &lt;URL:
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>&gt;.</p>
-<p>[14] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
+<p>[16] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
 Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
 2018. &lt;URL: <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>&gt;.</p>
-<p>[15] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
+<p>[17] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
 9780367563837. Boca Raton, Florida: Chapman and Hall/CRC, 2020. &lt;URL:
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>&gt;.</p>
-<p>[16] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
+<p>[18] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>&gt;.</p>
 </div>
@@ -2782,26 +3186,27 @@ Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] kableExtra_1.2.1     dplyr_1.0.2          kfigr_1.2           
-##  [4] devtools_2.3.2       usethis_2.0.0        formatR_1.7         
-##  [7] knitcitations_1.0.10 bookdown_0.21        rmarkdown_2.6       
-## [10] knitr_1.30          
+##  [1] DiagrammeR_1.0.6.1   data.tree_1.0.0      kableExtra_1.2.1    
+##  [4] dplyr_1.0.2          kfigr_1.2            devtools_2.3.2      
+##  [7] usethis_2.0.0        formatR_1.7          knitcitations_1.0.10
+## [10] bookdown_0.21        rmarkdown_2.6        knitr_1.30          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.1.0  xfun_0.20         remotes_2.2.0     purrr_0.3.4      
-##  [5] colorspace_2.0-0  generics_0.1.0    vctrs_0.3.6       testthat_3.0.1   
-##  [9] viridisLite_0.3.0 htmltools_0.5.0   yaml_2.2.1        rlang_0.4.10     
-## [13] pkgbuild_1.2.0    pillar_1.4.7      glue_1.4.2        withr_2.3.0      
-## [17] sessioninfo_1.1.1 lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0    
-## [21] munsell_0.5.0     rvest_0.3.6       memoise_1.1.0     evaluate_0.14    
-## [25] callr_3.5.1       ps_1.5.0          fansi_0.4.1       highr_0.8        
-## [29] Rcpp_1.0.6        scales_1.1.1      desc_1.2.0        pkgload_1.1.0    
-## [33] webshot_0.5.2     jsonlite_1.7.2    fs_1.5.0          digest_0.6.27    
-## [37] stringi_1.5.3     processx_3.4.5    rprojroot_2.0.2   bibtex_0.4.2.3   
-## [41] cli_2.2.0         tools_3.6.1       magrittr_2.0.1    tibble_3.0.4     
-## [45] RefManageR_1.2.12 crayon_1.3.4      pkgconfig_2.0.3   ellipsis_0.3.1   
-## [49] xml2_1.3.2        prettyunits_1.1.1 lubridate_1.7.9.2 assertthat_0.2.1 
-## [53] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          compiler_3.6.1</code></pre>
+##  [1] Rcpp_1.0.6         lubridate_1.7.9.2  tidyr_1.1.2        prettyunits_1.1.1 
+##  [5] ps_1.5.0           visNetwork_2.0.9   assertthat_0.2.1   rprojroot_2.0.2   
+##  [9] digest_0.6.27      R6_2.5.0           plyr_1.8.6         evaluate_0.14     
+## [13] httr_1.4.2         highr_0.8          pillar_1.4.7       rlang_0.4.10      
+## [17] rstudioapi_0.13    callr_3.5.1        desc_1.2.0         webshot_0.5.2     
+## [21] RefManageR_1.2.12  stringr_1.4.0      htmlwidgets_1.5.3  munsell_0.5.0     
+## [25] compiler_3.6.1     xfun_0.20          pkgconfig_2.0.3    pkgbuild_1.2.0    
+## [29] htmltools_0.5.0    tidyselect_1.1.0   tibble_3.0.4       fansi_0.4.1       
+## [33] viridisLite_0.3.0  crayon_1.3.4       withr_2.3.0        jsonlite_1.7.2    
+## [37] lifecycle_0.2.0    magrittr_2.0.1     scales_1.1.1       bibtex_0.4.2.3    
+## [41] cli_2.2.0          stringi_1.5.3      fs_1.5.0           remotes_2.2.0     
+## [45] testthat_3.0.1     xml2_1.3.2         ellipsis_0.3.1     vctrs_0.3.6       
+## [49] generics_0.1.0     RColorBrewer_1.1-2 tools_3.6.1        glue_1.4.2        
+## [53] purrr_0.3.4        processx_3.4.5     pkgload_1.1.0      yaml_2.2.1        
+## [57] colorspace_2.0-0   sessioninfo_1.1.1  rvest_0.3.6        memoise_1.1.0</code></pre>
 </div>
 <div class="footnotes">
 <hr />
