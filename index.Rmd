@@ -121,11 +121,11 @@ Part 1 aims at providing students with key theoretical knowledge on this topic a
 **PART 1: The Big Picture**
 
 1. **Introduction: The reproducibility crisis & prospects to tackle it!**
-   - Chapter 1: Introduction to R, RStudio & Markdown (incl. referencing).
+   - Chapter 1: Introduction to R, RStudio, Markdown (incl. referencing) & User-defined functions.
    - Chapter 2: The reproducibility crisis.
    - Chapter 3: A road map to implement reproducible science in Ecology & Evolution.
 2. **Getting started: Overview of data workflow & used software**
-   - Chapter 4: Data management, Reproducible code & R user-defined functions.
+   - Chapter 4: Data management, Reproducible code.
    - Chapter 5: Getting published & Peer review.
   
 <a name="PART2"></a>**PART 2: Bioinformatics for Reproducible Science** 
