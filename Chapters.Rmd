@@ -2195,6 +2195,10 @@ The code presented above could be at the core of a user-defined function that wo
 ##### R code and associated outputs
 
 ```{r plotProjStr, echo=T, eval=T, fig.cap="Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.", fig.dim=c(6,6)}
+### Load R packages
+library(data.tree)
+library(DiagrammeR)
+
 ### Step 1: Produce a list of all files in Project_ID
 filesInfo <- file.info(list.files(path="Project_ID", recursive = TRUE, full.name = TRUE))
 
