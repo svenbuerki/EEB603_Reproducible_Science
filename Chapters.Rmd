@@ -2229,15 +2229,15 @@ plot(myproj)
 
 Finally, the R DiagrammeR package sadly doesn't allow to easily save the graph into a file (step 4) using e.g. the *pdf()* and *dev.off()* functions, but this task can be done in RStudio as follows:
 
-1. The diagram outputted by step 3 is displayed in the `Plots` window (in the bottom right corner) and can be exported by clicking on the ![](Figures/Export_button.png) button and select `Save as Image...` as shown in Figure \@ref(fig:ExportDiag1).
+1. The diagram outputted by step 3 is displayed in the `Viewer` window (in the bottom right panel) and can be exported by clicking on the ![](Figures/Export_button.png) button and select `Save as Image...` as shown in Figure \@ref(fig:ExportDiag1).
 
-```{r ExportDiag1, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to export the diagram in RStudio.", out.width = '100%'}
+```{r ExportDiag1, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to export the diagram in RStudio.", out.width = '60%'}
 knitr::include_graphics("Figures/Save_DiagrammR.png")
 ```
 
 2. Once you have executed the latter step, a window will open allowing you to select the image format, directory and file name as shown in Figure \@ref(fig:ExportDiag2). 
 
-```{r ExportDiag2, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to save the diagram in RStudio.", out.width = '100%'}
+```{r ExportDiag2, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to save the diagram in RStudio.", out.width = '60%'}
 knitr::include_graphics("Figures/Save_DiagrammR_2.png")
 ```
 
