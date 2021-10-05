@@ -2187,10 +2187,11 @@ The code presented above could be at the core of a user-defined function that wo
 - **Step 1:** Produce a list of all files in your working directory using *file.info* and *list.files* functions. The output of this code is a `data.frame`
 - **Step 2:** Convert the `data.frame` into a `data.tree` class object. This is done using the *data.tree::as.Node* function from the `data.tree` package.
 - **Step 3:** Prepare and plot diagram of project structure. This is done using set of functions from `data.tree` and plotting the output using `DiagrammR` package.
+- **Step 4:** Save the output from step 3.
 
 **WARNING:** Prior to starting the exercise, please go on the shared Google Drive and download the `Project_ID` folder at this path: 
 
-`Reproducible_Science > Exercises > Chapter_5 > Project_ID`
+`Reproducible_Science > Exercises > Chapter_4 > Project_ID`
 
 ##### R code and associated outputs
 
@@ -2224,6 +2225,20 @@ data.tree::SetNodeStyle(myproj$R_functions, style = "box", penwidth = "2px")
 
 #Plot diagram
 plot(myproj)
+```
+
+Finally, the R DiagrammeR package sadly doesn't allow to easily save the graph into a file (step 4) using e.g. the *pdf()* and *dev.off()* functions, but this task can be done in RStudio as follows:
+
+1. The diagram outputted by step 3 is displayed in the `Plots` window (in the bottom right corner) and can be exported by clicking on the ![](Figures/Export_button.png) button and select `Save as Image...` as shown in Figure \@ref(fig:ExportDiag1).
+
+```{r ExportDiag1, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to export the diagram in RStudio.", out.width = '100%'}
+knitr::include_graphics("Figures/Save_DiagrammR.png")
+```
+
+2. Once you have executed the latter step, a window will open allowing you to select the image format, directory and file name as shown in Figure \@ref(fig:ExportDiag2). 
+
+```{r ExportDiag2, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to save the diagram in RStudio.", out.width = '100%'}
+knitr::include_graphics("Figures/Save_DiagrammR_2.png")
 ```
 
 #### Informative, consistent naming
