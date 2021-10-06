@@ -2241,6 +2241,10 @@ knitr::include_graphics("Figures/Save_DiagrammR.png")
 knitr::include_graphics("Figures/Save_DiagrammR_2.png")
 ```
 
+To find out more about your options to export/save DiagrammeR graphs please visit this website:
+
+https://rich-iannone.github.io/DiagrammeR/io.html
+
 #### Informative, consistent naming
 
 Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure \@ref(fig:ProjStuct) for examples and Chapter 4: Data management for more details).
