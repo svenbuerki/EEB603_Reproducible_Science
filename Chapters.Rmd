@@ -2780,7 +2780,7 @@ knitr::include_graphics("Figures/Structure_files.png")
 knitr::include_graphics("Figures/Structure_files_2.png")
 ```
 
-5. Start writing your article
+6. Start writing your article
   - Open `Submission_PNAS.Rmd` and update the YAML metadata section with information on authors, your abstract, summary and keywords (see Figure \@ref(fig:YAML2)).
 
 ```{r YAML2, echo=FALSE, fig.cap="Update YAML metadata section with information on authors, your abstract, summary and keywords.", fig.align = 'center', out.width = '100%'}
@@ -2788,7 +2788,7 @@ knitr::include_graphics("Figures/YAML_section.png")
 ```
   - Write your manuscript by following the journal's structure. You can take advantage of the R Markdown language in your manuscript (e.g. include R code chunks and outputs) and those will be converted by *knitr* and *rticles* packages during the compilation procedure.
 
-4. Compile your document and use both `.pdf` and `.tex` files to submit your article (see Figure \@ref(fig:Subm)). The output files will be saved in your project folder.
+7. Compile your document and use both `.pdf` and `.tex` files to submit your article (see Figure \@ref(fig:Subm)). The output files will be saved in your project folder.
 
 ```{r Subm, echo=FALSE, fig.cap="Snapshot of the procedure to knit the document.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/Compiled_file.png")
