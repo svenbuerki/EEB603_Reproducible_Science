@@ -2419,6 +2419,8 @@ This chapter is subdivided into two parts as follows:
 
 ## Getting published {#getpub}
 
+The presentation slides for Chapter 5 - part A can be downloaded [here](Chapters_files/Chapter_5_Getting_published.pdf).
+
 ### Why publish?
 
 **Publishing research results is the one thing that unites scientists across all disciplines**, and it is a necessary part of the scientific process. You can have the best ideas in the world, but if you don't communicate them clearly enough to be published, your work won't be acknowledged by the scientific community.
