@@ -2714,7 +2714,7 @@ As mentioned above, many journals support the LaTeX format (`.tex`) for manuscri
 
 ### The *rticles* package
 
-Submitting scientific manuscripts written in R Markdown is still challenging; however the R [*rticles*](https://cran.r-project.org/web/packages/rticles/index.html) package was designed to simplify the creation of documents that conform to submission standards for academic journals[see @R-rticles]. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:
+Submitting scientific manuscripts written in R Markdown is still challenging; however the R [*rticles*](https://cran.r-project.org/web/packages/rticles/index.html) package was designed to simplify the creation of documents that conform to submission standards for academic journals [see @R-rticles]. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:
 
 - Biometrics articles
 - Elsevier journal submissions
@@ -2748,7 +2748,7 @@ Tools -> Install Packages...
 Then, type "rticles" in the prompted window to install package. 
 ```
 
-  - If you wish to install the development version from GitHub (which often contains new article formats), you can do this [note that this code uses a function from the *remotes* package; @R-remotes]:
+  - If you wish to install the development version from GitHub (which often contains new article formats), you can do this [note that this code uses a function from the *remotes* package, @R-remotes]:
   
 ```{r, eval = FALSE}
 remotes::install_github("rstudio/rticles")
@@ -2760,7 +2760,7 @@ remotes::install_github("rstudio/rticles")
 File -> New File -> R Markdown... 
 ```
 
-3. In the `New R Markdown` window, click on `From Template` in the left panel and select the journal style that you would like to follow for your article (here PNAS Journal Article; see Figure \@ref(fig:RMarkTemplate)). Before pushing the `OK` button, provide a name for your project and set a location where the project will be saved (\@ref(fig:RMarkTemplate)). 
+3. In the `New R Markdown` window, click on `From Template` in the left panel and select the journal style that you would like to follow for your article (here PNAS Journal Article; see Figure \@ref(fig:RMarkTemplate)). Before pushing the `OK` button, provide a name for your project and set a location where the project will be saved (see Figure \@ref(fig:RMarkTemplate)). 
 
 ```{r RMarkTemplate, echo=FALSE, fig.cap="R Markdown window allowing to select templates following journal styles.", fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("Figures/New_RMarkdown_window.png")
