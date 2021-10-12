@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2021-10-10" />
+<meta name="date" content="2021-10-12" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -415,7 +415,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2021-10-10</h4>
+<h4 class="date">2021-10-12</h4>
 
 </div>
 
@@ -747,7 +747,7 @@ Figure 1.6: Example of code chunks.
     &quot;kableExtra&quot;, &quot;dplyr&quot;, &quot;magrittr&quot;, &quot;prettydoc&quot;, &quot;htmltools&quot;, 
     &quot;knitcitations&quot;))</code></pre>
 </div>
-<div id="tex-distribution" class="section level4" number="1.3.3.2">
+<div id="texdistr" class="section level4" number="1.3.3.2">
 <h4><span class="header-section-number">1.3.3.2</span> TeX distribution</h4>
 <p>If you are planning to create <code>PDF</code> documents, you will need to install a <code>TeX</code> distribution on your computers. Please refer to this website for more details: <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a></p>
 <div id="set-miktex-for-compiling-pdf-documents-on-windows-computers" class="section level5" number="1.3.3.2.1">
@@ -760,7 +760,7 @@ Figure 1.6: Example of code chunks.
 </ol>
 <ol style="list-style-type: lower-alpha">
 <li>Clicking on <code>Settings</code> tab.</li>
-<li>Ticking the radio button <code>Always install missing packages on-the-fly</code> under the “You can choose whether missing packages are to be installed on-the-fly” header ().</li>
+<li>Ticking the radio button <code>Always install missing packages on-the-fly</code> under the “You can choose whether missing packages are to be installed on-the-fly” header (see Figure <a href="#fig:MikTex">1.7</a>).</li>
 </ol>
 <ol start="3" style="list-style-type: decimal">
 <li>Restarting <code>RStudio</code> and you should be able to knit <code>pdf</code> documents.</li>
@@ -2802,19 +2802,19 @@ file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name 
 ## Project_ID/Scripts/04_fit_models.R                    2021-09-28 14:12:19
 ## Project_ID/Scripts/05_generate_figures.R              2021-09-28 14:12:19
 ##                                                                     atime uid
-## Project_ID/Data/species_data.csv                      2021-10-09 00:53:29 502
-## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf 2021-10-09 00:53:29 502
-## Project_ID/MS/MS_et_al.docx                           2021-10-09 00:57:41 502
-## Project_ID/Output/DataStr_network.html                2021-10-09 00:54:17 502
-## Project_ID/Output/DataStr_tree.pdf                    2021-10-09 00:53:29 502
-## Project_ID/R_functions/check.install.pkg.R            2021-10-09 00:53:29 502
-## Project_ID/README.md                                  2021-10-09 00:53:29 502
-## Project_ID/Reports/Documentation.md                   2021-10-09 00:53:29 502
-## Project_ID/Scripts/01_download_data.R                 2021-10-09 00:53:29 502
-## Project_ID/Scripts/02_clean_data.R                    2021-10-09 00:53:29 502
-## Project_ID/Scripts/03_exploratory_analyses.R          2021-10-09 00:53:29 502
-## Project_ID/Scripts/04_fit_models.R                    2021-10-09 00:53:29 502
-## Project_ID/Scripts/05_generate_figures.R              2021-10-09 00:53:29 502
+## Project_ID/Data/species_data.csv                      2021-10-11 00:45:19 502
+## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf 2021-10-11 00:45:19 502
+## Project_ID/MS/MS_et_al.docx                           2021-10-11 00:48:33 502
+## Project_ID/Output/DataStr_network.html                2021-10-11 00:46:10 502
+## Project_ID/Output/DataStr_tree.pdf                    2021-10-11 00:45:19 502
+## Project_ID/R_functions/check.install.pkg.R            2021-10-12 07:52:53 502
+## Project_ID/README.md                                  2021-10-11 00:45:19 502
+## Project_ID/Reports/Documentation.md                   2021-10-11 00:45:19 502
+## Project_ID/Scripts/01_download_data.R                 2021-10-12 07:52:53 502
+## Project_ID/Scripts/02_clean_data.R                    2021-10-12 07:52:53 502
+## Project_ID/Scripts/03_exploratory_analyses.R          2021-10-12 07:52:53 502
+## Project_ID/Scripts/04_fit_models.R                    2021-10-12 07:52:53 502
+## Project_ID/Scripts/05_generate_figures.R              2021-10-12 07:52:53 502
 ##                                                       gid      uname grname
 ## Project_ID/Data/species_data.csv                       20 svenbuerki  staff
 ## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf  20 svenbuerki  staff
@@ -2891,8 +2891,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span id="fig:plotProjStr"></span>
-<div id="htmlwidget-67e7248faca177490a45" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-67e7248faca177490a45">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cca4cd77345a27616b90" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cca4cd77345a27616b90">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 4.5: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3347,6 +3347,7 @@ Data/species_data.csv</code></pre>
 </div>
 <div id="writpub" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Writing papers in R Markdown</h2>
+<p>The presentation slides for Chapter 5 - part B can be downloaded <a href="Chapters_files/Chapter_5_writing_papers.pdf">here</a>.</p>
 <div id="literature-and-web-resources-3" class="section level3" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Literature and web resources</h3>
 <p>This chapter is mostly based on the following books and web resources:</p>
@@ -3354,19 +3355,23 @@ Data/species_data.csv</code></pre>
 <li><p><strong>Bookdown ebook on writing scientific papers:</strong> <a href="https://bookdown.org/yihui/rmarkdown/journals.html" class="uri">https://bookdown.org/yihui/rmarkdown/journals.html</a></p></li>
 <li><p><strong>A blog on “Writing papers in R Markdown” by Francisco Rodriguez-Sanchez:</strong> <a href="https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown" class="uri">https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown</a></p></li>
 <li><p><strong>rmdTemplates R package GitHub repository:</strong> <a href="https://github.com/Pakillo/rmdTemplates" class="uri">https://github.com/Pakillo/rmdTemplates</a></p></li>
-<li><p><strong>rcticles R package GitHub repository:</strong> <a href="https://github.com/rstudio/rticles" class="uri">https://github.com/rstudio/rticles</a></p></li>
+<li><p><strong>rticles R package GitHub repository:</strong> <a href="https://github.com/rstudio/rticles" class="uri">https://github.com/rstudio/rticles</a></p></li>
 </ul>
 </div>
-<div id="challenges-to-writing-publications-in-r-markdown" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Challenges to writing publications in R Markdown</h3>
+<div id="software-requirements" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Software requirements</h3>
+<p>To apply the approach described below make sure that you have a Tex distribution installed on your computer. More information on this topic is available <a href="#texdistr">here</a>. You will also need to install the R <em>rticles</em> package as demonstrated <a href="#rticlespkg">here</a>.</p>
+</div>
+<div id="challenges-to-writing-publications-in-r-markdown" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Challenges to writing publications in R Markdown</h3>
 <p>Traditionally, journals are accepting manuscripts submitted in either Word (<code>.doc</code>) or LaTex (<code>.tex</code>) formats. In addition, most journals are requesting figures to be submitted as separate files (in e.g. <code>.tiff</code> or <code>.eps</code> formats). Online submission platforms are collating your different files to produce a <code>.pdf</code> document, which is shared with reviewers for evaluation. In this context, although the <code>.Rmd</code> format is growing in popularity (due to its ability to “mesh” data analyses with data communication), this format is technically currently not accepted by journals. In this document, we are discussing ways that have been developed to circumvent this issue and allow using the approach implemented in R Markdown for journal submissions.</p>
 </div>
-<div id="solution-develop-templates-producing-latex-files-matching-journal-requirements" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Solution: Develop templates producing LaTex files matching journal requirements!</h3>
+<div id="solution-develop-templates-producing-latex-files-matching-journal-requirements" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Solution: Develop templates producing LaTex files matching journal requirements!</h3>
 <p>As mentioned above, many journals support the LaTeX format (<code>.tex</code>) for manuscript submissions. While you can convert R Markdown (<code>.Rmd</code>) to LaTeX, different journals have different typesetting requirements and LaTeX styles. <strong>The solution is to develop scripts converting R Markdown files into LaTex files, which are meeting journal requirements.</strong></p>
 </div>
-<div id="the-rticles-package" class="section level3" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> The <em>rticles</em> package</h3>
+<div id="rticlespkg" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> The <em>rticles</em> package</h3>
 <p>Submitting scientific manuscripts written in R Markdown is still challenging; however the R <a href="https://cran.r-project.org/web/packages/rticles/index.html"><em>rticles</em></a> package was designed to simplify the creation of documents that conform to submission standards for academic journals <span class="citation">(see <a href="#ref-R-rticles" role="doc-biblioref">Allaire et al., 2021</a>)</span>. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:</p>
 <ul>
 <li>Biometrics articles</li>
@@ -3382,8 +3387,8 @@ Data/species_data.csv</code></pre>
 <li>Taylor &amp; Francis articles</li>
 </ul>
 <p>An understanding of LaTeX is recommended, but not essential in order to use this package. R Markdown templates may sometimes inevitably contain LaTeX code, but usually we can use the simpler R Markdown and <em>knitr</em> function to produce elements like figures, tables, and math equations.</p>
-<div id="install-rticles-and-use-templates-to-write-publications" class="section level4" number="5.3.4.1">
-<h4><span class="header-section-number">5.3.4.1</span> Install <em>rticles</em> and use templates to write publications</h4>
+<div id="install-rticles-and-use-templates-to-write-publications" class="section level4" number="5.3.5.1">
+<h4><span class="header-section-number">5.3.5.1</span> Install <em>rticles</em> and use templates to write publications</h4>
 <ol style="list-style-type: decimal">
 <li>Install the <em>rticles</em> package:</li>
 </ol>
@@ -3463,16 +3468,47 @@ Figure 5.5: Snapshot of the procedure to knit the document.
 </p>
 </div>
 </div>
-<div id="exercise" class="section level4" number="5.3.4.2">
-<h4><span class="header-section-number">5.3.4.2</span> Exercise</h4>
+<div id="exercise" class="section level4" number="5.3.5.2">
+<h4><span class="header-section-number">5.3.5.2</span> Exercise</h4>
 <p>To get familiar with this procedure, please practice by applying the above approach to different journal templates by favoring those where you might be submitting to.</p>
 <p>Enjoy writing scientific publications in R Markdown!</p>
 </div>
 </div>
 </div>
 </div>
-<div id="references-1" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> References</h1>
+<div id="chapter-6" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Chapter 6</h1>
+<p>Gathering Data with R</p>
+<ol style="list-style-type: decimal">
+<li><p>R project:
+<a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects" class="uri">https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects</a></p></li>
+<li><p>Importing locally stored data sets</p></li>
+</ol>
+<ul>
+<li>Plain-text format:
+<ul>
+<li>csv</li>
+</ul></li>
+<li>Non-plain text formats:
+<ul>
+<li>xls/xlsx, S, SPSS, etc.</li>
+</ul></li>
+<li>Convert non-plain-text to plain text formats
+<ul>
+<li>Example with xls to csv</li>
+</ul></li>
+<li>Open csv from zip files (witout uncompressing): <a href="https://stackoverflow.com/questions/12460938/r-reading-in-a-zip-data-file-without-unzipping-it" class="uri">https://stackoverflow.com/questions/12460938/r-reading-in-a-zip-data-file-without-unzipping-it</a></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Importing data sets form the internet</li>
+</ol>
+<ul>
+<li>Non-secure URLs (maybe not or just mention that can be open with read.table())</li>
+<li>Secure URLs</li>
+</ul>
+</div>
+<div id="references-1" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-rticles" class="csl-entry">
 <span class="smallcaps">Allaire, J.</span>, <span class="smallcaps">Y. Xie</span>, <span class="smallcaps">R Foundation</span>, <span class="smallcaps">H. Wickham</span>, <span class="smallcaps">Journal of Statistical Software</span>, <span class="smallcaps">R. Vaidyanathan</span>, <span class="smallcaps">Association for Computing Machinery</span>, et al. 2021. Rticles: Article formats for r markdown. Available at: <a href="https://github.com/rstudio/rticles">https://github.com/rstudio/rticles</a>.
@@ -3545,7 +3581,7 @@ Figure 5.5: Snapshot of the procedure to knit the document.
 <div id="appendix-appendices" class="section level1 unnumbered">
 <h1>Appendices</h1>
 </div>
-<div id="appendix-1" class="section level1" number="7">
+<div id="appendix-1" class="section level1" number="8">
 <h1><span class="header-section-number">A</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
 <p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
@@ -3606,7 +3642,7 @@ Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
 Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>&gt;.</p>
 </div>
-<div id="appendix-2" class="section level1" number="8">
+<div id="appendix-2" class="section level1" number="9">
 <h1><span class="header-section-number">B</span> Appendix 2</h1>
 <p>Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using <code>sessionInfo()</code>.</p>
 <pre><code>## R version 3.6.1 (2019-07-05)

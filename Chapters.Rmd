@@ -365,7 +365,7 @@ To execute this tutorial the following R packages have to be installed on your c
 install.packages(c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations"))
 ```
 
-#### TeX distribution
+#### TeX distribution {#texdistr}
 
 If you are planning to create `PDF` documents, you will need to install a `TeX` distribution on your computers. Please refer to this website for more details: https://www.latex-project.org/get/
 
@@ -378,7 +378,7 @@ To solve this issue apply the following procedure:
 1. Start `MiKTeX` console by searching and clicking `MiKTeX Console` in the application launcher.
 2. Enable automatic package installation by:
   a. Clicking on `Settings` tab.
-  b. Ticking the radio button `Always install missing packages on-the-fly` under the "You can choose whether missing packages are to be installed on-the-fly" header (\autoref{fig:MikTex}).
+  b. Ticking the radio button `Always install missing packages on-the-fly` under the "You can choose whether missing packages are to be installed on-the-fly" header (see Figure \@ref(fig:MikTex)).
 3. Restarting `RStudio` and you should be able to knit `pdf` documents.
 
 ```{r MikTex, echo=FALSE, fig.cap="Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly.", out.width = '100%'}
@@ -2692,6 +2692,8 @@ It might be then time to coordinate the publication of a press release or post t
 
 ## Writing papers in R Markdown {#writpub}
 
+The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_5_writing_papers.pdf).
+
 ### Literature and web resources
 
 This chapter is mostly based on the following books and web resources:
@@ -2702,7 +2704,11 @@ This chapter is mostly based on the following books and web resources:
 
 - **rmdTemplates R package GitHub repository:** https://github.com/Pakillo/rmdTemplates
 
-- **rcticles R package GitHub repository:** https://github.com/rstudio/rticles
+- **rticles R package GitHub repository:** https://github.com/rstudio/rticles
+
+### Software requirements
+
+To apply the approach described below make sure that you have a Tex distribution installed on your computer. More information on this topic is available [here](#texdistr). You will also need to install the R *rticles* package as demonstrated [here](#rticlespkg). 
 
 ### Challenges to writing publications in R Markdown
 
@@ -2712,7 +2718,7 @@ Traditionally, journals are accepting manuscripts submitted in either Word (`.do
 
 As mentioned above, many journals support the LaTeX format (`.tex`) for manuscript submissions. While you can convert R Markdown (`.Rmd`) to LaTeX, different journals have different typesetting requirements and LaTeX styles. **The solution is to develop scripts converting R Markdown files into LaTex files, which are meeting journal requirements.**
 
-### The *rticles* package
+### The *rticles* package {#rticlespkg}
 
 Submitting scientific manuscripts written in R Markdown is still challenging; however the R [*rticles*](https://cran.r-project.org/web/packages/rticles/index.html) package was designed to simplify the creation of documents that conform to submission standards for academic journals [see @R-rticles]. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:
 
@@ -2801,6 +2807,37 @@ knitr::include_graphics("Figures/Compiled_file.png")
 To get familiar with this procedure, please practice by applying the above approach to different journal templates by favoring those where you might be submitting to. 
 
 Enjoy writing scientific publications in R Markdown!
+
+# Chapter 6
+
+Gathering Data with R
+
+1. R project: 
+https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+
+2. Importing locally stored data sets
+  - Plain-text format:
+    - csv
+  - Non-plain text formats:
+    - xls/xlsx, S, SPSS, etc.
+  - Convert non-plain-text to plain text formats
+    - Example with xls to csv
+  - Open csv from zip files (witout uncompressing): https://stackoverflow.com/questions/12460938/r-reading-in-a-zip-data-file-without-unzipping-it
+  
+```{r echo=F, eval=F}
+filesZip <- as.character(unzip("Chapters_files/drive-download-20211009T232918Z-001.zip", list = TRUE)$Name)
+
+#only unzip 1 specific file
+unzip("Chapters_files/drive-download-20211009T232918Z-001.zip", files = filesZip[1])
+
+
+read_xlsx(unz("Chapters_files/drive-download-20211009T232918Z-001.zip", filesZip[1]), sheet=1, skip = 2)
+
+```
+3. Importing data sets form the internet
+
+- Non-secure URLs (maybe not or just mention that can be open with read.table())
+- Secure URLs
 
 # References
 
