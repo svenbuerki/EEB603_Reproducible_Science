@@ -2810,10 +2810,210 @@ Enjoy writing scientific publications in R Markdown!
 
 # Chapter 6
 
+## Introduction
+
+In this chapter, we will **study protocols to import and gather data with R**. As stated by @Gandrud2015 in the chapter 6 of his book, **how you gather your data directly impacts how reproducible your research will be**. In this context, it is your duty to try your best to document every step of your data gathering process. Reproduction will be easier if all of your data gathering steps are tied together by your source code, then independent researchers (and you) can more easily regather the data. Regathering data will be easiest if running your code allows you to get all the way back to the raw data files (the rawer the better). Of course, this may not always be possible. You may need to conduct interviews or compile information from paper based archives, for example. The best you can sometimes do is describe your data gathering process in detail. Nonetheless, R’s automated data gathering capabilities for internet-based information is extensive. Learning how to take full advantage of these capabilities greatly increases reproducibility and can save you considerable time and effort over the long run. 
+
+Gathering data can be done by either importing locally stored data sets (= files stored on your computer) or by importing data sets from the Internet. Usually, these data sets are saved in plain-text format (usually in comma-separated values format or `csv`) making importing them into R a fairly straightforward task. However, if data sets are not saved in plain-text format, the users will have to start by converting them. In most cases, data sets will be saved in `xls` or `xlsx` formats and functions implemented in the [*readxl*](https://readxl.tidyverse.org/) package [@readxl] will be used. Although not covered in this chapter, if your data sets were created by other statistical programs such as SPSS, SAS or Stata, these can be imported into R using functions from the *foreign* package [@foreign]. Finally, data sets could be saved in compressed documents, which will have to be processed prior to importing the data into R.
+
+Learning skills to import and gather data sets is especially important in the fields of Ecology, Evolution and Behavior since your research is highly likely to depend on large and complex data sets (see Figure \@ref(fig:datainter)). In addition, testing your hypotheses will rely on your ability to manage your data sets to test for complex interactions (e.g. Does abiotic factors such as temperature drive selection processes in plants?; Figure \@ref(fig:datainter)).
+
+```{r datainter, echo=FALSE, fig.cap="Example of datasets involved in Ecology, Evolution and Behavior and their intercations.", fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("Figures/Data_interactions.png")
+```
+
+Here, we are providing an overview of the methods and functions that will be used in this chapter to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.
+
+## Learning outcomes
+
+- Creating RStudio projects to manage your reproducible project.
+- Importing locally stored data sets.
+- Importing data from the Internet focusing on GitHub.
+- Converting non plain-text to plain text formats.
+- Un-compressing content of whole document and listing and then un-compressing specific files in compressed document. 
+
+## Managing projects in RStudio
+
+RStudio projects (`.Rproj`) allow users to manage their project, more specifically by dividing their work into multiple contexts, each with their own working directory, workspace, history, and source documents.
+
+### Creating projects
+
+RStudio projects are associated with R working directories. You can create an RStudio project:
+
+1. In a brand new directory.
+2. In an existing directory where you already have R code and data.
+3. By cloning a version control (Git or Subversion) repository.
+
+We will be covering the last option during Chapter 11.
+
+To create a new project in RStudio, do `File > New Project...` and then a window will pop-up allowing you to select among the 3 options (see Figure \@ref(fig:newproj)).
+
+```{r newproj, echo=FALSE, fig.cap="Window allowing you to create a New RStudio project. See text for more details.", fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("Figures/New_project_window.png")
+```
+
+When a new project is created RStudio:
+
+1. Creates a project file (with an `.Rproj` extension) within the project directory. This file contains various project options and can also be used as a shortcut for opening the project directly from the filesystem.
+2. Creates a hidden directory (named .`Rproj.user`) where project-specific temporary files (e.g. auto-saved source documents, window-state, etc.) are stored. This directory is also automatically added to `.Rbuildignore`, `.gitignore`, etc. if required.
+3. Loads the project into RStudio and display its name in the Projects toolbar (which is located on the far right side of the main toolbar).
+
+### Working with projects
+
+To open a project, go to your project directory and double-click on the project file (`*.Rproj`). When your project opens within RStudio, the following actions will be taken:
+
+- A new R session (process) is started.
+- The current working directory is set to the project directory.
+- Previously edited source documents are restored into editor tabs.
+- If you saved your workspace into a `.RData` file (see below), it will be loaded into your environment and allowing you to purse your work. 
+
+When you are within a project and choose to either Quit, close the project, or open another project the following actions will be taken:
+
+- `.RData` and/or `.Rhistory` are written to the project directory (if current options indicate they should be).
+- The list of open source documents is saved (so it can be restored next time the project is opened).
+- The R session is terminated.
+
+### Additional information
+
+Additional information on RStudio projects can be found here:
+
+## Importing data from the Internet
+
+In this section, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedure to:
+
+1. Import comma-separated values format (`csv`) stored in GitHub repositories.
+2. Download whole GitHub repositories.
+
+### GitHub repositories used in this chapter
+
+#### EEB603_Reproducible_Science repository
+
+This repository is dedicated to this course and is used to demonstrate the procedure to import `csv` files from GitHub repositories. More specifically, we will be importing different versions of the file (`Timetable_EEB603_topic_tasks.csv`) at the origin of the [Timetable](Timetable.html). It is located at this URL (Uniform Resource Locator): 
+
+- https://github.com/svenbuerki/EEB603_Reproducible_Science 
+
+#### Sagebrush_rooting_in_vitro_prop
+
+This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. It is located at this URL: 
+
+- https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
+
+### Importing comma-separated values format from GitHub into R
+
+To achieve this task and import `csv` files deposited on GitHub into R the following tasks have to be done:
+
+1. Retrieve the *raw
+
+#### The SHA-1 hash accession number
+
+With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded. To support such feature, each version of a file/data set is associated to a unique encrypted [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (Secure Hash Algorithm 1) hash accession number. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set, which was used in their analyses therefore supporting reproducibility.  
+
+#### How to retrieve the URL of a GitHub CSV file?
+
+Before being able to import a `csv` file deposited in GitHub into R you have to find it's *raw* URL. In this section, we will demonstrate how to obtain this information by using the `Timetable_EEB603_topic_tasks.csv` file located on the [course's GitHub repository](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv).
+
+To retrieve the *raw* URL associated to `Timetable_EEB603_topic_tasks.csv` do the following:
+
+1. Navigate to the file location on the GitHub repository by clicking [here](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv) (see Figure \@ref(fig:repoURL1)).
+```{r repoURL1, echo=FALSE, fig.cap="Location of Timetable_EEB603_topic_tasks.csv on the EEB603_Reproducible_Science GitHub repository.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/GitHub_csv_URL1.png")
+```
+2. Click on the `Raw` button on the right just above the file preview (Figure \@ref(fig:repoURL1)). This action should open a new window showing you the *raw* `csv` file (see Figure \@ref(fig:repoURL2)). 
+```{r repoURL2, echo=FALSE, fig.cap="Raw csv file associated to Timetable_EEB603_topic_tasks.csv. See text for more details.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/GitHub_csv_URL2.png")
+```
+3. The *raw* URL for this `csv` file can be retrieved by copying the URL address (see Figure \@ref(fig:repoURL2)). In this case, the URL is as follows:
+https://raw.githubusercontent.com/svenbuerki/EEB603_Reproducible_Science/master/Data/Timetable_EEB603_topic_tasks.csv
+4. The URL can be shorten for free by using Bitly at https://bitly.com. In this case, the short URL pointing to our `csv` file is https://bit.ly/3BDxECl. We will be using this URL in the example below. 
+
+#### Importing GitHub csv into R
+
+Now that we have retrieved and shortened the *raw* GitHub URL pointing to our target `csv` file, we can use the *source_data()* function implemented in the R package *repmis* [@repmis] to download the file. This can be done as follows:
+
+```{r githubcsv}
+###~~~
+#Load package
+###~~~
+library(repmis)
+
+###~~~
+#Store raw short URL into object
+###~~~
+urlcsv <- "https://bit.ly/3BDxECl"
+
+###~~~
+#Download/Import csv into R
+###~~~
+csvTimeTable <- repmis::source_data(url = urlcsv) 
+
+###~~~
+#Print csv
+###~~~
+print(csvTimeTable)
+```
+
+*source_data()* will always download the most recent version of the file from the master branch and return its unique SHA-1 hash. However, you could also download a prior version of the file by providing its specific SHA-1 hash associated to a previous `commit`.
+
+#### Retrieving SHA-1 hash from previous commit
+
+Retrieving the `csv` file associated to a specific `commit` can be done by applying the following approach (here using the same example than above):
+
+1. To find a file's particular `commit` *raw* URL navigate to its location on GitHub by clicking [here](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv).
+2. Click the ![](Figures/History.png) button. This action will take you to a page listing all of the file's versions (see Figure \@ref(fig:hist)).
+```{r hist, echo=FALSE, fig.cap="Page showing commit history associated to Timetable_EEB603_topic_tasks.csv.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/History2.png")
+```
+3. Click on the ![](Figures/View_history_button.png) button next to the version of the file that you want to use (here `Commits on Aug 23, 2021`; Figure \@ref(fig:hist)). This will take you to the version of the file at this point in history. 
+```{r hist2, echo=FALSE, fig.cap="Page showing prior commit associated to Timetable_EEB603_topic_tasks.csv.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/History3.png")
+```
+4. Clicking on the `Raw` button will load the `csv` file and allow you to retrieve the URL (as done above).
+5. Download the file using the following R code:
+```{r}
+###~~~
+#Store raw URL into object
+###~~~
+urlcsvold <- "https://raw.githubusercontent.com/svenbuerki/EEB603_Reproducible_Science/1312eae07e0515d8d2423ff83834b184cf6eeb8d/Data/Timetable_EEB603_topic_tasks.csv"
+
+###~~~
+#Download/Import csv into R
+###~~~
+csvTimeTableOld <- repmis::source_data(url = urlcsvold) 
+
+###~~~
+#Print csv
+###~~~
+print(csvTimeTableOld)
+```
+6. You can see here that the SHA-1 hash is different from our previous download confirming that the files are different.
+
+### Gathering and converting data
+
+
+
+1. Import locally stored csv data set.
+2. Import locally stored Excel (xls) data set.
+3. Convert excel into csv formats.
+4. 
+
+
+```{r}
+url <- "https://raw.githubusercontent.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/master/01_Raw_Data/1_block_8_12_2020%20-%201_block.csv"
+```
+
+
+
+R
+
+
+https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+
+Gather, convert, clean and merge data
+
 Gathering Data with R
 
 1. R project: 
-https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+
 
 2. Importing locally stored data sets
   - Plain-text format:
