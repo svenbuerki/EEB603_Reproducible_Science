@@ -2814,7 +2814,7 @@ Enjoy writing scientific publications in R Markdown!
 
 In this chapter, we will **study protocols to import and gather data with R**. As stated by @Gandrud2015 in the chapter 6 of his book, **how you gather your data directly impacts how reproducible your research will be**. In this context, it is your duty to try your best to document every step of your data gathering process. Reproduction will be easier if all of your data gathering steps are tied together by your source code, then independent researchers (and you) can more easily regather the data. Regathering data will be easiest if running your code allows you to get all the way back to the raw data files (the rawer the better). Of course, this may not always be possible. You may need to conduct interviews or compile information from paper based archives, for example. The best you can sometimes do is describe your data gathering process in detail. Nonetheless, R’s automated data gathering capabilities for internet-based information is extensive. Learning how to take full advantage of these capabilities greatly increases reproducibility and can save you considerable time and effort over the long run. 
 
-Gathering data can be done by either importing locally stored data sets (= files stored on your computer) or by importing data sets from the Internet. Usually, these data sets are saved in plain-text format (usually in comma-separated values format or `csv`) making importing them into R a fairly straightforward task. However, if data sets are not saved in plain-text format, the users will have to start by converting them. In most cases, data sets will be saved in `xls` or `xlsx` formats and functions implemented in the [*readxl*](https://readxl.tidyverse.org/) package [@readxl] will be used. Although not covered in this chapter, if your data sets were created by other statistical programs such as SPSS, SAS or Stata, these can be imported into R using functions from the *foreign* package [@foreign]. Finally, data sets could be saved in compressed documents, which will have to be processed prior to importing the data into R.
+Gathering data can be done by either importing locally stored data sets (= files stored on your computer) or by importing data sets from the Internet. Usually, these data sets are saved in plain-text format (usually in comma-separated values format or `csv`) making importing them into R a fairly straightforward task (using the *read.csv()* function). However, if data sets are not saved in plain-text format, the users will have to start by converting them. In most cases, data sets will be saved in `xls` or `xlsx` formats and functions implemented in the [*readxl*](https://readxl.tidyverse.org/) package [@readxl] would be used (using the *read_xlsx()* function). If your data sets were created by other statistical programs such as SPSS, SAS or Stata, these could be imported into R using functions from the *foreign* package [@foreign]. Finally, data sets could be saved in compressed documents, which will have to be processed prior to importing the data into R.
 
 Learning skills to import and gather data sets is especially important in the fields of Ecology, Evolution and Behavior since your research is highly likely to depend on large and complex data sets (see Figure \@ref(fig:datainter)). In addition, testing your hypotheses will rely on your ability to manage your data sets to test for complex interactions (e.g. does abiotic factors such as temperature drive selection processes in plants?; Figure \@ref(fig:datainter)).
 
@@ -2833,7 +2833,6 @@ Here, we are providing methods and R functions that are applied to manage your p
 - Listing all files in a compressed `zip` file.
 - Extracting and saving selected files from a `zip` file without decompressing it.
 - Manipulating files and directories to organize your project.
-- Converting non plain-text to plain text formats.
 
 ## Managing projects in RStudio
 
@@ -2886,7 +2885,7 @@ The list of R packages and GitHub repositories used in this chapter are listed b
 
 ### R packages
 
-Most of the functions that we will be using in this chapter are base R functions installed (by default) in the *utils* package [@utils].  However, the following two R packages (and their dependencies) have to be installed on your computer prior to starting this tutorial: *readxl* [@readxl] and *repmis* [@repmis]. 
+Most of the functions that we will be using in this chapter are base R functions installed (by default) in the *utils* package [@utils].  However, the following R package (and its dependencies) has to be installed on your computer prior to starting this tutorial: *repmis* [@repmis]. In the event that you wanted to import `xsl` or `xlsx` files into R, you would also have to install the *readxl* package [@readxl]. 
 
 ### GitHub repositories used in this chapter
 
