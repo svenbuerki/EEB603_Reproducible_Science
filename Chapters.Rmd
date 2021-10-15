@@ -2816,23 +2816,23 @@ In this chapter, we will **study protocols to import and gather data with R**. A
 
 Gathering data can be done by either importing locally stored data sets (= files stored on your computer) or by importing data sets from the Internet. Usually, these data sets are saved in plain-text format (usually in comma-separated values format or `csv`) making importing them into R a fairly straightforward task. However, if data sets are not saved in plain-text format, the users will have to start by converting them. In most cases, data sets will be saved in `xls` or `xlsx` formats and functions implemented in the [*readxl*](https://readxl.tidyverse.org/) package [@readxl] will be used. Although not covered in this chapter, if your data sets were created by other statistical programs such as SPSS, SAS or Stata, these can be imported into R using functions from the *foreign* package [@foreign]. Finally, data sets could be saved in compressed documents, which will have to be processed prior to importing the data into R.
 
-Learning skills to import and gather data sets is especially important in the fields of Ecology, Evolution and Behavior since your research is highly likely to depend on large and complex data sets (see Figure \@ref(fig:datainter)). In addition, testing your hypotheses will rely on your ability to manage your data sets to test for complex interactions (e.g. Does abiotic factors such as temperature drive selection processes in plants?; Figure \@ref(fig:datainter)).
+Learning skills to import and gather data sets is especially important in the fields of Ecology, Evolution and Behavior since your research is highly likely to depend on large and complex data sets (see Figure \@ref(fig:datainter)). In addition, testing your hypotheses will rely on your ability to manage your data sets to test for complex interactions (e.g. does abiotic factors such as temperature drive selection processes in plants?; Figure \@ref(fig:datainter)).
 
 ```{r datainter, echo=FALSE, fig.cap="Example of datasets involved in Ecology, Evolution and Behavior and their intercations.", fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("Figures/Data_interactions.png")
 ```
 
-Here, we are providing an overview of the methods and functions that will be used in this chapter to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.
+Here, we are providing methods and R functions that are applied to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.
 
 ## Learning outcomes
 
 - Creating RStudio projects to manage your reproducible project.
 - Importing `csv` files deposited on GitHub into R. 
-- Learning about SHA-1 hash accession number and usage to retrieve specific `csv` files associated to GitHub `commit` events.
-- Downloading whole GitHub repository.
-- Listing all files in a compressed zip file.
-- Extracting and saving selected files from zip file (without decompressing it).
-- Manipulating directories and files.
+- Learning about SHA-1 hash accession numbers and their usage to retrieve `csv` files associated to specific GitHub `commit` events.
+- Downloading whole GitHub repository (in `zip` format) on your computer.
+- Listing all files in a compressed `zip` file.
+- Extracting and saving selected files from a `zip` file without decompressing it.
+- Manipulating files and directories to organize your project.
 - Converting non plain-text to plain text formats.
 
 ## Managing projects in RStudio
@@ -2880,38 +2880,42 @@ When you are within a project and choose to either Quit, close the project, or o
 
 Additional information on RStudio projects can be found here:
 
-## Importing data from the Internet
+## Bioinformatic dependencies and data repositories
 
-In this section, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedure to:
+The list of R packages and GitHub repositories used in this chapter are listed below. Please make sure you have all these set-up before starting reading and completing the material presented in this chapter.
 
-1. Import comma-separated values format (`csv`) stored in GitHub repositories.
-2. Download whole GitHub repositories.
+### R packages
+
+Most of the functions that we will be using in this chapter are base R functions installed (by default) in the *utils* package [@utils].  However, the following two R packages (and their dependencies) have to be installed on your computer prior to starting this tutorial: *readxl* [@readxl] and *repmis* [@repmis]. 
 
 ### GitHub repositories used in this chapter
 
 #### EEB603_Reproducible_Science repository
 
-This repository is dedicated to this course and is used to demonstrate the procedure to import `csv` files from GitHub repositories. More specifically, we will be importing different versions of the file (`Timetable_EEB603_topic_tasks.csv`) at the origin of the [Timetable](Timetable.html). It is located at this URL (Uniform Resource Locator): 
+This repository is dedicated to this course and is used to demonstrate the procedure to import `csv` files into R from GitHub repositories. More specifically, we will be importing different versions of the file (`Timetable_EEB603_topic_tasks.csv`) at the origin of the [Timetable](Timetable.html) to study procedure associated to file versioning in GitHub. It is located at this URL (Uniform Resource Locator): 
 
 - https://github.com/svenbuerki/EEB603_Reproducible_Science 
 
 #### Sagebrush_rooting_in_vitro_prop
 
-This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository and then extracting all `csv` files in the `01_Raw_Data/` folder. This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
+This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository on your local computer and then extracting all `csv` files in the `01_Raw_Data/` folder and saving them on your local computer using R. This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
 
 - https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
 
-### Importing comma-separated values format from GitHub into R
+## Overview of the methods applied in this chapter
 
-To achieve this task and import `csv` files deposited on GitHub into R the following tasks have to be done:
+In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedure to:
 
-1. Retrieve the *raw
+1. Import comma-separated values format (`csv`) stored in GitHub repositories.
+2. Download and process whole GitHub repositories.
 
-#### The SHA-1 hash accession number
+## Importing comma-separated values format from GitHub into R
 
-With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded. To support such feature, each version of a file/data set is associated to a unique encrypted [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (Secure Hash Algorithm 1) hash accession number. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set, which was used in their analyses therefore supporting reproducibility.  
+### The SHA-1 hash accession number
 
-#### How to retrieve the URL of a GitHub CSV file?
+With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. **Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded**. To support such feature, **each version of a file/data set is associated to a unique encrypted [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (Secure Hash Algorithm 1) hash accession number**. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set used in their analyses therefore supporting reproducibility.  
+
+### How to retrieve the URL of a GitHub csv file?
 
 Before being able to import a `csv` file deposited in GitHub into R you have to find it's *raw* URL. In this section, we will demonstrate how to obtain this information by using the `Timetable_EEB603_topic_tasks.csv` file located on the [course's GitHub repository](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv).
 
@@ -2929,7 +2933,7 @@ knitr::include_graphics("Figures/GitHub_csv_URL2.png")
 https://raw.githubusercontent.com/svenbuerki/EEB603_Reproducible_Science/master/Data/Timetable_EEB603_topic_tasks.csv
 4. The URL can be shorten for free by using Bitly at https://bitly.com. In this case, the short URL pointing to our `csv` file is https://bit.ly/3BDxECl. We will be using this URL in the example below. 
 
-#### Importing GitHub csv into R
+### Importing GitHub csv into R
 
 Now that we have retrieved and shortened the *raw* GitHub URL pointing to our target `csv` file, we can use the *source_data()* function implemented in the R package *repmis* [@repmis] to download the file. This can be done as follows:
 
@@ -2957,7 +2961,7 @@ print(csvTimeTable)
 
 *source_data()* will always download the most recent version of the file from the master branch and return its unique SHA-1 hash. However, you could also download a prior version of the file by providing its specific SHA-1 hash associated to a previous `commit`.
 
-#### Retrieving SHA-1 hash from previous commit
+### Retrieving csv from previous commit
 
 Retrieving the `csv` file associated to a specific `commit` can be done by applying the following approach (here using the same example than above):
 
@@ -2990,11 +2994,11 @@ print(csvTimeTableOld)
 ```
 6. You can see here that the SHA-1 hash is different from our previous download confirming that the files are different.
 
-### Download GitHub repositories
+## Downloading and processing GitHub repositories
 
 Before being able to download a GitHub repository and work with its files into R, you have to find the URL pointing to the compressed `zip` file containing all the files for the target repository. In this section, we will demonstrate how to obtain this information by using the [Sagebrush_rooting_in_vitro_prop GitHub repository](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop). As mentioned above, we will be downloading the whole repository and then extract all the `csv` files in the `01_Raw_Data/` folder. 
 
-#### How to retrieve the URL for the GitHub repository?
+### How to retrieve the URL for the GitHub repository?
 
 To retrieve the URL associated to the compressed `zip` file containing all files for the repository do the following:
 
@@ -3008,7 +3012,7 @@ knitr::include_graphics("Figures/URL_GitHub_repo.png")
   - Right-click to copy the link (as shown in Figure \@ref(fig:repo)).
 3. The copied URL (https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/archive/refs/heads/master.zip) will serve as input for downloading the repository on your local computer (see below).
 
-#### Download GitHub repository on your computer
+### Downloading GitHub repository on your computer
 
 Now that we have secured the URL pointing to the compressed `zip` file for the target repository (by copying it), we will use this URL and the base R *download.file()* function as input to download the file on our local computer. Since compressed files could be large, we are also providing some code to check if the file already exists on your computer before downloading.
 
@@ -3037,11 +3041,11 @@ if(file.exists("Data/GitHubRepoSagebrush.zip") == TRUE){
 }
 ```
 
-#### Extract raw data from compressed GitHub repository 
+### Extracting raw data from compressed GitHub repository 
 
 Compressed files can be quite large and you might would like to avoid decompressing them, but rather accessing target files and only decompressing those. Here, we are practicing such approach by using `GitHubRepoSagebrush.zip` and targeting `csv` files in the `01_Raw_Data/` folder.   
 
-##### What is the size of the zip file?
+#### What is the size of the zip file?
 
 To estimate the size (in bytes) of a file you can use base R function *file.size()* as follows:
 
@@ -3056,7 +3060,7 @@ ZipSize <- round(file.size("Data/GitHubRepoSagebrush.zip")/1e6,2)
 print(paste("The zip file size is", ZipSize, "Mb", sep = " "))
 ```
 
-##### Decompressing and saving csv files in 01_Raw_Data/
+#### Decompressing and saving csv files in 01_Raw_Data/
 
 Finally, we can now i) list all files in the `zip` file, ii) identify `csv` files in `01_Raw_Data/` and iii) save these files on our local computer in a folder entitled `01_Raw_Data/`. These files will then constitute the raw data for your subsequent analyses. 
 
