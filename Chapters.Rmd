@@ -2827,10 +2827,13 @@ Here, we are providing an overview of the methods and functions that will be use
 ## Learning outcomes
 
 - Creating RStudio projects to manage your reproducible project.
-- Importing locally stored data sets.
-- Importing data from the Internet focusing on GitHub.
+- Importing `csv` files deposited on GitHub into R. 
+- Learning about SHA-1 hash accession number and usage to retrieve specific `csv` files associated to GitHub `commit` events.
+- Downloading whole GitHub repository.
+- Listing all files in a compressed zip file.
+- Extracting and saving selected files from zip file (without decompressing it).
+- Manipulating directories and files.
 - Converting non plain-text to plain text formats.
-- Un-compressing content of whole document and listing and then un-compressing specific files in compressed document. 
 
 ## Managing projects in RStudio
 
@@ -2894,7 +2897,7 @@ This repository is dedicated to this course and is used to demonstrate the proce
 
 #### Sagebrush_rooting_in_vitro_prop
 
-This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. It is located at this URL: 
+This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository and then extracting all `csv` files in the `01_Raw_Data/` folder. This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
 
 - https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
 
@@ -2987,57 +2990,130 @@ print(csvTimeTableOld)
 ```
 6. You can see here that the SHA-1 hash is different from our previous download confirming that the files are different.
 
-### Gathering and converting data
+### Download GitHub repositories
 
+Before being able to download a GitHub repository and work with its files into R, you have to find the URL pointing to the compressed `zip` file containing all the files for the target repository. In this section, we will demonstrate how to obtain this information by using the [Sagebrush_rooting_in_vitro_prop GitHub repository](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop). As mentioned above, we will be downloading the whole repository and then extract all the `csv` files in the `01_Raw_Data/` folder. 
 
+#### How to retrieve the URL for the GitHub repository?
 
-1. Import locally stored csv data set.
-2. Import locally stored Excel (xls) data set.
-3. Convert excel into csv formats.
-4. 
+To retrieve the URL associated to the compressed `zip` file containing all files for the repository do the following:
 
+1. Navigate to the GitHub repository page by clicking [here](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop) (see Figure \@ref(fig:repo)).
+```{r repo, echo=FALSE, fig.cap="GitHub repository page for Sagebrush_rooting_in_vitro_prop.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/URL_GitHub_repo.png")
+```
+2. To copy the URL pointing to the compressed `zip` file do the following actions:
+  - Click on the ![](Figures/Code_button.png) button.
+  - Navigate to the ![](Figures/Download_section.png) section.
+  - Right-click to copy the link (as shown in Figure \@ref(fig:repo)).
+3. The copied URL (https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/archive/refs/heads/master.zip) will serve as input for downloading the repository on your local computer (see below).
+
+#### Download GitHub repository on your computer
+
+Now that we have secured the URL pointing to the compressed `zip` file for the target repository (by copying it), we will use this URL and the base R *download.file()* function as input to download the file on our local computer. Since compressed files could be large, we are also providing some code to check if the file already exists on your computer before downloading.
 
 ```{r}
-url <- "https://raw.githubusercontent.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/master/01_Raw_Data/1_block_8_12_2020%20-%201_block.csv"
+###~~~
+#Store URL in object
+###~~~
+# Paste the URL that you copied in the previous section here
+URLrepo <- "https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/archive/refs/heads/master.zip"
+
+###~~~  
+#Download the repository from GitHub
+###~~~
+# Arguments:
+# - url:  URLrepo
+# - destfile: Path and name of destination file on your computer
+#             YOU HAVE TO ADJUST PATH TO YOUR COMPUTER
+
+# First check if the file exists, if yes then return file already downloaded else proceed with download
+if(file.exists("Data/GitHubRepoSagebrush.zip") == TRUE){
+  #File already exists!
+  print("file already exists and doesn't need to be downloaded!")
+  }else{
+  #Download the file
+  download.file(url = URLrepo, destfile = "Data/GitHubRepoSagebrush.zip")
+}
 ```
 
+#### Extract raw data from compressed GitHub repository 
 
+Compressed files can be quite large and you might would like to avoid decompressing them, but rather accessing target files and only decompressing those. Here, we are practicing such approach by using `GitHubRepoSagebrush.zip` and targeting `csv` files in the `01_Raw_Data/` folder.   
 
-R
+##### What is the size of the zip file?
 
+To estimate the size (in bytes) of a file you can use base R function *file.size()* as follows:
 
-https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+```{r filesize}
+###~~~
+#Infer file size of GitHubRepoSagebrush.zip
+###~~~
 
-Gather, convert, clean and merge data
+# Transform and round file size from bytes to Mb
+ZipSize <- round(file.size("Data/GitHubRepoSagebrush.zip")/1e6,2)
 
-Gathering Data with R
-
-1. R project: 
-
-
-2. Importing locally stored data sets
-  - Plain-text format:
-    - csv
-  - Non-plain text formats:
-    - xls/xlsx, S, SPSS, etc.
-  - Convert non-plain-text to plain text formats
-    - Example with xls to csv
-  - Open csv from zip files (witout uncompressing): https://stackoverflow.com/questions/12460938/r-reading-in-a-zip-data-file-without-unzipping-it
-  
-```{r echo=F, eval=F}
-filesZip <- as.character(unzip("Chapters_files/drive-download-20211009T232918Z-001.zip", list = TRUE)$Name)
-
-#only unzip 1 specific file
-unzip("Chapters_files/drive-download-20211009T232918Z-001.zip", files = filesZip[1])
-
-
-read_xlsx(unz("Chapters_files/drive-download-20211009T232918Z-001.zip", filesZip[1]), sheet=1, skip = 2)
-
+print(paste("The zip file size is", ZipSize, "Mb", sep = " "))
 ```
-3. Importing data sets form the internet
 
-- Non-secure URLs (maybe not or just mention that can be open with read.table())
-- Secure URLs
+##### Decompressing and saving csv files in 01_Raw_Data/
+
+Finally, we can now i) list all files in the `zip` file, ii) identify `csv` files in `01_Raw_Data/` and iii) save these files on our local computer in a folder entitled `01_Raw_Data/`. These files will then constitute the raw data for your subsequent analyses. 
+
+```{r decompsave}
+###~~~
+#List all files in zip file without decompressing it
+###~~~
+filesZip <- as.character(unzip("Data/GitHubRepoSagebrush.zip", list = TRUE)$Name)
+
+###~~~
+#Identify files in 01_Raw_Data/ that are csv
+###~~~
+# Use grepl() to match criteria
+targetF <- which(grepl("01_Raw_Data/", filesZip) & grepl(".csv", filesZip) == TRUE)
+# Subset files from filesZip to only get our target files
+rawcsvfiles <- filesZip[targetF]
+#print list of target files
+print(rawcsvfiles)
+
+###~~~
+#Create local directory to save csv files
+###~~~
+#Check if the folder already exists
+# if not then creates it
+output_dir <- file.path(paste0("Data/01_Raw_Data/"))
+
+if(dir.exists(output_dir)){
+    print(paste0("Dir", output_dir, " already exists!"))
+  }else{
+    print(paste0("Created ", output_dir))
+    dir.create(output_dir)  
+}
+
+###~~~
+#Save csv in output_dir
+###~~~
+# Use loop to read csv file in and then save it in output_dir
+for(i in 1:length(rawcsvfiles)){
+  ###~~~
+  #Decompress and read in csv file
+  ###~~~
+  tempcsv <- read.csv(unz("Data/GitHubRepoSagebrush.zip", rawcsvfiles[i]))
+  ###~~~
+  #Write file in
+  ###~~~
+  # Extract file name
+  csvName <- strsplit(rawcsvfiles[i], split = "01_Raw_Data/")[[1]][2]
+  # Write csv file in output_dir
+  write.csv(tempcsv, file = paste0(output_dir, csvName))
+}
+```
+
+We can verify that all the files are in the newly created directory on your computer by listing them as follows:
+```{r}
+#List all the files in output_dir (on your local computer)
+list.files(paste0(output_dir))
+```
 
 # References
 
