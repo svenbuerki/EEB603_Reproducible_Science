@@ -2897,18 +2897,33 @@ This repository is dedicated to this course and is used to demonstrate the proce
 
 #### Sagebrush_rooting_in_vitro_prop
 
-This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository on your local computer and then extracting all `csv` files in the `01_Raw_Data/` folder and saving them on your local computer using R. This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
+This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository on your local computer and then extracting all `csv` files in the `01_Raw_Data/` folder and saving them on your local computer using R (see Figure \@ref(fig:GitHubRawDatashot) for more details on file content). 
+
+```{r GitHubRawDatashot, echo=FALSE, fig.cap="Snapshot showing files in the 01_Raw_Data folder that we will be targeting in the GitHub repository.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/GitHub_01_Raw_data.png")
+```
+
+This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
 
 - https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
 
 ## Overview of the methods applied in this chapter
 
-In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedure to:
+In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedures to:
 
 1. Import comma-separated values format (`csv`) stored in GitHub repositories.
-2. Download and process whole GitHub repositories.
+2. Download and process whole GitHub repositories saved in compressed `zip` format.
 
-## Importing comma-separated values format from GitHub into R
+## Getting started!
+
+Before starting coding, please do the following:
+
+1. Open RStudio and create a **New Project** in a **New Directory** entitled `EEB603_Chapter_06`.
+2. Open the new project and create and save a **new R script** entitled `01_Data_gathering.R`.
+
+## Importing csv files from GitHub into R
+
+Before delving into this subject, there are several topics that we need to cover.
 
 ### The SHA-1 hash accession number
 
@@ -2995,7 +3010,7 @@ print(csvTimeTableOld)
 
 ## Downloading and processing GitHub repositories
 
-Before being able to download a GitHub repository and work with its files into R, you have to find the URL pointing to the compressed `zip` file containing all the files for the target repository. In this section, we will demonstrate how to obtain this information by using the [Sagebrush_rooting_in_vitro_prop GitHub repository](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop). As mentioned above, we will be downloading the whole repository and then extract all the `csv` files in the `01_Raw_Data/` folder. 
+Before being able to download a GitHub repository and work with its files into R, you have to find the URL pointing to the compressed `zip` file containing all the files for the target repository. In this section, we will demonstrate how to obtain this information by using the [Sagebrush_rooting_in_vitro_prop GitHub repository](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop). As mentioned above, we will be downloading the whole repository and then extract all the `csv` files in the `01_Raw_Data/` folder (see Figure \@ref(fig:GitHubRawDatashot)). 
 
 ### How to retrieve the URL for the GitHub repository?
 
@@ -3036,6 +3051,7 @@ if(file.exists("Data/GitHubRepoSagebrush.zip") == TRUE){
   print("file already exists and doesn't need to be downloaded!")
   }else{
   #Download the file
+    print("Downloading GitHub repository!")
   download.file(url = URLrepo, destfile = "Data/GitHubRepoSagebrush.zip")
 }
 ```
@@ -3112,7 +3128,7 @@ for(i in 1:length(rawcsvfiles)){
 }
 ```
 
-We can verify that all the files are in the newly created directory on your computer by listing them as follows:
+We can verify that all the files are in the newly created directory on your computer by listing them as follows (compare your results with files shown in Figure \@ref(fig:GitHubRawDatashot)):
 ```{r}
 #List all the files in output_dir (on your local computer)
 list.files(paste0(output_dir))
