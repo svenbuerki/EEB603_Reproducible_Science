@@ -1,0 +1,16 @@
+﻿Function,Package,Purpose
+dir.create,base,Create a New Directory
+dir.exists,base,Check if Directory Exist
+download.file,utils,Download File from the Internet
+file.exists,base,Return a logical vector indicating whether the files named by its argument exist
+file.size,base,Return size of file in bytes
+print,base,Prints argument in function
+read.csv,utils,Read CSV File
+round,base,Rounding of Numbers
+source_data,repmis,Load plain-text data and RData from a URL
+unz,base,Extract or List Zip Archives
+write.csv,base,Write Object in CSV file
+strsplit,base,Split the Elements of a Character Vector
+grepl,base,Pattern Matching and Replacement
+paste,base,Concatenate Strings
+which,base,Which indices are TRUE?

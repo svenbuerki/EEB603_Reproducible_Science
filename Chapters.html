@@ -11,12 +11,12 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2021-10-17" />
+<meta name="date" content="2021-10-18" />
 
 <title>EEB 603 – Reproducible Science</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -34,6 +34,22 @@
 <script src="site_libs/viz-1.8.2/viz.js"></script>
 <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="site_libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.16/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.10.20/jszip.min.js"></script>
+<script src="site_libs/pdfmake-1.10.20/pdfmake.js"></script>
+<script src="site_libs/pdfmake-1.10.20/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -415,7 +431,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2021-10-17</h4>
+<h4 class="date">2021-10-18</h4>
 
 </div>
 
@@ -985,17 +1001,17 @@ wants to recreate your analysis, they will know which packages they will need to
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] rticles_0.18         DiagrammeR_1.0.6.1   data.tree_1.0.0     
-##  [4] kableExtra_1.2.1     dplyr_1.0.2          kfigr_1.2           
-##  [7] devtools_2.3.2       usethis_2.0.0        formatR_1.7         
-## [10] knitcitations_1.0.10 bookdown_0.21        rmarkdown_2.6       
-## [13] knitr_1.30          
+##  [1] DT_0.16              rticles_0.18         DiagrammeR_1.0.6.1  
+##  [4] data.tree_1.0.0      kableExtra_1.2.1     dplyr_1.0.2         
+##  [7] kfigr_1.2            devtools_2.3.2       usethis_2.0.0       
+## [10] formatR_1.7          knitcitations_1.0.10 bookdown_0.21       
+## [13] rmarkdown_2.6        knitr_1.30          
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_1.0.6         lubridate_1.7.9.2  prettyunits_1.1.1  ps_1.5.0          
 ##  [5] visNetwork_2.0.9   assertthat_0.2.1   rprojroot_2.0.2    digest_0.6.27     
-##  [9] R6_2.5.0           plyr_1.8.6         evaluate_0.14      httr_1.4.2        
-## [13] highr_0.8          pillar_1.4.7       rlang_0.4.10       rstudioapi_0.13   
+##  [9] R6_2.5.0           plyr_1.8.6         evaluate_0.14      highr_0.8         
+## [13] httr_1.4.2         pillar_1.4.7       rlang_0.4.10       rstudioapi_0.13   
 ## [17] callr_3.5.1        desc_1.2.0         webshot_0.5.2      RefManageR_1.2.12 
 ## [21] stringr_1.4.0      htmlwidgets_1.5.3  munsell_0.5.0      compiler_3.6.1    
 ## [25] xfun_0.20          pkgconfig_2.0.3    pkgbuild_1.2.0     htmltools_0.5.0   
@@ -2807,14 +2823,14 @@ file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name 
 ## Project_ID/MS/MS_et_al.docx                           2021-10-11 00:48:33 502
 ## Project_ID/Output/DataStr_network.html                2021-10-11 00:46:10 502
 ## Project_ID/Output/DataStr_tree.pdf                    2021-10-11 00:45:19 502
-## Project_ID/R_functions/check.install.pkg.R            2021-10-17 09:38:01 502
+## Project_ID/R_functions/check.install.pkg.R            2021-10-18 15:08:25 502
 ## Project_ID/README.md                                  2021-10-11 00:45:19 502
 ## Project_ID/Reports/Documentation.md                   2021-10-11 00:45:19 502
-## Project_ID/Scripts/01_download_data.R                 2021-10-17 09:38:01 502
-## Project_ID/Scripts/02_clean_data.R                    2021-10-17 09:38:01 502
-## Project_ID/Scripts/03_exploratory_analyses.R          2021-10-17 09:38:01 502
-## Project_ID/Scripts/04_fit_models.R                    2021-10-17 09:38:01 502
-## Project_ID/Scripts/05_generate_figures.R              2021-10-17 09:38:01 502
+## Project_ID/Scripts/01_download_data.R                 2021-10-18 15:08:25 502
+## Project_ID/Scripts/02_clean_data.R                    2021-10-18 15:08:25 502
+## Project_ID/Scripts/03_exploratory_analyses.R          2021-10-18 15:08:25 502
+## Project_ID/Scripts/04_fit_models.R                    2021-10-18 15:08:25 502
+## Project_ID/Scripts/05_generate_figures.R              2021-10-18 15:08:25 502
 ##                                                       gid      uname grname
 ## Project_ID/Data/species_data.csv                       20 svenbuerki  staff
 ## Project_ID/Figures_&amp;_Tables/Fig_01_Data_lifecycle.pdf  20 svenbuerki  staff
@@ -2891,8 +2907,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span id="fig:plotProjStr"></span>
-<div id="htmlwidget-990650547b54a6b2fb5b" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-990650547b54a6b2fb5b">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b3198619d9c231f03b3f" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b3198619d9c231f03b3f">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 4.5: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3054,17 +3070,17 @@ Data/species_data.csv</code></pre>
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] rticles_0.18         DiagrammeR_1.0.6.1   data.tree_1.0.0     
-##  [4] kableExtra_1.2.1     dplyr_1.0.2          kfigr_1.2           
-##  [7] devtools_2.3.2       usethis_2.0.0        formatR_1.7         
-## [10] knitcitations_1.0.10 bookdown_0.21        rmarkdown_2.6       
-## [13] knitr_1.30          
+##  [1] DT_0.16              rticles_0.18         DiagrammeR_1.0.6.1  
+##  [4] data.tree_1.0.0      kableExtra_1.2.1     dplyr_1.0.2         
+##  [7] kfigr_1.2            devtools_2.3.2       usethis_2.0.0       
+## [10] formatR_1.7          knitcitations_1.0.10 bookdown_0.21       
+## [13] rmarkdown_2.6        knitr_1.30          
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_1.0.6         lubridate_1.7.9.2  tidyr_1.1.2        prettyunits_1.1.1 
 ##  [5] ps_1.5.0           visNetwork_2.0.9   assertthat_0.2.1   rprojroot_2.0.2   
 ##  [9] digest_0.6.27      R6_2.5.0           plyr_1.8.6         evaluate_0.14     
-## [13] httr_1.4.2         highr_0.8          pillar_1.4.7       rlang_0.4.10      
+## [13] highr_0.8          httr_1.4.2         pillar_1.4.7       rlang_0.4.10      
 ## [17] rstudioapi_0.13    callr_3.5.1        desc_1.2.0         webshot_0.5.2     
 ## [21] RefManageR_1.2.12  stringr_1.4.0      htmlwidgets_1.5.3  munsell_0.5.0     
 ## [25] compiler_3.6.1     xfun_0.20          pkgconfig_2.0.3    pkgbuild_1.2.0    
@@ -3582,31 +3598,37 @@ Figure 6.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 </div>
 </div>
 </div>
-<div id="overview-of-the-methods-applied-in-this-chapter" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Overview of the methods applied in this chapter</h2>
+<div id="overview-of-methods-applied-in-this-chapter" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Overview of methods applied in this chapter</h2>
 <p>In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedures to:</p>
 <ol style="list-style-type: decimal">
 <li>Import comma-separated values format (<code>csv</code>) stored in GitHub repositories.</li>
 <li>Download and process whole GitHub repositories saved in compressed <code>zip</code> format.</li>
 </ol>
 </div>
-<div id="getting-started" class="section level2" number="6.6">
-<h2><span class="header-section-number">6.6</span> Getting started!</h2>
+<div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> List of R functions covered in this chapter</h2>
+<p>The list of major R functions covered in this chapter are provided in the Table below.</p>
+<div id="htmlwidget-651db2841f7a8a92438d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-651db2841f7a8a92438d">{"x":{"filter":"none","extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+<div id="getting-started" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Getting started!</h2>
 <p>Before starting coding, please do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Open RStudio and create a <strong>New Project</strong> in a <strong>New Directory</strong> entitled <code>EEB603_Chapter_06</code>.</li>
 <li>Open the new project and create and save a <strong>new R script</strong> entitled <code>01_Data_gathering.R</code>.</li>
 </ol>
 </div>
-<div id="importing-csv-files-from-github-into-r" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> Importing csv files from GitHub into R</h2>
+<div id="importing-csv-files-from-github-into-r" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> Importing csv files from GitHub into R</h2>
 <p>Before delving into this subject, there are several topics that we need to cover.</p>
-<div id="the-sha-1-hash-accession-number" class="section level3" number="6.7.1">
-<h3><span class="header-section-number">6.7.1</span> The SHA-1 hash accession number</h3>
+<div id="the-sha-1-hash-accession-number" class="section level3" number="6.8.1">
+<h3><span class="header-section-number">6.8.1</span> The SHA-1 hash accession number</h3>
 <p>With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. <strong>Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded</strong>. To support such feature, <strong>each version of a file/data set is associated to a unique encrypted <a href="https://en.wikipedia.org/wiki/SHA-1">SHA-1</a> (Secure Hash Algorithm 1) hash accession number</strong>. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set used in their analyses therefore supporting reproducibility.</p>
 </div>
-<div id="how-to-retrieve-the-url-of-a-github-csv-file" class="section level3" number="6.7.2">
-<h3><span class="header-section-number">6.7.2</span> How to retrieve the URL of a GitHub csv file?</h3>
+<div id="how-to-retrieve-the-url-of-a-github-csv-file" class="section level3" number="6.8.2">
+<h3><span class="header-section-number">6.8.2</span> How to retrieve the URL of a GitHub csv file?</h3>
 <p>Before being able to import a <code>csv</code> file deposited in GitHub into R you have to find it’s <em>raw</em> URL. In this section, we will demonstrate how to obtain this information by using the <code>Timetable_EEB603_topic_tasks.csv</code> file located on the <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv">course’s GitHub repository</a>.</p>
 <p>To retrieve the <em>raw</em> URL associated to <code>Timetable_EEB603_topic_tasks.csv</code> do the following:</p>
 <ol style="list-style-type: decimal">
@@ -3629,8 +3651,8 @@ Figure 6.5: Raw csv file associated to Timetable_EEB603_topic_tasks.csv. See tex
 <li>The URL can be shorten for free by using Bitly at <a href="https://bitly.com" class="uri">https://bitly.com</a>. In this case, the short URL pointing to our <code>csv</code> file is <a href="https://bit.ly/3BDxECl" class="uri">https://bit.ly/3BDxECl</a>. We will be using this URL in the example below.</li>
 </ol>
 </div>
-<div id="importing-github-csv-into-r" class="section level3" number="6.7.3">
-<h3><span class="header-section-number">6.7.3</span> Importing GitHub csv into R</h3>
+<div id="importing-github-csv-into-r" class="section level3" number="6.8.3">
+<h3><span class="header-section-number">6.8.3</span> Importing GitHub csv into R</h3>
 <p>Now that we have retrieved and shortened the <em>raw</em> GitHub URL pointing to our target <code>csv</code> file, we can use the <em>source_data()</em> function implemented in the R package <em>repmis</em> <span class="citation">(<a href="#ref-repmis" role="doc-biblioref">Gandrud, 2016</a>)</span> to download the file. This can be done as follows:</p>
 <pre class="r"><code>### ~~~ Load package ~~~
 library(repmis)
@@ -3707,8 +3729,8 @@ print(csvTimeTable)</code></pre>
 ## 30</code></pre>
 <p><em>source_data()</em> will always download the most recent version of the file from the master branch and return its unique SHA-1 hash. However, you could also download a prior version of the file by providing its specific SHA-1 hash associated to a previous <code>commit</code>.</p>
 </div>
-<div id="retrieving-csv-from-previous-commit" class="section level3" number="6.7.4">
-<h3><span class="header-section-number">6.7.4</span> Retrieving csv from previous commit</h3>
+<div id="retrieving-csv-from-previous-commit" class="section level3" number="6.8.4">
+<h3><span class="header-section-number">6.8.4</span> Retrieving csv from previous commit</h3>
 <p>Retrieving the <code>csv</code> file associated to a specific <code>commit</code> can be done by applying the following approach (here using the same example than above):</p>
 <ol style="list-style-type: decimal">
 <li>To find a file’s particular <code>commit</code> <em>raw</em> URL navigate to its location on GitHub by clicking <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv">here</a>.</li>
@@ -3805,11 +3827,11 @@ print(csvTimeTableOld)</code></pre>
 </ol>
 </div>
 </div>
-<div id="downloading-and-processing-github-repositories" class="section level2" number="6.8">
-<h2><span class="header-section-number">6.8</span> Downloading and processing GitHub repositories</h2>
+<div id="downloading-and-processing-github-repositories" class="section level2" number="6.9">
+<h2><span class="header-section-number">6.9</span> Downloading and processing GitHub repositories</h2>
 <p>Before being able to download a GitHub repository and work with its files into R, you have to find the URL pointing to the compressed <code>zip</code> file containing all the files for the target repository. In this section, we will demonstrate how to obtain this information by using the <a href="https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop">Sagebrush_rooting_in_vitro_prop GitHub repository</a>. As mentioned above, we will be downloading the whole repository and then extract all the <code>csv</code> files in the <code>01_Raw_Data/</code> folder (see Figure <a href="#fig:GitHubRawDatashot">6.3</a>).</p>
-<div id="how-to-retrieve-the-url-for-the-github-repository" class="section level3" number="6.8.1">
-<h3><span class="header-section-number">6.8.1</span> How to retrieve the URL for the GitHub repository?</h3>
+<div id="how-to-retrieve-the-url-for-the-github-repository" class="section level3" number="6.9.1">
+<h3><span class="header-section-number">6.9.1</span> How to retrieve the URL for the GitHub repository?</h3>
 <p>To retrieve the URL associated to the compressed <code>zip</code> file containing all files for the repository do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Navigate to the GitHub repository page by clicking <a href="https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop">here</a> (see Figure <a href="#fig:repo">6.8</a>).
@@ -3830,8 +3852,8 @@ Figure 6.8: GitHub repository page for Sagebrush_rooting_in_vitro_prop.
 <li>The copied URL (<a href="https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/archive/refs/heads/master.zip" class="uri">https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/archive/refs/heads/master.zip</a>) will serve as input for downloading the repository on your local computer (see below).</li>
 </ol>
 </div>
-<div id="downloading-github-repository-on-your-computer" class="section level3" number="6.8.2">
-<h3><span class="header-section-number">6.8.2</span> Downloading GitHub repository on your computer</h3>
+<div id="downloading-github-repository-on-your-computer" class="section level3" number="6.9.2">
+<h3><span class="header-section-number">6.9.2</span> Downloading GitHub repository on your computer</h3>
 <p>Now that we have secured the URL pointing to the compressed <code>zip</code> file for the target repository (by copying it), we will use this URL and the base R <em>download.file()</em> function as input to download the file on our local computer. Since compressed files could be large, we are also providing some code to check if the file already exists on your computer before downloading.</p>
 <pre class="r"><code>### ~~~ Store URL in object ~~~ Paste the URL that you copied
 ### in the previous section here
@@ -3851,11 +3873,11 @@ if (file.exists(&quot;Data/GitHubRepoSagebrush.zip&quot;) == TRUE) {
 }</code></pre>
 <pre><code>## [1] &quot;Downloading GitHub repository!&quot;</code></pre>
 </div>
-<div id="extracting-raw-data-from-compressed-github-repository" class="section level3" number="6.8.3">
-<h3><span class="header-section-number">6.8.3</span> Extracting raw data from compressed GitHub repository</h3>
+<div id="extracting-raw-data-from-compressed-github-repository" class="section level3" number="6.9.3">
+<h3><span class="header-section-number">6.9.3</span> Extracting raw data from compressed GitHub repository</h3>
 <p>Compressed files can be quite large and you might would like to avoid decompressing them, but rather accessing target files and only decompressing those. Here, we are practicing such approach by using <code>GitHubRepoSagebrush.zip</code> and targeting <code>csv</code> files in the <code>01_Raw_Data/</code> folder.</p>
-<div id="what-is-the-size-of-the-zip-file" class="section level4" number="6.8.3.1">
-<h4><span class="header-section-number">6.8.3.1</span> What is the size of the zip file?</h4>
+<div id="what-is-the-size-of-the-zip-file" class="section level4" number="6.9.3.1">
+<h4><span class="header-section-number">6.9.3.1</span> What is the size of the zip file?</h4>
 <p>To estimate the size (in bytes) of a file you can use base R function <em>file.size()</em> as follows:</p>
 <pre class="r"><code>### ~~~ Infer file size of GitHubRepoSagebrush.zip ~~~
 # Transform and round file size from bytes to Mb
@@ -3864,8 +3886,8 @@ ZipSize &lt;- round(file.size(&quot;Data/GitHubRepoSagebrush.zip&quot;)/1e+06,
 print(paste(&quot;The zip file size is&quot;, ZipSize, &quot;Mb&quot;, sep = &quot; &quot;))</code></pre>
 <pre><code>## [1] &quot;The zip file size is 22.26 Mb&quot;</code></pre>
 </div>
-<div id="decompressing-and-saving-csv-files-in-01_raw_data" class="section level4" number="6.8.3.2">
-<h4><span class="header-section-number">6.8.3.2</span> Decompressing and saving csv files in 01_Raw_Data/</h4>
+<div id="decompressing-and-saving-csv-files-in-01_raw_data" class="section level4" number="6.9.3.2">
+<h4><span class="header-section-number">6.9.3.2</span> Decompressing and saving csv files in 01_Raw_Data/</h4>
 <p>Finally, we can now i) list all files in the <code>zip</code> file, ii) identify <code>csv</code> files in <code>01_Raw_Data/</code> and iii) save these files on our local computer in a folder entitled <code>01_Raw_Data/</code>. These files will then constitute the raw data for your subsequent analyses.</p>
 <pre class="r"><code>### ~~~ List all files in zip file without decompressing it ~~~
 filesZip &lt;- as.character(unzip(&quot;Data/GitHubRepoSagebrush.zip&quot;, 
@@ -4062,10 +4084,13 @@ Generation in R</em>. R package version 1.30. 2020. &lt;URL:
 <p>[17] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
 Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
 2018. &lt;URL: <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>&gt;.</p>
-<p>[18] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
+<p>[18] Y. Xie, J. Cheng, and X. Tan. <em>DT: A Wrapper of the JavaScript
+Library DataTables</em>. R package version 0.16. 2020. &lt;URL:
+<a href="https://github.com/rstudio/DT" class="uri">https://github.com/rstudio/DT</a>&gt;.</p>
+<p>[19] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
 9780367563837. Boca Raton, Florida: Chapman and Hall/CRC, 2020. &lt;URL:
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>&gt;.</p>
-<p>[19] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
+<p>[20] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>&gt;.</p>
 </div>
@@ -4087,30 +4112,30 @@ Syntax</em>. R package version 1.2.1. 2020. &lt;URL:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] repmis_0.5           rticles_0.18         DiagrammeR_1.0.6.1  
-##  [4] data.tree_1.0.0      kableExtra_1.2.1     dplyr_1.0.2         
-##  [7] kfigr_1.2            devtools_2.3.2       usethis_2.0.0       
-## [10] formatR_1.7          knitcitations_1.0.10 bookdown_0.21       
-## [13] rmarkdown_2.6        knitr_1.30          
+##  [1] repmis_0.5           DT_0.16              rticles_0.18        
+##  [4] DiagrammeR_1.0.6.1   data.tree_1.0.0      kableExtra_1.2.1    
+##  [7] dplyr_1.0.2          kfigr_1.2            devtools_2.3.2      
+## [10] usethis_2.0.0        formatR_1.7          knitcitations_1.0.10
+## [13] bookdown_0.21        rmarkdown_2.6        knitr_1.30          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.6         lubridate_1.7.9.2  tidyr_1.1.2        prettyunits_1.1.1 
-##  [5] ps_1.5.0           visNetwork_2.0.9   assertthat_0.2.1   rprojroot_2.0.2   
-##  [9] digest_0.6.27      R6_2.5.0           plyr_1.8.6         evaluate_0.14     
-## [13] httr_1.4.2         highr_0.8          pillar_1.4.7       rlang_0.4.10      
-## [17] curl_4.3           data.table_1.13.6  rstudioapi_0.13    callr_3.5.1       
-## [21] R.utils_2.10.1     R.oo_1.24.0        desc_1.2.0         webshot_0.5.2     
-## [25] RefManageR_1.2.12  stringr_1.4.0      htmlwidgets_1.5.3  munsell_0.5.0     
-## [29] compiler_3.6.1     xfun_0.20          pkgconfig_2.0.3    pkgbuild_1.2.0    
-## [33] htmltools_0.5.0    tidyselect_1.1.0   tibble_3.0.4       fansi_0.4.1       
-## [37] viridisLite_0.3.0  crayon_1.3.4       withr_2.3.0        R.methodsS3_1.8.1 
-## [41] jsonlite_1.7.2     lifecycle_0.2.0    magrittr_2.0.1     scales_1.1.1      
-## [45] bibtex_0.4.2.3     cli_2.2.0          stringi_1.5.3      fs_1.5.0          
-## [49] remotes_2.2.0      testthat_3.0.1     xml2_1.3.2         ellipsis_0.3.1    
-## [53] vctrs_0.3.6        generics_0.1.0     RColorBrewer_1.1-2 tools_3.6.1       
-## [57] R.cache_0.14.0     glue_1.4.2         purrr_0.3.4        processx_3.4.5    
-## [61] pkgload_1.1.0      yaml_2.2.1         colorspace_2.0-0   sessioninfo_1.1.1 
-## [65] rvest_0.3.6        memoise_1.1.0</code></pre>
+##  [1] httr_1.4.2         pkgload_1.1.0      tidyr_1.1.2        jsonlite_1.7.2    
+##  [5] viridisLite_0.3.0  R.utils_2.10.1     assertthat_0.2.1   highr_0.8         
+##  [9] yaml_2.2.1         remotes_2.2.0      sessioninfo_1.1.1  pillar_1.4.7      
+## [13] glue_1.4.2         digest_0.6.27      RColorBrewer_1.1-2 rvest_0.3.6       
+## [17] RefManageR_1.2.12  colorspace_2.0-0   htmltools_0.5.0    R.oo_1.24.0       
+## [21] plyr_1.8.6         pkgconfig_2.0.3    bibtex_0.4.2.3     purrr_0.3.4       
+## [25] scales_1.1.1       webshot_0.5.2      processx_3.4.5     tibble_3.0.4      
+## [29] generics_0.1.0     ellipsis_0.3.1     withr_2.3.0        cli_2.2.0         
+## [33] magrittr_2.0.1     crayon_1.3.4       memoise_1.1.0      evaluate_0.14     
+## [37] ps_1.5.0           R.methodsS3_1.8.1  fs_1.5.0           fansi_0.4.1       
+## [41] R.cache_0.14.0     xml2_1.3.2         pkgbuild_1.2.0     data.table_1.13.6 
+## [45] tools_3.6.1        prettyunits_1.1.1  lifecycle_0.2.0    stringr_1.4.0     
+## [49] munsell_0.5.0      callr_3.5.1        compiler_3.6.1     rlang_0.4.10      
+## [53] rstudioapi_0.13    htmlwidgets_1.5.3  visNetwork_2.0.9   crosstalk_1.1.0.1 
+## [57] testthat_3.0.1     curl_4.3           R6_2.5.0           lubridate_1.7.9.2 
+## [61] rprojroot_2.0.2    desc_1.2.0         stringi_1.5.3      Rcpp_1.0.6        
+## [65] vctrs_0.3.6        tidyselect_1.1.0   xfun_0.20</code></pre>
 </div>
 <div class="footnotes">
 <hr />

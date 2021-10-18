@@ -42,6 +42,7 @@ library(kableExtra)
 library(data.tree)
 library(DiagrammeR)
 library(rticles)
+library(DT)
 
 #Generate BibTex citation file for all R packages used to produce report
 knitr::write_bib(.packages(), file = 'packages.bib')
@@ -2907,12 +2908,41 @@ This approach is aimed at demonstrating how you could access raw data deposited 
 
 - https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
 
-## Overview of the methods applied in this chapter
+## Overview of methods applied in this chapter
 
 In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedures to:
 
 1. Import comma-separated values format (`csv`) stored in GitHub repositories.
 2. Download and process whole GitHub repositories saved in compressed `zip` format.
+
+## List of R functions covered in this chapter
+
+The list of major R functions covered in this chapter are provided in the Table below.
+
+```{r funcTab, eval = T, echo=F, warning = FALSE, message=FALSE}
+###~~~
+#Read in csv with functions
+###~~~
+funcTab <- read.csv("Data/Functions_Chapter_06.csv") 
+
+###~~~
+#Produce final table
+###~~~
+
+#Order table (alphabetically)
+funcTab <- funcTab[order(funcTab$Function),]
+rownames(funcTab) <- NULL
+###~~~
+#Plot timetable in doc
+###~~~
+#Plot table
+DT::datatable(funcTab, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Blfrtip', buttons = c('copy', 'csv', 'excel', 'pdf', 'print')), rownames= FALSE) %>%
+  DT::formatStyle('Function', fontWeight = 'bold')
+
+#knitr::kable(as.data.frame(lex), caption = "Lexicon of terms used in this course.") %>%
+#  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+``` 
 
 ## Getting started!
 
