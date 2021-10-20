@@ -2880,6 +2880,8 @@ When you are within a project and choose to either Quit, close the project, or o
 
 Additional information on RStudio projects can be found here:
 
+https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+
 ## Bioinformatic dependencies and data repositories
 
 The list of R packages and GitHub repositories used in this chapter are listed below. Please make sure you have all these set-up before starting reading and completing the material presented in this chapter.
@@ -2979,7 +2981,7 @@ https://raw.githubusercontent.com/svenbuerki/EEB603_Reproducible_Science/master/
 
 ### Importing GitHub csv into R
 
-Now that we have retrieved and shortened the *raw* GitHub URL pointing to our target `csv` file, we can use the *source_data()* function implemented in the R package *repmis* [@repmis] to download the file. This can be done as follows:
+Now that we have retrieved and shortened the *raw* GitHub URL pointing to our target `csv` file, we can use the *source_data()* function implemented in the R package *repmis* [@repmis] to download the file. The object return by *source_data()* is a `data.frame` and can therefore be easily manipulated and saved on your local computer (using e.g. *write.csv()*). Retrieving a `csv` data set from a GitHub repository can be done as follows:
 
 ```{r githubcsv}
 ###~~~
@@ -2996,6 +2998,12 @@ urlcsv <- "https://bit.ly/3BDxECl"
 #Download/Import csv into R
 ###~~~
 csvTimeTable <- repmis::source_data(url = urlcsv) 
+
+###~~~
+#Check class
+###~~~
+#Class should be `data.frame`
+class(csvTimeTable)
 
 ###~~~
 #Print csv
@@ -3030,6 +3038,12 @@ urlcsvold <- "https://raw.githubusercontent.com/svenbuerki/EEB603_Reproducible_S
 #Download/Import csv into R
 ###~~~
 csvTimeTableOld <- repmis::source_data(url = urlcsvold) 
+
+###~~~
+#Check class
+###~~~
+#Class should be `data.frame`
+class(csvTimeTableOld)
 
 ###~~~
 #Print csv
