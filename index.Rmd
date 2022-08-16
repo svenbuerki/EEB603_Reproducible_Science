@@ -52,7 +52,7 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 -   Name: Sven Buerki
 -   Office: Science building, office 114 (ground floor).
 -   Email: [svenbuerki\@boisestate.edu](mailto:svenbuerki@boisestate.edu){.email}
--   Office hours: By appointment....
+-   Office hours: By appointment.
 
 # Our class ethos
 
@@ -64,35 +64,31 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 knitr::include_graphics("Images/Kindness.png")
 ```
 
-# Course delivery type
+# Class details
 
-To accommodate physical distancing and other safety measures necessitated by the coronavirus pandemic, the university is making changes to its fall 2020 course schedule. **This course will be taught remotely.** This means that courses meet virtually via technology (here Zoom) at scheduled class meeting times (see below).
+## Teaching mode and class location
 
-## What technology do you need?
+In-person in [Science Bldg, Rm 149](https://maps.boisestate.edu/?id=715#!m/89069).
 
-- You will need reliable access to a computer with an internet connection and a webcam.
-- You will need to install a suite of software on your computer ([Zoom](https://boisestate.zoom.us), [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com)). Please see [the computing tools of reproducible science](#software) section below for more details.
-- More information on Zoom provided by BSU is available [here](https://www.boisestate.edu/oit-learning/video/zoom/).
-- If you have concerns about access to technology needed for your courses this fall, the [Help Desk](https://www.boisestate.edu/oit/assistance/) is the place to begin to discuss your needs. The instructor would also gladly help you with any technology needs.
-
-# Class schedule
-
-## Meeting days & times
+## Meeting days and times
 
 Tuesday & Thursday from 9:00 to 10:15 AM.
 
-## Zoom information
+## Timetable
 
-Class will take place remotely using the [Zoom](https://boisestate.zoom.us) platform. A fully-licensed Zoom account is available to all faculty, staff, and students at Boise State. Zoom is a great tool for conducting remote meetings that allows you to see and hear one another, chat, share your computer screen, and more. In our case, we will be taking advantage of the remote control feature allowing users to take control of another participant's screen in a meeting. This is especially useful to help working on and debugging R code. Please see the following Zoom webpages for more details on:
+The tentative timetable for this course is available [here](Timetable.html). The instructor wants to warn students that he might adjust the timetable to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
 
-- Remote support session: https://support.zoom.us/hc/en-us/articles/208072316-Remote-Support-Session
-- Requesting or giving remote control: https://support.zoom.us/hc/en-us/articles/201362673-Requesting-or-giving-remote-control#heading=h.bdhzh38o7ljq
+## Health and safety protocols
 
-### Zoom meeting
+**Our priority is your safety!**
 
-- **Join Zoom Meeting:** [url](https://boisestate.zoom.us/j/94497163528?pwd=YU9wdHRSWjh4ajRkUnphOUV4clRFZz09)
-- **Meeting ID:** 944 9716 3528
-- **Passcode:** 152999
+The following rules apply for in-person classes:
+
+- Use sanitizing wipes to clean surfaces (desk and keyboard) at beginning and end of class.
+- Keep using the same seat throughout the semester. This information should be entered into MyBoiseState.
+- Do not attend class if you are sick.
+
+For more information consult the [BSU campus guidelines](https://www.boisestate.edu/coronavirus-response/).
 
 # Course goal & description
 
@@ -104,7 +100,6 @@ Ultimately, this course aims at **providing students with key knowledge to gathe
 knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")
 ```
 
-
 # <a name="Structure"></a>Structure of the course
 
 The course is subdivided into three parts: 
@@ -112,7 +107,6 @@ The course is subdivided into three parts:
 - *PART 1: The Big Picture*
 - *PART 2: Bioinformatics for Reproducible Science* 
 - *PART 3: Apply a Reproducible Approach to your Data*
-
 
 Part 1 aims at providing students with key theoretical knowledge on this topic allowing them to successfully design a reproducible approach tailored to Ecology & Evolution. Part 2 provides students with opportunities to learn and apply the bioinformatic tools required to implement a reproducible workflow (see see Figure \@ref(fig:part2)). Here, each student (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject (the material will be taught across two sessions to provide enough time for students to assimilate each subject). Tutorials will be written in an open access format and distributed to the class. Finally, part 3 will consist in providing students with an opportunity to develop individual reproducible workflows tailored to their thesis project or to data presented in a publication. This will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).
 

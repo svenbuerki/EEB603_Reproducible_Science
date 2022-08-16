@@ -47,7 +47,7 @@ The tentative timetable for this course is available in Table \@ref(tab:timetab)
 ###~~~
 # Build a data frame with all dates from beginning to end of Fall semester
 ###~~~
-dates <- data.frame(seq.Date(from=as.Date("2021/08/23"), to=as.Date("2021/12/10"), by="day"))
+dates <- data.frame(seq.Date(from=as.Date("2022/08/22"), to=as.Date("2022/12/09"), by="day"))
 #Assign a name to the col (allows using $)
 colnames(dates) <- "Date"
 
@@ -73,7 +73,7 @@ datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=16, by=1), 2)), datesc
 # Exclude dates falling during holiday break
 ###~~~
 #Establish vector of dates related to holidays
-holiday <- seq.Date(from=as.Date("2021/11/22"), to=as.Date("2021/11/28"), by="day")
+holiday <- seq.Date(from=as.Date("2022/11/21"), to=as.Date("2022/11/27"), by="day")
 
 #Find and exclude holidays
 datesclass <- datesclass[-which(datesclass$Date %in% holiday),]
