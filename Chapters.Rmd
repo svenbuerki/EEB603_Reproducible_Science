@@ -1719,6 +1719,16 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 
 # Chapter 4
 
+Balancing open science with values of your stakeholders is a challenging task, which requires your attention!
+
+What are the pillars of open science?
+
+Presenting the FAIR and CARE Principles.
+
+Licensing your work focusing on publication (code will be covered in Chapter 5).
+
+# Chapter 5
+
 ## Introduction
 
 This chapter is subdivided into two parts as follows:
@@ -2409,7 +2419,7 @@ This will not be covered in this class, but it is worth noting that there are at
 
 The instructor expects students to discuss with their supervisors to identify if those packages are potentially useful for their projects. 
 
-# Chapter 5
+# Chapter 6
 
 ## Introduction
 
@@ -2809,7 +2819,7 @@ To get familiar with this procedure, please practice by applying the above appro
 
 Enjoy writing scientific publications in R Markdown!
 
-# Chapter 6
+# Chapter 7
 
 ## Introduction
 

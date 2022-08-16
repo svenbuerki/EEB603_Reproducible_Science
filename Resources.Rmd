@@ -116,6 +116,17 @@ Please see the full documentation (with examples) at this url: https://rstudio.g
 
 <div id="refs"></div>
 
+# Publications
+
+Here is a list of the publications used in this class.
+
+```{r references, eval = T, results="asis", cache = F, echo=F, warning = FALSE, message=FALSE}
+library("knitcitations")
+cleanbib()
+options("citation_format" = "pandoc")
+read.bibtex(file = "Bibliography_Reproducible_Science_2.bib")
+``` 
+
 # Appendix 1 {.appendix}
 
 Citations of all R packages used to generate this report. 

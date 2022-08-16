@@ -45,7 +45,7 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
 <div style="text-align: right"> [Download pdf version](Data/EEB603_Syllabus_BUERKI.pdf) </div>
-<div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/ReproducibleScience) </div>
+<div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science) </div>
 
 # Instructor
 
@@ -118,21 +118,22 @@ Part 1 aims at providing students with key theoretical knowledge on this topic a
    - Chapter 1: Introduction to R, RStudio, Markdown (incl. referencing) & User-defined functions.
    - Chapter 2: The reproducibility crisis.
    - Chapter 3: A road map to implement reproducible science in Ecology & Evolution.
+   - Chapter 4: Open science and CARE principles.
 2. **Getting started: Overview of data workflow & used software**
-   - Chapter 4: Data management, Reproducible code.
-   - Chapter 5: Getting published & Peer review.
+   - Chapter 5: Data management, Reproducible code.
+   - Chapter 6: Getting published & Peer review.
   
 <a name="PART2"></a>**PART 2: Bioinformatics for Reproducible Science** 
 
 3. **Prepare your data**
-   - Chapter 6: Organize and import data with R.
-   - Chapter 7: Prepare/tidy data for analyses in R.
+   - Chapter 7: Organize and import data with R.
+   - Chapter 8: Prepare/tidy data for analyses in R.
 4. **Explore & understand your data**
-   - Chapter 8: Statistical modelling and *knitr*.
-   - Chapter 9: Visualize results with Tables.
-   - Chapter 10: Visualize results with Figures (incl. handling phylogenetic trees).
+   - Chapter 9: Statistical modelling and *knitr*.
+   - Chapter 10: Visualize results with Tables.
+   - Chapter 11: Visualize results with Figures (incl. handling phylogenetic trees).
 5. **Communicate/Disseminate your results**
-   - Chapter 11: Git & GitHub: What are those and how can they help you with your code and communicating your research?
+   - Chapter 12: Git & GitHub: What are those and how can they help you with your code and communicating your research?
    
 **PART 3: Apply a Reproducible Approach to your Data**
 
@@ -152,16 +153,17 @@ The reading material at the basis of this course is composed of a mixture of pub
 | Chapter | Reference(s)  |
 | :--- |-------------|
 | **Chap. 1** | Chapter 3 of @Gandrud2015 |
-| **Chap. 2** | @Baker_2016; @Freedman_2015; @Munafo; @Sarewitz_2016 |
+| **Chap. 2** | @Baker_2016; @Freedman_2015; @Munafo; ; @Peng2021; @Sarewitz_2016 |
 | **Chap. 3** | @Bone2015; @Smith2016 |
-| **Chap. 4** | @DataMan & Chapter 4 of @Gandrud2015; @RepCode & Chapter 2 of @Gandrud2015 |
-| **Chap. 5** | @GetPub; @PeerRev|
-| **Chap. 6** | Chapter 6 of @Gandrud2015 |
-| **Chap. 7** | Chapter 7 of @Gandrud2015 & Chapters 9-10 of @Wickham2017 |
-| **Chap. 8** | Chapter 8 of @Gandrud2015 |
-| **Chap. 9** | Chapter 9 of @Gandrud2015 |
-| **Chap. 10** | Chapter 10 of @Gandrud2015, Chapters 1 and 22 of @Wickham2017 & @Yu2017 |
-| **Chap. 11** | Chapter 5 of @Gandrud2015 |
+| **Chap. 4** | @Carroll2021; [Creative Commons](https://creativecommons.org/); @Wagner2022 |
+| **Chap. 5** | @DataMan & Chapter 4 of @Gandrud2015; @RepCode & Chapter 2 of @Gandrud2015; @Trisovic2022 |
+| **Chap. 6** | @GetPub; @PeerRev|
+| **Chap. 7** | Chapter 6 of @Gandrud2015 |
+| **Chap. 8** | Chapter 7 of @Gandrud2015 & Chapters 9-10 of @Wickham2017 |
+| **Chap. 9** | Chapter 8 of @Gandrud2015 |
+| **Chap. 10** | Chapter 9 of @Gandrud2015 |
+| **Chap. 11** | Chapter 10 of @Gandrud2015, Chapters 1 and 22 of @Wickham2017 & @Yu2017 |
+| **Chap. 12** | Chapter 5 of @Gandrud2015 |
 
 # <a name="software"></a>The computing tools of reproducible science
 
