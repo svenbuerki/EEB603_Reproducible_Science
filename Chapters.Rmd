@@ -65,6 +65,9 @@ opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60), 
 
 ## Locate figures as close as possible to requested position (=code)
 knitr::opts_chunk$set(fig.pos = 'H')
+
+# Read bibtex file
+refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 ```
 
 # Chapter 1 {#chap1}
@@ -1721,11 +1724,81 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 
 Balancing open science with values of your stakeholders is a challenging task, which requires your attention!
 
-What are the pillars of open science?
+### Literature and web resources
+
+This chapter is based on:
+
+- LERU Roadmap for Open Science: https://www.leru.org/publications/open-science-and-its-role-in-universities-a-roadmap-for-cultural-change#
+- `r capture.output(print(refs["Wilkinson2016"]))`
+- `r capture.output(print(refs["Wagenknecht2021"]))`
+- `r capture.output(print(refs["Groom2017"]))`
+
+## What are the pillars of open science?
+
+The 7 pillars of Open Science are 
+
+- [FAIR Data](#FAIR), 
+- [Research Integrity](#RI), 
+- [Next Generation Metrics](#NGSMet), 
+- [Future of Scholarly Communication](#FSC), 
+- [Citizen Science](#CS), 
+- [Education and Skills](#ES),
+- [Rewards and Initiatives](#EI).
+
+### FAIR Data {#FAIR}
+
+The FAIR principles [@Wilkinson2016] steward researchers in making outputs of research:
+
+- **F**indable: making research outputs discoverable by the wider academic community and the public.
+- **A**ccessible: using unique identifiers, metadata and a clear use of language and access protocols.
+- **I**nteroperable: applying standards to encode and exchange data and metadata.
+- **R**eusable: enabling the re-purposing of research outputs to maximize their research potential.
+
+When combined, these four elements are designed to help lower barriers to research outputs and facilitate potential secondary researchers finding, understanding reusing and re-purposing them to realize additional research opportunities and maximize existing resources.
+
+### Research Integrity {#RI}
+
+This is the practice of researchers acting honestly, reliably, respectfully and are accountable for their actions. 
+
+### Next Generation Metrics {#NGSMet}
+
+The next-generation metrics pillar of Open Science seeks to catalyse a shift in cultural thinking around the way in which bibliometrics are utilized in research, particularly when evaluating quality, and go beyond simply citation counts and journal impact. Appropriate metrics, drawn from different sources and describing different things, can help us gain a broader understanding of the significance and impact of research.
+
+For instance, more institutions and funders are supporting the [San Francisco Declaration of Research Assessment - DORA](https://sfdora.org/) and openly reject the use of quantitative metrics commonly associated with journal impact factors as a measure of research quality.
+
+### Future of Scholarly Communication {#FSC}
+
+The future of scholarly communication is one of the most prominent pillars of Open Scholarship given its intention to shift the current academic publishing model towards fully Open Access. We will be delevoping more this topic below in our section on open access and associated licenses.
+
+### Citizen Science {#CS}
+
+Movement towards members of the public having a greater role within research and recognizing the invaluable role they play in providing insights a researcher may not typically have.
+
+Harnessing the advantages of the internet, openly available software packages and local knowledge, citizen science brings about a change in the way research is conducted – no longer limited to academic researchers, it encourages collaboration from groups across society.
+
+@Wagenknecht2021 discuss this topic and its implementation in the case of a European Citizen Science project and @Groom2017 are reflecting on the role of Citizen Science in biodiversity research. 
+
+### Education and Skills {#ES}
+
+This pillar focuses on identifying which are the training needs of researchers and sufficiently addressing any gaps in knowledge and skills around engaging with Open Science such as making publications openly accessible, managing research data in-line with the FAIR principles and acting with integrity. All researchers at all levels should have access to education and skills programmes to support their work and continued learning. Further, skill development programmes should be opened up to other stakeholders in research such as professional staff including librarians and data managers and members of the public to facilitate the undertaking of citizen science. 
+
+### Rewards and Initiatives {#EI}
+
+Fostering engagement with the principle of Open Science requires reward and recognition of the efforts to do so – this pillar addresses barriers and champions best practice.
+
+A perceived lack of reward and recognition for work undertaken to manage research data and make publications openly accessible discourages researchers from engaging with the principle of Open Science. Work falling under this pillar seeks to address these challenges and champion engagement with Open Science practices.
+
+## Open Access: A tool to promote Open Science
+
+Open access is a set of principles and a range of practices through which research outputs are distributed online, free of access charges or other barriers. Although publications are free of charges to the users, researchers will have to pay publication fees (usually between \$1500 and \$2500) to publish their research as open access. With open access strictly defined (according to the 2001 definition), barriers to copying or reuse are also reduced or removed by applying an open license for copyright. An open license is a license which allows others to reuse another creator’s work as they wish. Without a special license, these uses are normally prohibited by copyright, patent or commercial license. Most free licenses are worldwide, royalty-free, non-exclusive, and perpetual. 
+
+Licensing your work focusing on publication (code will be covered in Chapter 5).
+
+
+## Is Open Science always possible?
 
 Presenting the FAIR and CARE Principles.
 
-Licensing your work focusing on publication (code will be covered in Chapter 5).
 
 # Chapter 5
 
@@ -1738,7 +1811,7 @@ This chapter is subdivided into two parts as follows:
 
 ## Data management {#partDM}
 
-The presentation slides for Chapter 4 - part A can be downloaded [here](Chapters_files/Chapter_4_Data_management.pdf).
+The presentation slides for Chapter 5 - part A can be downloaded [here](Chapters_files/Chapter_4_Data_management.pdf).
 
 ### Introduction
 
@@ -2107,7 +2180,7 @@ The data management checklist from the [UK Data Archive](https://www.ukdataservi
 
 ## Reproducible code {#repcode}
 
-The presentation slides for Chapter 4 - part B can be downloaded [here](Chapters_files/Chapter_4_Reproducible_code.pdf).
+The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_4_Reproducible_code.pdf).
 
 ### Introduction
 
@@ -2131,6 +2204,7 @@ This chapter is based on:
 - @wickham2014advanced -- *Advanced R* by Hadley Wickham (https://adv-r.hadley.nz)
 - Hadley Wickham’s R Style Guides: http://adv-r.had.co.nz/Style.html
 - Absolute vs relative paths: https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths
+- Comparison of free and open-source software licenses: https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
 
 ### "Draw" a reproducible project workflow
 
