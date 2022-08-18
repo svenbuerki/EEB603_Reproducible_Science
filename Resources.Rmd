@@ -114,9 +114,15 @@ The R [*learnr* package](https://cran.r-project.org/web/packages/learnr/index.ht
 
 Please see the full documentation (with examples) at this url: https://rstudio.github.io/learnr/
 
-<div id="refs"></div>
+# FAIR and CARE Principles
 
-# Publications
+- ResearchHub: https://research-hub.auckland.ac.nz/guide-to-managing-research-data/ethics-integrity-and-compliance/the-fair-and-care-principles-for-research-data
+
+# Special Issue on Reproducibility and research integrity
+
+*BMC Research Notes* published a special issue on Reproducibility and research integrity in 2022. You can consult all the publications [here](https://www.biomedcentral.com/collections/reproducibility).
+
+# Publications used in this class
 
 Here is a list of the publications used in this class.
 
@@ -126,6 +132,8 @@ cleanbib()
 options("citation_format" = "pandoc")
 read.bibtex(file = "Bibliography_Reproducible_Science_2.bib")
 ``` 
+
+<div id="refs"></div>
 
 # Appendix 1 {.appendix}
 
