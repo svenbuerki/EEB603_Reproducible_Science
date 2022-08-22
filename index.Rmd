@@ -153,7 +153,7 @@ The reading material at the basis of this course is composed of a mixture of pub
 | Chapter | Reference(s)  |
 | :--- |-------------|
 | **Chap. 1** | Chapter 3 of @Gandrud2015 |
-| **Chap. 2** | @Baker_2016; @Freedman_2015; @Munafo; ; @Peng2021; @Sarewitz_2016 |
+| **Chap. 2** | @Baker_2016; @Freedman_2015; @Munafo; @Peng2021; @Sarewitz_2016 |
 | **Chap. 3** | @Bone2015; @Markowetz2015; @Smith2016 |
 | **Chap. 4** | @Carroll2021; [Creative Commons](https://creativecommons.org/); @Wagner2022 |
 | **Chap. 5** | @DataMan & Chapter 4 of @Gandrud2015; @RepCode & Chapter 2 of @Gandrud2015; @Trisovic2022 |

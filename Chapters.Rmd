@@ -70,6 +70,10 @@ knitr::opts_chunk$set(fig.pos = 'H')
 refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 ```
 
+# Syllabus
+
+Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/Chapter_00_Syllabus_EEB603.pdf). 
+
 # Chapter 1 {#chap1}
 
 ## Introduction
