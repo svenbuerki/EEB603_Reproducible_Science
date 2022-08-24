@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-08-22" />
+<meta name="date" content="2022-08-24" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -169,11 +169,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -373,7 +377,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Syllabus</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-08-22</h4>
+<h4 class="date">2022-08-24</h4>
 
 </div>
 
@@ -993,7 +997,7 @@ https://doi.org/10.1146/annurev-publhealth-012420-105110
 <h1><span class="header-section-number">19</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
 <p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
-Documents for R</em>. R package version 2.14. 2022.
+Documents for R</em>. R package version 2.15. 2022.
 <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 <p>[2] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
 R package version 1.0.12. 2021.
@@ -1017,7 +1021,7 @@ Developing R Packages Easier</em>. R package version 2.4.4. 2022.
 Markdown</em>. ISBN 978-1138700109. Boca Raton, Florida: Chapman and
 Hall/CRC, 2016. <a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a>.</p>
 <p>[9] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
-Markdown</em>. R package version 0.27. 2022.
+Markdown</em>. R package version 0.28. 2022.
 <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 <p>[10] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
 978-1498716963. Boca Raton, Florida: Chapman and Hall/CRC, 2015.
@@ -1029,7 +1033,7 @@ R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V.
 Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and
 Hall/CRC, 2014. <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>.</p>
 <p>[13] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
-Generation in R</em>. R package version 1.39. 2022.
+Generation in R</em>. R package version 1.40. 2022.
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.</p>
 <p>[14] Y. Xie and J. Allaire. <em>tufte: Tufte’s Styles for R Markdown
 Documents</em>. R package version 0.12. 2022.
