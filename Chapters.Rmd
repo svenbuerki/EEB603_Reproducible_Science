@@ -554,6 +554,7 @@ In addition to providing citations to R packages, you might also would like to p
 wants to recreate your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
 
 ```{r eval=T, echo=T}
+# Collect Information About the Current R Session
 sessionInfo()
 ```
 
@@ -567,7 +568,7 @@ Version information about R, the operating system (OS) and attached or R loaded 
 ```
 
 2. Then, add an R code chunk with the following code:
-```{r eval=F, echo=F, warning = FALSE, message=FALSE}
+```{r eval=F, echo=T, warning = FALSE, message=FALSE}
 #Load and provide all packages and versions
 sessionInfo()
 ```
