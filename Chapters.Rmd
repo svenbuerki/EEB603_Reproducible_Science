@@ -78,7 +78,7 @@ Please see this [webpage](index.html) for more details on the Syllabus. In addit
 
 ## Introduction
 
-In this chapter, we will introduce the bioinformatic tools to write and disseminate reproducible reports as implemented in RStudio. More specifically, we will learn procedures to link and execute data and code into a unified environment (see Figure \@ref(fig:ReproScience)). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either `pdf`, `HTML` or `Word` formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:
+In this chapter, we will introduce the **bioinformatic tools to write and disseminate reproducible reports** as implemented in RStudio. More specifically, we will learn procedures to **link and execute data and code into a unified environment** (see Figure \@ref(fig:ReproScience)). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either `pdf`, `HTML` or `Word` formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:
 
 - [**PART A:**](#partA) Learning the basics.
 - [**PART B:**](#partB) Tables, Figures and References.
@@ -422,12 +422,16 @@ output:
     toc: TRUE
 link-citations: yes
 fontsize: 12pt
-bibliography: [Bibliography_Reproducible_Science_2.bib, packages.bib] 
+bibliography: Bibliography_Reproducible_Science_2.bib 
 csl: AmJBot.csl
 ---
 ```
 
 **Warning:** `.bib` and `.csl` files have to be stored in the same working directory as your `.Rmd` file.
+
+**Citing multiple bibliography files** by using this syntax:
+
+`bibliography: [file1.bib, file2.bib]` 
 
 ##### Step-by-step procedure
 
@@ -496,7 +500,7 @@ If you want to generate those latter citation entries in [BibTeX format], you ca
 toBibtex(citation("knitr"))
 ```
 
-To use citation entries generated from `toBibtex()`, you have to copy the output to a `.bib` file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by adding the following code to your `packages` R code chunk:
+To use citation entries generated from `toBibtex()`, you have to copy the output to a `.bib` file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by **adding the following code to your `packages` R code chunk**:
 
 ```{r cit3, eval=F, echo=TRUE}
 #Generate BibTex citation file for all R packages used to produce report
@@ -521,6 +525,8 @@ Although a bibliography/references section will be provided at the end of your d
 # (APPENDIX) Appendix {-}
 
 # Appendix 1
+
+Citations of all R packages used to generate this report.
 ```
 2. Insert an R code chunk directly under `# Appendix` to read in and print citations saved in `packages.bib`. This is done as follows:
 ```{r generateBibliography1, eval=FALSE, echo=TRUE, warning = FALSE, message=FALSE}
@@ -551,7 +557,20 @@ wants to recreate your analysis, they will know which packages they will need to
 sessionInfo()
 ```
 
-I have also used the approach described above to add this information in [Appendix 2]. 
+I have also used the approach described above to add this information in [Appendix 2]. This can be done as follows:
+
+1. Edit the Markdown section to add the following text below Appendix 1.
+```{r eval = FALSE}
+# Appendix 2
+
+Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
+```
+
+2. Then, add an R code chunk with the following code:
+```{r eval=F, echo=F, warning = FALSE, message=FALSE}
+#Load and provide all packages and versions
+sessionInfo()
+```
 
 ### All set, good to go!
 
@@ -573,7 +592,9 @@ There will be more details about figures in chapter 9; however this tutorial int
 Here, you will learn the R Markdown syntax and R code required to replicate the grading scale presented in the Syllabus (see Table \@ref(tab:tabgrades)):
 
 ```{r tabgrades, echo=F, fig.align='center'}
+#Create a data.frame w/ grading scale
 grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
+#Plot table
 knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
 ```
 
@@ -582,7 +603,9 @@ knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable
 3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
 4. Write the following R code in the code chunk:
 ```{r tabgrades2, eval=FALSE, echo=TRUE}
+#Create a data.frame w/ grading scale
 grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
+#Plot table and add caption
 knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
 ```
 5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
@@ -614,7 +637,9 @@ Here, you will learn the R Markdown syntax and R code required to replicate Figu
 3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
 4. Write the following R code in the code chunk:
 ```{r eval=FALSE}
+#Load and summarize cars dataset
 summary(cars)
+#Plot data
 plot(cars)
 ```
 5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
