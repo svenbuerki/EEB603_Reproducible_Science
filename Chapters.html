@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-08-31" />
+<meta name="date" content="2022-09-04" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -396,7 +396,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-08-31</h4>
+<h4 class="date">2022-09-04</h4>
 
 </div>
 
@@ -725,12 +725,51 @@ Figure 2.6: Example of code chunks.
 </div>
 <div id="set-your-r-markdown-environment" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Set your R Markdown environment</h3>
-<div id="install-dependencies" class="section level4" number="2.3.3.1">
+<div id="instDep" class="section level4" number="2.3.3.1">
 <h4><span class="header-section-number">2.3.3.1</span> Install dependencies</h4>
-<p>To execute this tutorial the following R packages have to be installed on your computer using code provided below:</p>
-<pre class="r"><code>install.packages(c(&quot;knitr&quot;, &quot;rmarkdown&quot;, &quot;bookdown&quot;, &quot;formattable&quot;,
-    &quot;kableExtra&quot;, &quot;dplyr&quot;, &quot;magrittr&quot;, &quot;prettydoc&quot;, &quot;htmltools&quot;,
-    &quot;knitcitations&quot;))</code></pre>
+<p>To execute this tutorial the following R packages (declared in <code>pkg</code> object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file saved at the root of your project.</p>
+<pre class="r"><code>##~~~
+#1. List all required packages
+##~~~
+#Object (args) provided by user with names of packages stored into a vector
+pkg &lt;- c(&quot;knitr&quot;, &quot;rmarkdown&quot;, &quot;bookdown&quot;, &quot;formattable&quot;, &quot;kableExtra&quot;, &quot;dplyr&quot;, &quot;magrittr&quot;, &quot;prettydoc&quot;, &quot;htmltools&quot;, &quot;knitcitations&quot;, &quot;bibtex&quot;, &quot;devtools&quot;)
+
+##~~~
+#2. Check if pkg are installed
+##~~~
+print(&quot;Check if packages are installed&quot;)</code></pre>
+<pre><code>## [1] &quot;Check if packages are installed&quot;</code></pre>
+<pre class="r"><code>#This line outputs a list of packages that are not installed
+new.pkg &lt;- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+#3. Install missing packages
+##~~~
+if(length(new.pkg) &gt; 0){
+  print(paste(&quot;Install missing package(s):&quot;, new.pkg, sep=&#39; &#39;))
+  install.packages(new.pkg, dependencies = TRUE)
+}else{
+  print(&quot;All packages are already installed!&quot;)
+}</code></pre>
+<pre><code>## [1] &quot;All packages are already installed!&quot;</code></pre>
+<pre class="r"><code>##~~~
+#4. Load all packages
+##~~~
+print(&quot;Load packages and return status&quot;)</code></pre>
+<pre><code>## [1] &quot;Load packages and return status&quot;</code></pre>
+<pre class="r"><code>#Here we use the sapply() function to require all the packages
+sapply(pkg, require, character.only = TRUE)</code></pre>
+<pre><code>## Loading required package: formattable</code></pre>
+<pre><code>## Loading required package: magrittr</code></pre>
+<pre><code>## Loading required package: prettydoc</code></pre>
+<pre><code>## Loading required package: htmltools</code></pre>
+<pre><code>## Loading required package: bibtex</code></pre>
+<pre><code>##         knitr     rmarkdown      bookdown   formattable    kableExtra 
+##          TRUE          TRUE          TRUE          TRUE          TRUE 
+##         dplyr      magrittr     prettydoc     htmltools knitcitations 
+##          TRUE          TRUE          TRUE          TRUE          TRUE 
+##        bibtex      devtools 
+##          TRUE          TRUE</code></pre>
 </div>
 <div id="texdistr" class="section level4" number="2.3.3.2">
 <h4><span class="header-section-number">2.3.3.2</span> TeX distribution</h4>
@@ -850,7 +889,12 @@ library(magrittr)
 library(prettydoc)
 library(htmltools)
 library(knitcitations)
+library(bibtex)
 library(devtools)</code></pre>
+</div>
+<div id="challenge" class="section level5" number="2.3.3.5.2">
+<h5><span class="header-section-number">2.3.3.5.2</span> Challenge</h5>
+<p>Please get inspiration from the code presented in <a href="#instDep">section</a> to improve the code in the <code>packages</code> code chunk.</p>
 </div>
 </div>
 <div id="generate-citation-file-of-r-packages-used-to-produce-the-report" class="section level4" number="2.3.3.6">
@@ -917,7 +961,7 @@ knitr::write_bib(.packages(), file = &quot;packages.bib&quot;)</code></pre>
 </div>
 <div id="generate-appendix-with-citations-for-all-r-packages" class="section level4" number="2.3.3.7">
 <h4><span class="header-section-number">2.3.3.7</span> Generate Appendix with citations for all R packages</h4>
-<p>Although a bibliography/references section will be provided at the end of your document to cite in text references (see <a href="#references-1">References</a>), it is customed to add citations for all R packages used to generate the research in <a href="#appendix-1">Appendix 1</a>. We will learn here the procedure to assemble such Appendix.</p>
+<p>Although a bibliography/references section will be provided at the end of your document to cite in text references (see <a href="#references-1">References</a>), it is customized to add citations for all R packages used to generate the research in <a href="#appendix-1">Appendix 1</a>. We will learn here the procedure to assemble such Appendix.</p>
 <div id="step-by-step-procedure-2" class="section level5" number="2.3.3.7.1">
 <h5><span class="header-section-number">2.3.3.7.1</span> Step-by-step procedure</h5>
 <ol style="list-style-type: decimal">
@@ -975,11 +1019,13 @@ sessionInfo()</code></pre>
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] DT_0.24              rticles_0.23         DiagrammeR_1.0.9    
-##  [4] data.tree_1.0.0      kableExtra_1.3.4     dplyr_1.0.9         
-##  [7] kfigr_1.2.1          devtools_2.4.4       usethis_2.1.6       
-## [10] formatR_1.12         knitcitations_1.0.12 bookdown_0.28       
-## [13] rmarkdown_2.16       knitr_1.40          
+##  [1] bibtex_0.4.2.3       htmltools_0.5.3      prettydoc_0.4.1     
+##  [4] magrittr_2.0.3       formattable_0.2.1    DT_0.24             
+##  [7] rticles_0.23         DiagrammeR_1.0.9     data.tree_1.0.0     
+## [10] kableExtra_1.3.4     dplyr_1.0.9          kfigr_1.2.1         
+## [13] devtools_2.4.4       usethis_2.1.6        formatR_1.12        
+## [16] knitcitations_1.0.12 bookdown_0.28        rmarkdown_2.16      
+## [19] knitr_1.40          
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] httr_1.4.4         sass_0.4.2         pkgload_1.3.0      jsonlite_1.8.0    
@@ -987,20 +1033,19 @@ sessionInfo()</code></pre>
 ##  [9] highr_0.9          yaml_2.3.5         remotes_2.4.2      sessioninfo_1.2.2 
 ## [13] pillar_1.8.1       glue_1.6.2         digest_0.6.29      RColorBrewer_1.1-3
 ## [17] promises_1.2.0.1   rvest_1.0.3        RefManageR_1.3.0   colorspace_2.0-3  
-## [21] htmltools_0.5.3    httpuv_1.6.5       plyr_1.8.7         pkgconfig_2.0.3   
-## [25] bibtex_0.4.2.3     purrr_0.3.4        xtable_1.8-4       scales_1.2.1      
-## [29] webshot_0.5.3      processx_3.7.0     svglite_2.1.0      later_1.3.0       
-## [33] tibble_3.1.8       generics_0.1.3     ellipsis_0.3.2     cachem_1.0.6      
-## [37] cli_3.3.0          magrittr_2.0.3     crayon_1.5.1       mime_0.12         
-## [41] memoise_2.0.1      evaluate_0.16      ps_1.7.1           fs_1.5.2          
-## [45] fansi_1.0.3        xml2_1.3.3         pkgbuild_1.3.1     profvis_0.3.7     
-## [49] tools_4.2.0        prettyunits_1.1.1  lifecycle_1.0.1    stringr_1.4.1     
-## [53] munsell_0.5.0      callr_3.7.2        compiler_4.2.0     jquerylib_0.1.4   
-## [57] systemfonts_1.0.4  rlang_1.0.4        rstudioapi_0.14    htmlwidgets_1.5.4 
-## [61] visNetwork_2.1.0   miniUI_0.1.1.1     DBI_1.1.3          R6_2.5.1          
-## [65] lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2         stringi_1.7.8     
-## [69] Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2   xfun_0.32         
-## [73] urlchecker_1.0.1</code></pre>
+## [21] httpuv_1.6.5       plyr_1.8.7         pkgconfig_2.0.3    purrr_0.3.4       
+## [25] xtable_1.8-4       scales_1.2.1       webshot_0.5.3      processx_3.7.0    
+## [29] svglite_2.1.0      later_1.3.0        tibble_3.1.8       generics_0.1.3    
+## [33] ellipsis_0.3.2     cachem_1.0.6       cli_3.3.0          crayon_1.5.1      
+## [37] mime_0.12          memoise_2.0.1      evaluate_0.16      ps_1.7.1          
+## [41] fs_1.5.2           fansi_1.0.3        xml2_1.3.3         pkgbuild_1.3.1    
+## [45] profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1  lifecycle_1.0.1   
+## [49] stringr_1.4.1      munsell_0.5.0      callr_3.7.2        compiler_4.2.0    
+## [53] jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.4        rstudioapi_0.14   
+## [57] htmlwidgets_1.5.4  visNetwork_2.1.0   miniUI_0.1.1.1     DBI_1.1.3         
+## [61] R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2        
+## [65] stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2  
+## [69] xfun_0.32          urlchecker_1.0.1</code></pre>
 <p>I have also used the approach described above to add this information in <a href="#appendix-2">Appendix 2</a>. This can be done as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Edit the Markdown section to add the following text below Appendix 1.</li>
@@ -2274,6 +2319,7 @@ Figure 4.3: Overview of the OSF workflow and connections with other widely used 
 <div id="chapter-4" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Chapter 4</h1>
 <p>Balancing open science with values of your stakeholders is a challenging task, which requires your attention!</p>
+<p>For instance, the White House requires immediate public access to all U.S.-funded research papers by 2025. See <em>Science</em> news article (<a href="https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025">doi: 10.1126/science.ade6076</a>) to know more about this announcement.</p>
 <div id="literature-and-web-resources" class="section level3" number="5.0.1">
 <h3><span class="header-section-number">5.0.1</span> Literature and web resources</h3>
 <p>This chapter is based on:</p>
@@ -2976,8 +3022,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-bde8f7cbef44225736d7" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bde8f7cbef44225736d7">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b9c82000661b7f606ce0" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b9c82000661b7f606ce0">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.5: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3139,11 +3185,13 @@ Data/species_data.csv</code></pre>
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] DT_0.24              rticles_0.23         DiagrammeR_1.0.9    
-##  [4] data.tree_1.0.0      kableExtra_1.3.4     dplyr_1.0.9         
-##  [7] kfigr_1.2.1          devtools_2.4.4       usethis_2.1.6       
-## [10] formatR_1.12         knitcitations_1.0.12 bookdown_0.28       
-## [13] rmarkdown_2.16       knitr_1.40          
+##  [1] bibtex_0.4.2.3       htmltools_0.5.3      prettydoc_0.4.1     
+##  [4] magrittr_2.0.3       formattable_0.2.1    DT_0.24             
+##  [7] rticles_0.23         DiagrammeR_1.0.9     data.tree_1.0.0     
+## [10] kableExtra_1.3.4     dplyr_1.0.9          kfigr_1.2.1         
+## [13] devtools_2.4.4       usethis_2.1.6        formatR_1.12        
+## [16] knitcitations_1.0.12 bookdown_0.28        rmarkdown_2.16      
+## [19] knitr_1.40          
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] httr_1.4.4         tidyr_1.2.0        sass_0.4.2         pkgload_1.3.0     
@@ -3151,20 +3199,19 @@ Data/species_data.csv</code></pre>
 ##  [9] assertthat_0.2.1   highr_0.9          yaml_2.3.5         remotes_2.4.2     
 ## [13] sessioninfo_1.2.2  pillar_1.8.1       glue_1.6.2         digest_0.6.29     
 ## [17] RColorBrewer_1.1-3 promises_1.2.0.1   rvest_1.0.3        RefManageR_1.3.0  
-## [21] colorspace_2.0-3   htmltools_0.5.3    httpuv_1.6.5       plyr_1.8.7        
-## [25] pkgconfig_2.0.3    bibtex_0.4.2.3     purrr_0.3.4        xtable_1.8-4      
-## [29] scales_1.2.1       webshot_0.5.3      processx_3.7.0     svglite_2.1.0     
-## [33] later_1.3.0        tibble_3.1.8       generics_0.1.3     ellipsis_0.3.2    
-## [37] cachem_1.0.6       cli_3.3.0          magrittr_2.0.3     crayon_1.5.1      
-## [41] mime_0.12          memoise_2.0.1      evaluate_0.16      ps_1.7.1          
-## [45] fs_1.5.2           fansi_1.0.3        xml2_1.3.3         pkgbuild_1.3.1    
-## [49] profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1  lifecycle_1.0.1   
-## [53] stringr_1.4.1      munsell_0.5.0      callr_3.7.2        compiler_4.2.0    
-## [57] jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.4        rstudioapi_0.14   
-## [61] htmlwidgets_1.5.4  visNetwork_2.1.0   miniUI_0.1.1.1     DBI_1.1.3         
-## [65] R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2        
-## [69] stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2  
-## [73] xfun_0.32          urlchecker_1.0.1</code></pre>
+## [21] colorspace_2.0-3   httpuv_1.6.5       plyr_1.8.7         pkgconfig_2.0.3   
+## [25] purrr_0.3.4        xtable_1.8-4       scales_1.2.1       webshot_0.5.3     
+## [29] processx_3.7.0     svglite_2.1.0      later_1.3.0        tibble_3.1.8      
+## [33] generics_0.1.3     ellipsis_0.3.2     cachem_1.0.6       cli_3.3.0         
+## [37] crayon_1.5.1       mime_0.12          memoise_2.0.1      evaluate_0.16     
+## [41] ps_1.7.1           fs_1.5.2           fansi_1.0.3        xml2_1.3.3        
+## [45] pkgbuild_1.3.1     profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1 
+## [49] lifecycle_1.0.1    stringr_1.4.1      munsell_0.5.0      callr_3.7.2       
+## [53] compiler_4.2.0     jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.4       
+## [57] rstudioapi_0.14    htmlwidgets_1.5.4  visNetwork_2.1.0   miniUI_0.1.1.1    
+## [61] DBI_1.1.3          R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0     
+## [65] utf8_1.2.2         stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1       
+## [69] tidyselect_1.1.2   xfun_0.32          urlchecker_1.0.1</code></pre>
 </div>
 <div id="using-r-packages-to-help-managing-dependencies-and-recreate-setup" class="section level4" number="6.3.6.2">
 <h4><span class="header-section-number">6.3.6.2</span> Using R packages to help managing dependencies and recreate setup</h4>
@@ -3683,8 +3730,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-c0fdb9b248133beae4db" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c0fdb9b248133beae4db">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-4d64acc7f0593ba21c65" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4d64acc7f0593ba21c65">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
@@ -4232,11 +4279,13 @@ Syntax</em>. R package version 1.3.4. 2021.
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] repmis_0.5           DT_0.24              rticles_0.23        
-##  [4] DiagrammeR_1.0.9     data.tree_1.0.0      kableExtra_1.3.4    
-##  [7] dplyr_1.0.9          kfigr_1.2.1          devtools_2.4.4      
-## [10] usethis_2.1.6        formatR_1.12         knitcitations_1.0.12
-## [13] bookdown_0.28        rmarkdown_2.16       knitr_1.40          
+##  [1] repmis_0.5           bibtex_0.4.2.3       htmltools_0.5.3     
+##  [4] prettydoc_0.4.1      magrittr_2.0.3       formattable_0.2.1   
+##  [7] DT_0.24              rticles_0.23         DiagrammeR_1.0.9    
+## [10] data.tree_1.0.0      kableExtra_1.3.4     dplyr_1.0.9         
+## [13] kfigr_1.2.1          devtools_2.4.4       usethis_2.1.6       
+## [16] formatR_1.12         knitcitations_1.0.12 bookdown_0.28       
+## [19] rmarkdown_2.16       knitr_1.40          
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] httr_1.4.4         tidyr_1.2.0        sass_0.4.2         pkgload_1.3.0     
@@ -4244,22 +4293,21 @@ Syntax</em>. R package version 1.3.4. 2021.
 ##  [9] shiny_1.7.2        assertthat_0.2.1   highr_0.9          yaml_2.3.5        
 ## [13] remotes_2.4.2      sessioninfo_1.2.2  pillar_1.8.1       glue_1.6.2        
 ## [17] digest_0.6.29      RColorBrewer_1.1-3 promises_1.2.0.1   rvest_1.0.3       
-## [21] RefManageR_1.3.0   colorspace_2.0-3   R.oo_1.25.0        htmltools_0.5.3   
-## [25] httpuv_1.6.5       plyr_1.8.7         pkgconfig_2.0.3    bibtex_0.4.2.3    
-## [29] purrr_0.3.4        xtable_1.8-4       scales_1.2.1       webshot_0.5.3     
-## [33] processx_3.7.0     svglite_2.1.0      later_1.3.0        tibble_3.1.8      
-## [37] generics_0.1.3     ellipsis_0.3.2     cachem_1.0.6       cli_3.3.0         
-## [41] magrittr_2.0.3     crayon_1.5.1       mime_0.12          memoise_2.0.1     
-## [45] evaluate_0.16      ps_1.7.1           R.methodsS3_1.8.2  fs_1.5.2          
-## [49] fansi_1.0.3        R.cache_0.16.0     xml2_1.3.3         pkgbuild_1.3.1    
-## [53] data.table_1.14.2  profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1 
-## [57] lifecycle_1.0.1    stringr_1.4.1      munsell_0.5.0      callr_3.7.2       
-## [61] compiler_4.2.0     jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.4       
-## [65] rstudioapi_0.14    htmlwidgets_1.5.4  visNetwork_2.1.0   crosstalk_1.2.0   
-## [69] miniUI_0.1.1.1     curl_4.3.2         DBI_1.1.3          R6_2.5.1          
-## [73] lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2         stringi_1.7.8     
-## [77] Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2   xfun_0.32         
-## [81] urlchecker_1.0.1</code></pre>
+## [21] RefManageR_1.3.0   colorspace_2.0-3   R.oo_1.25.0        httpuv_1.6.5      
+## [25] plyr_1.8.7         pkgconfig_2.0.3    purrr_0.3.4        xtable_1.8-4      
+## [29] scales_1.2.1       webshot_0.5.3      processx_3.7.0     svglite_2.1.0     
+## [33] later_1.3.0        tibble_3.1.8       generics_0.1.3     ellipsis_0.3.2    
+## [37] cachem_1.0.6       cli_3.3.0          crayon_1.5.1       mime_0.12         
+## [41] memoise_2.0.1      evaluate_0.16      ps_1.7.1           R.methodsS3_1.8.2 
+## [45] fs_1.5.2           fansi_1.0.3        R.cache_0.16.0     xml2_1.3.3        
+## [49] pkgbuild_1.3.1     data.table_1.14.2  profvis_0.3.7      tools_4.2.0       
+## [53] prettyunits_1.1.1  lifecycle_1.0.1    stringr_1.4.1      munsell_0.5.0     
+## [57] callr_3.7.2        compiler_4.2.0     jquerylib_0.1.4    systemfonts_1.0.4 
+## [61] rlang_1.0.4        rstudioapi_0.14    htmlwidgets_1.5.4  visNetwork_2.1.0  
+## [65] crosstalk_1.2.0    miniUI_0.1.1.1     curl_4.3.2         DBI_1.1.3         
+## [69] R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2        
+## [73] stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2  
+## [77] xfun_0.32          urlchecker_1.0.1</code></pre>
 </div>
 <div class="footnotes footnotes-end-of-document">
 <hr />

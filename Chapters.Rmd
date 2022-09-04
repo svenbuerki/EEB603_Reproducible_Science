@@ -365,12 +365,40 @@ Please refer to [section](#Files) for more details on supporting files and their
 
 ### Set your R Markdown environment
 
-#### Install dependencies
+#### Install dependencies {#instDep}
 
-To execute this tutorial the following R packages have to be installed on your computer using code provided below:
+To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file saved at the root of your project.
 
-```{r pck, eval=FALSE, tidy=TRUE}
-install.packages(c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations"))
+```{r pck, eval=TRUE, tidy=FALSE}
+##~~~
+#1. List all required packages
+##~~~
+#Object (args) provided by user with names of packages stored into a vector
+pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools")
+
+##~~~
+#2. Check if pkg are installed
+##~~~
+print("Check if packages are installed")
+#This line outputs a list of packages that are not installed
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+#3. Install missing packages
+##~~~
+if(length(new.pkg) > 0){
+  print(paste("Install missing package(s):", new.pkg, sep=' '))
+  install.packages(new.pkg, dependencies = TRUE)
+}else{
+  print("All packages are already installed!")
+}
+
+##~~~
+#4. Load all packages
+##~~~
+print("Load packages and return status")
+#Here we use the sapply() function to require all the packages
+sapply(pkg, require, character.only = TRUE)
 ```
 
 #### TeX distribution {#texdistr}
@@ -481,8 +509,14 @@ library(magrittr)
 library(prettydoc)
 library(htmltools)
 library(knitcitations)
+library(bibtex)
 library(devtools)
 ```
+
+##### Challenge
+
+Please get inspiration from the code presented in [section](#instDep) to improve the code in the `packages` code chunk. 
+
 #### Generate citation file of R packages used to produce the report
 
 I don't know about you, but I am always struggling to properly cite R packages in my publications. If you want to retrieve the citation for an R package, you can use the base R function `citation()`. For instance, citations for *knitr* can be obtained as follow:
@@ -511,7 +545,7 @@ The `.packages()` argument returns the names of all packages loaded in the curre
 
 #### Generate Appendix with citations for all R packages
 
-Although a bibliography/references section will be provided at the end of your document to cite in text references (see [References]), it is customed to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
+Although a bibliography/references section will be provided at the end of your document to cite in text references (see [References]), it is customized to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
 
 ##### Step-by-step procedure
 
@@ -1753,6 +1787,9 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 # Chapter 4
 
 Balancing open science with values of your stakeholders is a challenging task, which requires your attention!
+
+For instance, the White House requires immediate public access to all U.S.-funded research papers by 2025. See *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)) to know more about this announcement.
+
 
 ### Literature and web resources
 
