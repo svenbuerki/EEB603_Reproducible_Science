@@ -957,14 +957,14 @@ opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60), 
 
 To compile your `.Rmd` document faster (especially if you have computing intensive tasks), you can cache the output of your code into files associated to each of your code chunks. This process allows compute intensive chunks to be saved and the output used later without being re-run. 
 
-The *knitr* package has options to only evaluate cached chunks when necessary, but this has to be set by users. Such procedure creates a unique MD5 digest (= a data storage technique) of each chunk to track when changes are present. When the option `cache=TRUE` (there are other, more granular settings; see below), the chunk will only be evaluated in the following scenarios:
+The *knitr* package has options to only evaluate cached chunks when necessary, but this has to be set by users. Such procedure creates a unique MD5 digest (= a data storage technique) of each chunk to track when changes are present. When the option `cache = TRUE` (there are other, more granular settings; see below) is set, the chunk will only be evaluated in the following scenarios:
 
 - There are no cached results (either this is the first time running or the results were moved/deleted).
 - The code chunk has been modified.
 
 The following code allows implementing this procedure to your document:
 
-```{r echo= TRUE, eval=FALSE}
+```{r echo = TRUE, eval = FALSE}
 # Setup options for code cache
 opts_chunk$set(cache = 2, cache.path = "cache/")
 ```
@@ -972,11 +972,11 @@ opts_chunk$set(cache = 2, cache.path = "cache/")
 ##### Explanations of the caching code options 
 
 - Besides `TRUE` and `FALSE` for the chunk option `cache`, advanced users can also consider more granular cache by using numeric values for `cache = 0, 1, 2, 3`. `0` means `FALSE`, and `3` is equivalent to `TRUE`. For `cache = 1`, the results of the computation are loaded from the cache, so the code is not evaluated again, but everything else is still executed, such the output hooks and saving recorded plots to files. For `cache = 2` (used here), it is very similar to `1`, and the only difference is that the recorded plots will not be re-saved to files when the plot files already exist, which might save some time when the plots are big.
-- `cache.path = "cache/"`: Directory where cache files will be saved. You don't have to create the directory before executing the code, it will be created automatically by *knitr*.  
+- `cache.path = "cache/"`: Directory where cache files will be saved. You don't have to create the directory before executing the code, it will be created automatically by *knitr* if it doesn't exist yet.  
 
 #### Plots
 
-Plots are a major element of your research and they are at the core of your figures. We can take advantage of options implemented in the `knitr` package to output plots meeting publication requirements. This will save precious time during the writing phase of your research (= no need to fiddle with the size and resolution of figures to meet journal policies).
+Plots are a major element of your research and they are at the core of your figures. We can take advantage of options implemented in the `knitr` package to output plots meeting publication requirements. This approach will save precious time during the writing phase of your research (= no need to fiddle with the size and resolution of figures to meet journal policies).
 
 Please find below an example of options that could be applied across code chunks:
 
