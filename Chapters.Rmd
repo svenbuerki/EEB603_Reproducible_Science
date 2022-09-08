@@ -982,7 +982,8 @@ Please find below an example of options that could be applied across code chunks
 
 ```{r echo= TRUE, eval=FALSE}
 # Setup options for plots
-opts_chunk$set(fig.path = "Figures_MS/", dev=c('pdf', 'png'), dpi = 300)
+# The first dev is the master for the output document
+opts_chunk$set(fig.path = "Figures_MS/", dev=c('png', 'pdf'), dpi = 300)
 ```
 
 ##### Explanations of the caching plots options 
@@ -1034,7 +1035,8 @@ opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60), 
 opts_chunk$set(cache = 2, cache.path = "cache/")
 
 ## Plots
-opts_chunk$set(fig.path = "Figures_MS/", dev=c('pdf', 'png'), dpi = 300)
+# The first dev is the master for the output document
+opts_chunk$set(fig.path = "Figures_MS/", dev=c('png', 'pdf'), dpi = 300)
 
 ## Locate figures as close as possible to requested position (=code)
 opts_chunk$set(fig.pos = "H")
