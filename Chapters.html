@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-09-08" />
+<meta name="date" content="2022-09-11" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -396,7 +396,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-09-08</h4>
+<h4 class="date">2022-09-11</h4>
 
 </div>
 
@@ -1695,11 +1695,11 @@ Figure 2.13: Snapshot of RStudio showing procedure to create a new R script docu
 <div id="r-syntax-for-function" class="section level4" number="2.5.5.1">
 <h4><span class="header-section-number">2.5.5.1</span> R syntax for function</h4>
 <p>In R, according to the base documentation, you define a function with the following construct:</p>
-<pre class="r"><code>function(arglist) {
-    body
+<pre class="r"><code>function(arglist){
+   body
 }</code></pre>
 <p>The code between the curly braces is the <code>body</code> of the function.</p>
-<p>When you use built-in functions, the only thing you need to worry about is how to effectively communicate the correct input arguments (<code>arglist</code>) and manage the return value(s), if there are any. To know more about arguments associated with a specific function you can access its documentation by using the following syntax (entered in the R console):</p>
+<p>When you use built-in functions, the only thing you need to worry about is how to effectively communicate the correct input arguments (<code>arglist</code>) and manage the return value(s) (or outputs), if there are any. To know more about arguments associated with a specific function you can access its documentation by using the following syntax (entered in the R console):</p>
 <pre class="r"><code>#General syntax
 ?function() 
 
@@ -1714,7 +1714,7 @@ Figure 2.13: Snapshot of RStudio showing procedure to create a new R script docu
    some more code
    return values
 }</code></pre>
-<p>So, in most cases, a function has a name (here <code>function.name</code>), some arguments (here <code>arguments</code>) used as input to the function (declared within the <code>()</code> following the keyword ‘function’); a body, which is the code within the curly braces <code>{}</code>, where you carry out the computation; and can have one or more return values (the output). You define the function similarly to variables, by “assigning” the directive <code>function(arguments)</code> to the “variable” <code>function.name</code>, followed by the rest.</p>
+<p>So, in most cases, a function has a name (here <code>function.name</code>), some arguments (here <code>arguments</code>) used as input to the function (declared within the <code>()</code> following the keyword <code>function</code>); a body, which is the code within the curly braces <code>{}</code>, where you carry out the computation; and can have one or more return values (the output). You define the function similarly to variables, by “assigning” the directive <code>function(arguments)</code> to the “variable” <code>function.name</code>, followed by the rest.</p>
 </div>
 </div>
 <div id="best-practice-to-writing-code" class="section level3" number="2.5.6">
@@ -1722,11 +1722,16 @@ Figure 2.13: Snapshot of RStudio showing procedure to create a new R script docu
 <p>This topic will be covered in chapter 4, but here is an outline of the best practice to write code and functions in R. <strong>Before delving into code writing, we will usually work on developing a pseudocode, which aims at providing a high-level description of the tasks that will have to be performed by the function.</strong> Once this job done, we will then start writing the code by turning the tasks identified into the pseudocode into real R code. This will be done by searching for existing R functions allowing to execute each task described in the pseudocode and if they don’t exist develop new functions (this task might require some additional pseudocode). Please find below more detailed definitions of the two concepts described here.</p>
 <div id="writing-pseudocode" class="section level4" number="2.5.6.1">
 <h4><span class="header-section-number">2.5.6.1</span> Writing pseudocode</h4>
-<p>Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.</p>
+<p><strong>Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm.</strong> It uses the structural conventions of a normal programming language (here <code>R</code>), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie <code>R</code> functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.</p>
 </div>
 <div id="writing-code" class="section level4" number="2.5.6.2">
 <h4><span class="header-section-number">2.5.6.2</span> Writing code</h4>
-<p>Writing clear, reproducible code has (at least) three main benefits. Firstly, it makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. Secondly, the results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. Thirdly, having clean and reproducible code available can encourage greater uptake of new methods that you have developed.</p>
+<p>Writing clear, reproducible code has (at least) three main benefits:</p>
+<ol style="list-style-type: decimal">
+<li>It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review.</li>
+<li>The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity.</li>
+<li>Having clean and reproducible code available can encourage greater uptake of new methods that you have developed (and therefore citations).</li>
+</ol>
 </div>
 </div>
 <div id="loading-and-calling-udfs" class="section level3" number="2.5.7">
@@ -1761,8 +1766,8 @@ sapply(files_source, source)</code></pre>
 <div id="call-your-udfs" class="section level3" number="2.5.8">
 <h3><span class="header-section-number">2.5.8</span> Call your UDFs</h3>
 <p>Once loaded into your Global Environment (see Figure <a href="#fig:sourceUDF">2.15</a> for an example), you will be able to call your functions by typing their names directly into the console. For instance:</p>
-<pre class="r"><code># Check if ape package is installed, if not install it and
-# then load it
+<pre class="r"><code># Check if knitr package is installed, if not install it
+# and then load it
 check.install.pkg(pkg = c(&quot;knitr&quot;))</code></pre>
 <pre><code>## [1] &quot;Check if packages are installed&quot;
 ## [1] &quot;Load packages&quot;</code></pre>
@@ -1787,7 +1792,7 @@ check.install.pkg(pkg = c(&quot;knitr&quot;))</code></pre>
 <li>Save output of task 2 into an object called <code>sq</code>.</li>
 <li>Return <code>sq</code> object to user (here a single value). To return <code>sq</code>, we will be using the <code>return()</code> function.</li>
 </ol>
-<p>This also means that the class of the <strong>input</strong> provided by user has to be <strong>numeric</strong> and the <strong>output</strong> will also be <strong>numeric</strong>. We will further discuss this topic during the third exercise. The class of an object can be checked by using the <code>class()</code> function. Note: This function will be useful for implementing defensive programming.</p>
+<p>This also means that the class of the <strong>input</strong> provided by user has to be <strong>numeric</strong> and the <strong>output</strong> will also be <strong>numeric</strong>. We will further discuss this topic during the third exercise. The class of an object can be checked by using the <code>class()</code> function. <strong>Note:</strong> The <code>class()</code> function will be useful for implementing defensive programming.</p>
 </div>
 <div id="turning-your-pseudocode-into-a-function" class="section level4" number="2.5.9.3">
 <h4><span class="header-section-number">2.5.9.3</span> Turning your pseudocode into a function</h4>
@@ -1795,11 +1800,12 @@ check.install.pkg(pkg = c(&quot;knitr&quot;))</code></pre>
 <pre class="r"><code>## Create a UDF in R to calculate square number:
 # - argument: base (= one number)
 # - output: square of base (= one number)
-square_number &lt;- function(base) {
-    # Infer square of base and save it into object
-    sq &lt;- base * base
-    # Return sq
-    return(sq)
+square_number &lt;- function(base){
+  #Infer square of base and save it into object
+  sq &lt;- base*base
+  
+  #Return sq object
+  return(sq)
 }</code></pre>
 <p>Write the code associated to the <code>square_number</code> into your new R script (saved in your working directory) and load function by executing all lines associated to function. Please carry on populating this document with the rest of the exercises.</p>
 </div>
@@ -1930,19 +1936,19 @@ print(list_data$A_Matrix)</code></pre>
 <div id="solution-proposed-by-the-instructor" class="section level4" number="2.5.10.7">
 <h4><span class="header-section-number">2.5.10.7</span> Solution proposed by the instructor</h4>
 <p>Please find below the solution proposed by the instructor:</p>
-<pre class="r"><code>## Create a user defined function in R to calculate log and
-## square of a number:
+<pre class="r"><code>##Create a user defined function in R to calculate log and square of a number:
 # argument: base (= one number)
-# output: log and square of base (= two numbers) returned
-# in a list
-my_log_square &lt;- function(base) {
-    # log (base 10)
-    log_value &lt;- log(base)
-    # Square of base
-    square_value &lt;- base^2
-    # Return both objects
-    return(list(log_val = log_value, square_val = square_value))
+# output: log and square of base (= two numbers) returned in a list
+my_log_square &lt;- function(base){
+  #log (base 10)
+  log_value &lt;- log(base)
+  #Square of base
+  square_value &lt;- base^2
+  
+  #Return both objects
+  return(list(log_val = log_value, square_val = square_value))
 }
+
 # Call the function
 my_log_square(base = 2)</code></pre>
 <pre><code>## $log_val
@@ -1961,10 +1967,14 @@ my_log_square(base = 2)</code></pre>
 <pre class="r"><code># Define a power function (exp_number): y = x^n
 # - Arguments: base (= x) and power (= n)
 # - Output: a number (y)
-exp_number &lt;- function(base, power) {
-    exp &lt;- base^power
-    return(exp)
+exp_number &lt;- function(base, power){
+  #Infer exp (y) based on base (x) and power (n) (y=base^power)
+  exp &lt;- base^power
+  
+  #Return exp object
+  return(exp)
 }
+
 # Call function
 exp_number(base = 2, power = 5)</code></pre>
 <pre><code>## [1] 32</code></pre>
@@ -1977,17 +1987,19 @@ exp_number(base = &quot;hello&quot;, power = 5)</code></pre>
 <pre class="r"><code># Define a power function (exp_number): y = x ^n
 # - Arguments: base (= x) and power (= n)
 # - Output: a number (y)
-exp_number &lt;- function(base, power) {
-    # This if statement tests if classes of base and power
-    # are numeric.
-    # If one of them is not numeric it stops and return
-    # meaningful message
-    if (class(base) != &quot;numeric&quot; | class(power) != &quot;numeric&quot;) {
-        stop(&quot;Both base and power inputs must be numeric&quot;)
+exp_number &lt;- function(base, power){
+    # This if statement tests if classes of base and power are numeric.
+    # If one of them is not numeric it stops and return meaningful message
+    if(class(base) != &quot;numeric&quot; | class(power) != &quot;numeric&quot;){
+          stop(&quot;Both base and power inputs must be numeric&quot;)
     }
+    #If classes are good then infer exp
     exp &lt;- base^power
+    
+    # Return exp object
     return(exp)
 }
+
 # Call function
 exp_number(base = &quot;hello&quot;, power = 5)</code></pre>
 <pre><code>## Error in exp_number(base = &quot;hello&quot;, power = 5): Both base and power inputs must be numeric</code></pre>
@@ -3024,8 +3036,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-dfcc760088446188c515" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dfcc760088446188c515">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-966ca76d4de9b398d7ac" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-966ca76d4de9b398d7ac">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.5: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3732,8 +3744,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-44b27a2cb4cb94b1f4f5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-44b27a2cb4cb94b1f4f5">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-2f76841755617fae1527" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2f76841755617fae1527">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>

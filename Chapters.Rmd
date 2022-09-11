@@ -1154,15 +1154,15 @@ There exist many terms to define and express functions, subroutines, procedures,
 
 In R, according to the base documentation, you define a function with the following construct:
 
-```{r Rfuncsyntax, echo=TRUE, eval=FALSE}
- function(arglist){
+```{r Rfuncsyntax, tidy = FALSE, echo=TRUE, eval=FALSE}
+function(arglist){
    body
-   }
+}
 ```
 
 The code between the curly braces is the `body` of the function. 
 
-When you use built-in functions, the only thing you need to worry about is how to effectively communicate the correct input arguments (`arglist`) and manage the return value(s), if there are any. To know more about arguments associated with a specific function you can access its documentation by using the following syntax (entered in the R console):
+When you use built-in functions, the only thing you need to worry about is how to effectively communicate the correct input arguments (`arglist`) and manage the return value(s) (or outputs), if there are any. To know more about arguments associated with a specific function you can access its documentation by using the following syntax (entered in the R console):
 
 ```{r echo=TRUE, eval=F, tidy=F}
 #General syntax
@@ -1184,7 +1184,7 @@ function.name <- function(arguments){
 }
 ```
 
-So, in most cases, a function has a name (here `function.name`), some arguments (here `arguments`) used as input to the function (declared within the `()` following the keyword ‘function’); a body, which is the code within the curly braces `{}`, where you carry out the computation; and can have one or more return values (the output). You define the function similarly to variables, by “assigning” the directive `function(arguments)` to the “variable” `function.name`, followed by the rest.
+So, in most cases, a function has a name (here `function.name`), some arguments (here `arguments`) used as input to the function (declared within the `()` following the keyword `function`); a body, which is the code within the curly braces `{}`, where you carry out the computation; and can have one or more return values (the output). You define the function similarly to variables, by “assigning” the directive `function(arguments)` to the “variable” `function.name`, followed by the rest.
 
 ### Best practice to writing code
 
@@ -1192,11 +1192,15 @@ This topic will be covered in chapter 4, but here is an outline of the best prac
 
 #### Writing pseudocode
 
-Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.  
+**Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm.** It uses the structural conventions of a normal programming language (here `R`), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie `R` functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.  
 
 #### Writing code
 
-Writing clear, reproducible code has (at least) three main benefits. Firstly, it makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. Secondly, the results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. Thirdly, having clean and reproducible code available can encourage greater uptake of new methods that you have developed.
+Writing clear, reproducible code has (at least) three main benefits:
+
+1. It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. 
+2. The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. 
+3. Having clean and reproducible code available can encourage greater uptake of new methods that you have developed (and therefore citations).
 
 ### Loading and calling UDFs
 
@@ -1240,7 +1244,7 @@ sapply(files_source, source)
 Once loaded into your Global Environment (see Figure \@ref(fig:sourceUDF) for an example), you will be able to call your functions by typing their names directly into the console. For instance:
 
 ```{r echo=TRUE, eval=T}
-#Check if ape package is installed, if not install it and then load it
+#Check if knitr package is installed, if not install it and then load it
 check.install.pkg(pkg=c("knitr"))
 ```
 
@@ -1263,23 +1267,21 @@ Although straightforward, the function will have to execute the following tasks:
 3. Save output of task 2 into an object called `sq`.
 4. Return `sq` object to user (here a single value). To return `sq`, we will be using the `return()` function.
 
-This also means that the class of the **input** provided by user has to be **numeric** and the **output** will also be **numeric**. We will further discuss this topic during the third exercise. The class of an object can be checked by using the `class()` function. Note: This function will be useful for implementing defensive programming.
+This also means that the class of the **input** provided by user has to be **numeric** and the **output** will also be **numeric**. We will further discuss this topic during the third exercise. The class of an object can be checked by using the `class()` function. **Note:** The `class()` function will be useful for implementing defensive programming.
 
 #### Turning your pseudocode into a function
 
 In this section, we will implement the pseudocode proposed above into a function entitled `square_number()`. This function requires one argument from the user (`base`, which is a number) and returns the square of that number (here square of `base` = `base`*`base`). 
 
-```{r echo=TRUE, eval=T}
+```{r tidy = FALSE, echo=TRUE, eval=T}
 ## Create a UDF in R to calculate square number:
-
 # - argument: base (= one number)
-
 # - output: square of base (= one number)
 square_number <- function(base){
   #Infer square of base and save it into object
   sq <- base*base
   
-  #Return sq
+  #Return sq object
   return(sq)
 }
 ```
@@ -1388,11 +1390,9 @@ Each student is tasked to:
 
 Please find below the solution proposed by the instructor:
 
-```{r echo=TRUE, eval=T}
+```{r tidy = FALSE, echo=TRUE, eval=T}
 ##Create a user defined function in R to calculate log and square of a number:
-
 # argument: base (= one number)
-
 # output: log and square of base (= two numbers) returned in a list
 my_log_square <- function(base){
   #log (base 10)
@@ -1416,15 +1416,16 @@ Defensive programming is a technique to ensure that code fails with well-defined
 
 In order to demonstrate how to apply defensive programming to your code, a new function will be defined:
 
-```{r echo=TRUE, eval=T}
+```{r tidy = FALSE, echo=TRUE, eval=T}
 # Define a power function (exp_number): y = x^n
-
 # - Arguments: base (= x) and power (= n)
-
 # - Output: a number (y)
-exp_number <- function(base, power) {
-        exp <- base^power
-        return(exp)
+exp_number <- function(base, power){
+  #Infer exp (y) based on base (x) and power (n) (y=base^power)
+  exp <- base^power
+  
+  #Return exp object
+  return(exp)
 }
 
 # Call function
@@ -1440,20 +1441,20 @@ exp_number(base = "hello", power = 5)
 
 If you add in a line of code to test the data type of the inputs, you get a more meaningful error.
 
-```{r echo=TRUE, eval=T, error=TRUE}
+```{r tidy = FALSE, echo=TRUE, eval=T, error=TRUE}
 # Define a power function (exp_number): y = x ^n
-
 # - Arguments: base (= x) and power (= n)
-
 # - Output: a number (y)
-exp_number <- function(base, power) {
+exp_number <- function(base, power){
     # This if statement tests if classes of base and power are numeric.
-  
     # If one of them is not numeric it stops and return meaningful message
     if(class(base) != "numeric" | class(power) != "numeric"){
           stop("Both base and power inputs must be numeric")
     }
+    #If classes are good then infer exp
     exp <- base^power
+    
+    # Return exp object
     return(exp)
 }
 
