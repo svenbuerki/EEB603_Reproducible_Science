@@ -1132,7 +1132,7 @@ knitr::include_graphics("Figures/R_script.png")
 
 ### Introduction
 
-This tutorial aims at providing an introduction to functions, more specifically, we will be studying the user defined functions (UDFs) as implemented in R. UDFs allow users to write their own functions and make them available in the R Global Environment (using the `source()` function) or ultimately in [R packages](https://r-pkgs.org). 
+This tutorial aims at providing an introduction to functions, more specifically, we will be studying the user defined functions (UDFs) as implemented in R. **UDFs allow users to write their own functions and make them available in the R Global Environment** (using the `source()` function) or ultimately in [R packages](https://r-pkgs.org). 
 
 To gain this knowledge, students will be conducting three exercises to learn about the following topics:
 
