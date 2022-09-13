@@ -1254,7 +1254,7 @@ In this exercise, we will be working on developing a function that returns a sin
 
 #### Aim
 
-Develop, implement and apply a UDF to calculate the square of a number. 
+**Develop, implement and apply a UDF to calculate the square of a number.** 
 
 In math, the squared symbol ($^2$) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
 
