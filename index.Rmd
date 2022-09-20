@@ -265,19 +265,33 @@ Tutorials will have to be written in the *knitr*/*rmarkdown* language as impleme
 
 Students should design their tutorials to be completed within 2 laboratory sessions (see [below](#TeachTut)). **Tutorials should be submitted to the instructor 1 week in advance for correction and to be uploaded onto the shared Google drive.**
 
-### Google sheet with groups for bioinformatic tutorials
+### What do you need to keep in mind?
 
-The instructor is asking students to sign up for designing and teaching a bioinformatic tutorial by accessing the following Google sheet (the number of students per chapter is provided, please respect this guideline):
+While designing your tutorials, please think about the following points:
 
-- https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing
+1. What are your major objectives and how do they fit within the scientific process and data life-cycle? Please also focus on the theoretical background.
+2. What are the specific learning outcomes?
+3. What data are used to teach this tutorial?
+4. What are the bioinformatic dependencies and how to install them? 
+5. When you teach each concept, make sure to clearly explain the rational, steps to get there (pseudo-code) and focus on the input/output and data class/format used for each function.
 
-### Tutorial should include:
+### Content of the tutorial
+
+Based on the information provided above, your tutorial should include:
 
 - A short introduction highlighting the theory and aims of the tutorial.
 - A section on R package requirements with instructions on how to install those packages and their dependencies.
 - A section introducing the data (dataset) used to support these exercises (and how to download those).
 - A references section and links to manuals of R packages. 
 - Commented R code necessary to guide users through the exercises as well as some knowledge on expected outputs.
+
+### Google sheet with groups for bioinformatic tutorials
+
+The instructor is asking students to sign up for designing and teaching a bioinformatic tutorial by accessing the following Google sheet (the number of students per chapter is provided, please respect this guideline):
+
+- https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing
+
+
 
 ## <a name="TeachTut"></a>Teaching your bioinformatic tutorial (100 points)
 
