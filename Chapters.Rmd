@@ -1537,6 +1537,16 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 
 In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
 
+## Online resources
+
+The list of websites listed here have been used to design this chapter:
+
+- [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
+- [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
+- [Reproducibility and research integrity](https://www.biomedcentral.com/collections/reproducibility) - A Special Issue published in *BMC Research Notes*.
+- [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
+- [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
+
 ## Teaching material
 
 The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf). The pdf of @Baker_2016 is available on our shared Google Drive at this path:
