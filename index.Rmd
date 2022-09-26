@@ -272,7 +272,7 @@ While designing your tutorials, please think about the following points:
 1. What are your major objectives and how do they fit within the scientific process and data life-cycle? Please also focus on the theoretical background.
 2. What are the specific learning outcomes?
 3. What data are used to teach this tutorial?
-4. What are the bioinformatic dependencies and how to install them? 
+4. What are the bioinformatic dependencies and how to install them?
 5. When you teach each concept, make sure to clearly explain the rational, steps to get there (pseudo-code) and focus on the input/output and data class/format used for each function.
 
 ### Content of the tutorial

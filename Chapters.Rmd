@@ -1557,7 +1557,7 @@ The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_
 
 The presentation slides for this chapter can be downloaded [here](Chapters_files/Chapter_3_Scientific_process.pdf).
 
-Improving the reliability and efficiency of scientific research will increase the credibility of the published scientific literature and accelerate discovery. In this chapter, we will survey measures that can be adopted to optimize key elements of the scientific process by especially focusing on: methods, reporting and dissemination, reproducibility, evaluation and incentives. These measures aim at minimizing threats to the scientific process therefore making it more open and transparent (\autoref{fig:ThreatReproSci}). While studying this topic keep this citation from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) in mind:
+Improving the reliability and efficiency of scientific research will increase the credibility of the published scientific literature and accelerate discovery. In this chapter, we will survey measures that can be adopted to optimize key elements of the scientific process by especially focusing on: methods, reporting and dissemination, reproducibility, evaluation and incentives. These measures aim at minimizing threats to the scientific process therefore making it more open and transparent (Figure \@ref(fig:ThreatReproSci)). While studying this topic keep this citation from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) in mind:
 
 > *The first principle is that you must not fool yourself – and you are the easiest person to fool.*
 
@@ -1620,13 +1620,13 @@ These measures are not intended to be exhaustive, but aim at providing a broad, 
 
 This chapter is mostly based on the following publications:
 
-- @Kerr1998 - On HARKing (see Glossary section).
-- @Nosek2012 - On incentives.
-- @Nosek1422 - On promoting an open research culture.
-- @Baker_2016 - Results of reproducible survey.
-- @Munafo - Provides framework for measures proposed in this chapter.
-- @Nosek2600 - On the pre-registration revolution.
-- @Troudet2018 - On accuracy of biodiversity occurrences available in GBIF.
+- `r capture.output(print(refs["Kerr1998"]))` **- On HARKing (see Glossary section).**
+- `r capture.output(print(refs["Nosek2012"]))` **- On incentives.** 
+- `r capture.output(print(refs["Nosek1422"]))` **- On promoting an open research culture.**
+- `r capture.output(print(refs["Baker_2016"]))` **- Results of reproducible survey.**
+- `r capture.output(print(refs["Munafo"]))` **- Provides a framework to implement the measures proposed in this chapter.**
+- `r capture.output(print(refs["Nosek2600"]))` **- On the pre-registration revolution.**
+- `r capture.output(print(refs["Troudet2018"]))` **- On accuracy of biodiversity occurrences available in GBIF.**
 
 The website of the **Center for Open Science** (https://cos.io) was also used to design the chapter content.
 
@@ -1698,7 +1698,7 @@ Please see the Glossary section for definitions of these concepts.
 
 #### The Transparency and Openness Promotion (TOP) guidelines: A mean to improve usability {#TOP}
 
-TOP guidelines [published in @Nosek1422] offer standards as a basis for journals and funders to incentivize or require greater transparency in planning and reporting of research. More precisely, TOP guidelines include eight modular standards, each with three levels of increasing stringency (\autoref{fig:TOP}). Journals are selecting which of the eight transparency standards they wish to implement and also select a level of implementation for each. These features provide flexibility for adoption depending on disciplinary variation, but simultaneously establish community standards.
+TOP guidelines [published in @Nosek1422] offer standards as a basis for journals and funders to incentivize or require greater transparency in planning and reporting of research. More precisely, TOP guidelines include eight modular standards, each with three levels of increasing stringency (Figure \@ref(fig:OSF)). Journals are selecting which of the eight transparency standards they wish to implement and also select a level of implementation for each. These features provide flexibility for adoption depending on disciplinary variation, but simultaneously establish community standards.
 
 ##### TOP transparency modular standards
 
@@ -1713,7 +1713,7 @@ Please find below the list of eight TOP modular standards:
 7. Pre-registration of analysis plans (registering analysis plan prior to study initiation).
 8. Replication (a study designed to replicate a previously published study).
 
-Each category template text for three levels of transparency: Level 1, Level 2, and Level 3 (\autoref{fig:TOP}). Adopting journals select among the levels based on readiness to adopt milder to stronger transparency standards for authors and researchers. There are many factors that will influence level selection including considerations for implementation, and concordance with disciplinary norms and expectations.
+Each category template text for three levels of transparency: Level 1, Level 2, and Level 3 (Figure \@ref(fig:OSF)). Adopting journals select among the levels based on readiness to adopt milder to stronger transparency standards for authors and researchers. There are many factors that will influence level selection including considerations for implementation, and concordance with disciplinary norms and expectations.
 
 ```{r TOP, echo=FALSE, fig.cap="Table presenting the TOP standards and their associated levels of transparency.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/TableSummary.png")
@@ -1725,9 +1725,9 @@ Over 1,000 journals or organizations have implemented one or more TOP-compliant 
 
 The material presented in chapter 1 focusing on R Markdown (as implemented in RStudio) is a response to the need to provide a unified environment linking publication, code and data.
 
-The Center for Open Science also proposes a platform called "Open Science Framework" or OSF to achieve the same goal (\autoref{fig:OSF}). [OSF](https://cos.io/our-products/osf/) is a free and open source project management repository that supports researchers across their entire project life-cycle. As a collaboration tool, OSF helps researchers work on projects privately with a limited number of collaborators and make parts of their projects public, or make all the project publicly accessible for broader dissemination with citable, discoverable DOIs. As a workflow system, OSF enables connections to the many products researchers already use to streamline their process and increase efficiency.
+The Center for Open Science also proposes a platform called "Open Science Framework" or OSF to achieve the same goal (Figure \@ref(fig:OSF)). [OSF](https://cos.io/our-products/osf/) is a free and open source project management repository that supports researchers across their entire project life-cycle. As a collaboration tool, OSF helps researchers work on projects privately with a limited number of collaborators and make parts of their projects public, or make all the project publicly accessible for broader dissemination with citable, discoverable DOIs. As a workflow system, OSF enables connections to the many products researchers already use to streamline their process and increase efficiency.
 
-With OSF's workflow and storage integrations, researchers can really manage their entire projects from one place. The OSF workflow connects the valuable research tools researchers are already using, so that they can effectively share the story of their research projects and eliminate data silos and information gaps (\autoref{fig:OSF}). OSF ecosystem is designed to allow all those tools to work together the way researchers' do, removing barriers to collaboration and knowledge (\autoref{fig:OSF}).
+With OSF's workflow and storage integrations, researchers can really manage their entire projects from one place. The OSF workflow connects the valuable research tools researchers are already using, so that they can effectively share the story of their research projects and eliminate data silos and information gaps (Figure \@ref(fig:OSF)). OSF ecosystem is designed to allow all those tools to work together the way researchers' do, removing barriers to collaboration and knowledge (Figure \@ref(fig:OSF)).
 
 ```{r OSF, echo=FALSE, fig.cap="Overview of the OSF workflow and connections with other widely used software.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
