@@ -1565,7 +1565,7 @@ The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_
 
 # Chapter 3 {#chap3}
 
-The presentation slides for this chapter can be downloaded [here](Chapters_files/Chapter_3_Scientific_process.pdf).
+## Introduction
 
 Improving the reliability and efficiency of scientific research will increase the credibility of the published scientific literature and accelerate discovery. In this chapter, we will survey measures that can be adopted to optimize key elements of the scientific process by especially focusing on: methods, reporting and dissemination, reproducibility, evaluation and incentives. These measures aim at minimizing threats to the scientific process therefore making it more open and transparent (Figure \@ref(fig:ThreatReproSci)). While studying this topic keep this citation from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) in mind:
 
@@ -1574,6 +1574,24 @@ Improving the reliability and efficiency of scientific research will increase th
 ```{r ThreatReproSci, echo=FALSE, fig.align="center", fig.cap="Overview of the scientific process and threats preventing reproducibility of the study (indicated in red). Abbreviations: HARKing: hypothesizing after the results are known; P-hacking: data dredging.", out.width = '80%'}
 knitr::include_graphics("Figures/Threats2reproducible_science.png")
 ```
+
+## Publications and web resources
+
+This chapter is mostly based on the following publications:
+
+- `r capture.output(print(refs["Kerr1998"]))` **- On HARKing (see Glossary section).**
+- `r capture.output(print(refs["Nosek2012"]))` **- On incentives.** 
+- `r capture.output(print(refs["Nosek1422"]))` **- On promoting an open research culture.**
+- `r capture.output(print(refs["Baker_2016"]))` **- Results of reproducible survey.**
+- `r capture.output(print(refs["Munafo"]))` **- Provides a framework to implement the measures proposed in this chapter.**
+- `r capture.output(print(refs["Nosek2600"]))` **- On the pre-registration revolution.**
+- `r capture.output(print(refs["Troudet2018"]))` **- On accuracy of biodiversity occurrences available in GBIF.**
+
+The website of the **Center for Open Science** (https://cos.io) was also used to design the chapter content.
+
+## Teaching material
+
+The presentation slides for this chapter can be downloaded [here](Chapters_files/Chapter_3_Scientific_process.pdf).
 
 ## Scientific process in a nutshell
 
@@ -1625,20 +1643,6 @@ Our **objective is to tackle threats by providing measures to ensure reproducibi
 5. **Incentives**
 
 These measures are not intended to be exhaustive, but aim at providing a broad, practical and evidence-based set of actions that can be implemented by researchers, institutions, journals and funders. They will also provide a road map for students to design their thesis projects.
-
-## Publications and web resources
-
-This chapter is mostly based on the following publications:
-
-- `r capture.output(print(refs["Kerr1998"]))` **- On HARKing (see Glossary section).**
-- `r capture.output(print(refs["Nosek2012"]))` **- On incentives.** 
-- `r capture.output(print(refs["Nosek1422"]))` **- On promoting an open research culture.**
-- `r capture.output(print(refs["Baker_2016"]))` **- Results of reproducible survey.**
-- `r capture.output(print(refs["Munafo"]))` **- Provides a framework to implement the measures proposed in this chapter.**
-- `r capture.output(print(refs["Nosek2600"]))` **- On the pre-registration revolution.**
-- `r capture.output(print(refs["Troudet2018"]))` **- On accuracy of biodiversity occurrences available in GBIF.**
-
-The website of the **Center for Open Science** (https://cos.io) was also used to design the chapter content.
 
 ## Methods
 
