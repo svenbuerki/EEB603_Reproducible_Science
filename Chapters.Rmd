@@ -1537,6 +1537,16 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 
 In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
 
+## What’s the difference between reproduction and replication?
+
+Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adpated from [RESCIENCE C](http://rescience.github.io/).
+
+- **Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
+
+- **Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on sagebrush. For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
+
+Overall, **reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else**. On the other hand, **replication explores which details matter for reaching a specific scientific conclusion**. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.
+
 ## Online resources
 
 The list of websites listed here have been used to design this chapter:
