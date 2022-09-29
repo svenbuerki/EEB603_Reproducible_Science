@@ -1815,14 +1815,15 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 
 ## Introduction
 
-**Balancing Open Science with values of your stakeholders is a challenging task, which is requiring your attention!**
+**Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** Indeed, funding agencies and journals are moving forward to promote Open Science and the benefit of this approach was discussed in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025. You can also learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
 
-At the same time, funding agencies and journals are moving forward to promote Open Science and the benefit of this approach was discussed in Chapter 3. For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025. You can also learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
+In this chapter, we are studying the mechanisms implemented to promote Open Science while highlighting reasons or cases where other principles might have to be adopted to respect different views, opinions and/or data sovereignty.
 
 ## Learning outcomes
 
 - Learn what are the seven pillars of Open Science.
-- Provide an overview of the Creative Common licenses and their usage in scientific publications. 
+- Introduce the Open Access mechanism to promote Open Science
+- Provide an overview of the Creative Common licenses and their applications in scientific publications. 
 - Introduce the CARE Principles and data sovereignty concept and how these apply to Indigenous Peoples.
 
 ### Web resources and publications
@@ -1845,6 +1846,7 @@ This chapter is based on:
 
 - `r capture.output(print(refs["Carroll2021"]))`
 - `r capture.output(print(refs["Groom2017"]))`
+- `r capture.output(print(refs["Khoo_2019"]))`
 - `r capture.output(print(refs["Wagenknecht2021"]))`
 - `r capture.output(print(refs["Wilkinson2016"]))`
 
@@ -1948,13 +1950,17 @@ A perceived lack of reward and recognition for work undertaken to manage researc
 
 ## Open Access: A tool to promote Open Science
 
-Open access is a set of principles and a range of practices through which research outputs are distributed online, free of access charges or other barriers (Figure \@ref(fig:EcolEvolCC))). Although publications are free of charges to the users, researchers will have to pay publication fees (usually between \$1500 and \$2500) to publish their research as open access. With open access strictly defined (according to the 2001 definition), barriers to copying or reuse are also reduced or removed by applying an open license for copyright. An open license is a license which allows others to reuse another creator’s work as they wish. Without a special license, these uses are normally prohibited by copyright, patent or commercial license. Most free licenses are worldwide, royalty-free, non-exclusive, and perpetual. 
+Open access (OA) is a set of principles and a range of practices through which research outputs are distributed online, free of access charges or other barriers (Figure \@ref(fig:EcolEvolCC)). Although publications are free of charges to the users, researchers will have to pay publication fees (usually between \$1500 and \$2500) to publish their research as OA. With open access strictly defined (according to the 2001 definition), barriers to copying or reuse are also reduced or removed by applying an open license for copyright. An open license is a license which allows others to reuse another creator’s work as they wish. Without a special license, these uses are normally prohibited by copyright, patent or commercial license. Most free licenses are worldwide, royalty-free, non-exclusive, and perpetual.
+
+### The Open Access conundrum 
+
+Since the revenue of most open access journals is earned from publication fees charged to the authors, OA publishers are motivated to increase their profits by accepting low-quality papers and by not performing thorough peer review. On the other hand, the prices for OA publications in the most prestigious journals have exceeded \$5000, making such publishing model unaffordable to a large number of researchers. This increase in publishing cost has been called the "Open-Access Sequel to [the] Serials Crisis" [@Khoo_2019].
 
 ## Creative Common licences
 
 Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC))). 
 
-The CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. 
+A CC license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted "work". A CC license is used when an author wants to give other people the right to share, use, and build upon a work that the author has created. CC provides an author flexibility (for example, they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
@@ -2000,7 +2006,7 @@ knitr::include_graphics("Figures/BeFAIRandCARE.png")
 
 ## Data sovreignty
 
-The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We will provide a definition here and it is especially important to cover such material in this course since data sovereignty could impact your data sharing protocols.
+The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We will provide a definition here and it is especially important to cover such material in this course since data sovereignty could impact your data sharing protocols. More on this topic will be discussed in [Chapter 5](#partDM).
 
 **Data sovereignty is the idea that data are subject to the laws and governance structures of the nation where they are collected.** The concept of data sovereignty is closely linked with data security, cloud computing, network sovereignty and technological sovereignty. Unlike technological sovereignty, which is vaguely defined and can be used as an umbrella term in policymaking, data sovereignty is specifically concerned with questions surrounding the data itself. Data sovereignty as the idea that data is subject to the laws and governance structures within one nation is usually discussed in two ways: in relation to Indigenous groups and Indigenous autonomy from post-colonial states or in relation to transnational data flow. With the rise of cloud computing, many countries have passed various laws around control and storage of data, which all reflects measures of data sovereignty. More than 100 countries have some sort of data sovereignty laws in place. With self-sovereign identity (SSI) the individual identity holders can fully create and control their credentials, although a nation can still issue a digital identity in that paradigm.
 
