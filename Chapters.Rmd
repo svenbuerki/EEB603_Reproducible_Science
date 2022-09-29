@@ -1817,14 +1817,18 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 
 **Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** Indeed, funding agencies and journals are moving forward to promote Open Science and the benefit of this approach was discussed in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025. You can also learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
 
-In this chapter, we are studying the mechanisms implemented to promote Open Science while highlighting reasons or cases where other principles might have to be adopted to respect different views, opinions and/or data sovereignty.
+## Objectives
+
+The major objective of this chapter is to **study the mechanisms implemented to promote Open Science while highlighting circumstances where other principles might have to be adopted to respect different views, opinions and/or data sovereignty**. 
+
+Overall, content of this chapter aims at **providing solutions to tackles threats to the scientific process** (discussed in Chapters 2 and 3) **as well as information to manage the data life cycle and research dissemination**. 
 
 ## Learning outcomes
 
 - Learn what are the seven pillars of Open Science.
 - Introduce the Open Access mechanism to promote Open Science
 - Provide an overview of the Creative Common licenses and their applications in scientific publications. 
-- Introduce the CARE Principles and data sovereignty concept and how these apply to Indigenous Peoples.
+- Introduce the CARE Principles and data sovereignty concepts and how these apply to Indigenous Peoples.
 
 ### Web resources and publications
 
@@ -1834,6 +1838,7 @@ This chapter is based on:
 
 - Albertsons library: https://www.boisestate.edu/library/
 - Altmetric: https://www.altmetric.com/
+- BSU Office of Research Compliance: https://www.boisestate.edu/research-compliance/
 - CARE Principles: https://www.gida-global.org/care
 - Creative Common: https://creativecommons.org/
 - DORA Declaration: https://sfdora.org/
@@ -1864,7 +1869,7 @@ The 7 pillars of Open Science are:
 
 ### FAIR Data {#FAIR}
 
-The FAIR principles [@Wilkinson2016] steward researchers in making outputs of research that are (Figure \@ref(fig:FAIR)):
+The FAIR Principles [@Wilkinson2016] steward researchers in making outputs of research that are (Figure \@ref(fig:FAIR)):
 
 - **F**indable: making research outputs discoverable by the wider academic community and the public.
 - **A**ccessible: using unique identifiers, metadata and a clear use of language and access protocols.
@@ -1928,7 +1933,7 @@ Another example is the [Altmetric](https://www.altmetric.com/), which tracks and
 
 ### Future of Scholarly Communication {#FSC}
 
-The future of scholarly communication is one of the most prominent pillars of Open Scholarship given its intention to shift the current academic publishing model towards fully Open Access. We will be developing more this topic below in our section on open access and associated licenses.
+The future of scholarly communication is one of the most prominent pillars of Open Scholarship given its intention to **shift the current academic publishing model towards fully Open Access**. We will be developing more this topic below in our section on open access and associated licenses.
 
 ### Citizen Science {#CS}
 
@@ -1940,11 +1945,11 @@ Harnessing the advantages of the internet, openly available software packages an
 
 ### Education and Skills {#ES}
 
-This pillar focuses on identifying which are the training needs of researchers and sufficiently addressing any gaps in knowledge and skills around engaging with Open Science such as making publications openly accessible, managing research data in-line with the FAIR principles (Figure \@ref(fig:FAIR)) and acting with integrity. All researchers at all levels should have access to education and skills programmes to support their work and continued learning. Further, skill development programmes should be opened up to other stakeholders in research such as professional staff including librarians and data managers and members of the public to facilitate the undertaking of citizen science. At BSU, the [Alberstons library](https://www.boisestate.edu/library/) has resources on this topic and also runs workshops and seminars.  
+This pillar focuses on **identifying which are the training needs of researchers and sufficiently addressing any gaps in knowledge and skills around engaging with Open Science** such as making publications openly accessible, managing research data in-line with the FAIR principles (Figure \@ref(fig:FAIR)) and acting with integrity. All researchers at all levels should have access to education and skills programmes to support their work and continued learning. Further, skill development programmes should be opened up to other stakeholders in research such as professional staff including librarians and data managers and members of the public to facilitate the undertaking of citizen science. At BSU, the [Alberstons library](https://www.boisestate.edu/library/) has resources on this topic and also runs workshops and seminars.  
 
 ### Rewards and Initiatives {#EI}
 
-Fostering engagement with the principle of Open Science requires reward and recognition of the efforts to do so – this pillar addresses barriers and champions best practice.
+**Fostering engagement with the principle of Open Science requires reward and recognition of the efforts to do so** – this pillar addresses barriers and champions best practice.
 
 A perceived lack of reward and recognition for work undertaken to manage research data and make publications openly accessible discourages researchers from engaging with the principle of Open Science. Work falling under this pillar seeks to address these challenges and champion engagement with Open Science practices. Please see [Chapter 3](#chap3) for more details on some of these initiatives and rewards to promote Open Science. 
 
@@ -1958,9 +1963,9 @@ Since the revenue of most open access journals is earned from publication fees c
 
 ## Creative Common licences
 
-Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC))). 
+Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC)). 
 
-A CC license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted "work". A CC license is used when an author wants to give other people the right to share, use, and build upon a work that the author has created. CC provides an author flexibility (for example, they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
+**A CC license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted "work".** A CC license is used when an author wants to give other people the right to share, use, and build upon a work that the author has created. CC provides an author flexibility (for example, they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
@@ -1994,7 +1999,7 @@ Here is the list of some of the mostly used CC licenses with URLs leading to the
 
 We have been promoting Open Science, but is this approach always possible?
 
-As pointed out by @Carroll2021, as big data, open data, and open science advance to increase access to complex and large datasets for innovation, discovery, and decision-making, Indigenous Peoples’ rights to control and access their data within these data environments remain limited. Operationalizing the FAIR Principles for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability and brings people and purpose to the fore to resolve Indigenous Peoples’ rights to and interests in their data across the data lifecycle (Figure \@ref(fig:CARE)).
+As pointed out by @Carroll2021, **as big data, open data, and open science advance to increase access to complex and large datasets for innovation, discovery, and decision-making, Indigenous Peoples’ rights to control and access their data within these data environments remain limited.** Operationalizing the FAIR Principles for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability and brings people and purpose to the fore to resolve Indigenous Peoples’ rights to and interests in their data across the data lifecycle (Figure \@ref(fig:CARE)).
 
 ```{r CARE, echo=FALSE, fig.cap="Be FAIR and CARE (source: https://www.gida-global.org/care).", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/BeFAIRandCARE.png")
