@@ -1658,7 +1658,7 @@ Pre-registration of the study design, primary outcome(s) and analysis plan (see 
 
 Research design and statistical analysis are mutually dependent. Common misperceptions, such as the interpretation of *P* values, limitations of null-hypothesis significance testing, the meaning and importance of statistical power, the accuracy of reported effect sizes, and the likelihood that a sample size that generated a statistically significant finding will also be adequate to replicate a true finding, could all be addressed through improved statistical training. These concepts are presented in BIOL603, ADVANCED BIOMETRY.
 
-### Improving chain of evidence supporting (identification of) biodiversity occurrences
+### Improving chain of evidence supporting (identification of) biodiversity occurrences {#biodiv}
 
 #### Are occurrences in GBIF scientifically sound?
 
@@ -1761,7 +1761,7 @@ Very little of the research process (for example, study protocols, analysis work
 
 #### Promoting open science is good, but "open" costs fall onto researchers...
 
-To promote open science, several open-access journals were recently created (e.g. [*BMC*](https://www.biomedcentral.com/p/the-bmc-series-journals), [*Frontiers*](https://www.frontiersin.org), [*PLoS*](https://www.plos.org)). These journals facilitate sharing of scientific research (and associated methods, data and code), but they are quite expensive (>$1500 on average). Waivers can be obtained for researchers based in certain countries or institutions can sponsor those initiatives and have a certain amount of papers per year published for "free". However, if you do not fall into one of these categories, it will be quite challenging to pay for these costs without support from a grant (NSF is making an effort to promote open-science). The EEB program might be able to support some of those costs, but it will vary on the yearly budget (and when you ask).      
+To promote open science, several open-access journals were recently created (e.g. [*BMC*](https://www.biomedcentral.com/p/the-bmc-series-journals), [*Frontiers*](https://www.frontiersin.org), [*PLoS*](https://www.plos.org)). These journals facilitate sharing of scientific research (and associated methods, data and code), but they are quite expensive (>$1500 on average). Waivers can be obtained for researchers based in certain countries or institutions can sponsor those initiatives and have a certain amount of papers per year published for "free". However, if you do not fall into one of these categories, it will be quite challenging to pay for these costs without support from a grant (NSF is making an effort to promote open-science). The EEB program might be able to support some of those costs, but it will vary on the yearly budget (and when you ask). This topic is further investigated in [Chapter 4](#chap4).      
 
 ## Evaluation
 
@@ -1811,7 +1811,7 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 [^2]: GBIF — the Global Biodiversity Information Facility — is an international network and research infrastructure funded by the world’s governments and aimed at providing anyone, anywhere, open access to data about all types of life on Earth.
 [^3]: Postdiction involves explanation after the fact.
 
-# Chapter 4
+# Chapter 4 {#chap4}
 
 ## Introduction
 
@@ -1936,7 +1936,7 @@ Movement towards members of the public having a greater role within research and
 
 Harnessing the advantages of the internet, openly available software packages and local knowledge, citizen science brings about a change in the way research is conducted – no longer limited to academic researchers, it encourages collaboration from groups across society.
 
-@Wagenknecht2021 discuss this topic and its implementation in the case of a European Citizen Science project and @Groom2017 are reflecting on the role of Citizen Science in biodiversity research. 
+@Wagenknecht2021 discuss this topic and its implementation in the case of a European Citizen Science project and @Groom2017 are reflecting on the role of Citizen Science in biodiversity research. Overall, citizen science could really propel your research foreward, but you have to be aware of the potential pitfalls. Please see this [section in Chapter 3](#biodiv) where this topic was discussed.
 
 ### Education and Skills {#ES}
 
@@ -1946,15 +1946,15 @@ This pillar focuses on identifying which are the training needs of researchers a
 
 Fostering engagement with the principle of Open Science requires reward and recognition of the efforts to do so – this pillar addresses barriers and champions best practice.
 
-A perceived lack of reward and recognition for work undertaken to manage research data and make publications openly accessible discourages researchers from engaging with the principle of Open Science. Work falling under this pillar seeks to address these challenges and champion engagement with Open Science practices.
+A perceived lack of reward and recognition for work undertaken to manage research data and make publications openly accessible discourages researchers from engaging with the principle of Open Science. Work falling under this pillar seeks to address these challenges and champion engagement with Open Science practices. Please see [Chapter 3](#chap3) for more details on some of these initiatives and rewards to promote Open Science. 
 
-## Open Access: A tool to promote Open Science
+## Open Access: A tool to promote Open Science?
 
 Open access (OA) is a set of principles and a range of practices through which research outputs are distributed online, free of access charges or other barriers (Figure \@ref(fig:EcolEvolCC)). Although publications are free of charges to the users, researchers will have to pay publication fees (usually between \$1500 and \$2500) to publish their research as OA. With open access strictly defined (according to the 2001 definition), barriers to copying or reuse are also reduced or removed by applying an open license for copyright. An open license is a license which allows others to reuse another creator’s work as they wish. Without a special license, these uses are normally prohibited by copyright, patent or commercial license. Most free licenses are worldwide, royalty-free, non-exclusive, and perpetual.
 
 ### The Open Access conundrum 
 
-Since the revenue of most open access journals is earned from publication fees charged to the authors, OA publishers are motivated to increase their profits by accepting low-quality papers and by not performing thorough peer review. On the other hand, the prices for OA publications in the most prestigious journals have exceeded \$5000, making such publishing model unaffordable to a large number of researchers. This increase in publishing cost has been called the "Open-Access Sequel to [the] Serials Crisis" [@Khoo_2019].
+Since the revenue of most open access journals is earned from publication fees charged to the authors, OA publishers are motivated to increase their profits by accepting low-quality papers and by not performing thorough peer review. On the other hand, the prices for OA publications in the most prestigious journals have exceeded \$5000, making such publishing model unaffordable to a large number of researchers. This increase in publishing cost has been called the "Open-Access Sequel to [the] Serials Crisis" [@Khoo_2019]. To provide further context, the serial crisis involves unsustainable budgetary pressures on libraries due to hyperinflation of subscription costs. In this framework, OA was proposed as one way of coping with these costs because articles would not require ongoing subscriptions to remain accessible, but findings by @Khoo_2019 might suggest that both systems have limitations. 
 
 ## Creative Common licences
 
