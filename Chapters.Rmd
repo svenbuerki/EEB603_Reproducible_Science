@@ -2030,7 +2030,7 @@ The presentation slides for Chapter 5 - part A can be downloaded [here](Chapters
 
 ### Introduction
 
-Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see [TOP guidelines](#TOP) in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide DOIs to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse. These citations have to be directly included in publications in devoted sections usually entitled "Data Availability Statement" located at the end of the article (see Figure \@ref(fig:DataAvail) for an example).
+Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see [TOP guidelines](#TOP) in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide [DOIs](https://www.doi.org/) to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse. These citations have to be directly included in publications in devoted sections usually entitled "Data Availability Statement" located at the end of the article (see Figure \@ref(fig:DataAvail) for an example).
 
 
 ```{r DataAvail, echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
@@ -2054,6 +2054,7 @@ This chapter is based on:
 - @DataMan -- A Guide to Data Management in Ecology and Evolution published by the [British Ecological Society](https://www.britishecologicalsociety.org).
 - UK Managing and Sharing Research Data handbook: https://data-archive.ac.uk/media/2894/managingsharing.pdf
 - The companion website presenting material for UK Managing and Sharing Research Data handbook: https://www.ukdataservice.ac.uk/manage-data/handbook/
+- Digital Object Identifier (DOI): https://www.doi.org/index.html
 
 ### What are research data?
 
