@@ -2596,10 +2596,16 @@ Figure 5.5: Be FAIR and CARE (source: <a href="https://www.gida-global.org/care"
 </div>
 <div id="partDM" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Data management</h2>
-<p>The presentation slides for Chapter 5 - part A can be downloaded <a href="Chapters_files/Chapter_4_Data_management.pdf">here</a>.</p>
+<p>The presentation slides for Chapter 5 - part A can be downloaded <a href="Chapters_files/Chapter_5_PartA.pdf">here</a>.</p>
 <div id="introduction-6" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Introduction</h3>
-<p>Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see <a href="#TOP">TOP guidelines</a> in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide DOIs to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse.</p>
+<p>Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see <a href="#TOP">TOP guidelines</a> in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide DOIs to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse. These citations have to be directly included in publications in devoted sections usually entitled “Data Availability Statement” located at the end of the article (see Figure <a href="#fig:DataAvail">6.1</a> for an example).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:DataAvail"></span>
+<img src="Figures/Data_availibility_satement.png" alt="Example of a Data Availability Statement." width="50%" />
+<p class="caption">
+Figure 6.1: Example of a Data Availability Statement.
+</p>
+</div>
 <p>This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.</p>
 </div>
 <div id="learning-outcomes-5" class="section level3" number="6.2.2">
@@ -2634,11 +2640,11 @@ Figure 5.5: Be FAIR and CARE (source: <a href="https://www.gida-global.org/care"
 </div>
 <div id="the-data-life-cycle" class="section level3" number="6.2.5">
 <h3><span class="header-section-number">6.2.5</span> The data life cycle</h3>
-<p>Data have a longer lifespan than the project they were created for, as illustrated by the data life-cycle displayed in Figure <a href="#fig:LifeCycle">6.1</a>.</p>
+<p>Data have a longer lifespan than the project they were created for, as illustrated by the data life-cycle displayed in Figure <a href="#fig:LifeCycle">6.2</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:LifeCycle"></span>
 <img src="Figures/Data_lifecycle.png" alt="The data lifecycle" width="60%" />
 <p class="caption">
-Figure 6.1: The data lifecycle
+Figure 6.2: The data lifecycle
 </p>
 </div>
 <p>Some projects may only focus on certain parts of the data life-cycle, such as primary data creation, or reusing others’ data. Other projects may go through several revolutions of the cycle. Either way, most researchers will work with data at all stages throughout their career.</p>
@@ -2710,7 +2716,7 @@ Figure 6.1: The data lifecycle
 </div>
 <div id="creating-data" class="section level3" number="6.2.9">
 <h3><span class="header-section-number">6.2.9</span> Creating data</h3>
-<p>In the data life-cycle (Figure <a href="#fig:LifeCycle">6.1</a>), creating datasets occurs as a researcher collects data in the field or lab, and digitizes them to end up with a raw dataset.</p>
+<p>In the data life-cycle (Figure <a href="#fig:LifeCycle">6.2</a>), creating datasets occurs as a researcher collects data in the field or lab, and digitizes them to end up with a raw dataset.</p>
 <pre><code># Workflow associated with creating data
 
 Collect data (in the field and/or lab) --&gt; Digitize data --&gt; Raw dataset
@@ -2747,7 +2753,7 @@ Collect data (in the field and/or lab) --&gt; Digitize data --&gt; Raw dataset
 <div id="processing-data" class="section level3" number="6.2.11">
 <h3><span class="header-section-number">6.2.11</span> Processing data</h3>
 <p><strong>Data should be processed into a format that is suited to subsequent analyses and ensures long-term usability.</strong> Data are at risk of being lost if the hardware and software originally used to create and process them are rendered obsolete. Therefore, data should be well organized, structured, named and versioned in standard formats that can be interpreted in the future (see the Data structure and organisation of files section below).</p>
-<p>Here are some guidelines to ensure best processing of data (Figure <a href="#fig:LifeCycle">6.1</a>):</p>
+<p>Here are some guidelines to ensure best processing of data (Figure <a href="#fig:LifeCycle">6.2</a>):</p>
 <ul>
 <li><strong>File formats:</strong> Data should be written in <em>non-proprietary formats</em>, also known as open standard formats. These files can be used and implemented by anyone, as opposed to proprietary formats which can only be used by those with the correct software installed. The most common format used for spreadsheet data are comma-separated values files (<code>.csv</code>). Other non-proprietary formats include: plain text files (<code>.txt</code>) for text; and <code>GIF</code>, <code>JPEG</code> and <code>PNG</code> for images.</li>
 <li><strong>File names and folders:</strong> To keep track of data and know how to find them, digital files and folders should be structured and well organized. Use a folder hierarchy that fits the structure of the project and ensure that it is used consistently. Drawing a folder map which details where specific data are saved may be particularly useful if others will be accessing folders, or if there is simply a lot to navigate (store this information in the <code>Readme.txt</code> file).</li>
@@ -2782,11 +2788,11 @@ Collect data (in the field and/or lab) --&gt; Digitize data --&gt; Raw dataset
 </div>
 <div id="data-structure-and-organisation-of-files" class="section level3" number="6.2.12">
 <h3><span class="header-section-number">6.2.12</span> Data structure and organisation of files</h3>
-<p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project (see above). In UNIX, this can be easily achieved by using the <em>tree</em> package as shown in Figure <a href="#fig:TreeDir">6.2</a>.</p>
+<p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project (see above). In UNIX, this can be easily achieved by using the <em>tree</em> package as shown in Figure <a href="#fig:TreeDir">6.3</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:TreeDir"></span>
 <img src="Figures/Tree_directory.png" alt="Infer directory tree structure using the UNIX tree package." width="60%" />
 <p class="caption">
-Figure 6.2: Infer directory tree structure using the UNIX tree package.
+Figure 6.3: Infer directory tree structure using the UNIX tree package.
 </p>
 </div>
 <div id="the-unix-tree-package-a-way-to-support-data-structure-organisation" class="section level4" number="6.2.12.1">
@@ -2803,7 +2809,7 @@ brew install tree</code></pre>
 </div>
 <div id="documenting-data" class="section level3" number="6.2.13">
 <h3><span class="header-section-number">6.2.13</span> Documenting data</h3>
-<p>Producing good documentation and metadata ensures that data can be understood and used in the long term (Figure <a href="#fig:LifeCycle">6.1</a>). Documentation (i.e. the manual associated with your data) describes the data, explains any manipulations and provides contextual information – no room should be left for others to misinterpret the data.</p>
+<p>Producing good documentation and metadata ensures that data can be understood and used in the long term (Figure <a href="#fig:LifeCycle">6.2</a>). Documentation (i.e. the manual associated with your data) describes the data, explains any manipulations and provides contextual information – no room should be left for others to misinterpret the data.</p>
 <p>All documentation requirements should be identified at the planning stages so you are prepared for it during all stages of the data life-cycle, particularly during data creation and processing. This will avoid having to perform a rescue mission in situations where you have forgotten what has happened or when a collaborator has left without leaving any key documentation behind.</p>
 <p>Data documentation includes information at project and data levels and should cover the following information.</p>
 <div id="project-level" class="section level4" number="6.2.13.1">
@@ -2814,7 +2820,7 @@ brew install tree</code></pre>
 <li>Details of sponsors.</li>
 <li>Data collection methods, including details of instrumentation and environmental conditions during collection, copies of collection instructions if applicable.</li>
 <li>Standards used.</li>
-<li>Data structure and organisation of files (see Figure <a href="#fig:TreeDir">6.2</a>).</li>
+<li>Data structure and organisation of files (see Figure <a href="#fig:TreeDir">6.3</a>).</li>
 <li>Software used to prepare and read the data.</li>
 <li>Procedures used for data processing, including quality control and versioning and the dates these were carried out.</li>
 <li>Known problems that may limit data use.</li>
@@ -2842,7 +2848,7 @@ brew install tree</code></pre>
 </div>
 <div id="preserving-data" class="section level3" number="6.2.14">
 <h3><span class="header-section-number">6.2.14</span> Preserving data</h3>
-<p>To protect data from loss and to make sure data are securely stored, good data management should include a strategy for backing up and storing data effectively (see where this step fits in Figure <a href="#fig:LifeCycle">6.1</a>). It is recommended to keep three versions of your data: the original, external/local and external/remote. Talk with your thesis supervisor to isolate best procedure to ensure preservation of your data.</p>
+<p>To protect data from loss and to make sure data are securely stored, good data management should include a strategy for backing up and storing data effectively (see where this step fits in Figure <a href="#fig:LifeCycle">6.2</a>). It is recommended to keep three versions of your data: the original, external/local and external/remote. Talk with your thesis supervisor to isolate best procedure to ensure preservation of your data.</p>
 <div id="data-backup" class="section level4" number="6.2.14.1">
 <h4><span class="header-section-number">6.2.14.1</span> Data backup</h4>
 <p>When designing a backup strategy, thought should be given to the possible means by which data loss could occur. These include:</p>
@@ -3032,10 +3038,10 @@ brew install tree</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ReproWorkflow"></span>
 <img src="Figures/Reproducible_code_workflow.png" alt="A simple reproducible project workflow." width="100%" />
 <p class="caption">
-Figure 6.3: A simple reproducible project workflow.
+Figure 6.4: A simple reproducible project workflow.
 </p>
 </div>
-<p>An example of a reproducible project workflow is displayed in Figure <a href="#fig:ReproWorkflow">6.3</a>. This workflow serves as a basis for the discussion presented in this chapter.</p>
+<p>An example of a reproducible project workflow is displayed in Figure <a href="#fig:ReproWorkflow">6.4</a>. This workflow serves as a basis for the discussion presented in this chapter.</p>
 </div>
 <div id="organize-project-for-reproducibility" class="section level3" number="6.3.4">
 <h3><span class="header-section-number">6.3.4</span> Organize project for reproducibility</h3>
@@ -3071,10 +3077,10 @@ Figure 6.3: A simple reproducible project workflow.
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ProjStuct"></span>
 <img src="Figures/Example_project_structure.png" alt="Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered." width="100%" />
 <p class="caption">
-Figure 6.4: Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered.
+Figure 6.5: Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered.
 </p>
 </div>
-<p>There is no single best way to organize a file system. The key is to make sure that the structure of directories and location of files are consistent, informative and works for you. Please find below an example of basic project directory structure (Figure <a href="#fig:ProjStuct">6.4</a>):</p>
+<p>There is no single best way to organize a file system. The key is to make sure that the structure of directories and location of files are consistent, informative and works for you. Please find below an example of basic project directory structure (Figure <a href="#fig:ProjStuct">6.5</a>):</p>
 <ul>
 <li>The <code>data</code> folder contains all input data (and metadata) used in the analysis.</li>
 <li>The <code>MS</code> folder contains the manuscript.</li>
@@ -3087,7 +3093,7 @@ Figure 6.4: Example file structure of a simple analysis project. Make sure you l
 </div>
 <div id="using-r-to-infer-data-structure-and-files-organization" class="section level4" number="6.3.4.5">
 <h4><span class="header-section-number">6.3.4.5</span> Using R to infer data structure and files organization</h4>
-<p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions <em>list.files()</em> and <em>file.info()</em> can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure <a href="#fig:ProjStuct">6.4</a>.</p>
+<p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions <em>list.files()</em> and <em>file.info()</em> can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure <a href="#fig:ProjStuct">6.5</a>.</p>
 <pre class="r"><code># Produce a list of all files in working directory
 # (Project-ID) together with info related to those files
 file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name = TRUE))</code></pre>
@@ -3164,7 +3170,7 @@ file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name 
 </div>
 <div id="pseudocode-and-associated-r-script" class="section level4" number="6.3.4.6">
 <h4><span class="header-section-number">6.3.4.6</span> Pseudocode and associated R script</h4>
-<p>The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let’s investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure <a href="#fig:plotProjStr">6.5</a>):</p>
+<p>The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let’s investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure <a href="#fig:plotProjStr">6.6</a>):</p>
 <ul>
 <li><strong>Step 1:</strong> Produce a list of all files in your working directory using <em>file.info</em> and <em>list.files</em> functions. The output of this code is a <code>data.frame</code></li>
 <li><strong>Step 2:</strong> Convert the <code>data.frame</code> into a <code>data.tree</code> class object. This is done using the <em>data.tree::as.Node</em> function from the <code>data.tree</code> package.</li>
@@ -3223,29 +3229,29 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-70d7039d278c23c0667a" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-70d7039d278c23c0667a">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6c74807ff2068d8d2c10" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6c74807ff2068d8d2c10">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
-Figure 6.5: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
+Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
 </div>
 <p>Finally, the R DiagrammeR package sadly doesn’t allow to easily save the graph into a file (step 4) using e.g. the <em>pdf()</em> and <em>dev.off()</em> functions, but this task can be done in RStudio as follows:</p>
 <ol style="list-style-type: decimal">
-<li>The diagram outputted by step 3 is displayed in the <code>Viewer</code> window (in the bottom right panel) and can be exported by clicking on the <img src="Figures/Export_button.png" /> button and select <code>Save as Image...</code> as shown in Figure <a href="#fig:ExportDiag1">6.6</a>.</li>
+<li>The diagram outputted by step 3 is displayed in the <code>Viewer</code> window (in the bottom right panel) and can be exported by clicking on the <img src="Figures/Export_button.png" /> button and select <code>Save as Image...</code> as shown in Figure <a href="#fig:ExportDiag1">6.7</a>.</li>
 </ol>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ExportDiag1"></span>
 <img src="Figures/Save_DiagrammR.png" alt="Snapshot showing how to export the diagram in RStudio." width="60%" />
 <p class="caption">
-Figure 6.6: Snapshot showing how to export the diagram in RStudio.
+Figure 6.7: Snapshot showing how to export the diagram in RStudio.
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
-<li>Once you have executed the latter step, a window will open allowing you to select the image format, directory and file name as shown in Figure <a href="#fig:ExportDiag2">6.7</a>.</li>
+<li>Once you have executed the latter step, a window will open allowing you to select the image format, directory and file name as shown in Figure <a href="#fig:ExportDiag2">6.8</a>.</li>
 </ol>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ExportDiag2"></span>
 <img src="Figures/Save_DiagrammR_2.png" alt="Snapshot showing how to save the diagram in RStudio." width="60%" />
 <p class="caption">
-Figure 6.7: Snapshot showing how to save the diagram in RStudio.
+Figure 6.8: Snapshot showing how to save the diagram in RStudio.
 </p>
 </div>
 <p>To find out more about your options to export/save DiagrammeR graphs please visit this website:</p>
@@ -3254,7 +3260,7 @@ Figure 6.7: Snapshot showing how to save the diagram in RStudio.
 </div>
 <div id="informative-consistent-naming" class="section level4" number="6.3.4.7">
 <h4><span class="header-section-number">6.3.4.7</span> Informative, consistent naming</h4>
-<p>Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure <a href="#fig:ProjStuct">6.4</a> for examples and Chapter 4: Data management for more details).</p>
+<p>Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 4: Data management for more details).</p>
 </div>
 </div>
 <div id="ensure-basic-programming-standards" class="section level3" number="6.3.5">
@@ -3269,13 +3275,13 @@ Figure 6.7: Snapshot showing how to save the diagram in RStudio.
 1. It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review.
 2. The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity.
 3. Having clean and reproducible code available can encourage greater uptake of new methods that you have developed.</p>
-<p>To write clear and reproducible code, it is recommended to follow the workflow depicted in Figure <a href="#fig:ReproWorkflow">6.3</a>. The following section explains each part of the workflow along with some tips for writing code. Although this workflow would be the ‘gold standard’, just picking up some of the elements can help to make your code more effective and readable.</p>
+<p>To write clear and reproducible code, it is recommended to follow the workflow depicted in Figure <a href="#fig:ReproWorkflow">6.4</a>. The following section explains each part of the workflow along with some tips for writing code. Although this workflow would be the ‘gold standard’, just picking up some of the elements can help to make your code more effective and readable.</p>
 </div>
 <div id="style-guides" class="section level4" number="6.3.5.3">
 <h4><span class="header-section-number">6.3.5.3</span> Style guides</h4>
 <p>The foundation of writing readable code is to choose a logical and readable coding style, and to stick to it. Some key elements to consider when developing a coding style are:</p>
 <ul>
-<li>Using meaningful file names, and numbering these if they are in a sequence (see Figure <a href="#fig:ProjStuct">6.4</a> for examples and Chapter 4: Data management for more details).</li>
+<li>Using meaningful file names, and numbering these if they are in a sequence (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 4: Data management for more details).</li>
 </ul>
 <pre class="r"><code>### Naming files
 # Good
@@ -3331,7 +3337,7 @@ x = 5</code></pre>
 <h4><span class="header-section-number">6.3.5.4</span> Portable code: Absolute vs. Relative paths</h4>
 <p>When working collaboratively, portability between machines is very important, i.e. will your code work on someone else’s computer? Portability is also important if code is being run on another server, for example a High Performance Cluster. One way to improve portability of code is to avoid using absolute paths and use only relative paths (see <a href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths" class="uri">https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths</a>).</p>
 <p><strong>An absolute path is one that gives the full address to a folder or file. A relative path gives the location of the file from the current working directory.</strong></p>
-<p>For example based on <code>species_data.csv</code> stored in the <code>Data</code> folder shown in Figure <a href="#fig:ProjStuct">6.4</a>:</p>
+<p>For example based on <code>species_data.csv</code> stored in the <code>Data</code> folder shown in Figure <a href="#fig:ProjStuct">6.5</a>:</p>
 <pre class="r"><code># Absolute path -----------------------------
 C:/Project_ID/Data/species_data.csv
 
@@ -3353,7 +3359,7 @@ Data/species_data.csv</code></pre>
 </div>
 <div id="writing-functions" class="section level4" number="6.3.5.6">
 <h4><span class="header-section-number">6.3.5.6</span> Writing functions</h4>
-<p>Often when you are analyzing data, you need to repeat the same task many times. For example, you might have several files that all need loading and cleaning in the same way, or you might need to perform the same analysis for multiple species or parameters. The best way (by far) to handle those tasks is to write functions and store those in a specific folder (e.g. <code>R_functions</code> in <a href="#fig:ProjStuct">6.4</a>). Those functions will be loaded into the R environment (and therefore made available to users) by using the <code>source()</code> function, which will be placed at the top of your R script. Please see Chapter 1 part D for more details.</p>
+<p>Often when you are analyzing data, you need to repeat the same task many times. For example, you might have several files that all need loading and cleaning in the same way, or you might need to perform the same analysis for multiple species or parameters. The best way (by far) to handle those tasks is to write functions and store those in a specific folder (e.g. <code>R_functions</code> in <a href="#fig:ProjStuct">6.5</a>). Those functions will be loaded into the R environment (and therefore made available to users) by using the <code>source()</code> function, which will be placed at the top of your R script. Please see Chapter 1 part D for more details.</p>
 </div>
 <div id="testing-scientific-code" class="section level4" number="6.3.5.7">
 <h4><span class="header-section-number">6.3.5.7</span> Testing scientific code</h4>
@@ -3931,8 +3937,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-9ab8478d969ebcf9e9c2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9ab8478d969ebcf9e9c2">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-77149d7ee805d139b44b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-77149d7ee805d139b44b">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
