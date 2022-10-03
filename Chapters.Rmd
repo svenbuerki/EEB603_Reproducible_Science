@@ -2034,6 +2034,13 @@ Good data management is fundamental to research excellence. It produces high-qua
 
 This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.
 
+### Learning outcomes
+
+- Learn what are the different types of research data and their specificity.
+- Provide an overview of the data life-cycle.
+- Highlight the benefits of good data management.
+- Study best-practices to planning data management.
+
 ### Literature and web resources
 
 This chapter is based on:
