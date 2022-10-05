@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-10-03" />
+<meta name="date" content="2022-10-05" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -396,7 +396,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-10-03</h4>
+<h4 class="date">2022-10-05</h4>
 
 </div>
 
@@ -3008,9 +3008,12 @@ brew install tree</code></pre>
 </div>
 <div id="repcode" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Reproducible code</h2>
-<p>The presentation slides for Chapter 5 - part B can be downloaded <a href="Chapters_files/Chapter_4_Reproducible_code.pdf">here</a>.</p>
-<div id="introduction-7" class="section level3" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Introduction</h3>
+<div id="download-presentation" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Download presentation</h3>
+<p>The presentation slides for Chapter 5 - part B can be downloaded <a href="Chapters_files/Chapter_5_Reproducible_code.pdf">here</a>.</p>
+</div>
+<div id="introduction-7" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Introduction</h3>
 <p>The following steps have to be fully integrated in order to produce a reproducible code:</p>
 <ul>
 <li><strong>Step 1:</strong> Establish a reproducible project workflow.</li>
@@ -3021,10 +3024,17 @@ brew install tree</code></pre>
 <li><strong>Step 6:</strong> Implement a version control protocol (with Git).</li>
 <li><strong>Step 7:</strong> Ensure archiving and citation of code.</li>
 </ul>
-<p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 4 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 11.</p>
+<p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 5 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.</p>
 </div>
-<div id="literature-and-web-resources-1" class="section level3" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Literature and web resources</h3>
+<div id="learning-outcomes-6" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Learning outcomes</h3>
+<ul>
+<li>Learn protocol to organize projects for reproducibility.</li>
+<li>Learn basic programming standards to ensure transparency and broad understanding of your data workflow.</li>
+</ul>
+</div>
+<div id="literature-and-web-resources-1" class="section level3" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Literature and web resources</h3>
 <p>This chapter is based on:</p>
 <ul>
 <li><span class="citation">British Ecological Society (<a href="#ref-RepCode" role="doc-biblioref">2014c</a>)</span> – <em>A Guide to Reproducible Code in Ecology and Evolution</em> published by the <a href="https://www.britishecologicalsociety.org">British Ecological Society</a>.</li>
@@ -3034,24 +3044,64 @@ brew install tree</code></pre>
 <li>Comparison of free and open-source software licenses: <a href="https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses" class="uri">https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses</a></li>
 </ul>
 </div>
-<div id="draw-a-reproducible-project-workflow" class="section level3" number="6.3.3">
-<h3><span class="header-section-number">6.3.3</span> “Draw” a reproducible project workflow</h3>
+<div id="data-and-dependencies" class="section level3" number="6.3.5">
+<h3><span class="header-section-number">6.3.5</span> Data and dependencies</h3>
+<p>To conduct the exercises presented in this chapter, you will need to download a folder from the shared Google Drive and install R packages. More information on these items is provided below.</p>
+<div id="data" class="section level4" number="6.3.5.1">
+<h4><span class="header-section-number">6.3.5.1</span> Data</h4>
+<p>The data (<code>Project_ID</code>) used for this chapter are deposited on our shared Google Drive at this address:</p>
+<p><code>Reproducible_Science &gt; Exercises &gt; Chapter_5 &gt; Project_ID</code></p>
+<p>Please download this whole folder prior to starting the exercises.</p>
+</div>
+<div id="r-packages" class="section level4" number="6.3.5.2">
+<h4><span class="header-section-number">6.3.5.2</span> R packages</h4>
+<p>Here, we are using code developed in Chapter 1 to make sure the R dependencies (<em>data.tree</em>, <em>DiagrammeR</em>) are installed and loaded prior to pursuing the exercises.</p>
+<pre class="r"><code>## ~~~ 1. List all required packages ~~~ Object (args)
+## provided by user with names of packages stored into a
+## vector
+pkg &lt;- c(&quot;data.tree&quot;, &quot;DiagrammeR&quot;)
+## ~~~ 2. Check if pkg are installed ~~~
+print(&quot;Check if packages are installed&quot;)</code></pre>
+<pre><code>## [1] &quot;Check if packages are installed&quot;</code></pre>
+<pre class="r"><code># This line outputs a list of packages that are not
+# installed
+new.pkg &lt;- pkg[!(pkg %in% installed.packages())]
+## ~~~ 3. Install missing packages ~~~
+if (length(new.pkg) &gt; 0) {
+    print(paste(&quot;Install missing package(s):&quot;, new.pkg, sep = &quot; &quot;))
+    install.packages(new.pkg, dependencies = TRUE)
+} else {
+    print(&quot;All packages are already installed!&quot;)
+}</code></pre>
+<pre><code>## [1] &quot;All packages are already installed!&quot;</code></pre>
+<pre class="r"><code>## ~~~ 4. Load all packages ~~~
+print(&quot;Load packages and return status&quot;)</code></pre>
+<pre><code>## [1] &quot;Load packages and return status&quot;</code></pre>
+<pre class="r"><code># Here we use the sapply() function to require all the
+# packages
+sapply(pkg, require, character.only = TRUE)</code></pre>
+<pre><code>##  data.tree DiagrammeR 
+##       TRUE       TRUE</code></pre>
+</div>
+</div>
+<div id="organize-project-for-reproducibility" class="section level3" number="6.3.6">
+<h3><span class="header-section-number">6.3.6</span> Organize project for reproducibility</h3>
+<div id="draw-a-reproducible-project-workflow" class="section level4" number="6.3.6.1">
+<h4><span class="header-section-number">6.3.6.1</span> “Draw” a reproducible project workflow</h4>
+<p>Organizing your project for reproducibility starts by drawing a workflow serving as basis to guide your project implementation. An example of a reproducible project workflow is displayed in Figure <a href="#fig:ReproWorkflow">6.4</a>. This workflow will be used as template for the material presented in this chapter.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ReproWorkflow"></span>
 <img src="Figures/Reproducible_code_workflow.png" alt="A simple reproducible project workflow." width="100%" />
 <p class="caption">
 Figure 6.4: A simple reproducible project workflow.
 </p>
 </div>
-<p>An example of a reproducible project workflow is displayed in Figure <a href="#fig:ReproWorkflow">6.4</a>. This workflow serves as a basis for the discussion presented in this chapter.</p>
 </div>
-<div id="organize-project-for-reproducibility" class="section level3" number="6.3.4">
-<h3><span class="header-section-number">6.3.4</span> Organize project for reproducibility</h3>
-<div id="the-repeatable-reproducible-analysis-workflow" class="section level4" number="6.3.4.1">
-<h4><span class="header-section-number">6.3.4.1</span> The repeatable, reproducible analysis workflow</h4>
-<p>The fundamental idea behind a robust, reproducible analysis is <strong>a clean, repeatable script-based workflow (i.e. the sequence of tasks from the start to the end of a project) linking raw data through to clean data and to final analysis outputs</strong>.</p>
+<div id="the-repeatable-reproducible-analysis-workflow" class="section level4" number="6.3.6.2">
+<h4><span class="header-section-number">6.3.6.2</span> The repeatable, reproducible analysis workflow</h4>
+<p>The fundamental idea behind a robust, reproducible analysis is <strong>a clean, repeatable script-based workflow</strong> (i.e. the sequence of tasks from the start to the end of a project) <strong>linking raw data through to clean data and to final analysis outputs</strong>.</p>
 </div>
-<div id="principles-of-a-good-analysis-workflow" class="section level4" number="6.3.4.2">
-<h4><span class="header-section-number">6.3.4.2</span> Principles of a good analysis workflow</h4>
+<div id="principles-of-a-good-analysis-workflow" class="section level4" number="6.3.6.3">
+<h4><span class="header-section-number">6.3.6.3</span> Principles of a good analysis workflow</h4>
 <p>Please find below some key concepts associated with this task:</p>
 <ul>
 <li>Start your analysis from copies of your raw data.</li>
@@ -3068,12 +3118,12 @@ Figure 6.4: A simple reproducible project workflow.
 <li>Keep your raw data raw.</li>
 </ul>
 </div>
-<div id="organizing-and-documenting-workflows" class="section level4" number="6.3.4.3">
-<h4><span class="header-section-number">6.3.4.3</span> Organizing and documenting workflows</h4>
-<p>The simplest and most effective way of documenting your workflow – its inputs and outputs – is through good file system organization, and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible on what a file contains, why it exists, and how it relates to other files in the project. These principles extend to all files in your project (not just scripts) and are also intimately linked to good research data management (see Chapter 4: Data management).</p>
+<div id="organizing-and-documenting-workflows" class="section level4" number="6.3.6.4">
+<h4><span class="header-section-number">6.3.6.4</span> Organizing and documenting workflows</h4>
+<p>The simplest and most effective way of documenting your workflow – its inputs and outputs – is through good file system organization, and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible on what a file contains, why it exists, and how it relates to other files in the project. These principles extend to all files in your project (not just scripts) and are also intimately linked to good research data management (see Chapter 5: Data management).</p>
 </div>
-<div id="file-system-structure" class="section level4" number="6.3.4.4">
-<h4><span class="header-section-number">6.3.4.4</span> File system structure</h4>
+<div id="file-system-structure" class="section level4" number="6.3.6.5">
+<h4><span class="header-section-number">6.3.6.5</span> File system structure</h4>
 <p>It is best to keep all files associated with a particular project in a single root directory. RStudio projects offer a great way to keep everything together in a self-contained and portable (i.e. so they can be moved from computer to computer) manner, allowing internal pathways to data and other scripts to remain valid even when shared or moved.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ProjStuct"></span>
 <img src="Figures/Example_project_structure.png" alt="Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered." width="100%" />
@@ -3092,8 +3142,8 @@ Figure 6.5: Example file structure of a simple analysis project. Make sure you l
 <li>The scripts (<code>*.R</code>) that actually do things are stored in the root directory together with the <code>README.md</code> file. If your project has too many scripts, you might consider organizing them in a separate folder.</li>
 </ul>
 </div>
-<div id="using-r-to-infer-data-structure-and-files-organization" class="section level4" number="6.3.4.5">
-<h4><span class="header-section-number">6.3.4.5</span> Using R to infer data structure and files organization</h4>
+<div id="using-r-to-infer-data-structure-and-files-organization" class="section level4" number="6.3.6.6">
+<h4><span class="header-section-number">6.3.6.6</span> Using R to infer data structure and files organization</h4>
 <p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions <em>list.files()</em> and <em>file.info()</em> can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure <a href="#fig:ProjStuct">6.5</a>.</p>
 <pre class="r"><code># Produce a list of all files in working directory
 # (Project-ID) together with info related to those files
@@ -3169,8 +3219,8 @@ file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name 
 ## Project_ID/Scripts/04_fit_models.R                     20  sven  staff
 ## Project_ID/Scripts/05_generate_figures.R               20  sven  staff</code></pre>
 </div>
-<div id="pseudocode-and-associated-r-script" class="section level4" number="6.3.4.6">
-<h4><span class="header-section-number">6.3.4.6</span> Pseudocode and associated R script</h4>
+<div id="pseudocode-and-associated-r-script" class="section level4" number="6.3.6.7">
+<h4><span class="header-section-number">6.3.6.7</span> Pseudocode and associated R script</h4>
 <p>The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let’s investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure <a href="#fig:plotProjStr">6.6</a>):</p>
 <ul>
 <li><strong>Step 1:</strong> Produce a list of all files in your working directory using <em>file.info</em> and <em>list.files</em> functions. The output of this code is a <code>data.frame</code></li>
@@ -3179,9 +3229,9 @@ file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name 
 <li><strong>Step 4:</strong> Save the output from step 3.</li>
 </ul>
 <p><strong>WARNING:</strong> Prior to starting the exercise, please go on the shared Google Drive and download the <code>Project_ID</code> folder at this path:</p>
-<p><code>Reproducible_Science &gt; Exercises &gt; Chapter_4 &gt; Project_ID</code></p>
-<div id="r-code-and-associated-outputs" class="section level5" number="6.3.4.6.1">
-<h5><span class="header-section-number">6.3.4.6.1</span> R code and associated outputs</h5>
+<p><code>Reproducible_Science &gt; Exercises &gt; Chapter_5 &gt; Project_ID</code></p>
+<div id="r-code-and-associated-outputs" class="section level5" number="6.3.6.7.1">
+<h5><span class="header-section-number">6.3.6.7.1</span> R code and associated outputs</h5>
 <pre class="r"><code>### Load R packages
 library(data.tree)
 library(DiagrammeR)
@@ -3230,8 +3280,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-9d873c331c420a7e02d0" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9d873c331c420a7e02d0">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8ea6d678b6612a170c1b" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8ea6d678b6612a170c1b">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3259,30 +3309,30 @@ Figure 6.8: Snapshot showing how to save the diagram in RStudio.
 <p><a href="https://rich-iannone.github.io/DiagrammeR/io.html" class="uri">https://rich-iannone.github.io/DiagrammeR/io.html</a></p>
 </div>
 </div>
-<div id="informative-consistent-naming" class="section level4" number="6.3.4.7">
-<h4><span class="header-section-number">6.3.4.7</span> Informative, consistent naming</h4>
-<p>Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 4: Data management for more details).</p>
+<div id="informative-consistent-naming" class="section level4" number="6.3.6.8">
+<h4><span class="header-section-number">6.3.6.8</span> Informative, consistent naming</h4>
+<p>Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 5: Data management for more details).</p>
 </div>
 </div>
-<div id="ensure-basic-programming-standards" class="section level3" number="6.3.5">
-<h3><span class="header-section-number">6.3.5</span> Ensure basic programming standards</h3>
-<div id="writing-pseudocode-1" class="section level4" number="6.3.5.1">
-<h4><span class="header-section-number">6.3.5.1</span> Writing pseudocode</h4>
+<div id="ensure-basic-programming-standards" class="section level3" number="6.3.7">
+<h3><span class="header-section-number">6.3.7</span> Ensure basic programming standards</h3>
+<div id="writing-pseudocode-1" class="section level4" number="6.3.7.1">
+<h4><span class="header-section-number">6.3.7.1</span> Writing pseudocode</h4>
 <p>Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.</p>
 </div>
-<div id="writing-code-1" class="section level4" number="6.3.5.2">
-<h4><span class="header-section-number">6.3.5.2</span> Writing code</h4>
+<div id="writing-code-1" class="section level4" number="6.3.7.2">
+<h4><span class="header-section-number">6.3.7.2</span> Writing code</h4>
 <p>Writing clear, reproducible code has (at least) three main benefits:
 1. It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review.
 2. The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity.
 3. Having clean and reproducible code available can encourage greater uptake of new methods that you have developed.</p>
 <p>To write clear and reproducible code, it is recommended to follow the workflow depicted in Figure <a href="#fig:ReproWorkflow">6.4</a>. The following section explains each part of the workflow along with some tips for writing code. Although this workflow would be the ‘gold standard’, just picking up some of the elements can help to make your code more effective and readable.</p>
 </div>
-<div id="style-guides" class="section level4" number="6.3.5.3">
-<h4><span class="header-section-number">6.3.5.3</span> Style guides</h4>
+<div id="style-guides" class="section level4" number="6.3.7.3">
+<h4><span class="header-section-number">6.3.7.3</span> Style guides</h4>
 <p>The foundation of writing readable code is to choose a logical and readable coding style, and to stick to it. Some key elements to consider when developing a coding style are:</p>
 <ul>
-<li>Using meaningful file names, and numbering these if they are in a sequence (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 4: Data management for more details).</li>
+<li>Using meaningful file names, and numbering these if they are in a sequence (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 5: Data management for more details).</li>
 </ul>
 <pre class="r"><code>### Naming files
 # Good
@@ -3334,8 +3384,8 @@ x &lt;- 5
 x = 5</code></pre>
 <p>The most important role of a style guide, however, is to introduce consistency to scripts.</p>
 </div>
-<div id="portable-code-absolute-vs.-relative-paths" class="section level4" number="6.3.5.4">
-<h4><span class="header-section-number">6.3.5.4</span> Portable code: Absolute vs. Relative paths</h4>
+<div id="portable-code-absolute-vs.-relative-paths" class="section level4" number="6.3.7.4">
+<h4><span class="header-section-number">6.3.7.4</span> Portable code: Absolute vs. Relative paths</h4>
 <p>When working collaboratively, portability between machines is very important, i.e. will your code work on someone else’s computer? Portability is also important if code is being run on another server, for example a High Performance Cluster. One way to improve portability of code is to avoid using absolute paths and use only relative paths (see <a href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths" class="uri">https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths</a>).</p>
 <p><strong>An absolute path is one that gives the full address to a folder or file. A relative path gives the location of the file from the current working directory.</strong></p>
 <p>For example based on <code>species_data.csv</code> stored in the <code>Data</code> folder shown in Figure <a href="#fig:ProjStuct">6.5</a>:</p>
@@ -3349,32 +3399,32 @@ Data/species_data.csv</code></pre>
 <p>Relative paths are particularly useful when transferring between computers because while I may have stored my project folder in ‘C:/Project_ID/’, you may have yours stored in ‘C:/Users/My Documents’. Using relative paths and running from the project folder will ensure that <em>file-not-found errors</em> are avoided.</p>
 <p>RStudio is especially designed to help portability of code. For instance, you can easily set the working directory in RStudio by clicking:</p>
 <pre class="r"><code>Session &gt; Set Working Directory &gt; To Source File Location</code></pre>
-<p>or using the <em>setwd()</em> function. Please see chapter 1 for more details.</p>
+<p>or using the <em>setwd()</em> function. Please see Chapter 1 for more details.</p>
 </div>
-<div id="commenting-code" class="section level4" number="6.3.5.5">
-<h4><span class="header-section-number">6.3.5.5</span> Commenting code</h4>
+<div id="commenting-code" class="section level4" number="6.3.7.5">
+<h4><span class="header-section-number">6.3.7.5</span> Commenting code</h4>
 <p>How often have you revisited an old script six months down the line and not been able to figure out what you had been doing? Or have taken on a script from a collaborator and not been able to understand what their code is doing and why? An easy win for making code more readable and reproducible is the liberal, and effective, use of comments. A comment is a line of code that is visible, but does not get run with the rest of the script. In R and Python this is signified by beginning the line with a #.</p>
 <p><strong>One good principle to adhere to is to comment the ‘why’ rather than the ‘what’</strong>. The code itself tells the reader what is being done, it is far more important to document the reasoning behind a particular section of code or, if it is doing something nonstandard or complicated, to take some time to describe that section of code.</p>
 <p>It is also good practice to use comments to add an overview at the beginning of a script, and commented lines of <code>---</code> to break up the script: e.g. in R</p>
 <pre class="r"><code># Load data -------</code></pre>
 </div>
-<div id="writing-functions" class="section level4" number="6.3.5.6">
-<h4><span class="header-section-number">6.3.5.6</span> Writing functions</h4>
+<div id="writing-functions" class="section level4" number="6.3.7.6">
+<h4><span class="header-section-number">6.3.7.6</span> Writing functions</h4>
 <p>Often when you are analyzing data, you need to repeat the same task many times. For example, you might have several files that all need loading and cleaning in the same way, or you might need to perform the same analysis for multiple species or parameters. The best way (by far) to handle those tasks is to write functions and store those in a specific folder (e.g. <code>R_functions</code> in <a href="#fig:ProjStuct">6.5</a>). Those functions will be loaded into the R environment (and therefore made available to users) by using the <code>source()</code> function, which will be placed at the top of your R script. Please see Chapter 1 part D for more details.</p>
 </div>
-<div id="testing-scientific-code" class="section level4" number="6.3.5.7">
-<h4><span class="header-section-number">6.3.5.7</span> Testing scientific code</h4>
+<div id="testing-scientific-code" class="section level4" number="6.3.7.7">
+<h4><span class="header-section-number">6.3.7.7</span> Testing scientific code</h4>
 <p>In the experimental sciences, rigorous testing is applied to ensure that results are accurate, reproducible and reliable. Testing will show that the experimental setup is doing what it is meant to do and will quantify any systematic biases. Results of experiments will not be trusted without such tests; why should your code be any different? Testing scientific code allows you to be sure that it is working as intended and to understand and quantify any limitations of the code. Using tests can also help to speed up the code development process by finding errors early on.</p>
 <p>Although the instructor recognizes the importance of establishing protocols, those tests will be especially relevant if you were to design R packages. However, the instructor would recommend informal testing by loading functions that have been written by the students and running <em>ad hoc</em> tests in the command line to make sure that they perform as expected.</p>
 </div>
 </div>
-<div id="document-and-manage-dependencies" class="section level3" number="6.3.6">
-<h3><span class="header-section-number">6.3.6</span> Document and manage dependencies</h3>
+<div id="document-and-manage-dependencies" class="section level3" number="6.3.8">
+<h3><span class="header-section-number">6.3.8</span> Document and manage dependencies</h3>
 <p>Reproducibility is also about making sure someone else can re-use your code to obtain the same results as you (see <a href="#appendix-1">Appendix 1</a> for more details).</p>
 <p>For someone else to be able to reproduce the results included in your report, you need to provide more than the code and the data. You also need to document the exact versions of all the packages, libraries, and software you used, and potentially your operating system as well as your hardware.</p>
 <p>R itself is very stable, and the core team of developers takes backward compatibility (old code works with recent versions of R) very seriously. However, default values in some functions change, and new functions get introduced regularly. If you wrote your code on a recent version of R and give it to someone who has not upgraded recently, they may not be able to run your code. Code written for one version of a package may produce very different results with a more recent version.</p>
-<div id="reporting-r-packages-and-versions" class="section level4" number="6.3.6.1">
-<h4><span class="header-section-number">6.3.6.1</span> Reporting R packages and versions</h4>
+<div id="reporting-r-packages-and-versions" class="section level4" number="6.3.8.1">
+<h4><span class="header-section-number">6.3.8.1</span> Reporting R packages and versions</h4>
 <p>With R, the simplest (but a useful and important) approach to document your dependencies is to report the output of <code>sessionInfo()</code> (or <code>devtools::session_info()</code>). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone wants to recreate your analysis, they will know which packages they will need to install. Please see <a href="#appendix-2">Appendix 2</a> for more details.</p>
 <p>For instance, here is the output of <code>sessionInfo()</code> showing the R version and packages that I used to create this document:</p>
 <pre class="r"><code>sessionInfo()</code></pre>
@@ -3421,8 +3471,8 @@ Data/species_data.csv</code></pre>
 ## [65] utf8_1.2.2         stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1       
 ## [69] tidyselect_1.1.2   xfun_0.32          urlchecker_1.0.1</code></pre>
 </div>
-<div id="using-r-packages-to-help-managing-dependencies-and-recreate-setup" class="section level4" number="6.3.6.2">
-<h4><span class="header-section-number">6.3.6.2</span> Using R packages to help managing dependencies and recreate setup</h4>
+<div id="using-r-packages-to-help-managing-dependencies-and-recreate-setup" class="section level4" number="6.3.8.2">
+<h4><span class="header-section-number">6.3.8.2</span> Using R packages to help managing dependencies and recreate setup</h4>
 <p>This will not be covered in this class, but it is worth noting that there are at least two R packages allowing to better manage dependencies and recreate your setup. Those packages are:</p>
 <ul>
 <li><em>checkpoint</em>: <a href="https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html" class="uri">https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html</a></li>
@@ -3835,7 +3885,7 @@ Figure 8.1: Example of datasets involved in Ecology, Evolution and Behavior and 
 </div>
 <p>Here, we are providing methods and R functions that are applied to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.</p>
 </div>
-<div id="learning-outcomes-6" class="section level2" number="8.2">
+<div id="learning-outcomes-7" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Learning outcomes</h2>
 <ul>
 <li>Creating RStudio projects to manage your reproducible project.</li>
@@ -3898,7 +3948,7 @@ Figure 8.2: Window allowing you to create a New RStudio project. See text for mo
 <div id="bioinformatic-dependencies-and-data-repositories" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Bioinformatic dependencies and data repositories</h2>
 <p>The list of R packages and GitHub repositories used in this chapter are listed below. Please make sure you have all these set-up before starting reading and completing the material presented in this chapter.</p>
-<div id="r-packages" class="section level3" number="8.4.1">
+<div id="r-packages-1" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> R packages</h3>
 <p>Most of the functions that we will be using in this chapter are base R functions installed (by default) in the <em>utils</em> package <span class="citation">(<a href="#ref-utils" role="doc-biblioref">R Core Team, 2019</a>)</span>. However, the following R package (and its dependencies) has to be installed on your computer prior to starting this tutorial: <em>repmis</em> <span class="citation">(<a href="#ref-repmis" role="doc-biblioref">Gandrud, 2016</a>)</span>. In the event that you wanted to import <code>xsl</code> or <code>xlsx</code> files into R, you would also have to install the <em>readxl</em> package <span class="citation">(<a href="#ref-readxl" role="doc-biblioref">Wickham and Bryan, 2019</a>)</span>.</p>
 </div>
@@ -3938,8 +3988,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-2984117efed870c99fe3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2984117efed870c99fe3">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-b5dfe3e37ad348013b55" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b5dfe3e37ad348013b55">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>

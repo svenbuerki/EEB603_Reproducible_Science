@@ -2409,7 +2409,9 @@ The data management checklist from the [UK Data Archive](https://www.ukdataservi
 
 ## Reproducible code {#repcode}
 
-The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_4_Reproducible_code.pdf).
+### Download presentation
+
+The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_5_Reproducible_code.pdf).
 
 ### Introduction
 
@@ -2423,7 +2425,12 @@ The following steps have to be fully integrated in order to produce a reproducib
 - **Step 6:** Implement a version control protocol (with Git).
 - **Step 7:** Ensure archiving and citation of code.
 
-In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 4 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 11.
+In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 5 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.
+
+### Learning outcomes
+
+- Learn protocol to organize projects for reproducibility.
+- Learn basic programming standards to ensure transparency and broad understanding of your data workflow.
 
 ### Literature and web resources
 
@@ -2435,19 +2442,68 @@ This chapter is based on:
 - Absolute vs relative paths: https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths
 - Comparison of free and open-source software licenses: https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
 
-### "Draw" a reproducible project workflow
+### Data and dependencies
+
+To conduct the exercises presented in this chapter, you will need to download a folder from the shared Google Drive and install R packages. More information on these items is provided below. 
+
+#### Data
+
+The data (`Project_ID`) used for this chapter are deposited on our shared Google Drive at this address:
+
+`Reproducible_Science > Exercises > Chapter_5 > Project_ID`
+
+Please download this whole folder prior to starting the exercises.
+
+#### R packages
+
+Here, we are using code developed in Chapter 1 to make sure the R dependencies (*data.tree*, *DiagrammeR*) are installed and loaded prior to pursuing the exercises.
+
+```{r eval = TRUE, echo = TRUE}
+##~~~
+#1. List all required packages
+##~~~
+#Object (args) provided by user with names of packages stored into a vector
+pkg <- c("data.tree", "DiagrammeR")
+
+##~~~
+#2. Check if pkg are installed
+##~~~
+print("Check if packages are installed")
+#This line outputs a list of packages that are not installed
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+#3. Install missing packages
+##~~~
+if(length(new.pkg) > 0){
+  print(paste("Install missing package(s):", new.pkg, sep=' '))
+  install.packages(new.pkg, dependencies = TRUE)
+}else{
+  print("All packages are already installed!")
+}
+
+##~~~
+#4. Load all packages
+##~~~
+print("Load packages and return status")
+#Here we use the sapply() function to require all the packages
+sapply(pkg, require, character.only = TRUE)
+```
+
+
+### Organize project for reproducibility
+
+#### "Draw" a reproducible project workflow
+
+Organizing your project for reproducibility starts by drawing a workflow serving as basis to guide your project implementation. An example of a reproducible project workflow is displayed in Figure \@ref(fig:ReproWorkflow). This workflow will be used as template for the material presented in this chapter.
 
 ```{r ReproWorkflow, echo=FALSE, fig.align="center", fig.cap="A simple reproducible project workflow.", out.width = '100%'}
 knitr::include_graphics("Figures/Reproducible_code_workflow.png")
 ```
 
-An example of a reproducible project workflow is displayed in Figure \@ref(fig:ReproWorkflow). This workflow serves as a basis for the discussion presented in this chapter.
-
-### Organize project for reproducibility
-
 #### The repeatable, reproducible analysis workflow
 
-The fundamental idea behind a robust, reproducible analysis is **a clean, repeatable script-based workflow (i.e. the sequence of tasks from the start to the end of a project) linking raw data through to clean data and to final analysis outputs**.
+The fundamental idea behind a robust, reproducible analysis is **a clean, repeatable script-based workflow** (i.e. the sequence of tasks from the start to the end of a project) **linking raw data through to clean data and to final analysis outputs**.
 
 #### Principles of a good analysis workflow
 
@@ -2466,7 +2522,7 @@ Please find below some key concepts associated with this task:
 
 #### Organizing and documenting workflows
 
-The simplest and most effective way of documenting your workflow – its inputs and outputs – is through good file system organization, and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible on what a file contains, why it exists, and how it relates to other files in the project. These principles extend to all files in your project (not just scripts) and are also intimately linked to good research data management (see Chapter 4: Data management).
+The simplest and most effective way of documenting your workflow – its inputs and outputs – is through good file system organization, and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible on what a file contains, why it exists, and how it relates to other files in the project. These principles extend to all files in your project (not just scripts) and are also intimately linked to good research data management (see Chapter 5: Data management).
 
 #### File system structure
 
@@ -2506,7 +2562,7 @@ The code presented above could be at the core of a user-defined function that wo
 
 **WARNING:** Prior to starting the exercise, please go on the shared Google Drive and download the `Project_ID` folder at this path: 
 
-`Reproducible_Science > Exercises > Chapter_4 > Project_ID`
+`Reproducible_Science > Exercises > Chapter_5 > Project_ID`
 
 ##### R code and associated outputs
 
@@ -2562,7 +2618,7 @@ https://rich-iannone.github.io/DiagrammeR/io.html
 
 #### Informative, consistent naming
 
-Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure \@ref(fig:ProjStuct) for examples and Chapter 4: Data management for more details).
+Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure \@ref(fig:ProjStuct) for examples and Chapter 5: Data management for more details).
 
 ### Ensure basic programming standards
 
@@ -2583,7 +2639,7 @@ To write clear and reproducible code, it is recommended to follow the workflow d
 
 The foundation of writing readable code is to choose a logical and readable coding style, and to stick to it. Some key elements to consider when developing a coding style are:
 
-- Using meaningful file names, and numbering these if they are in a sequence (see Figure \@ref(fig:ProjStuct) for examples and Chapter 4: Data management for more details).
+- Using meaningful file names, and numbering these if they are in a sequence (see Figure \@ref(fig:ProjStuct) for examples and Chapter 5: Data management for more details).
 
 ```{r tidy=F, eval=FALSE}
 ### Naming files
@@ -2671,7 +2727,7 @@ RStudio is especially designed to help portability of code. For instance, you ca
 Session > Set Working Directory > To Source File Location
 ```
 
-or using the *setwd()* function. Please see chapter 1 for more details.
+or using the *setwd()* function. Please see Chapter 1 for more details.
 
 #### Commenting code
 
