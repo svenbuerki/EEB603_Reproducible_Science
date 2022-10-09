@@ -2789,7 +2789,9 @@ This chapter is subdivided into two parts as follows:
 
 ## Getting published {#getpub}
 
-The presentation slides for Chapter 5 - part A can be downloaded [here](Chapters_files/Chapter_5_Getting_published.pdf).
+### Download presentation
+
+The presentation slides for Chapter 6 - part A can be downloaded [here](Chapters_files/Chapter_6_Getting_published.pdf).
 
 ### Why publish?
 
@@ -2807,13 +2809,23 @@ In biology, publishing research is equal to journal articles.
 
 This chapter is mostly based on the following books, publications and web resources:
 
-- @Allen -- Comment published in *Nature* advocating for a “taxonomy” of author roles.
+**Books and Guides**
+
 - @GetPub -- A Guide to Getting Published in Ecology and Evolution published by the [British Ecological Society](https://www.britishecologicalsociety.org).
 - @Margaret_OConnor -- A book entitled "Writing Scientific Research Articles: Strategy and Steps" available to download [here](http://www.idemployee.id.tue.nl/g.w.m.rauterberg/lecturenotes/2009-Writing_Scientific_Research_Articles.pdf).
-- The Committee on Publication Ethics (COPE) website for general information on publishing ethics (http://publicationethics.org/).
 - COPE: The guide entitled "How to handle authorship disputes: a guide for new researchers" available for download here: http://publicationethics.org/files/2003pdf12_0.pdf
-- @Fox2015 -- A publication investigating the relationship between manuscript title structure and success in Ecology.
 - Moore, A. An eBook entitled "Writing Science Well: Techniques, tips and pitfalls" available to download here: http://www.wiley.com/legacy/wileyblackwell/gmspdfs/69204eBookECR/#/1/
+
+**Publications**
+
+- @Allen -- Comment published in *Nature* advocating for a “taxonomy” of author roles.
+- @Fox2015 -- A publication investigating the relationship between manuscript title structure and success in Ecology.
+
+**Websites**
+
+- The Committee on Publication Ethics (COPE) website for general information on publishing ethics (http://publicationethics.org/).
+- CRediT (Contribution Roles Taxonomy): https://authorservices.wiley.com/author-resources/Journal-Authors/open-access/credit.html
+- Directory of Open Access journals: https://doaj.org/
 - The Wiley Author Webinars website is full of seminars covering topics such as: How to get published; How to write for scientific publications; Grant funding tips; Understand the peer review process; Improve article/publication discoverability; Ethics in publishing; Open Access; Time management skills. Available here: https://authorservices.wiley.com/author-resources/Journal-Authors/Prepare/webinars/index.html
 
 ### Know your message
@@ -2834,10 +2846,10 @@ Shape the whole narrative of your paper around this message.
 
 Once you know your message, getting your research published will be a four steps process:
 
-- Step 1: Selecting your journal.
-- Step 2: Writing your manuscript.
-- Step 3: Submitting your manuscript.
-- Step 4: Acceptance and publication.
+- **Step 1:** Selecting your journal.
+- **Step 2:** Writing your manuscript.
+- **Step 3:** Submitting your manuscript.
+- **Step 4:** Acceptance and publication.
 
 Each step will be discussed below. Please seek support from your supervisor to learn more about specifics from you field.
 
@@ -2862,6 +2874,8 @@ Do you want your article read by a more specialist audience working on closely r
 It is a good sign if you recognize the names of the editors and editorial board members of a journal from the work you have already encountered (even better if they contributed to some of the references cited in your manuscript). Research who would likely deal with your paper if you submitted to a journal and find someone who would appreciate reading your paper. You can suggest handling editors in your cover letter or in the submission form, if it allows, but be aware that journals do not have to follow your suggestions and/or requests.
 
 #### Impact factor and other metrics
+
+A summary of our previously discussed material is presented below to provide more context for this chapter, but please consult Chapter 4 for more details on this topic.
 
 Impact factors are the one unambiguous measure widely used to compare journal quality based on citations the journal receives. However, other metrics are becoming more common, e.g. altmetric score measuring the impact of individual articles through online activity (shares on different social media platforms etc.), or article download figures listed next to the published paper. 
 
@@ -2904,7 +2918,26 @@ As an author, it helps if you are familiar with what constitutes good practices 
 
 Start talking about authorship and author order for your paper with collaborators at an early stage – before submitting and ideally before writing the paper. To deal with potential issues, ask yourself the question: **Who will do what?**
 
-Some journals are now encouraging ‘authorship contribution statements’ so check the journal guidelines to see if this is required and how to format it. Here is an example of an author contributions paragraph:
+Some journals are now encouraging ‘authorship contribution statements’ so check the journal guidelines to see if this is required and how to format it. To help you figuring out authorship associated with your research article, you could apply the [CRediT (Contribution Roles Taxonomy)](https://authorservices.wiley.com/author-resources/Journal-Authors/open-access/credit.html) model presented by Wiley. The classification is as follows:
+
+**CRediT Classification**
+
+- *Conceptualization*: Ideas; formulation or evolution of overarching research goals and aims.
+- *Data Curation*: Management activities to annotate (produce metadata), scrub data and maintain research data (including software code, where it is necessary for interpreting the data itself) for initial use and later reuse.
+- *Formal Analysis*: Application of statistical, mathematical, computational, or other formal techniques to analyze or synthesize study data.
+- *Funding Acquisition*: Acquisition of the financial support for the project leading to this publication.
+- *Investigation*: Conducting a research and investigation process, specifically performing the experiments, or data/evidence collection.
+- *Methodology*: Development or design of methodology; creation of models.
+- *Project Administration*: Management and coordination responsibility for the research activity planning and execution.
+- *Resources*: Provision of study materials, reagents, materials, patients, laboratory samples, animals, instrumentation, computing resources, or other analysis tools.
+- *Software*: Programming, software development; designing computer programs; implementation of the computer code and supporting algorithms; testing of existing code components.
+- *Supervision*: Oversight and leadership responsibility for the research activity planning and execution, including mentorship external to the core team.
+- *Validation*: Verification, whether as a part of the activity or separate, of the overall replication/reproducibility of results/experiments and other research outputs.
+- *Visualization*: Preparation, creation and/or presentation of the published work, specifically visualization/data presentation.
+- *Writing – Original Draft Preparation*: Creation and/or presentation of the published work, specifically writing the initial draft (including substantive translation).
+- *Writing – Review & Editing*: Preparation, creation and/or presentation of the published work by those from the original research group, specifically critical review, commentary or revision – including pre- or post-publication stages.
+
+Here is an example of an author contributions paragraph inspired by the CRediT model:
 
 *F.F., N.A.B. and S.B. designed study; F.F., E.B., S.P.B., J.M., and S.B. compiled data; F.F., S.B. and J.M. performed analyses; S.I.B., P.M.H., A.L., D.P.L., S.M., H.R., C.R., D.W.S., and P.T. provided material and/or sequences; F.F., J.M. and S.B. wrote the manuscript; all authors critically read and revised the manuscript, and approved the final submitted version.*
 
@@ -3062,7 +3095,9 @@ It might be then time to coordinate the publication of a press release or post t
 
 ## Writing papers in R Markdown {#writpub}
 
-The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_5_writing_papers.pdf).
+### Download presentation
+
+The presentation slides for Chapter 6 - part B can be downloaded [here](Chapters_files/Chapter_6_writing_papers.pdf).
 
 ### Literature and web resources
 
