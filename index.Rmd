@@ -64,6 +64,8 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 knitr::include_graphics("Images/Kindness.png")
 ```
 
+Learn more about this initiative [here](https://doi.org/10.1038/d41586-018-00482-y), as well as a recent article delving into what kindness in science is and why it does matter [@Boulter2023]. 
+
 # Class details
 
 ## Teaching mode and class location
@@ -82,13 +84,13 @@ The tentative timetable for this course is available [here](Timetable.html). The
 
 **Our priority is your safety!**
 
-There are currently no specific health guidelines, but for more information on this topic please visit the [BSU public helath response](https://www.boisestate.edu/publichealth/) webpage.
+There are currently no specific health guidelines, but for more information on this topic please visit the [BSU public health response](https://www.boisestate.edu/publichealth/) webpage.
 
 # Course goal & description
 
-The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [see e.g. @Baker_2016]. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in the fields of Ecology, Evolution & Behavior. 
+The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [see e.g. @Baker_2016]. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in the fields of Ecology, Evolution & Behavior. This course also aims at providing a platform to develop, practice and strengthen science communication skills [see e.g. @Soltis2023 for some innovative ways to share your research].  
 
-The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the course, students will be taught how to use open source software for their research such as [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further master these latter skills and improve communication and teaching skills, students will *i*) design bioinformatic tutorials and teach those to their peers and *ii*) design and implement individual projects aiming at developing a reproducible workflow specific to their research interest.
+The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the course, students will be taught how to use open source software for their research such as [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further master these latter skills and improve communication and teaching skills, students will *i*) design bioinformatic tutorials and teach those to their peers and *ii*) design and implement individual projects aiming at developing a reproducible workflow specific to their research interest.   
 
 Overall, this course **provides students with key knowledge to gather, store, share, prepare and analyze data as well as communicate results to the scientific community and various stakeholders** (see Figure \@ref(fig:part2)).
 
