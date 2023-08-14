@@ -82,19 +82,15 @@ The tentative timetable for this course is available [here](Timetable.html). The
 
 **Our priority is your safety!**
 
-The following rules apply for in-person classes:
-
-- Use sanitizing wipes to clean surfaces (desk and keyboard) at beginning and end of class.
-- Keep using the same seat throughout the semester. This information should be entered into MyBoiseState.
-- Do not attend class if you are sick.
-
-For more information consult the [BSU campus guidelines](https://www.boisestate.edu/coronavirus-response/).
+There are currently no specific health guidelines, but for more information on this topic please visit the [BSU public helath response](https://www.boisestate.edu/publichealth/) webpage.
 
 # Course goal & description
 
-The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [see e.g. @Baker_2016]. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in Ecology & Evolution. The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the class, students will be taught to use open source software for their research such as [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). Students will design bioinformatic tutorials and teach those to their peers. In addition, students will be tasked to develop individual projects aiming at developing a reproducible workflow specific to either their own thesis project or a scientific publication.
+The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [see e.g. @Baker_2016]. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in the fields of Ecology, Evolution & Behavior. 
 
-Ultimately, this course aims at **providing students with key knowledge to gather, store, share, prepare and analyze their data as well as communicate their results to the scientific community** (see Figure \@ref(fig:part2)).
+The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the course, students will be taught how to use open source software for their research such as [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further master these latter skills and improve communication and teaching skills, students will *i*) design bioinformatic tutorials and teach those to their peers and *ii*) design and implement individual projects aiming at developing a reproducible workflow specific to their research interest.
+
+Overall, this course **provides students with key knowledge to gather, store, share, prepare and analyze data as well as communicate results to the scientific community and various stakeholders** (see Figure \@ref(fig:part2)).
 
 ```{r part2, echo=FALSE, fig.cap="Overview of workflow studied in PART2.", out.width = '100%', fig.pos= "h"}
 knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")
@@ -108,7 +104,11 @@ The course is subdivided into three parts:
 - *PART 2: Bioinformatics for Reproducible Science* 
 - *PART 3: Apply a Reproducible Approach to your Data*
 
-Part 1 aims at providing students with key theoretical knowledge on this topic allowing them to successfully design a reproducible approach tailored to Ecology & Evolution. Part 2 provides students with opportunities to learn and apply the bioinformatic tools required to implement a reproducible workflow (see see Figure \@ref(fig:part2)). Here, each student (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject (the material will be taught across two sessions to provide enough time for students to assimilate each subject). Tutorials will be written in an open access format and distributed to the class. Finally, part 3 will consist in providing students with an opportunity to develop individual reproducible workflows tailored to their thesis project or to data presented in a publication. This will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).
+Part 1 provides students with key theoretical knowledge on reproducible science allowing them to successfully design and implement a reproducible approach tailored to Ecology, Evolution & Behavior. 
+
+Part 2 provides students with opportunities to further learn and apply the bioinformatic tools required to implement a reproducible workflow (Figure \@ref(fig:part2)). Here, students (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject, which will be taught over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment will be conducted in group or individually.
+
+Finally, part 3 was designed to provide students with an opportunity to develop individual reproducible workflows tailored to their research project (or to data presented in a publication if they don't have a thesis subject yet). This assignment will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).
 
 ## Content of the course
 
@@ -117,7 +117,7 @@ Part 1 aims at providing students with key theoretical knowledge on this topic a
 1. **Introduction: The reproducibility crisis & prospects to tackle it!**
    - Chapter 1: Introduction to R, RStudio, Markdown (incl. referencing) & User-defined functions.
    - Chapter 2: The reproducibility crisis.
-   - Chapter 3: A road map to implement reproducible science in Ecology & Evolution.
+   - Chapter 3: A roadmap to implement reproducible science in Ecology, Evolution & Behavior.
    - Chapter 4: Open science and CARE principles.
 2. **Getting started: Overview of data workflow & used software**
    - Chapter 5: Data management, Reproducible code.
@@ -148,7 +148,7 @@ A shared Google drive is set up to facilitate data sharing and allow students up
 
 # <a name="Publis"></a>Publications & Textbooks
 
-The reading material at the basis of this course is composed of a mixture of publications and chapters from two textbooks [@Gandrud2015; @Wickham2017]. We will also study the *"Guides to"* published by the [British Ecological Society](https://www.britishecologicalsociety.org/publications/guides-to/). Please find below the references used in each [chapter](#Structure).
+The reading material at the basis of this course is composed of a mixture of publications and chapters mostly from two textbooks [@Gandrud2015; @Wickham2017]. We will also study the *"Guides to"* published by the [British Ecological Society](https://www.britishecologicalsociety.org/publications/guides-to/). Please find below the references used in each [chapter](#Structure). **This list is not exhaustive and additional literature will be provided in class.** 
 
 | Chapter | Reference(s)  |
 | :--- |-------------|
@@ -291,8 +291,6 @@ The instructor is asking students to sign up for designing and teaching a bioinf
 
 - https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing
 
-
-
 ## <a name="TeachTut"></a>Teaching your bioinformatic tutorial (100 points)
 
 Students are expected to prepare a 10 minutes presentation providing general guidelines to complete the tutorial. Presentations will be uploaded onto the shared Google drive and made accessible to all students. Students are expected to support their peers in completing tutorials by answering questions. The instructor will also be answering questions, but students are leading the teaching of the bioinformatic laboratories. 
@@ -342,7 +340,7 @@ The instructor expects students to deliver their assignments on time and set eno
 
 # Engagement expectations
 
-The remote teaching mode of this course makes it harder for the instructor to take attendance. The instructor is expecting students to attend classes (please join on time and for the full duration of the class) and actively engage by asking questions and giving feedback on teaching material and course content. This course was designed to help students implementing a reproducible approach to their thesis projects. If you are judging that additional content should be covered in class, please contact the instructor. The instructor will do his very best to obtain information or seek support from colleagues to cover the requested material. Finally, the instructor is aware that COVID could potentially impact yourselves and your families. In the case that you have any issues attending class, please contact the instructor by email (svenbuerki@boisestate.edu) asap and see below for more details.
+The instructor is expecting students to attend classes (please join on time and for the full duration of the class) and actively engage by asking questions and giving feedback on teaching material and course content. This course was designed to help students implementing a reproducible approach to their research projects. If you are judging that additional content should be covered in class, please contact the instructor. The instructor will do his very best to obtain information or seek support from colleagues to cover the requested material. In the case that you have any issues attending class, please contact the instructor by email (svenbuerki@boisestate.edu) asap and see below for more details.
 
 # What you can expect of me
 
@@ -354,7 +352,7 @@ The instructor has developed this course to provide a welcoming environment and 
 
 ## This class’s community is inclusive
 
-Students in this class represent a rich variety of backgrounds and perspectives. The Biological Sciences department is committed to providing an atmosphere for learning that respects diversity and creates inclusive environments in our courses. While working together to build this community, we ask all members to:
+Students in this class represent a rich variety of backgrounds and perspectives. The [Biological Sciences department](https://www.boisestate.edu/biology/) is committed to providing an atmosphere for learning that respects diversity and creates inclusive environments in our courses. While working together to build this community, we ask all members to:
 
 - Share their unique experiences, values, and beliefs, if comfortable doing so.
 - Listen deeply to one another.
@@ -369,7 +367,7 @@ Students in this class represent a rich variety of backgrounds and perspectives.
 
 Please let the instructor know of your preferred or adopted name and gender pronoun(s), and he will make those changes to his own records and address you that way in all cases. 
 
-To change to a preferred name so that it displays on all BSU sites, including Blackboard and the course roster, contact the Registrar's Office at (208) 426-4249. Note that only a legal name change can alter your name on BSU official and legal documents (e.g., your transcript).
+To change to a preferred name so that it displays on all BSU sites, including Canvas and the course roster, contact the Registrar's Office at (208) 426-4249. Note that only a legal name change can alter your name on BSU official and legal documents (e.g., your transcript).
 
 ## This course is accessible to students with disabilities
 
@@ -390,7 +388,7 @@ To create a welcoming, engaging, and effective learning environment, the instruc
 
 # Student well-being
 
-If you are struggling for any reason (COVID, relationship, family, or life’s stresses) and believe these may impact your performance in the course, the instructor is encouraging you to contact the Dean of Students at (208) 426-1527 or email deanofstudents@boisestate.edu for support. Additionally, if you are comfortable doing so, please reach out to me and I will provide any resources or accommodations that I can. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with Counseling Services (1529 Belmont Street, Norco Building) at (208) 426-1459 or email healthservices@boisestate.edu.
+If you are struggling for any reason (e.g., COVID, relationship, family, or life’s stresses) and believe these may impact your performance in the course, the instructor is encouraging you to contact the Dean of Students at (208) 426-1527 or email deanofstudents@boisestate.edu for support. Additionally, if you are comfortable doing so, please reach out to me and I will provide any resources or accommodations that I can. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with Counseling Services (1529 Belmont Street, Norco Building) at (208) 426-1459 or email healthservices@boisestate.edu.
 
 ## What do you need?
 

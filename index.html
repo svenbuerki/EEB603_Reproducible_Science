@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-09-20" />
+<meta name="date" content="2023-08-14" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -206,8 +206,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -215,16 +215,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -377,7 +370,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Syllabus</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-09-20</h4>
+<h4 class="date">2023-08-14</h4>
 
 </div>
 
@@ -430,19 +423,14 @@ Kindness in Science is an inclusive approach that fosters diversity, respect, we
 <div id="health-and-safety-protocols" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Health and safety protocols</h2>
 <p><strong>Our priority is your safety!</strong></p>
-<p>The following rules apply for in-person classes:</p>
-<ul>
-<li>Use sanitizing wipes to clean surfaces (desk and keyboard) at beginning and end of class.</li>
-<li>Keep using the same seat throughout the semester. This information should be entered into MyBoiseState.</li>
-<li>Do not attend class if you are sick.</li>
-</ul>
-<p>For more information consult the <a href="https://www.boisestate.edu/coronavirus-response/">BSU campus guidelines</a>.</p>
+<p>There are currently no specific health guidelines, but for more information on this topic please visit the <a href="https://www.boisestate.edu/publichealth/">BSU public helath response</a> webpage.</p>
 </div>
 </div>
 <div id="course-goal-description" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Course goal &amp; description</h1>
-<p>The scientific community widely acknowledges that we are in the midst of a reproducibility crisis <span class="citation">(see e.g. <a href="#ref-Baker_2016" role="doc-biblioref">Baker, 2016</a>)</span>. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in Ecology &amp; Evolution. The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the class, students will be taught to use open source software for their research such as <a href="https://cran.r-project.org">R</a>, <a href="https://www.rstudio.com">RStudio</a> and <a href="https://rmarkdown.rstudio.com">R Markdown</a> (incl. <a href="https://kbroman.org/knitr_knutshell/">knitr</a>). Students will design bioinformatic tutorials and teach those to their peers. In addition, students will be tasked to develop individual projects aiming at developing a reproducible workflow specific to either their own thesis project or a scientific publication.</p>
-<p>Ultimately, this course aims at <strong>providing students with key knowledge to gather, store, share, prepare and analyze their data as well as communicate their results to the scientific community</strong> (see Figure <a href="#fig:part2">4.1</a>).</p>
+<p>The scientific community widely acknowledges that we are in the midst of a reproducibility crisis <span class="citation">(see e.g. <a href="#ref-Baker_2016" role="doc-biblioref">Baker, 2016</a>)</span>. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in the fields of Ecology, Evolution &amp; Behavior.</p>
+<p>The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the course, students will be taught how to use open source software for their research such as <a href="https://cran.r-project.org">R</a>, <a href="https://www.rstudio.com">RStudio</a> and <a href="https://rmarkdown.rstudio.com">R Markdown</a> (incl. <a href="https://kbroman.org/knitr_knutshell/">knitr</a>). To further master these latter skills and improve communication and teaching skills, students will <em>i</em>) design bioinformatic tutorials and teach those to their peers and <em>ii</em>) design and implement individual projects aiming at developing a reproducible workflow specific to their research interest.</p>
+<p>Overall, this course <strong>provides students with key knowledge to gather, store, share, prepare and analyze data as well as communicate results to the scientific community and various stakeholders</strong> (see Figure <a href="#fig:part2">4.1</a>).</p>
 <div class="figure"><span style="display:block;" id="fig:part2"></span>
 <img src="Images/Bioinformatic_workflow_PART2.png" alt="Overview of workflow studied in PART2." width="100%" />
 <p class="caption">
@@ -458,7 +446,9 @@ Figure 4.1: Overview of workflow studied in PART2.
 <li><em>PART 2: Bioinformatics for Reproducible Science</em></li>
 <li><em>PART 3: Apply a Reproducible Approach to your Data</em></li>
 </ul>
-<p>Part 1 aims at providing students with key theoretical knowledge on this topic allowing them to successfully design a reproducible approach tailored to Ecology &amp; Evolution. Part 2 provides students with opportunities to learn and apply the bioinformatic tools required to implement a reproducible workflow (see see Figure <a href="#fig:part2">4.1</a>). Here, each student (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject (the material will be taught across two sessions to provide enough time for students to assimilate each subject). Tutorials will be written in an open access format and distributed to the class. Finally, part 3 will consist in providing students with an opportunity to develop individual reproducible workflows tailored to their thesis project or to data presented in a publication. This will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).</p>
+<p>Part 1 provides students with key theoretical knowledge on reproducible science allowing them to successfully design and implement a reproducible approach tailored to Ecology, Evolution &amp; Behavior.</p>
+<p>Part 2 provides students with opportunities to further learn and apply the bioinformatic tools required to implement a reproducible workflow (Figure <a href="#fig:part2">4.1</a>). Here, students (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject, which will be taught over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment will be conducted in group or individually.</p>
+<p>Finally, part 3 was designed to provide students with an opportunity to develop individual reproducible workflows tailored to their research project (or to data presented in a publication if they don’t have a thesis subject yet). This assignment will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).</p>
 <div id="content-of-the-course" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Content of the course</h2>
 <p><strong>PART 1: The Big Picture</strong></p>
@@ -467,7 +457,7 @@ Figure 4.1: Overview of workflow studied in PART2.
 <ul>
 <li>Chapter 1: Introduction to R, RStudio, Markdown (incl. referencing) &amp; User-defined functions.</li>
 <li>Chapter 2: The reproducibility crisis.</li>
-<li>Chapter 3: A road map to implement reproducible science in Ecology &amp; Evolution.</li>
+<li>Chapter 3: A roadmap to implement reproducible science in Ecology, Evolution &amp; Behavior.</li>
 <li>Chapter 4: Open science and CARE principles.</li>
 </ul></li>
 <li><strong>Getting started: Overview of data workflow &amp; used software</strong>
@@ -513,7 +503,7 @@ Figure 4.1: Overview of workflow studied in PART2.
 </div>
 <div id="publications-textbooks" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> <a name="Publis"></a>Publications &amp; Textbooks</h1>
-<p>The reading material at the basis of this course is composed of a mixture of publications and chapters from two textbooks <span class="citation">(<a href="#ref-Gandrud2015" role="doc-biblioref">Gandrud, 2015</a>; <a href="#ref-Wickham2017" role="doc-biblioref">Wickham and Grolemund, 2017</a>)</span>. We will also study the <em>“Guides to”</em> published by the <a href="https://www.britishecologicalsociety.org/publications/guides-to/">British Ecological Society</a>. Please find below the references used in each <a href="#Structure">chapter</a>.</p>
+<p>The reading material at the basis of this course is composed of a mixture of publications and chapters mostly from two textbooks <span class="citation">(<a href="#ref-Gandrud2015" role="doc-biblioref">Gandrud, 2015</a>; <a href="#ref-Wickham2017" role="doc-biblioref">Wickham and Grolemund, 2017</a>)</span>. We will also study the <em>“Guides to”</em> published by the <a href="https://www.britishecologicalsociety.org/publications/guides-to/">British Ecological Society</a>. Please find below the references used in each <a href="#Structure">chapter</a>. <strong>This list is not exhaustive and additional literature will be provided in class.</strong></p>
 <table>
 <colgroup>
 <col width="23%" />
@@ -779,7 +769,7 @@ F
 <li>What are your major objectives and how do they fit within the scientific process and data life-cycle? Please also focus on the theoretical background.</li>
 <li>What are the specific learning outcomes?</li>
 <li>What data are used to teach this tutorial?</li>
-<li>What are the bioinformatic dependencies and how to install them? </li>
+<li>What are the bioinformatic dependencies and how to install them?</li>
 <li>When you teach each concept, make sure to clearly explain the rational, steps to get there (pseudo-code) and focus on the input/output and data class/format used for each function.</li>
 </ol>
 </div>
@@ -858,7 +848,7 @@ F
 </div>
 <div id="engagement-expectations" class="section level1" number="13">
 <h1><span class="header-section-number">13</span> Engagement expectations</h1>
-<p>The remote teaching mode of this course makes it harder for the instructor to take attendance. The instructor is expecting students to attend classes (please join on time and for the full duration of the class) and actively engage by asking questions and giving feedback on teaching material and course content. This course was designed to help students implementing a reproducible approach to their thesis projects. If you are judging that additional content should be covered in class, please contact the instructor. The instructor will do his very best to obtain information or seek support from colleagues to cover the requested material. Finally, the instructor is aware that COVID could potentially impact yourselves and your families. In the case that you have any issues attending class, please contact the instructor by email (<a href="mailto:svenbuerki@boisestate.edu" class="email">svenbuerki@boisestate.edu</a>) asap and see below for more details.</p>
+<p>The instructor is expecting students to attend classes (please join on time and for the full duration of the class) and actively engage by asking questions and giving feedback on teaching material and course content. This course was designed to help students implementing a reproducible approach to their research projects. If you are judging that additional content should be covered in class, please contact the instructor. The instructor will do his very best to obtain information or seek support from colleagues to cover the requested material. In the case that you have any issues attending class, please contact the instructor by email (<a href="mailto:svenbuerki@boisestate.edu" class="email">svenbuerki@boisestate.edu</a>) asap and see below for more details.</p>
 </div>
 <div id="what-you-can-expect-of-me" class="section level1" number="14">
 <h1><span class="header-section-number">14</span> What you can expect of me</h1>
@@ -869,7 +859,7 @@ F
 <p>The instructor has developed this course to provide a welcoming environment and effective, equitable learning experience for all students. If you encounter barriers in this course, please bring them to my attention so that I may work to address them.</p>
 <div id="this-classs-community-is-inclusive" class="section level2" number="15.1">
 <h2><span class="header-section-number">15.1</span> This class’s community is inclusive</h2>
-<p>Students in this class represent a rich variety of backgrounds and perspectives. The Biological Sciences department is committed to providing an atmosphere for learning that respects diversity and creates inclusive environments in our courses. While working together to build this community, we ask all members to:</p>
+<p>Students in this class represent a rich variety of backgrounds and perspectives. The <a href="https://www.boisestate.edu/biology/">Biological Sciences department</a> is committed to providing an atmosphere for learning that respects diversity and creates inclusive environments in our courses. While working together to build this community, we ask all members to:</p>
 <ul>
 <li>Share their unique experiences, values, and beliefs, if comfortable doing so.</li>
 <li>Listen deeply to one another.</li>
@@ -884,7 +874,7 @@ F
 <div id="we-use-each-others-preferred-names-and-pronouns" class="section level2" number="15.2">
 <h2><span class="header-section-number">15.2</span> We use each other’s preferred names and pronouns</h2>
 <p>Please let the instructor know of your preferred or adopted name and gender pronoun(s), and he will make those changes to his own records and address you that way in all cases.</p>
-<p>To change to a preferred name so that it displays on all BSU sites, including Blackboard and the course roster, contact the Registrar’s Office at (208) 426-4249. Note that only a legal name change can alter your name on BSU official and legal documents (e.g., your transcript).</p>
+<p>To change to a preferred name so that it displays on all BSU sites, including Canvas and the course roster, contact the Registrar’s Office at (208) 426-4249. Note that only a legal name change can alter your name on BSU official and legal documents (e.g., your transcript).</p>
 </div>
 <div id="this-course-is-accessible-to-students-with-disabilities" class="section level2" number="15.3">
 <h2><span class="header-section-number">15.3</span> This course is accessible to students with disabilities</h2>
@@ -905,7 +895,7 @@ F
 </div>
 <div id="student-well-being" class="section level1" number="17">
 <h1><span class="header-section-number">17</span> Student well-being</h1>
-<p>If you are struggling for any reason (COVID, relationship, family, or life’s stresses) and believe these may impact your performance in the course, the instructor is encouraging you to contact the Dean of Students at (208) 426-1527 or email <a href="mailto:deanofstudents@boisestate.edu" class="email">deanofstudents@boisestate.edu</a> for support. Additionally, if you are comfortable doing so, please reach out to me and I will provide any resources or accommodations that I can. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with Counseling Services (1529 Belmont Street, Norco Building) at (208) 426-1459 or email <a href="mailto:healthservices@boisestate.edu" class="email">healthservices@boisestate.edu</a>.</p>
+<p>If you are struggling for any reason (e.g., COVID, relationship, family, or life’s stresses) and believe these may impact your performance in the course, the instructor is encouraging you to contact the Dean of Students at (208) 426-1527 or email <a href="mailto:deanofstudents@boisestate.edu" class="email">deanofstudents@boisestate.edu</a> for support. Additionally, if you are comfortable doing so, please reach out to me and I will provide any resources or accommodations that I can. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with Counseling Services (1529 Belmont Street, Norco Building) at (208) 426-1459 or email <a href="mailto:healthservices@boisestate.edu" class="email">healthservices@boisestate.edu</a>.</p>
 <div id="what-do-you-need" class="section level2" number="17.1">
 <h2><span class="header-section-number">17.1</span> What do you need?</h2>
 <p>The university has many resources designed to support you as a learner and human being. Among these are:</p>
@@ -1008,8 +998,8 @@ https://doi.org/10.1146/annurev-publhealth-012420-105110
 <div id="appendix-1" class="section level1 appendix" number="19">
 <h1><span class="header-section-number">19</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
-<p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
-Documents for R</em>. R package version 2.16. 2022.
+<p>[1] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rmarkdown: Dynamic
+Documents for R</em>. R package version 2.21. 2023.
 <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 <p>[2] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
 R package version 1.0.12. 2021.
@@ -1033,7 +1023,7 @@ Developing R Packages Easier</em>. R package version 2.4.4. 2022.
 Markdown</em>. ISBN 978-1138700109. Boca Raton, Florida: Chapman and
 Hall/CRC, 2016. <a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a>.</p>
 <p>[9] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
-Markdown</em>. R package version 0.28. 2022.
+Markdown</em>. R package version 0.33. 2023.
 <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 <p>[10] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
 978-1498716963. Boca Raton, Florida: Chapman and Hall/CRC, 2015.
@@ -1043,18 +1033,18 @@ Markdown</em>. R package version 0.28. 2022.
 <p>[12] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
 R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V.
 Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and
-Hall/CRC, 2014. <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>.</p>
+Hall/CRC, 2014.</p>
 <p>[13] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
-Generation in R</em>. R package version 1.40. 2022.
+Generation in R</em>. R package version 1.42. 2023.
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.</p>
 <p>[14] Y. Xie and J. Allaire. <em>tufte: Tufte’s Styles for R Markdown
 Documents</em>. R package version 0.12. 2022.
 <a href="https://github.com/rstudio/tufte" class="uri">https://github.com/rstudio/tufte</a>.</p>
 <p>[15] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
-Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
-2018. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
-<p>[16] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
-9780367563837. Boca Raton, Florida: Chapman and Hall/CRC, 2020.
+Guide</em>. Boca Raton, Florida: Chapman and Hall/CRC, 2018. ISBN:
+9781138359338. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
+<p>[16] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. Boca
+Raton, Florida: Chapman and Hall/CRC, 2020. ISBN: 9780367563837.
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>.</p>
 <p>[17] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.3.4. 2021.
