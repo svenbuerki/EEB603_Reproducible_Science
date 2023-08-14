@@ -49,7 +49,7 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 
 # Instructor
 
--   Name: Sven Buerki
+-   Name: Sven Buerki (he/his)
 -   Office: Science building, office 114 (ground floor).
 -   Email: [svenbuerki\@boisestate.edu](mailto:svenbuerki@boisestate.edu){.email}
 -   Office hours: By appointment.

@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2022-10-09" />
+<meta name="date" content="2023-08-14" />
 
 <title>Timetable</title>
 
@@ -180,8 +180,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -189,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -276,7 +269,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Timetable</h1>
-<h4 class="date">2022-10-09</h4>
+<h4 class="date">2023-08-14</h4>
 
 </div>
 
@@ -287,10 +280,10 @@ $(document).ready(function() {
   $('#header').css('margin-right', '120px')
 });
 </script>
-<p>The tentative timetable for this course is available in Table <a href="#tab:timetab">1</a>. The instructor wants to warn students that he might adjust the timetable to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.</p>
+<p>The tentative timetable for this course is available in Table <a href="#tab:timetab">1</a>. The instructor wants to warn students that he might adjust the timetable to accommodate progress and needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.</p>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:timetab">Table 1: </span>Tentative timetable for the Reproducible Science course during the 2022 Fall semester.
+<span id="tab:timetab">Table 1: </span>Tentative timetable for the EEB603 Reproducible Science course during the 2023 Fall semester.
 </caption>
 <thead>
 <tr>
@@ -324,7 +317,7 @@ URL
 1
 </td>
 <td style="text-align:left;">
-2022-08-23
+2023-08-22
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -345,7 +338,7 @@ Syllabus
 1
 </td>
 <td style="text-align:left;">
-2022-08-25
+2023-08-24
 </td>
 <td style="text-align:left;">
 Thursday
@@ -367,7 +360,7 @@ Work on bioinfo. tutorials
 2
 </td>
 <td style="text-align:left;">
-2022-08-30
+2023-08-29
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -389,7 +382,7 @@ Work on bioinfo. tutorials
 2
 </td>
 <td style="text-align:left;">
-2022-09-01
+2023-08-31
 </td>
 <td style="text-align:left;">
 Thursday
@@ -411,7 +404,7 @@ Work on bioinfo. tutorials
 3
 </td>
 <td style="text-align:left;">
-2022-09-06
+2023-09-05
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -433,7 +426,7 @@ Work on bioinfo. tutorials
 3
 </td>
 <td style="text-align:left;">
-2022-09-08
+2023-09-07
 </td>
 <td style="text-align:left;">
 Thursday
@@ -455,7 +448,7 @@ Work on bioinfo. tutorials
 4
 </td>
 <td style="text-align:left;">
-2022-09-13
+2023-09-12
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -477,7 +470,7 @@ Work on bioinfo. tutorials
 4
 </td>
 <td style="text-align:left;">
-2022-09-15
+2023-09-14
 </td>
 <td style="text-align:left;">
 Thursday
@@ -499,7 +492,7 @@ Work on bioinfo. tutorials
 5
 </td>
 <td style="text-align:left;">
-2022-09-20
+2023-09-19
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -521,7 +514,7 @@ Work on bioinfo. tutorials
 5
 </td>
 <td style="text-align:left;">
-2022-09-22
+2023-09-21
 </td>
 <td style="text-align:left;">
 Thursday
@@ -543,7 +536,7 @@ Read Baker (2016) and prepare for discussing outcome of study
 6
 </td>
 <td style="text-align:left;">
-2022-09-27
+2023-09-26
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -565,7 +558,7 @@ Work on bioinfo. tutorials
 6
 </td>
 <td style="text-align:left;">
-2022-09-29
+2023-09-28
 </td>
 <td style="text-align:left;">
 Thursday
@@ -587,7 +580,7 @@ Work on bioinfo. tutorials
 7
 </td>
 <td style="text-align:left;">
-2022-10-04
+2023-10-03
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -609,7 +602,7 @@ Work on bioinfo. tutorials
 7
 </td>
 <td style="text-align:left;">
-2022-10-06
+2023-10-05
 </td>
 <td style="text-align:left;">
 Thursday
@@ -631,7 +624,7 @@ Work on bioinfo. tutorials
 8
 </td>
 <td style="text-align:left;">
-2022-10-11
+2023-10-10
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -653,7 +646,7 @@ Turn in tutorial for Chap. 7 &amp; start individual reports
 8
 </td>
 <td style="text-align:left;">
-2022-10-13
+2023-10-12
 </td>
 <td style="text-align:left;">
 Thursday
@@ -675,7 +668,7 @@ Upload tutorial of Chap. 7 on Google Drive
 9
 </td>
 <td style="text-align:left;">
-2022-10-18
+2023-10-17
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -696,7 +689,7 @@ Turn in tutorial for Chap. 8
 9
 </td>
 <td style="text-align:left;">
-2022-10-20
+2023-10-19
 </td>
 <td style="text-align:left;">
 Thursday
@@ -717,7 +710,7 @@ Upload tutorial of Chap. 8 on Google Drive
 10
 </td>
 <td style="text-align:left;">
-2022-10-25
+2023-10-24
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -738,7 +731,7 @@ Turn in tutorial for Chap. 9
 10
 </td>
 <td style="text-align:left;">
-2022-10-27
+2023-10-26
 </td>
 <td style="text-align:left;">
 Thursday
@@ -759,7 +752,7 @@ Upload tutorial of Chap. 9 on Google Drive
 11
 </td>
 <td style="text-align:left;">
-2022-11-01
+2023-10-31
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -780,7 +773,7 @@ Turn in tutorial for Chap. 10
 11
 </td>
 <td style="text-align:left;">
-2022-11-03
+2023-11-02
 </td>
 <td style="text-align:left;">
 Thursday
@@ -801,7 +794,7 @@ Upload tutorial of Chap. 10 on Google Drive
 12
 </td>
 <td style="text-align:left;">
-2022-11-08
+2023-11-07
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -822,7 +815,7 @@ Turn in tutorial for Chap. 11
 12
 </td>
 <td style="text-align:left;">
-2022-11-10
+2023-11-09
 </td>
 <td style="text-align:left;">
 Thursday
@@ -843,7 +836,7 @@ Upload tutorial of Chap. 11 on Google Drive
 13
 </td>
 <td style="text-align:left;">
-2022-11-15
+2023-11-14
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -864,7 +857,7 @@ Turn in tutorial for Chap. 12
 13
 </td>
 <td style="text-align:left;">
-2022-11-17
+2023-11-16
 </td>
 <td style="text-align:left;">
 Thursday
@@ -885,7 +878,7 @@ Upload tutorial of Chap. 12 on Google Drive
 15
 </td>
 <td style="text-align:left;">
-2022-11-29
+2023-11-28
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -906,7 +899,7 @@ Students work on ind. projects: Review literature (see Syllabus)
 15
 </td>
 <td style="text-align:left;">
-2022-12-01
+2023-11-30
 </td>
 <td style="text-align:left;">
 Thursday
@@ -927,7 +920,7 @@ Students work on ind. projects: Data management workflow
 16
 </td>
 <td style="text-align:left;">
-2022-12-06
+2023-12-05
 </td>
 <td style="text-align:left;">
 Tuesday
@@ -948,7 +941,7 @@ Students work on ind. projects: Data management workflow
 16
 </td>
 <td style="text-align:left;">
-2022-12-08
+2023-12-07
 </td>
 <td style="text-align:left;">
 Thursday
@@ -958,6 +951,46 @@ Individual projects - Q&amp;A
 </td>
 <td style="text-align:left;">
 Turn in ind. projects (on <a href="https://drive.google.com/drive/folders/1MZt5kNKusCv6OeZpjuuPxUiqBaoQVQAc?usp=sharing">Google Drive</a>)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+2023-12-12
+</td>
+<td style="text-align:left;">
+Tuesday
+</td>
+<td style="text-align:left;">
+Oral presentations of individual projects
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+2023-12-14
+</td>
+<td style="text-align:left;">
+Thursday
+</td>
+<td style="text-align:left;">
+Oral presentations of individual projects
+</td>
+<td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 </td>

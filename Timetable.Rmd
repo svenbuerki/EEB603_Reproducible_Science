@@ -41,13 +41,13 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-The tentative timetable for this course is available in Table \@ref(tab:timetab). The instructor wants to warn students that he might adjust the timetable to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
+The tentative timetable for this course is available in Table \@ref(tab:timetab). The instructor wants to warn students that he might adjust the timetable to accommodate progress and needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
 
 ```{r timetab, echo=FALSE}
 ###~~~
 # Build a data frame with all dates from beginning to end of Fall semester
 ###~~~
-dates <- data.frame(seq.Date(from=as.Date("2022/08/22"), to=as.Date("2022/12/09"), by="day"))
+dates <- data.frame(seq.Date(from=as.Date("2023/08/21"), to=as.Date("2023/12/15"), by="day"))
 #Assign a name to the col (allows using $)
 colnames(dates) <- "Date"
 
@@ -67,13 +67,13 @@ datesclass <- subset(dates, dates$Weekday %in% c("Tuesday", "Thursday"))
 # Add week ID (from 1 to 16) to object from step 4
 ###~~~
 #Create weekID vector and add it in front of dataframe
-datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=16, by=1), 2)), datesclass)
+datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=17, by=1), 2)), datesclass)
 
 ###~~~
 # Exclude dates falling during holiday break
 ###~~~
 #Establish vector of dates related to holidays
-holiday <- seq.Date(from=as.Date("2022/11/21"), to=as.Date("2022/11/27"), by="day")
+holiday <- seq.Date(from=as.Date("2023/11/20"), to=as.Date("2023/11/26"), by="day")
 
 #Find and exclude holidays
 datesclass <- datesclass[-which(datesclass$Date %in% holiday),]
@@ -95,7 +95,7 @@ colnames(timetable)[5] <- "Task/Deadline"
 ###~~~
 #Plot timetable in doc
 ###~~~
-knitr::kable(timetable,  caption = "Tentative timetable for the Reproducible Science course during the 2022 Fall semester.") %>%
+knitr::kable(timetable,  caption = "Tentative timetable for the EEB603 Reproducible Science course during the 2023 Fall semester.") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
 #PDF
