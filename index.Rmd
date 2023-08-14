@@ -167,6 +167,14 @@ The reading material at the basis of this course is composed of a mixture of pub
 | **Chap. 11** | Chapter 10 of @Gandrud2015, Chapters 1 and 22 of @Wickham2017 & @Yu2017 |
 | **Chap. 12** | Chapter 5 of @Gandrud2015 |
 
+# Reproducible science products emerging from this course
+
+To further exemplify how a reproducible approach can be implemented in your research, the instructor provides here examples of publications produced by alumni students that have attended this course (alphabetically sorted):
+
+- @Cole2022 -- **EcoCountHelper: an R package and analytical pipeline for the analysis of ecological count data using GLMMs, and a case study of bats in Grand Teton National Park.**
+- @Ellestad2022 -- **Genomic Insights into Cultivated Mexican Vanilla planifolia Reveal High Levels of Heterozygosity Stemming from Hybridization.**
+- @Wojahn2021 -- **G2PMineR: A Genome to Phenome Literature Review Approach.**
+
 # <a name="software"></a>The computing tools of reproducible science
 
 Research is often presented in the form of slideshows, articles or books. These presentation documents announce a project's findings, but they are not the research, they are the advertisement part of the research project! 
@@ -214,7 +222,7 @@ Once you enter this code, you may be asked to select a CRAN "mirror" to download
 
 Finally, it is highly likely that we will have to install additional packages. In this case, you can simply install it by using the same R function `install.packages()` or by using RStudio as follows: Select "Tools" -> "Install Packages ..." and then type the name of the package in the window (make sure to tick the "Install dependencies" box).
 
-# <a name="Cheat"></a>RStudio Cheat Sheets: A gold mine to design your bioinformatic tutorials
+# <a name="Cheat"></a>RStudio Cheat Sheets
 
 RStudio provides a suite of cheat sheets that can be accessed by going to the "Help" menu and selecting "Cheatsheets". 
 
