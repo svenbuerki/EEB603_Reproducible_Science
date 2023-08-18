@@ -1,22 +1,23 @@
 ---
 title: "EEB 603 -- Reproducible Science"
-subtitle: "Syllabus"
 author: "Sven Buerki - Boise State University"
-date: "`r Sys.Date()`"
+date: '`r Sys.Date()`'
 output:
 #  bookdown::pdf_document2:
-#    toc: TRUE
-  bookdown::html_document2: 
-    toc: TRUE
-    toc_float: TRUE
-    self_contained: TRUE
+#    toc: yes
+  bookdown::html_document2:
+    toc: yes
+    toc_float: yes
+    self_contained: yes
+  '': default
+subtitle: Syllabus
 link-citations: yes
 fontsize: 12pt
 urlcolor: blue
 csl: AmJBot.csl
 bibliography: Bibliography_Reproducible_Science_2.bib
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: sentence
 ---
 
@@ -44,7 +45,7 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-<div style="text-align: right"> [Download pdf version](Data/EEB603_Syllabus_BUERKI.pdf) </div>
+<div style="text-align: right"> [Download pdf version](Data/EEB603_Syllabus_BUERKI_2023.pdf) </div>
 <div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science) </div>
 
 # Instructor
@@ -106,9 +107,9 @@ The course is subdivided into three parts:
 - *PART 2: Bioinformatics for Reproducible Science* 
 - *PART 3: Apply a Reproducible Approach to your Data*
 
-Part 1 provides students with key theoretical knowledge on reproducible science allowing them to successfully design and implement a reproducible approach tailored to Ecology, Evolution & Behavior. 
+Part 1 provides students with key theoretical knowledge on reproducible science allowing them to successfully design and implement a reproducible approach tailored to Ecology, Evolution & Behavior. This part will also cover material associated with open science and data management and how these practices intertwine with scientific publications. 
 
-Part 2 provides students with opportunities to further learn and apply the bioinformatic tools required to implement a reproducible workflow (Figure \@ref(fig:part2)). Here, students (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject, which will be taught over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment will be conducted in group or individually.
+Part 2 provides students with opportunities to further learn and apply the coding and bioinformatic tools required to implement a reproducible workflow (Figure \@ref(fig:part2)). Here, students (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject, which will be taught over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment will be conducted in group or individually.
 
 Finally, part 3 was designed to provide students with an opportunity to develop individual reproducible workflows tailored to their research project (or to data presented in a publication if they don't have a thesis subject yet). This assignment will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).
 
@@ -157,7 +158,7 @@ The reading material at the basis of this course is composed of a mixture of pub
 | **Chap. 1** | Chapter 3 of @Gandrud2015 |
 | **Chap. 2** | @Baker_2016; @Freedman_2015; @Munafo; @Peng2021; @Sarewitz_2016 |
 | **Chap. 3** | @Bone2015; @Markowetz2015; @Smith2016 |
-| **Chap. 4** | @Carroll2021; [Creative Commons](https://creativecommons.org/); @Wagner2022 |
+| **Chap. 4** | @Carroll2021; [Creative Commons](https://creativecommons.org/); @Wagner2022; @Williams2023 |
 | **Chap. 5** | @DataMan & Chapter 4 of @Gandrud2015; @RepCode & Chapter 2 of @Gandrud2015; @Trisovic2022 |
 | **Chap. 6** | @GetPub; @PeerRev|
 | **Chap. 7** | Chapter 6 of @Gandrud2015 |
@@ -167,9 +168,9 @@ The reading material at the basis of this course is composed of a mixture of pub
 | **Chap. 11** | Chapter 10 of @Gandrud2015, Chapters 1 and 22 of @Wickham2017 & @Yu2017 |
 | **Chap. 12** | Chapter 5 of @Gandrud2015 |
 
-# Reproducible science products emerging from this course
+# Examples of reproducible science
 
-To further exemplify how a reproducible approach can be implemented in your research, the instructor provides here examples of publications produced by alumni students that have attended this course (alphabetically sorted):
+To further exemplify how a reproducible approach can be implemented in your research, the instructor provides here examples of publications and software produced by students that have attended this course (alphabetically sorted):
 
 - @Cole2022 -- **EcoCountHelper: an R package and analytical pipeline for the analysis of ecological count data using GLMMs, and a case study of bats in Grand Teton National Park.**
 - @Ellestad2022 -- **Genomic Insights into Cultivated Mexican Vanilla planifolia Reveal High Levels of Heterozygosity Stemming from Hybridization.**
