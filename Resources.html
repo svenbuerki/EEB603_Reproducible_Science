@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-08-18" />
+<meta name="date" content="2023-08-21" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -167,11 +167,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -200,8 +204,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -209,16 +213,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -371,7 +368,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Resources</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-08-18</h4>
+<h4 class="date">2023-08-21</h4>
 
 </div>
 
@@ -443,8 +440,12 @@ $(document).ready(function() {
 <li>Taylor &amp; Francis articles</li>
 </ul>
 </div>
-<div id="interactive-tutorials" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Interactive tutorials</h1>
+<div id="preparing-literature" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Preparing literature</h1>
+<p>The <a href="https://www.doi2bib.org/">doi2bib</a> web tool allows you to generate BibTex formatted literature from DOIs.</p>
+</div>
+<div id="interactive-tutorials" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Interactive tutorials</h1>
 <p>The R <a href="https://cran.r-project.org/web/packages/learnr/index.html"><em>learnr</em> package</a> allows to turn R Markdown documents into interactive tutorials. Tutorials consist of content along with interactive components for checking and reinforcing understanding. Tutorials can include any or all of the following:</p>
 <ul>
 <li>Narrative, figures, illustrations, and equations.</li>
@@ -455,18 +456,18 @@ $(document).ready(function() {
 </ul>
 <p>Please see the full documentation (with examples) at this url: <a href="https://rstudio.github.io/learnr/" class="uri">https://rstudio.github.io/learnr/</a></p>
 </div>
-<div id="fair-and-care-principles" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> FAIR and CARE Principles</h1>
+<div id="fair-and-care-principles" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> FAIR and CARE Principles</h1>
 <ul>
 <li>ResearchHub: <a href="https://research-hub.auckland.ac.nz/guide-to-managing-research-data/ethics-integrity-and-compliance/the-fair-and-care-principles-for-research-data" class="uri">https://research-hub.auckland.ac.nz/guide-to-managing-research-data/ethics-integrity-and-compliance/the-fair-and-care-principles-for-research-data</a></li>
 </ul>
 </div>
-<div id="special-issue-on-reproducibility-and-research-integrity" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> Special Issue on Reproducibility and research integrity</h1>
+<div id="special-issue-on-reproducibility-and-research-integrity" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Special Issue on Reproducibility and Research Integrity</h1>
 <p><em>BMC Research Notes</em> published a special issue on Reproducibility and research integrity in 2022. You can consult all the publications <a href="https://www.biomedcentral.com/collections/reproducibility">here</a>.</p>
 </div>
-<div id="publications-used-in-this-class" class="section level1" number="12">
-<h1><span class="header-section-number">12</span> Publications used in this class</h1>
+<div id="publications-used-in-this-class" class="section level1" number="13">
+<h1><span class="header-section-number">13</span> Publications used in this class</h1>
 <p>Here is a list of the publications used in this class.</p>
 <p>[1] M. Cargill and P. O’Connor. _ Writing Scientific Research
 Articles: Strategy and Steps _. Wiley-Blackwell , .</p>
@@ -487,141 +488,175 @@ evolution in Afro-Madagascan drylands: Eulophiinae orchids as a case
 study”. In: <em>New Phytologist</em> 208.2 (2015). 2015-19192, pp. 469-481.
 ISSN: 1469-8137. DOI: 10.1111/nph.13572.
 <a href="http://dx.doi.org/10.1111/nph.13572" class="uri">http://dx.doi.org/10.1111/nph.13572</a>.</p>
-<p>[6] British Ecological Society, ed. <em>A Guide to Data Management in
+<p>[6] J. Boulter, M. L. Orozco Morales, N. Principe, et al. “What is
+Kindness in Science and why does it matter?” In: <em>Immunology &amp; Cell
+Biology</em> 101.2 (2023), pp. 97-103. DOI:
+<a href="https://doi.org/10.1111/imcb.12580" class="uri">https://doi.org/10.1111/imcb.12580</a>. eprint:
+<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/imcb.12580" class="uri">https://onlinelibrary.wiley.com/doi/pdf/10.1111/imcb.12580</a>.
+<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/imcb.12580" class="uri">https://onlinelibrary.wiley.com/doi/abs/10.1111/imcb.12580</a>.</p>
+<p>[7] British Ecological Society, ed. <em>A Guide to Data Management in
 Ecology and Evolution</em>. British Ecological Society. 2014.</p>
-<p>[7] British Ecological Society, ed. <em>A Guide to Getting Published in
+<p>[8] British Ecological Society, ed. <em>A Guide to Getting Published in
 Ecology and Evolution</em>. British Ecological Society. 2014.</p>
-<p>[8] British Ecological Society, ed. <em>A Guide to Peer Review in Ecology
+<p>[9] British Ecological Society, ed. <em>A Guide to Peer Review in Ecology
 and Evolution</em>. British Ecological Society. 2014.</p>
-<p>[9] British Ecological Society, ed. <em>A Guide to Reproducible Code in
+<p>[10] British Ecological Society, ed. <em>A Guide to Reproducible Code in
 Ecology and Evolution</em>. British Ecological Society. 2014.</p>
-<p>[10] S. R. Carroll, E. Herczog, M. Hudson, et al. “Operationalizing the
+<p>[11] S. R. Carroll, E. Herczog, M. Hudson, et al. “Operationalizing the
 CARE and FAIR Principles for Indigenous data futures”. In: <em>Scientific
 Data</em> 8.1 (Apr. 2021), p. 108. ISSN: 2052-4463. DOI:
 10.1038/s41597-021-00892-0.
 <a href="https://doi.org/10.1038/s41597-021-00892-0" class="uri">https://doi.org/10.1038/s41597-021-00892-0</a>.</p>
-<p>[11] D. L. Donoho. “An invitation to reproducible computational
+<p>[12] H. J. Cole, D. G. Gomes, and J. R. Barber. “EcoCountHelper: an R
+package and analytical pipeline for the analysis of ecological count
+data using GLMMs, and a case study of bats in Grant Teton National
+Park”. In: <em>PeerJ</em> 10 (Dec. 2022), p. e14509. DOI: 10.7717/peerj.14509.
+<a href="https://doi.org/10.7717/peerj.14509" class="uri">https://doi.org/10.7717/peerj.14509</a>.</p>
+<p>[13] D. L. Donoho. “An invitation to reproducible computational
 research”. In: <em>Biostatistics</em> 11.3 (2010), pp. 385-388. DOI:
 10.1093/biostatistics/kxq028. eprint:
 /oup/backfile/content_public/journal/biostatistics/11/3/10.1093/biostatistics/kxq028/2/kxq028.pdf.
 <a href="http://dx.doi.org/10.1093/biostatistics/kxq028" class="uri">http://dx.doi.org/10.1093/biostatistics/kxq028</a>.</p>
-<p>[12] C. W. Fox and C. S. Burns. “The relationship between manuscript
+<p>[14] P. Ellestad, M. A. Pérez-Farrera, and S. Buerki. “Genomic Insights
+into Cultivated Mexican Vanilla planifolia Reveal High Levels of
+Heterozygosity Stemming from Hybridization”. In: <em>Plants</em> 11.16 (Aug.
+2022), p. 2090. DOI: 10.3390/plants11162090.
+<a href="https://doi.org/10.3390/plants11162090" class="uri">https://doi.org/10.3390/plants11162090</a>.</p>
+<p>[15] C. W. Fox and C. S. Burns. “The relationship between manuscript
 title structure and success: editorial decisions and citation
 performance for an ecological journal”. In: <em>Ecology and Evolution</em>
 5.10 (2015), pp. 1970-1980. DOI: 10.1002/ece3.1480. eprint:
 <a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/ece3.1480" class="uri">https://onlinelibrary.wiley.com/doi/pdf/10.1002/ece3.1480</a>.
 <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.1480" class="uri">https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.1480</a>.</p>
-<p>[13] L. P. Freedman, I. M. Cockburn, and T. S. Simcoe. “The Economics
+<p>[16] L. P. Freedman, I. M. Cockburn, and T. S. Simcoe. “The Economics
 of Reproducibility in Preclinical Research”. In: <em>PLOS Biology</em> 13.6
 (Jun. 2015), p. e1002165. DOI: 10.1371/journal.pbio.1002165.
 <a href="https://doi.org/10.1371/journal.pbio.1002165" class="uri">https://doi.org/10.1371/journal.pbio.1002165</a>.</p>
-<p>[14] C. Gandrud. <em>Reproducible Research with R and RStudio</em>. Ed. by C.
+<p>[17] C. Gandrud. <em>Reproducible Research with R and RStudio</em>. Ed. by C.
 Gandrud. CRC Press, 2015, p. 294. ISBN: 1466572841.</p>
-<p>[15] C. Gandrud. <em>repmis: Miscellaneous Tools for Reproducible
+<p>[18] C. Gandrud. <em>repmis: Miscellaneous Tools for Reproducible
 Research</em>. R package version 0.5. 2016.
 <a href="https://CRAN.R-project.org/package=repmis" class="uri">https://CRAN.R-project.org/package=repmis</a>.</p>
-<p>[16] Q. Groom, L. Weatherdon, and I. R. Geijzendorffer. “Is citizen
+<p>[19] Q. Groom, L. Weatherdon, and I. R. Geijzendorffer. “Is citizen
 science an open science in the case of biodiversity observations?” In:
 <em>Journal of Applied Ecology</em> 54.2 (2017), pp. 612-617. DOI:
 <a href="https://doi.org/10.1111/1365-2664.12767" class="uri">https://doi.org/10.1111/1365-2664.12767</a>. eprint:
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2664.12767" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2664.12767</a>.
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.12767" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.12767</a>.</p>
-<p>[17] Y. Guangchuang, S. D. K., Z. Huachen, et al. “ggtree: an r package
+<p>[20] Y. Guangchuang, S. D. K., Z. Huachen, et al. “ggtree: an r package
 for visualization and annotation of phylogenetic trees with their
 covariates and other associated data”. In: <em>Methods in Ecology and
 Evolution</em> 8.1 (2017), pp. 28-36. DOI: 10.1111/2041-210X.12628. eprint:
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.12628" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.12628</a>.
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12628" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12628</a>.</p>
-<p>[18] J. Hester, G. Csárdi, H. Wickham, et al. <em>remotes: R Package
+<p>[21] J. Hester, G. Csárdi, H. Wickham, et al. <em>remotes: R Package
 Installation from Remote Repositories, Including GitHub</em>. R package
 version 2.1.0. 2019. <a href="https://github.com/r-lib/remotes#readme" class="uri">https://github.com/r-lib/remotes#readme</a>.</p>
-<p>[19] N. L. Kerr. “HARKing: Hypothesizing After the Results are Known”.
+<p>[22] N. L. Kerr. “HARKing: Hypothesizing After the Results are Known”.
 In: <em>Personality and Social Psychology Review</em> 2.3 (1998), pp. 196-217.
-DOI: 10.1207/s15327957pspr0203_4.
 <a href="https://doi.org/10.1207/s15327957pspr0203_4" class="uri">https://doi.org/10.1207/s15327957pspr0203_4</a>.</p>
-<p>[20] F. Markowetz. “Five selfish reasons to work reproducibly”. In:
+<p>[23] S. Y. Khoo. “Article Processing Charge Hyperinflation and Price
+Insensitivity: An Open Access Sequel to the Serials Crisis”. In: <em>LIBER
+Quarterly: The Journal of the Association of European Research
+Libraries</em> 29.1 (May. 2019), p. 1–18. DOI: 10.18352/lq.10280.
+<a href="https://liberquarterly.eu/article/view/10729" class="uri">https://liberquarterly.eu/article/view/10729</a>.</p>
+<p>[24] F. Markowetz. “Five selfish reasons to work reproducibly”. In:
 <em>Genome Biology</em> 16.1 (Dec. 2015), p. 274. ISSN: 1474-760X. DOI:
 10.1186/s13059-015-0850-7. <a href="https://doi.org/10.1186/s13059-015-0850-7" class="uri">https://doi.org/10.1186/s13059-015-0850-7</a>.</p>
-<p>[21] M. R. Munafo, B. A. Nosek, D. V. M. Bishop, et al. “A manifesto
+<p>[25] M. R. Munafo, B. A. Nosek, D. V. M. Bishop, et al. “A manifesto
 for reproducible science”. English. In: <em>Nature human behaviour</em> 1.0021
 (Jan. 2017), p. 0021. ISSN: 2397-3374. DOI: 10.1038/s41562-016-0021.</p>
-<p>[22] B. A. Nosek, G. Alter, G. C. Banks, et al. “Promoting an open
+<p>[26] B. A. Nosek, G. Alter, G. C. Banks, et al. “Promoting an open
 research culture”. In: <em>Science</em> 348.6242 (2015), pp. 1422-1425. ISSN:
 0036-8075. DOI: 10.1126/science.aab2374. eprint:
 <a href="http://science.sciencemag.org/content/348/6242/1422.full.pdf" class="uri">http://science.sciencemag.org/content/348/6242/1422.full.pdf</a>.
 <a href="http://science.sciencemag.org/content/348/6242/1422" class="uri">http://science.sciencemag.org/content/348/6242/1422</a>.</p>
-<p>[23] B. A. Nosek, C. R. Ebersole, A. C. DeHaven, et al. “The
+<p>[27] B. A. Nosek, C. R. Ebersole, A. C. DeHaven, et al. “The
 preregistration revolution”. In: <em>Proceedings of the National Academy
 of Sciences</em> 115.11 (2018), pp. 2600-2606. ISSN: 0027-8424. DOI:
 10.1073/pnas.1708274114. eprint:
 <a href="http://www.pnas.org/content/115/11/2600.full.pdf" class="uri">http://www.pnas.org/content/115/11/2600.full.pdf</a>.
 <a href="http://www.pnas.org/content/115/11/2600" class="uri">http://www.pnas.org/content/115/11/2600</a>.</p>
-<p>[24] B. A. Nosek, J. R. Spies, and M. Motyl. “Scientific Utopia: II.
+<p>[28] B. A. Nosek, J. R. Spies, and M. Motyl. “Scientific Utopia: II.
 Restructuring Incentives and Practices to Promote Truth Over
 Publishability”. In: <em>Perspectives on Psychological Science</em> 7.6
 (2012), pp. 615-631. DOI: 10.1177/1745691612459058.
 <a href="https://doi.org/10.1177/1745691612459058" class="uri">https://doi.org/10.1177/1745691612459058</a>.</p>
-<p>[25] R. D. Peng and S. C. Hicks. “Reproducible Research: A
+<p>[29] R. D. Peng and S. C. Hicks. “Reproducible Research: A
 Retrospective”. In: <em>Annual Review of Public Health</em> 42.1 (2021). PMID:
 33467923, pp. 79-93. DOI: 10.1146/annurev-publhealth-012420-105110.
 eprint: <a href="https://doi.org/10.1146/annurev-publhealth-012420-105110" class="uri">https://doi.org/10.1146/annurev-publhealth-012420-105110</a></p>
 <p>. <a href="https://doi.org/10.1146/annurev-publhealth-012420-105110" class="uri">https://doi.org/10.1146/annurev-publhealth-012420-105110</a>.</p>
-<p>[26] R Core Team. <em>foreign: Read Data Stored by ‘Minitab’, ‘S’, ‘SAS’,
+<p>[30] R Core Team. <em>foreign: Read Data Stored by ‘Minitab’, ‘S’, ‘SAS’,
 ‘SPSS’, ‘Stata’, ‘Systat’, ‘Weka’, ‘dBase’, …</em> R package version
 0.8-75. 2020. <a href="https://CRAN.R-project.org/package=foreign" class="uri">https://CRAN.R-project.org/package=foreign</a>.</p>
-<p>[27] R Core Team. <em>R: A Language and Environment for Statistical
+<p>[31] R Core Team. <em>R: A Language and Environment for Statistical
 Computing</em>. R Foundation for Statistical Computing. Vienna, Austria,
 2019. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
-<p>[28] D. Sarewitz. “The pressure to publish pushes down quality”. In:
+<p>[32] D. Sarewitz. “The pressure to publish pushes down quality”. In:
 <em>Nature</em> 533.7602 (May. 2016), pp. 147-147. DOI: 10.1038/533147a.
 <a href="https://doi.org/10.1038/533147a" class="uri">https://doi.org/10.1038/533147a</a>.</p>
-<p>[29] J. F. Smith, T. H. Parker, S. Nakagawa, et al. “Promoting
+<p>[33] J. F. Smith, T. H. Parker, S. Nakagawa, et al. “Promoting
 Transparency in Evolutionary Biology and Ecology”. In: <em>Systematic
 Botany</em> 41.3 (Jul. 2016), pp. 495-497. ISSN: 0363-6445. DOI:
 10.1600/036364416X692262.
 <a href="http://www.bioone.org/doi/abs/10.1600/036364416X692262" class="uri">http://www.bioone.org/doi/abs/10.1600/036364416X692262</a>.</p>
-<p>[30] A. Trisovic, M. K. Lau, T. Pasquier, et al. “A large-scale study
+<p>[34] D. E. Soltis, V. B. Smocovitis, K. K. Pham, et al. “Rethinking the
+Ph.D. dissertation in botany: Widening the circle”. In: <em>American
+Journal of Botany</em> 110.3 (2023), p. e16136. DOI:
+<a href="https://doi.org/10.1002/ajb2.16136" class="uri">https://doi.org/10.1002/ajb2.16136</a>. eprint:
+<a href="https://bsapubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ajb2.16136" class="uri">https://bsapubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ajb2.16136</a>.
+<a href="https://bsapubs.onlinelibrary.wiley.com/doi/abs/10.1002/ajb2.16136" class="uri">https://bsapubs.onlinelibrary.wiley.com/doi/abs/10.1002/ajb2.16136</a>.</p>
+<p>[35] A. Trisovic, M. K. Lau, T. Pasquier, et al. “A large-scale study
 on research code quality and execution”. In: <em>Scientific Data</em> 9.1
 (Feb. 2022), p. 60. ISSN: 2052-4463. DOI: 10.1038/s41597-022-01143-6.
 <a href="https://doi.org/10.1038/s41597-022-01143-6" class="uri">https://doi.org/10.1038/s41597-022-01143-6</a>.</p>
-<p>[31] J. Troudet, R. Vignes-Lebbe, P. Grandcolas, et al. “The Increasing
+<p>[36] J. Troudet, R. Vignes-Lebbe, P. Grandcolas, et al. “The Increasing
 Disconnection of Primary Biodiversity Data from Specimens: How Does It
 Happen and How to Handle It?” In: <em>Systematic Biology</em> (2018), p.
 syy044. DOI: 10.1093/sysbio/syy044. eprint:
 /oup/backfile/content_public/journal/sysbio/pap/10.1093_sysbio_syy044/3/syy044.pdf.
 <a href="http://dx.doi.org/10.1093/sysbio/syy044" class="uri">http://dx.doi.org/10.1093/sysbio/syy044</a>.</p>
-<p>[32] K. Wagenknecht, T. Woods, F. G. Sanz, et al. “EU-Citizen.Science:
+<p>[37] K. Wagenknecht, T. Woods, F. G. Sanz, et al. “EU-Citizen.Science:
 A Platform for Mainstreaming Citizen Science and Open Science in
 Europe”. In: <em>Data Intelligence</em> 3.1 (Feb. 2021), pp. 136-149. ISSN:
 2641-435X. DOI: 10.1162/dint_a_00085. eprint:
 <a href="https://direct.mit.edu/dint/article-pdf/3/1/136/1893818/dint\_a\_00085.pdf" class="uri">https://direct.mit.edu/dint/article-pdf/3/1/136/1893818/dint\_a\_00085.pdf</a>.
 <a href="https://doi.org/10.1162/dint%5C_a%5C_00085" class="uri">https://doi.org/10.1162/dint%5C_a%5C_00085</a>.</p>
-<p>[33] A. S. Wagner, L. K. Waite, M. Wierzba, et al. “FAIRly big: A
+<p>[38] A. S. Wagner, L. K. Waite, M. Wierzba, et al. “FAIRly big: A
 framework for computationally reproducible processing of large-scale
 data”. In: <em>Scientific Data</em> 9.1 (Mar. 2022), p. 80. ISSN: 2052-4463.
 DOI: 10.1038/s41597-022-01163-2.
 <a href="https://doi.org/10.1038/s41597-022-01163-2" class="uri">https://doi.org/10.1038/s41597-022-01163-2</a>.</p>
-<p>[34] H. Wickham. <em>Advanced R</em>. Chapman &amp; Hall/CRC The R Series. Taylor
+<p>[39] H. Wickham. <em>Advanced R</em>. Chapman &amp; Hall/CRC The R Series. Taylor
 &amp; Francis, 2014. ISBN: 9781466586963.
 <a href="https://books.google.com/books?id=PFHFNAEACAAJ" class="uri">https://books.google.com/books?id=PFHFNAEACAAJ</a>.</p>
-<p>[35] H. Wickham and J. Bryan. <em>readxl: Read Excel Files</em>. R package
+<p>[40] H. Wickham and J. Bryan. <em>readxl: Read Excel Files</em>. R package
 version 1.3.1. 2019. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
-<p>[36] H. Wickham and G. Grolemund. <em>R for Data Science: Import, Tidy,
+<p>[41] H. Wickham and G. Grolemund. <em>R for Data Science: Import, Tidy,
 Transform, Visualize, and Model Data</em>. 1st. O’Reilly Media, Inc., 2017.
 ISBN: 1491910399, 9781491910399. <a href="http://r4ds.had.co.nz" class="uri">http://r4ds.had.co.nz</a>.</p>
-<p>[37] M. D. Wilkinson, M. Dumontier, I. J. Aalbersberg, et al. “The FAIR
+<p>[42] M. D. Wilkinson, M. Dumontier, I. J. Aalbersberg, et al. “The FAIR
 Guiding Principles for scientific data management and stewardship”. In:
 <em>Scientific Data</em> 3.1 (Mar. 2016), p. 160018. ISSN: 2052-4463. DOI:
 10.1038/sdata.2016.18. <a href="https://doi.org/10.1038/sdata.2016.18" class="uri">https://doi.org/10.1038/sdata.2016.18</a>.</p>
+<p>[43] J. W. Williams, A. Taylor, K. A. Tolley, et al. “Shifts to open
+access with high article processing charges hinder research equity and
+careers”. In: <em>Journal of Biogeography</em> 50.9 (Jul. 2023), pp.
+1485-1489. DOI: 10.1111/jbi.14697. <a href="https://doi.org/10.1111/jbi.14697" class="uri">https://doi.org/10.1111/jbi.14697</a>.</p>
+<p>[44] J. M. A. Wojahn, S. J. Galla, A. E. Melton, et al. “G2PMineR: A
+Genome to Phenome Literature Review Approach”. In: <em>Genes</em> 12.2 (Feb.
+2021), p. 293. DOI: 10.3390/genes12020293.
+<a href="https://doi.org/10.3390/genes12020293" class="uri">https://doi.org/10.3390/genes12020293</a>.</p>
 <div id="refs">
 
 </div>
 </div>
-<div id="appendix-1" class="section level1 appendix" number="13">
-<h1><span class="header-section-number">13</span> Appendix 1</h1>
+<div id="appendix-1" class="section level1 appendix" number="14">
+<h1><span class="header-section-number">14</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
-<p>[1] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
-Documents for R</em>. R package version 2.14. 2022.
+<p>[1] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rmarkdown: Dynamic
+Documents for R</em>. R package version 2.21. 2023.
 <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 <p>[2] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
 R package version 1.0.12. 2021.
@@ -645,7 +680,7 @@ Developing R Packages Easier</em>. R package version 2.4.4. 2022.
 Markdown</em>. ISBN 978-1138700109. Boca Raton, Florida: Chapman and
 Hall/CRC, 2016. <a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a>.</p>
 <p>[9] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
-Markdown</em>. R package version 0.27. 2022.
+Markdown</em>. R package version 0.33. 2023.
 <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 <p>[10] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
 978-1498716963. Boca Raton, Florida: Chapman and Hall/CRC, 2015.
@@ -655,18 +690,18 @@ Markdown</em>. R package version 0.27. 2022.
 <p>[12] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
 R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V.
 Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and
-Hall/CRC, 2014. <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>.</p>
+Hall/CRC, 2014.</p>
 <p>[13] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
-Generation in R</em>. R package version 1.39. 2022.
+Generation in R</em>. R package version 1.42. 2023.
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.</p>
 <p>[14] Y. Xie and J. Allaire. <em>tufte: Tufte’s Styles for R Markdown
 Documents</em>. R package version 0.12. 2022.
 <a href="https://github.com/rstudio/tufte" class="uri">https://github.com/rstudio/tufte</a>.</p>
 <p>[15] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
-Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
-2018. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
-<p>[16] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
-9780367563837. Boca Raton, Florida: Chapman and Hall/CRC, 2020.
+Guide</em>. Boca Raton, Florida: Chapman and Hall/CRC, 2018. ISBN:
+9781138359338. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
+<p>[16] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. Boca
+Raton, Florida: Chapman and Hall/CRC, 2020. ISBN: 9780367563837.
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>.</p>
 <p>[17] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.3.4. 2021.

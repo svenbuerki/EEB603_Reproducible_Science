@@ -72,7 +72,7 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 
 # Syllabus
 
-Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/Chapter_00_Syllabus_EEB603.pdf). 
+Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/EEB603_Syllabus_BUERKI_2023.pdf). 
 
 # Chapter 1 {#chap1}
 
@@ -123,7 +123,9 @@ Software and packages required to perform this tutorial are detailed below. Stud
 install.packages(c("bookdown","knitr", "rmarkdown"))
 ```
 - **RStudio**: https://www.rstudio.com/products/rstudio/download/
-- **TeX**: This software is required to compile document into `pdf` format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux.
+- **TeX**: This software is required to compile document into `pdf` format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux. **For this class, you are not requested to install this software**, which takes significant hard drive space and is harder to operate on Windows OS. 
+
+**NOTE:** The instructor is using the following version of `RStudio`: Version 2022.12.0+353 (2022.12.0+353). If your computer is experiencing issues running the latest version of the software, you can install previous versions [here](https://docs.posit.co/previous-versions/rstudio/).
 
 ### RStudio
 

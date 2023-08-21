@@ -1,0 +1,12 @@
+knitr
+bookdown
+rmarkdown
+formattable
+kableExtra
+dplyr
+magrittr
+prettydoc
+htmltools
+knitcitations
+usethis
+devtools

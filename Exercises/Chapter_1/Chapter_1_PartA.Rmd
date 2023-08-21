@@ -1,0 +1,83 @@
+---
+title: "Chapter 1 - Part A"
+output: html_document
+date: "2022-08-25"
+---
+
+# Inside text commenting
+
+To comment inside text use the following syntax (in `HTML`).
+
+```{r eval = FALSE, echo = TRUE}
+# HTML syntax to comment inside text
+<!-- COMMENT -->
+```
+
+# Headers
+
+<!-- THIS SECTION IS ON HEADERS -->
+
+In this section, we are working on `Markdown` syntax associated to headers (using `#`).
+ 
+# Level 1
+
+## Level 2
+
+### Level 3
+
+# Lists
+
+In this section, we learn syntax on lists.
+
+## Unorderded lists
+
+For sub items, use 2 tabs.
+
+* Item 1
+    - Sub item 1
+        + Sub sub item 1
+        + Sub sub item 2
+    - Sub item 2
+* Item 2
+
+## Orderded lists
+
+Syntax associated to ordered lists. 
+
+1. Item 1
+    - Sub Item 1
+    - Sub item 2
+2. Item 2
+    1. Sub item 2.1
+    2. Sub item 2.2
+4. Item 3
+5. Item 4
+
+# Text formatting
+
+## Italic
+
+To italicize a word put `*` at beginning and end of word/sentence.
+
+Italic *Italic*.
+
+## Bold
+
+To bold a word put `**` at beginning and end of word/sentence.
+
+Bold **Bold**.
+
+
+# Code chunks
+
+The RMarkdown format allows integrating code chunks directly in the document, which are going to be executed and compiled to produce the final document (`HTML`).
+
+```{r include = FALSE, eval = FALSE}
+# 2+2
+2+2
+```
+
+
+# Inline code
+
+The result of this equation is `r 2+2`.

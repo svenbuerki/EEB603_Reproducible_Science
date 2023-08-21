@@ -102,6 +102,10 @@ Submitting scientific manuscripts written in R Markdown is still challenging; ho
 - The R Journal articles
 - Taylor & Francis articles
 
+# Preparing literature
+
+The [doi2bib](https://www.doi2bib.org/) web tool allows you to generate BibTex formatted literature from DOIs.  
+
 # Interactive tutorials
 
 The R [*learnr* package](https://cran.r-project.org/web/packages/learnr/index.html) allows to turn R Markdown documents into interactive tutorials. Tutorials consist of content along with interactive components for checking and reinforcing understanding. Tutorials can include any or all of the following:
@@ -118,7 +122,7 @@ Please see the full documentation (with examples) at this url: https://rstudio.g
 
 - ResearchHub: https://research-hub.auckland.ac.nz/guide-to-managing-research-data/ethics-integrity-and-compliance/the-fair-and-care-principles-for-research-data
 
-# Special Issue on Reproducibility and research integrity
+# Special Issue on Reproducibility and Research Integrity
 
 *BMC Research Notes* published a special issue on Reproducibility and research integrity in 2022. You can consult all the publications [here](https://www.biomedcentral.com/collections/reproducibility).
 

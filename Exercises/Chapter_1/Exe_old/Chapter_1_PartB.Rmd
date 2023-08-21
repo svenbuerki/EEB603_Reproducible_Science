@@ -1,0 +1,95 @@
+--- 
+title: 'Your title'
+subtitle: "Your subtitle"
+author: "Your name"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+link-citations: yes
+fontsize: 12pt
+bibliography: Bibliography_Reproducible_Science_2.bib
+csl: AmJBot.csl
+---
+
+
+<!-- Load R packages and save bib file-->
+
+```{r packages, echo = FALSE, warning = FALSE, include = FALSE}
+#Load packages
+library(knitr)
+library(rmarkdown)
+library(bookdown)
+library(formattable)
+library(kableExtra)
+library(dplyr)
+library(magrittr)
+library(prettydoc)
+library(htmltools)
+library(knitcitations)
+library(devtools)
+
+# Generate BibTex citation file for all R packages used to
+# produce report
+knitr::write_bib(.packages(), file = "packages.bib")
+```
+
+# Tables
+
+```{r tablegrd, echo = F}
+#Build data.frame with grading scale
+grades <- data.frame(Percentage = c("100-98", "97.9-93", "92.9-90",
+    "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70",
+    "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+", "A", "A-",
+    "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"))
+#Plot grading scale in doc
+knitr::kable(grades, caption = "Grading scale applied in this class.") %>%
+    kable_styling(c("striped", "scale_down"))
+```
+
+
+# Figures
+
+```{r fig, echo = FALSE, results='asis', fig.cap="fff"}
+summary(cars)
+plot(cars)
+```
+
+# Cross-referencing tables and figures
+
+Figure \@ref(fig:fig) and Table \@ref(tab:tablegrd).
+
+# Citing publ
+
+@Baker_2016 and [@Baker_2016] or Baker [-@Baker_2016].
+
+
+# References
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendix {-}
+
+# Appendix 1
+
+```{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}
+### Load R package
+library("knitcitations")
+### Process and print citations in packages.bib Clear all
+### bibliography that could be in the cash
+cleanbib()
+# Set pandoc as the default output option for bib
+options(citation_format = "pandoc")
+# Read and print bib from file
+read.bibtex(file = "packages.bib")
+```
+
+# Appendix 2
+Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
+
+```{r eval=T, echo=F, warning = FALSE, message=FALSE}
+#Retrieve all loaded packages and versions
+sessionInfo()
+```

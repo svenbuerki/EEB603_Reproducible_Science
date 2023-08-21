@@ -1,0 +1,142 @@
+--- 
+title: "Chapter 1"
+subtitle: "Part B"
+author: "Sven"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+link-citations: yes
+fontsize: 12pt
+bibliography: Bibliography_Reproducible_Science_2.bib 
+csl: pnas.csl
+---
+
+<!-- GLOBAL OPTIONS -->
+
+```{r setup, include = FALSE, cache = FALSE, message = FALSE}
+# Load packages
+## Add any packages specific to your code
+library("knitr")
+library("bookdown")
+# Chunk options: see http://yihui.name/knitr/options/ ###
+## Text results
+opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
+## Code decoration
+opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60),
+    highlight = TRUE)
+## Caching code
+opts_chunk$set(cache = 2, cache.path = "cache/")
+## Plots
+opts_chunk$set(fig.path = "Figures_MS/", dev = c("png", "pdf"),
+    dpi = 300)
+## Locate figures as close as possible to requested
+## position (=code)
+opts_chunk$set(fig.pos = "H")
+```
+
+
+<!-- LOAD ALL DEPENDENCIES -->
+```{r packages, echo = FALSE, warning = FALSE, include = FALSE}
+#Load packages
+library(knitr)
+library(rmarkdown)
+library(bookdown)
+library(formattable)
+library(kableExtra)
+library(dplyr)
+library(magrittr)
+library(prettydoc)
+library(htmltools)
+library(knitcitations)
+library(devtools)
+
+# Generate BibTex citation file for all R packages used to
+# produce report
+knitr::write_bib(.packages(), file = "packages.bib")
+```
+
+# Tables
+
+Include a table in the RMarkdown document.
+
+```{r tabgrades, echo = F}
+# Create a data.frame w/ grading scale
+grades <- data.frame(Percentage = c("100-98", "97.9-93", "92.9-90",
+    "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70",
+    "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+", "A", "A-",
+    "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"))
+# Plot table and add caption
+knitr::kable(grades, caption = "Grading scale applied in this class.") %>%
+    kable_styling(c("striped", "scale_down"))
+```
+
+# Figures
+
+Include a figure in the RMarkdown.
+
+```{r cars, echo=FALSE, results='hide', fig.cap="Plot of cars' speed in relation to distance.", out.width="100%"}
+# Load and summarize cars dataset
+summary(cars)
+# Plot data
+plot(cars)
+```
+
+# Cross-referencing tables and figures
+
+## Tables
+
+See Table \@ref(tab:tabgrades).
+
+## Figures
+
+See Figure \@ref(fig:cars).
+
+
+# Citing publications
+
+## Cite in parenthesis
+
+Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
+
+## Cite in parenthesis without authors
+
+Baker says blah blah [-@Baker_2016].
+
+## Cite directly in the text
+
+@Baker_2016 says blah.
+
+# References
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendix {-}
+
+# Appendix 1
+
+Citations of all R packages used to generate this report.
+
+```{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
+### Load R package
+library("knitcitations")
+### Process and print citations in packages.bib Clear all
+### bibliography that could be in the cash
+cleanbib()
+# Set pandoc as the default output option for bib
+options(citation_format = "pandoc")
+# Read and print bib from file
+read.bibtex(file = "packages.bib")
+```
+
+# Appendix 2
+
+Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
+
+```{r sessionInfo, echo = FALSE, warning = FALSE, message = FALSE}
+# Load and provide all packages and versions
+sessionInfo()
+```
+

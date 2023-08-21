@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2022-10-09" />
+<meta name="date" content="2023-08-21" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -225,8 +225,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -234,16 +234,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -396,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2022-10-09</h4>
+<h4 class="date">2023-08-21</h4>
 
 </div>
 
@@ -409,7 +402,7 @@ $(document).ready(function() {
 </script>
 <div id="syllabus" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Syllabus</h1>
-<p>Please see this <a href="index.html">webpage</a> for more details on the Syllabus. In addition, the presentation slides can be downloaded <a href="Chapters_files/Chapter_00_Syllabus_EEB603.pdf">here</a>.</p>
+<p>Please see this <a href="index.html">webpage</a> for more details on the Syllabus. In addition, the presentation slides can be downloaded <a href="Chapters_files/EEB603_Syllabus_BUERKI_2023.pdf">here</a>.</p>
 </div>
 <div id="chap1" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Chapter 1</h1>
@@ -464,8 +457,9 @@ Figure 2.1: The spectrum of reproducibility.
 <pre class="r"><code>install.packages(c(&quot;bookdown&quot;, &quot;knitr&quot;, &quot;rmarkdown&quot;))</code></pre>
 <ul>
 <li><strong>RStudio</strong>: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
-<li><strong>TeX</strong>: This software is required to compile document into <code>pdf</code> format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux.</li>
+<li><strong>TeX</strong>: This software is required to compile document into <code>pdf</code> format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux. <strong>For this class, you are not requested to install this software</strong>, which takes significant hard drive space and is harder to operate on Windows OS.</li>
 </ul>
+<p><strong>NOTE:</strong> The instructor is using the following version of <code>RStudio</code>: Version 2022.12.0+353 (2022.12.0+353). If your computer is experiencing issues running the latest version of the software, you can install previous versions <a href="https://docs.posit.co/previous-versions/rstudio/">here</a>.</p>
 </div>
 <div id="rstudio" class="section level3" number="2.1.4">
 <h3><span class="header-section-number">2.1.4</span> RStudio</h3>
@@ -699,7 +693,7 @@ Figure 2.6: Example of code chunks.
 </div>
 <div id="partB" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> PART B: Tables, Figures and References</h2>
-<p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2022a</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
+<p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
 <div id="learning-outcomes-1" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
@@ -799,7 +793,7 @@ Figure 2.7: Snapshot of the MikTex Console showing the procedure to always insta
 </div>
 <div id="yaml-metadata-section" class="section level4" number="2.3.3.3">
 <h4><span class="header-section-number">2.3.3.3</span> YAML metadata section</h4>
-<p>The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2022b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2022a</a>)</span> to define (field names as declared in the YAML metadata section are provided between parenthesis):</p>
+<p>The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2023b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> to define (field names as declared in the YAML metadata section are provided between parenthesis):</p>
 <ol style="list-style-type: decimal">
 <li>Title (<code>title</code>).</li>
 <li>Subtitle (<code>subtitle</code>).</li>
@@ -905,8 +899,8 @@ citation(&quot;knitr&quot;)</code></pre>
 <pre><code>## 
 ## To cite the &#39;knitr&#39; package in publications use:
 ## 
-##   Yihui Xie (2022). knitr: A General-Purpose Package for Dynamic Report
-##   Generation in R. R package version 1.40.
+##   Yihui Xie (2023). knitr: A General-Purpose Package for Dynamic Report
+##   Generation in R. R package version 1.42.
 ## 
 ##   Yihui Xie (2015) Dynamic Documents with R and knitr. 2nd edition.
 ##   Chapman and Hall/CRC. ISBN 978-1498716963
@@ -927,8 +921,8 @@ toBibtex(citation(&quot;knitr&quot;))</code></pre>
 <pre><code>## @Manual{,
 ##   title = {knitr: A General-Purpose Package for Dynamic Report Generation in R},
 ##   author = {Yihui Xie},
-##   year = {2022},
-##   note = {R package version 1.40},
+##   year = {2023},
+##   note = {R package version 1.42},
 ##   url = {https://yihui.org/knitr/},
 ## }
 ## 
@@ -951,7 +945,6 @@ toBibtex(citation(&quot;knitr&quot;))</code></pre>
 ##   publisher = {Chapman and Hall/CRC},
 ##   year = {2014},
 ##   note = {ISBN 978-1466561595},
-##   url = {http://www.crcpress.com/product/isbn/9781466561595},
 ## }</code></pre>
 <p>To use citation entries generated from <code>toBibtex()</code>, you have to copy the output to a <code>.bib</code> file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by <strong>adding the following code to your <code>packages</code> R code chunk</strong>:</p>
 <pre class="r"><code># Generate BibTex citation file for all R packages used to
@@ -1024,28 +1017,28 @@ sessionInfo()</code></pre>
 ##  [7] rticles_0.23         DiagrammeR_1.0.9     data.tree_1.0.0     
 ## [10] kableExtra_1.3.4     dplyr_1.0.9          kfigr_1.2.1         
 ## [13] devtools_2.4.4       usethis_2.1.6        formatR_1.12        
-## [16] knitcitations_1.0.12 bookdown_0.28        rmarkdown_2.16      
-## [19] knitr_1.40          
+## [16] knitcitations_1.0.12 bookdown_0.33        rmarkdown_2.21      
+## [19] knitr_1.42          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] httr_1.4.4         sass_0.4.2         pkgload_1.3.0      jsonlite_1.8.0    
+##  [1] httr_1.4.5         sass_0.4.2         pkgload_1.3.0      jsonlite_1.8.4    
 ##  [5] viridisLite_0.4.1  bslib_0.4.0        shiny_1.7.2        assertthat_0.2.1  
-##  [9] highr_0.9          yaml_2.3.5         remotes_2.4.2      sessioninfo_1.2.2 
+##  [9] highr_0.9          yaml_2.3.7         remotes_2.4.2      sessioninfo_1.2.2 
 ## [13] pillar_1.8.1       glue_1.6.2         digest_0.6.29      RColorBrewer_1.1-3
 ## [17] promises_1.2.0.1   rvest_1.0.3        RefManageR_1.3.0   colorspace_2.0-3  
 ## [21] httpuv_1.6.5       plyr_1.8.7         pkgconfig_2.0.3    purrr_0.3.4       
-## [25] xtable_1.8-4       scales_1.2.1       webshot_0.5.3      processx_3.7.0    
+## [25] xtable_1.8-4       scales_1.2.1       webshot_0.5.4      processx_3.8.0    
 ## [29] svglite_2.1.0      later_1.3.0        tibble_3.1.8       generics_0.1.3    
-## [33] ellipsis_0.3.2     cachem_1.0.6       cli_3.3.0          crayon_1.5.1      
-## [37] mime_0.12          memoise_2.0.1      evaluate_0.16      ps_1.7.1          
+## [33] ellipsis_0.3.2     cachem_1.0.6       cli_3.4.1          crayon_1.5.1      
+## [37] mime_0.12          memoise_2.0.1      evaluate_0.16      ps_1.7.3          
 ## [41] fs_1.5.2           fansi_1.0.3        xml2_1.3.3         pkgbuild_1.3.1    
-## [45] profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1  lifecycle_1.0.1   
+## [45] profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1  lifecycle_1.0.3   
 ## [49] stringr_1.4.1      munsell_0.5.0      callr_3.7.2        compiler_4.2.0    
-## [53] jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.4        rstudioapi_0.14   
+## [53] jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.6        rstudioapi_0.14   
 ## [57] htmlwidgets_1.5.4  visNetwork_2.1.0   miniUI_0.1.1.1     DBI_1.1.3         
 ## [61] R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2        
-## [65] stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2  
-## [69] xfun_0.32          urlchecker_1.0.1</code></pre>
+## [65] stringi_1.7.8      Rcpp_1.0.10        vctrs_0.4.1        tidyselect_1.2.0  
+## [69] xfun_0.36          urlchecker_1.0.1</code></pre>
 <p>I have also used the approach described above to add this information in <a href="#appendix-2">Appendix 2</a>. This can be done as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Edit the Markdown section to add the following text below Appendix 1.</li>
@@ -1458,7 +1451,7 @@ Figure 2.11: Snapshot of RStudio showing procedure to set your working directory
 <li>plots (or figures).</li>
 <li>positioning figures.</li>
 </ul>
-<p>These general settings will be set using the <code>opts_chunk()</code> function implemented in <code>knitr</code> <span class="citation">(<a href="#ref-R-knitr" role="doc-biblioref">Xie, 2022b</a>)</span>. The following website contains valuable information on code chunk options:</p>
+<p>These general settings will be set using the <code>opts_chunk()</code> function implemented in <code>knitr</code> <span class="citation">(<a href="#ref-R-knitr" role="doc-biblioref">Xie, 2023b</a>)</span>. The following website contains valuable information on code chunk options:</p>
 <ul>
 <li><a href="https://yihui.name/knitr/options/" class="uri">https://yihui.name/knitr/options/</a></li>
 </ul>
@@ -3280,8 +3273,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-61c92e132826c092a385" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-61c92e132826c092a385">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-da6d0d33e1e7571dd6fb" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-da6d0d33e1e7571dd6fb">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3448,28 +3441,28 @@ Data/species_data.csv</code></pre>
 ##  [7] rticles_0.23         DiagrammeR_1.0.9     data.tree_1.0.0     
 ## [10] kableExtra_1.3.4     dplyr_1.0.9          kfigr_1.2.1         
 ## [13] devtools_2.4.4       usethis_2.1.6        formatR_1.12        
-## [16] knitcitations_1.0.12 bookdown_0.28        rmarkdown_2.16      
-## [19] knitr_1.40          
+## [16] knitcitations_1.0.12 bookdown_0.33        rmarkdown_2.21      
+## [19] knitr_1.42          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] httr_1.4.4         tidyr_1.2.0        sass_0.4.2         pkgload_1.3.0     
-##  [5] jsonlite_1.8.0     viridisLite_0.4.1  bslib_0.4.0        shiny_1.7.2       
-##  [9] assertthat_0.2.1   highr_0.9          yaml_2.3.5         remotes_2.4.2     
+##  [1] httr_1.4.5         tidyr_1.2.0        sass_0.4.2         pkgload_1.3.0     
+##  [5] jsonlite_1.8.4     viridisLite_0.4.1  bslib_0.4.0        shiny_1.7.2       
+##  [9] assertthat_0.2.1   highr_0.9          yaml_2.3.7         remotes_2.4.2     
 ## [13] sessioninfo_1.2.2  pillar_1.8.1       glue_1.6.2         digest_0.6.29     
 ## [17] RColorBrewer_1.1-3 promises_1.2.0.1   rvest_1.0.3        RefManageR_1.3.0  
 ## [21] colorspace_2.0-3   httpuv_1.6.5       plyr_1.8.7         pkgconfig_2.0.3   
-## [25] purrr_0.3.4        xtable_1.8-4       scales_1.2.1       webshot_0.5.3     
-## [29] processx_3.7.0     svglite_2.1.0      later_1.3.0        tibble_3.1.8      
-## [33] generics_0.1.3     ellipsis_0.3.2     cachem_1.0.6       cli_3.3.0         
-## [37] crayon_1.5.1       mime_0.12          memoise_2.0.1      evaluate_0.16     
-## [41] ps_1.7.1           fs_1.5.2           fansi_1.0.3        xml2_1.3.3        
-## [45] pkgbuild_1.3.1     profvis_0.3.7      tools_4.2.0        prettyunits_1.1.1 
-## [49] lifecycle_1.0.1    stringr_1.4.1      munsell_0.5.0      callr_3.7.2       
-## [53] compiler_4.2.0     jquerylib_0.1.4    systemfonts_1.0.4  rlang_1.0.4       
-## [57] rstudioapi_0.14    htmlwidgets_1.5.4  visNetwork_2.1.0   miniUI_0.1.1.1    
-## [61] DBI_1.1.3          R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0     
-## [65] utf8_1.2.2         stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1       
-## [69] tidyselect_1.1.2   xfun_0.32          urlchecker_1.0.1</code></pre>
+## [25] purrr_0.3.4        xtable_1.8-4       scales_1.2.1       webshot_0.5.4     
+## [29] processx_3.8.0     svglite_2.1.0      later_1.3.0        tibble_3.1.8      
+## [33] generics_0.1.3     ellipsis_0.3.2     withr_2.5.0        cachem_1.0.6      
+## [37] cli_3.4.1          crayon_1.5.1       mime_0.12          memoise_2.0.1     
+## [41] evaluate_0.16      ps_1.7.3           fs_1.5.2           fansi_1.0.3       
+## [45] xml2_1.3.3         pkgbuild_1.3.1     profvis_0.3.7      tools_4.2.0       
+## [49] prettyunits_1.1.1  lifecycle_1.0.3    stringr_1.4.1      munsell_0.5.0     
+## [53] callr_3.7.2        compiler_4.2.0     jquerylib_0.1.4    systemfonts_1.0.4 
+## [57] rlang_1.0.6        rstudioapi_0.14    htmlwidgets_1.5.4  visNetwork_2.1.0  
+## [61] miniUI_0.1.1.1     DBI_1.1.3          R6_2.5.1           lubridate_1.8.0   
+## [65] fastmap_1.1.0      utf8_1.2.2         stringi_1.7.8      Rcpp_1.0.10       
+## [69] vctrs_0.4.1        tidyselect_1.2.0   xfun_0.36          urlchecker_1.0.1</code></pre>
 </div>
 <div id="using-r-packages-to-help-managing-dependencies-and-recreate-setup" class="section level4" number="6.3.8.2">
 <h4><span class="header-section-number">6.3.8.2</span> Using R packages to help managing dependencies and recreate setup</h4>
@@ -4022,8 +4015,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-72a55952e2b566c1072c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-72a55952e2b566c1072c">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-1267e38fd2e7688eb4e6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1267e38fd2e7688eb4e6">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
@@ -4075,43 +4068,45 @@ urlcsv &lt;- &quot;https://bit.ly/3BDxECl&quot;
 csvTimeTable &lt;- repmis::source_data(url = urlcsv)</code></pre>
 <pre><code>## Downloading data from: https://bit.ly/3BDxECl</code></pre>
 <pre><code>## SHA-1 hash of the downloaded data file is:
-## 2f5bb4150910afaf55977eadfae89590f5550320</code></pre>
+## 2511f8ce83e524903104a8d1ee4ac0ad81939593</code></pre>
 <pre class="r"><code>### ~~~ Check class ~~~ Class should be `data.frame`
 class(csvTimeTable)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
 <pre class="r"><code>### ~~~ Print csv ~~~
 print(csvTimeTable)</code></pre>
-<pre><code>##                                                                                Topic
-## 1                                                                           Syllabus
-## 2                                              Chap. 1 - part A: Learning the basics
-## 3                                              Chap. 1 - part A: Learning the basics
-## 4                                   Chap. 1 - part B: Tables, Figures and References
-## 5                                   Chap. 1 - part B: Tables, Figures and References
-## 6                 Chap. 1 - Complete part B and part C: Advanced R Markdown settings
-## 7                                      Chap. 1 - part D: User Defined Functions in R
-## 8                                      Chap. 1 - part D: User Defined Functions in R
-## 9                                            Q&amp;A and work on bioinformatic tutorials
-## 10                                               Chap. 2: The reproducibility crisis
-## 11      Chap. 3: A road map to implement reproducible science in Ecology &amp; Evolution
-## 12                                         Chap. 4: Open science and CARE principles
-## 13                                                          Chap. 5: Data management
-## 14                  Complete Chap. 5: Data management and Chap. 5: Reproducible code
-## 15                                                        Chap. 6: Getting published
-## 16 Chap. 6: Writing papers in R Markdown (rticles) &amp; Work on bioinformatic tutorials
-## 17                                                       Bioinfo. tutorial - Chap. 7
-## 18                                                       Bioinfo. tutorial - Chap. 7
-## 19                                                       Bioinfo. tutorial - Chap. 8
-## 20                                                       Bioinfo. tutorial - Chap. 8
-## 21                                                       Bioinfo. tutorial - Chap. 9
-## 22                                                       Bioinfo. tutorial - Chap. 9
-## 23                                                      Bioinfo. tutorial - Chap. 10
-## 24                                                      Bioinfo. tutorial - Chap. 10
-## 25                                                      Bioinfo. tutorial - Chap. 11
-## 26                                                      Bioinfo. tutorial - Chap. 11
-## 27                                                      Bioinfo. tutorial - Chap. 12
-## 28                                                      Bioinfo. tutorial - Chap. 12
-## 29                                                         Individual projects - Q&amp;A
-## 30                                                         Individual projects - Q&amp;A
+<pre><code>##                                                                                                                                                                       Topic
+## 1                                                                                                                                                                  Syllabus
+## 2                                                                                                                                     Chap. 1 - part A: Learning the basics
+## 3                                                                                                                                     Chap. 1 - part A: Learning the basics
+## 4                                                                                                                          Chap. 1 - part B: Tables, Figures and References
+## 5                                                                                                                          Chap. 1 - part B: Tables, Figures and References
+## 6                                                                                                        Chap. 1 - Complete part B and part C: Advanced R Markdown settings
+## 7                                                                                                                             Chap. 1 - part D: User Defined Functions in R
+## 8                                                                                                                             Chap. 1 - part D: User Defined Functions in R
+## 9                                                                                                                                   Q&amp;A and work on bioinformatic tutorials
+## 10                                                                                                                                      Chap. 2: The reproducibility crisis
+## 11                                                                                             Chap. 3: A road map to implement reproducible science in Ecology &amp; Evolution
+## 12                                                                                                                                Chap. 4: Open science and CARE principles
+## 13                                                                                                                                                 Chap. 5: Data management
+## 14                                                                                                         Complete Chap. 5: Data management and Chap. 5: Reproducible code
+## 15                                                                                                                                               Chap. 6: Getting published
+## 16 Chap. 6: Writing papers in R Markdown ([rticles](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#rticlespkg)) and Work on bioinformatic tutorials
+## 17                                                                                                                                              Bioinfo. tutorial - Chap. 7
+## 18                                                                                                                                              Bioinfo. tutorial - Chap. 7
+## 19                                                                                                                                              Bioinfo. tutorial - Chap. 8
+## 20                                                                                                                                              Bioinfo. tutorial - Chap. 8
+## 21                                                                                                                                              Bioinfo. tutorial - Chap. 9
+## 22                                                                                                                                              Bioinfo. tutorial - Chap. 9
+## 23                                                                                                                                             Bioinfo. tutorial - Chap. 10
+## 24                                                                                                                                             Bioinfo. tutorial - Chap. 10
+## 25                                                                                                                                             Bioinfo. tutorial - Chap. 11
+## 26                                                                                                                                             Bioinfo. tutorial - Chap. 11
+## 27                                                                                                                                             Bioinfo. tutorial - Chap. 12
+## 28                                                                                                                                             Bioinfo. tutorial - Chap. 12
+## 29                                                                                                                                                Individual projects - Q&amp;A
+## 30                                                                                                                                                Individual projects - Q&amp;A
+## 31                                                                                                                                Oral presentations of individual projects
+## 32                                                                                                                                Oral presentations of individual projects
 ##                                                                                                                      Task Deadline
 ## 1                                                                                                                                 
 ## 2                                                                                                       Work on bioinfo. tutorials
@@ -4143,6 +4138,8 @@ print(csvTimeTable)</code></pre>
 ## 28                                                                        Students work on ind. projects: Data management workflow
 ## 29                                                                        Students work on ind. projects: Data management workflow
 ## 30 Turn in ind. projects (on [Google Drive](https://drive.google.com/drive/folders/1MZt5kNKusCv6OeZpjuuPxUiqBaoQVQAc?usp=sharing))
+## 31                                                                                                                                
+## 32                                                                                                                                
 ##                                                                                                                                                                                                                                                            URL
 ## 1                                                                                                                                                                              [Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html)
 ## 2                                                                                                                                                                       [Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partA)
@@ -4158,8 +4155,8 @@ print(csvTimeTable)</code></pre>
 ## 12                                                                                                                                                             [Chapter 4](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#5_Chapter_4)
 ## 13                                                                                                                                                         [Chapter 5 - Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partDM)
 ## 14                                                                                                                                                        [Chapter 5 - Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#repcode)
-## 15                                                                                                                                                                                                                                                            
-## 16                                                                                                                                                                                                                                                            
+## 15                                                                                                                                                         [Chapter 6 - Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#getpub)
+## 16                                                                                                                                                        [Chapter 6 - Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#writpub)
 ## 17                                                                                                                                                                                                                                                            
 ## 18                                                                                                                                                                                                                                                            
 ## 19                                                                                                                                                                                                                                                            
@@ -4173,7 +4170,9 @@ print(csvTimeTable)</code></pre>
 ## 27                                                                                                                                                                                                                                                            
 ## 28                                                                                                                                                                                                                                                            
 ## 29                                                                                                                                                                                                                                                            
-## 30</code></pre>
+## 30                                                                                                                                                                                                                                                            
+## 31                                                                                                                                                                                                                                                            
+## 32</code></pre>
 <p><em>source_data()</em> will always download the most recent version of the file from the master branch and return its unique SHA-1 hash. However, you could also download a prior version of the file by providing its specific SHA-1 hash associated to a previous <code>commit</code>.</p>
 </div>
 <div id="retrieving-csv-from-previous-commit" class="section level3" number="8.8.4">
@@ -4475,7 +4474,7 @@ list.files(paste0(output_dir))</code></pre>
 <span class="smallcaps">Wilkinson, M.D.</span>, <span class="smallcaps">M. Dumontier</span>, <span class="smallcaps">Ij.J. Aalbersberg</span>, <span class="smallcaps">G. Appleton</span>, <span class="smallcaps">M. Axton</span>, <span class="smallcaps">A. Baak</span>, <span class="smallcaps">N. Blomberg</span>, et al. 2016. The FAIR guiding principles for scientific data management and stewardship. <em>Scientific Data</em> 3: 160018. Available at: <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>.
 </div>
 <div id="ref-R-bookdown" class="csl-entry">
-<span class="smallcaps">Xie, Y.</span> 2022a. Bookdown: Authoring books and technical documents with r markdown. Available at: <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+<span class="smallcaps">Xie, Y.</span> 2023a. Bookdown: Authoring books and technical documents with r markdown. Available at: <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
 <div id="ref-bookdown2016" class="csl-entry">
 <span class="smallcaps">Xie, Y.</span> 2016. Bookdown: Authoring books and technical documents with <span>R</span> markdown. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://bookdown.org/yihui/bookdown">https://bookdown.org/yihui/bookdown</a>.
@@ -4484,7 +4483,7 @@ list.files(paste0(output_dir))</code></pre>
 <span class="smallcaps">Xie, Y.</span> 2015. Dynamic documents with <span>R</span> and knitr. 2nd ed. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-R-knitr" class="csl-entry">
-<span class="smallcaps">Xie, Y.</span> 2022b. Knitr: A general-purpose package for dynamic report generation in r. Available at: <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+<span class="smallcaps">Xie, Y.</span> 2023b. Knitr: A general-purpose package for dynamic report generation in r. Available at: <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-rmarkdown2018" class="csl-entry">
 <span class="smallcaps">Xie, Y.</span>, <span class="smallcaps">J.J. Allaire</span>, and <span class="smallcaps">G. Grolemund</span>. 2018. R markdown: The definitive guide. Chapman; Hall/CRC, Boca Raton, Florida. Available at: <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
@@ -4497,12 +4496,12 @@ list.files(paste0(output_dir))</code></pre>
 <div id="appendix-1" class="section level1" number="10">
 <h1><span class="header-section-number">A</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
-<p>[1] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rticles: Article Formats
+<p>[1] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rmarkdown: Dynamic
+Documents for R</em>. R package version 2.21. 2023.
+<a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>[2] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rticles: Article Formats
 for R Markdown</em>. R package version 0.23. 2022.
 <a href="https://github.com/rstudio/rticles" class="uri">https://github.com/rstudio/rticles</a>.</p>
-<p>[2] J. Allaire, Y. Xie, J. McPherson, et al. <em>rmarkdown: Dynamic
-Documents for R</em>. R package version 2.16. 2022.
-<a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 <p>[3] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
 R package version 1.0.12. 2021.
 <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>.</p>
@@ -4529,7 +4528,7 @@ Developing R Packages Easier</em>. R package version 2.4.4. 2022.
 Markdown</em>. ISBN 978-1138700109. Boca Raton, Florida: Chapman and
 Hall/CRC, 2016. <a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a>.</p>
 <p>[12] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
-Markdown</em>. R package version 0.28. 2022.
+Markdown</em>. R package version 0.33. 2023.
 <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 <p>[13] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
 978-1498716963. Boca Raton, Florida: Chapman and Hall/CRC, 2015.
@@ -4539,18 +4538,18 @@ Markdown</em>. R package version 0.28. 2022.
 <p>[15] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
 R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V.
 Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and
-Hall/CRC, 2014. <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>.</p>
+Hall/CRC, 2014.</p>
 <p>[16] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
-Generation in R</em>. R package version 1.40. 2022.
+Generation in R</em>. R package version 1.42. 2023.
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.</p>
 <p>[17] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
-Guide</em>. ISBN 9781138359338. Boca Raton, Florida: Chapman and Hall/CRC,
-2018. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
+Guide</em>. Boca Raton, Florida: Chapman and Hall/CRC, 2018. ISBN:
+9781138359338. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
 <p>[18] Y. Xie, J. Cheng, and X. Tan. <em>DT: A Wrapper of the JavaScript
 Library DataTables</em>. R package version 0.24. 2022.
 <a href="https://github.com/rstudio/DT" class="uri">https://github.com/rstudio/DT</a>.</p>
-<p>[19] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. ISBN
-9780367563837. Boca Raton, Florida: Chapman and Hall/CRC, 2020.
+<p>[19] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. Boca
+Raton, Florida: Chapman and Hall/CRC, 2020. ISBN: 9780367563837.
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>.</p>
 <p>[20] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.3.4. 2021.
@@ -4579,30 +4578,30 @@ Syntax</em>. R package version 1.3.4. 2021.
 ##  [7] DT_0.24              rticles_0.23         DiagrammeR_1.0.9    
 ## [10] data.tree_1.0.0      kableExtra_1.3.4     dplyr_1.0.9         
 ## [13] kfigr_1.2.1          devtools_2.4.4       usethis_2.1.6       
-## [16] formatR_1.12         knitcitations_1.0.12 bookdown_0.28       
-## [19] rmarkdown_2.16       knitr_1.40          
+## [16] formatR_1.12         knitcitations_1.0.12 bookdown_0.33       
+## [19] rmarkdown_2.21       knitr_1.42          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] httr_1.4.4         tidyr_1.2.0        sass_0.4.2         pkgload_1.3.0     
-##  [5] jsonlite_1.8.0     viridisLite_0.4.1  R.utils_2.12.0     bslib_0.4.0       
-##  [9] shiny_1.7.2        assertthat_0.2.1   highr_0.9          yaml_2.3.5        
+##  [1] httr_1.4.5         tidyr_1.2.0        sass_0.4.2         pkgload_1.3.0     
+##  [5] jsonlite_1.8.4     viridisLite_0.4.1  R.utils_2.12.0     bslib_0.4.0       
+##  [9] shiny_1.7.2        assertthat_0.2.1   highr_0.9          yaml_2.3.7        
 ## [13] remotes_2.4.2      sessioninfo_1.2.2  pillar_1.8.1       glue_1.6.2        
 ## [17] digest_0.6.29      RColorBrewer_1.1-3 promises_1.2.0.1   rvest_1.0.3       
 ## [21] RefManageR_1.3.0   colorspace_2.0-3   R.oo_1.25.0        httpuv_1.6.5      
 ## [25] plyr_1.8.7         pkgconfig_2.0.3    purrr_0.3.4        xtable_1.8-4      
-## [29] scales_1.2.1       webshot_0.5.3      processx_3.7.0     svglite_2.1.0     
+## [29] scales_1.2.1       webshot_0.5.4      processx_3.8.0     svglite_2.1.0     
 ## [33] later_1.3.0        tibble_3.1.8       generics_0.1.3     ellipsis_0.3.2    
-## [37] cachem_1.0.6       cli_3.3.0          crayon_1.5.1       mime_0.12         
-## [41] memoise_2.0.1      evaluate_0.16      ps_1.7.1           R.methodsS3_1.8.2 
-## [45] fs_1.5.2           fansi_1.0.3        R.cache_0.16.0     xml2_1.3.3        
-## [49] pkgbuild_1.3.1     data.table_1.14.2  profvis_0.3.7      tools_4.2.0       
-## [53] prettyunits_1.1.1  lifecycle_1.0.1    stringr_1.4.1      munsell_0.5.0     
-## [57] callr_3.7.2        compiler_4.2.0     jquerylib_0.1.4    systemfonts_1.0.4 
-## [61] rlang_1.0.4        rstudioapi_0.14    htmlwidgets_1.5.4  visNetwork_2.1.0  
-## [65] crosstalk_1.2.0    miniUI_0.1.1.1     curl_4.3.2         DBI_1.1.3         
-## [69] R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0      utf8_1.2.2        
-## [73] stringi_1.7.8      Rcpp_1.0.9         vctrs_0.4.1        tidyselect_1.1.2  
-## [77] xfun_0.32          urlchecker_1.0.1</code></pre>
+## [37] withr_2.5.0        cachem_1.0.6       cli_3.4.1          crayon_1.5.1      
+## [41] mime_0.12          memoise_2.0.1      evaluate_0.16      ps_1.7.3          
+## [45] R.methodsS3_1.8.2  fs_1.5.2           fansi_1.0.3        R.cache_0.16.0    
+## [49] xml2_1.3.3         pkgbuild_1.3.1     data.table_1.14.2  profvis_0.3.7     
+## [53] tools_4.2.0        prettyunits_1.1.1  lifecycle_1.0.3    stringr_1.4.1     
+## [57] munsell_0.5.0      callr_3.7.2        compiler_4.2.0     jquerylib_0.1.4   
+## [61] systemfonts_1.0.4  rlang_1.0.6        rstudioapi_0.14    htmlwidgets_1.5.4 
+## [65] visNetwork_2.1.0   crosstalk_1.2.0    miniUI_0.1.1.1     curl_5.0.0        
+## [69] DBI_1.1.3          R6_2.5.1           lubridate_1.8.0    fastmap_1.1.0     
+## [73] utf8_1.2.2         stringi_1.7.8      Rcpp_1.0.10        vctrs_0.4.1       
+## [77] tidyselect_1.2.0   xfun_0.36          urlchecker_1.0.1</code></pre>
 </div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
