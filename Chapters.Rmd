@@ -72,7 +72,7 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 
 # Syllabus
 
-Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/EEB603_Syllabus_BUERKI_2023.pdf). 
+Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/Chapter_00_Syllabus_EEB603.pdf). 
 
 # Chapter 1 {#chap1}
 
