@@ -2,9 +2,9 @@
 
 # Instructor
 
-**Name:** Sven Buerki, Ph.D (he/him)
-**Affiliation:** Boise State University, ID, USA
-**Email:** svenbuerki@boisestate.edu
+- **Name:** Sven Buerki, Ph.D (he/him)
+- **Affiliation:** Boise State University, ID, USA
+- **Email:** svenbuerki@boisestate.edu
 
 # What is in this repository?
 
