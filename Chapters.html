@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2023-08-21" />
+<meta name="date" content="2023-08-23" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -389,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2023-08-21</h4>
+<h4 class="date">2023-08-23</h4>
 
 </div>
 
@@ -408,7 +408,7 @@ $(document).ready(function() {
 <h1><span class="header-section-number">2</span> Chapter 1</h1>
 <div id="introduction" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Introduction</h2>
-<p>In this chapter, we will introduce the <strong>bioinformatic tools to write and disseminate reproducible reports</strong> as implemented in RStudio. More specifically, we will learn procedures to <strong>link and execute data and code into a unified environment</strong> (see Figure <a href="#fig:ReproScience">2.1</a>). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either <code>pdf</code>, <code>HTML</code> or <code>Word</code> formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:</p>
+<p>In this chapter, we will introduce the <strong>bioinformatic tools to write and disseminate reproducible reports</strong> as implemented in RStudio <span class="citation">(<a href="#ref-RStudio" role="doc-biblioref">RStudio Team, 2020</a>)</span>. More specifically, we will learn procedures to <strong>link and execute data and code into a unified environment</strong> (see Figure <a href="#fig:ReproScience">2.1</a>). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either <code>pdf</code>, <code>HTML</code> or <code>Word</code> formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:</p>
 <ul>
 <li><a href="#partA"><strong>PART A:</strong></a> Learning the basics.</li>
 <li><a href="#partB"><strong>PART B:</strong></a> Tables, Figures and References.</li>
@@ -416,6 +416,7 @@ $(document).ready(function() {
 <li><a href="#partD"><strong>PART D:</strong></a> User Defined Functions in R.</li>
 <li><a href="#partE"><strong>PART E:</strong></a> Interactive tutorials.</li>
 </ul>
+<p>In an effort to maximize time, we will not cover Part E in class, but students are encouraged to study this material on their own. Indeed, this latter material could provide examples and ideas for your assignments.</p>
 <div class="figure"><span style="display:block;" id="fig:ReproScience"></span>
 <img src="Figures/Fig1.png" alt="The spectrum of reproducibility." width="100%" />
 <p class="caption">
@@ -426,19 +427,20 @@ Figure 2.1: The spectrum of reproducibility.
 <h3><span class="header-section-number">2.1.1</span> Learning outcomes</h3>
 <p>This chapter provides students with opportunities to learn procedures to:</p>
 <ul>
-<li>Install R Markdown on your computer.</li>
+<li>Install R Markdown (incl. dependencies) on your computer.</li>
 <li>Create and render (or knitting) your first R Markdown document.</li>
 <li>Execute basic R Markdown syntax and protocols.</li>
 <li>Develop pseudocode and implement it using the R language.</li>
-<li>Create your own functions (referred to as user-defined functions).</li>
+<li>Create your own functions (referred to as user-defined functions or UDFs) to support your research needs.</li>
 </ul>
 </div>
 <div id="Files" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Files supporting this tutorial</h3>
-<p>Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive at this path:</p>
+<p>Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive under this path:</p>
 <ul>
 <li><code>Reproducible_Science/Chapters/Chapter_1/Tutorial_files</code></li>
 </ul>
+<p>If you have difficulties accessing the Google Drive, click <a href="https://drive.google.com/drive/folders/1JnGop4WBuToNDNFf7fgLthLDJ-re36o3?usp=drive_link">here</a>.</p>
 <p>Files are as follows:</p>
 <ul>
 <li><code>EEB603_Syllabus_BUERKI.Rmd</code>: This is the <code>.Rmd</code> file used to compile the syllabus of this class. This file provides a good source of information for the syntax and protocols described in this tutorial.</li>
@@ -463,7 +465,7 @@ Figure 2.1: The spectrum of reproducibility.
 </div>
 <div id="rstudio" class="section level3" number="2.1.4">
 <h3><span class="header-section-number">2.1.4</span> RStudio</h3>
-<p>RStudio is an integrated development environment (IDE) that allows you to interact with R more readily. RStudio is similar to the standard RGUI, but it is considerably more user friendly. It has more drop-down menus, windows with multiple tabs, and many customization options (see Figure <a href="#fig:IDE">2.2</a>). Detailed information on using RStudio can be found at at <a href="https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio">RStudio’s website</a>.</p>
+<p>RStudio <span class="citation">(<a href="#ref-RStudio" role="doc-biblioref">RStudio Team, 2020</a>)</span> is an integrated development environment (IDE) that allows you to interact with R more readily. RStudio is similar to the standard RGUI, but it is considerably more user friendly. It has more drop-down menus, windows with multiple tabs, and many customization options (see Figure <a href="#fig:IDE">2.2</a>). Detailed information on using RStudio can be found at at <a href="https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio">RStudio’s website</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:IDE"></span>
 <img src="Figures/IDE.png" alt="Snapshot of the RStudio environment showing the four windows and their content." width="100%" />
 <p class="caption">
@@ -548,6 +550,7 @@ Figure 2.5: R Markdown flow.
 <li>Italicize and bold words.</li>
 <li>Embed code chunks and inline code.</li>
 <li>Check spelling.</li>
+<li>Inside text commenting.</li>
 </ul>
 <p>More syntax are available in the R Markdown Reference Guide. You can access this document as follows in RStudio:</p>
 <ul>
@@ -616,9 +619,9 @@ Figure 2.5: R Markdown flow.
 #Syntax for bold
 **bold**</code></pre>
 </div>
-<div id="embed-code-chunks-and-inline-code" class="section level3" number="2.2.9">
-<h3><span class="header-section-number">2.2.9</span> Embed code chunks and inline code</h3>
-<p>One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly “plug” the output of R code into the compiled document (see Figure <a href="#fig:Rflow">2.5</a>). In other words, when you compile your <code>.Rmd</code> file, R Markdown will automatically run and process each code chunk and code lines and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your <code>pdf</code> or <code>html</code> document. Cross-referencing is possible thanks to the <code>\@ref()</code> function implemented in the R <code>bookdown</code> package.</p>
+<div id="embed-code-chunks" class="section level3" number="2.2.9">
+<h3><span class="header-section-number">2.2.9</span> Embed code chunks</h3>
+<p>One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly “plug” the output of R code into the compiled document (see Figure <a href="#fig:Rflow">2.5</a>). In other words, when you compile your <code>.Rmd</code> file, R Markdown will automatically run and process each code chunk and code lines (see below) and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your <code>pdf</code> or <code>html</code> document. Cross-referencing is possible thanks to the <code>\@ref()</code> function implemented in the R <code>bookdown</code> package.</p>
 <div id="code-chunk" class="section level4" number="2.2.9.1">
 <h4><span class="header-section-number">2.2.9.1</span> Code chunk</h4>
 <p>A code chunk could easily be inserted in your document as follows:</p>
@@ -650,13 +653,14 @@ Figure 2.6: Example of code chunks.
 </div>
 <div id="inline-code" class="section level3" number="2.2.10">
 <h3><span class="header-section-number">2.2.10</span> Inline code</h3>
-<p>Code results can be inserted directly into the text of a <code>.Rmd</code> file by enclosing the code with <code>r</code>.</p>
+<p>Code results can also be inserted directly into the text of a <code>.Rmd</code> file by enclosing the code with <code>r</code>.</p>
 <p>R Markdown will always:</p>
 <ul>
 <li>Display the results of inline code, but not the code.</li>
 <li>Apply relevant text formatting to the results.</li>
 </ul>
-<p>As a result, inline output is indistinguishable from the surrounding text. <strong>Warning:</strong> Inline expressions do not take <em>knitr</em> options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; 16)</p>
+<p>As a result, inline output is indistinguishable from the surrounding text.</p>
+<p><strong>Warning:</strong> Inline expressions do not take <em>knitr</em> options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; 16)</p>
 </div>
 <div id="check-spelling" class="section level3" number="2.2.11">
 <h3><span class="header-section-number">2.2.11</span> Check spelling</h3>
@@ -667,25 +671,30 @@ Figure 2.6: Example of code chunks.
 <li>The F7 key.</li>
 </ol>
 </div>
-<div id="exercises" class="section level3" number="2.2.12">
-<h3><span class="header-section-number">2.2.12</span> Exercises</h3>
+<div id="inside-text-commenting" class="section level3" number="2.2.12">
+<h3><span class="header-section-number">2.2.12</span> Inside text commenting</h3>
+<p>To comment inside text (= in the Markdown section) use the following syntax borrowed from the <code>HTML</code> language.</p>
+<pre class="r"><code># HTML syntax to comment inside text
+&lt;!-- YOUR COMMENT --&gt;</code></pre>
+<p>Usually, we are using this syntax to e.g. highlight where we need improvement in the text, but these will not be rendered/visible when the document is knitted.</p>
+</div>
+<div id="exercises" class="section level3" number="2.2.13">
+<h3><span class="header-section-number">2.2.13</span> Exercises</h3>
 <p>Students will work individually to complete the following exercises:</p>
 <ol style="list-style-type: decimal">
 <li>Create an <code>*.Rmd</code> file entitled <code>Exercises chapter 1: part A</code> and select <code>HTML</code> as output format.</li>
-<li>Save this document as <code>Exe_chap1_partA.Rmd</code> in a sub-folder called <code>Exercises</code> located in:</li>
-</ol>
+<li>Save this document as <code>Exe_chap1_partA.Rmd</code> in a folder called <code>Exercises</code> located in:
 <ul>
 <li><code>Reproducible_Science/Chapters/Chapter_1</code></li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Practice syntax to do:</li>
-</ol>
+</ul></li>
+<li>Practice syntax to do:
 <ul>
 <li>headers,</li>
 <li>lists,</li>
-<li>include R code chunk and inline code.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
+<li>include R code chunk,</li>
+<li>include inline code,</li>
+<li>Inside text commenting.</li>
+</ul></li>
 <li>Confirm that your syntax works by knitting your document and inspecting the output.</li>
 </ol>
 <p>To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).</p>
@@ -3273,8 +3282,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-f7322de61ce2d6e0750f" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f7322de61ce2d6e0750f">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cb2fe26335507f327db8" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb2fe26335507f327db8">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -4015,8 +4024,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-9654dfc14aad2f231496" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9654dfc14aad2f231496">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-0fc4a8700917be42ad69" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0fc4a8700917be42ad69">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
@@ -4454,6 +4463,9 @@ list.files(paste0(output_dir))</code></pre>
 </div>
 <div id="ref-utils" class="csl-entry">
 <span class="smallcaps">R Core Team</span>. 2019. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. Available at: <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-RStudio" class="csl-entry">
+<span class="smallcaps">RStudio Team</span>. 2020. RStudio: Integrated development environment for r. RStudio, PBC., Boston, MA. Available at: <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.
 </div>
 <div id="ref-Smith2016" class="csl-entry">
 <span class="smallcaps">Smith, J.F.</span>, <span class="smallcaps">T.H. Parker</span>, <span class="smallcaps">S. Nakagawa</span>, <span class="smallcaps">J. Gurevitch</span>, <span class="smallcaps">Ecology</span>, and <span class="smallcaps">T.(Tools. for T. in Evolution) Working Group</span>. 2016. Promoting transparency in evolutionary biology and ecology. <em>Systematic Botany</em> 41: 495–497. Available at: <a href="http://www.bioone.org/doi/abs/10.1600/036364416X692262">http://www.bioone.org/doi/abs/10.1600/036364416X692262</a>.

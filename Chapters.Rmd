@@ -78,13 +78,15 @@ Please see this [webpage](index.html) for more details on the Syllabus. In addit
 
 ## Introduction
 
-In this chapter, we will introduce the **bioinformatic tools to write and disseminate reproducible reports** as implemented in RStudio. More specifically, we will learn procedures to **link and execute data and code into a unified environment** (see Figure \@ref(fig:ReproScience)). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either `pdf`, `HTML` or `Word` formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:
+In this chapter, we will introduce the **bioinformatic tools to write and disseminate reproducible reports** as implemented in RStudio [@RStudio]. More specifically, we will learn procedures to **link and execute data and code into a unified environment** (see Figure \@ref(fig:ReproScience)). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either `pdf`, `HTML` or `Word` formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:
 
 - [**PART A:**](#partA) Learning the basics.
 - [**PART B:**](#partB) Tables, Figures and References.
 - [**PART C:**](#partC) Advanced R Markdown settings.
 - [**PART D:**](#partD) User Defined Functions in R.
 - [**PART E:**](#partE) Interactive tutorials.
+
+In an effort to maximize time, we will not cover Part E in class, but students are encouraged to study this material on their own. Indeed, this latter material could provide examples and ideas for your assignments. 
 
 ```{r ReproScience, echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Fig1.png")
@@ -94,17 +96,19 @@ knitr::include_graphics("Figures/Fig1.png")
 
 This chapter provides students with opportunities to learn procedures to:
 
-- Install R Markdown on your computer. 
+- Install R Markdown (incl. dependencies) on your computer. 
 - Create and render (or knitting) your first R Markdown document.
 - Execute basic R Markdown syntax and protocols.
 - Develop pseudocode and implement it using the R language.
-- Create your own functions (referred to as user-defined functions).
+- Create your own functions (referred to as user-defined functions or UDFs) to support your research needs.
 
 ### Files supporting this tutorial {#Files}
 
-Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive at this path: 
+Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive under this path: 
   
   + `Reproducible_Science/Chapters/Chapter_1/Tutorial_files`
+
+If you have difficulties accessing the Google Drive, click [here](https://drive.google.com/drive/folders/1JnGop4WBuToNDNFf7fgLthLDJ-re36o3?usp=drive_link).
 
 Files are as follows:
 
@@ -129,7 +133,7 @@ install.packages(c("bookdown","knitr", "rmarkdown"))
 
 ### RStudio
 
-RStudio is an integrated development environment (IDE) that allows you to interact with R more readily. RStudio is similar to the standard RGUI, but it is considerably more user friendly. It has more drop-down menus, windows with multiple tabs, and many customization options (see Figure \@ref(fig:IDE)). Detailed information on using RStudio can be found at at [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
+RStudio [@RStudio] is an integrated development environment (IDE) that allows you to interact with R more readily. RStudio is similar to the standard RGUI, but it is considerably more user friendly. It has more drop-down menus, windows with multiple tabs, and many customization options (see Figure \@ref(fig:IDE)). Detailed information on using RStudio can be found at at [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
 
 ```{r IDE, echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/IDE.png")
@@ -202,6 +206,7 @@ We will focus here on learning the syntax and protocols to produce:
 - Italicize and bold words.
 - Embed code chunks and inline code.
 - Check spelling.
+- Inside text commenting. 
 
 More syntax are available in the R Markdown Reference Guide. You can access this document as follows in RStudio:
 
@@ -277,9 +282,9 @@ The following syntax will render text in italics or bold:
 **bold**
 ```
 
-### Embed code chunks and inline code
+### Embed code chunks
 
-One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly "plug" the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). In other words, when you compile your `.Rmd` file, R Markdown will automatically run and process each code chunk and code lines and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your `pdf` or `html` document. Cross-referencing is possible thanks to the `\@ref()` function implemented in the R `bookdown` package. 
+One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly "plug" the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). In other words, when you compile your `.Rmd` file, R Markdown will automatically run and process each code chunk and code lines (see below) and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your `pdf` or `html` document. Cross-referencing is possible thanks to the `\@ref()` function implemented in the R `bookdown` package. 
 
 #### Code chunk
 
@@ -309,14 +314,16 @@ knitr::include_graphics("Figures/code-1-options.png")
 
 ### Inline code
 
-Code results can be inserted directly into the text of a `.Rmd` file by enclosing the code with ``r ``.
+Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code with ``r ``.
 
 R Markdown will always:
 
 - Display the results of inline code, but not the code.
 - Apply relevant text formatting to the results.
 
-As a result, inline output is indistinguishable from the surrounding text. **Warning:** Inline expressions do not take *knitr* options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; `r 4*4`)
+As a result, inline output is indistinguishable from the surrounding text. 
+
+**Warning:** Inline expressions do not take *knitr* options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; `r 4*4`)
 
 ### Check spelling
 
@@ -326,17 +333,30 @@ There are three ways to access spell checking in an R Markdown document in RStud
 2. `Edit > Check Spelling...`
 3. The F7 key.
 
+### Inside text commenting
+
+To comment inside text (= in the Markdown section) use the following syntax borrowed from the `HTML` language.
+
+```{r eval = FALSE, echo = TRUE}
+# HTML syntax to comment inside text
+<!-- YOUR COMMENT -->
+```
+
+Usually, we are using this syntax to e.g. highlight where we need improvement in the text, but these will not be rendered/visible when the document is knitted.
+
 ### Exercises
 
 Students will work individually to complete the following exercises:
 
 1. Create an `*.Rmd` file entitled `Exercises chapter 1: part A` and select `HTML` as output format.
-2. Save this document as `Exe_chap1_partA.Rmd` in a sub-folder called `Exercises` located in:
-  + `Reproducible_Science/Chapters/Chapter_1`
+2. Save this document as `Exe_chap1_partA.Rmd` in a folder called `Exercises` located in:
+    + `Reproducible_Science/Chapters/Chapter_1`
 3. Practice syntax to do:
-  + headers, 
-  + lists, 
-  + include R code chunk and inline code.
+    + headers, 
+    + lists, 
+    + include R code chunk, 
+    + include inline code,
+    + Inside text commenting.
 4. Confirm that your syntax works by knitting your document and inspecting the output.
 
 To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).
