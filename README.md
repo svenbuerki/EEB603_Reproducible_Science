@@ -2,13 +2,13 @@
 
 # Instructor
 
-Name: Sven Buerki
-Affiliation: Boise State University
-Email: svenbuerki@boisestate.edu
+**Name:** Sven Buerki, Ph.D (he/him)
+**Affiliation:** Boise State University, ID, USA
+**Email:** svenbuerki@boisestate.edu
 
 # What is in this repository?
 
-This repository contains files associated to material presented in EEB603.
+This repository contains files (code and data) associated to material presented in the Fall EEB603 Reproducible Science course taught at Boise State University.
 
 # Associated GitHub pages
 
