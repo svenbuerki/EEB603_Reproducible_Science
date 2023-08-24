@@ -1561,7 +1561,7 @@ In this chapter, we are investigating the causes leading to irreproducible scien
 
 ## What’s the difference between reproduction and replication?
 
-Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adpated from [RESCIENCE C](http://rescience.github.io/).
+Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adapted from [RESCIENCE C](http://rescience.github.io/).
 
 - **Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
 
