@@ -94,13 +94,7 @@ knitr::include_graphics("Figures/Fig1.png")
 
 ### Learning outcomes
 
-This chapter provides students with opportunities to learn procedures to:
-
-- Install R Markdown (incl. dependencies) on your computer. 
-- Create and render (or knitting) your first R Markdown document.
-- Execute basic R Markdown syntax and protocols.
-- Develop pseudocode and implement it using the R language.
-- Create your own functions (referred to as user-defined functions or UDFs) to support your research needs.
+Learning outcomes associated to this chapter are provided at the top of each part. 
 
 ### Files supporting this tutorial {#Files}
 
@@ -156,6 +150,20 @@ Please find below URLs to webpages that are providing key information for chapte
 
 In this part, we will provide a survey of the procedures to create and render (or knitting) your first R Markdown document.
 
+### Learning outcomes
+
+This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
+
+- Create and render (or knitting) your first R Markdown document.
+- Learn the following basic R Markdown syntax and protocols:
+    + Headers
+    + Inside text commenting
+    + Lists
+    + Italicize and bold words
+    + Create hyperlinks
+    + Include code chunks and inline code
+    + Check spelling
+
 ### Introduction to R Markdown
 
 Markdown is a simple formatting syntax language used for authoring HTML, PDF, and MS Word documents, which is implemented in the `rmarkdown` package. An R Markdown document is usually subdivided into three sections (see Figure \@ref(fig:RMdown)):
@@ -201,12 +209,13 @@ knitr::include_graphics("Figures/rmarkdownflow.png")
 
 We will focus here on learning the syntax and protocols to produce:
 
-- Headers. 
+- Headers.
+- Inside text commenting.
 - Lists.
 - Italicize and bold words.
 - Embed code chunks and inline code.
 - Check spelling.
-- Inside text commenting. 
+
 
 More syntax are available in the R Markdown Reference Guide. You can access this document as follows in RStudio:
 
@@ -225,6 +234,19 @@ The "#" refers to the level of the header
 ## Header 2  
 ### Header 3  
 ```  
+
+### Inside text commenting
+
+Markdown does not have a syntax to add comments in your text, but this function can be borrowed from HTML as follows:
+
+```{r eval = FALSE, echo = TRUE}
+# HTML syntax to comment inside text
+<!-- COMMENT -->
+```
+
+Usually, we are using this syntax to e.g. highlight where the text needs improvement/work or editing points. Comments will not be visible when your document is knitted.
+
+You can learn more about this HTML syntax on this [webpage](https://www.w3schools.com/html/html_comments.asp).
 
 ### Lists
 
@@ -282,7 +304,21 @@ The following syntax will render text in italics or bold:
 **bold**
 ```
 
-### Embed code chunks
+### Create hyperlinks
+
+Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax:
+
+```{r eval=FALSE}
+#Syntax to add hyperlink
+[text](link)
+
+#Example to provide hyperlink to RStudio
+[RStudio](https://www.rstudio.com)
+```
+
+When knitted, the example with RStudio turns like that [RStudio](https://www.rstudio.com).
+
+### Include code chunks
 
 One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly "plug" the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). In other words, when you compile your `.Rmd` file, R Markdown will automatically run and process each code chunk and code lines (see below) and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your `pdf` or `html` document. Cross-referencing is possible thanks to the `\@ref()` function implemented in the R `bookdown` package. 
 
@@ -333,16 +369,6 @@ There are three ways to access spell checking in an R Markdown document in RStud
 2. `Edit > Check Spelling...`
 3. The F7 key.
 
-### Inside text commenting
-
-To comment inside text (= in the Markdown section) use the following syntax borrowed from the `HTML` language.
-
-```{r eval = FALSE, echo = TRUE}
-# HTML syntax to comment inside text
-<!-- YOUR COMMENT -->
-```
-
-Usually, we are using this syntax to e.g. highlight where we need improvement in the text, but these will not be rendered/visible when the document is knitted.
 
 ### Exercises
 
@@ -352,11 +378,11 @@ Students will work individually to complete the following exercises:
 2. Save this document as `Exe_chap1_partA.Rmd` in a folder called `Exercises` located in:
     + `Reproducible_Science/Chapters/Chapter_1`
 3. Practice syntax to do:
-    + headers, 
-    + lists, 
-    + include R code chunk, 
-    + include inline code,
-    + Inside text commenting.
+    + headers
+    + Inside text commenting
+    + lists
+    + include R code chunk 
+    + include inline code
 4. Confirm that your syntax works by knitting your document and inspecting the output.
 
 To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).

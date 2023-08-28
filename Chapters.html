@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2023-08-24" />
+<meta name="date" content="2023-08-28" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -389,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2023-08-24</h4>
+<h4 class="date">2023-08-28</h4>
 
 </div>
 
@@ -425,14 +425,7 @@ Figure 2.1: The spectrum of reproducibility.
 </div>
 <div id="learning-outcomes" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Learning outcomes</h3>
-<p>This chapter provides students with opportunities to learn procedures to:</p>
-<ul>
-<li>Install R Markdown (incl. dependencies) on your computer.</li>
-<li>Create and render (or knitting) your first R Markdown document.</li>
-<li>Execute basic R Markdown syntax and protocols.</li>
-<li>Develop pseudocode and implement it using the R language.</li>
-<li>Create your own functions (referred to as user-defined functions or UDFs) to support your research needs.</li>
-</ul>
+<p>Learning outcomes associated to this chapter are provided at the top of each part.</p>
 </div>
 <div id="Files" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Files supporting this tutorial</h3>
@@ -491,8 +484,25 @@ Figure 2.2: Snapshot of the RStudio environment showing the four windows and the
 <div id="partA" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> PART A: Learning the basics</h2>
 <p>In this part, we will provide a survey of the procedures to create and render (or knitting) your first R Markdown document.</p>
-<div id="introduction-to-r-markdown" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Introduction to R Markdown</h3>
+<div id="learning-outcomes-1" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Learning outcomes</h3>
+<p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
+<ul>
+<li>Create and render (or knitting) your first R Markdown document.</li>
+<li>Learn the following basic R Markdown syntax and protocols:
+<ul>
+<li>Headers</li>
+<li>Inside text commenting</li>
+<li>Lists</li>
+<li>Italicize and bold words</li>
+<li>Create hyperlinks</li>
+<li>Include code chunks and inline code</li>
+<li>Check spelling</li>
+</ul></li>
+</ul>
+</div>
+<div id="introduction-to-r-markdown" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Introduction to R Markdown</h3>
 <p>Markdown is a simple formatting syntax language used for authoring HTML, PDF, and MS Word documents, which is implemented in the <code>rmarkdown</code> package. An R Markdown document is usually subdivided into three sections (see Figure <a href="#fig:RMdown">2.3</a>):</p>
 <ol style="list-style-type: decimal">
 <li><strong>YAML metadata section:</strong> This section provides high level information about the output format of the R Markdown file. Information stored in this section will be used by the Pandoc program to format the output document (see Figure <a href="#fig:RMdown">2.3</a>).</li>
@@ -506,8 +516,8 @@ Figure 2.3: Example of an R Markdown file showing the three major sections.
 </p>
 </div>
 </div>
-<div id="creating-an-r-markdown-file" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Creating an R Markdown file</h3>
+<div id="creating-an-r-markdown-file" class="section level3" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Creating an R Markdown file</h3>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:RMdownscreen"></span>
 <img src="Figures/Create_RMarkdown.png" alt="Snapshot of window to create an R Markdown file." width="40%" />
 <p class="caption">
@@ -522,8 +532,8 @@ If you want to knit your document in <code>pdf</code> format, a version of the <
 <li>Save the <code>.Rmd</code> document (using <code>File -&gt; Save As...</code>). Save this file in a new folder devoted to the project (<strong>Warning:</strong> Knitting the document will generate several files).</li>
 </ol>
 </div>
-<div id="rendering-or-knitting-an-r-markdown-document" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Rendering (or knitting) an R Markdown document</h3>
+<div id="rendering-or-knitting-an-r-markdown-document" class="section level3" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Rendering (or knitting) an R Markdown document</h3>
 <p>To render or knit <img src="Figures/knit_2.png" /> your R Markdown document/script into the format specified in the YAML metadata section do the following steps in RStudio:</p>
 <ol style="list-style-type: decimal">
 <li>Select the <code>Knit</code> button (Figure <a href="#fig:RMdown">2.3</a>) in the upper bar of your window to render document.</li>
@@ -531,8 +541,8 @@ If you want to knit your document in <code>pdf</code> format, a version of the <
 <li>The output file will automatically be created in the same directory as the <code>.Rmd</code> file. You can track progress in the <code>R Markdown</code> console. If the knitting fails, error messages will be printed in the <code>R Markdown</code> console (including information on which line of the script the error occurred, but it might not always be the case). Error messages are very useful to debug your R Markdown document.</li>
 </ol>
 </div>
-<div id="how-does-the-knitting-process-work" class="section level3" number="2.2.4">
-<h3><span class="header-section-number">2.2.4</span> <a name="compilation"></a>How does the knitting process work?</h3>
+<div id="how-does-the-knitting-process-work" class="section level3" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> <a name="compilation"></a>How does the knitting process work?</h3>
 <p>When you knit your document, R Markdown will feed the <code>.Rmd</code> file to the R <em>knitr</em> package, which executes all of the code chunks and creates a new markdown (<code>.md</code>) document. This latter document includes the code and its output (Figure <a href="#fig:Rflow">2.5</a>). The markdown file generated by <code>knitr</code> is then processed by the Pandoc program, which is responsible for creating the finished format (Figure <a href="#fig:Rflow">2.5</a>).</p>
 <div class="figure"><span style="display:block;" id="fig:Rflow"></span>
 <img src="Figures/rmarkdownflow.png" alt="R Markdown flow." width="100%" />
@@ -541,16 +551,16 @@ Figure 2.5: R Markdown flow.
 </p>
 </div>
 </div>
-<div id="basic-r-markdown-syntax-and-protocols" class="section level3" number="2.2.5">
-<h3><span class="header-section-number">2.2.5</span> Basic R Markdown syntax and protocols</h3>
+<div id="basic-r-markdown-syntax-and-protocols" class="section level3" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Basic R Markdown syntax and protocols</h3>
 <p>We will focus here on learning the syntax and protocols to produce:</p>
 <ul>
 <li>Headers.</li>
+<li>Inside text commenting.</li>
 <li>Lists.</li>
 <li>Italicize and bold words.</li>
 <li>Embed code chunks and inline code.</li>
 <li>Check spelling.</li>
-<li>Inside text commenting.</li>
 </ul>
 <p>More syntax are available in the R Markdown Reference Guide. You can access this document as follows in RStudio:</p>
 <ul>
@@ -558,8 +568,8 @@ Figure 2.5: R Markdown flow.
 </ul>
 <p><strong>Notice:</strong> The Cheatsheet section also allows accessing additional supporting documents related to R Markdown and Data manipulation. Those documents will be very useful for this class.</p>
 </div>
-<div id="headers" class="section level3" number="2.2.6">
-<h3><span class="header-section-number">2.2.6</span> Headers</h3>
+<div id="headers" class="section level3" number="2.2.7">
+<h3><span class="header-section-number">2.2.7</span> Headers</h3>
 <p>Please find below the syntax to create headers (3 levels):</p>
 <p>Syntax:</p>
 <pre class="r"><code>The &quot;#&quot; refers to the level of the header
@@ -567,15 +577,23 @@ Figure 2.5: R Markdown flow.
 ## Header 2  
 ### Header 3  </code></pre>
 </div>
-<div id="lists" class="section level3" number="2.2.7">
-<h3><span class="header-section-number">2.2.7</span> Lists</h3>
+<div id="inside-text-commenting" class="section level3" number="2.2.8">
+<h3><span class="header-section-number">2.2.8</span> Inside text commenting</h3>
+<p>Markdown does not have a syntax to add comments in your text, but this function can be borrowed from HTML as follows:</p>
+<pre class="r"><code># HTML syntax to comment inside text
+&lt;!-- COMMENT --&gt;</code></pre>
+<p>Usually, we are using this syntax to e.g. highlight where the text needs improvement/work or editing points. Comments will not be visible when your document is knitted.</p>
+<p>You can learn more about this HTML syntax on this <a href="https://www.w3schools.com/html/html_comments.asp">webpage</a>.</p>
+</div>
+<div id="lists" class="section level3" number="2.2.9">
+<h3><span class="header-section-number">2.2.9</span> Lists</h3>
 <p>There are two types of lists:</p>
 <ul>
 <li>Unordered</li>
 <li>Ordered</li>
 </ul>
-<div id="syntax-for-unordered-lists" class="section level4" number="2.2.7.1">
-<h4><span class="header-section-number">2.2.7.1</span> Syntax for unordered lists</h4>
+<div id="syntax-for-unordered-lists" class="section level4" number="2.2.9.1">
+<h4><span class="header-section-number">2.2.9.1</span> Syntax for unordered lists</h4>
 <p>Syntax:</p>
 <pre class="r"><code>* unordered list
 * item 2
@@ -592,8 +610,8 @@ Figure 2.5: R Markdown flow.
 </ul></li>
 </ul>
 </div>
-<div id="syntax-for-ordered-lists" class="section level4" number="2.2.7.2">
-<h4><span class="header-section-number">2.2.7.2</span> Syntax for ordered lists</h4>
+<div id="syntax-for-ordered-lists" class="section level4" number="2.2.9.2">
+<h4><span class="header-section-number">2.2.9.2</span> Syntax for ordered lists</h4>
 <p>Syntax:</p>
 <pre class="r"><code>1. ordered list
 2. item 2
@@ -610,8 +628,8 @@ Figure 2.5: R Markdown flow.
 </ol>
 </div>
 </div>
-<div id="italicize-and-bold-words" class="section level3" number="2.2.8">
-<h3><span class="header-section-number">2.2.8</span> Italicize and bold words</h3>
+<div id="italicize-and-bold-words" class="section level3" number="2.2.10">
+<h3><span class="header-section-number">2.2.10</span> Italicize and bold words</h3>
 <p>The following syntax will render text in italics or bold:</p>
 <pre class="r"><code>#Syntax for italics
 *italics*
@@ -619,11 +637,21 @@ Figure 2.5: R Markdown flow.
 #Syntax for bold
 **bold**</code></pre>
 </div>
-<div id="embed-code-chunks" class="section level3" number="2.2.9">
-<h3><span class="header-section-number">2.2.9</span> Embed code chunks</h3>
+<div id="create-hyperlinks" class="section level3" number="2.2.11">
+<h3><span class="header-section-number">2.2.11</span> Create hyperlinks</h3>
+<p>Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax:</p>
+<pre class="r"><code>#Syntax to add hyperlink
+[text](link)
+
+#Example to provide hyperlink to RStudio
+[RStudio](https://www.rstudio.com)</code></pre>
+<p>When knitted, the example with RStudio turns like that <a href="https://www.rstudio.com">RStudio</a>.</p>
+</div>
+<div id="include-code-chunks" class="section level3" number="2.2.12">
+<h3><span class="header-section-number">2.2.12</span> Include code chunks</h3>
 <p>One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly “plug” the output of R code into the compiled document (see Figure <a href="#fig:Rflow">2.5</a>). In other words, when you compile your <code>.Rmd</code> file, R Markdown will automatically run and process each code chunk and code lines (see below) and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your <code>pdf</code> or <code>html</code> document. Cross-referencing is possible thanks to the <code>\@ref()</code> function implemented in the R <code>bookdown</code> package.</p>
-<div id="code-chunk" class="section level4" number="2.2.9.1">
-<h4><span class="header-section-number">2.2.9.1</span> Code chunk</h4>
+<div id="code-chunk" class="section level4" number="2.2.12.1">
+<h4><span class="header-section-number">2.2.12.1</span> Code chunk</h4>
 <p>A code chunk could easily be inserted in your document as follows:</p>
 <ul>
 <li>Using the keyboard shortcut <strong>Ctrl + Alt + I</strong> (OS X: <strong>Cmd + Option + I</strong>).</li>
@@ -632,8 +660,8 @@ Figure 2.5: R Markdown flow.
 </ul>
 <p>By default the code chunk will expect R code, but you can also insert code chunks supporting different computer languages (e.g. Bash, Python).</p>
 </div>
-<div id="chunk-options" class="section level4" number="2.2.9.2">
-<h4><span class="header-section-number">2.2.9.2</span> Chunk options</h4>
+<div id="chunk-options" class="section level4" number="2.2.12.2">
+<h4><span class="header-section-number">2.2.12.2</span> Chunk options</h4>
 <p>Chunk output can be customized with <em>knitr</em> options arguments set in the <code>{}</code> of a chunk header. In the examples displayed in Figure <a href="#fig:RChunk">2.6</a> five arguments are used:</p>
 <ul>
 <li><code>include = FALSE</code> prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.</li>
@@ -651,8 +679,8 @@ Figure 2.6: Example of code chunks.
 </div>
 </div>
 </div>
-<div id="inline-code" class="section level3" number="2.2.10">
-<h3><span class="header-section-number">2.2.10</span> Inline code</h3>
+<div id="inline-code" class="section level3" number="2.2.13">
+<h3><span class="header-section-number">2.2.13</span> Inline code</h3>
 <p>Code results can also be inserted directly into the text of a <code>.Rmd</code> file by enclosing the code with <code>r</code>.</p>
 <p>R Markdown will always:</p>
 <ul>
@@ -662,8 +690,8 @@ Figure 2.6: Example of code chunks.
 <p>As a result, inline output is indistinguishable from the surrounding text.</p>
 <p><strong>Warning:</strong> Inline expressions do not take <em>knitr</em> options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; 16)</p>
 </div>
-<div id="check-spelling" class="section level3" number="2.2.11">
-<h3><span class="header-section-number">2.2.11</span> Check spelling</h3>
+<div id="check-spelling" class="section level3" number="2.2.14">
+<h3><span class="header-section-number">2.2.14</span> Check spelling</h3>
 <p>There are three ways to access spell checking in an R Markdown document in RStudio:</p>
 <ol style="list-style-type: decimal">
 <li>A spell check button <img src="Figures/ABC.png" /> to the right of the save button.</li>
@@ -671,15 +699,8 @@ Figure 2.6: Example of code chunks.
 <li>The F7 key.</li>
 </ol>
 </div>
-<div id="inside-text-commenting" class="section level3" number="2.2.12">
-<h3><span class="header-section-number">2.2.12</span> Inside text commenting</h3>
-<p>To comment inside text (= in the Markdown section) use the following syntax borrowed from the <code>HTML</code> language.</p>
-<pre class="r"><code># HTML syntax to comment inside text
-&lt;!-- YOUR COMMENT --&gt;</code></pre>
-<p>Usually, we are using this syntax to e.g. highlight where we need improvement in the text, but these will not be rendered/visible when the document is knitted.</p>
-</div>
-<div id="exercises" class="section level3" number="2.2.13">
-<h3><span class="header-section-number">2.2.13</span> Exercises</h3>
+<div id="exercises" class="section level3" number="2.2.15">
+<h3><span class="header-section-number">2.2.15</span> Exercises</h3>
 <p>Students will work individually to complete the following exercises:</p>
 <ol style="list-style-type: decimal">
 <li>Create an <code>*.Rmd</code> file entitled <code>Exercises chapter 1: part A</code> and select <code>HTML</code> as output format.</li>
@@ -689,11 +710,11 @@ Figure 2.6: Example of code chunks.
 </ul></li>
 <li>Practice syntax to do:
 <ul>
-<li>headers,</li>
-<li>lists,</li>
-<li>include R code chunk,</li>
-<li>include inline code,</li>
-<li>Inside text commenting.</li>
+<li>headers</li>
+<li>Inside text commenting</li>
+<li>lists</li>
+<li>include R code chunk</li>
+<li>include inline code</li>
 </ul></li>
 <li>Confirm that your syntax works by knitting your document and inspecting the output.</li>
 </ol>
@@ -703,7 +724,7 @@ Figure 2.6: Example of code chunks.
 <div id="partB" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> PART B: Tables, Figures and References</h2>
 <p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
-<div id="learning-outcomes-1" class="section level3" number="2.3.1">
+<div id="learning-outcomes-2" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
 <ul>
@@ -1410,7 +1431,7 @@ csl: AmJBot.csl
 </div>
 <div id="partC" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> PART C: Advanced R and R Markdown settings</h2>
-<div id="learning-outcomes-2" class="section level3" number="2.4.1">
+<div id="learning-outcomes-3" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part C of chapter 1 and provides students with opportunities to learn procedures to:</p>
 <ul>
@@ -1654,7 +1675,7 @@ plot(x, y)</code></pre>
 </div>
 <div id="partD" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> PART D: User Defined Functions in R</h2>
-<div id="learning-outcomes-3" class="section level3" number="2.5.1">
+<div id="learning-outcomes-4" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Learning outcomes</h3>
 <p>This tutorial provides students with opportunities to gain the following skills by:</p>
 <ul>
@@ -2369,7 +2390,7 @@ Figure 4.3: Overview of the OSF workflow and connections with other widely used 
 <p>The major objective of this chapter is to <strong>study the mechanisms implemented to promote Open Science while highlighting circumstances where other principles might have to be adopted to respect different views, opinions and/or data sovereignty</strong>.</p>
 <p>Overall, content of this chapter aims at <strong>providing solutions to tackles threats to the scientific process</strong> (discussed in Chapters 2 and 3) <strong>as well as information to manage the data life cycle and research dissemination</strong>.</p>
 </div>
-<div id="learning-outcomes-4" class="section level2" number="5.3">
+<div id="learning-outcomes-5" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Learning outcomes</h2>
 <ul>
 <li>Learn what are the seven pillars of Open Science.</li>
@@ -2610,7 +2631,7 @@ Figure 6.1: Example of a Data Availability Statement.
 </div>
 <p>This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.</p>
 </div>
-<div id="learning-outcomes-5" class="section level3" number="6.2.2">
+<div id="learning-outcomes-6" class="section level3" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Learning outcomes</h3>
 <ul>
 <li>Learn what are the different types of research data and their specificity.</li>
@@ -3028,7 +3049,7 @@ brew install tree</code></pre>
 </ul>
 <p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 5 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.</p>
 </div>
-<div id="learning-outcomes-6" class="section level3" number="6.3.3">
+<div id="learning-outcomes-7" class="section level3" number="6.3.3">
 <h3><span class="header-section-number">6.3.3</span> Learning outcomes</h3>
 <ul>
 <li>Learn protocol to organize projects for reproducibility.</li>
@@ -3282,8 +3303,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-f0219815b164a4f258bc" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f0219815b164a4f258bc">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-40c8ebfc7eedb37220b2" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-40c8ebfc7eedb37220b2">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3921,7 +3942,7 @@ Figure 8.1: Example of datasets involved in Ecology, Evolution and Behavior and 
 </div>
 <p>Here, we are providing methods and R functions that are applied to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.</p>
 </div>
-<div id="learning-outcomes-7" class="section level2" number="8.2">
+<div id="learning-outcomes-8" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Learning outcomes</h2>
 <ul>
 <li>Creating RStudio projects to manage your reproducible project.</li>
@@ -4024,8 +4045,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-a6534238db68706591b0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a6534238db68706591b0">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-4f1ef40eafa84ce29a75" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4f1ef40eafa84ce29a75">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
@@ -4077,7 +4098,7 @@ urlcsv &lt;- &quot;https://bit.ly/3BDxECl&quot;
 csvTimeTable &lt;- repmis::source_data(url = urlcsv)</code></pre>
 <pre><code>## Downloading data from: https://bit.ly/3BDxECl</code></pre>
 <pre><code>## SHA-1 hash of the downloaded data file is:
-## 2511f8ce83e524903104a8d1ee4ac0ad81939593</code></pre>
+## fd34bbd586e591c0cc4f9714fdf9c3384619f9af</code></pre>
 <pre class="r"><code>### ~~~ Check class ~~~ Class should be `data.frame`
 class(csvTimeTable)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -4085,16 +4106,16 @@ class(csvTimeTable)</code></pre>
 print(csvTimeTable)</code></pre>
 <pre><code>##                                                                                                                                                                       Topic
 ## 1                                                                                                                                                                  Syllabus
-## 2                                                                                                                                     Chap. 1 - part A: Learning the basics
+## 2                                                                                                                     Intro. Chapt. 1 &amp; Chap. 2: The reproducibility crisis
 ## 3                                                                                                                                     Chap. 1 - part A: Learning the basics
-## 4                                                                                                                          Chap. 1 - part B: Tables, Figures and References
+## 4                                                                                            Chap. 1 - Complete part A &amp; overview of part B: Tables, Figures and References
 ## 5                                                                                                                          Chap. 1 - part B: Tables, Figures and References
-## 6                                                                                                        Chap. 1 - Complete part B and part C: Advanced R Markdown settings
-## 7                                                                                                                             Chap. 1 - part D: User Defined Functions in R
+## 6                                                                                                                          Chap. 1 - part B: Tables, Figures and References
+## 7                                                                                                        Chap. 1 - Complete part B and part C: Advanced R Markdown settings
 ## 8                                                                                                                             Chap. 1 - part D: User Defined Functions in R
-## 9                                                                                                                                   Q&amp;A and work on bioinformatic tutorials
-## 10                                                                                                                                      Chap. 2: The reproducibility crisis
-## 11                                                                                             Chap. 3: A road map to implement reproducible science in Ecology &amp; Evolution
+## 9                                                                                                                             Chap. 1 - part D: User Defined Functions in R
+## 10                                                                                                                                  Q&amp;A and work on bioinformatic tutorials
+## 11                                                                                    Chap. 3: A roadmap to implement reproducible science in Ecology, Evolution &amp; Behavior
 ## 12                                                                                                                                Chap. 4: Open science and CARE principles
 ## 13                                                                                                                                                 Chap. 5: Data management
 ## 14                                                                                                         Complete Chap. 5: Data management and Chap. 5: Reproducible code
@@ -4118,15 +4139,15 @@ print(csvTimeTable)</code></pre>
 ## 32                                                                                                                                Oral presentations of individual projects
 ##                                                                                                                      Task Deadline
 ## 1                                                                                                                                 
-## 2                                                                                                       Work on bioinfo. tutorials
-## 3                                                                                                       Work on bioinfo. tutorials
-## 4                                                                                                       Work on bioinfo. tutorials
+## 2       Due to internet outage on campus, we had to change schedule. Read Baker (2016) and prepare for discussing outcome of study
+## 3       [Install software](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#213_Install_R_Markdown_software)
+## 4                                                                                                           Read Chapt. 1 - part B
 ## 5                                                                                                       Work on bioinfo. tutorials
 ## 6                                                                                                       Work on bioinfo. tutorials
 ## 7                                                                                                       Work on bioinfo. tutorials
 ## 8                                                                                                       Work on bioinfo. tutorials
 ## 9                                                                                                       Work on bioinfo. tutorials
-## 10                                                                   Read Baker (2016) and prepare for discussing outcome of study
+## 10                                                                                                      Work on bioinfo. tutorials
 ## 11                                                                                                      Work on bioinfo. tutorials
 ## 12                                                                                                      Work on bioinfo. tutorials
 ## 13                                                                                                      Work on bioinfo. tutorials
@@ -4151,15 +4172,15 @@ print(csvTimeTable)</code></pre>
 ## 32                                                                                                                                
 ##                                                                                                                                                                                                                                                            URL
 ## 1                                                                                                                                                                              [Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html)
-## 2                                                                                                                                                                       [Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partA)
+## 2                                                            [Chapter 1](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1) &amp; [Chapter 2](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#3_Chapter_2)
 ## 3                                                                                                                                                                       [Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partA)
-## 4                                                                                                                                   [Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References)
+## 4                                          [Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partA) &amp; [Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References)
 ## 5                                                                                                                                   [Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References)
-## 6  [Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References) &amp; [Part C](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#14_PART_C:_Advanced_R_and_R_Markdown_settings)
-## 7                                                                                                                                      [Part D](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#15_PART_D:_User_Defined_Functions_in_R)
+## 6                                                                                                                                   [Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References)
+## 7  [Part B](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References) &amp; [Part C](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#14_PART_C:_Advanced_R_and_R_Markdown_settings)
 ## 8                                                                                                                                      [Part D](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#15_PART_D:_User_Defined_Functions_in_R)
-## 9                                                                                                      [Publications and Resources for bioinformatic tutorials](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#7_Publications__Textbooks)
-## 10                                                                                                                                                             [Chapter 2](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#3_Chapter_2)
+## 9                                                                                                                                      [Part D](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#15_PART_D:_User_Defined_Functions_in_R)
+## 10                                                                                                     [Publications and Resources for bioinformatic tutorials](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#7_Publications__Textbooks)
 ## 11                                                                                                                                                             [Chapter 3](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#4_Chapter_3)
 ## 12                                                                                                                                                             [Chapter 4](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#5_Chapter_4)
 ## 13                                                                                                                                                         [Chapter 5 - Part A](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partDM)
