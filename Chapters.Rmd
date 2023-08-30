@@ -525,6 +525,7 @@ Do the following steps to set your YAML metadata section:
 - **Warning:** The `.bib` and `.csl` files have to be stored in the same working directory as your `.Rmd` file.
 - **`R` functions can be used in the YAML metadata section** by using inline R code syntax (see part A for more details). Here, we use `Sys.Date()` to automatically date the output document.
 - **Multiple bibliography files** can be used in your document by using this syntax: `bibliography: [file1.bib, file2.bib]`.
+- **Fields/parameters can be omitted in the YAML metadata section** by inserting `#` in front of the command line (= equivalent of commenting). 
 - To learn more about YAML and its application to R Markdown, please visit this [website](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html).
  
 #### Knitting procedure
