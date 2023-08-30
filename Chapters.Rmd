@@ -395,17 +395,17 @@ The aim of this tutorial is to provide students with the expertise to generate r
 
 This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
 
-- Set your R Markdown environment:
+- **Set your R Markdown environment**
   + Install R dependencies (using an `*.R` script saved at the root of your working directory).
   + YAML metadata section.
   + Load required R packages.
   + Generate citation file of R packages used to produce the report.
   + Generate Appendix with citations for all R packages.
   + Generate Appendix with R package versions used to produce report.
-- Insert tables and figures in R Markdown document. 
-- Cross-reference tables and figures in the text.
-- Cite references in the text and add a bibliography/references section.
-- Format citations to journal styles.
+- **Insert tables and figures in R Markdown document** 
+- **Cross-reference tables and figures in the text**
+- **Cite references in the text and add a References section**
+- **Format citations to journal style**
 
 ### Associated files supporting this tutorial
 
@@ -768,7 +768,7 @@ To cross-reference the `cars` figure type:
 
 Note the this syntax doesn't automatically include the `Table` or `Figure` handles in front of the cross-reference. You will have to manually add `Table` or `Figure` in front of your `\@ref()` function.
 
-### Citing references in text and adding a bibliography/references section {#bib}
+### Citing references in text and adding a References section {#bib}
 
 #### The bibliography file
 
@@ -859,7 +859,7 @@ Once knitted, the above code/syntax turns into:
 
 Students have to use their `.Rmd` document to practice citing references in the text using procedures described above. To clearly define where you practice citing references, please do so under a `Citing references` header. 
 
-### Adding a bibliography/references section
+### Adding a References section
 
 Upon knitting, a bibliography/references section will be automatically generated at the end of the document. Usually, we recommend adding a References header just after the last paragraph of the document as displayed below:
 
@@ -871,7 +871,7 @@ last paragraph...
 
 The bibliography will be inserted after this header (please see References section of this tutorial for more details).
 
-#### Formatting citations to journal styles
+#### Formatting citations to journal style
 
 In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a citation style file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.  
 
