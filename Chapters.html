@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2023-08-28" />
+<meta name="date" content="2023-08-30" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -389,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2023-08-28</h4>
+<h4 class="date">2023-08-30</h4>
 
 </div>
 
@@ -711,7 +711,7 @@ Figure 2.6: Example of code chunks.
 <li>Practice syntax to do:
 <ul>
 <li>headers</li>
-<li>Inside text commenting</li>
+<li>inside text commenting</li>
 <li>lists</li>
 <li>include R code chunk</li>
 <li>include inline code</li>
@@ -730,7 +730,7 @@ Figure 2.6: Example of code chunks.
 <ul>
 <li>Set your R Markdown environment:
 <ul>
-<li>Install dependencies.</li>
+<li>Install R dependencies (using an <code>*.R</code> script saved at the root of your working directory).</li>
 <li>YAML metadata section.</li>
 <li>Load required R packages.</li>
 <li>Generate citation file of R packages used to produce the report.</li>
@@ -751,8 +751,12 @@ Figure 2.6: Example of code chunks.
 <h3><span class="header-section-number">2.3.3</span> Set your R Markdown environment</h3>
 <div id="instDep" class="section level4" number="2.3.3.1">
 <h4><span class="header-section-number">2.3.3.1</span> Install dependencies</h4>
-<p>To execute this tutorial the following R packages (declared in <code>pkg</code> object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file saved at the root of your project.</p>
+<p>To execute this tutorial the following R packages (declared in <code>pkg</code> object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file (entitled <code>01_R_dependencies.R</code>) saved at the root of your working directory (if it does not exist yet, please start by creating your folder dedicated to Chapter 1 part B).</p>
 <pre class="r"><code>##~~~
+# Check/Install R dependencies
+##~~~
+
+##~~~
 #1. List all required packages
 ##~~~
 #Object (args) provided by user with names of packages stored into a vector
@@ -769,6 +773,8 @@ new.pkg &lt;- pkg[!(pkg %in% installed.packages())]
 ##~~~
 #3. Install missing packages
 ##~~~
+# Using an if/else statement
+# WARNING: If package is not on CRAN then need to adjust code
 if(length(new.pkg) &gt; 0){
   print(paste(&quot;Install missing package(s):&quot;, new.pkg, sep=&#39; &#39;))
   install.packages(new.pkg, dependencies = TRUE)
@@ -782,6 +788,7 @@ if(length(new.pkg) &gt; 0){
 print(&quot;Load packages and return status&quot;)</code></pre>
 <pre><code>## [1] &quot;Load packages and return status&quot;</code></pre>
 <pre class="r"><code>#Here we use the sapply() function to require all the packages
+# To know mode about the function type ?sapply() in R console
 sapply(pkg, require, character.only = TRUE)</code></pre>
 <pre><code>## Loading required package: formattable</code></pre>
 <pre><code>## Loading required package: magrittr</code></pre>
@@ -821,9 +828,9 @@ Figure 2.7: Snapshot of the MikTex Console showing the procedure to always insta
 </div>
 </div>
 </div>
-<div id="yaml-metadata-section" class="section level4" number="2.3.3.3">
+<div id="YAMLset" class="section level4" number="2.3.3.3">
 <h4><span class="header-section-number">2.3.3.3</span> YAML metadata section</h4>
-<p>The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2023b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> to define (field names as declared in the YAML metadata section are provided between parenthesis):</p>
+<p>The YAML metadata section allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2023b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):</p>
 <ol style="list-style-type: decimal">
 <li>Title (<code>title</code>).</li>
 <li>Subtitle (<code>subtitle</code>).</li>
@@ -835,7 +842,7 @@ Figure 2.7: Snapshot of the MikTex Console showing the procedure to always insta
 <li>Bibliography file(s) (<code>bibliography</code>).</li>
 <li>Format for citations to follow journal styles (<code>csl</code>).</li>
 </ol>
-<p>The YAML code provided below outputs either an <code>HTML</code> or <code>PDF</code> document (see <code>output</code> field) with a table of content (see <code>toc</code> field) and generates in text citations and bibliography section as declared in the <code>AmJBot.csl</code> file (under the <code>csl</code> field).</p>
+<p>The YAML code provided below outputs either an <code>HTML</code> or <code>PDF</code> document (see <code>output</code> field) with a table of content (see <code>toc</code> field) and generates in text citations and bibliography section as declared in the <code>AmJBot.csl</code> file (under the <code>csl</code> field). The bibliography has to be stored in a file (here <code>Bibliography_Reproducible_Science_2.bib</code>) deposited at the root of your working directory.</p>
 <pre class="r"><code>--- 
 title: &#39;Your title&#39;
 subtitle: &quot;Your subtitle&quot;
@@ -854,9 +861,10 @@ csl: AmJBot.csl
 <p><strong>Warning:</strong> <code>.bib</code> and <code>.csl</code> files have to be stored in the same working directory as your <code>.Rmd</code> file.</p>
 <p><strong>Citing multiple bibliography files</strong> by using this syntax:</p>
 <p><code>bibliography: [file1.bib, file2.bib]</code></p>
+<p>You can learn more about YAML and its application to R Markdown <a href="https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html">here</a>.</p>
 <div id="step-by-step-procedure" class="section level5" number="2.3.3.3.1">
 <h5><span class="header-section-number">2.3.3.3.1</span> Step-by-step procedure</h5>
-<p>Do the following to set your YAML metadata section:</p>
+<p>Do the following steps to set your YAML metadata section:</p>
 <ol style="list-style-type: decimal">
 <li>Create a new R Markdown document.</li>
 <li>Save the <code>.Rmd</code> document into a new project folder in <code>Reproducible_Science/Chapters/Chapter_1/</code>.</li>
@@ -866,7 +874,7 @@ csl: AmJBot.csl
 <li><code>Reproducible_Science/Chapters/Chapter_1/Tutorial_files</code></li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
-<li>Edit the YAML metadata section as shown in the above code.</li>
+<li>Edit the YAML metadata section as shown in the <a href="#YAMLset">section</a> above.</li>
 </ol>
 <p><strong>Note:</strong></p>
 <ul>
@@ -895,9 +903,9 @@ Figure 2.8: Snapshot of RStudio console showing the drop-down list associated to
 <li>Name code chunk <code>packages</code> and set options line as follows:</li>
 </ol>
 <ul>
-<li><code>echo=FALSE</code>,</li>
-<li><code>warning=FALSE</code>,</li>
-<li><code>include=FALSE</code>.</li>
+<li><code>echo = FALSE</code>,</li>
+<li><code>warning = FALSE</code>,</li>
+<li><code>include = FALSE</code>.</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
 <li>Add the following code to load required packages to produce your report:</li>
@@ -915,10 +923,6 @@ library(htmltools)
 library(knitcitations)
 library(bibtex)
 library(devtools)</code></pre>
-</div>
-<div id="challenge" class="section level5" number="2.3.3.5.2">
-<h5><span class="header-section-number">2.3.3.5.2</span> Challenge</h5>
-<p>Please get inspiration from the code presented in <a href="#instDep">section</a> to improve the code in the <code>packages</code> code chunk.</p>
 </div>
 </div>
 <div id="generate-citation-file-of-r-packages-used-to-produce-the-report" class="section level4" number="2.3.3.6">
@@ -977,10 +981,11 @@ toBibtex(citation(&quot;knitr&quot;))</code></pre>
 ##   note = {ISBN 978-1466561595},
 ## }</code></pre>
 <p>To use citation entries generated from <code>toBibtex()</code>, you have to copy the output to a <code>.bib</code> file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by <strong>adding the following code to your <code>packages</code> R code chunk</strong>:</p>
-<pre class="r"><code># Generate BibTex citation file for all R packages used to
-# produce report
+<pre class="r"><code># Generate BibTex citation file for all loaded R packages
+# used to produce report Notice the syntax used here to
+# call the function
 knitr::write_bib(.packages(), file = &quot;packages.bib&quot;)</code></pre>
-<p>The <code>.packages()</code> argument returns the names of all packages loaded in the current R session. This makes sure all packages being used will have their citation entries written to the <code>.bib</code> file. Finally, to be able to cite those references (see <a href="#citation-identifier">Citation identifier</a>) in your text, the <a href="#yaml-metadata-section">YAML metadata section</a> has to be edited. See <a href="#appendix-1">Appendix 1</a> for a full list of references associated to the R packages used to generate this report.</p>
+<p>The <code>.packages()</code> argument returns the names of all packages loaded in the current R session. This makes sure all packages being used will have their citation entries written to the <code>.bib</code> file. Finally, to be able to cite those references (see <a href="#citation-identifier">Citation identifier</a>) in your text, the <a href="#YAMLset">YAML metadata section</a> has to be edited. See <a href="#appendix-1">Appendix 1</a> for a full list of references associated to the R packages used to generate this report.</p>
 </div>
 <div id="generate-appendix-with-citations-for-all-r-packages" class="section level4" number="2.3.3.7">
 <h4><span class="header-section-number">2.3.3.7</span> Generate Appendix with citations for all R packages</h4>
@@ -988,10 +993,10 @@ knitr::write_bib(.packages(), file = &quot;packages.bib&quot;)</code></pre>
 <div id="step-by-step-procedure-2" class="section level5" number="2.3.3.7.1">
 <h5><span class="header-section-number">2.3.3.7.1</span> Step-by-step procedure</h5>
 <ol style="list-style-type: decimal">
-<li>Include Appendix after bibliography/references section.</li>
+<li>Include Appendix after the References section.</li>
 </ol>
 <ul>
-<li>This is done by using <code>&lt;div id="refs"&gt;&lt;/div&gt;</code> as shown below:</li>
+<li>This is done by using <code>&lt;div id="refs"&gt;&lt;/div&gt;</code> as shown below, which allows printing Appendices (or any other material) after the References section (see <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography">here</a> for more details):</li>
 </ul>
 <pre class="r"><code># References
 
@@ -1016,7 +1021,7 @@ options(citation_format = &quot;pandoc&quot;)
 read.bibtex(file = &quot;packages.bib&quot;)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Edit your R code chunk options line as follows to correctly print out references:
-<code>{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}</code></li>
+<code>{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}</code></li>
 <li>Knit your code to check that it produces the right output (see <a href="#knitting-procedure">Knitting procedure</a>). See <a href="#appendix-1">Appendix 1</a> to get an idea of the output.</li>
 </ol>
 </div>
@@ -1318,7 +1323,7 @@ plot(cars)</code></pre>
 <ol style="list-style-type: decimal">
 <li>Save all your <code>BibTeX</code> references in a text file and make sure to add the <code>.bib</code> extension.</li>
 <li>This file has to be deposited in the same folder as your <code>.Rmd</code> file.</li>
-<li>You will be inserting the name of your references file in the <a href="#yaml-metadata-section">YAML metadata section</a>.</li>
+<li>You will be inserting the name of your references file in the <a href="#YAMLset">YAML metadata section</a>.</li>
 <li>You can visit this <a href="https://academic.oup.com/botlinnean/article/186/4/435/4736317?searchresult=1">webpage</a> and click on the <code>Cite</code> icon to download a citation in <code>.bibtex</code> format. More details on the <code>BibTeX</code> format is provided below.</li>
 <li>References formatted in <code>BibTeX</code> format are available in associated file:</li>
 </ol>
@@ -1329,7 +1334,7 @@ plot(cars)</code></pre>
 </div>
 <div id="specifying-a-bibliography-in-the-r-markdown-file" class="section level4" number="2.3.7.2">
 <h4><span class="header-section-number">2.3.7.2</span> Specifying a bibliography in the R Markdown file</h4>
-<p>The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles. In order to use this feature, you need to specify a bibliography file in the <a href="#yaml-metadata-section">YAML metadata section</a>.</p>
+<p>The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles. In order to use this feature, you need to specify a bibliography file in the <a href="#YAMLset">YAML metadata section</a>.</p>
 </div>
 <div id="bibtex-format" class="section level4" number="2.3.7.3">
 <h4><span class="header-section-number">2.3.7.3</span> BibTeX format</h4>
@@ -3303,8 +3308,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-40c8ebfc7eedb37220b2" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-40c8ebfc7eedb37220b2">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ee2d53fe7c0761d3d9e1" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ee2d53fe7c0761d3d9e1">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -4045,8 +4050,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-4f1ef40eafa84ce29a75" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4f1ef40eafa84ce29a75">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-8002eccfdb481a02e394" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8002eccfdb481a02e394">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>

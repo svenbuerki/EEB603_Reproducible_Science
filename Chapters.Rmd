@@ -379,7 +379,7 @@ Students will work individually to complete the following exercises:
     + `Reproducible_Science/Chapters/Chapter_1`
 3. Practice syntax to do:
     + headers
-    + Inside text commenting
+    + inside text commenting
     + lists
     + include R code chunk 
     + include inline code
@@ -396,7 +396,7 @@ The aim of this tutorial is to provide students with the expertise to generate r
 This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
 
 - Set your R Markdown environment:
-  + Install dependencies.
+  + Install R dependencies (using an `*.R` script saved at the root of your working directory).
   + YAML metadata section.
   + Load required R packages.
   + Generate citation file of R packages used to produce the report.
@@ -415,9 +415,13 @@ Please refer to [section](#Files) for more details on supporting files and their
 
 #### Install dependencies {#instDep}
 
-To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file saved at the root of your project.
+To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file (entitled `01_R_dependencies.R`) saved at the root of your working directory (if it does not exist yet, please start by creating your folder dedicated to Chapter 1 part B).
 
 ```{r pck, eval=TRUE, tidy=FALSE}
+##~~~
+# Check/Install R dependencies
+##~~~
+
 ##~~~
 #1. List all required packages
 ##~~~
@@ -434,6 +438,8 @@ new.pkg <- pkg[!(pkg %in% installed.packages())]
 ##~~~
 #3. Install missing packages
 ##~~~
+# Using an if/else statement
+# WARNING: If package is not on CRAN then need to adjust code
 if(length(new.pkg) > 0){
   print(paste("Install missing package(s):", new.pkg, sep=' '))
   install.packages(new.pkg, dependencies = TRUE)
@@ -446,6 +452,7 @@ if(length(new.pkg) > 0){
 ##~~~
 print("Load packages and return status")
 #Here we use the sapply() function to require all the packages
+# To know mode about the function type ?sapply() in R console
 sapply(pkg, require, character.only = TRUE)
 ```
 
@@ -469,9 +476,9 @@ To solve this issue apply the following procedure:
 knitr::include_graphics("Figures/MikTex.png")
 ```
 
-#### YAML metadata section
+#### YAML metadata section {#YAMLset}
 
-The YAML metadata section allows users to provide arguments (refereed to as fields) to convert their R Markdown document into its final form. Here, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to define (field names as declared in the YAML metadata section are provided between parenthesis):
+The YAML metadata section allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):
 
 1. Title (`title`).
 2. Subtitle (`subtitle`).
@@ -483,7 +490,7 @@ The YAML metadata section allows users to provide arguments (refereed to as fiel
 8. Bibliography file(s) (`bibliography`).
 9. Format for citations to follow journal styles (`csl`).
 
-The YAML code provided below outputs either an `HTML` or `PDF` document (see `output` field) with a table of content (see `toc` field) and generates in text citations and bibliography section as declared in the `AmJBot.csl` file (under the `csl` field).
+The YAML code provided below outputs either an `HTML` or `PDF` document (see `output` field) with a table of content (see `toc` field) and generates in text citations and bibliography section as declared in the `AmJBot.csl` file (under the `csl` field). The bibliography has to be stored in a file (here `Bibliography_Reproducible_Science_2.bib`) deposited at the root of your working directory.
 
 ```{r YAML, eval=FALSE, echo=TRUE}
 --- 
@@ -509,15 +516,17 @@ csl: AmJBot.csl
 
 `bibliography: [file1.bib, file2.bib]` 
 
+You can learn more about YAML and its application to R Markdown [here](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html).
+
 ##### Step-by-step procedure
 
-Do the following to set your YAML metadata section:
+Do the following steps to set your YAML metadata section:
 
 1. Create a new R Markdown document. 
 2. Save the `.Rmd` document into a new project folder in `Reproducible_Science/Chapters/Chapter_1/`. 
 3. Copy `Bibliography_Reproducible_Science_2.bib` and `AmJBot.csl` in your project folder. These files are available on the Shared Google Drive folder:
   + `Reproducible_Science/Chapters/Chapter_1/Tutorial_files`
-4. Edit the YAML metadata section as shown in the above code.  
+4. Edit the YAML metadata section as shown in the [section](#YAMLset) above.  
 
 **Note:** 
 
@@ -540,9 +549,9 @@ It is best practice to add an R code chunk directly under the YAML metadata sect
 
 1. Include an R code chunk directly under your YAML metadata section.
 2. Name code chunk `packages` and set options line as follows:
-  + `echo=FALSE`, 
-  + `warning=FALSE`, 
-  + `include=FALSE`.
+  + `echo = FALSE`, 
+  + `warning = FALSE`, 
+  + `include = FALSE`.
 3. Add the following code to load required packages to produce your report:
 
 ```
@@ -560,10 +569,6 @@ library(knitcitations)
 library(bibtex)
 library(devtools)
 ```
-
-##### Challenge
-
-Please get inspiration from the code presented in [section](#instDep) to improve the code in the `packages` code chunk. 
 
 #### Generate citation file of R packages used to produce the report
 
@@ -585,7 +590,8 @@ toBibtex(citation("knitr"))
 To use citation entries generated from `toBibtex()`, you have to copy the output to a `.bib` file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by **adding the following code to your `packages` R code chunk**:
 
 ```{r cit3, eval=F, echo=TRUE}
-#Generate BibTex citation file for all R packages used to produce report
+#Generate BibTex citation file for all loaded R packages used to produce report
+# Notice the syntax used here to call the function
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
@@ -597,8 +603,8 @@ Although a bibliography/references section will be provided at the end of your d
 
 ##### Step-by-step procedure
 
-1. Include Appendix after bibliography/references section.
-  + This is done by using `<div id="refs"></div>` as shown below:
+1. Include Appendix after the References section.
+  + This is done by using `<div id="refs"></div>` as shown below, which allows printing Appendices (or any other material) after the References section (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography) for more details):
 ```{r eval=FALSE}
 # References
 
@@ -627,7 +633,7 @@ options("citation_format" = "pandoc")
 read.bibtex(file = "packages.bib")
 ``` 
 3. Edit your R code chunk options line as follows to correctly print out references:
-`{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}`
+`{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}`
 4. Knit your code to check that it produces the right output (see [Knitting procedure]). See [Appendix 1] to get an idea of the output.
 
 #### Generate Appendix with R package versions used to produce report
