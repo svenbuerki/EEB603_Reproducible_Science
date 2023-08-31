@@ -415,12 +415,15 @@ Please refer to [section](#Files) for more details on supporting files and their
 
 #### Install dependencies {#instDep}
 
-To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. The best procedure to ensure reproducibility would be to save the code below in an R script file (entitled `01_R_dependencies.R`) saved at the root of your working directory (if it does not exist yet, please start by creating your folder dedicated to Chapter 1 part B).
+To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. 
+
+The best procedure to ensure reproducibility would be to copy the code below in an R script file (entitled `01_R_dependencies.R`) saved at the root of your working directory (if this directory does not exist yet, please start by creating it and naming it `Chapter_1_PartB`).
 
 ```{r pck, eval=TRUE, tidy=FALSE}
 ##~~~
 # Check/Install R dependencies
 ##~~~
+# This code is dedicated to packages for Chapter 1
 
 ##~~~
 #1. List all required packages
@@ -438,8 +441,8 @@ new.pkg <- pkg[!(pkg %in% installed.packages())]
 ##~~~
 #3. Install missing packages
 ##~~~
-# Using an if/else statement
-# WARNING: If package is not on CRAN then need to adjust code
+# Using an if/else statement to check whether packages have to be installed
+# WARNING: If your target R package is not deposited on CRAN then need to adjust code/function
 if(length(new.pkg) > 0){
   print(paste("Install missing package(s):", new.pkg, sep=' '))
   install.packages(new.pkg, dependencies = TRUE)
