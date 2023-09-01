@@ -27,28 +27,49 @@ $(document).ready(function() {
 });
 ```
 
-```{r packages, echo=FALSE, warning=FALSE, include=FALSE}
-library(knitr)
-library(rmarkdown)
-library(bookdown)
-#library(distill)
-library(knitcitations)
-library(formatR)
-library(devtools)
-library(kfigr)
-library(dplyr)
-library(kableExtra)
-#library(learnr)
-library(data.tree)
-library(DiagrammeR)
-library(rticles)
-library(DT)
+```{r packages, echo=FALSE, warning=FALSE, include=FALSE, cache = FALSE}
+###~~~
+# Load R packages
+###~~~
+#Create vector w/ R packages
+# --> If you have a new dependency, don't forget to add it in this vector
+pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools", "kfigr", "data.tree", "DT", "DiagrammeR", "rticles")
+
+##~~~
+#2. Check if pkg are installed
+##~~~
+print("Check if packages are installed")
+#This line outputs a list of packages that are not installed
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+#3. Install missing packages
+##~~~
+# Using an if/else statement to check whether packages have to be installed
+# WARNING: If your target R package is not deposited on CRAN then need to adjust code/function
+if(length(new.pkg) > 0){
+  print(paste("Install missing package(s):", new.pkg, sep=' '))
+  install.packages(new.pkg, dependencies = TRUE)
+}else{
+  print("All packages are already installed!")
+}
+
+##~~~
+#4. Load all packages
+##~~~
+print("Load packages and return status")
+#Here we use the sapply() function to require all the packages
+# To know more about the function type ?sapply() in R console
+sapply(pkg, require, character.only = TRUE)
+
+# To know more about the function type ?sapply() in R console
+sapply(pkg, require, character.only = TRUE)
 
 #Generate BibTex citation file for all R packages used to produce report
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-```{r setup, include=FALSE, cache=FALSE, message = FALSE}
+```{r setup, include = FALSE, cache = FALSE, message = FALSE}
 # Chunk options: see http://yihui.name/knitr/options/ ###
 
 ## Text results
@@ -455,7 +476,7 @@ if(length(new.pkg) > 0){
 ##~~~
 print("Load packages and return status")
 #Here we use the sapply() function to require all the packages
-# To know mode about the function type ?sapply() in R console
+# To know more about the function type ?sapply() in R console
 sapply(pkg, require, character.only = TRUE)
 ```
 
@@ -541,7 +562,7 @@ knitr::include_graphics("Figures/knit_drop_down.png")
 
 #### Load required R packages
 
-It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report. This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
+It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented [here](#instDep)). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
 
 ##### Step-by-step procedure
 
@@ -550,22 +571,45 @@ It is best practice to add an R code chunk directly under the YAML metadata sect
   + `echo = FALSE`, 
   + `warning = FALSE`, 
   + `include = FALSE`.
-3. Add the following code to load required packages to produce your report:
+3. Add the following code to load required packages to produce your report (or copy content of `01_R_dependencies.R`):
 
-```
-#Load packages
-library(knitr)
-library(rmarkdown)
-library(bookdown)
-library(formattable)
-library(kableExtra)
-library(dplyr)
-library(magrittr)
-library(prettydoc)
-library(htmltools)
-library(knitcitations)
-library(bibtex)
-library(devtools)
+```{r eval = FALSE, echo = TRUE}
+###~~~
+# Load R packages
+###~~~
+#Create vector w/ R packages
+# --> If you have a new dependency, don't forget to add it in this vector
+pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools")
+
+##~~~
+#2. Check if pkg are installed
+##~~~
+print("Check if packages are installed")
+#This line outputs a list of packages that are not installed
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+#3. Install missing packages
+##~~~
+# Using an if/else statement to check whether packages have to be installed
+# WARNING: If your target R package is not deposited on CRAN then need to adjust code/function
+if(length(new.pkg) > 0){
+  print(paste("Install missing package(s):", new.pkg, sep=' '))
+  install.packages(new.pkg, dependencies = TRUE)
+}else{
+  print("All packages are already installed!")
+}
+
+##~~~
+#4. Load all packages
+##~~~
+print("Load packages and return status")
+#Here we use the sapply() function to require all the packages
+# To know more about the function type ?sapply() in R console
+sapply(pkg, require, character.only = TRUE)
+
+# To know more about the function type ?sapply() in R console
+sapply(pkg, require, character.only = TRUE)
 ```
 
 #### Generate citation file of R packages used to produce the report
@@ -3644,7 +3688,7 @@ list.files(paste0(output_dir))
 
 Citations of all R packages used to generate this report. 
 
-```{r generateBibliography, results="asis", echo=FALSE, warning = FALSE, message=FALSE}
+```{r generateBibliography, results="asis", echo=FALSE, cache = FALSE, warning = FALSE, message=FALSE}
 library("knitcitations")
 cleanbib()
 options("citation_format" = "pandoc")
@@ -3655,6 +3699,6 @@ read.bibtex(file = "packages.bib")
 
 Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
 
-```{r eval=T, echo=F, warning = FALSE, message=FALSE}
+```{r eval=T, echo=F, warning = FALSE, cache = F, message=FALSE}
 sessionInfo()
 ```
