@@ -60,6 +60,14 @@ The challenge of reproducing results from ten-year-old code:
 
 Please find [here](https://bookdown.org) a suite of open-access books written with the R [*bookdown* package](https://github.com/rstudio/bookdown), which are relevant to the EEB603 - Reproducible Science course.
 
+# R keypoints 
+
+Here are three important points for R coding:
+
+1. R’s basic **data types** are [character]{.underline}, [numeric]{.underline}, [integer]{.underline}, [complex]{.underline}, and [logical]{.underline}. Read more about R data types [here](https://www.w3schools.com/r/r_data_types.asp).
+2. R’s basic **data structures** include the [vector]{.underline}, [list]{.underline}, [matrix]{.underline}, [data frame]{.underline}, and [factors]{.underline}. Some of these structures require that all members be of the same data type (e.g. vectors, matrices) while others permit multiple data types (e.g. lists, data frames). Read more about R data structures [here](https://www.geeksforgeeks.org/data-structures-in-r-programming/).
+3. R **objects** may have attributes, such as name, dimension, and class. Read more about R objects [here](https://rstudio-education.github.io/hopr/r-objects.html).
+
 # R Markdown
 
 Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. Please find below additional key resources on this topic:
