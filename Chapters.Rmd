@@ -570,7 +570,7 @@ It is best practice to add an R code chunk directly under the YAML metadata sect
   + `include = FALSE`.
 3. Add the following code to load required packages to produce your report (or copy content of `01_R_dependencies.R`):
 
-```{r eval = FALSE, echo = TRUE}
+```{r eval = FALSE, echo = TRUE, tidy = FALSE}
 ###~~~
 # Load R packages
 ###~~~
