@@ -62,9 +62,6 @@ print("Load packages and return status")
 # To know more about the function type ?sapply() in R console
 sapply(pkg, require, character.only = TRUE)
 
-# To know more about the function type ?sapply() in R console
-sapply(pkg, require, character.only = TRUE)
-
 #Generate BibTex citation file for all R packages used to produce report
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
@@ -605,9 +602,6 @@ if(length(new.pkg) > 0){
 ##~~~
 print("Load packages and return status")
 #Here we use the sapply() function to require all the packages
-# To know more about the function type ?sapply() in R console
-sapply(pkg, require, character.only = TRUE)
-
 # To know more about the function type ?sapply() in R console
 sapply(pkg, require, character.only = TRUE)
 ```
