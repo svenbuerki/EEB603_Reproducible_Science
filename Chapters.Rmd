@@ -413,23 +413,23 @@ The aim of this tutorial is to provide students with the expertise to generate r
 
 This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
 
-- **Set your R Markdown environment**
+- [**Set your R Markdown environment**](#setRMd)
   + Install R dependencies (using an `*.R` script saved at the root of your working directory).
   + YAML metadata section.
   + Load required R packages.
   + Generate citation file of R packages used to produce the report.
   + Generate Appendix with citations for all R packages.
   + Generate Appendix with R package versions used to produce report.
-- **Insert tables and figures in R Markdown document** 
-- **Cross-reference tables and figures in the text**
-- **Cite references in the text and add a References section**
-- **Format citations to journal style**
+- [**Insert tables and figures in R Markdown document**](#insertTabFig)
+- [**Cross-reference tables and figures in the text**](#crossrefTabFig)
+- [**Cite references in the text and add a References section**](#bib)
+- [**Format citations to journal style**](#cslForm)
 
 ### Associated files supporting this tutorial
 
 Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
 
-### Set your R Markdown environment
+### Set your R Markdown environment {#setRMd}
 
 #### Install dependencies {#instDep}
 
@@ -702,7 +702,7 @@ sessionInfo()
 
 We have now set our R Markdown environment and can start populating it! This means that you will be inserting your text and other code chunks directly under the `packages` code chunk. The [References] section constitutes the end of the main body of your document. If you want to add Appendices, do so under [Appendix 1], appendices will be labelled differently from the main body of the document.   
 
-### Insert tables and figures in R Markdown document
+### Insert tables and figures in R Markdown document {#insertTabFig}
 
 #### Tables
 
@@ -777,7 +777,7 @@ plot(cars)
 7. Test your code to check that it produces the expected plot by using the `Run` button. 
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
 
-### Cross-reference tables and figures in the text
+### Cross-reference tables and figures in the text {#crossrefTabFig}
 
 Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the `\@ref()` function implemented in  the *bookdown* package. 
 
@@ -807,7 +807,7 @@ To cross-reference the `cars` figure type:
 
 Cross-reference your table and figure by adding a new level 1 header entitled `Cross-referncing tables and figures` and then typing examples as shown below in this section.
 
-### Citing references in text and adding a References section {#bib}
+### Cite references in text and add a References section {#bib}
 
 #### The bibliography file
 
@@ -910,7 +910,7 @@ last paragraph...
 
 The bibliography will be inserted after this header (please see References section of this tutorial for more details).
 
-#### Formatting citations to journal style
+### Format citations to journal style {#cslForm}
 
 In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a citation style file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.  
 
