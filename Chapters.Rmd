@@ -639,25 +639,26 @@ Although a bibliography/references section will be provided at the end of your d
 
 ##### Step-by-step procedure
 
-1. Include Appendix after the References section.
+1. Include Appendices after the References section.
   + This is done by using `<div id="refs"></div>` as shown below, which allows printing Appendices (or any other material) after the References section (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography) for more details):
 ```{r eval=FALSE}
 # References
 
 <div id="refs"></div>
 
-# (APPENDIX) Appendix {-}
+# (APPENDIX) Appendices {-}
 
 # Appendix 1
 
 Citations of all R packages used to generate this report.
 ```
-2. Insert an R code chunk directly under `# Appendix` to read in and print citations saved in `packages.bib`. This is done as follows:
+2. Insert an R code chunk directly under `# Appendix 1` to read in and print citations saved in `packages.bib`. This is done as follows:
 ```{r generateBibliography1, eval=FALSE, echo=TRUE, warning = FALSE, message=FALSE}
 ###
 #Load R package
 ###
 library("knitcitations")
+
 ###
 #Process and print citations in packages.bib
 ###
@@ -665,7 +666,7 @@ library("knitcitations")
 cleanbib()
 # Set pandoc as the default output option for bib
 options("citation_format" = "pandoc")
-#Read and print bib from file
+# Read and print bib from file
 read.bibtex(file = "packages.bib")
 ``` 
 3. Edit your R code chunk options line as follows to correctly print out references:
@@ -674,8 +675,8 @@ read.bibtex(file = "packages.bib")
 
 #### Generate Appendix with R package versions used to produce report
 
-In addition to providing citations to R packages, you might also would like to provide full information on R package versions and your operating systems. With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
-wants to recreate your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
+In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems. With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
+wants to reproduce your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
 
 ```{r eval=T, echo=T}
 # Collect Information About the Current R Session
@@ -684,7 +685,7 @@ sessionInfo()
 
 I have also used the approach described above to add this information in [Appendix 2]. This can be done as follows:
 
-1. Edit the Markdown section to add the following text below Appendix 1.
+1. Edit the document to add the following text below Appendix 1.
 ```{r eval = FALSE}
 # Appendix 2
 
@@ -705,7 +706,7 @@ We have now set our R Markdown environment and can start populating it! This mea
 
 #### Tables
 
-There will be more details about figures in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:
+There will be more details about tables in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:
 
 - Creating a table in R. 
 - Assigning a table caption.
@@ -726,18 +727,18 @@ knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable
 1. Use the same `.Rmd` document as above to practice working with tables. 
 2. Add a first-level header entitled `Tables`.
 3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
-4. Write the following R code in the code chunk:
+4. Copy/paste the following R code in your code chunk:
 ```{r tabgrades2, eval=FALSE, echo=TRUE}
 #Create a data.frame w/ grading scale
 grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
 #Plot table and add caption
 knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
 ```
-5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
-  - `echo=FALSE`
+5. Edit the code chunk options line by adding the following argument (**Note:** each argument should be separated by a comma):
+  - `echo = FALSE`
 6. Add the unique label `tabgrades` in the chunk options line (just after `{r`) to enable further cross-referencing.
-7. Test your code to check that it produces the expected table (using the `Run` button). 
-8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (remember to select your output format; Figure \@ref(fig:knitout)). 
+7. Test your code to check that it produces the expected table by using the `Run` button. 
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
 
 #### Figures
 
@@ -760,7 +761,7 @@ Here, you will learn the R Markdown syntax and R code required to replicate Figu
 1. Use the same `.Rmd` document as above to practice working with figures. 
 2. Add a first-level header entitled `Figures`.
 3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
-4. Write the following R code in the code chunk:
+4. Copy/paste the following R code in the code chunk:
 ```{r eval=FALSE}
 #Load and summarize cars dataset
 summary(cars)
@@ -768,17 +769,17 @@ summary(cars)
 plot(cars)
 ```
 5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
-  - `echo=FALSE`
-  - `results="hide"`
-  - `fig.cap="Plot of cars' speed in relation to distance."`
-  - `out.width = '100%'`
+  - `echo = FALSE`
+  - `results = "hide"`
+  - `fig.cap = "Plot of cars' speed in relation to distance."`
+  - `out.width = "100%"`
 6. Add the unique label `cars` in the chunk options line (just after `{r`) to enable further cross-referencing.
-7. Test your code to check that it produces the expected plot (using the `Run` button). 
-8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (remember to select your output format; Figure \@ref(fig:knitout)). 
+7. Test your code to check that it produces the expected plot by using the `Run` button. 
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
 
 ### Cross-reference tables and figures in the text
 
-Cross-referencing tables and figures in the main body of your R Markdown document can easily be done using the `\@ref()` function implemented in  the *bookdown* package. 
+Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the `\@ref()` function implemented in  the *bookdown* package. 
 
 #### General syntax
 
@@ -802,13 +803,15 @@ To cross-reference the `cars` figure type:
 
 `\@ref(fig:cars)`, which translates into \@ref(fig:cars).
 
-Note the this syntax doesn't automatically include the `Table` or `Figure` handles in front of the cross-reference. You will have to manually add `Table` or `Figure` in front of your `\@ref()` function.
+**Note:** This syntax doesn't automatically include the `Table` or `Figure` handles in front of the cross-reference. You will have to **manually add `Table` or `Figure` in front of `\@ref()`**.
+
+Cross-reference your table and figure by adding a new level 1 header entitled `Cross-referncing tables and figures` and then typing examples as shown below in this section.
 
 ### Citing references in text and adding a References section {#bib}
 
 #### The bibliography file
 
-To cite references in the R Markdown document those have to be saved in a bibliography file using the `BibTeX` format. Other formats can be used, but the `BibTeX` format is open-source and easy to edit. Please see this webpage for more details on other formats: https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+To cite references in the R Markdown document those have to be saved in a bibliography file using the `BibTeX` format. Other formats can be used, but the `BibTeX` format is open-source and easy to edit. Please see this [webpage](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more details on other formats. 
  
 Most journals allow saving citation of publications directly in `BibTeX` format, but when this feature is not available formats can be converted using online services (e.g. EndNote to BibTeX: https://www.bruot.org/ris2bib/).
 
@@ -848,7 +851,7 @@ Please find below an example of a reference formatted in `BibTeX` format:
 
 #### Citation identifier
 
-The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the bibliography/references section. 
+The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the References section. 
 
 #### Citing references
 
@@ -897,7 +900,7 @@ Students have to use their `.Rmd` document to practice citing references in the 
 
 ### Adding a References section
 
-Upon knitting, a bibliography/references section will be automatically generated at the end of the document. Usually, we recommend adding a References header just after the last paragraph of the document as displayed below:
+Upon knitting, a References section will be automatically generated at the end of the document. Usually, we recommend adding a References header just after the last paragraph of the document as displayed below:
 
 ```{r eval=FALSE}
 last paragraph...
@@ -1028,7 +1031,7 @@ If you want some of the text results to have different options, please adjust th
 
 #### Code decoration
 
-This section deals with settings related to code decoration (i.e. how it is outputted in the final `pdf` document) generated by code chunks.
+This section deals with settings related to code decoration (i.e. how it is outputted in the final `html` or `pdf` document) generated by code chunks.
 
 Please find below an example of options that could be applied across code chunks:
 
@@ -1083,7 +1086,6 @@ opts_chunk$set(fig.path = "Figures_MS/", dev=c('png', 'pdf'), dpi = 300)
 - `dpi = 300`: The DPI (dots per inch) for bitmap devices (dpi * inches = pixels). Please look at publishing requirements to set this parameter appropriately.
 
 It is worth noting that you might be using external figures in your `.Rmd` document. To avoid confusions between figures generated by the `.Rmd` document and those coming from outside, it is best practice to have them saved in two different subfolders (see Figure \@ref(fig:projstr) for more details). 
-
 
 ##### Additional plots options
 
