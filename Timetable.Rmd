@@ -91,7 +91,7 @@ timetable <- data.frame(datesclass, topic)
 #Some editing to better print table in pdf doc
 timetable <- as.matrix(timetable)
 rownames(timetable) <- rep("", nrow(timetable))
-colnames(timetable)[5] <- "Task/Deadline"
+colnames(timetable)[5] <- "Homework"
 ###~~~
 #Plot timetable in doc
 ###~~~
