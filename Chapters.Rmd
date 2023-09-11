@@ -817,12 +817,12 @@ Most journals allow saving citation of publications directly in `BibTeX` format,
 
 ##### Procedure to do prior to citing references in an R Markdown document  
 
-1. Save all your `BibTeX` references in a text file and make sure to add the `.bib` extension. 
-2. This file has to be deposited in the same folder as your `.Rmd` file.
-3. You will be inserting the name of your references file in the [YAML metadata section].
+1. Save all your `BibTeX` fromatted references in a text file and make sure to add the `.bib` extension. 
+2. The `.bib` file has to be deposited in the same folder as your `.Rmd` file (= working directory).
+3. Provide the name of your references file in the [YAML metadata section].
 4. You can visit this [webpage](https://academic.oup.com/botlinnean/article/186/4/435/4736317?searchresult=1) and click on the `Cite` icon to download a citation in `.bibtex` format. More details on the `BibTeX` format is provided below.
-5. References formatted in `BibTeX` format are available in associated file: 
-  + `Bibliography_Reproducible_Science_2.bib`.
+5. References formatted in the `BibTeX` format are available in the associated file: 
+    + `Bibliography_Reproducible_Science_2.bib`.
 
 #### Specifying a bibliography in the R Markdown file
 
@@ -900,7 +900,7 @@ Students have to use their `.Rmd` document to practice citing references in the 
 
 ### Adding a References section
 
-Upon knitting, a References section will be automatically generated at the end of the document. Usually, we recommend adding a References header just after the last paragraph of the document as displayed below:
+Upon knitting, a References section will automatically be generated and inserted at the end of the document. Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:
 
 ```{r eval=FALSE}
 last paragraph...
@@ -908,11 +908,11 @@ last paragraph...
 # References
 ```
 
-The bibliography will be inserted after this header (please see References section of this tutorial for more details).
+The bibliography will be inserted after this header (please see [References] section of this tutorial for more details).
 
 ### Format citations to journal style {#cslForm}
 
-In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a citation style file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.  
+In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a **c**itation **s**tyle **l**anguage file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.  
 
 #### What is the citation style language (CSL)?
 
@@ -1102,7 +1102,7 @@ Positioning figures close to their code chunks is critical and can get sorted by
 opts_chunk$set(fig.pos = "H")
 ```
 
-### Applying global changes to all code chunks
+### Apply global changes to all code chunks {#setupcode}
 
 In this section, we will collate all global settings discussed above into a code chunk entitled `setup`, which will be placed under the YAML metadata section. In addition to containing the global settings, it is advisable to also include a code section devoted to loading required R packages in the `setup` code chunk. 
 
@@ -1145,25 +1145,26 @@ When inserting the above code into an R code chunk, please set the options of th
 
 Options (and their associated arguments) in the code chunk have to be separated by commas.
 
-### An exercise to work on learning objectives 
+### Exercise to work on learning objectives 
 
 Please conduct the above exercise to get accustomed with the material presented in the tutorial. This exercise is divided into six steps as follows:
 
-1. Open RStudio, create and save a `.Rmd` document (**Tip:** save the file in a new folder).
-2. Set your working directory according to file location.
-3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) and entitle it `setup`. This code chunk will be used to define the global settings for the following options as implemented in the `opts_chunk$set()` function:
-  - Text results.
-  - Code decoration.
-  - Caching code.
-  - Plots.
-  - Positioning of figures.
-4. Use the R code provided below (which generates a plot) to learn more about the effect of global settings on code outputs.
-5. Once the file is completed, compile your document using the `Knit` ![](Figures/knit_2.png) button. Please pay attention to the outputs in your folder.
-6. Use the `bookdown` `\@ref()` function to cite your figure/plot in the text.
+1. Open RStudio, and open your `Chapter_1_PartB.Rmd` document.
+2. Set your working directory according to file location. **Note:** This is especially important if you want to test your R code prior to knitting the document. 
+3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) directly under the YAML metadata section and entitle it `setup`. This code chunk will be used to define the global settings for the following options as implemented in the `opts_chunk$set()` function:
+    - Text results.
+    - Code decoration.
+    - Caching code.
+    - Plots.
+    - Positioning of figures.
+4. Copy the content of the code presented in this [section](#setupcode) inside of your `setup` code chunk. 
+5. Use the R code provided [below](#step5) (which generates a plot) to learn more about the effect of global settings on code outputs.
+6. Once the file is completed, compile your document using the `Knit` ![](Figures/knit_2.png) button. Please pay attention to the outputs in your folder (= working directory).
+7. Use the `bookdown` `\@ref()` function to cite your figure/plot in the text.
 
-### An R code to generate a plot & cross-reference it in text
+#### R code for step 5 {#step5}
 
-The R code provided below is associated to step 4 of the exercise and it produces the plot displayed in Figure \@ref(fig:PlotFig).
+The R code provided below is associated with step 5 of the exercise and it produces the plot displayed in Figure \@ref(fig:PlotFig).
 
 ```{r PlotFig, echo=FALSE, results="hide", fig.cap="Plot of y ~ x."}
 # Generate a set of observations (n=100) that have a normal distribution
@@ -1179,12 +1180,10 @@ plot(x, y)
 To get there:
 
 1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) and set the following options and associated arguments:
-
-- `Plot`: Unique ID of code chunk.
-- `fig.cap="Plot of y ~ x."`: Figure caption.
-- `fig.show="asis"`: Figure display.
-- `out.width = '100%'`: Figure width on the page.
-
+    - `Plot`: Unique ID of code chunk.
+    - `fig.cap = "Plot of y ~ x."`: Figure caption.
+    - `fig.show = "asis"`: Figure display.
+    - `out.width = '100%'`: Figure width on the page.
 2. Enter the following R code in the code chunk.
 
 ```{r Plot2, eval = FALSE}
@@ -1199,7 +1198,7 @@ plot(x, y)
 ```
 
 3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
-4. Go to step 5 in the above section and complete the exercise.
+4. Go to step 6 in the above section and complete the exercise.
 
 ## PART D: User Defined Functions in R {#partD}
 
