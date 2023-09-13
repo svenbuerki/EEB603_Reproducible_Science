@@ -129,7 +129,7 @@ Files are as follows:
 - `AmJBot.csl`: This citation style language (CSL) file allows formatting citations and bibliography following citation style of *American Journal of Botany*.
 - `Bioinformatic workflow_PART2.pdf`: A `pdf` file containing the bioinformatic workflow taught in this class. This file will be used to learn how to incorporate a figure into R Markdown file.
 
-### Install R Markdown software
+### Install RMarkdown software
 
 Software and packages required to perform this tutorial are detailed below. Students should install those software and packages on their personal computers to be able to complete this course. Additional packages might need to be installed and the instructor will provide guidance on how to install those as part of the forthcoming tutorials.
 
@@ -425,6 +425,25 @@ This tutorial is devoted to part B of chapter 1 and provides students with oppor
 - [**Cite references in the text and add a References section**](#bib)
 - [**Format citations to journal style**](#cslForm)
 
+### RMarkdown file structure
+
+To facilitate teaching of the learning outcomes, a roadmap with the RMarkdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). 
+
+To support reproducibility of your research, we are structuring the RMarkdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
+
+1. The YAML metadata section (at the top of the document) must contain information about your bibliography (`*.bib`) and citation style language (`*.csl`) files, which have to be stored in the working directory .
+2. Two R code chunks are provided just under the YAML metadata section to:
+    - [Code chunk #1]{.underline}: Install and load packages and generate a packages.bib file (stored in the working directory).
+    - [Code chunk #2]{.underline}: Setting code chunk global options
+3. The Markdown section below the two R code chunks is edited to add headers associated with References and Appendices.
+4. Finally, two R code chunks are provided in the Appendices section to:
+    - [Code chunk #3]{.underline}: Provide citations of software (relying on output of Code chunk #1) associated to Appendix 1.
+    - [Code chunk #4]{.underline}: Provide software versions (relying on *sessionInfo()*) associated to Appendix 2.
+
+```{r RMarkdwnstrct, echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
+knitr::include_graphics("Figures/RMarkdown_file_structure.png")
+```
+
 ### Associated files supporting this tutorial
 
 Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
@@ -499,7 +518,7 @@ knitr::include_graphics("Figures/MikTex.png")
 
 #### YAML metadata section {#YAMLset}
 
-The YAML metadata section allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):
+The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):
 
 1. Title (`title`).
 2. Subtitle (`subtitle`).
@@ -533,7 +552,7 @@ csl: AmJBot.csl
 
 ##### Step-by-step procedure
 
-Do the following steps to set your YAML metadata section:
+Do the following steps to set your YAML metadata section (also see Figure \@ref(fig:RMarkdwnstrct)):
 
 1. Create a new R Markdown document. 
 2. Save the `.Rmd` document into a new project folder in `Reproducible_Science/Chapters/Chapter_1/` (**Note:** this folder has to be created prior to executing this step). 
@@ -559,11 +578,11 @@ knitr::include_graphics("Figures/knit_drop_down.png")
 
 #### Load required R packages
 
-It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented [here](#instDep)). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
+It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented [here](#instDep)) (see Figure \@ref(fig:RMarkdwnstrct)). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
 
 ##### Step-by-step procedure
 
-1. Include an R code chunk directly under your YAML metadata section.
+1. Include an R code chunk directly under your YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)).
 2. Name code chunk `packages` and set options line as follows:
   + `echo = FALSE`, 
   + `warning = FALSE`, 
@@ -635,11 +654,11 @@ The `.packages()` argument returns *invisibly* the names of all packages loaded 
 
 #### Generate Appendix with citations for all R packages
 
-Although a bibliography/references section will be provided at the end of your document to cite in text references (see [References]), it is customized to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
+Although a References section will be provided at the end of your document to cite in text references (see [References] and Figure \@ref(fig:RMarkdwnstrct)), it is customized to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
 
 ##### Step-by-step procedure
 
-1. Include Appendices after the References section.
+1. Include Appendices after the References section (see Figure \@ref(fig:RMarkdwnstrct)).
   + This is done by using `<div id="refs"></div>` as shown below, which allows printing Appendices (or any other material) after the References section (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography) for more details):
 ```{r eval=FALSE}
 # References
@@ -675,7 +694,7 @@ read.bibtex(file = "packages.bib")
 
 #### Generate Appendix with R package versions used to produce report
 
-In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems. With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
+In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems (see Figure \@ref(fig:RMarkdwnstrct)). With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
 wants to reproduce your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
 
 ```{r eval=T, echo=T}
@@ -779,7 +798,7 @@ plot(cars)
 
 ### Cross-reference tables and figures in the text {#crossrefTabFig}
 
-Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the `\@ref()` function implemented in  the *bookdown* package. 
+Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the `\@ref()` function implemented in  the *bookdown* package (see Figure \@ref(fig:RMarkdwnstrct)). 
 
 #### General syntax
 
@@ -824,15 +843,15 @@ Most journals allow saving citation of publications directly in `BibTeX` format,
 5. References formatted in the `BibTeX` format are available in the associated file: 
     + `Bibliography_Reproducible_Science_2.bib`.
 
-#### Specifying a bibliography in the R Markdown file
+#### Specifying a bibliography in the RMarkdown file
 
-The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles. In order to use this feature, you need to specify a bibliography file in the [YAML metadata section]. 
+The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles (see Figure \@ref(fig:RMarkdwnstrct)). In order to use this feature, you need to specify a bibliography file in the [YAML metadata section]. 
 
 #### BibTeX format
 
 Please find below an example of a reference formatted in `BibTeX` format:
 
-```{r eval=FALSE}
+```{r eval = FALSE}
 # Example of BibTex format for Baker (2016) published in Nature
 @Article{Baker_2016,
   doi = {10.1038/533452a},
@@ -900,7 +919,7 @@ Students have to use their `.Rmd` document to practice citing references in the 
 
 ### Adding a References section
 
-Upon knitting, a References section will automatically be generated and inserted at the end of the document. Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:
+Upon knitting, a References section will automatically be generated and inserted at the end of the document (see Figure \@ref(fig:RMarkdwnstrct)). Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:
 
 ```{r eval=FALSE}
 last paragraph...
@@ -925,9 +944,9 @@ There are two main CSL repositories:
 - **GitHub Repository:** https://github.com/citation-style-language/styles
 - **Zotero Style Repository:** https://www.zotero.org/styles
 
-#### How to use a CSL file in an R Markdown to format citations and bibliography?
+#### How to use a CSL file in an RMarkdown to format citations and bibliography?
 
-Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file:
+Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file (see Figure \@ref(fig:RMarkdwnstrct) for more details):
 
 1. Download the CSL file using repositories provided above. Some journals provide their CSL files on their websites (one has been made available for you to use in the associated files: `AmJBot.csl`).
 2. Save the CSL file in the same working directory as the `.Rmd` file.
@@ -964,6 +983,10 @@ This tutorial is devoted to part C of chapter 1 and provides students with oppor
 ### Associated files supporting this tutorial
 
 Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
+
+### Download presentation
+
+The slides presented in class can be downloaded [here](Chapters_files/Chapter_01_PartC.pdf). All the information presented in these slides are found in the text below.
 
 ### Set your working directory
 

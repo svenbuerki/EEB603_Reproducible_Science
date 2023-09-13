@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2023-09-11" />
+<meta name="date" content="2023-09-13" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -389,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2023-09-11</h4>
+<h4 class="date">2023-09-13</h4>
 
 </div>
 
@@ -442,8 +442,8 @@ Figure 2.1: The spectrum of reproducibility.
 <li><code>Bioinformatic workflow_PART2.pdf</code>: A <code>pdf</code> file containing the bioinformatic workflow taught in this class. This file will be used to learn how to incorporate a figure into R Markdown file.</li>
 </ul>
 </div>
-<div id="install-r-markdown-software" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Install R Markdown software</h3>
+<div id="install-rmarkdown-software" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Install RMarkdown software</h3>
 <p>Software and packages required to perform this tutorial are detailed below. Students should install those software and packages on their personal computers to be able to complete this course. Additional packages might need to be installed and the instructor will provide guidance on how to install those as part of the forthcoming tutorials.</p>
 <ul>
 <li><strong>R</strong>: <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a></li>
@@ -743,14 +743,39 @@ Figure 2.6: Example of code chunks.
 <li><a href="#cslForm"><strong>Format citations to journal style</strong></a></li>
 </ul>
 </div>
-<div id="associated-files-supporting-this-tutorial" class="section level3" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Associated files supporting this tutorial</h3>
+<div id="rmarkdown-file-structure" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> RMarkdown file structure</h3>
+<p>To facilitate teaching of the learning outcomes, a roadmap with the RMarkdown file (<code>*.Rmd</code>) structure is summarized in Figure <a href="#fig:RMarkdwnstrct">2.7</a>.</p>
+<p>To support reproducibility of your research, we are structuring the RMarkdown file as follows (Figure <a href="#fig:RMarkdwnstrct">2.7</a>):</p>
+<ol style="list-style-type: decimal">
+<li>The YAML metadata section (at the top of the document) must contain information about your bibliography (<code>*.bib</code>) and citation style language (<code>*.csl</code>) files, which have to be stored in the working directory .</li>
+<li>Two R code chunks are provided just under the YAML metadata section to:
+<ul>
+<li><u>Code chunk #1</u>: Install and load packages and generate a packages.bib file (stored in the working directory).</li>
+<li><u>Code chunk #2</u>: Setting code chunk global options</li>
+</ul></li>
+<li>The Markdown section below the two R code chunks is edited to add headers associated with References and Appendices.</li>
+<li>Finally, two R code chunks are provided in the Appendices section to:
+<ul>
+<li><u>Code chunk #3</u>: Provide citations of software (relying on output of Code chunk #1) associated to Appendix 1.</li>
+<li><u>Code chunk #4</u>: Provide software versions (relying on <em>sessionInfo()</em>) associated to Appendix 2.</li>
+</ul></li>
+</ol>
+<div class="figure"><span style="display:block;" id="fig:RMarkdwnstrct"></span>
+<img src="Figures/RMarkdown_file_structure.png" alt="Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details." width="100%" />
+<p class="caption">
+Figure 2.7: Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.
+</p>
+</div>
+</div>
+<div id="associated-files-supporting-this-tutorial" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Associated files supporting this tutorial</h3>
 <p>Please refer to <a href="#Files">section</a> for more details on supporting files and their locations on the shared Google Drive.</p>
 </div>
-<div id="setRMd" class="section level3" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> Set your R Markdown environment</h3>
-<div id="instDep" class="section level4" number="2.3.3.1">
-<h4><span class="header-section-number">2.3.3.1</span> Install dependencies</h4>
+<div id="setRMd" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Set your R Markdown environment</h3>
+<div id="instDep" class="section level4" number="2.3.4.1">
+<h4><span class="header-section-number">2.3.4.1</span> Install dependencies</h4>
 <p>To execute this tutorial the following R packages (declared in <code>pkg</code> object) have to be installed on your computer using the code provided below.</p>
 <p>The best procedure to ensure reproducibility would be to copy the code below in an R script file (entitled <code>01_R_dependencies.R</code>) saved at the root of your working directory (if this directory does not exist yet, please start by creating it and naming it <code>Chapter_1_PartB</code>).</p>
 <pre class="r"><code>##~~~
@@ -799,11 +824,11 @@ sapply(pkg, require, character.only = TRUE)</code></pre>
 ##        bibtex      devtools 
 ##          TRUE          TRUE</code></pre>
 </div>
-<div id="texdistr" class="section level4" number="2.3.3.2">
-<h4><span class="header-section-number">2.3.3.2</span> TeX distribution</h4>
+<div id="texdistr" class="section level4" number="2.3.4.2">
+<h4><span class="header-section-number">2.3.4.2</span> TeX distribution</h4>
 <p>If you are planning to create <code>PDF</code> documents, you will need to install a <code>TeX</code> distribution on your computers. Please refer to this website for more details: <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a></p>
-<div id="set-miktex-for-compiling-pdf-documents-on-windows-computers" class="section level5" number="2.3.3.2.1">
-<h5><span class="header-section-number">2.3.3.2.1</span> Set MiKTeX for compiling PDF documents on Windows computers</h5>
+<div id="set-miktex-for-compiling-pdf-documents-on-windows-computers" class="section level5" number="2.3.4.2.1">
+<h5><span class="header-section-number">2.3.4.2.1</span> Set MiKTeX for compiling PDF documents on Windows computers</h5>
 <p>Several students working on Windows computers shared difficulties in compiling <code>PDF</code> documents in RStudio. This issue is associated to <code>MiKTeX</code> preventing RStudio to install or update <code>TeX</code> packages required to knit your documents.</p>
 <p>To solve this issue apply the following procedure:</p>
 <ol style="list-style-type: decimal">
@@ -812,7 +837,7 @@ sapply(pkg, require, character.only = TRUE)</code></pre>
 </ol>
 <ol style="list-style-type: lower-alpha">
 <li>Clicking on <code>Settings</code> tab.</li>
-<li>Ticking the radio button <code>Always install missing packages on-the-fly</code> under the “You can choose whether missing packages are to be installed on-the-fly” header (see Figure <a href="#fig:MikTex">2.7</a>).</li>
+<li>Ticking the radio button <code>Always install missing packages on-the-fly</code> under the “You can choose whether missing packages are to be installed on-the-fly” header (see Figure <a href="#fig:MikTex">2.8</a>).</li>
 </ol>
 <ol start="3" style="list-style-type: decimal">
 <li>Restarting <code>RStudio</code> and you should be able to knit <code>pdf</code> documents.</li>
@@ -820,14 +845,14 @@ sapply(pkg, require, character.only = TRUE)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:MikTex"></span>
 <img src="Figures/MikTex.png" alt="Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly." width="100%" />
 <p class="caption">
-Figure 2.7: Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly.
+Figure 2.8: Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly.
 </p>
 </div>
 </div>
 </div>
-<div id="YAMLset" class="section level4" number="2.3.3.3">
-<h4><span class="header-section-number">2.3.3.3</span> YAML metadata section</h4>
-<p>The YAML metadata section allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2023b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):</p>
+<div id="YAMLset" class="section level4" number="2.3.4.3">
+<h4><span class="header-section-number">2.3.4.3</span> YAML metadata section</h4>
+<p>The YAML metadata section (Figure <a href="#fig:RMarkdwnstrct">2.7</a>) allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the <em>knitr</em> <span class="citation">(<a href="#ref-knitr2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2023b</a>)</span> and <em>bookdown</em> packages <span class="citation">(<a href="#ref-bookdown2016" role="doc-biblioref">Xie, 2016</a>, <a href="#ref-R-bookdown" role="doc-biblioref">2023a</a>)</span> to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):</p>
 <ol style="list-style-type: decimal">
 <li>Title (<code>title</code>).</li>
 <li>Subtitle (<code>subtitle</code>).</li>
@@ -855,9 +880,9 @@ fontsize: 12pt
 bibliography: Bibliography_Reproducible_Science_2.bib 
 csl: AmJBot.csl
 ---</code></pre>
-<div id="step-by-step-procedure" class="section level5" number="2.3.3.3.1">
-<h5><span class="header-section-number">2.3.3.3.1</span> Step-by-step procedure</h5>
-<p>Do the following steps to set your YAML metadata section:</p>
+<div id="step-by-step-procedure" class="section level5" number="2.3.4.3.1">
+<h5><span class="header-section-number">2.3.4.3.1</span> Step-by-step procedure</h5>
+<p>Do the following steps to set your YAML metadata section (also see Figure <a href="#fig:RMarkdwnstrct">2.7</a>):</p>
 <ol style="list-style-type: decimal">
 <li>Create a new R Markdown document.</li>
 <li>Save the <code>.Rmd</code> document into a new project folder in <code>Reproducible_Science/Chapters/Chapter_1/</code> (<strong>Note:</strong> this folder has to be created prior to executing this step).</li>
@@ -870,8 +895,8 @@ csl: AmJBot.csl
 <li>Edit the top YAML metadata section as shown in the <a href="#YAMLset">section</a> above.</li>
 </ol>
 </div>
-<div id="extra-information" class="section level5" number="2.3.3.3.2">
-<h5><span class="header-section-number">2.3.3.3.2</span> Extra information</h5>
+<div id="extra-information" class="section level5" number="2.3.4.3.2">
+<h5><span class="header-section-number">2.3.4.3.2</span> Extra information</h5>
 <ul>
 <li><strong>Warning:</strong> The <code>.bib</code> and <code>.csl</code> files have to be stored in the same working directory as your <code>.Rmd</code> file.</li>
 <li><strong><code>R</code> functions can be used in the YAML metadata section</strong> by using inline R code syntax (see part A for more details). Here, we use <code>Sys.Date()</code> to automatically date the output document.</li>
@@ -881,23 +906,23 @@ csl: AmJBot.csl
 </ul>
 </div>
 </div>
-<div id="knitting-procedure" class="section level4" number="2.3.3.4">
-<h4><span class="header-section-number">2.3.3.4</span> Knitting procedure</h4>
-<p>Since you have declared two output documents in the YAML metadata section and that those are specific to <code>bookdown</code> functions, you will have to select which output format you want to use to compile your document by clicking on the drop-down list on the left side of the <code>Knit</code> button (see Figure <a href="#fig:knitout">2.8</a>). To use <code>bookdown</code> functions, please make sure to select one of the following options (see Figure <a href="#fig:knitout">2.8</a>): <code>Knit to html_document2</code> or <code>Knit to pdf_document2</code>.</p>
+<div id="knitting-procedure" class="section level4" number="2.3.4.4">
+<h4><span class="header-section-number">2.3.4.4</span> Knitting procedure</h4>
+<p>Since you have declared two output documents in the YAML metadata section and that those are specific to <code>bookdown</code> functions, you will have to select which output format you want to use to compile your document by clicking on the drop-down list on the left side of the <code>Knit</code> button (see Figure <a href="#fig:knitout">2.9</a>). To use <code>bookdown</code> functions, please make sure to select one of the following options (see Figure <a href="#fig:knitout">2.9</a>): <code>Knit to html_document2</code> or <code>Knit to pdf_document2</code>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:knitout"></span>
 <img src="Figures/knit_drop_down.png" alt="Snapshot of RStudio console showing the drop-down list associated to Knit button." width="100%" />
 <p class="caption">
-Figure 2.8: Snapshot of RStudio console showing the drop-down list associated to Knit button.
+Figure 2.9: Snapshot of RStudio console showing the drop-down list associated to Knit button.
 </p>
 </div>
 </div>
-<div id="load-required-r-packages" class="section level4" number="2.3.3.5">
-<h4><span class="header-section-number">2.3.3.5</span> Load required R packages</h4>
-<p>It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented <a href="#instDep">here</a>). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!</p>
-<div id="step-by-step-procedure-1" class="section level5" number="2.3.3.5.1">
-<h5><span class="header-section-number">2.3.3.5.1</span> Step-by-step procedure</h5>
+<div id="load-required-r-packages" class="section level4" number="2.3.4.5">
+<h4><span class="header-section-number">2.3.4.5</span> Load required R packages</h4>
+<p>It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented <a href="#instDep">here</a>) (see Figure <a href="#fig:RMarkdwnstrct">2.7</a>). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!</p>
+<div id="step-by-step-procedure-1" class="section level5" number="2.3.4.5.1">
+<h5><span class="header-section-number">2.3.4.5.1</span> Step-by-step procedure</h5>
 <ol style="list-style-type: decimal">
-<li>Include an R code chunk directly under your YAML metadata section.</li>
+<li>Include an R code chunk directly under your YAML metadata section (Figure <a href="#fig:RMarkdwnstrct">2.7</a>).</li>
 <li>Name code chunk <code>packages</code> and set options line as follows:</li>
 </ol>
 <ul>
@@ -943,8 +968,8 @@ print(&quot;Load packages and return status&quot;)
 sapply(pkg, require, character.only = TRUE)</code></pre>
 </div>
 </div>
-<div id="generate-citation-file-of-r-packages-used-to-produce-the-report" class="section level4" number="2.3.3.6">
-<h4><span class="header-section-number">2.3.3.6</span> Generate citation file of R packages used to produce the report</h4>
+<div id="generate-citation-file-of-r-packages-used-to-produce-the-report" class="section level4" number="2.3.4.6">
+<h4><span class="header-section-number">2.3.4.6</span> Generate citation file of R packages used to produce the report</h4>
 <p>I don’t know about you, but I am always struggling to properly cite R packages in my publications. If you want to retrieve the citation for an R package, you can use the base R function <code>citation()</code>. For instance, citations for <em>knitr</em> can be obtained as follow:</p>
 <pre class="r"><code># Generate citation for knitr
 citation(&quot;knitr&quot;)</code></pre>
@@ -1005,13 +1030,13 @@ toBibtex(citation(&quot;knitr&quot;))</code></pre>
 knitr::write_bib(.packages(), file = &quot;packages.bib&quot;)</code></pre>
 <p>The <code>.packages()</code> argument returns <em>invisibly</em> the names of all packages loaded in the current R session (if you want to see a return use <code>.packages(all.available = TRUE)</code>). This makes sure all packages being used in your code will have their citation entries written to the <code>.bib</code> file. Finally, to be able to cite those references (see <a href="#citation-identifier">Citation identifier</a>) in your text, the <a href="#YAMLset">YAML metadata section</a> has to be edited. See <a href="#appendix-1">Appendix 1</a> for a full list of references associated to the R packages used to generate this report.</p>
 </div>
-<div id="generate-appendix-with-citations-for-all-r-packages" class="section level4" number="2.3.3.7">
-<h4><span class="header-section-number">2.3.3.7</span> Generate Appendix with citations for all R packages</h4>
-<p>Although a bibliography/references section will be provided at the end of your document to cite in text references (see <a href="#references-1">References</a>), it is customized to add citations for all R packages used to generate the research in <a href="#appendix-1">Appendix 1</a>. We will learn here the procedure to assemble such Appendix.</p>
-<div id="step-by-step-procedure-2" class="section level5" number="2.3.3.7.1">
-<h5><span class="header-section-number">2.3.3.7.1</span> Step-by-step procedure</h5>
+<div id="generate-appendix-with-citations-for-all-r-packages" class="section level4" number="2.3.4.7">
+<h4><span class="header-section-number">2.3.4.7</span> Generate Appendix with citations for all R packages</h4>
+<p>Although a References section will be provided at the end of your document to cite in text references (see <a href="#references-1">References</a> and Figure <a href="#fig:RMarkdwnstrct">2.7</a>), it is customized to add citations for all R packages used to generate the research in <a href="#appendix-1">Appendix 1</a>. We will learn here the procedure to assemble such Appendix.</p>
+<div id="step-by-step-procedure-2" class="section level5" number="2.3.4.7.1">
+<h5><span class="header-section-number">2.3.4.7.1</span> Step-by-step procedure</h5>
 <ol style="list-style-type: decimal">
-<li>Include Appendices after the References section.</li>
+<li>Include Appendices after the References section (see Figure <a href="#fig:RMarkdwnstrct">2.7</a>).</li>
 </ol>
 <ul>
 <li>This is done by using <code>&lt;div id="refs"&gt;&lt;/div&gt;</code> as shown below, which allows printing Appendices (or any other material) after the References section (see <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography">here</a> for more details):</li>
@@ -1044,9 +1069,9 @@ read.bibtex(file = &quot;packages.bib&quot;)</code></pre>
 </ol>
 </div>
 </div>
-<div id="generate-appendix-with-r-package-versions-used-to-produce-report" class="section level4" number="2.3.3.8">
-<h4><span class="header-section-number">2.3.3.8</span> Generate Appendix with R package versions used to produce report</h4>
-<p>In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems. With R, the simplest (but a useful and important) approach to document your R environment is to report the output of <code>sessionInfo()</code> (or <code>devtools::session_info()</code>). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
+<div id="generate-appendix-with-r-package-versions-used-to-produce-report" class="section level4" number="2.3.4.8">
+<h4><span class="header-section-number">2.3.4.8</span> Generate Appendix with R package versions used to produce report</h4>
+<p>In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems (see Figure <a href="#fig:RMarkdwnstrct">2.7</a>). With R, the simplest (but a useful and important) approach to document your R environment is to report the output of <code>sessionInfo()</code> (or <code>devtools::session_info()</code>). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
 wants to reproduce your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of <code>sessionInfo()</code> showing the R version and packages that I used to create this document:</p>
 <pre class="r"><code># Collect Information About the Current R Session
 sessionInfo()</code></pre>
@@ -1105,14 +1130,14 @@ Version information about R, the operating system (OS) and attached or R loaded 
 sessionInfo()</code></pre>
 </div>
 </div>
-<div id="all-set-good-to-go" class="section level3" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> All set, good to go!</h3>
+<div id="all-set-good-to-go" class="section level3" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> All set, good to go!</h3>
 <p>We have now set our R Markdown environment and can start populating it! This means that you will be inserting your text and other code chunks directly under the <code>packages</code> code chunk. The <a href="#references-1">References</a> section constitutes the end of the main body of your document. If you want to add Appendices, do so under <a href="#appendix-1">Appendix 1</a>, appendices will be labelled differently from the main body of the document.</p>
 </div>
-<div id="insertTabFig" class="section level3" number="2.3.5">
-<h3><span class="header-section-number">2.3.5</span> Insert tables and figures in R Markdown document</h3>
-<div id="tables" class="section level4" number="2.3.5.1">
-<h4><span class="header-section-number">2.3.5.1</span> Tables</h4>
+<div id="insertTabFig" class="section level3" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> Insert tables and figures in R Markdown document</h3>
+<div id="tables" class="section level4" number="2.3.6.1">
+<h4><span class="header-section-number">2.3.6.1</span> Tables</h4>
 <p>There will be more details about tables in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:</p>
 <ul>
 <li>Creating a table in R.</li>
@@ -1120,8 +1145,8 @@ sessionInfo()</code></pre>
 <li>Providing a unique label to the R code chunk allowing further cross-referencing in the text.</li>
 <li>Displaying the table in the document.</li>
 </ul>
-<div id="step-by-step-protocol" class="section level5" number="2.3.5.1.1">
-<h5><span class="header-section-number">2.3.5.1.1</span> Step-by-step protocol</h5>
+<div id="step-by-step-protocol" class="section level5" number="2.3.6.1.1">
+<h5><span class="header-section-number">2.3.6.1.1</span> Step-by-step protocol</h5>
 <p>Here, you will learn the R Markdown syntax and R code required to replicate the grading scale presented in the Syllabus (see Table <a href="#tab:tabgrades">2.1</a>):</p>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -1259,15 +1284,15 @@ knitr::kable(grades, caption = &quot;Grading scale applied in this class.&quot;)
 <ol start="6" style="list-style-type: decimal">
 <li>Add the unique label <code>tabgrades</code> in the chunk options line (just after <code>{r</code>) to enable further cross-referencing.</li>
 <li>Test your code to check that it produces the expected table by using the <code>Run</code> button.</li>
-<li>Knit your document using the <code>Knit</code> button <img src="Figures/knit_2.png" /> on the editor toolbar (Figure <a href="#fig:knitout">2.8</a>).</li>
+<li>Knit your document using the <code>Knit</code> button <img src="Figures/knit_2.png" /> on the editor toolbar (Figure <a href="#fig:knitout">2.9</a>).</li>
 </ol>
 </div>
 </div>
-<div id="figures" class="section level4" number="2.3.5.2">
-<h4><span class="header-section-number">2.3.5.2</span> Figures</h4>
+<div id="figures" class="section level4" number="2.3.6.2">
+<h4><span class="header-section-number">2.3.6.2</span> Figures</h4>
 <p>There will be more details about figures in chapter 10; however this tutorial introduces key concepts related to figure making in R Markdown, more specifically on the following topics:</p>
 <ul>
-<li>Creating a figure in R (based on the <code>cars</code> dataset; Figure <a href="#fig:cars">2.9</a>).</li>
+<li>Creating a figure in R (based on the <code>cars</code> dataset; Figure <a href="#fig:cars">2.10</a>).</li>
 <li>Assigning a figure caption.</li>
 <li>Providing a unique label to the R code chunk allowing further cross-referencing in the text.</li>
 <li>Displaying the figure in the document.</li>
@@ -1275,12 +1300,12 @@ knitr::kable(grades, caption = &quot;Grading scale applied in this class.&quot;)
 <div class="figure"><span style="display:block;" id="fig:cars"></span>
 <img src="Chapters_files/figure-html/cars-1.png" alt="Plot of cars' speed in relation to distance." width="100%" />
 <p class="caption">
-Figure 2.9: Plot of cars’ speed in relation to distance.
+Figure 2.10: Plot of cars’ speed in relation to distance.
 </p>
 </div>
-<div id="step-by-step-protocol-1" class="section level5" number="2.3.5.2.1">
-<h5><span class="header-section-number">2.3.5.2.1</span> Step-by-step protocol</h5>
-<p>Here, you will learn the R Markdown syntax and R code required to replicate Figure <a href="#fig:cars">2.9</a>:</p>
+<div id="step-by-step-protocol-1" class="section level5" number="2.3.6.2.1">
+<h5><span class="header-section-number">2.3.6.2.1</span> Step-by-step protocol</h5>
+<p>Here, you will learn the R Markdown syntax and R code required to replicate Figure <a href="#fig:cars">2.10</a>:</p>
 <ol style="list-style-type: decimal">
 <li>Use the same <code>.Rmd</code> document as above to practice working with figures.</li>
 <li>Add a first-level header entitled <code>Figures</code>.</li>
@@ -1303,16 +1328,16 @@ plot(cars)</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Add the unique label <code>cars</code> in the chunk options line (just after <code>{r</code>) to enable further cross-referencing.</li>
 <li>Test your code to check that it produces the expected plot by using the <code>Run</code> button.</li>
-<li>Knit your document using the <code>Knit</code> button <img src="Figures/knit_2.png" /> on the editor toolbar (Figure <a href="#fig:knitout">2.8</a>).</li>
+<li>Knit your document using the <code>Knit</code> button <img src="Figures/knit_2.png" /> on the editor toolbar (Figure <a href="#fig:knitout">2.9</a>).</li>
 </ol>
 </div>
 </div>
 </div>
-<div id="crossrefTabFig" class="section level3" number="2.3.6">
-<h3><span class="header-section-number">2.3.6</span> Cross-reference tables and figures in the text</h3>
-<p>Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the <code>\@ref()</code> function implemented in the <em>bookdown</em> package.</p>
-<div id="general-syntax" class="section level4" number="2.3.6.1">
-<h4><span class="header-section-number">2.3.6.1</span> General syntax</h4>
+<div id="crossrefTabFig" class="section level3" number="2.3.7">
+<h3><span class="header-section-number">2.3.7</span> Cross-reference tables and figures in the text</h3>
+<p>Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the <code>\@ref()</code> function implemented in the <em>bookdown</em> package (see Figure <a href="#fig:RMarkdwnstrct">2.7</a>).</p>
+<div id="general-syntax" class="section level4" number="2.3.7.1">
+<h4><span class="header-section-number">2.3.7.1</span> General syntax</h4>
 <p>The general syntax is as follows:</p>
 <pre class="r"><code># Cross-referencing tables in main body of text
 \@ref(tab:code_chunk_ID)
@@ -1320,24 +1345,24 @@ plot(cars)</code></pre>
 # Cross-referencing figures in main body of text
 \@ref(fig:code_chunk_ID)</code></pre>
 </div>
-<div id="step-by-step-procedure-3" class="section level4" number="2.3.6.2">
-<h4><span class="header-section-number">2.3.6.2</span> Step-by-step procedure</h4>
+<div id="step-by-step-procedure-3" class="section level4" number="2.3.7.2">
+<h4><span class="header-section-number">2.3.7.2</span> Step-by-step procedure</h4>
 <p>To cross-reference the <code>tabgrades</code> table type:</p>
 <p><code>\@ref(tab:tabgrades)</code>, which translates into <a href="#tab:tabgrades">2.1</a>.</p>
 <p>To cross-reference the <code>cars</code> figure type:</p>
-<p><code>\@ref(fig:cars)</code>, which translates into <a href="#fig:cars">2.9</a>.</p>
+<p><code>\@ref(fig:cars)</code>, which translates into <a href="#fig:cars">2.10</a>.</p>
 <p><strong>Note:</strong> This syntax doesn’t automatically include the <code>Table</code> or <code>Figure</code> handles in front of the cross-reference. You will have to <strong>manually add <code>Table</code> or <code>Figure</code> in front of <code>\@ref()</code></strong>.</p>
 <p>Cross-reference your table and figure by adding a new level 1 header entitled <code>Cross-referncing tables and figures</code> and then typing examples as shown below in this section.</p>
 </div>
 </div>
-<div id="bib" class="section level3" number="2.3.7">
-<h3><span class="header-section-number">2.3.7</span> Cite references in text and add a References section</h3>
-<div id="the-bibliography-file" class="section level4" number="2.3.7.1">
-<h4><span class="header-section-number">2.3.7.1</span> The bibliography file</h4>
+<div id="bib" class="section level3" number="2.3.8">
+<h3><span class="header-section-number">2.3.8</span> Cite references in text and add a References section</h3>
+<div id="the-bibliography-file" class="section level4" number="2.3.8.1">
+<h4><span class="header-section-number">2.3.8.1</span> The bibliography file</h4>
 <p>To cite references in the R Markdown document those have to be saved in a bibliography file using the <code>BibTeX</code> format. Other formats can be used, but the <code>BibTeX</code> format is open-source and easy to edit. Please see this <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">webpage</a> for more details on other formats.</p>
 <p>Most journals allow saving citation of publications directly in <code>BibTeX</code> format, but when this feature is not available formats can be converted using online services (e.g. EndNote to BibTeX: <a href="https://www.bruot.org/ris2bib/" class="uri">https://www.bruot.org/ris2bib/</a>).</p>
-<div id="procedure-to-do-prior-to-citing-references-in-an-r-markdown-document" class="section level5" number="2.3.7.1.1">
-<h5><span class="header-section-number">2.3.7.1.1</span> Procedure to do prior to citing references in an R Markdown document</h5>
+<div id="procedure-to-do-prior-to-citing-references-in-an-r-markdown-document" class="section level5" number="2.3.8.1.1">
+<h5><span class="header-section-number">2.3.8.1.1</span> Procedure to do prior to citing references in an R Markdown document</h5>
 <ol style="list-style-type: decimal">
 <li>Save all your <code>BibTeX</code> fromatted references in a text file and make sure to add the <code>.bib</code> extension.</li>
 <li>The <code>.bib</code> file has to be deposited in the same folder as your <code>.Rmd</code> file (= working directory).</li>
@@ -1350,12 +1375,12 @@ plot(cars)</code></pre>
 </ol>
 </div>
 </div>
-<div id="specifying-a-bibliography-in-the-r-markdown-file" class="section level4" number="2.3.7.2">
-<h4><span class="header-section-number">2.3.7.2</span> Specifying a bibliography in the R Markdown file</h4>
-<p>The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles. In order to use this feature, you need to specify a bibliography file in the <a href="#YAMLset">YAML metadata section</a>.</p>
+<div id="specifying-a-bibliography-in-the-rmarkdown-file" class="section level4" number="2.3.8.2">
+<h4><span class="header-section-number">2.3.8.2</span> Specifying a bibliography in the RMarkdown file</h4>
+<p>The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles (see Figure <a href="#fig:RMarkdwnstrct">2.7</a>). In order to use this feature, you need to specify a bibliography file in the <a href="#YAMLset">YAML metadata section</a>.</p>
 </div>
-<div id="bibtex-format" class="section level4" number="2.3.7.3">
-<h4><span class="header-section-number">2.3.7.3</span> BibTeX format</h4>
+<div id="bibtex-format" class="section level4" number="2.3.8.3">
+<h4><span class="header-section-number">2.3.8.3</span> BibTeX format</h4>
 <p>Please find below an example of a reference formatted in <code>BibTeX</code> format:</p>
 <pre class="r"><code># Example of BibTex format for Baker (2016) published in Nature
 @Article{Baker_2016,
@@ -1372,12 +1397,12 @@ plot(cars)</code></pre>
   journal = {Nature},
 }</code></pre>
 </div>
-<div id="citation-identifier" class="section level4" number="2.3.7.4">
-<h4><span class="header-section-number">2.3.7.4</span> Citation identifier</h4>
+<div id="citation-identifier" class="section level4" number="2.3.8.4">
+<h4><span class="header-section-number">2.3.8.4</span> Citation identifier</h4>
 <p>The unique citation identifier of a reference (<code>Baker_2016</code> in the example above) is set by the user in the <code>BibTeX</code> citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the References section.</p>
 </div>
-<div id="citing-references" class="section level4" number="2.3.7.5">
-<h4><span class="header-section-number">2.3.7.5</span> Citing references</h4>
+<div id="citing-references" class="section level4" number="2.3.8.5">
+<h4><span class="header-section-number">2.3.8.5</span> Citing references</h4>
 <p>Citations go inside square brackets (<code>[]</code>) and are separated by semicolons. Each citation must have a key, composed of <code>@</code> + the citation identifier (see above) as stored into the <code>BibTeX</code> file.</p>
 <p>Please find below some examples on citation protocols:</p>
 <pre class="r"><code>#Syntax
@@ -1398,38 +1423,38 @@ Baker says blah blah [-@Baker_2016].</code></pre>
 <p>Once knitted, the above code/syntax turns into:</p>
 <p><span class="citation">Baker (<a href="#ref-Baker_2016" role="doc-biblioref">2016</a>)</span> says blah.</p>
 <p><span class="citation">Baker (<a href="#ref-Baker_2016" role="doc-biblioref">2016 p. 1</a>)</span> says blah.</p>
-<div id="practice-citing-references" class="section level5" number="2.3.7.5.1">
-<h5><span class="header-section-number">2.3.7.5.1</span> Practice citing references</h5>
+<div id="practice-citing-references" class="section level5" number="2.3.8.5.1">
+<h5><span class="header-section-number">2.3.8.5.1</span> Practice citing references</h5>
 <p>Students have to use their <code>.Rmd</code> document to practice citing references in the text using procedures described above. To clearly define where you practice citing references, please do so under a <code>Citing references</code> header.</p>
 </div>
 </div>
 </div>
-<div id="adding-a-references-section" class="section level3" number="2.3.8">
-<h3><span class="header-section-number">2.3.8</span> Adding a References section</h3>
-<p>Upon knitting, a References section will automatically be generated and inserted at the end of the document. Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:</p>
+<div id="adding-a-references-section" class="section level3" number="2.3.9">
+<h3><span class="header-section-number">2.3.9</span> Adding a References section</h3>
+<p>Upon knitting, a References section will automatically be generated and inserted at the end of the document (see Figure <a href="#fig:RMarkdwnstrct">2.7</a>). Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:</p>
 <pre class="r"><code>last paragraph...
 
 # References</code></pre>
 <p>The bibliography will be inserted after this header (please see <a href="#references-1">References</a> section of this tutorial for more details).</p>
 </div>
-<div id="cslForm" class="section level3" number="2.3.9">
-<h3><span class="header-section-number">2.3.9</span> Format citations to journal style</h3>
+<div id="cslForm" class="section level3" number="2.3.10">
+<h3><span class="header-section-number">2.3.10</span> Format citations to journal style</h3>
 <p>In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a <strong>c</strong>itation <strong>s</strong>tyle <strong>l</strong>anguage file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.</p>
-<div id="what-is-the-citation-style-language-csl" class="section level4" number="2.3.9.1">
-<h4><span class="header-section-number">2.3.9.1</span> What is the citation style language (CSL)?</h4>
+<div id="what-is-the-citation-style-language-csl" class="section level4" number="2.3.10.1">
+<h4><span class="header-section-number">2.3.10.1</span> What is the citation style language (CSL)?</h4>
 <p>The <strong>C</strong>itation <strong>S</strong>tyle <strong>L</strong>anguage (CSL) was developed by an open-source project and aims at facilitating scholarly publishing by <strong>automating the formatting of citations and bibliographies</strong>. This project has developed the CSL and maintains a crowd sourced repository with over 8000 free CSL citation styles. Please see the following website for more details: <a href="https://citationstyles.org" class="uri">https://citationstyles.org</a></p>
 </div>
-<div id="csl-repositories" class="section level4" number="2.3.9.2">
-<h4><span class="header-section-number">2.3.9.2</span> CSL repositories</h4>
+<div id="csl-repositories" class="section level4" number="2.3.10.2">
+<h4><span class="header-section-number">2.3.10.2</span> CSL repositories</h4>
 <p>There are two main CSL repositories:</p>
 <ul>
 <li><strong>GitHub Repository:</strong> <a href="https://github.com/citation-style-language/styles" class="uri">https://github.com/citation-style-language/styles</a></li>
 <li><strong>Zotero Style Repository:</strong> <a href="https://www.zotero.org/styles" class="uri">https://www.zotero.org/styles</a></li>
 </ul>
 </div>
-<div id="how-to-use-a-csl-file-in-an-r-markdown-to-format-citations-and-bibliography" class="section level4" number="2.3.9.3">
-<h4><span class="header-section-number">2.3.9.3</span> How to use a CSL file in an R Markdown to format citations and bibliography?</h4>
-<p>Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file:</p>
+<div id="how-to-use-a-csl-file-in-an-rmarkdown-to-format-citations-and-bibliography" class="section level4" number="2.3.10.3">
+<h4><span class="header-section-number">2.3.10.3</span> How to use a CSL file in an RMarkdown to format citations and bibliography?</h4>
+<p>Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file (see Figure <a href="#fig:RMarkdwnstrct">2.7</a> for more details):</p>
 <ol style="list-style-type: decimal">
 <li>Download the CSL file using repositories provided above. Some journals provide their CSL files on their websites (one has been made available for you to use in the associated files: <code>AmJBot.csl</code>).</li>
 <li>Save the CSL file in the same working directory as the <code>.Rmd</code> file.</li>
@@ -1473,29 +1498,33 @@ csl: AmJBot.csl
 <h3><span class="header-section-number">2.4.2</span> Associated files supporting this tutorial</h3>
 <p>Please refer to <a href="#Files">section</a> for more details on supporting files and their locations on the shared Google Drive.</p>
 </div>
-<div id="set-your-working-directory" class="section level3" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> Set your working directory</h3>
-<p>Unlike R scripts where you have to set your working directory or provide the path to your files, the approach implemented in R Markdown document (<code>.Rmd</code>) automatically sets your working directory to the location of your <code>.Rmd</code> file. This procedure is done by <code>knitr</code> functions. <code>knitr</code> expects all declared files to be located in the same path as your <code>.Rmd</code> file or in a subfolder within this working directory. The main reason for this approach is to maximize portability of your R Markdown project, which is usually composed of a set of files (see Figure <a href="#fig:projstr">2.10</a>).</p>
+<div id="download-presentation" class="section level3" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Download presentation</h3>
+<p>The slides presented in class can be downloaded <a href="Chapters_files/Chapter_01_PartC.pdf">here</a>. All the information presented in these slides are found in the text below.</p>
+</div>
+<div id="set-your-working-directory" class="section level3" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Set your working directory</h3>
+<p>Unlike R scripts where you have to set your working directory or provide the path to your files, the approach implemented in R Markdown document (<code>.Rmd</code>) automatically sets your working directory to the location of your <code>.Rmd</code> file. This procedure is done by <code>knitr</code> functions. <code>knitr</code> expects all declared files to be located in the same path as your <code>.Rmd</code> file or in a subfolder within this working directory. The main reason for this approach is to maximize portability of your R Markdown project, which is usually composed of a set of files (see Figure <a href="#fig:projstr">2.11</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:projstr"></span>
 <img src="Figures/Project_structure.png" alt="Snapshot of the project structure associated to part C of Chapter 1. External figures used in the document are in Figures, whereas those generated by the document are saved in Figures MS." width="100%" />
 <p class="caption">
-Figure 2.10: Snapshot of the project structure associated to part C of Chapter 1. External figures used in the document are in Figures, whereas those generated by the document are saved in Figures MS.
+Figure 2.11: Snapshot of the project structure associated to part C of Chapter 1. External figures used in the document are in Figures, whereas those generated by the document are saved in Figures MS.
 </p>
 </div>
-<div id="instructions-to-setup-your-working-directory" class="section level4" number="2.4.3.1">
-<h4><span class="header-section-number">2.4.3.1</span> Instructions to setup your working directory</h4>
-<p>Before knitting your document, you will be testing your code and this requires to set your working directory. The can be done in RStudio by clicking (see Figure <a href="#fig:setwd">2.11</a>):</p>
+<div id="instructions-to-setup-your-working-directory" class="section level4" number="2.4.4.1">
+<h4><span class="header-section-number">2.4.4.1</span> Instructions to setup your working directory</h4>
+<p>Before knitting your document, you will be testing your code and this requires to set your working directory. The can be done in RStudio by clicking (see Figure <a href="#fig:setwd">2.12</a>):</p>
 <p><code>Session --&gt; Set Working Directory --&gt; To Source File Location</code></p>
 <div class="figure"><span style="display:block;" id="fig:setwd"></span>
 <img src="Figures/Setwkd.png" alt="Snapshot of RStudio showing procedure to set your working directory to allow testing your code prior to knitting." width="100%" />
 <p class="caption">
-Figure 2.11: Snapshot of RStudio showing procedure to set your working directory to allow testing your code prior to knitting.
+Figure 2.12: Snapshot of RStudio showing procedure to set your working directory to allow testing your code prior to knitting.
 </p>
 </div>
 </div>
 </div>
-<div id="set-global-options-for-code-chunks" class="section level3" number="2.4.4">
-<h3><span class="header-section-number">2.4.4</span> Set global options for code chunks</h3>
+<div id="set-global-options-for-code-chunks" class="section level3" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> Set global options for code chunks</h3>
 <p>To improve code reproducibility and efficiency and to follow publication requirements, it is customed to include a “code chunk” at the beginning of your <code>.Rmd</code> file to set global options applying to the whole document. Those settings are related to the following elements of your code:</p>
 <ul>
 <li>text results.</li>
@@ -1508,8 +1537,8 @@ Figure 2.11: Snapshot of RStudio showing procedure to set your working directory
 <ul>
 <li><a href="https://yihui.name/knitr/options/" class="uri">https://yihui.name/knitr/options/</a></li>
 </ul>
-<div id="the-opts_chunkset-function" class="section level4" number="2.4.4.1">
-<h4><span class="header-section-number">2.4.4.1</span> The opts_chunk$set() function</h4>
+<div id="the-opts_chunkset-function" class="section level4" number="2.4.5.1">
+<h4><span class="header-section-number">2.4.5.1</span> The opts_chunk$set() function</h4>
 <p>The <code>knitr</code> function <code>opts_chunk$set()</code> is used to change the default global options in an <code>.Rmd</code> document.</p>
 <p>Before starting, a few special notes should be known on the options:</p>
 <ol style="list-style-type: decimal">
@@ -1519,14 +1548,14 @@ Figure 2.11: Snapshot of RStudio showing procedure to set your working directory
 </ol>
 <p>Here we will be discussing each part of the settings individually, but those will have to be merged into one code chunk in your document entitled <code>setup</code> (please see below for more details).</p>
 </div>
-<div id="text-results" class="section level4" number="2.4.4.2">
-<h4><span class="header-section-number">2.4.4.2</span> Text results</h4>
+<div id="text-results" class="section level4" number="2.4.5.2">
+<h4><span class="header-section-number">2.4.5.2</span> Text results</h4>
 <p>This section deals with settings related to text results generated by code chunks.</p>
 <p>Please find below an example of options that could be applied across code chunks:</p>
 <pre class="r"><code># Setup options for text results
 opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)</code></pre>
-<div id="explanations-of-the-text-results-options" class="section level5" number="2.4.4.2.1">
-<h5><span class="header-section-number">2.4.4.2.1</span> Explanations of the text results options</h5>
+<div id="explanations-of-the-text-results-options" class="section level5" number="2.4.5.2.1">
+<h5><span class="header-section-number">2.4.5.2.1</span> Explanations of the text results options</h5>
 <ul>
 <li><code>echo = TRUE</code>: Include all R source codes in the output file.</li>
 <li><code>warning = TRUE</code>: Preserve warnings (produced by <code>warning()</code>) in the output like we run R code in a terminal.</li>
@@ -1536,15 +1565,15 @@ opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)</cod
 <p>If you want some of the text results to have different options, please adjust those in their specific code chunks. This comment is valid for all the other general settings.</p>
 </div>
 </div>
-<div id="code-decoration" class="section level4" number="2.4.4.3">
-<h4><span class="header-section-number">2.4.4.3</span> Code decoration</h4>
+<div id="code-decoration" class="section level4" number="2.4.5.3">
+<h4><span class="header-section-number">2.4.5.3</span> Code decoration</h4>
 <p>This section deals with settings related to code decoration (i.e. how it is outputted in the final <code>html</code> or <code>pdf</code> document) generated by code chunks.</p>
 <p>Please find below an example of options that could be applied across code chunks:</p>
 <pre class="r"><code># Setup options for code decoration
 opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60),
     highlight = TRUE)</code></pre>
-<div id="explanations-of-the-code-decoration-options" class="section level5" number="2.4.4.3.1">
-<h5><span class="header-section-number">2.4.4.3.1</span> Explanations of the code decoration options</h5>
+<div id="explanations-of-the-code-decoration-options" class="section level5" number="2.4.5.3.1">
+<h5><span class="header-section-number">2.4.5.3.1</span> Explanations of the code decoration options</h5>
 <ul>
 <li><code>tidy = TRUE</code>: Use <code>formatR::tidy_source()</code> to reformat the code. Please see <code>tidy.opts</code> below.</li>
 <li><code>tidy.opts = list(blank = FALSE, width.cutoff = 60)</code>: This provides a list of options to be passed to the function determined by the <code>tidy</code> option. Here we format the code to avoid blank lines and with a width cutoff of 60 characters.</li>
@@ -1552,8 +1581,8 @@ opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60),
 </ul>
 </div>
 </div>
-<div id="caching-code" class="section level4" number="2.4.4.4">
-<h4><span class="header-section-number">2.4.4.4</span> Caching code</h4>
+<div id="caching-code" class="section level4" number="2.4.5.4">
+<h4><span class="header-section-number">2.4.5.4</span> Caching code</h4>
 <p>To compile your <code>.Rmd</code> document faster (especially if you have computing intensive tasks), you can cache the output of your code into files associated to each of your code chunks. This process allows compute intensive chunks to be saved and the output used later without being re-run.</p>
 <p>The <em>knitr</em> package has options to only evaluate cached chunks when necessary, but this has to be set by users. Such procedure creates a unique MD5 digest (= a data storage technique) of each chunk to track when changes are present. When the option <code>cache = TRUE</code> (there are other, more granular settings; see below) is set, the chunk will only be evaluated in the following scenarios:</p>
 <ul>
@@ -1563,49 +1592,49 @@ opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60),
 <p>The following code allows implementing this procedure to your document:</p>
 <pre class="r"><code># Setup options for code cache
 opts_chunk$set(cache = 2, cache.path = &quot;cache/&quot;)</code></pre>
-<div id="explanations-of-the-caching-code-options" class="section level5" number="2.4.4.4.1">
-<h5><span class="header-section-number">2.4.4.4.1</span> Explanations of the caching code options</h5>
+<div id="explanations-of-the-caching-code-options" class="section level5" number="2.4.5.4.1">
+<h5><span class="header-section-number">2.4.5.4.1</span> Explanations of the caching code options</h5>
 <ul>
 <li>Besides <code>TRUE</code> and <code>FALSE</code> for the chunk option <code>cache</code>, advanced users can also consider more granular cache by using numeric values for <code>cache = 0, 1, 2, 3</code>. <code>0</code> means <code>FALSE</code>, and <code>3</code> is equivalent to <code>TRUE</code>. For <code>cache = 1</code>, the results of the computation are loaded from the cache, so the code is not evaluated again, but everything else is still executed, such the output hooks and saving recorded plots to files. For <code>cache = 2</code> (used here), it is very similar to <code>1</code>, and the only difference is that the recorded plots will not be re-saved to files when the plot files already exist, which might save some time when the plots are big.</li>
 <li><code>cache.path = "cache/"</code>: Directory where cache files will be saved. You don’t have to create the directory before executing the code, it will be created automatically by <em>knitr</em> if it doesn’t exist yet.</li>
 </ul>
 </div>
 </div>
-<div id="plots" class="section level4" number="2.4.4.5">
-<h4><span class="header-section-number">2.4.4.5</span> Plots</h4>
+<div id="plots" class="section level4" number="2.4.5.5">
+<h4><span class="header-section-number">2.4.5.5</span> Plots</h4>
 <p>Plots are a major element of your research and they are at the core of your figures. We can take advantage of options implemented in the <code>knitr</code> package to output plots meeting publication requirements. This approach will save precious time during the writing phase of your research (= no need to fiddle with the size and resolution of figures to meet journal policies).</p>
 <p>Please find below an example of options that could be applied across code chunks:</p>
 <pre class="r"><code># Setup options for plots The first dev is the master for
 # the output document
 opts_chunk$set(fig.path = &quot;Figures_MS/&quot;, dev = c(&quot;png&quot;, &quot;pdf&quot;),
     dpi = 300)</code></pre>
-<div id="explanations-of-the-caching-plots-options" class="section level5" number="2.4.4.5.1">
-<h5><span class="header-section-number">2.4.4.5.1</span> Explanations of the caching plots options</h5>
+<div id="explanations-of-the-caching-plots-options" class="section level5" number="2.4.5.5.1">
+<h5><span class="header-section-number">2.4.5.5.1</span> Explanations of the caching plots options</h5>
 <ul>
 <li><code>fig.path = "Figures_MS/""</code>: Set directory to save figures generated by the R Markdown document. As above, this folder doesn’t need to exist prior to executing the code chunks. Files will be save based on code chunk title and assigned figure number.</li>
 <li><code>dev = c('pdf', 'png')</code>: Save figures in both <code>pdf</code> and <code>png</code> formats.</li>
 <li><code>dpi = 300</code>: The DPI (dots per inch) for bitmap devices (dpi * inches = pixels). Please look at publishing requirements to set this parameter appropriately.</li>
 </ul>
-<p>It is worth noting that you might be using external figures in your <code>.Rmd</code> document. To avoid confusions between figures generated by the <code>.Rmd</code> document and those coming from outside, it is best practice to have them saved in two different subfolders (see Figure <a href="#fig:projstr">2.10</a> for more details).</p>
+<p>It is worth noting that you might be using external figures in your <code>.Rmd</code> document. To avoid confusions between figures generated by the <code>.Rmd</code> document and those coming from outside, it is best practice to have them saved in two different subfolders (see Figure <a href="#fig:projstr">2.11</a> for more details).</p>
 </div>
-<div id="additional-plots-options" class="section level5" number="2.4.4.5.2">
-<h5><span class="header-section-number">2.4.4.5.2</span> Additional plots options</h5>
+<div id="additional-plots-options" class="section level5" number="2.4.5.5.2">
+<h5><span class="header-section-number">2.4.5.5.2</span> Additional plots options</h5>
 <p>Some journals have specific requirements on figure dimensions. You can easily set these by using the following option:</p>
 <ul>
 <li><code>fig.dim</code>: (NULL; numeric) if a numeric vector of length 2, it gives <code>fig.width</code> and <code>fig.height</code>, e.g., <code>fig.dim = c(5, 7)</code>.</li>
 </ul>
 </div>
 </div>
-<div id="positioning-figures" class="section level4" number="2.4.4.6">
-<h4><span class="header-section-number">2.4.4.6</span> Positioning figures</h4>
+<div id="positioning-figures" class="section level4" number="2.4.5.6">
+<h4><span class="header-section-number">2.4.5.6</span> Positioning figures</h4>
 <p>Positioning figures close to their code chunks is critical and can get sorted by adding another <code>opts_chunk$set()</code> code line in your <code>setup</code> R code chunk. This is done by invoking the <code>fig.pos</code> argument and setting it to <code>"H"</code>. <strong>Warning:</strong> Setting this argument might generate errors when documents are knitted as <code>pdf</code> documents. If it happens, please comment this line using <code>#</code> and knit again.</p>
 <pre class="r"><code>## Locate figures as close as possible to requested
 ## position (=code)
 opts_chunk$set(fig.pos = &quot;H&quot;)</code></pre>
 </div>
 </div>
-<div id="setupcode" class="section level3" number="2.4.5">
-<h3><span class="header-section-number">2.4.5</span> Apply global changes to all code chunks</h3>
+<div id="setupcode" class="section level3" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> Apply global changes to all code chunks</h3>
 <p>In this section, we will collate all global settings discussed above into a code chunk entitled <code>setup</code>, which will be placed under the YAML metadata section. In addition to containing the global settings, it is advisable to also include a code section devoted to loading required R packages in the <code>setup</code> code chunk.</p>
 <p>Please find below the code for the <code>setup</code> code chunk based on the options presented above:</p>
 <pre class="r"><code># Load packages
@@ -1627,8 +1656,8 @@ opts_chunk$set(fig.path = &quot;Figures_MS/&quot;, dev = c(&quot;png&quot;, &quo
 ## Locate figures as close as possible to requested
 ## position (=code)
 opts_chunk$set(fig.pos = &quot;H&quot;)</code></pre>
-<div id="settings-of-the-setup-r-code-chunk" class="section level4" number="2.4.5.1">
-<h4><span class="header-section-number">2.4.5.1</span> Settings of the <code>setup</code> R code chunk</h4>
+<div id="settings-of-the-setup-r-code-chunk" class="section level4" number="2.4.6.1">
+<h4><span class="header-section-number">2.4.6.1</span> Settings of the <code>setup</code> R code chunk</h4>
 <p>When inserting the above code into an R code chunk, please set the options of the chunk as follows:</p>
 <ul>
 <li><code>setup</code>: Unique ID of the code chunk.</li>
@@ -1639,8 +1668,8 @@ opts_chunk$set(fig.pos = &quot;H&quot;)</code></pre>
 <p>Options (and their associated arguments) in the code chunk have to be separated by commas.</p>
 </div>
 </div>
-<div id="exercise-to-work-on-learning-objectives" class="section level3" number="2.4.6">
-<h3><span class="header-section-number">2.4.6</span> Exercise to work on learning objectives</h3>
+<div id="exercise-to-work-on-learning-objectives" class="section level3" number="2.4.7">
+<h3><span class="header-section-number">2.4.7</span> Exercise to work on learning objectives</h3>
 <p>Please conduct the above exercise to get accustomed with the material presented in the tutorial. This exercise is divided into six steps as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Open RStudio, and open your <code>Chapter_1_PartB.Rmd</code> document.</li>
@@ -1658,13 +1687,13 @@ opts_chunk$set(fig.pos = &quot;H&quot;)</code></pre>
 <li>Once the file is completed, compile your document using the <code>Knit</code> <img src="Figures/knit_2.png" /> button. Please pay attention to the outputs in your folder (= working directory).</li>
 <li>Use the <code>bookdown</code> <code>\@ref()</code> function to cite your figure/plot in the text.</li>
 </ol>
-<div id="step5" class="section level4" number="2.4.6.1">
-<h4><span class="header-section-number">2.4.6.1</span> R code for step 5</h4>
-<p>The R code provided below is associated with step 5 of the exercise and it produces the plot displayed in Figure <a href="#fig:PlotFig">2.12</a>.</p>
+<div id="step5" class="section level4" number="2.4.7.1">
+<h4><span class="header-section-number">2.4.7.1</span> R code for step 5</h4>
+<p>The R code provided below is associated with step 5 of the exercise and it produces the plot displayed in Figure <a href="#fig:PlotFig">2.13</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:PlotFig"></span>
 <img src="Chapters_files/figure-html/PlotFig-1.png" alt="Plot of y ~ x." width="672" />
 <p class="caption">
-Figure 2.12: Plot of y ~ x.
+Figure 2.13: Plot of y ~ x.
 </p>
 </div>
 <p>To get there:</p>
@@ -1709,11 +1738,11 @@ plot(x, y)</code></pre>
 </div>
 <div id="what-do-you-need-to-complete-this-tutorial" class="section level3" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> What do you need to complete this tutorial?</h3>
-<p>To complete part D, please create a new R script document (Figure <a href="#fig:Rscript">2.13</a>) and save it in your working directory. All the code and functions presented here should be reported in your R script.</p>
+<p>To complete part D, please create a new R script document (Figure <a href="#fig:Rscript">2.14</a>) and save it in your working directory. All the code and functions presented here should be reported in your R script.</p>
 <div class="figure"><span style="display:block;" id="fig:Rscript"></span>
 <img src="Figures/R_script.png" alt="Snapshot of RStudio showing procedure to create a new R script document." width="100%" />
 <p class="caption">
-Figure 2.13: Snapshot of RStudio showing procedure to create a new R script document.
+Figure 2.14: Snapshot of RStudio showing procedure to create a new R script document.
 </p>
 </div>
 </div>
@@ -1779,22 +1808,22 @@ Figure 2.13: Snapshot of RStudio showing procedure to create a new R script docu
 </div>
 <div id="loading-and-calling-udfs" class="section level3" number="2.5.7">
 <h3><span class="header-section-number">2.5.7</span> Loading and calling UDFs</h3>
-<p>When you will be working on your project, it is highly likely that you will have developed multiple UDFs tailored to your research. In this case, it would be appropriate to create a new folder entitled <code>R_functions</code>, which will be located in the same directory as your R scripts (see Figure <a href="#fig:Structure">2.14</a>). Save all your UDFs as independent files (e.g. <code>check.install.pkg.R</code>) into the <code>R_functions</code> folder.</p>
+<p>When you will be working on your project, it is highly likely that you will have developed multiple UDFs tailored to your research. In this case, it would be appropriate to create a new folder entitled <code>R_functions</code>, which will be located in the same directory as your R scripts (see Figure <a href="#fig:Structure">2.15</a>). Save all your UDFs as independent files (e.g. <code>check.install.pkg.R</code>) into the <code>R_functions</code> folder.</p>
 <div class="figure"><span style="display:block;" id="fig:Structure"></span>
 <img src="Figures/Example_project_structure.png" alt="Example file structure of a simple analysis project. See Chapter 4 for more details" width="100%" />
 <p class="caption">
-Figure 2.14: Example file structure of a simple analysis project. See Chapter 4 for more details
+Figure 2.15: Example file structure of a simple analysis project. See Chapter 4 for more details
 </p>
 </div>
 <div id="the-source-function-read-r-code-from-a-file" class="section level4" number="2.5.7.1">
 <h4><span class="header-section-number">2.5.7.1</span> The <code>source()</code> function: Read R code from a file</h4>
-<p>Once your project will be properly structured (see Figure <a href="#fig:Structure">2.14</a>), it will be easy to call specific UDFs into any R script by using the <code>source()</code> function.</p>
-<p>For instance, to load the <code>check.install.pkg()</code> (saved in <code>R_functions/check.install.pkg.R</code>) into the Global Environment enter the following code into the R console (see Figure <a href="#fig:sourceUDF">2.15</a>):</p>
+<p>Once your project will be properly structured (see Figure <a href="#fig:Structure">2.15</a>), it will be easy to call specific UDFs into any R script by using the <code>source()</code> function.</p>
+<p>For instance, to load the <code>check.install.pkg()</code> (saved in <code>R_functions/check.install.pkg.R</code>) into the Global Environment enter the following code into the R console (see Figure <a href="#fig:sourceUDF">2.16</a>):</p>
 <pre class="r"><code>source(&quot;R_functions/check.install.pkg.R&quot;)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:sourceUDF"></span>
 <img src="Figures/source_view.png" alt="Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF." width="100%" />
 <p class="caption">
-Figure 2.15: Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.
+Figure 2.16: Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.
 </p>
 </div>
 <p>Below, you will find some R code allowing to load all your UDFs stored in <code>R_functions</code> folder. This code is very handy when you have several UDFs associated to your pipeline.</p>
@@ -1808,7 +1837,7 @@ sapply(files_source, source)</code></pre>
 </div>
 <div id="call-your-udfs" class="section level3" number="2.5.8">
 <h3><span class="header-section-number">2.5.8</span> Call your UDFs</h3>
-<p>Once loaded into your Global Environment (see Figure <a href="#fig:sourceUDF">2.15</a> for an example), you will be able to call your functions by typing their names directly into the console. For instance:</p>
+<p>Once loaded into your Global Environment (see Figure <a href="#fig:sourceUDF">2.16</a> for an example), you will be able to call your functions by typing their names directly into the console. For instance:</p>
 <pre class="r"><code># Check if knitr package is installed, if not install it
 # and then load it
 check.install.pkg(pkg = c(&quot;knitr&quot;))</code></pre>
@@ -1854,11 +1883,11 @@ square_number &lt;- function(base){
 </div>
 <div id="loading-your-function-into-the-global-environment" class="section level4" number="2.5.9.4">
 <h4><span class="header-section-number">2.5.9.4</span> Loading your function into the Global Environment</h4>
-<p>Before being able to use your UDF, execute the code associated to the <code>square_number()</code> function in the console. The UDF should now be loaded in the Global Environment and therefore be available for use. To verify that the UDF is loaded, please check the Environment panel in RStudio (see Figure <a href="#fig:envir">2.16</a>).</p>
+<p>Before being able to use your UDF, execute the code associated to the <code>square_number()</code> function in the console. The UDF should now be loaded in the Global Environment and therefore be available for use. To verify that the UDF is loaded, please check the Environment panel in RStudio (see Figure <a href="#fig:envir">2.17</a>).</p>
 <div class="figure"><span style="display:block;" id="fig:envir"></span>
 <img src="Figures/Environment_RStudio.png" alt="Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used." width="100%" />
 <p class="caption">
-Figure 2.16: Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.
+Figure 2.17: Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.
 </p>
 </div>
 </div>
@@ -3051,7 +3080,7 @@ brew install tree</code></pre>
 </div>
 <div id="repcode" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Reproducible code</h2>
-<div id="download-presentation" class="section level3" number="6.3.1">
+<div id="download-presentation-1" class="section level3" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> Download presentation</h3>
 <p>The presentation slides for Chapter 5 - part B can be downloaded <a href="Chapters_files/Chapter_5_Reproducible_code.pdf">here</a>.</p>
 </div>
@@ -3323,8 +3352,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-1a4c2eccb38493b76202" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1a4c2eccb38493b76202">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4ba2483912979b5ff83a" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4ba2483912979b5ff83a">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3537,7 +3566,7 @@ Data/species_data.csv</code></pre>
 </div>
 <div id="getpub" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Getting published</h2>
-<div id="download-presentation-1" class="section level3" number="7.2.1">
+<div id="download-presentation-2" class="section level3" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Download presentation</h3>
 <p>The presentation slides for Chapter 6 - part A can be downloaded <a href="Chapters_files/Chapter_6_Getting_published.pdf">here</a>.</p>
 </div>
@@ -3814,7 +3843,7 @@ Data/species_data.csv</code></pre>
 </div>
 <div id="writpub" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Writing papers in R Markdown</h2>
-<div id="download-presentation-2" class="section level3" number="7.3.1">
+<div id="download-presentation-3" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Download presentation</h3>
 <p>The presentation slides for Chapter 6 - part B can be downloaded <a href="Chapters_files/Chapter_6_writing_papers.pdf">here</a>.</p>
 </div>
@@ -4064,8 +4093,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-1fe274b3ce142711c21c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1fe274b3ce142711c21c">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-0c62ab94e8f9bf60875a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0c62ab94e8f9bf60875a">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
