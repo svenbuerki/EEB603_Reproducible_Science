@@ -427,7 +427,7 @@ This tutorial is devoted to part B of chapter 1 and provides students with oppor
 
 ### RMarkdown file structure
 
-To facilitate teaching of the learning outcomes, a roadmap with the RMarkdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). 
+To facilitate teaching of the learning outcomes, a roadmap with the RMarkdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). This structure also applies to [Chapter 1 - part C](#partC).
 
 To support reproducibility of your research, we are structuring the RMarkdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
 
@@ -970,7 +970,7 @@ csl: AmJBot.csl
 
 ### Learning outcomes
 
-This tutorial is devoted to part C of chapter 1 and provides students with opportunities to learn procedures to:
+This tutorial is devoted to part C of chapter 1 and provides students with opportunities to learn procedures to (see Figure \@ref(fig:RMarkdwnstrct)):
 
 - Set your working directory.
 - Set global options for code chunks related to:
@@ -1008,7 +1008,7 @@ knitr::include_graphics("Figures/Setwkd.png")
 
 ### Set global options for code chunks
 
-To improve code reproducibility and efficiency and to follow publication requirements, it is customed to include a "code chunk" at the beginning of your `.Rmd` file to set global options applying to the whole document. Those settings are related to the following elements of your code:
+To improve code reproducibility and efficiency and to follow publication requirements, it is customed to include a "code chunk" at the beginning of your `.Rmd` file to set global options applying to the whole document (see Figure \@ref(fig:RMarkdwnstrct)). Those settings are related to the following elements of your code:
 
 - text results.
 - code decoration.
@@ -1127,7 +1127,7 @@ opts_chunk$set(fig.pos = "H")
 
 ### Apply global changes to all code chunks {#setupcode}
 
-In this section, we will collate all global settings discussed above into a code chunk entitled `setup`, which will be placed under the YAML metadata section. In addition to containing the global settings, it is advisable to also include a code section devoted to loading required R packages in the `setup` code chunk. 
+In this section, we will collate all global settings discussed above into a code chunk entitled `setup`, which will be placed under the YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct) for more details on location). In addition to containing the global settings, it is advisable to also include a code section devoted to loading required R packages (see Chapter 1 - part B and Figure \@ref(fig:RMarkdwnstrct)). 
 
 Please find below the code for the `setup` code chunk based on the options presented above:
 
@@ -1159,7 +1159,7 @@ opts_chunk$set(fig.pos = "H")
 
 #### Settings of the `setup` R code chunk 
 
-When inserting the above code into an R code chunk, please set the options of the chunk as follows:
+When inserting the above code into an R code chunk (see Figure \@ref(fig:RMarkdwnstrct)), please set the options of the chunk as follows:
 
 - `setup`: Unique ID of the code chunk.
 - `include = FALSE`: Nothing will be written into the output document, but the code will be evaluated and plot files will be generated (if there are any plots in the chunk).
@@ -1206,7 +1206,7 @@ To get there:
     - `Plot`: Unique ID of code chunk.
     - `fig.cap = "Plot of y ~ x."`: Figure caption.
     - `fig.show = "asis"`: Figure display.
-    - `out.width = '100%'`: Figure width on the page.
+    - `out.width = "100%"`: Figure width on the page.
 2. Enter the following R code in the code chunk.
 
 ```{r Plot2, eval = FALSE}
