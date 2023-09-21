@@ -116,6 +116,14 @@ Learning outcomes associated to this chapter are provided at the top of each par
 
 ### Files supporting this tutorial {#Files}
 
+#### GitHub
+
+The final files associated to Chapter 1 are all deposited on the instructor's GitHub account at this URL:
+
+- https://github.com/svenbuerki/EEB603_Reproducible_Science/tree/master/Exercises/Chapter_1
+
+#### Google Drive
+
 Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive under this path: 
   
   + `Reproducible_Science/Chapters/Chapter_1/Tutorial_files`
