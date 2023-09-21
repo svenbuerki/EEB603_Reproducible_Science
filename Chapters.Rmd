@@ -1235,6 +1235,7 @@ This tutorial provides students with opportunities to gain the following skills 
 - Providing some background on R lists (`list()`) and their applicability to functions returning multiple values.
 - Developing, implementing and applying user-defined functions returning single and multiple values.
 - Learning protocols to implement defensive programming to your code.
+- Learning about the use of logical operators in R.
 
 ### What do you need to complete this tutorial?
 
@@ -1579,6 +1580,16 @@ exp_number(base = "hello", power = 5)
 ```
 
 Although in this case debugging the error would not have taken long, in more complicated functions you are likely to either have less meaningful error messages, or code that runs for some time before it fails. By applying defensive programming and adding in these checks to the code, you can find unexpected behavior sooner and with more meaningful error messages.
+
+### The logical operators in R
+
+As you have seen in the previous example, we have used a logical operator (in this last case OR represented with the `|` syntax) to implement defensive programming into our UDF function. In a nutshell, the most used logical operators in `R` are as follows:
+
+- AND (`&`): This operator takes two logical values and returns `TRUE` only if both values are TRUE themselves.
+- OR (`|`): This operator takes two logical values and returns `TRUE` if just one value is `TRUE`.
+- NOT (`!`): This operator negates the logical value it is used on.
+
+You can learn more about the logical operators (including exercises) on the [website](https://builtin.com/data-science/and-in-r). 
 
 ### Exercise 4: Your turn to implement defensive programming!
 
