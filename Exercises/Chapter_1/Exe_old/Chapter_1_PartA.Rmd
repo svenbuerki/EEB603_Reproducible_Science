@@ -4,15 +4,6 @@ output: html_document
 date: "2022-08-25"
 ---
 
-# Inside text commenting
-
-To comment inside text use the following syntax (in `HTML`).
-
-```{r eval = FALSE, echo = TRUE}
-# HTML syntax to comment inside text
-<!-- COMMENT -->
-```
-
 # Headers
 
 <!-- THIS SECTION IS ON HEADERS -->
@@ -24,6 +15,17 @@ In this section, we are working on `Markdown` syntax associated to headers (usin
 ## Level 2
 
 ### Level 3
+
+# Inside text commenting
+
+Markdown does not have a syntax to add comments in your text, but this can be borrowed from HTML as follows:
+
+```{r eval = FALSE, echo = TRUE}
+# HTML syntax to comment inside text
+<!-- COMMENT -->
+```
+
+You can learn more about this HTML syntax on this [webpage](https://www.w3schools.com/html/html_comments.asp).
 
 # Lists
 
@@ -67,6 +69,17 @@ To bold a word put `**` at beginning and end of word/sentence.
 
 Bold **Bold**.
 
+# Create hyperlinks
+
+Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax:
+
+```{r eval=FALSE}
+#Syntax to add hyperlink
+[text](link)
+
+#Example to provide hyperlink to RStudio
+[RStudio](https://www.rstudio.com)
+```
 
 # Code chunks
 
@@ -77,7 +90,7 @@ The RMarkdown format allows integrating code chunks directly in the document, wh
 2+2
 ```
 
-
 # Inline code
 
 The result of this equation is `r 2+2`.
+
