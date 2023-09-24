@@ -1701,7 +1701,19 @@ The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_
 
 ## Introduction
 
-Improving the reliability and efficiency of scientific research will increase the credibility of the published scientific literature and accelerate discovery. In this chapter, we will survey measures that can be adopted to optimize key elements of the scientific process by especially focusing on: methods, reporting and dissemination, reproducibility, evaluation and incentives. These measures aim at minimizing threats to the scientific process therefore making it more open and transparent (Figure \@ref(fig:ThreatReproSci)). While studying this topic keep this citation from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) in mind:
+Improving the reliability and efficiency of scientific research will increase the credibility of the published scientific literature and accelerate discovery. 
+
+In this chapter, we will survey measures that can be adopted to optimize key elements of the scientific process by especially focusing on:
+
+- Methods
+- Reporting and dissemination 
+- Reproducibility
+- Evaluation
+- Incentives 
+
+These measures aim at minimizing threats to the scientific process therefore making it more open and transparent (Figure \@ref(fig:ThreatReproSci)). 
+
+While studying this topic, keep in mind this quote from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman):
 
 > *The first principle is that you must not fool yourself – and you are the easiest person to fool.*
 
@@ -1709,9 +1721,16 @@ Improving the reliability and efficiency of scientific research will increase th
 knitr::include_graphics("Figures/Threats2reproducible_science.png")
 ```
 
-## Publications and web resources
+## Learning outcomes
 
-This chapter is mostly based on the following publications:
+- Review the steps involved in the scientific process.
+- Identify and define threats to the scientific process.
+- Discuss solutions to mitigate threats to the scientific process.
+- Learn about Transparency and Openness Promotion (TOP) guidelines and their applications in scientific publications and funding activities.
+
+## Web resources and publications
+
+This chapter is mostly based on the following resources:
 
 - `r capture.output(print(refs["Kerr1998"]))` **- On HARKing (see Glossary section).**
 - `r capture.output(print(refs["Nosek2012"]))` **- On incentives.** 
@@ -1964,7 +1983,7 @@ Overall, content of this chapter aims at **providing solutions to tackles threat
 - Provide an overview of the Creative Common licenses and their applications in scientific publications. 
 - Introduce the CARE Principles and data sovereignty concepts and how these apply to Indigenous Peoples.
 
-### Web resources and publications
+## Web resources and publications
 
 This chapter is based on:
 
