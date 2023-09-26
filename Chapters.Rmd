@@ -1726,7 +1726,7 @@ knitr::include_graphics("Figures/Threats2reproducible_science.png")
 - Review the steps involved in the scientific process.
 - Identify and define threats to the scientific process.
 - Discuss solutions to mitigate threats to the scientific process.
-- Learn about Transparency and Openness Promotion (TOP) guidelines and their applications in scientific publications and funding activities.
+- Learn about the Transparency and Openness Promotion (TOP) guidelines and their applications in scientific publications and funding activities.
 
 ## Web resources and publications
 
