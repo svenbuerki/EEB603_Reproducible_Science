@@ -1728,7 +1728,7 @@ knitr::include_graphics("Figures/Threats2reproducible_science.png")
 - Discuss solutions to mitigate threats to the scientific process.
 - Learn about the Transparency and Openness Promotion (TOP) guidelines and their applications in scientific publications and funding activities.
 
-## Web resources and publications
+## Publications and web resources
 
 This chapter is mostly based on the following resources:
 
@@ -1740,7 +1740,7 @@ This chapter is mostly based on the following resources:
 - `r capture.output(print(refs["Nosek2600"]))` **- On the pre-registration revolution.**
 - `r capture.output(print(refs["Troudet2018"]))` **- On accuracy of biodiversity occurrences available in GBIF.**
 
-The website of the **Center for Open Science** (https://cos.io) was also used to design the chapter content.
+The website of the **Center for Open Science** (https://cos.io) was also used to design the chapter content. More specifically, visit this [webpage](https://www.cos.io/initiatives/prereg#:~:text=When%20you%20preregister%20your%20research,%2Dtesting%20(confirmatory)%20research.) on study pre-registration.
 
 ## Teaching material
 
