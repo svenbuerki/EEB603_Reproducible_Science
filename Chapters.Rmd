@@ -1968,7 +1968,9 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 
 ## Introduction
 
-**Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** Indeed, funding agencies and journals are moving forward to promote Open Science and the benefit of this approach was discussed in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025. You can also learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
+**Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** 
+
+Indeed, funding agencies and journals are moving forward to promote Open Science and the benefit of this approach was discussed in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025. You can also learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
 
 ## Objectives
 
@@ -1978,10 +1980,18 @@ Overall, content of this chapter aims at **providing solutions to tackles threat
 
 ## Learning outcomes
 
-- Learn what are the seven pillars of Open Science.
+- Learn what Open Science is
+- Learn what are the seven pillars of Open Science:
+    + [FAIR Data](#FAIR)
+    + [Research Integrity](#RI)
+    + [Next Generation Metrics](#NGSMet) 
+    + [Future of Scholarly Communication](#FSC) 
+    + [Citizen Science](#CS)
+    + [Education and Skills](#ES)
+    + [Rewards and Initiatives](#EI)
 - Introduce the Open Access mechanism to promote Open Science
-- Provide an overview of the Creative Common licenses and their applications in scientific publications. 
-- Introduce the CARE Principles and data sovereignty concepts and how these apply to Indigenous Peoples.
+- Provide an overview of the Creative Common licenses and their applications in scientific publications
+- Introduce the CARE Principles and Data sovereignty concepts and how these apply to Indigenous Peoples
 
 ## Web resources and publications
 
@@ -2008,26 +2018,34 @@ This chapter is based on:
 - `r capture.output(print(refs["Wagenknecht2021"]))`
 - `r capture.output(print(refs["Wilkinson2016"]))`
 
+## What is Open Science?
+
+The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines Open Science as follows:
+
+“to make the primary outputs of publicly funded research results – publications and the research data – publicly accessible in digital format with no or minimal restriction” (see [here](https://www.oecd.org/sti/inno/open-science.htm) for more details). 
+
+Several other agencies argue that the definition of Open Science should be expanded. For them, Open Science is about extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done (see [here](https://www.fosteropenscience.eu/content/what-open-science-introduction) for more details).
+
 ## What are the pillars of Open Science?
 
 The 7 pillars of Open Science are: 
 
-- [FAIR Data](#FAIR), 
-- [Research Integrity](#RI), 
-- [Next Generation Metrics](#NGSMet), 
-- [Future of Scholarly Communication](#FSC), 
-- [Citizen Science](#CS), 
-- [Education and Skills](#ES),
-- [Rewards and Initiatives](#EI).
+- [FAIR Data](#FAIR)
+- [Research Integrity](#RI)
+- [Next Generation Metrics](#NGSMet) 
+- [Future of Scholarly Communication](#FSC) 
+- [Citizen Science](#CS)
+- [Education and Skills](#ES)
+- [Rewards and Initiatives](#EI)
 
 ### FAIR Data {#FAIR}
 
 The FAIR Principles [@Wilkinson2016] steward researchers in making outputs of research that are (Figure \@ref(fig:FAIR)):
 
-- **F**indable: making research outputs discoverable by the wider academic community and the public.
-- **A**ccessible: using unique identifiers, metadata and a clear use of language and access protocols.
-- **I**nteroperable: applying standards to encode and exchange data and metadata. Interoperability is the ability of different systems, devices, applications or products to connect and communicate in a coordinated way, without effort from the end user.
-- **R**eusable: enabling the re-purposing of research outputs to maximize their research potential.
+- **F**indable: making research outputs **discoverable** by the wider academic community and the public.
+- **A**ccessible: using **unique identifiers**, metadata and a clear use of language and access protocols.
+- **I**nteroperable: applying **standards to encode and exchange** data and metadata. Interoperability is the ability of different systems, devices, applications or products to connect and communicate in a coordinated way, without effort from the end user.
+- **R**eusable: enabling the **re-purposing** of research outputs to maximize their research potential.
 
 **When combined, these four elements are designed to help lower barriers to research outputs and facilitate potential secondary researchers finding, understanding reusing and re-purposing them to realize additional research opportunities and maximize existing resources.**
 
@@ -2070,7 +2088,7 @@ At BSU, the [Office of Research Compliance](https://www.boisestate.edu/research-
 
 ### Next Generation Metrics {#NGSMet}
 
-The next-generation metrics pillar of Open Science seeks to catalyse a shift in cultural thinking around the way in which bibliometrics are utilized in research, particularly when evaluating quality, and go beyond simply citation counts and journal impact (Figure \@ref(fig:NGSMetrics)). Appropriate metrics, drawn from different sources and describing different things, can help us gain a broader understanding of the significance and impact of research.
+The next-generation metrics pillar of Open Science seeks to catalyse a shift in cultural thinking around the way in which bibliometrics are utilized in research, particularly when evaluating quality, and go beyond simply citation counts and journal impact (Figure \@ref(fig:NGSMetrics)). Appropriate metrics, drawn from different sources and describing different things, can help us **gain a broader understanding of the significance and impact of research**.
 
 ```{r NGSMetrics, echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
 knitr::include_graphics("Figures/Metrics_example.png")
@@ -2078,11 +2096,11 @@ knitr::include_graphics("Figures/Metrics_example.png")
 
 ##### The San Francisco Declaration of Research Assessment - DORA
 
-As an example showing changes in how research is percived, more institutions and funders are supporting the [San Francisco Declaration of Research Assessment - DORA](https://sfdora.org/) and openly reject the use of quantitative metrics commonly associated with journal impact factors as a measure of research quality. Among many others, Springer Nature has joined DORA and [here](https://www.springernature.com/gp/researchers/dora) are their commitments.
+As an example showing changes in how research is perceived, more institutions and funders are supporting the [San Francisco Declaration of Research Assessment - DORA](https://sfdora.org/) and openly reject the use of quantitative metrics commonly associated with journal impact factors as a measure of research quality. Among many others, Springer Nature has joined DORA and [here](https://www.springernature.com/gp/researchers/dora) are their commitments.
 
 ##### Altmetric
 
-Another example is the [Altmetric](https://www.altmetric.com/), which tracks and demonstrates the reach and influence of your work to key stakeholders by mainly focusing on social media (Figure \@ref(fig:NGSMetrics)).
+Another example is the [Altmetric](https://www.altmetric.com/), which tracks and demonstrates the **reach and influence of your work to key stakeholders** by mainly focusing on social media (Figure \@ref(fig:NGSMetrics)).
 
 ### Future of Scholarly Communication {#FSC}
 
@@ -2090,7 +2108,7 @@ The future of scholarly communication is one of the most prominent pillars of Op
 
 ### Citizen Science {#CS}
 
-Movement towards members of the public having a greater role within research and recognizing the invaluable role they play in providing insights a researcher may not typically have. Examples of such initiatives are e.g. [eBird](https://ebird.org/home) or [iNaturalist](https://www.inaturalist.org/).
+Movement towards **members of the public having a greater role within research** and recognizing the invaluable role they play in providing insights a researcher may not typically have. Examples of such initiatives are e.g. [eBird](https://ebird.org/home) or [iNaturalist](https://www.inaturalist.org/).
 
 Harnessing the advantages of the internet, openly available software packages and local knowledge, citizen science brings about a change in the way research is conducted – no longer limited to academic researchers, it encourages collaboration from groups across society.
 
@@ -2098,7 +2116,9 @@ Harnessing the advantages of the internet, openly available software packages an
 
 ### Education and Skills {#ES}
 
-This pillar focuses on **identifying which are the training needs of researchers and sufficiently addressing any gaps in knowledge and skills around engaging with Open Science** such as making publications openly accessible, managing research data in-line with the FAIR principles (Figure \@ref(fig:FAIR)) and acting with integrity. All researchers at all levels should have access to education and skills programmes to support their work and continued learning. Further, skill development programmes should be opened up to other stakeholders in research such as professional staff including librarians and data managers and members of the public to facilitate the undertaking of citizen science. At BSU, the [Alberstons library](https://www.boisestate.edu/library/) has resources on this topic and also runs workshops and seminars.  
+This pillar focuses on **identifying which are the training needs of researchers and sufficiently addressing any gaps in knowledge and skills around engaging with Open Science** such as making publications openly accessible, managing research data in-line with the FAIR Principles (Figure \@ref(fig:FAIR)) and acting with integrity. 
+
+All researchers at all levels should have access to education and skills programmes to support their work and continued learning. Further, skill development programmes should be opened up to other stakeholders in research such as professional staff including librarians and data managers and members of the public to facilitate the undertaking of citizen science. At BSU, the [Alberstons library](https://www.boisestate.edu/library/) has resources on this topic and also runs workshops and seminars.  
 
 ### Rewards and Initiatives {#EI}
 
@@ -2118,7 +2138,7 @@ Open access (OA) is a set of principles and a range of practices through which r
 
 Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC)). 
 
-**A CC license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted "work".** A CC license is used when an author wants to give other people the right to share, use, and build upon a work that the author has created. CC provides an author flexibility (for example, they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
+**A CC license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted "work".** A CC license is used when an author wants to give other people the **right to share, use, and build upon a work that the author has created**. CC provides an author flexibility (for example, they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
@@ -2162,7 +2182,7 @@ knitr::include_graphics("Figures/BeFAIRandCARE.png")
 
 **Collective benefit** is more likely to be realized when data ecosystems are designed to support Indigenous nations and when the use/reuse of data for resource allocation is consistent with community values. The [United Nations Declaration on the Rights of Indigenous Peoples](https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html) asserts Indigenous Peoples’ rights and interests in data and their **authority to control** their data. Access to ‘data for governance’ is vital to support self-determination and Indigenous nations should be actively involved in ‘governance of data’ to ensure ethical reuse of data. Given the majority of Indigenous data is controlled by non-Indigenous institutions there is a **responsibility** to engage respectfully with those communities to ensure the use of Indigenous data supports capacity development, increasing community data capabilities, and the strengthening of Indigenous languages and cultures. Similarly, Indigenous Peoples’ **ethics** should inform the use of data across time in order to minimize harm, maximize benefits, promote justice, and allow for future use [see @Carroll2021 for more details].
 
-## Data sovreignty
+## Data sovereignty
 
 The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We will provide a definition here and it is especially important to cover such material in this course since data sovereignty could impact your data sharing protocols. More on this topic will be discussed in [Chapter 5](#partDM).
 
