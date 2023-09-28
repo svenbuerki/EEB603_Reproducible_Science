@@ -1970,11 +1970,11 @@ Collectively, and at scale, such efforts can shift incentives such that what is 
 
 **Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** 
 
-Indeed, funding agencies and journals are moving forward to promote Open Science and the benefit of this approach was discussed in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025. You can also learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
+Nowadays, funding agencies and journals are moving forward to promote Open Science and we started discussing this approach in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025 without an embargo or cost. You can learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
 
 ## Objectives
 
-The major objective of this chapter is to **study the mechanisms implemented to promote Open Science while highlighting circumstances where other principles might have to be adopted to respect different views, opinions and/or data sovereignty**. 
+The overarching objective of this chapter is to **study the mechanisms implemented to promote Open Science while highlighting circumstances where other principles might have to be adopted to respect different views, opinions and/or data sovereignty**. 
 
 Overall, content of this chapter aims at **providing solutions to tackles threats to the scientific process** (discussed in Chapters 2 and 3) **as well as information to manage the data life cycle and research dissemination**. 
 
@@ -2020,11 +2020,11 @@ This chapter is based on:
 
 ## What is Open Science?
 
-The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines Open Science as follows:
+The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines [Open Science](https://www.oecd.org/sti/inno/open-science.htm) as follows:
 
-“to make the primary outputs of publicly funded research results – publications and the research data – publicly accessible in digital format with no or minimal restriction” (see [here](https://www.oecd.org/sti/inno/open-science.htm) for more details). 
+“*to make the primary outputs of publicly funded research results – publications and the research data – publicly accessible in digital format with no or minimal restriction*”. 
 
-Several other agencies argue that the definition of Open Science should be expanded. For them, Open Science is about extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done (see [here](https://www.fosteropenscience.eu/content/what-open-science-introduction) for more details).
+Several other agencies argue that the definition of Open Science should be expanded. For them, [Open Science](https://www.fosteropenscience.eu/content/what-open-science-introduction) is about *extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done*.
 
 ## What are the pillars of Open Science?
 
@@ -2047,7 +2047,11 @@ The FAIR Principles [@Wilkinson2016] steward researchers in making outputs of re
 - **I**nteroperable: applying **standards to encode and exchange** data and metadata. Interoperability is the ability of different systems, devices, applications or products to connect and communicate in a coordinated way, without effort from the end user.
 - **R**eusable: enabling the **re-purposing** of research outputs to maximize their research potential.
 
-**When combined, these four elements are designed to help lower barriers to research outputs and facilitate potential secondary researchers finding, understanding reusing and re-purposing them to realize additional research opportunities and maximize existing resources.**
+When combined, these four elements are designed to help:
+
+- Lower barriers to research outputs 
+- Facilitate potential secondary researchers finding, understanding, reusing and re-purposing data to realize additional research opportunities
+- Maximize existing resources
 
 ```{r FAIR, echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
 knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
@@ -2058,27 +2062,27 @@ knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
 @Wilkinson2016 have provided the following guidelines that have to be applied to support the FAIR Principles:
 
 1. **To be Findable:**
-  - F1. (meta)data are assigned a globally unique and persistent identifier
-  - F2. data are described with rich metadata (defined by R1 below)
-  - F3. metadata clearly and explicitly include the identifier of the data it describes
-  - F4. (meta)data are registered or indexed in a searchable resource
+    - F1. (meta)data are assigned a globally unique and persistent identifier
+    - F2. data are described with rich metadata (defined by R1 below)
+    - F3. metadata clearly and explicitly include the identifier of the data it describes
+    - F4. (meta)data are registered or indexed in a searchable resource
 
 2. **To be Accessible:**
-  - A1. (meta)data are retrievable by their identifier using a standardized communications protocol
-    - A1.1 the protocol is open, free, and universally implementable
-    - A1.2 the protocol allows for an authentication and authorization procedure, where necessary
-  - A2. metadata are accessible, even when the data are no longer available
+    - A1. (meta)data are retrievable by their identifier using a standardized communications protocol
+      - A1.1 the protocol is open, free, and universally implementable
+      - A1.2 the protocol allows for an authentication and authorization procedure, where necessary
+      - A2. metadata are accessible, even when the data are no longer available
 
 3. **To be Interoperable:**
-  - I1. (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
-  - I2. (meta)data use vocabularies that follow FAIR principles
-  - I3. (meta)data include qualified references to other (meta)data
+    - I1. (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
+    - I2. (meta)data use vocabularies that follow FAIR principles
+    - I3. (meta)data include qualified references to other (meta)data
 
 4. **To be Reusable:**
-  - R1. meta(data) are richly described with a plurality of accurate and relevant attributes
-    - R1.1. (meta)data are released with a clear and accessible data usage license
-    - R1.2. (meta)data are associated with detailed provenance
-    - R1.3. (meta)data meet domain-relevant community standards
+    - R1. meta(data) are richly described with a plurality of accurate and relevant attributes
+      - R1.1. (meta)data are released with a clear and accessible data usage license
+      - R1.2. (meta)data are associated with detailed provenance
+      - R1.3. (meta)data meet domain-relevant community standards
 
 ### Research Integrity {#RI}
 
@@ -2088,7 +2092,7 @@ At BSU, the [Office of Research Compliance](https://www.boisestate.edu/research-
 
 ### Next Generation Metrics {#NGSMet}
 
-The next-generation metrics pillar of Open Science seeks to catalyse a shift in cultural thinking around the way in which bibliometrics are utilized in research, particularly when evaluating quality, and go beyond simply citation counts and journal impact (Figure \@ref(fig:NGSMetrics)). Appropriate metrics, drawn from different sources and describing different things, can help us **gain a broader understanding of the significance and impact of research**.
+The next-generation metrics pillar of Open Science seeks to catalyze a shift in cultural thinking around the way in which [bibliometrics](https://en.wikipedia.org/wiki/Bibliometrics) are utilized in research, particularly when evaluating quality, and go beyond simply citation counts and journal impact (Figure \@ref(fig:NGSMetrics)). Appropriate metrics, drawn from different sources and describing different things, can help us **gain a broader understanding of the significance and impact of research**.
 
 ```{r NGSMetrics, echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
 knitr::include_graphics("Figures/Metrics_example.png")
@@ -2112,7 +2116,7 @@ Movement towards **members of the public having a greater role within research**
 
 Harnessing the advantages of the internet, openly available software packages and local knowledge, citizen science brings about a change in the way research is conducted – no longer limited to academic researchers, it encourages collaboration from groups across society.
 
-@Wagenknecht2021 discuss this topic and its implementation in the case of a European Citizen Science project and @Groom2017 are reflecting on the role of Citizen Science in biodiversity research. Overall, citizen science could really propel your research foreward, but you have to be aware of the potential pitfalls. Please see this [section in Chapter 3](#biodiv) where this topic was discussed.
+@Wagenknecht2021 discuss this topic and its implementation in the case of a European Citizen Science project and @Groom2017 are reflecting on the role of Citizen Science in biodiversity research. Overall, citizen science could really propel your research forward, but you have to be aware of the potential pitfalls. Please see this [section in Chapter 3](#biodiv) where this topic was discussed.
 
 ### Education and Skills {#ES}
 
@@ -2132,13 +2136,15 @@ Open access (OA) is a set of principles and a range of practices through which r
 
 ### The Open Access conundrum 
 
-**Since the revenue of most open access journals is earned from publication fees charged to the authors, OA publishers are motivated to increase their profits by accepting low-quality papers and by not performing thorough peer review.** On the other hand, the prices for OA publications in the most prestigious journals have exceeded \$5000, making such publishing model unaffordable to a large number of researchers. This increase in publishing cost has been called the "Open-Access Sequel to [the] Serials Crisis" [@Khoo_2019]. To provide further context, the serial crisis involves unsustainable budgetary pressures on libraries due to hyperinflation of subscription costs. In this framework, OA was proposed as one way of coping with these costs because articles would not require ongoing subscriptions to remain accessible, but findings by @Khoo_2019 might suggest that both systems have limitations. 
+Since the revenue of most open access journals is earned from publication fees charged to the authors, **OA publishers are motivated to increase their profits by accepting low-quality papers and by not performing thorough peer review.** On the other hand, the prices for OA publications in the most prestigious journals have exceeded \$5000, making such publishing model unaffordable to a large number of researchers. 
+
+The increase in publishing cost has been called the "Open-Access Sequel to [the] Serials Crisis" [@Khoo_2019]. To provide further context, the serial crisis involves unsustainable budgetary pressures on libraries due to hyperinflation of subscription costs. In this framework, OA was proposed as one way of coping with these costs because articles would not require ongoing subscriptions to remain accessible, but findings by @Khoo_2019 might suggest that both systems have limitations. 
 
 ## Creative Common licences
 
-Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC)). 
+Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC)). A CC license is one of several **public copyright licenses that enable the free distribution of an otherwise copyrighted "work".** 
 
-**A CC license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted "work".** A CC license is used when an author wants to give other people the **right to share, use, and build upon a work that the author has created**. CC provides an author flexibility (for example, they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
+A CC license is used when an author wants to give other people the **right to share, use, and build upon a work that the author has created**. CC provides an author flexibility (e.g., they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
