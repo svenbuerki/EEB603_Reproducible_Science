@@ -2205,17 +2205,13 @@ This chapter is subdivided into two parts as follows:
 
 ## Data management {#partDM}
 
-The presentation slides for Chapter 5 - part A can be downloaded [here](Chapters_files/Chapter_5_PartA.pdf).
-
 ### Introduction
 
 Good data management is fundamental to research excellence. It produces high-quality research data that are accessible to others and usable in the future (see [TOP guidelines](#TOP) in chapter 3). The value of data is now explicitly acknowledged through citations (e.g. GBIF and Dryad repositories provide [DOIs](https://www.doi.org/) to cite datasets) so researchers can make a difference to their own careers, as well as to their fields of research, by sharing and making data available for reuse. These citations have to be directly included in publications in devoted sections usually entitled "Data Availability Statement" located at the end of the article (see Figure \@ref(fig:DataAvail) for an example).
 
-
 ```{r DataAvail, echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
 knitr::include_graphics("Figures/Data_availibility_satement.png")
 ```
-
 
 This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.
 
@@ -2234,6 +2230,10 @@ This chapter is based on:
 - UK Managing and Sharing Research Data handbook: https://data-archive.ac.uk/media/2894/managingsharing.pdf
 - The companion website presenting material for UK Managing and Sharing Research Data handbook: https://www.ukdataservice.ac.uk/manage-data/handbook/
 - Digital Object Identifier (DOI): https://www.doi.org/index.html
+
+### Teaching material
+
+The presentation slides for Chapter 5 - part A can be downloaded [here](Chapters_files/Chapter_5_PartA.pdf).
 
 ### What are research data?
 
@@ -2588,10 +2588,6 @@ The data management checklist from the [UK Data Archive](https://www.ukdataservi
 
 ## Reproducible code {#repcode}
 
-### Download presentation
-
-The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_5_Reproducible_code.pdf).
-
 ### Introduction
 
 The following steps have to be fully integrated in order to produce a reproducible code:
@@ -2620,6 +2616,10 @@ This chapter is based on:
 - Hadley Wickham’s R Style Guides: http://adv-r.had.co.nz/Style.html
 - Absolute vs relative paths: https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths
 - Comparison of free and open-source software licenses: https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
+
+### Teaching material
+
+The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_5_Reproducible_code.pdf).
 
 ### Data and dependencies
 
