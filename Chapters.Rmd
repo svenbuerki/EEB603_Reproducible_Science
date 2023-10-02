@@ -2230,6 +2230,8 @@ This chapter is based on:
 - UK Managing and Sharing Research Data handbook: https://data-archive.ac.uk/media/2894/managingsharing.pdf
 - The companion website presenting material for UK Managing and Sharing Research Data handbook: https://www.ukdataservice.ac.uk/manage-data/handbook/
 - Digital Object Identifier (DOI): https://www.doi.org/index.html
+- Dryad Data Repository: https://datadryad.org/stash
+- Zenodo Data Repository: https://zenodo.org/
 
 ### Teaching material
 
