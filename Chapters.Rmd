@@ -2230,6 +2230,7 @@ This chapter is based on:
 - UK Managing and Sharing Research Data handbook: https://data-archive.ac.uk/media/2894/managingsharing.pdf
 - The companion website presenting material for UK Managing and Sharing Research Data handbook: https://www.ukdataservice.ac.uk/manage-data/handbook/
 - Digital Object Identifier (DOI): https://www.doi.org/index.html
+- [ASCII](https://www.asciitable.com/) or American Standard Code for Information Interchange used by computers to ensure data are readable by a maximum number of software programs 
 - Dryad Data Repository: https://datadryad.org/stash
 - Zenodo Data Repository: https://zenodo.org/
 
@@ -2351,7 +2352,7 @@ Key things to consider during data digitization include:
 - Designing a database structure to organize data and data files (i.e. making sure that observations have unique IDs).
 - Using a consistent format for each data file – e.g. one row represents a complete record and the columns represent all the parameters that make up that record (this is known as spreadsheet format).
 - Atomizing data – make sure that only one piece of data is in each entry (this greatly helps analyses).
-- Using plain text characters (e.g. ASCII, Unicode) to ensure data are readable by a maximum number of software programmes.
+- Using plain text characters (e.g. [ASCII](https://www.asciitable.com/), which stands for American Standard Code for Information Interchange used for computers) to ensure data are readable by a maximum number of software programs.
 - Using code – coding assigns a numerical value to variables and allows for statistical analysis of data. Keep coding simple.
 - Describing the contents of your data files in a `Readme.txt` file or even better in protocol files (later attached as appendixes of your manuscript), or other metadata standard, including a definition of each parameter, the units used and codes for missing values.
 - Keeping raw data raw.
