@@ -2603,12 +2603,16 @@ The following steps have to be fully integrated in order to produce a reproducib
 - **Step 6:** Implement a version control protocol (with Git).
 - **Step 7:** Ensure archiving and citation of code.
 
-In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 5 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.
+In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters [1](#chap1) and 5 ([Data management](#partDM)), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.
 
 ### Learning outcomes
 
 - Learn protocol to organize projects for reproducibility.
-- Learn basic programming standards to ensure transparency and broad understanding of your data workflow.
+- Discuss licenses for code and software.
+- Learn basic programming standards to ensure transparency and broad understanding of the data workflow.
+- Learn how to use R to infer data structure and files organization.
+- Learn about code portability: Absolute vs. Relative paths.
+- Review knowledge on documenting and managing software dependencies.
 
 ### Literature and web resources
 
@@ -2619,6 +2623,7 @@ This chapter is based on:
 - Hadley Wickham’s R Style Guides: http://adv-r.had.co.nz/Style.html
 - Absolute vs relative paths: https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths
 - Comparison of free and open-source software licenses: https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
+- [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html): This type of license is commonly used for code and software
 
 ### Teaching material
 
@@ -2626,17 +2631,22 @@ The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters
 
 ### Data and dependencies
 
-To conduct the exercises presented in this chapter, you will need to download a folder from the shared Google Drive and install R packages. More information on these items is provided below. 
+To conduct the exercises presented in this chapter, you will need to:
 
-#### Data
+1. Download a [folder](#dataProjectID) from the shared Google Drive
+2. Install [R packages](#RpkgRepCode)
 
-The data (`Project_ID`) used for this chapter are deposited on our shared Google Drive at this address:
+More information on these items is provided below. 
+
+#### Data {#dataProjectID}
+
+The data (`Project_ID`) used for this chapter are deposited on our shared [Google Drive](https://drive.google.com/drive/folders/1ZNNfDcn6b1vLscjbg66aU5cWtx773lnw?usp=drive_link) at this address:
 
 `Reproducible_Science > Exercises > Chapter_5 > Project_ID`
 
 Please download this whole folder prior to starting the exercises.
 
-#### R packages
+#### R packages {#RpkgRepCode}
 
 Here, we are using code developed in Chapter 1 to make sure the R dependencies (*data.tree*, *DiagrammeR*) are installed and loaded prior to pursuing the exercises.
 
@@ -2671,7 +2681,6 @@ print("Load packages and return status")
 #Here we use the sapply() function to require all the packages
 sapply(pkg, require, character.only = TRUE)
 ```
-
 
 ### Organize project for reproducibility
 
@@ -2724,6 +2733,10 @@ There is no single best way to organize a file system. The key is to make sure t
 - The `Reports` folder contains RMarkdown files that document the analysis or report on results.
 - The scripts (`*.R`) that actually do things are stored in the root directory together with the `README.md` file. If your project has too many scripts, you might consider organizing them in a separate folder.
 
+#### License file
+
+Usually, code and software are licensed under a [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html). This is a free, copyleft license for software and other kinds of works, specifically designed to ensure cooperation with the community in the case of network server software. For instance, this is the licence that the instructor has used for this [class](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE.md). 
+
 #### Using R to infer data structure and files organization
 
 Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions *list.files()* and *file.info()* can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure \@ref(fig:ProjStuct).  
@@ -2737,8 +2750,8 @@ file.info(list.files(path="Project_ID", recursive = TRUE, full.name = TRUE))
 
 The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let's investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure \@ref(fig:plotProjStr)):
 
-- **Step 1:** Produce a list of all files in your working directory using *file.info* and *list.files* functions. The output of this code is a `data.frame`
-- **Step 2:** Convert the `data.frame` into a `data.tree` class object. This is done using the *data.tree::as.Node* function from the `data.tree` package.
+- **Step 1:** Produce a list of all files in your working directory using *file.info()* and *list.files()* functions. The output of this code is a `data.frame`
+- **Step 2:** Convert the `data.frame` into a `data.tree` class object. This is done using the *data.tree::as.Node()* function from the `data.tree` package.
 - **Step 3:** Prepare and plot diagram of project structure. This is done using set of functions from `data.tree` and plotting the output using `DiagrammR` package.
 - **Step 4:** Save the output from step 3.
 
@@ -2748,7 +2761,14 @@ The code presented above could be at the core of a user-defined function that wo
 
 ##### R code and associated outputs
 
-```{r plotProjStr, echo=T, eval=T, fig.cap="Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.", fig.dim=c(6,6)}
+Procedure to follow:
+
+1. Copy `Project_ID/` in a directory entitled `Chapter_5_PartB`.
+2. Create and save an `R` script and save it in `Chapter_5_PartB`.
+3. Make sure R packages are installed. See [here](#RpkgRepCode) for more details.
+4. Study and execute the R code below to infer the file structure in `Project_ID/`. Also read the text below, which further explains the approach.   
+
+```{r plotProjStr, echo = T, eval = T, fig.cap = "Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.", fig.dim = c(6,6)}
 ### Load R packages
 library(data.tree)
 library(DiagrammeR)
@@ -2887,7 +2907,8 @@ The most important role of a style guide, however, is to introduce consistency t
 
 When working collaboratively, portability between machines is very important, i.e. will your code work on someone else’s computer? Portability is also important if code is being run on another server, for example a High Performance Cluster. One way to improve portability of code is to avoid using absolute paths and use only relative paths (see https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths). 
 
-**An absolute path is one that gives the full address to a folder or file. A relative path gives the location of the file from the current working directory.** 
+- **An absolute path** is one that gives the full address to a folder or file. 
+- **A relative path** gives the location of the file from the current working directory. Relative paths are favored to promote code portability.
 
 For example based on `species_data.csv` stored in the `Data` folder shown in Figure \@ref(fig:ProjStuct):
 

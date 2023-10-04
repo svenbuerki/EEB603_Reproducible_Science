@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2023-10-02" />
+<meta name="date" content="2023-10-04" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -389,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2023-10-02</h4>
+<h4 class="date">2023-10-04</h4>
 
 </div>
 
@@ -3157,13 +3157,17 @@ brew install tree</code></pre>
 <li><strong>Step 6:</strong> Implement a version control protocol (with Git).</li>
 <li><strong>Step 7:</strong> Ensure archiving and citation of code.</li>
 </ul>
-<p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters 1 and 5 (Data management), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.</p>
+<p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters <a href="#chap1">1</a> and 5 (<a href="#partDM">Data management</a>), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.</p>
 </div>
 <div id="learning-outcomes-8" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Learning outcomes</h3>
 <ul>
 <li>Learn protocol to organize projects for reproducibility.</li>
-<li>Learn basic programming standards to ensure transparency and broad understanding of your data workflow.</li>
+<li>Discuss licenses for code and software.</li>
+<li>Learn basic programming standards to ensure transparency and broad understanding of the data workflow.</li>
+<li>Learn how to use R to infer data structure and files organization.</li>
+<li>Learn about code portability: Absolute vs. Relative paths.</li>
+<li>Review knowledge on documenting and managing software dependencies.</li>
 </ul>
 </div>
 <div id="literature-and-web-resources-1" class="section level3" number="6.3.3">
@@ -3175,6 +3179,7 @@ brew install tree</code></pre>
 <li>Hadley Wickham’s R Style Guides: <a href="http://adv-r.had.co.nz/Style.html" class="uri">http://adv-r.had.co.nz/Style.html</a></li>
 <li>Absolute vs relative paths: <a href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths" class="uri">https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths</a></li>
 <li>Comparison of free and open-source software licenses: <a href="https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses" class="uri">https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses</a></li>
+<li><a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License</a>: This type of license is commonly used for code and software</li>
 </ul>
 </div>
 <div id="teaching-material-3" class="section level3" number="6.3.4">
@@ -3183,14 +3188,19 @@ brew install tree</code></pre>
 </div>
 <div id="data-and-dependencies" class="section level3" number="6.3.5">
 <h3><span class="header-section-number">6.3.5</span> Data and dependencies</h3>
-<p>To conduct the exercises presented in this chapter, you will need to download a folder from the shared Google Drive and install R packages. More information on these items is provided below.</p>
-<div id="data" class="section level4" number="6.3.5.1">
+<p>To conduct the exercises presented in this chapter, you will need to:</p>
+<ol style="list-style-type: decimal">
+<li>Download a <a href="#dataProjectID">folder</a> from the shared Google Drive</li>
+<li>Install <a href="#RpkgRepCode">R packages</a></li>
+</ol>
+<p>More information on these items is provided below.</p>
+<div id="dataProjectID" class="section level4" number="6.3.5.1">
 <h4><span class="header-section-number">6.3.5.1</span> Data</h4>
-<p>The data (<code>Project_ID</code>) used for this chapter are deposited on our shared Google Drive at this address:</p>
+<p>The data (<code>Project_ID</code>) used for this chapter are deposited on our shared <a href="https://drive.google.com/drive/folders/1ZNNfDcn6b1vLscjbg66aU5cWtx773lnw?usp=drive_link">Google Drive</a> at this address:</p>
 <p><code>Reproducible_Science &gt; Exercises &gt; Chapter_5 &gt; Project_ID</code></p>
 <p>Please download this whole folder prior to starting the exercises.</p>
 </div>
-<div id="r-packages" class="section level4" number="6.3.5.2">
+<div id="RpkgRepCode" class="section level4" number="6.3.5.2">
 <h4><span class="header-section-number">6.3.5.2</span> R packages</h4>
 <p>Here, we are using code developed in Chapter 1 to make sure the R dependencies (<em>data.tree</em>, <em>DiagrammeR</em>) are installed and loaded prior to pursuing the exercises.</p>
 <pre class="r"><code>## ~~~ 1. List all required packages ~~~ Object (args)
@@ -3279,8 +3289,12 @@ Figure 6.5: Example file structure of a simple analysis project. Make sure you l
 <li>The scripts (<code>*.R</code>) that actually do things are stored in the root directory together with the <code>README.md</code> file. If your project has too many scripts, you might consider organizing them in a separate folder.</li>
 </ul>
 </div>
-<div id="using-r-to-infer-data-structure-and-files-organization" class="section level4" number="6.3.6.6">
-<h4><span class="header-section-number">6.3.6.6</span> Using R to infer data structure and files organization</h4>
+<div id="license-file" class="section level4" number="6.3.6.6">
+<h4><span class="header-section-number">6.3.6.6</span> License file</h4>
+<p>Usually, code and software are licensed under a <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License</a>. This is a free, copyleft license for software and other kinds of works, specifically designed to ensure cooperation with the community in the case of network server software. For instance, this is the licence that the instructor has used for this <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE.md">class</a>.</p>
+</div>
+<div id="using-r-to-infer-data-structure-and-files-organization" class="section level4" number="6.3.6.7">
+<h4><span class="header-section-number">6.3.6.7</span> Using R to infer data structure and files organization</h4>
 <p>Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions <em>list.files()</em> and <em>file.info()</em> can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure <a href="#fig:ProjStuct">6.5</a>.</p>
 <pre class="r"><code># Produce a list of all files in working directory
 # (Project-ID) together with info related to those files
@@ -3356,19 +3370,26 @@ file.info(list.files(path = &quot;Project_ID&quot;, recursive = TRUE, full.name 
 ## Project_ID/Scripts/04_fit_models.R                     20  sven  staff
 ## Project_ID/Scripts/05_generate_figures.R               20  sven  staff</code></pre>
 </div>
-<div id="pseudocode-and-associated-r-script" class="section level4" number="6.3.6.7">
-<h4><span class="header-section-number">6.3.6.7</span> Pseudocode and associated R script</h4>
+<div id="pseudocode-and-associated-r-script" class="section level4" number="6.3.6.8">
+<h4><span class="header-section-number">6.3.6.8</span> Pseudocode and associated R script</h4>
 <p>The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let’s investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure <a href="#fig:plotProjStr">6.6</a>):</p>
 <ul>
-<li><strong>Step 1:</strong> Produce a list of all files in your working directory using <em>file.info</em> and <em>list.files</em> functions. The output of this code is a <code>data.frame</code></li>
-<li><strong>Step 2:</strong> Convert the <code>data.frame</code> into a <code>data.tree</code> class object. This is done using the <em>data.tree::as.Node</em> function from the <code>data.tree</code> package.</li>
+<li><strong>Step 1:</strong> Produce a list of all files in your working directory using <em>file.info()</em> and <em>list.files()</em> functions. The output of this code is a <code>data.frame</code></li>
+<li><strong>Step 2:</strong> Convert the <code>data.frame</code> into a <code>data.tree</code> class object. This is done using the <em>data.tree::as.Node()</em> function from the <code>data.tree</code> package.</li>
 <li><strong>Step 3:</strong> Prepare and plot diagram of project structure. This is done using set of functions from <code>data.tree</code> and plotting the output using <code>DiagrammR</code> package.</li>
 <li><strong>Step 4:</strong> Save the output from step 3.</li>
 </ul>
 <p><strong>WARNING:</strong> Prior to starting the exercise, please go on the shared Google Drive and download the <code>Project_ID</code> folder at this path:</p>
 <p><code>Reproducible_Science &gt; Exercises &gt; Chapter_5 &gt; Project_ID</code></p>
-<div id="r-code-and-associated-outputs" class="section level5" number="6.3.6.7.1">
-<h5><span class="header-section-number">6.3.6.7.1</span> R code and associated outputs</h5>
+<div id="r-code-and-associated-outputs" class="section level5" number="6.3.6.8.1">
+<h5><span class="header-section-number">6.3.6.8.1</span> R code and associated outputs</h5>
+<p>Procedure to follow:</p>
+<ol style="list-style-type: decimal">
+<li>Copy <code>Project_ID/</code> in a directory entitled <code>Chapter_5_PartB</code>.</li>
+<li>Create and save an <code>R</code> script and save it in <code>Chapter_5_PartB</code>.</li>
+<li>Make sure R packages are installed. See <a href="#RpkgRepCode">here</a> for more details.</li>
+<li>Study and execute the R code below to infer the file structure in <code>Project_ID/</code>. Also read the text below, which further explains the approach.</li>
+</ol>
 <pre class="r"><code>### Load R packages
 library(data.tree)
 library(DiagrammeR)
@@ -3417,8 +3438,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div id="htmlwidget-fa4e8c92a6e598414f4e" style="width:576px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fa4e8c92a6e598414f4e">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7d2d79c907ca73bf7a4d" style="width:576px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7d2d79c907ca73bf7a4d">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -3446,8 +3467,8 @@ Figure 6.8: Snapshot showing how to save the diagram in RStudio.
 <p><a href="https://rich-iannone.github.io/DiagrammeR/io.html" class="uri">https://rich-iannone.github.io/DiagrammeR/io.html</a></p>
 </div>
 </div>
-<div id="informative-consistent-naming" class="section level4" number="6.3.6.8">
-<h4><span class="header-section-number">6.3.6.8</span> Informative, consistent naming</h4>
+<div id="informative-consistent-naming" class="section level4" number="6.3.6.9">
+<h4><span class="header-section-number">6.3.6.9</span> Informative, consistent naming</h4>
 <p>Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure <a href="#fig:ProjStuct">6.5</a> for examples and Chapter 5: Data management for more details).</p>
 </div>
 </div>
@@ -3524,7 +3545,10 @@ x = 5</code></pre>
 <div id="portable-code-absolute-vs.-relative-paths" class="section level4" number="6.3.7.4">
 <h4><span class="header-section-number">6.3.7.4</span> Portable code: Absolute vs. Relative paths</h4>
 <p>When working collaboratively, portability between machines is very important, i.e. will your code work on someone else’s computer? Portability is also important if code is being run on another server, for example a High Performance Cluster. One way to improve portability of code is to avoid using absolute paths and use only relative paths (see <a href="https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths" class="uri">https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths</a>).</p>
-<p><strong>An absolute path is one that gives the full address to a folder or file. A relative path gives the location of the file from the current working directory.</strong></p>
+<ul>
+<li><strong>An absolute path</strong> is one that gives the full address to a folder or file.</li>
+<li><strong>A relative path</strong> gives the location of the file from the current working directory. Relative paths are favored to promote code portability.</li>
+</ul>
 <p>For example based on <code>species_data.csv</code> stored in the <code>Data</code> folder shown in Figure <a href="#fig:ProjStuct">6.5</a>:</p>
 <pre class="r"><code># Absolute path -----------------------------
 C:/Project_ID/Data/species_data.csv
@@ -4118,7 +4142,7 @@ Figure 8.2: Window allowing you to create a New RStudio project. See text for mo
 <div id="bioinformatic-dependencies-and-data-repositories" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Bioinformatic dependencies and data repositories</h2>
 <p>The list of R packages and GitHub repositories used in this chapter are listed below. Please make sure you have all these set-up before starting reading and completing the material presented in this chapter.</p>
-<div id="r-packages-1" class="section level3" number="8.4.1">
+<div id="r-packages" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> R packages</h3>
 <p>Most of the functions that we will be using in this chapter are base R functions installed (by default) in the <em>utils</em> package <span class="citation">(<a href="#ref-utils" role="doc-biblioref">R Core Team, 2019</a>)</span>. However, the following R package (and its dependencies) has to be installed on your computer prior to starting this tutorial: <em>repmis</em> <span class="citation">(<a href="#ref-repmis" role="doc-biblioref">Gandrud, 2016</a>)</span>. In the event that you wanted to import <code>xsl</code> or <code>xlsx</code> files into R, you would also have to install the <em>readxl</em> package <span class="citation">(<a href="#ref-readxl" role="doc-biblioref">Wickham and Bryan, 2019</a>)</span>.</p>
 </div>
@@ -4158,8 +4182,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div id="htmlwidget-9f0688e921e9cd0cb8cb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9f0688e921e9cd0cb8cb">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-65a4ea16e692686c26d9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-65a4ea16e692686c26d9">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
