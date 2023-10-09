@@ -2992,21 +2992,18 @@ This chapter is subdivided into two parts as follows:
 
 ## Getting published {#getpub}
 
-### Download presentation
+### Learning outcome
 
-The presentation slides for Chapter 6 - part A can be downloaded [here](Chapters_files/Chapter_6_Getting_published.pdf).
+- Learn procedures to present your research and disseminate it through publications.
 
-### Why publish?
+To support the learning outcome, we will focus on discussing:
 
-**Publishing research results is the one thing that unites scientists across all disciplines**, and it is a necessary part of the scientific process. You can have the best ideas in the world, but if you don't communicate them clearly enough to be published, your work won't be acknowledged by the scientific community.
-
-By publishing you are achieving three key goals for yourself and the larger scientific endeavor:
-
-- Disseminating your research.
-- Advancing your career.
-- Advancing science.
-
-In biology, publishing research is equal to journal articles. 
+1. The importance of knowing the key conclusion that you want to communicate and revolve your publication around it.
+2. The steps towards getting your research published:
+    - Selecting your journal.
+    - Writing your manuscript.
+    - Submitting your manuscript.
+    - Acceptance and publication.
 
 ### Literature and web resources
 
@@ -3030,6 +3027,22 @@ This chapter is mostly based on the following books, publications and web resour
 - CRediT (Contribution Roles Taxonomy): https://authorservices.wiley.com/author-resources/Journal-Authors/open-access/credit.html
 - Directory of Open Access journals: https://doaj.org/
 - The Wiley Author Webinars website is full of seminars covering topics such as: How to get published; How to write for scientific publications; Grant funding tips; Understand the peer review process; Improve article/publication discoverability; Ethics in publishing; Open Access; Time management skills. Available here: https://authorservices.wiley.com/author-resources/Journal-Authors/Prepare/webinars/index.html
+
+### Download presentation
+
+The presentation slides for Chapter 6 - part A can be downloaded [here](Chapters_files/Chapter_6_Getting_published.pdf).
+
+### Why publish?
+
+**Publishing research results is the one thing that unites scientists across disciplines**, and it is a necessary part of the scientific process. You can have the best ideas in the world, but if you don't communicate them clearly enough to be published, your work won't be acknowledged by the scientific community.
+
+By publishing you are achieving three key goals for yourself and the larger scientific endeavor:
+
+- Disseminating your research.
+- Advancing your career.
+- Advancing science.
+
+In biology, publishing research is equal to journal articles. 
 
 ### Know your message
 
