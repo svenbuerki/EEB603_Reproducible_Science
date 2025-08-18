@@ -4,11 +4,13 @@ date: "`r Sys.Date()`"
 output:
 #  bookdown::pdf_document2:
 #    toc: FALSE
-  bookdown::html_document2: 
+  bookdown::html_document2:
+    theme: yeti
+    highlight: tango
     toc: FALSE
     toc_float: TRUE
-link-citations: yes
 fontsize: 12pt
+link-citations: yes
 urlcolor: blue
 csl: AmJBot.csl
 bibliography: Bibliography_Reproducible_Science_2.bib
@@ -41,13 +43,13 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-The tentative timetable for this course is available in Table \@ref(tab:timetab). The instructor wants to warn students that he might adjust the timetable to accommodate progress and needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
+The tentative timetable for this course is provided in Table \@ref(tab:timetab). Please note that the instructor may adjust our schedule to accommodate the course’s progress and students’ needs. Any changes will be communicated to enrolled students in a timely manner.
 
 ```{r timetab, echo=FALSE}
 ###~~~
 # Build a data frame with all dates from beginning to end of Fall semester
 ###~~~
-dates <- data.frame(seq.Date(from=as.Date("2023/08/21"), to=as.Date("2023/12/15"), by="day"))
+dates <- data.frame(seq.Date(from=as.Date("2025/08/25"), to=as.Date("2025/12/19"), by="day"))
 #Assign a name to the col (allows using $)
 colnames(dates) <- "Date"
 
@@ -73,7 +75,7 @@ datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=17, by=1), 2)), datesc
 # Exclude dates falling during holiday break
 ###~~~
 #Establish vector of dates related to holidays
-holiday <- seq.Date(from=as.Date("2023/11/20"), to=as.Date("2023/11/26"), by="day")
+holiday <- seq.Date(from=as.Date("2025/11/24"), to=as.Date("2025/11/30"), by="day")
 
 #Find and exclude holidays
 datesclass <- datesclass[-which(datesclass$Date %in% holiday),]
@@ -95,7 +97,7 @@ colnames(timetable)[5] <- "Homework"
 ###~~~
 #Plot timetable in doc
 ###~~~
-knitr::kable(timetable,  caption = "Tentative timetable for the EEB603 Reproducible Science course during the 2023 Fall semester.") %>%
+knitr::kable(timetable,  caption = "Tentative timetable for the EEB603 Reproducible Science course, Fall 2025 semester.") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
 #PDF

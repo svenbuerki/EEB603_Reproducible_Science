@@ -48,58 +48,50 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 <div style="text-align: right"> [Download pdf version](Data/EEB603_Syllabus_BUERKI_2023.pdf) </div>
 <div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science) </div>
 
-# Instructor
+# Instructor Information
 
--   Name: Sven Buerki (he/his)
--   Office: Science building, office 114 (ground floor).
--   Email: [svenbuerki\@boisestate.edu](mailto:svenbuerki@boisestate.edu){.email}
--   Office hours: By appointment.
+- Name: Sven Buerki (he/his)
+- Office location: Science building, office 228 (first floor)
+- Office hours: By appointment
+- Email address: [svenbuerki\@boisestate.edu](mailto:svenbuerki@boisestate.edu){.email}
+- Preferred way to contact me: By email or in class
 
-# Our class ethos
+# Welcome
 
-> Everyone here is smart; distinguish yourself by being kind.
->
-> `r tufte::quote_footer('Kindness in Science is an inclusive approach that fosters diversity, 	respect, wellbeing & openness leading to better science outcomes.')`
+Welcome to the course! I am looking forward to getting to know you this semester. To get started, please familiarize yourself with this syllabus and our [website](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html). I developed this course to provide a welcoming environment and effective learning experience for all students. If you encounter barriers in this course, please bring them to my attention so that I may work to address them, and reach out to me at any time if you have questions about course content or assignments. 
 
-```{r kindness, echo=FALSE, fig.align='right', out.width = '40%', fig.pos= "h"}
-knitr::include_graphics("Images/Kindness.png")
-```
+# Class Details
 
-Learn more about this initiative [here](https://doi.org/10.1038/d41586-018-00482-y), as well as a recent article delving into what kindness in science is and why it does matter [@Boulter2023]. 
+## Class Location
 
-# Class details
+In-person in [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share).
 
-## Teaching mode and class location
+## Schedule
 
-In-person in [Science Bldg, Rm 149](https://maps.boisestate.edu/?id=715#!m/89069).
-
-## Meeting days and times
-
-Tuesday & Thursday from 9:00 to 10:15 AM.
+- Days: Tuesday & Thursday 
+- Times: 9:00 to 10:15 AM
 
 ## Timetable
 
 The tentative timetable for this course is available [here](Timetable.html). The instructor wants to warn students that he might adjust the timetable to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
 
-## Health and safety protocols
+# Course Format
 
-**Our priority is your safety!**
+This is a face to face course that will meet two times a week. Our class sessions include important information and opportunities to apply what you are learning with your peers. To best achieve the learning outcomes for the course, it is important that you attend class and be engaged with the content, me and each other. You should expect to spend approximately 9 hours each week on work for this course (including in and out of class time).
 
-There are currently no specific health guidelines, but for more information on this topic please visit the [BSU public health response](https://www.boisestate.edu/publichealth/) webpage.
+# Course Description and Goals
 
-# Course goal & description
+The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [e.g. @Baker_2016]. This course begins by reviewing the evidence for, and causes of, this crisis, and aims to highlight key factors that can improve reproducibility in science—especially within Ecology, Evolution & Behavior. It also provides a platform to develop, practice, and strengthen science communication skills [e.g. @Soltis2023 for some innovative ways to share your research]. 
 
-The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [see e.g. @Baker_2016]. This course starts by reviewing the evidence and causes supporting this crisis and aims at highlighting factors to boost reproducibility in science, especially in the fields of Ecology, Evolution & Behavior. This course also aims at providing a platform to develop, practice and strengthen science communication skills [see e.g. @Soltis2023 for some innovative ways to share your research].  
+The overarching aim of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research. Throughout the course, students will learn to use open-source software for research, including [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further develop these skills—and improve communication and teaching competencies—students will (**i**) design bioinformatics tutorials and teach them to peers, and (**ii**) design and implement individual projects aimed at developing a reproducible workflow tailored to their research interests.
 
-The overarching aim of this course is therefore to provide students with the theoretical knowledge and bioinformatic tools necessary to improve transparency, reproducibility and efficiency in scientific research. Across the course of the course, students will be taught how to use open source software for their research such as [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further master these latter skills and improve communication and teaching skills, students will *i*) design bioinformatic tutorials and teach those to their peers and *ii*) design and implement individual projects aiming at developing a reproducible workflow specific to their research interest.   
-
-Overall, this course **provides students with key knowledge to gather, store, share, prepare and analyze data as well as communicate results to the scientific community and various stakeholders** (see Figure \@ref(fig:part2)).
+Overall, this course **provides students with key knowledge to gather, store, share, prepare, and analyze data, as well as communicate results to the scientific community and various stakeholders** (see Figure @ref(fig:part2)).
 
 ```{r part2, echo=FALSE, fig.cap="Overview of workflow studied in PART2.", out.width = '100%', fig.pos= "h"}
 knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")
 ```
 
-# <a name="Structure"></a>Structure of the course
+## <a name="Structure"></a>Structure of the Course
 
 The course is subdivided into three parts: 
 
@@ -107,17 +99,18 @@ The course is subdivided into three parts:
 - *PART 2: Bioinformatics for Reproducible Science* 
 - *PART 3: Apply a Reproducible Approach to your Data*
 
-Part 1 provides students with key theoretical knowledge on reproducible science allowing them to successfully design and implement a reproducible approach tailored to Ecology, Evolution & Behavior. This part will also cover material associated with open science and data management and how these practices intertwine with scientific publications. 
+**Part 1** provides students with key theoretical knowledge on reproducible science, enabling them to design and implement a reproducible approach tailored to Ecology, Evolution & Behavior. This section also covers topics related to open science and data management, and how these practices intersect with scientific publishing.
 
-Part 2 provides students with opportunities to further learn and apply the coding and bioinformatic tools required to implement a reproducible workflow (Figure \@ref(fig:part2)). Here, students (with the support of the instructor) will develop and teach a tutorial on a specific bioinformatic subject, which will be taught over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment will be conducted in group or individually.
+**Part 2** offers students the opportunity to further develop and apply coding and bioinformatics tools essential for building reproducible workflows (Figure @ref(fig:part2)). In this section, students—supported by the instructor—will develop and teach a tutorial on a specific bioinformatics topic over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment may be completed individually or in groups.
 
-Finally, part 3 was designed to provide students with an opportunity to develop individual reproducible workflows tailored to their research project (or to data presented in a publication if they don't have a thesis subject yet). This assignment will be done by applying knowledge gained during the previous parts and working in collaboration with the instructor (in some cases, we might seek support from thesis advisers).
+**Part 3** is designed to give students the chance to develop an individual reproducible workflow tailored to their own research project (or using data from a publication, if they have not yet defined a thesis topic). This assignment builds on knowledge gained in the earlier parts of the course and will involve collaboration with the instructor—and in some cases, with thesis advisors.
 
-## Content of the course
+## Content of the Course
 
 **PART 1: The Big Picture**
 
-1. **Introduction: The reproducibility crisis & prospects to tackle it!**
+1. **The reproducibility crisis & prospects to tackle it!**
+   - Introduction: What is Reproducible Science?
    - Chapter 1: Introduction to R, RStudio, Markdown (incl. referencing) & User-defined functions.
    - Chapter 2: The reproducibility crisis.
    - Chapter 3: A roadmap to implement reproducible science in Ecology, Evolution & Behavior.
@@ -144,12 +137,18 @@ Finally, part 3 was designed to provide students with an opportunity to develop 
    - Produce individual reports showcasing reproducible workflows tailored to thesis projects.
    - Oral presentations of individual students' projects. 
 
-# <a name="GoogleSite"></a>Shared Google Drive
-A shared Google drive is set up to facilitate data sharing and allow students uploading their [bioinformatic tutorials](#BioTut). 
+## Course Learning Outcomes
 
+Learning outcomes for each chapter are available on the [course website](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html).
+
+# Class Resources
+
+## <a name="GoogleSite"></a>Shared Google Drive
+
+A shared Google Drive has been set up for data sharing and uploading [bioinformatic tutorials](#BioTut).
 - URL: https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=sharing
 
-# <a name="Publis"></a>Publications & Textbooks
+## <a name="Publis"></a>Publications and Textbooks
 
 The reading material at the basis of this course is composed of a mixture of publications and chapters mostly from two textbooks [@Gandrud2015; @Wickham2017]. We will also study the *"Guides to"* published by the [British Ecological Society](https://www.britishecologicalsociety.org/publications/guides-to/). Please find below the references used in each [chapter](#Structure). **This list is not exhaustive and additional literature will be provided in class.** 
 
@@ -168,15 +167,15 @@ The reading material at the basis of this course is composed of a mixture of pub
 | **Chap. 11** | Chapter 10 of @Gandrud2015, Chapters 1 and 22 of @Wickham2017 & @Yu2017 |
 | **Chap. 12** | Chapter 5 of @Gandrud2015 |
 
-# Examples of reproducible science
+## Examples of Reproducible Science
 
-To further exemplify how a reproducible approach can be implemented in your research, the instructor provides here examples of publications and software produced by students that have attended this course (alphabetically sorted):
+To further illustrate how a reproducible approach can be applied to research, the instructor provides examples of publications and software produced by students who have taken this course (listed alphabetically):
 
 - @Cole2022 -- **EcoCountHelper: an R package and analytical pipeline for the analysis of ecological count data using GLMMs, and a case study of bats in Grand Teton National Park.**
 - @Ellestad2022 -- **Genomic Insights into Cultivated Mexican Vanilla planifolia Reveal High Levels of Heterozygosity Stemming from Hybridization.**
 - @Wojahn2021 -- **G2PMineR: A Genome to Phenome Literature Review Approach.**
 
-# <a name="software"></a>The computing tools of reproducible science
+# <a name="software"></a>The Computing Tools of Reproducible Science
 
 Research is often presented in the form of slideshows, articles or books. These presentation documents announce a project's findings, but they are not the research, they are the advertisement part of the research project! 
 
@@ -184,48 +183,49 @@ Research is often presented in the form of slideshows, articles or books. These 
 
 **When we separate the research from its advertisement, we are making it difficult for others to verify the findings by reproducing them.**
 
-This course will give you the tools to dynamically combine your research with the presentation of your findings. The first tool will be a workflow for reproducible research weaving the principles of reproducibility throughout your entire research project, from data gathering to the statistical analysis, and the presentation of results. To reach this goal, you will learn how to use a number of computer tools that make this workflow possible. 
+This course will equip you with tools to integrate your research with clear and reproducible presentation of your findings. The first is a reproducible research workflow, which applies the principles of reproducibility throughout your entire project—from data collection to statistical analysis and results presentation. To support this, you will learn to use a range of computing tools that make this workflow possible.
 
-## The bioinformatic tools
+## The bioinformatics Tools
 
-The main bioinformatic tools covered in this course are:
+The main bioinformatics tools covered in this course are:
 
 - The **R** statistical language that will allow you to gather data and analyze it.
-- The **LaTeX** and **Markdown** markup languages that you can use to create documents (slideshows, articles, books, webpages) for presenting your findings.
+- The **Markdown** and **LaTeX** markup languages that you can use to create documents (slideshows, articles, books, webpages) for presenting your findings.
 - The *knitr* and *rmarkdown* **packages** for R and other tools, including **command-line shell programs** like GNU Make and Git version control, for dynamically tiding your data gathering, analysis, and presentation documents together so that they can be easily reproduced.
 - **RStudio**, a program that brings all of these tools together in one place.
 
-## Installing the main software
+## Installing Software
 
 As shown above, **R** and **RStudio** are at the core of this course and will have to be installed on your computers. This can be easily done by downloading the software from the following websites:
 
 - **R**: https://www.r-project.org
 - **RStudio**: https://www.rstudio.com/products/rstudio/download/
 
-The download webpages for these software have comprehensive information on how to install them, so please refer to those pages for more information.
+The download pages for these software tools include detailed installation instructions; please refer to them for more information.
 
-## Installing markup languages
+## Installing Markup Software
 
 If you are planning to create LaTeX documents, you will need to install a Tex distribution. Please refer to this website for more details: https://www.latex-project.org/get/
 
 If you want to create Markdown documents you can separately install the *rmarkdown* package in R (see [below](#Rpack) for more details).
 
-## <a name="Rpack"></a>Installing R packages
+## <a name="Rpack"></a>Installing R Packages
 
-We will be using a number of R packages especially designed to support reproducible research. Many of those packages are not included in the default R installation and will need to be installed separately. 
-To install key packages used in class, copy the following code and paste it into your R console:
+We will be using several R packages specifically designed to support reproducible research. Many of these packages are not included in the default R installation and must be installed separately.
+
+To install the core packages used in this course, copy the following code and paste it into your R console:
 
 ```{r eval=FALSE, tidy=TRUE}
 install.packages(c("brew", "countrycode", "devtools", "dplyr", "ggplot2", "googleVis", "knitr", "rmarkdown", "tidyr", "xtable"))
 ```
 
-Once you enter this code, you may be asked to select a CRAN "mirror" to download the packages from. Simply select the mirror closest to you.
+Once you run this code, you may be prompted to select a CRAN "mirror" to download the packages from. Simply choose the mirror closest to your location.
 
-Finally, it is highly likely that we will have to install additional packages. In this case, you can simply install it by using the same R function `install.packages()` or by using RStudio as follows: Select "Tools" -> "Install Packages ..." and then type the name of the package in the window (make sure to tick the "Install dependencies" box).
+It is also likely that we will need to install additional packages throughout the course. When that happens, you can install them using the same R function `install.packages()`, or through RStudio by selecting "Tools" → "Install Packages...", entering the package name in the dialog box, and ensuring the "Install dependencies" option is checked.
 
-# <a name="Cheat"></a>RStudio Cheat Sheets
+## <a name="Cheat"></a>RStudio Cheat Sheets
 
-RStudio provides a suite of cheat sheets that can be accessed by going to the "Help" menu and selecting "Cheatsheets". 
+RStudio offers a collection of cheat sheets accessible from the "Help" menu by selecting "Cheatsheets."
 
 Five cheat sheets are especially relevant to chapters taught in this course:
 
@@ -235,29 +235,29 @@ Five cheat sheets are especially relevant to chapters taught in this course:
   - *R Markdown Cheat Sheet*
   - *R Markdown Reference Guide*
 
-These documents together with the material presented in [publications & textbooks](#Publis) will provide the basis to design your [bioinformatic tutorials](#BioTut). 
+These documents together with the material presented in [publications & textbooks](#Publis) will provide the basis to design your [bioinformatics tutorials](#BioTut). 
 
-# R tutorials
+## R Tutorials
 
 Please find below two documents providing a comprehensive introduction to R:
 
 - R for beginners (a tutorial by Emmanuel Paradis): https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf
 - An introduction to R: https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf
 
-# Assessments
+# Assessments and Grading
 
-There will not be any classical exams in this course, but we will rather focus on developing theoretical and bioinformatic skills and applying those to your research. In this context, each student will be asked to produce a bioinformatic tutorial and teach it to their peers (see [PART 2](#PART2)). Each student will also be tasked to produce a report (tailored to their thesis project or a publication) and present their results and conclusions in class. 
+There will not be any classical exams in this course, but we will rather focus on developing theoretical and bioinformatics skills and applying those to your research. In this context, each student will be asked to produce a bioinformatics tutorial and teach it to their peers (see [PART 2](#PART2)). Each student will also be tasked to produce a report (tailored to their thesis project or a publication) and present their results and conclusions in class. 
 
-## Tests conducted during the course & grading
+## Mandatory Assignments
 
-Students will be graded based on the following four tasks:
+Students will be graded on the following four mandatory assignments:
 
-- Produce a bioinformatic tutorial focusing on a chapter from [PART 2](#PART2). Depending on enrollment students may be working in pairs (150 points).
-- Teach a bioinformatic lab (spread across 2 sessions; 100 points).
-- Produce an individual report on thesis project/publication (200 points).
-- One oral presentation on thesis project/publication (100 points).
+1. Produce a group bioinformatics tutorial based on a chapter from [PART 2](#PART2) (150 points).
+2. Teach the bioinformatics tutorial to their peers over two sessions (100 points).
+3. Produce an individual report on their thesis project or a related publication (200 points).
+4. Deliver an oral presentation on their thesis project or publication (100 points).
 
-Exams are summing to a total of **550 points** and Table \@ref(tab:mygrade) exhibits the grading scale applied in this course.
+These assignments total **550 points**. Table @ref(tab:mygrade) shows the grading scale used in this course.
 
 ```{r mygrade, echo=FALSE}
 library(bookdown)
@@ -267,26 +267,26 @@ knitr::kable(grades, caption = "Grading scale applied in this course.") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
+## <a name="BioTut"></a>Bioinformatics Tutorial (150 points)
 
-## <a name="BioTut"></a>Bioinformatic tutorial (150 points)
+During the first two weeks, students will [sign up](#GoogleBioTut) for a chapter from [PART 2](#PART2) to study and create a bioinformatics tutorial. Depending on enrollment, tutorials will be developed individually or in groups, with support from the instructor (see details below).
 
-During week 1, students will be assigned a chapter of [PART 2](#PART2) to study and produce a bioinformatic tutorial. Based on enrollment, students might work individually or in pairs (please see below for more information).
+Tutorials must be written using *knitr*/*rmarkdown* in RStudio and focus on a set of exercises designed to build key bioinformatics skills related to the chosen chapter (see [PART 2](#PART2)). Students are encouraged to use materials from @Gandrud2015 and @Wickham2017, or other properly cited sources. For additional resources, see the [Publications and Textbooks](#Publis) and [RStudio Cheat Sheets](#Cheat) sections.
 
-Tutorials will have to be written in the *knitr*/*rmarkdown* language as implemented in RStudio. Tutorials should be focused on developing a suite of exercises aiming at gaining key bioinformatic skills specific to each chapter (see [PART 2](#PART2)). Students will be welcomed to use material presented in @Gandrud2015 and @Wickham2017 to develop their tutorials, but they can also use other sources as long as they are properly cited in their documents. See [Publications & Textbooks](#Publis) and [RStudio Cheat Sheets](#Cheat) sections for more details.  
+Each tutorial should be designed to fit within two laboratory sessions (see [Teaching Tutorials](#TeachTut)). **Tutorials must be submitted to the instructor one week before presentation for review and uploading to the shared Google Drive.**
 
-Students should design their tutorials to be completed within 2 laboratory sessions (see [below](#TeachTut)). **Tutorials should be submitted to the instructor 1 week in advance for correction and to be uploaded onto the shared Google drive.**
+### What Should You Keep in Mind?
 
-### What do you need to keep in mind?
+When designing your tutorials, please consider the following:
 
-While designing your tutorials, please think about the following points:
+1. What are your main objectives, and how do they relate to the scientific process and data life cycle? Include the necessary theoretical background.
+2. What specific learning outcomes do you want your peers to achieve?
+3. What data will you use to teach the tutorial?
+4. What bioinformatics tools or packages are required, and how can they be installed?
 
-1. What are your major objectives and how do they fit within the scientific process and data life-cycle? Please also focus on the theoretical background.
-2. What are the specific learning outcomes?
-3. What data are used to teach this tutorial?
-4. What are the bioinformatic dependencies and how to install them?
-5. When you teach each concept, make sure to clearly explain the rational, steps to get there (pseudo-code) and focus on the input/output and data class/format used for each function.
+When explaining each concept, clearly describe the rationale, outline the steps (using pseudocode if helpful), and emphasize the input/output and data type or format for each function.
 
-### Content of the tutorial
+### Content of the Tutorial
 
 Based on the information provided above, your tutorial should include:
 
@@ -296,35 +296,39 @@ Based on the information provided above, your tutorial should include:
 - A references section and links to manuals of R packages. 
 - Commented R code necessary to guide users through the exercises as well as some knowledge on expected outputs.
 
-### Google sheet with groups for bioinformatic tutorials
+### <a name="GoogleBioTut"></a>Google Sheet for Bioinformatics Tutorials
 
-The instructor is asking students to sign up for designing and teaching a bioinformatic tutorial by accessing the following Google sheet (the number of students per chapter is provided, please respect this guideline):
+The instructor is asking students to sign up for designing and teaching a bioinformatics tutorial by accessing the following Google sheet (the number of students per chapter is provided, please respect this guideline):
 
 - https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing
 
-## <a name="TeachTut"></a>Teaching your bioinformatic tutorial (100 points)
+## <a name="TeachTut"></a>Teaching Tutorials (100 points)
 
-Students are expected to prepare a 10 minutes presentation providing general guidelines to complete the tutorial. Presentations will be uploaded onto the shared Google drive and made accessible to all students. Students are expected to support their peers in completing tutorials by answering questions. The instructor will also be answering questions, but students are leading the teaching of the bioinformatic laboratories. 
+Students are expected to prepare a 10–20 minute presentation that provides general guidance on completing their tutorial. Presentations will be uploaded to the shared Google Drive and made accessible to all students. During the tutorial sessions, students must run through their tutorial with their peers, ensuring they understand the key concepts and are able to complete the assignments or tasks. Students are expected to support their peers by answering questions throughout. While the instructor will also be available to assist, students will take the lead in teaching the bioinformatics laboratories.
 
-Students will be graded according to their abilities to teach their tutorials and answer questions. The instructor might also use student's feedback to grade this test.
+Grading will be based on students’ ability to effectively teach their tutorials, facilitate understanding, and respond to questions. The instructor may also consider peer feedback when assigning grades for this component.
 
-## Individual report on thesis project/publication (200 points)
+## Individual Report on Thesis Project/Publication (200 points)
 
-Students will work alongside the instructor to develop a reproducible workflow specific to their thesis project. In cases where students do not yet have a clear idea on their thesis project, they will work with instructor to identify a publication that can serve as basis for their individual project.  
+Students will collaborate with the instructor to develop a reproducible workflow tailored to their thesis project. For students who do not yet have a defined thesis topic, the instructor will help select a relevant publication to serve as the basis for their individual project. The instructor encourages students to reach out as soon as possible to begin designing their individual projects.
 
-Reports will be written using the *knitr*/*rmarkdown* markup language as implemented in RStudio. The instructor expects students to provide a list of references supporting their reports. References will have to be cited in the text: it is not enough to through a bunch of references at the end of the report. This exercise aims at supporting methodological decisions taken in the report and increasing transparency.
+Reports should be written using *knitr*/*rmarkdown* in RStudio. Students must clearly state the rationale, objectives, and the scientific question at the core of their report. Framing the project within the scientific process is essential, as it is impossible to evaluate reproducibility without this context.
 
-### Students gather prior key elements on their project
+Additionally, students are expected to include a list of references supporting their report. References must be properly cited within the text; simply listing them at the end is not sufficient. This practice helps justify methodological choices and enhances transparency.
 
-- What kind of data are already published/available (and which of those are relevant to your topic)? 
-- Where are those published data deposited?
-- Can you reproduce the analyses based on published data?
-- What types of data are or will be produced during your thesis project? 
-- What are the specificity of your data (in term of storage, sharing, etc.)?
-- What are the publication standards in your field [see e.g. @Donoho2010; @Smith2016]?
-- etc...
+### Students Gather Key Elements for their Project
 
-### Students develop the following core processes for their project
+When considering your individual project, keep the following questions in mind:
+
+- What types of data are already published or available, and which are relevant to your topic?
+- Where are these published data deposited?
+- Can you reproduce the analyses based on the published data?
+- What types of data are or will be generated during your thesis project?
+- What are the specific characteristics of your data (e.g., storage, sharing requirements)?
+- What are the publication standards in your field? [see e.g., @Donoho2010; @Smith2016]
+- Etc.
+
+### Students Develop these Core Processes for their Project
 
 - A data management workflow specific to your research, which will cover the following stages of the data life cycle [see e.g. @DataMan]:
   - Create
@@ -341,67 +345,53 @@ Reports will be written using the *knitr*/*rmarkdown* markup language as impleme
   - Model
   - Communicate
 
-## Oral presentation on thesis project/publication (100 points)
+## Oral Presentation on Thesis Project/Publication (100 points)
 
 Each student will have to present their report during final week. The presentation should follow the same structure as the report and not exceed 15 minutes. There will be 5 minutes at the end of the presentation allocated for questions. 
 
-# Late work policy
+# Expectation for Student Success
 
-The instructor expects students to deliver their assignments on time and set enough time aside to work on their projects (see above for more details). However, if you have any issues preventing completion of your work on time, please contact the instructor as soon as possible to find common solutions. 
+My goal is that every student is successful in this course, but I need your help to achieve that. In order to do your part to ensure your success in this course, please: 
 
-# Engagement expectations
+- **Attend class.** We will be using class time to practice and apply what we are learning, so it is important for your and your fellow students’ learning that you are present and participatory. You can miss two class periods without it affecting your grade. If you have to miss beyond two classes, please email me as soon as possible to discuss ways to help you participate in classroom activities asynchronously as appropriate.
+- **Ask questions.** Learning is all about asking questions, so always feel free to do so in this class. 
+- **Be respectful of your fellow students.** While working together to build this community, we ask all members to:
+  - Share their unique experiences, values, and beliefs, if comfortable doing so.
+  - Listen deeply to one another.
+  - Honor the uniqueness of their peers.
+  - Create a respectful environment in this course and across the campus community.
+- **Check announcements or e-mails regularly.** Announcements will serve as courtesy reminders and also point you to any new materials or changes. 
+- **Do the pre-class assignments.** In order to make the most of our class time, it is important that all students complete the pre-class assignments so we can jump into our application activities. 
 
-The instructor is expecting students to attend classes (please join on time and for the full duration of the class) and actively engage by asking questions and giving feedback on teaching material and course content. This course was designed to help students implementing a reproducible approach to their research projects. If you are judging that additional content should be covered in class, please contact the instructor. The instructor will do his very best to obtain information or seek support from colleagues to cover the requested material. In the case that you have any issues attending class, please contact the instructor by email (svenbuerki@boisestate.edu) asap and see below for more details.
+If you are unable to attend class, please contact the instructor as soon as possible via email at svenbuerki@boisestate.edu.
 
-# What you can expect of me
+# Expectations for Me
 
-The instructor will be prepared for class, on time and not leave early. He will also be respectful of you and your opinions. Overall, the instructor wants to foster a kind and respectful class environment where all students can express themselves and share their opinions. This means that meaningful and constructive dialogue is encouraged in this class and it requires a degree of mutual respect, willingness to listen, and tolerance of opposing points of view. Respect for individual differences and alternative viewpoints will be maintained at all times in this class. One’s words and use of language should be temperate and within acceptable bounds of civility and decency. Finally, the instructor will reply to emails and grade tests as soon as possible (and provide positive criticism) to allow students mastering the material presented in class.
+In support of my goal that every student be successful in this course, you can expect that I: 
 
-# This course was designed with you in mind
+- **Will be available to answer questions throughout the course.** I encourage you to visit me during Student Hours to ask any questions about the course material or to further your curiosity in the subject matter. You may also email me with questions or concerns or ask to meet via Zoom or on campus outside of the Student Hours, and I will do my best to accommodate your needs.
+- **Will provide regular feedback on your work in a timely fashion.** I will return completed work to you, with feedback, within one week of the due date. 
+- **Will continuously work on improving your learning experience through my own class observations and based on your feedback.** You will have the opportunity to provide feedback to me at the midpoint of the semester, and via the end of course evaluations. 
 
-The instructor has developed this course to provide a welcoming environment and effective, equitable learning experience for all students. If you encounter barriers in this course, please bring them to my attention so that I may work to address them.
+# This Class Welcomes Everyone
 
-## This class’s community is inclusive
+Students in this class represent a rich variety of backgrounds and perspectives. The (program/dept) is committed to providing an environment where similarities and differences are respected, supported, and valued.  While working together to build this community, we ask all members to:
 
-Students in this class represent a rich variety of backgrounds and perspectives. The [Biological Sciences department](https://www.boisestate.edu/biology/) is committed to providing an atmosphere for learning that respects diversity and creates inclusive environments in our courses. While working together to build this community, we ask all members to:
+- share their unique experiences, values, and beliefs, if comfortable doing so.
+- listen deeply to one another.
+- honor the uniqueness of their peers.
+- appreciate the opportunity we have to learn from each other in this community.
+- use this opportunity together to discuss ways in which we can create a welcoming and respectful environment in this course and across the campus community.
+- recognize opportunities to invite a community member to exhibit more respectful speech or behavior—and then also invite them into further conversation. We also expect community members to respond with gratitude and to take a moment of reflection when they receive such an invitation, rather than react immediately from defensiveness.
+- keep confidential any discussions that the community has of a personal (or professional) nature, unless the speaker has given explicit permission to share what they have said.
 
-- Share their unique experiences, values, and beliefs, if comfortable doing so.
-- Listen deeply to one another.
-- Honor the uniqueness of their peers.
-- Appreciate the opportunity we have to learn from each other in this community.
-- Use this opportunity together to discuss ways in which we can create an inclusive environment in this course and across the campus community.
-- Recognize opportunities to invite a community member to exhibit more inclusive, equitable speech or behavior—and then also invite them into further conversation. We also expect community members to respond with gratitude and to take a moment of reflection when they receive such an invitation, rather than react immediately from defensiveness.
-- Keep confidential any discussions that the community has of a personal (or professional) nature, unless the speaker has given explicit permission to share what they have said.
-- Respect the right of students to be addressed and referred to by the names and pronouns that correspond to their gender identities, including the use of non-binary pronouns. 
+As your instructor, my goal is to make sure that our learning environment is effective for everyone. This means, in part, that each student is encouraged to share perspectives relevant to the course material and that our class activities and discussions are conducted in a way that supports everyone’s learning.
 
-## We use each other’s preferred names and pronouns
+# Student Well-being
 
-Please let the instructor know of your preferred or adopted name and gender pronoun(s), and he will make those changes to his own records and address you that way in all cases. 
+If you are struggling for any reason (e.g., family emergency, financial/basic needs, mental/physical health concerns, caregiving responsibilities, etc.) and believe these struggles may impact your performance in the course, I encourage you to reach out to me if you are comfortable doing so, and I will refer you to an appropriate university resource. You may also reach out directly to the outreach team in the Office of the Dean of Students at (208) 426-1527 or email studentoutreach@boisestate.edu for support. The [Student Life Essentials page](https://www.boisestate.edu/student-life/) is also a great place to find helpful resources. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with [Counseling Services](https://www.boisestate.edu/healthservices/counseling/) (1529 Belmont Street, Norco Building) at (208) 426-1459 or email healthservices@boisestate.edu.
 
-To change to a preferred name so that it displays on all BSU sites, including Canvas and the course roster, contact the Registrar's Office at (208) 426-4249. Note that only a legal name change can alter your name on BSU official and legal documents (e.g., your transcript).
-
-## This course is accessible to students with disabilities
-
-The instructor recognizes that navigating your education and life can often be more difficult if you have disabilities. I want you to achieve at your highest capacity in this class. If you have a disability, the instructor needs to know if you encounter inequitable opportunities in this course related to:
-- Accessing and understanding course materials.
-- Engaging with course materials and other students in the course.
-- Demonstrating your skills and knowledge on assignments and exams.
-
-If you have a documented disability, you may be eligible for accommodations in all of your courses. To learn more, make an appointment with the university’s [Educational Access Center](https://www.boisestate.edu/eac/). 
-
-## For students responsible for children
-
-The instructor recognizes the unique challenges that can arise for students who are also parents or guardians of children. If you have any specific needs related to this topic, please contact the instructor asap.
-
-# Academic integrity
-
-To create a welcoming, engaging, and effective learning environment, the instructor expects all of us to exhibit behavior that reflects Boise State’s [Statement of Shared Values](https://www.boisestate.edu/president/values/statement-of-shared-values/). The Shared Values emphasize academic excellence, caring, citizenship, fairness, respect, responsibility, and trustworthiness. In keeping with these values, the instructor expects students in this course to uphold the standards outlined in the Boise State University [Student Code of Conduct](https://www.boisestate.edu/policy/student-affairs/code-of-conduct/).
-
-# Student well-being
-
-If you are struggling for any reason (e.g., COVID, relationship, family, or life’s stresses) and believe these may impact your performance in the course, the instructor is encouraging you to contact the Dean of Students at (208) 426-1527 or email deanofstudents@boisestate.edu for support. Additionally, if you are comfortable doing so, please reach out to me and I will provide any resources or accommodations that I can. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with Counseling Services (1529 Belmont Street, Norco Building) at (208) 426-1459 or email healthservices@boisestate.edu.
-
-## What do you need?
+# What Do you Need?
 
 The university has many resources designed to support you as a learner and human being. Among these are:
 
@@ -424,6 +414,50 @@ The university has many resources designed to support you as a learner and human
   - Mentoring and Training.
   - Programs and events.
 - Food assistance: If you are hungry and cannot afford to purchase food, the campus has some resources to help you. You can visit the [campus food pantry](https://www.boisestate.edu/deanofstudents/student-support/food-help/food-pantry/) or [get free meals in the campus dining hall](https://www.boisestate.edu/deanofstudents/student-support/food-help/meal-assistance/).
+
+# Course Policies
+
+## Academic Integrity
+
+Academic Excellence is a [Shared Value](https://www.boisestate.edu/president/values/statement-of-shared-values/) at Boise State, and part of your responsibility in pursuing academic excellence includes avoiding cheating, plagiarism, and any other kind of academic misconduct. If I find a student responsible for academic misconduct in our class, the outcome of their choice to not fully engage in their learning might range from a 'revise & resubmit' up to an 'F (failure) for the course.' For more info, please read [The Student Code of Conduct (Policy 2020), Section 7: Academic Misconduct Complaints, Violations, Processes and Sanctions](https://www.boisestate.edu/policy/student-affairs/code-of-conduct/#academic_misconduct).
+
+## Artifical Intelligence (AI) Use in The Course
+
+In this course, I want to see your thoughts, understand your reasoning, and hear your voice. However, there are moments in this course where you might find it useful to use generative AI tools in support of your learning.
+ 
+You may use generative AI tools for specified activities and assignments if their use supports, rather than undermines, your learning. While generative AI can help to advance your learning, its usefulness depends on the purpose of each activity or assignment. You will find guidelines for generative AI use in the instructions for each assignment; please read them very carefully, as these guidelines differ by assignment.
+
+If you use ChatGPT, Gemini, Grammarly, Midjourney, or other AI tools in support of your work in this course, cite any ideas, text, images, or other media generated by the tool using the instructions and format of the [Modern Language Association](https://style.mla.org/citing-generative-ai/) (MLA), [American Psychological Association](https://apastyle.apa.org/blog/how-to-cite-chatgpt) (APA), [Chicago Manual of Style](https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Documentation/faq0422.html), or other citation style as appropriate. When you use a tool in an assignment, include a brief, clear description of how you used it. If you use generative AI, you must not let this tool replace your thinking and work. In fact, it is your responsibility to ensure you are fully engaging in learning and submitting authentic work. To learn more about how to learn successfully and avoid academic misconduct behaviors, please review the [Student Code of Conduct](https://www.boisestate.edu/policy/student-affairs/code-of-conduct/) with special attention to [Section 8: Procedures for Academic Misconduct](https://www.boisestate.edu/policy/student-affairs/code-of-conduct/#procedures). 
+
+If you are unsure of whether or when to use generative AI tools in this course, please reach out to me. I’m eager to learn about how we might use them in new ways to meaningfully advance your learning and prepare you for your future beyond Boise State.
+
+## Communicable Disease Policy
+
+Boise State has a [Communicable Disease Policy (Policy 9270)](https://www.boisestate.edu/policy/facilities-planning-campus-safety/communicable-disease/#:~:text=Students%2C%20faculty%2C%20and%20other%20employees,to%20the%20Public%20Health%20Office.) that guides everyone working and learning in our community. The policy has two key implications:
+
+1.	Any illness covered by the policy must be reported to Boise State Public Health by the impacted individual,
+2.	Faculty are required to accommodate any student impacted by any illness covered by the policy as directed by Boise State Public Health. 
+
+## Late Work Policy
+
+Due dates for every assignment are provided on the course [timetable](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html). Unless otherwise stated, assignments are due on those days. However, I recognize that things can happen that are out of your control. In these instances, please reach out to me ahead of the due date, or as soon as possible afterwards, so that we can make a plan for you to submit the assignment as close to the original due date as possible. If an assignment is not submitted within two weeks of the due date, and you have not contacted me about when you will be submitting it, I will enter the assignment as Incomplete in Canvas until such time that we discuss the missing assignment and agree on a course of action. 
+
+# Note on Course Content and Idaho Law
+
+Under Idaho law (Section § 67-5909D), some university courses with content related to diversity, equity, inclusion, or critical theory may be subject to certain restrictions. However, the law affirms and does not limit free discussion in the learning environment. Like all Boise State courses, this course supports open inquiry, intellectual honesty, and respectful engagement with a range of perspectives, all of which are consistent with student rights and responsibilities described in the [Student Code of Conduct (Policy 2020)](https://www.boisestate.edu/policy/student-affairs/code-of-conduct/). 
+
+This course may include content that touches on concepts related to diversity, equity, inclusion (DEI), or critical theory—such as systemic inequality, cultural identity, or gender and race in society. If these topics are included, it is because they are relevant to the learning outcomes for this course and are explored to support critical thinking, deeper understanding, and respectful engagement with different perspectives. As part of the course, you may be asked to apply or explain ideas that come from a particular perspective. However, you are not required to adopt such perspectives as your own.
+
+Our learning environment is a space for open dialogue and thoughtful discussion, including complex or challenging topics. Everyone is expected to engage with curiosity, listen respectfully, and contribute in ways that support a productive and welcoming learning environment. Boise State and the Idaho State Board of Education affirm the importance of free expression and academic inquiry. As outlined in SBOE Policy III.B:
+
+> “Membership in the academic community imposes on administrators, faculty members, other institutional employees, and students an obligation to respect the dignity of others, to acknowledge the right of others to express differing opinions, and to foster and defend intellectual honesty, freedom of inquiry and instruction, and free expression on and off the campus of an institution.”
+
+Disruptive behavior that interferes with the learning environment will not be tolerated and may result in removal from this course, in line with university policy (See [Policy 3240 Maintaining Effective Learning Environments](https://www.boisestate.edu/policy/academic-affairs-student/maintaining-effective-learning-environments/)).
+
+In this course, I will foster critical discussion and analysis, and a respectful consideration of a wide range of ideas, in accordance with the [Faculty Code of Rights, Responsibilities, and Conduct (Policy 4000)](https://www.boisestate.edu/policy/academic-affairs-faculty-administration/faculty-code-of-rights-responsibilities-and-conduct/). You are encouraged to think critically, question ideas, and form your own conclusions. As always, you have the freedom to choose courses that align with your academic goals—if you have concerns about course content, please talk with your instructor or advisor. Refer to the academic calendar for important deadlines related to course withdrawal.
+
+To learn more about the law and its impact at Boise State, visit the [Provost Office’s Information Regarding Section 67-5909D page](https://www.boisestate.edu/academics/information-regarding-section-67-5909d-course-and-curriculum/).
+
 
 # References
 
