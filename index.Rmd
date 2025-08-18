@@ -3,13 +3,10 @@ title: "EEB 603 -- Reproducible Science"
 author: "Sven Buerki - Boise State University"
 date: '`r Sys.Date()`'
 output:
-#  bookdown::pdf_document2:
-#    toc: yes
   bookdown::html_document2:
     toc: yes
     toc_float: yes
     self_contained: yes
-  '': default
 subtitle: Syllabus
 link-citations: yes
 fontsize: 12pt
