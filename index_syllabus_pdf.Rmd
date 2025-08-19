@@ -3,10 +3,12 @@ title: "EEB 603 -- Reproducible Science"
 author: "Sven Buerki - Boise State University"
 date: '`r Sys.Date()`'
 output:
-  bookdown::html_document2:
+  bookdown::pdf_document2:
     toc: yes
-    toc_float: yes
-    self_contained: yes
+    toc_depth: 2
+    number_sections: yes
+    geometry: margin=1in
+    keep_tex: yes
 subtitle: Syllabus
 link-citations: yes
 fontsize: 12pt
@@ -42,7 +44,7 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-<div style="text-align: right"> [Download pdf version](index_syllabus_pdf.pdf) </div>
+<div style="text-align: right"> [Download pdf version](Data/EEB603_Syllabus_BUERKI_2023.pdf) </div>
 <div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science) </div>
 
 # Meeting Time and Place
