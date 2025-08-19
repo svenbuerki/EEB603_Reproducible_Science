@@ -101,9 +101,8 @@ The course is subdivided into three parts:
 **PART 1: The Big Picture**
 
 1. **The reproducibility crisis & prospects to tackle it!**
-   - Introduction: What is Reproducible Science?
-   - Chapter 1: Introduction to R, RStudio, Markdown (incl. referencing) & User-defined functions.
-   - Chapter 2: The reproducibility crisis.
+   - Chapter 1: The reproducibility crisis.
+   - Chapter 2: Introduction to R, RStudio, Markdown (incl. referencing) & User-defined functions.
    - Chapter 3: A roadmap to implement reproducible science in Ecology, Evolution & Behavior.
    - Chapter 4: Open science and CARE principles.
 2. **Getting started: Overview of data workflow & used software**

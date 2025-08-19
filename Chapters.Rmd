@@ -92,15 +92,43 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 
 Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/Chapter_00_Syllabus_EEB603.pdf).
 
-# Introduction
+# Chapter 1
 
-In this section, we will investigate the following question:
+## What is Reproducible Science?
 
-> What is Reproducible Science?
+Group activity to investigate reproducible science. 
 
-Group work
+## What Factors Break Reproducibility?
 
-# Chapter 1 {#chap1}
+In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
+
+## What’s the difference between reproduction and replication?
+
+Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adapted from [RESCIENCE C](http://rescience.github.io/).
+
+- **Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
+
+- **Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on sagebrush. For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
+
+Overall, **reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else**. On the other hand, **replication explores which details matter for reaching a specific scientific conclusion**. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.
+
+## Online resources
+
+The list of websites listed here have been used to design this chapter:
+
+- [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
+- [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
+- [Reproducibility and research integrity](https://www.biomedcentral.com/collections/reproducibility) - A Special Issue published in *BMC Research Notes*.
+- [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
+- [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
+
+## Teaching material
+
+The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf). The pdf of @Baker_2016 is available on our shared Google Drive at this path:
+
+`Reproducible_Science > Publications > Baker_Nature_2016.pdf`
+
+# Chapter 2 {#chap2}
 
 ## Introduction
 
@@ -408,9 +436,9 @@ There are three ways to access spell checking in an R Markdown document in RStud
 
 Students will work individually to complete the following exercises:
 
-1. Create an `*.Rmd` file entitled `Exercises chapter 1: part A` and select `HTML` as output format.
-2. Save this document as `Exe_chap1_partA.Rmd` in a folder called `Exercises` located in:
-    + `Reproducible_Science/Chapters/Chapter_1`
+1. Create an `*.Rmd` file entitled `Exercises chapter 2: part A` and select `HTML` as output format.
+2. Save this document as `Exe_chap2_partA.Rmd` in a folder called `Exercises` located in:
+    + `Reproducible_Science/Chapters/Chapter_2`
 3. Practice syntax to do:
     + headers
     + inside text commenting
@@ -1673,38 +1701,6 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 - Include multiple choices questions.
 - Embed a YouTube video.
 
-# Chapter 2
-
-## Introduction
-
-In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
-
-## What’s the difference between reproduction and replication?
-
-Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adapted from [RESCIENCE C](http://rescience.github.io/).
-
-- **Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
-
-- **Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on sagebrush. For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
-
-Overall, **reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else**. On the other hand, **replication explores which details matter for reaching a specific scientific conclusion**. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.
-
-## Online resources
-
-The list of websites listed here have been used to design this chapter:
-
-- [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
-- [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
-- [Reproducibility and research integrity](https://www.biomedcentral.com/collections/reproducibility) - A Special Issue published in *BMC Research Notes*.
-- [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
-- [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
-
-## Teaching material
-
-The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf). The pdf of @Baker_2016 is available on our shared Google Drive at this path:
-
-`Reproducible_Science > Publications > Baker_Nature_2016.pdf`
-
 # Chapter 3 {#chap3}
 
 ## Introduction
@@ -1796,7 +1792,7 @@ Our **objective is to tackle threats by providing measures to ensure reproducibi
 2. **Reporting & dissemination**
     - Promoting study pre-registration.
     - Improving the quality of reporting.
-    - Promoting linkage of publication, data, code & analyses into a unified environment (see [chapter 1](#chap1)).
+    - Promoting linkage of publication, data, code & analyses into a unified environment (see [chapter 2](#chap2)).
 3. **Reproducibility**
     - Promoting transparency and open science.
 4. **Evaluation**
@@ -2611,7 +2607,7 @@ The following steps have to be fully integrated in order to produce a reproducib
 - **Step 6:** Implement a version control protocol (with Git).
 - **Step 7:** Ensure archiving and citation of code.
 
-In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters [1](#chap1) and 5 ([Data management](#partDM)), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.
+In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters [2](#chap2) and 5 ([Data management](#partDM)), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.
 
 ### Learning outcomes
 
