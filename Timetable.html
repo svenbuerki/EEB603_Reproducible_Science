@@ -9,14 +9,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="" />
 
-<meta name="date" content="2025-08-13" />
+<meta name="date" content="2025-08-18" />
 
 <title>Timetable</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,6 +31,8 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -42,6 +45,16 @@
   ul.task-list{list-style: none;}
     </style>
 
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -236,7 +249,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="Timetable.html">Timetable</a>
+  <a href="Timetable.html">Schedule</a>
 </li>
 <li>
   <a href="Chapters.html">Chapters</a>
@@ -257,7 +270,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Timetable</h1>
-<h4 class="date">2025-08-13</h4>
+<h4 class="author"></h4>
+<h4 class="date">2025-08-18</h4>
 
 </div>
 
@@ -271,7 +285,7 @@ $(document).ready(function() {
 <p>The tentative timetable for this course is provided in Table <a href="#tab:timetab">1</a>. Please note that the instructor may adjust our schedule to accommodate the course’s progress and students’ needs. Any changes will be communicated to enrolled students in a timely manner.</p>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:timetab">Table 1: </span>Tentative timetable for the EEB603 Reproducible Science course during the 2023 Fall semester.
+<span id="tab:timetab">Table 1: </span>Tentative timetable for the EEB603 Reproducible Science course, Fall 2025 semester.
 </caption>
 <thead>
 <tr>
@@ -292,9 +306,6 @@ Topic
 <th style="text-align:left;">
 Homework
 </th>
-<th style="text-align:left;">
-URL
-</th>
 </tr>
 </thead>
 <tbody>
@@ -311,12 +322,9 @@ URL
 Tuesday
 </td>
 <td style="text-align:left;">
-Syllabus
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
 <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html">Syllabus</a>
+</td>
+<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -332,13 +340,10 @@ Syllabus
 Thursday
 </td>
 <td style="text-align:left;">
-Intro. Chapt. 1 &amp; Chap. 2: The reproducibility crisis
+<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1">Chapt. 1</a>
 </td>
 <td style="text-align:left;">
-Due to internet outage on campus, we had to change schedule. Read Baker (2016) and prepare for discussing outcome of study
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1">Chapter 1</a> &amp; <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#3_Chapter_2">Chapter 2</a>
+Read your assigned publication for Chapter 1
 </td>
 </tr>
 <tr>
@@ -354,13 +359,10 @@ Due to internet outage on campus, we had to change schedule. Read Baker (2016) a
 Tuesday
 </td>
 <td style="text-align:left;">
-Chap. 1 - part A: Learning the basics
+<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1">Chapt. 1</a>
 </td>
 <td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#213_Install_R_Markdown_software">Install software</a>
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partA">Part A</a>
+Read Baker (2016) and prepare for discussing outcome of study
 </td>
 </tr>
 <tr>
@@ -376,13 +378,10 @@ Chap. 1 - part A: Learning the basics
 Thursday
 </td>
 <td style="text-align:left;">
-Chap. 1 - Complete part A &amp; overview of part B: Tables, Figures and References
+<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1">Chapt. 1</a>
 </td>
 <td style="text-align:left;">
-Read Chapt. 1 - part B (Set your R Markdown environment)
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partA">Part A</a> &amp; <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#233_Set_your_R_Markdown_environment">Part B: Set your R Markdown environment</a>
+<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#213_Install_R_Markdown_software">Install software</a> and Sign up for bioinformatics tutorial (see <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#1013_Google_Sheet">Syllabus</a> )
 </td>
 </tr>
 <tr>
@@ -398,13 +397,10 @@ Read Chapt. 1 - part B (Set your R Markdown environment)
 Tuesday
 </td>
 <td style="text-align:left;">
-Chap. 1 - part B: Tables, Figures and References
+<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#32_PART_A:_Learning_the_basics">Chap. 2 - part A: Learning the basics</a>
 </td>
 <td style="text-align:left;">
-Work on bioinfo. tutorials
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References">Part B</a>
+Read Chapt. 1 - part A
 </td>
 </tr>
 <tr>
@@ -420,13 +416,10 @@ Work on bioinfo. tutorials
 Thursday
 </td>
 <td style="text-align:left;">
-Chap. 1 - part B: Tables, Figures and References
+Chap. 2 - Complete part A &amp; overview of part B: Tables, Figures and References
 </td>
 <td style="text-align:left;">
-Work on bioinfo. tutorials
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References">Part B</a>
+TBD
 </td>
 </tr>
 <tr>
@@ -442,13 +435,10 @@ Work on bioinfo. tutorials
 Tuesday
 </td>
 <td style="text-align:left;">
-Chap. 1 - Complete part B and part C: Advanced R Markdown settings
+<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#33_PART_B:_Tables,_Figures_and_References">Chap. 2 - part B: Tables, Figures and References</a>
 </td>
 <td style="text-align:left;">
-<strong>1.</strong> Complete material all the way to the end of section 2.3.6; <strong>2.</strong> Read sections 2.3.7 and 2.3.8 and make sure that the bibliography file “Bibliography_Reproducible_Science_2.bib” is copied in your working directory; <strong>3.</strong> Read section 2.3.9 and make sure that the csl file “AmJBot.csl” is copied in your working directory; <strong>4.</strong> Read section 2.4 (Chapter 1 - part C) and get accustomed with the concepts presented in this part. I will be giving a presentation on these concepts and you will be implementing the code.
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#13_PART_B:_Tables,_Figures_and_References">Part B</a> &amp; <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#14_PART_C:_Advanced_R_and_R_Markdown_settings">Part C</a>
+TBD
 </td>
 </tr>
 <tr>
@@ -464,13 +454,10 @@ Chap. 1 - Complete part B and part C: Advanced R Markdown settings
 Thursday
 </td>
 <td style="text-align:left;">
-Chap. 1 - part D: User Defined Functions in R
+Chap. 2 - part B: Tables, Figures and References
 </td>
 <td style="text-align:left;">
-<strong>1.</strong> Complete section 2.4.6 of part C and <strong>2.</strong> Read part D until the end of section 2.5.8.
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#15_PART_D:_User_Defined_Functions_in_R">Part D</a>
+TBD
 </td>
 </tr>
 <tr>
@@ -486,13 +473,10 @@ Chap. 1 - part D: User Defined Functions in R
 Tuesday
 </td>
 <td style="text-align:left;">
-Chap. 1 - part D: User Defined Functions in R
+Chap. 2 - Complete part B and part C: Advanced R Markdown settings
 </td>
 <td style="text-align:left;">
-<strong>1.</strong> Complete exercise in section 2.4.7 of part C and <strong>2.</strong> Read part D until the end of section 2.5.8.
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#15_PART_D:_User_Defined_Functions_in_R">Part D</a>
+TBD
 </td>
 </tr>
 <tr>
@@ -508,13 +492,10 @@ Chap. 1 - part D: User Defined Functions in R
 Thursday
 </td>
 <td style="text-align:left;">
-Q&amp;A and work on bioinformatic tutorials
+Chap. 2 - part D: User Defined Functions in R
 </td>
 <td style="text-align:left;">
-<strong>1.</strong> Sign up for bioinformatics tutorial (see Syllabus sections 5.1, 6 and 11 ) and <strong>2.</strong> Work with your group to organize your bioinformatics tutorial
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#7_Publications__Textbooks">Publications and Resources for bioinformatic tutorials</a>
+TBD
 </td>
 </tr>
 <tr>
@@ -530,13 +511,10 @@ Q&amp;A and work on bioinformatic tutorials
 Tuesday
 </td>
 <td style="text-align:left;">
-Chap. 3: A roadmap to implement reproducible science in Ecology, Evolution &amp; Behavior
+Chap. 2 - part D: User Defined Functions in R
 </td>
 <td style="text-align:left;">
 Read material presented in Chapter 3
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#4_Chapter_3">Chapter 3</a>
 </td>
 </tr>
 <tr>
@@ -552,13 +530,10 @@ Read material presented in Chapter 3
 Thursday
 </td>
 <td style="text-align:left;">
-Chap. 4: Open science and CARE principles
+Chap. 3: A roadmap to implement reproducible science in Ecology, Evolution &amp; Behavior
 </td>
 <td style="text-align:left;">
 Read material presented in Chapter 4
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#5_Chapter_4">Chapter 4</a>
 </td>
 </tr>
 <tr>
@@ -574,13 +549,10 @@ Read material presented in Chapter 4
 Tuesday
 </td>
 <td style="text-align:left;">
-Chap. 5: Data management
+Chap. 4: Open science and CARE principles
 </td>
 <td style="text-align:left;">
 Read material presented in Chapter 5 - Part A
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#partDM">Chapter 5 - Part A</a>
 </td>
 </tr>
 <tr>
@@ -596,13 +568,10 @@ Read material presented in Chapter 5 - Part A
 Thursday
 </td>
 <td style="text-align:left;">
-Complete Chap. 5: Data management and Chap. 5: Reproducible code
+Chap. 5: Data management
 </td>
 <td style="text-align:left;">
 Read material presented in Chapter 5 - Part B + Download folder “Project_ID/“ on Google Drive under this path: Reproducible_Science &gt; Exercises &gt; Chapter_5
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#repcode">Chapter 5 - Part B</a>
 </td>
 </tr>
 <tr>
@@ -623,9 +592,6 @@ Chap. 6: Getting published
 <td style="text-align:left;">
 Turn in tutorial for Chap. 7 &amp; start individual reports
 </td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#getpub">Chapter 6 - Part A</a>
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -644,9 +610,6 @@ Chap. 6: Writing papers in R Markdown (<a href="https://svenbuerki.github.io/EEB
 </td>
 <td style="text-align:left;">
 Upload tutorial of Chap. 7 on Google Drive
-</td>
-<td style="text-align:left;">
-<a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#writpub">Chapter 6 - Part B</a>
 </td>
 </tr>
 <tr>
@@ -667,8 +630,6 @@ Bioinfo. tutorial - Chap. 7
 <td style="text-align:left;">
 Turn in tutorial for Chap. 8
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -687,8 +648,6 @@ Bioinfo. tutorial - Chap. 7
 </td>
 <td style="text-align:left;">
 Upload tutorial of Chap. 8 on Google Drive
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -709,8 +668,6 @@ Bioinfo. tutorial - Chap. 8
 <td style="text-align:left;">
 Turn in tutorial for Chap. 9
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -729,8 +686,6 @@ Bioinfo. tutorial - Chap. 8
 </td>
 <td style="text-align:left;">
 Upload tutorial of Chap. 9 on Google Drive
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -751,8 +706,6 @@ Bioinfo. tutorial - Chap. 9
 <td style="text-align:left;">
 Turn in tutorial for Chap. 10
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -771,8 +724,6 @@ Bioinfo. tutorial - Chap. 9
 </td>
 <td style="text-align:left;">
 Upload tutorial of Chap. 10 on Google Drive
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -793,8 +744,6 @@ Bioinfo. tutorial - Chap. 10
 <td style="text-align:left;">
 Turn in tutorial for Chap. 11
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -813,8 +762,6 @@ Bioinfo. tutorial - Chap. 10
 </td>
 <td style="text-align:left;">
 Upload tutorial of Chap. 11 on Google Drive
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -835,8 +782,6 @@ Bioinfo. tutorial - Chap. 11
 <td style="text-align:left;">
 Turn in tutorial for Chap. 12
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -855,8 +800,6 @@ Bioinfo. tutorial - Chap. 11
 </td>
 <td style="text-align:left;">
 Upload tutorial of Chap. 12 on Google Drive
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -877,8 +820,6 @@ Bioinfo. tutorial - Chap. 12
 <td style="text-align:left;">
 Students work on ind. projects: Review literature (see Syllabus)
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -897,8 +838,6 @@ Bioinfo. tutorial - Chap. 12
 </td>
 <td style="text-align:left;">
 Students work on ind. projects: Data management workflow
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -919,8 +858,6 @@ Individual projects - Q&amp;A
 <td style="text-align:left;">
 Students work on ind. projects: Data management workflow
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -940,8 +877,6 @@ Individual projects - Q&amp;A
 <td style="text-align:left;">
 Turn in ind. projects (on <a href="https://drive.google.com/drive/folders/1MZt5kNKusCv6OeZpjuuPxUiqBaoQVQAc?usp=sharing">Google Drive</a>)
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -960,8 +895,6 @@ Oral presentations of individual projects
 </td>
 <td style="text-align:left;">
 </td>
-<td style="text-align:left;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -977,8 +910,6 @@ Thursday
 </td>
 <td style="text-align:left;">
 Oral presentations of individual projects
-</td>
-<td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 </td>

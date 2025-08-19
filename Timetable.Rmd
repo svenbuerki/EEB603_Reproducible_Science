@@ -1,21 +1,20 @@
 ---
 title: "Timetable"
-date: "`r Sys.Date()`"
+author: ""
+date: '`r Sys.Date()`'
 output:
-#  bookdown::pdf_document2:
-#    toc: FALSE
   bookdown::html_document2:
-    theme: yeti
-    highlight: tango
-    toc: FALSE
-    toc_float: TRUE
-fontsize: 12pt
+    toc: no
+    toc_float: no
+    self_contained: yes
+subtitle:
 link-citations: yes
+fontsize: 12pt
 urlcolor: blue
 csl: AmJBot.csl
 bibliography: Bibliography_Reproducible_Science_2.bib
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: sentence
 ---
 
@@ -94,6 +93,8 @@ timetable <- data.frame(datesclass, topic)
 timetable <- as.matrix(timetable)
 rownames(timetable) <- rep("", nrow(timetable))
 colnames(timetable)[5] <- "Homework"
+# Discrad larst column with URLs
+timetable <- timetable[,-ncol(timetable)]
 ###~~~
 #Plot timetable in doc
 ###~~~
