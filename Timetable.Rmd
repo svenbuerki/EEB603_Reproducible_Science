@@ -1,5 +1,5 @@
 ---
-title: "Timetable"
+title: "Schedule"
 author: ""
 date: '`r Sys.Date()`'
 output:
@@ -42,7 +42,7 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-The tentative timetable for this course is provided in Table \@ref(tab:timetab). Please note that the instructor may adjust our schedule to accommodate the course’s progress and students’ needs. Any changes will be communicated to enrolled students in a timely manner.
+The tentative schedule for this course is provided in Table \@ref(tab:timetab). Please note that the instructor may adjust our schedule to accommodate the course’s progress and students’ needs. Any changes will be communicated to enrolled students in a timely manner.
 
 ```{r timetab, echo=FALSE}
 ###~~~
@@ -98,7 +98,7 @@ timetable <- timetable[,-ncol(timetable)]
 ###~~~
 #Plot timetable in doc
 ###~~~
-knitr::kable(timetable,  caption = "Tentative timetable for the EEB603 Reproducible Science course, Fall 2025 semester.") %>%
+knitr::kable(timetable,  caption = "Tentative schedule for EEB603 Reproducible Science, Fall 2025 semester.") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
 #PDF
