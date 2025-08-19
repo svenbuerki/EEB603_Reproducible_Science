@@ -45,6 +45,12 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 <div style="text-align: right"> [Download pdf version](Data/EEB603_Syllabus_BUERKI_2023.pdf) </div>
 <div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science) </div>
 
+# Meeting Time and Place
+
+- Days: Tuesday & Thursday 
+- Times: 9:00 to 10:15 AM
+- Place: [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share).
+
 # Instructor Information
 
 - Name: Sven Buerki (he/his)
@@ -57,21 +63,6 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 
 Welcome to the course! I am looking forward to getting to know you this semester. To get started, please familiarize yourself with this syllabus and our [website](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html). I developed this course to provide a welcoming environment and effective learning experience for all students. If you encounter barriers in this course, please bring them to my attention so that I may work to address them, and reach out to me at any time if you have questions about course content or assignments. 
 
-# Class Details
-
-## Class Location
-
-In-person in [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share).
-
-## Schedule
-
-- Days: Tuesday & Thursday 
-- Times: 9:00 to 10:15 AM
-
-## Timetable
-
-The tentative timetable for this course is available [here](Timetable.html). The instructor wants to warn students that he might adjust the timetable to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
-
 # Course Format
 
 This is a face to face course that will meet two times a week. Our class sessions include important information and opportunities to apply what you are learning with your peers. To best achieve the learning outcomes for the course, it is important that you attend class and be engaged with the content, me and each other. You should expect to spend approximately 9 hours each week on work for this course (including in and out of class time).
@@ -80,15 +71,18 @@ This is a face to face course that will meet two times a week. Our class session
 
 The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [e.g. @Baker_2016]. This course begins by reviewing the evidence for, and causes of, this crisis, and aims to highlight key factors that can improve reproducibility in science—especially within Ecology, Evolution & Behavior. It also provides a platform to develop, practice, and strengthen science communication skills [e.g. @Soltis2023 for some innovative ways to share your research]. 
 
-The overarching aim of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research. Throughout the course, students will learn to use open-source software for research, including [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further develop these skills—and improve communication and teaching competencies—students will (**i**) design bioinformatics tutorials and teach them to peers, and (**ii**) design and implement individual projects aimed at developing a reproducible workflow tailored to their research interests.
+The overarching aim of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research. Throughout the course, students will learn to use open-source software for research, including [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further develop these skills—and improve communication and teaching competencies—students will 
 
-Overall, this course **provides students with key knowledge to gather, store, share, prepare, and analyze data, as well as communicate results to the scientific community and various stakeholders** (see Figure @ref(fig:part2)).
+1. design bioinformatics tutorials and teach them to peers
+2. design, implement, and present individual projects aimed at developing a reproducible workflow tailored to their research interests
+
+Overall, this course **provides students with key knowledge to gather, store, share, prepare, and analyze data, as well as communicate results to the scientific community and various stakeholders** (see Figure \@ref(fig:part2)).
 
 ```{r part2, echo=FALSE, fig.cap="Overview of workflow studied in PART2.", out.width = '100%', fig.pos= "h"}
 knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")
 ```
 
-## <a name="Structure"></a>Structure of the Course
+## <a name="Structure"></a>Course Structure {#Structure}
 
 The course is subdivided into three parts: 
 
@@ -98,11 +92,11 @@ The course is subdivided into three parts:
 
 **Part 1** provides students with key theoretical knowledge on reproducible science, enabling them to design and implement a reproducible approach tailored to Ecology, Evolution & Behavior. This section also covers topics related to open science and data management, and how these practices intersect with scientific publishing.
 
-**Part 2** offers students the opportunity to further develop and apply coding and bioinformatics tools essential for building reproducible workflows (Figure @ref(fig:part2)). In this section, students—supported by the instructor—will develop and teach a tutorial on a specific bioinformatics topic over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment may be completed individually or in groups.
+**Part 2** offers students the opportunity to further develop and apply coding and bioinformatics tools essential for building reproducible workflows (Figure \@ref(fig:part2)). In this section, students—supported by the instructor—will develop and teach a tutorial on a specific bioinformatics topic over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. Depending on class size, this assignment may be completed individually or in groups.
 
 **Part 3** is designed to give students the chance to develop an individual reproducible workflow tailored to their own research project (or using data from a publication, if they have not yet defined a thesis topic). This assignment builds on knowledge gained in the earlier parts of the course and will involve collaboration with the instructor—and in some cases, with thesis advisors.
 
-## Content of the Course
+## Course Content {#courseCont}
 
 **PART 1: The Big Picture**
 
@@ -116,7 +110,7 @@ The course is subdivided into three parts:
    - Chapter 5: Data management, Reproducible code.
    - Chapter 6: Getting published & Peer review.
   
-<a name="PART2"></a>**PART 2: Bioinformatics for Reproducible Science** 
+<a name="PART2"></a>**PART 2: Bioinformatics for Reproducible Science**
 
 3. **Prepare your data**
    - Chapter 7: Organize and import data with R.
@@ -138,14 +132,19 @@ The course is subdivided into three parts:
 
 Learning outcomes for each chapter are available on the [course website](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html).
 
-# Class Resources
+# Course Schedule
 
-## <a name="GoogleSite"></a>Shared Google Drive
+The tentative schedule for this course is available [here](Timetable.html). The instructor wants to warn students that he might adjust the schedule to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
+
+# Course Resources
+
+## <a name="GoogleSite"></a>Shared Google Drive {#GoogleSite}
 
 A shared Google Drive has been set up for data sharing and uploading [bioinformatic tutorials](#BioTut).
+
 - URL: https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=sharing
 
-## <a name="Publis"></a>Publications and Textbooks
+## <a name="Publis"></a> Publications and Textbooks {#Publis}
 
 The reading material at the basis of this course is composed of a mixture of publications and chapters mostly from two textbooks [@Gandrud2015; @Wickham2017]. We will also study the *"Guides to"* published by the [British Ecological Society](https://www.britishecologicalsociety.org/publications/guides-to/). Please find below the references used in each [chapter](#Structure). **This list is not exhaustive and additional literature will be provided in class.** 
 
@@ -172,7 +171,7 @@ To further illustrate how a reproducible approach can be applied to research, th
 - @Ellestad2022 -- **Genomic Insights into Cultivated Mexican Vanilla planifolia Reveal High Levels of Heterozygosity Stemming from Hybridization.**
 - @Wojahn2021 -- **G2PMineR: A Genome to Phenome Literature Review Approach.**
 
-# <a name="software"></a>The Computing Tools of Reproducible Science
+# <a name="software"></a>Computing Tools {#software}
 
 Research is often presented in the form of slideshows, articles or books. These presentation documents announce a project's findings, but they are not the research, they are the advertisement part of the research project! 
 
@@ -182,7 +181,7 @@ Research is often presented in the form of slideshows, articles or books. These 
 
 This course will equip you with tools to integrate your research with clear and reproducible presentation of your findings. The first is a reproducible research workflow, which applies the principles of reproducibility throughout your entire project—from data collection to statistical analysis and results presentation. To support this, you will learn to use a range of computing tools that make this workflow possible.
 
-## The bioinformatics Tools
+## Bioinformatics Tools
 
 The main bioinformatics tools covered in this course are:
 
@@ -206,7 +205,7 @@ If you are planning to create LaTeX documents, you will need to install a Tex di
 
 If you want to create Markdown documents you can separately install the *rmarkdown* package in R (see [below](#Rpack) for more details).
 
-## <a name="Rpack"></a>Installing R Packages
+## <a name="Rpack"></a>Installing R Packages {#Rpack}
 
 We will be using several R packages specifically designed to support reproducible research. Many of these packages are not included in the default R installation and must be installed separately.
 
@@ -220,7 +219,7 @@ Once you run this code, you may be prompted to select a CRAN "mirror" to downloa
 
 It is also likely that we will need to install additional packages throughout the course. When that happens, you can install them using the same R function `install.packages()`, or through RStudio by selecting "Tools" → "Install Packages...", entering the package name in the dialog box, and ensuring the "Install dependencies" option is checked.
 
-## <a name="Cheat"></a>RStudio Cheat Sheets
+## <a name="Cheat"></a>RStudio Cheat Sheets {#Cheat}
 
 RStudio offers a collection of cheat sheets accessible from the "Help" menu by selecting "Cheatsheets."
 
@@ -232,7 +231,7 @@ Five cheat sheets are especially relevant to chapters taught in this course:
   - *R Markdown Cheat Sheet*
   - *R Markdown Reference Guide*
 
-These documents together with the material presented in [publications & textbooks](#Publis) will provide the basis to design your [bioinformatics tutorials](#BioTut). 
+These documents together with the material presented in [course resources](#Publis) will provide the basis to design your [bioinformatics tutorials](#BioTut). 
 
 ## R Tutorials
 
@@ -243,18 +242,22 @@ Please find below two documents providing a comprehensive introduction to R:
 
 # Assessments and Grading
 
-There will not be any classical exams in this course, but we will rather focus on developing theoretical and bioinformatics skills and applying those to your research. In this context, each student will be asked to produce a bioinformatics tutorial and teach it to their peers (see [PART 2](#PART2)). Each student will also be tasked to produce a report (tailored to their thesis project or a publication) and present their results and conclusions in class. 
+There will not be any classical exams in this course, but we will rather focus on developing theoretical and bioinformatics skills and applying those to your research. In this context, each student will be asked to produce a bioinformatics tutorial and teach it to their peers (see [Course Content - PART 2](#courseCont)). Each student will also be tasked to produce a report (tailored to their thesis project or a publication) and present their results and conclusions in class. 
 
-## Mandatory Assignments
+## Assessments
 
-Students will be graded on the following four mandatory assignments:
+Students will be graded on the following four mandatory assessments:
 
-1. Produce a group bioinformatics tutorial based on a chapter from [PART 2](#PART2) (150 points).
+1. Produce a group bioinformatics tutorial based on a chapter from [Course Content - PART 2](#courseCont) (150 points).
 2. Teach the bioinformatics tutorial to their peers over two sessions (100 points).
 3. Produce an individual report on their thesis project or a related publication (200 points).
 4. Deliver an oral presentation on their thesis project or publication (100 points).
 
-These assignments total **550 points**. Table @ref(tab:mygrade) shows the grading scale used in this course.
+These assessments total **550 points**. Table \@ref(tab:mygrade) shows the grading scale used in this course.
+
+# Grading Policy 
+
+The grading scale for this course is in Table \@ref(tab:mygrade).
 
 ```{r mygrade, echo=FALSE}
 library(bookdown)
@@ -264,11 +267,13 @@ knitr::kable(grades, caption = "Grading scale applied in this course.") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-## <a name="BioTut"></a>Bioinformatics Tutorial (150 points)
+You can look at all of your scores by accessing Grades in the Canvas course menu. 
 
-During the first two weeks, students will [sign up](#GoogleBioTut) for a chapter from [PART 2](#PART2) to study and create a bioinformatics tutorial. Depending on enrollment, tutorials will be developed individually or in groups, with support from the instructor (see details below).
+## <a name="BioTut"></a>Bioinformatics Tutorial (150 points) {#BioTut}
 
-Tutorials must be written using *knitr*/*rmarkdown* in RStudio and focus on a set of exercises designed to build key bioinformatics skills related to the chosen chapter (see [PART 2](#PART2)). Students are encouraged to use materials from @Gandrud2015 and @Wickham2017, or other properly cited sources. For additional resources, see the [Publications and Textbooks](#Publis) and [RStudio Cheat Sheets](#Cheat) sections.
+During the first two weeks, students will [sign up](#GoogleBioTut) for a chapter from [Course Content - PART 2](#courseCont) to study and create a bioinformatics tutorial. Depending on enrollment, tutorials will be developed individually or in groups, with support from the instructor (see details below).
+
+Tutorials must be written using *knitr*/*rmarkdown* in RStudio and focus on a set of exercises designed to build key bioinformatics skills related to the chosen chapter (see [Course Content - PART 2](#courseCont)). Students are encouraged to use materials from @Gandrud2015 and @Wickham2017, or other properly cited sources. For additional resources, see the [Publications and Textbooks](#Publis) and [RStudio Cheat Sheets](#Cheat) sections.
 
 Each tutorial should be designed to fit within two laboratory sessions (see [Teaching Tutorials](#TeachTut)). **Tutorials must be submitted to the instructor one week before presentation for review and uploading to the shared Google Drive.**
 
@@ -293,13 +298,13 @@ Based on the information provided above, your tutorial should include:
 - A references section and links to manuals of R packages. 
 - Commented R code necessary to guide users through the exercises as well as some knowledge on expected outputs.
 
-### <a name="GoogleBioTut"></a>Google Sheet for Bioinformatics Tutorials
+### <a name="GoogleBioTut"></a>Google Sheet {#GoogleBioTut}
 
-The instructor is asking students to sign up for designing and teaching a bioinformatics tutorial by accessing the following Google sheet (the number of students per chapter is provided, please respect this guideline):
+The instructor asks students to sign up to design and teach a bioinformatics tutorial by accessing the following Google Sheet. Please respect the indicated number of students per chapter when making your selection.
 
 - https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing
 
-## <a name="TeachTut"></a>Teaching Tutorials (100 points)
+## <a name="TeachTut"></a>Teaching Tutorials (100 points) {#TeachTut}
 
 Students are expected to prepare a 10–20 minute presentation that provides general guidance on completing their tutorial. Presentations will be uploaded to the shared Google Drive and made accessible to all students. During the tutorial sessions, students must run through their tutorial with their peers, ensuring they understand the key concepts and are able to complete the assignments or tasks. Students are expected to support their peers by answering questions throughout. While the instructor will also be available to assist, students will take the lead in teaching the bioinformatics laboratories.
 
@@ -437,7 +442,7 @@ Boise State has a [Communicable Disease Policy (Policy 9270)](https://www.boises
 
 ## Late Work Policy
 
-Due dates for every assignment are provided on the course [timetable](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html). Unless otherwise stated, assignments are due on those days. However, I recognize that things can happen that are out of your control. In these instances, please reach out to me ahead of the due date, or as soon as possible afterwards, so that we can make a plan for you to submit the assignment as close to the original due date as possible. If an assignment is not submitted within two weeks of the due date, and you have not contacted me about when you will be submitting it, I will enter the assignment as Incomplete in Canvas until such time that we discuss the missing assignment and agree on a course of action. 
+Due dates for every assignment are provided on the course [schedule](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html). Unless otherwise stated, assignments are due on those days. However, I recognize that things can happen that are out of your control. In these instances, please reach out to me ahead of the due date, or as soon as possible afterwards, so that we can make a plan for you to submit the assignment as close to the original due date as possible. If an assignment is not submitted within two weeks of the due date, and you have not contacted me about when you will be submitting it, I will enter the assignment as Incomplete in Canvas until such time that we discuss the missing assignment and agree on a course of action. 
 
 # Note on Course Content and Idaho Law
 
