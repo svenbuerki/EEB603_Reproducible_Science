@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Timetable"
+    - text: "Schedule"
       href: Timetable.html
     - text: "Chapters"
       href: Chapters.html
