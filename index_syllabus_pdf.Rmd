@@ -135,7 +135,7 @@ Learning outcomes for each chapter are available on the [course website](https:/
 
 # Course Schedule
 
-The tentative schedule for this course is available [here](Timetable.html). The instructor wants to warn students that he might adjust the schedule to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
+The tentative schedule for this course is available [here](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html). The instructor wants to warn students that he might adjust the schedule to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
 
 # Course Resources
 
