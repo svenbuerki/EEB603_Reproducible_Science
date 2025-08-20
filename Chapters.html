@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2025-08-18" />
+<meta name="date" content="2025-08-20" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -389,7 +389,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2025-08-18</h4>
+<h4 class="date">2025-08-20</h4>
 
 </div>
 
@@ -402,29 +402,210 @@ $(document).ready(function() {
 </script>
 <div id="syllabus" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Syllabus</h1>
-<p>Please see this <a href="index.html">webpage</a> for more details on the Syllabus. In addition, the presentation slides can be downloaded <a href="Chapters_files/Chapter_00_Syllabus_EEB603.pdf">here</a>.</p>
+<p>Please see this <a href="index.html">webpage</a> for more details on the Syllabus. In addition, the presentation slides can be downloaded <a href="index_syllabus_pdf.pdf">here</a>.</p>
 </div>
 <div id="chapter-1" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Chapter 1</h1>
-<div id="what-is-reproducible-science" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> What is Reproducible Science?</h2>
-<p>Group activity to investigate reproducible science.</p>
+<div id="goal" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Goal</h2>
+<p>In this chapter, we engage in group activities and literature reading to explore the concept of reproducible science, including its challenges, benefits, and practical implementation in research. Overall, this chapter aims to provide a broader understanding of reproducible science and the context that underpins the material covered throughout the course.</p>
+<p>The chapter is subdivided into two parts:</p>
+<ul>
+<li>PART 1: <a href="#WhatRepSci">What is Reproducible Science?</a></li>
+<li>PART 2: <a href="#WhatFacBreakRep">What Factors Break Reproducibility?</a></li>
+</ul>
 </div>
-<div id="what-factors-break-reproducibility" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> What Factors Break Reproducibility?</h2>
+<div id="learning-outcomes" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Learning Outcomes</h2>
+<ul>
+<li>Understand the definitions of reproducibility and replicability in scientific research</li>
+<li>Identify the importance of reproducible science for research integrity and advancements</li>
+<li>Recognize the challenges to achieving reproducibility and potential solutions</li>
+<li>Engage with practical tools and strategies to promote reproducible research practices</li>
+</ul>
+</div>
+<div id="WhatRepSci" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> What is Reproducible Science?</h2>
+<div id="overview" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Overview</h3>
+<p>In Part 1, students will engage in self-reflection and group activities to explore the meaning of reproducible science and how it is implemented in research and scientific publications.</p>
+<p><strong>Disclaimer:</strong> The instructor has provided definitions and other supporting materials (in collapsible boxes) throughout this section. However, students are advised <strong>not</strong> to read these materials in advance in order to complete the exercises sincerely and gain the most from the experience.</p>
+</div>
+<div id="class-outline" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Class Outline</h3>
+<p>This class taking place over 2-3 sessions is outlined as follows:</p>
+<ol style="list-style-type: decimal">
+<li><a href="#IntroDef">Introduction and Definitions</a></li>
+<li><a href="#CaseStudies">Case Studies and Challenges</a></li>
+<li><a href="#BestPract">Best Practices and Open Science Tools</a></li>
+<li><a href="#WrapUp">Wrap-up and Future Directions</a></li>
+</ol>
+</div>
+<div id="IntroDef" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Introduction and Definitions</h3>
+<div id="individual-self-reflection-5-minutes" class="section level4" number="2.3.3.1">
+<h4><span class="header-section-number">2.3.3.1</span> Individual self-reflection (5 minutes)</h4>
+<p>Students individually reflect on what “reproducible science” means to them and write down a definition.</p>
+</div>
+<div id="group-sharing-and-discussion-15-minutes" class="section level4" number="2.3.3.2">
+<h4><span class="header-section-number">2.3.3.2</span> Group Sharing and Discussion (15 minutes)</h4>
+<ul>
+<li><p>In small groups (3-4 students), students share their definitions and compare them</p></li>
+<li><p>Each group share their findings with the class to emulate a class discussion</p></li>
+</ul>
+</div>
+<div id="formal-definitions-10-minutes" class="section level4" number="2.3.3.3">
+<h4><span class="header-section-number">2.3.3.3</span> Formal Definitions (10 minutes)</h4>
+<p>A set of standard definitions is provided to emphasize the use of same data/code for reproducibility versus new data/similar methods for replicability. Students are encouraged to engage and discuss these definitions in light of their research/knowledge/experience.</p>
+<details>
+<summary>
+<b>Reproducible Science</b>
+</summary>
+<p>
+Reproducible science refers to the ability to obtain the same research findings and conclusions by using the same original data, computational steps, methods, and code used in a prior study.
+</p>
+<p>
+Key elements of reproducible science:
+</p>
+<ul>
+<li>
+<strong>Transparency:</strong> All data, code, and methodological details are openly available and well-documented.
+</li>
+<li>
+<strong>Documentation:</strong> Clear and detailed descriptions of the experimental design, procedures, analysis steps, and any decisions made during the research process.
+</li>
+<li>
+<strong>Data Availability:</strong> Raw data used in the study is accessible and ideally deposited in publicly available repositories.
+</li>
+<li>
+<strong>Code Availability:</strong> Software code and scripts used for analysis are shared and well-commented.
+</li>
+<li>
+<strong>Use of Standardized Tools and Practices:</strong> Utilizing established tools and adhering to best practices within the research field to reduce variability and errors.
+</li>
+</ul>
+</details>
+<details>
+<summary>
+<b>Reproduction vs. Replication</b>
+</summary>
+<p>
+<strong>Reproduction</strong> of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
+</p>
+<p>
+<strong>Replication</strong> of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on another species (e.g., sagebrush). For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
+</p>
+<p>
+Overall, <strong>reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else</strong>. On the other hand, <strong>replication explores which details matter for reaching a specific scientific conclusion</strong>. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.
+</p>
+</details>
+</div>
+</div>
+<div id="CaseStudies" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Case Studies and Challenges</h3>
+<div id="group-work-activity-50-minutes" class="section level4" number="2.3.4.1">
+<h4><span class="header-section-number">2.3.4.1</span> Group Work Activity (50 minutes)</h4>
+<ul>
+<li>Each group receives a publication illustrating a challenge or challenges to reproducibility (e.g., lack of data sharing, insufficient methodological details, issues with statistical analysis, publication bias)</li>
+<li>Each group is tasked to analyzes their assigned case study by:
+<ul>
+<li>Reading the publication</li>
+<li>Identifying the reproducibility challenge(s)</li>
+<li>Discussing the potential impact on the research community</li>
+<li>Brainstorming possible solutions or ways the situation could be mitigated to improve reproducibility</li>
+</ul></li>
+<li>Students are encouraged to research their publication online and use the <a href="#OnlineResChap1">resources</a> presented below to support their findings and group activity. <strong>Please don’t research our publication prior to making your own conclusions.</strong></li>
+</ul>
+</div>
+<div id="OnlineResChap1" class="section level4" number="2.3.4.2">
+<h4><span class="header-section-number">2.3.4.2</span> Online Resources</h4>
+<p>This list of online resources are provided to support your group activity:</p>
+<ul>
+<li><a href="http://rescience.github.io/">RESCIENCE C</a> - Reproducible Science is good. Replicated Science is better.</li>
+<li><a href="https://retractionwatch.com/">Retraction Watch</a> - Tracking retractions as a window into the scientific process.</li>
+<li><a href="https://www.biomedcentral.com/collections/reproducibility">Reproducibility and research integrity</a> - A Special Issue published in <em>BMC Research Notes</em>.</li>
+<li><a href="https://researchintegrityjournal.biomedcentral.com/">Research Integrity and Peer Review</a> - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.</li>
+<li><a href="https://peerreviewweek.wordpress.com/">Peer Review Week</a> - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.</li>
+<li><a href="https://pubpeer.com/">PubPeer</a> - An online journal club where researchers are posting comments on articles.</li>
+<li><a href="https://www.nature.com/articles/d41586-023-00191-1">Tools such as ChatGPT threaten transparent science; here are our ground rules for their use</a> - A <em>Nature</em> editorial discussing the inclusion of AI in research articles.</li>
+</ul>
+</div>
+<div id="group-presentations-and-class-discussion-20-minutes" class="section level4" number="2.3.4.3">
+<h4><span class="header-section-number">2.3.4.3</span> Group Presentations and Class Discussion (20 minutes)</h4>
+<ul>
+<li>Each group presents their findings on their assigned case study, and proposed solutions</li>
+<li>We will facilitate a class discussion by drawing connections between the different publications and exploring the systemic challenges to reproducibility and the various factors at play.</li>
+</ul>
+</div>
+</div>
+<div id="BestPract" class="section level3" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Best Practices and Open Science Tools</h3>
+</div>
+<div id="group-activity-20-minutes" class="section level3" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> Group Activity (20 minutes)</h3>
+<ul>
+<li>Each group brainstorm best practices and tools to improve research reproducibility, based on their understanding and previous discussions</li>
+<li>Class discussion to present our recommendations to implement reproducible science</li>
+</ul>
+</div>
+<div id="key-strategies-and-tools-10-minutes" class="section level3" number="2.3.7">
+<h3><span class="header-section-number">2.3.7</span> Key Strategies and Tools (10 minutes)</h3>
+<p>The instructor will go over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don’t look at the content of the box before we get here!</p>
+<details>
+<summary>
+<b>Strategies and tools for reproducible science</b>
+</summary>
+<ul>
+<li>
+<strong>Detailed Protocols:</strong> Importance of clear and precise documentation of all steps leading to data production.
+</li>
+<li>
+<strong>Lab Notebooks:</strong> For improved documentation and data management.
+</li>
+<li>
+<strong>Version Control:</strong> Using tools like Git for code and data management.
+</li>
+<li>
+<strong>Data and Code Repositories:</strong> Platforms like Dryad, Zenodo, and Figshare for sharing research materials.
+</li>
+</ul>
+</details>
+</div>
+<div id="WrapUp" class="section level3" number="2.3.8">
+<h3><span class="header-section-number">2.3.8</span> Wrap-up and Future Directions</h3>
+<div id="individual-activity-10-minutes" class="section level4" number="2.3.8.1">
+<h4><span class="header-section-number">2.3.8.1</span> Individual Activity (10 minutes)</h4>
+<ul>
+<li>Students reflect individually on:
+<ul>
+<li>One key takeaway from this exercise</li>
+<li>One action that they can implement in their research to improve reproducibility</li>
+</ul></li>
+</ul>
+</div>
+<div id="class-discussion-qa-10-minutes" class="section level4" number="2.3.8.2">
+<h4><span class="header-section-number">2.3.8.2</span> Class Discussion &amp; QA (10 minutes)</h4>
+<ul>
+<li>Students share their reflections and ask any pending questions</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="WhatFacBreakRep" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> PART 2: What Factors Break Reproducibility?</h2>
 <p>In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> as baseline to support our discussions.</p>
 </div>
-<div id="whats-the-difference-between-reproduction-and-replication" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> What’s the difference between reproduction and replication?</h2>
+<div id="whats-the-difference-between-reproduction-and-replication" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> What’s the difference between reproduction and replication?</h2>
 <p>Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adapted from <a href="http://rescience.github.io/">RESCIENCE C</a>.</p>
 <ul>
 <li><p><strong>Reproduction</strong> of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.</p></li>
-<li><p><strong>Replication</strong> of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on sagebrush. For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.</p></li>
+<li><p><strong>Replication</strong> of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on another species (e.g., sagebrush). For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.</p></li>
 </ul>
 <p>Overall, <strong>reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else</strong>. On the other hand, <strong>replication explores which details matter for reaching a specific scientific conclusion</strong>. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.</p>
 </div>
-<div id="online-resources" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Online resources</h2>
+<div id="online-resources" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Online resources</h2>
 <p>The list of websites listed here have been used to design this chapter:</p>
 <ul>
 <li><a href="http://rescience.github.io/">RESCIENCE C</a> - Reproducible Science is good. Replicated Science is better.</li>
@@ -432,10 +613,11 @@ $(document).ready(function() {
 <li><a href="https://www.biomedcentral.com/collections/reproducibility">Reproducibility and research integrity</a> - A Special Issue published in <em>BMC Research Notes</em>.</li>
 <li><a href="https://researchintegrityjournal.biomedcentral.com/">Research Integrity and Peer Review</a> - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.</li>
 <li><a href="https://peerreviewweek.wordpress.com/">Peer Review Week</a> - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.</li>
+<li><a href="https://pubpeer.com/">PubPeer</a> - An online journal club where researchers are posting comments on articles.</li>
 </ul>
 </div>
-<div id="teaching-material" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Teaching material</h2>
+<div id="teaching-material" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Teaching material</h2>
 <p>The <code>pdf</code> of the presentation can be downloaded <a href="Chapters_files/Chapter_2_Reproducibility_crisis.pdf">here</a>. The pdf of <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> is available on our shared Google Drive at this path:</p>
 <p><code>Reproducible_Science &gt; Publications &gt; Baker_Nature_2016.pdf</code></p>
 </div>
@@ -459,7 +641,7 @@ $(document).ready(function() {
 Figure 3.1: The spectrum of reproducibility.
 </p>
 </div>
-<div id="learning-outcomes" class="section level3" number="3.1.1">
+<div id="learning-outcomes-1" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Learning outcomes</h3>
 <p>Learning outcomes associated to this chapter are provided at the top of each part.</p>
 </div>
@@ -530,7 +712,7 @@ Figure 3.2: Snapshot of the RStudio environment showing the four windows and the
 <div id="partA" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> PART A: Learning the basics</h2>
 <p>In this part, we will provide a survey of the procedures to create and render (or knitting) your first R Markdown document.</p>
-<div id="learning-outcomes-1" class="section level3" number="3.2.1">
+<div id="learning-outcomes-2" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
 <ul>
@@ -770,7 +952,7 @@ Figure 3.6: Example of code chunks.
 <div id="partB" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> PART B: Tables, Figures and References</h2>
 <p>The aim of this tutorial is to provide students with the expertise to generate reproducible reports using <em>bookdown</em> <span class="citation">(<a href="#ref-bookdown2016">Xie, 2016</a>, <a href="#ref-R-bookdown">2023a</a>)</span> and allied R packages (see <a href="#appendix-1">Appendix 1</a> for a full list). Unlike functions implemented in the R <em>rmarkdown</em> package <span class="citation">(<a href="#ref-rmarkdown2018">Xie et al., 2018</a>, which was better suited to generating <code>PDF</code> reproducible reports)</span>, <em>bookdown</em> allows to use ONE unified set of functions to generate <code>HTML</code> and <code>PDF</code> documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).</p>
-<div id="learning-outcomes-2" class="section level3" number="3.3.1">
+<div id="learning-outcomes-3" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:</p>
 <ul>
@@ -1525,7 +1707,7 @@ csl: AmJBot.csl
 </div>
 <div id="partC" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> PART C: Advanced R and R Markdown settings</h2>
-<div id="learning-outcomes-3" class="section level3" number="3.4.1">
+<div id="learning-outcomes-4" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Learning outcomes</h3>
 <p>This tutorial is devoted to part C of chapter 1 and provides students with opportunities to learn procedures to (see Figure <a href="#fig:RMarkdwnstrct">3.7</a>):</p>
 <ul>
@@ -1770,7 +1952,7 @@ plot(x, y)</code></pre>
 </div>
 <div id="partD" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> PART D: User Defined Functions in R</h2>
-<div id="learning-outcomes-4" class="section level3" number="3.5.1">
+<div id="learning-outcomes-5" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Learning outcomes</h3>
 <p>This tutorial provides students with opportunities to gain the following skills by:</p>
 <ul>
@@ -2234,7 +2416,7 @@ Figure 4.1: Overview of the scientific process and threats preventing reproducib
 </p>
 </div>
 </div>
-<div id="learning-outcomes-5" class="section level2" number="4.2">
+<div id="learning-outcomes-6" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Learning outcomes</h2>
 <ul>
 <li>Review the steps involved in the scientific process.</li>
@@ -2485,7 +2667,7 @@ Figure 4.3: Overview of the OSF workflow and connections with other widely used 
 <p>The overarching objective of this chapter is to <strong>study the mechanisms implemented to promote Open Science while highlighting circumstances where other principles might have to be adopted to respect different views, opinions and/or data sovereignty</strong>.</p>
 <p>Overall, content of this chapter aims at <strong>providing solutions to tackles threats to the scientific process</strong> (discussed in Chapters 2 and 3) <strong>as well as information to manage the data life cycle and research dissemination</strong>.</p>
 </div>
-<div id="learning-outcomes-6" class="section level2" number="5.3">
+<div id="learning-outcomes-7" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Learning outcomes</h2>
 <ul>
 <li>Learn what Open Science is</li>
@@ -2742,7 +2924,7 @@ Figure 6.1: Example of a Data Availability Statement.
 </div>
 <p>This chapter aims at helping students navigate data management firstly by explaining what data and data management are and why data sharing is important, and secondly by providing advice and examples of best practice in data management.</p>
 </div>
-<div id="learning-outcomes-7" class="section level3" number="6.2.2">
+<div id="learning-outcomes-8" class="section level3" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Learning outcomes</h3>
 <ul>
 <li>Learn what are the different types of research data and their specificity.</li>
@@ -3163,7 +3345,7 @@ brew install tree</code></pre>
 </ul>
 <p>In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters <a href="#chap2">2</a> and 5 (<a href="#partDM">Data management</a>), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.</p>
 </div>
-<div id="learning-outcomes-8" class="section level3" number="6.3.2">
+<div id="learning-outcomes-9" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Learning outcomes</h3>
 <ul>
 <li>Learn protocol to organize projects for reproducibility.</li>
@@ -3442,8 +3624,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ca8a2d3b5274f6de1d13" style="width:576px;height:576px;"></div>
-<script type="application/json" data-for="htmlwidget-ca8a2d3b5274f6de1d13">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-09e33f6057c71b4fb186" style="width:576px;height:576px;"></div>
+<script type="application/json" data-for="htmlwidget-09e33f6057c71b4fb186">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -4101,7 +4283,7 @@ Figure 8.1: Example of datasets involved in Ecology, Evolution and Behavior and 
 </div>
 <p>Here, we are providing methods and R functions that are applied to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.</p>
 </div>
-<div id="learning-outcomes-9" class="section level2" number="8.2">
+<div id="learning-outcomes-10" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Learning outcomes</h2>
 <ul>
 <li>Creating RStudio projects to manage your reproducible project.</li>
@@ -4204,8 +4386,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-455f89b94e415f21b80a" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-455f89b94e415f21b80a">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d793ce7fd7c49149647d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d793ce7fd7c49149647d">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>
@@ -4257,27 +4439,27 @@ urlcsv &lt;- &quot;https://bit.ly/3BDxECl&quot;
 csvTimeTable &lt;- repmis::source_data(url = urlcsv)</code></pre>
 <pre><code>## Downloading data from: https://bit.ly/3BDxECl</code></pre>
 <pre><code>## SHA-1 hash of the downloaded data file is:
-## e1feec6965718f2b9299d24119afa7aac310425c</code></pre>
+## cb40fe8f067bec443131d39d1aac4e09ddec2397</code></pre>
 <pre class="r"><code>### ~~~ Check class ~~~ Class should be `data.frame`
 class(csvTimeTable)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
 <pre class="r"><code>### ~~~ Print csv ~~~
 print(csvTimeTable)</code></pre>
 <pre><code>##                                                                                                                                                                       Topic
-## 1                                                                                                                                                                  Syllabus
-## 2                                                                                                                     Intro. Chapt. 1 &amp; Chap. 2: The reproducibility crisis
-## 3                                                                                                                                     Chap. 1 - part A: Learning the basics
-## 4                                                                                            Chap. 1 - Complete part A &amp; overview of part B: Tables, Figures and References
-## 5                                                                                                                          Chap. 1 - part B: Tables, Figures and References
-## 6                                                                                                                          Chap. 1 - part B: Tables, Figures and References
-## 7                                                                                                        Chap. 1 - Complete part B and part C: Advanced R Markdown settings
-## 8                                                                                                                             Chap. 1 - part D: User Defined Functions in R
-## 9                                                                                                                             Chap. 1 - part D: User Defined Functions in R
-## 10                                                                                                                                  Q&amp;A and work on bioinformatic tutorials
-## 11                                                                                    Chap. 3: A roadmap to implement reproducible science in Ecology, Evolution &amp; Behavior
-## 12                                                                                                                                Chap. 4: Open science and CARE principles
-## 13                                                                                                                                                 Chap. 5: Data management
-## 14                                                                                                         Complete Chap. 5: Data management and Chap. 5: Reproducible code
+## 1                                                                                           [Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html)
+## 2                                                                            [Chapt. 1](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1)
+## 3                                                                            [Chapt. 1](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1)
+## 4                                                                            [Chapt. 1](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1)
+## 5                            [Chap. 2 - part A: Learning the basics](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#32_PART_A:_Learning_the_basics)
+## 6                                                                                            Chap. 2 - Complete part A &amp; overview of part B: Tables, Figures and References
+## 7      [Chap. 2 - part B: Tables, Figures and References](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#33_PART_B:_Tables,_Figures_and_References)
+## 8                                                                                                                          Chap. 2 - part B: Tables, Figures and References
+## 9                                                                                                        Chap. 2 - Complete part B and part C: Advanced R Markdown settings
+## 10                                                                                                                            Chap. 2 - part D: User Defined Functions in R
+## 11                                                                                                                            Chap. 2 - part D: User Defined Functions in R
+## 12                                                                                    Chap. 3: A roadmap to implement reproducible science in Ecology, Evolution &amp; Behavior
+## 13                                                                                                                                Chap. 4: Open science and CARE principles
+## 14                                                                                                                                                 Chap. 5: Data management
 ## 15                                                                                                                                               Chap. 6: Getting published
 ## 16 Chap. 6: Writing papers in R Markdown ([rticles](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#rticlespkg)) and Work on bioinformatic tutorials
 ## 17                                                                                                                                              Bioinfo. tutorial - Chap. 7
@@ -4296,39 +4478,39 @@ print(csvTimeTable)</code></pre>
 ## 30                                                                                                                                                Individual projects - Q&amp;A
 ## 31                                                                                                                                Oral presentations of individual projects
 ## 32                                                                                                                                Oral presentations of individual projects
-##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Homework
-## 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-## 2                                                                                                                                                                                                                                                                                                                                                                                                                       Due to internet outage on campus, we had to change schedule. Read Baker (2016) and prepare for discussing outcome of study
-## 3                                                                                                                                                                                                                                                                                                                                                                                                                       [Install software](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#213_Install_R_Markdown_software)
-## 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Read Chapt. 1 - part B (Set your R Markdown environment)
-## 5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Work on bioinfo. tutorials
-## 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Work on bioinfo. tutorials
-## 7  **1.** Complete material all the way to the end of section 2.3.6; **2.** Read sections 2.3.7 and 2.3.8 and make sure that the bibliography file &quot;&quot;Bibliography_Reproducible_Science_2.bib” is copied in your working directory; **3.** Read section 2.3.9 and make sure that the csl file &quot;&quot;AmJBot.csl” is copied in your working directory; **4.** Read section 2.4 (Chapter 1 - part C) and get accustomed with the concepts presented in this part. I will be giving a presentation on these concepts and you will be implementing the code.
-## 8                                                                                                                                                                                                                                                                                                                                                                                                                                                   **1.** Complete section 2.4.6 of part C and **2.** Read part D until the end of section 2.5.8.
-## 9                                                                                                                                                                                                                                                                                                                                                                                                                                       **1.** Complete exercise in section 2.4.7 of part C and **2.** Read part D until the end of section 2.5.8.
-## 10                                                                                                                                                                                                                                                                                                                                                                                      **1.** Sign up for bioinformatics tutorial (see Syllabus sections 5.1, 6 and 11 ) and **2.** Work with your group to organize your bioinformatics tutorial
-## 11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Read material presented in Chapter 3
-## 12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Read material presented in Chapter 4
-## 13                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Read material presented in Chapter 5 - Part A
-## 14                                                                                                                                                                                                                                                                                                                                                                                     Read material presented in Chapter 5 - Part B + Download folder “Project_ID/“ on Google Drive under this path: Reproducible_Science &gt; Exercises &gt; Chapter_5
-## 15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Turn in tutorial for Chap. 7 &amp; start individual reports
-## 16                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Upload tutorial of Chap. 7 on Google Drive
-## 17                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Turn in tutorial for Chap. 8
-## 18                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Upload tutorial of Chap. 8 on Google Drive
-## 19                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Turn in tutorial for Chap. 9
-## 20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Upload tutorial of Chap. 9 on Google Drive
-## 21                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Turn in tutorial for Chap. 10
-## 22                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Upload tutorial of Chap. 10 on Google Drive
-## 23                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Turn in tutorial for Chap. 11
-## 24                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Upload tutorial of Chap. 11 on Google Drive
-## 25                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Turn in tutorial for Chap. 12
-## 26                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Upload tutorial of Chap. 12 on Google Drive
-## 27                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Students work on ind. projects: Review literature (see Syllabus)
-## 28                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Students work on ind. projects: Data management workflow
-## 29                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Students work on ind. projects: Data management workflow
-## 30                                                                                                                                                                                                                                                                                                                                                                                                                 Turn in ind. projects (on [Google Drive](https://drive.google.com/drive/folders/1MZt5kNKusCv6OeZpjuuPxUiqBaoQVQAc?usp=sharing))
-## 31                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-## 32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+##                                                                                                                                                                                                                                                                       Homework
+## 1                                                                                                                                                                                                                                                                             
+## 2                                                                                                                                                                                                                                 Read your assigned publication for Chapter 1
+## 3                                                                                                                                                                                                                Read Baker (2016) and prepare for discussing outcome of study
+## 4  [Install software](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#213_Install_R_Markdown_software) and Sign up for bioinformatics tutorial (see [Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#1013_Google_Sheet) )
+## 5                                                                                                                                                                                                                                                       Read Chapt. 1 - part A
+## 6                                                                                                                                                                                                                                                                          TBD
+## 7                                                                                                                                                                                                                                                                          TBD
+## 8                                                                                                                                                                                                                                                                          TBD
+## 9                                                                                                                                                                                                                                                                          TBD
+## 10                                                                                                                                                                                                                                                                         TBD
+## 11                                                                                                                                                                                                                                        Read material presented in Chapter 3
+## 12                                                                                                                                                                                                                                        Read material presented in Chapter 4
+## 13                                                                                                                                                                                                                               Read material presented in Chapter 5 - Part A
+## 14                                                                                                                 Read material presented in Chapter 5 - Part B + Download folder “Project_ID/“ on Google Drive under this path: Reproducible_Science &gt; Exercises &gt; Chapter_5
+## 15                                                                                                                                                                                                                     Turn in tutorial for Chap. 7 &amp; start individual reports
+## 16                                                                                                                                                                                                                                  Upload tutorial of Chap. 7 on Google Drive
+## 17                                                                                                                                                                                                                                                Turn in tutorial for Chap. 8
+## 18                                                                                                                                                                                                                                  Upload tutorial of Chap. 8 on Google Drive
+## 19                                                                                                                                                                                                                                                Turn in tutorial for Chap. 9
+## 20                                                                                                                                                                                                                                  Upload tutorial of Chap. 9 on Google Drive
+## 21                                                                                                                                                                                                                                               Turn in tutorial for Chap. 10
+## 22                                                                                                                                                                                                                                 Upload tutorial of Chap. 10 on Google Drive
+## 23                                                                                                                                                                                                                                               Turn in tutorial for Chap. 11
+## 24                                                                                                                                                                                                                                 Upload tutorial of Chap. 11 on Google Drive
+## 25                                                                                                                                                                                                                                               Turn in tutorial for Chap. 12
+## 26                                                                                                                                                                                                                                 Upload tutorial of Chap. 12 on Google Drive
+## 27                                                                                                                                                                                                            Students work on ind. projects: Review literature (see Syllabus)
+## 28                                                                                                                                                                                                                    Students work on ind. projects: Data management workflow
+## 29                                                                                                                                                                                                                    Students work on ind. projects: Data management workflow
+## 30                                                                                                                                             Turn in ind. projects (on [Google Drive](https://drive.google.com/drive/folders/1MZt5kNKusCv6OeZpjuuPxUiqBaoQVQAc?usp=sharing))
+## 31                                                                                                                                                                                                                                                                            
+## 32                                                                                                                                                                                                                                                                            
 ##                                                                                                                                                                                                                                                            URL
 ## 1                                                                                                                                                                              [Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html)
 ## 2                                                            [Chapter 1](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#2_Chapter_1) &amp; [Chapter 2](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#3_Chapter_2)

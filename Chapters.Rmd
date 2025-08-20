@@ -90,15 +90,142 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 
 # Syllabus
 
-Please see this [webpage](index.html) for more details on the Syllabus. In addition, the presentation slides can be downloaded [here](Chapters_files/Chapter_00_Syllabus_EEB603.pdf).
+Please see this [webpage](index.html) for more details on the Syllabus.
 
 # Chapter 1
 
-## What is Reproducible Science?
+## Goal
 
-Group activity to investigate reproducible science. 
+In this chapter, we engage in group activities and literature reading to **explore the concept of reproducible science**, including its challenges, benefits, and practical implementation in research. Overall, this chapter aims to provide a broader understanding of reproducible science and the context that underpins the material covered throughout the course.
 
-## What Factors Break Reproducibility?
+The chapter is subdivided into two parts:
+
+- PART 1: [What is Reproducible Science?](#WhatRepSci)
+- PART 2: [What Factors Break Reproducibility?](#WhatFacBreakRep)
+
+## Learning Outcomes
+
+- Understand the definitions of reproducibility and replicability in scientific research
+- Identify the importance of reproducible science for research integrity and advancements
+- Recognize the challenges to achieving reproducibility and potential solutions
+- Engage with practical tools and strategies to promote reproducible research practices 
+
+## What is Reproducible Science? {#WhatRepSci}
+
+### Overview
+
+In Part 1, students will engage in self-reflection and group activities to explore the meaning of reproducible science and how it is implemented in research and scientific publications.
+
+**Disclaimer:** The instructor has provided definitions and other supporting materials (in collapsible boxes) throughout this section. However, students are advised **not** to read these materials in advance in order to complete the exercises sincerely and gain the most from the experience.  
+
+### Class Outline
+
+This class taking place over 2-3 sessions is outlined as follows:
+
+1. [Introduction and Definitions](#IntroDef)
+2. [Case Studies and Challenges](#CaseStudies)
+3. [Best Practices and Open Science Tools](#BestPract)
+4. [Wrap-up and Future Directions](#WrapUp)
+
+### Introduction and Definitions {#IntroDef}
+
+#### Individual self-reflection (5 minutes)
+
+Students individually reflect on what "reproducible science" means to them and write down a definition. 
+
+#### Group Sharing and Discussion (15 minutes)
+
+- In small groups (3-4 students), students share their definitions and compare them
+
+- Each group share their findings with the class to emulate a class discussion
+
+#### Formal Definitions (10 minutes)
+
+A set of standard definitions is provided to emphasize the use of same data/code for reproducibility versus new data/similar methods for replicability. Students are encouraged to engage and discuss these definitions in light of their research/knowledge/experience. 
+    
+<details>
+    <summary><b>Reproducible Science</b></summary>
+      <p>Reproducible science refers to the ability to obtain the same research findings and conclusions by using the same original data, computational steps, methods, and code used in a prior study.</p>
+<p>Key elements of reproducible science:</p>
+<ul>
+  <li><strong>Transparency:</strong> All data, code, and methodological details are openly available and well-documented.</li>
+  <li><strong>Documentation:</strong> Clear and detailed descriptions of the experimental design, procedures, analysis steps, and any decisions made during the research process.</li>
+  <li><strong>Data Availability:</strong> Raw data used in the study is accessible and ideally deposited in publicly available repositories.</li>
+  <li><strong>Code Availability:</strong> Software code and scripts used for analysis are shared and well-commented.</li>
+  <li><strong>Use of Standardized Tools and Practices:</strong> Utilizing established tools and adhering to best practices within the research field to reduce variability and errors.</li>
+</ul>
+</details>
+
+<details>
+    <summary><b>Reproduction vs. Replication</b></summary>
+      <p>**Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.</p>
+      <p>**Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on another species (e.g., sagebrush). For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.</p>
+      <p>Overall, **reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else**. On the other hand, **replication explores which details matter for reaching a specific scientific conclusion**. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.</p>
+</details>
+
+### Case Studies and Challenges {#CaseStudies}
+
+#### Group Work Activity (50 minutes)
+
+- Each group receives a publication illustrating a challenge or challenges to reproducibility (e.g., lack of data sharing, insufficient methodological details, issues with statistical analysis, publication bias)
+- Each group is tasked to analyzes their assigned case study by:
+    - Reading the publication
+    - Identifying the reproducibility challenge(s)
+    - Discussing the potential impact on the research community
+    - Brainstorming possible solutions or ways the situation could be mitigated to improve reproducibility
+- Students are encouraged to research their publication online and use the [resources](#OnlineResChap1) presented below to support their findings and group activity. **Please don't research our publication prior to making your own conclusions.** 
+
+#### Online Resources {#OnlineResChap1}
+
+This list of online resources are provided to support your group activity:
+
+- [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
+- [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
+- [Reproducibility and research integrity](https://www.biomedcentral.com/collections/reproducibility) - A Special Issue published in *BMC Research Notes*.
+- [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
+- [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
+- [PubPeer](https://pubpeer.com/) - An online journal club where researchers are posting comments on articles.
+- [Tools such as ChatGPT threaten transparent science; here are our ground rules for their use](https://www.nature.com/articles/d41586-023-00191-1) - A *Nature* editorial discussing the inclusion of AI in research articles.
+    
+#### Group Presentations and Class Discussion (20 minutes)
+
+- Each group presents their findings on their assigned case study, and proposed solutions
+- **Tip for Discussion:** We facilitate a class discussion by drawing connections between the different case studies and exploring the systemic challenges to reproducibility and the various factors at play.
+
+### Best Practices and Open Science Tools {#BestPract}
+
+### Group Activity (20 minutes)
+
+- Groups brainstorm best practices and tools to improve research reproducibility, based on their understanding and previous discussions
+- Class discussion to present our recommendations to implement reproducible science
+
+### Key Strategies and Tools (10 minutes)
+
+The instructor will go over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
+
+<details>
+    <summary><b>Strategies and tools for reproducible science</b></summary>
+<ul>
+  <li><strong>Detailed Protocols:</strong> Importance of clear and precise documentation of all steps leading to data production.</li>
+  <li><strong>Lab Notebooks:</strong> For improved documentation and data management.</li>
+  <li><strong>Version Control:</strong> Using tools like Git for code and data management.</li>
+  <li><strong>Data and Code Repositories:</strong> Platforms like Dryad, Zenodo, and Figshare for sharing research materials.</li>
+</ul>
+</details>
+
+### Wrap-up and Future Directions {#WrapUp}
+
+#### Individual Activity (10 minutes)
+
+- Students reflect individually on:
+  - One key takeaway from this exercise
+  - One action that they can implement in their research to improve reproducibility
+
+#### Class Discussion & QA (10 minutes)
+
+- Students share their reflections and ask any pending questions
+
+## PART 2: What Factors Break Reproducibility? {#WhatFacBreakRep}
 
 In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
 
@@ -108,7 +235,7 @@ Before delving into the cause leading to irreproducible science, we need to look
 
 - **Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
 
-- **Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on sagebrush. For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
+- **Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on another species (e.g., sagebrush). For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
 
 Overall, **reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else**. On the other hand, **replication explores which details matter for reaching a specific scientific conclusion**. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.
 
@@ -121,6 +248,7 @@ The list of websites listed here have been used to design this chapter:
 - [Reproducibility and research integrity](https://www.biomedcentral.com/collections/reproducibility) - A Special Issue published in *BMC Research Notes*.
 - [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
 - [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
+- [PubPeer](https://pubpeer.com/) - An online journal club where researchers are posting comments on articles.
 
 ## Teaching material
 

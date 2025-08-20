@@ -402,19 +402,7 @@ The university has many resources designed to support you as a learner and human
   - The MakerLab on the second floor offers tools for student use, and there are friendly staff in the MakerLab to help you learn how.
 - The [Writing Center](https://www.boisestate.edu/writingcenter/) offers individual consultations tailored to your needs, including making sense of writing assignment instructions, brainstorming, crafting a thesis, organizing an essay, revisions, citations, and more.
 - [Counseling Services](https://www.boisestate.edu/healthservices/counseling) helps you tap into your strengths and find resources to deal more effectively with concerns that impact your pursuit of personal and academic goals. It emphasizes prevention and early detection and provides a broad spectrum of short-term counseling, consultative, evaluative, teaching, and training functions. Counseling staff consists of licensed counselors, psychologists, and closely supervised trainees/post-graduate interns.
-- The [Gender Equity Center](https://www.boisestate.edu/genderequity/) provides specialized, brief, no-cost, confidential support for campus members affected by:
-  - Identity-related harassment.
-  - Sexual harassment, sexual assault, unhealthy relationships, and stalking.
-  - Life experiences related to gender, sexual orientation, and allyship.
-  - Life transitions and crisis.
-  - Personal, financial, or academic roadblocks.
-- [Multicultural Student Services](https://www.boisestate.edu/mss/) works with all students interested in equity and social justice, students from different cultures, countries and ethnicities. The staff understands cultural differences and perspectives, and knows what it’s like living in a dominant culture. The training and the programs Multicultural Student Services provides can help you navigate through political correctness and into respectful dialogue. This center also provides:
-  - Support and guidance for planning cultural festivals and events.
-  - In-center tutoring and studying lounge.
-  - Volunteer opportunities.
-  - Mentoring and Training.
-  - Programs and events.
-- Food assistance: If you are hungry and cannot afford to purchase food, the campus has some resources to help you. You can visit the [campus food pantry](https://www.boisestate.edu/deanofstudents/student-support/food-help/food-pantry/) or [get free meals in the campus dining hall](https://www.boisestate.edu/deanofstudents/student-support/food-help/meal-assistance/).
+- Food assistance: If you are hungry and cannot afford to purchase food, the campus has some resources to help you. You can visit the [campus food pantry](https://www.boisestate.edu/campusfoodpantry/) or [get free meals in the campus dining hall](https://www.boisestate.edu/deanofstudents/student-support/food-help/meal-assistance/).
 
 # Course Policies
 
