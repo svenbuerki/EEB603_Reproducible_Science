@@ -100,8 +100,8 @@ In this chapter, we engage in group activities and literature reading to **explo
 
 The chapter is subdivided into two parts:
 
-- PART 1: [What is Reproducible Science?](#WhatRepSci)
-- PART 2: [What Factors Break Reproducibility?](#WhatFacBreakRep)
+- [PART A:](#WhatRepSci) What is Reproducible Science?
+- [PART B:](#WhatFacBreakRep) What Factors Break Reproducibility?
 
 ## Learning Outcomes
 
@@ -114,7 +114,7 @@ The chapter is subdivided into two parts:
 
 ### Overview
 
-In Part 1, students will engage in self-reflection and group activities to explore the meaning of reproducible science and how it is implemented in research and scientific publications.
+In Part A, students engage in self-reflection and group activities to explore the meaning of reproducible science and how it is implemented in research and scientific publications.
 
 **Disclaimer:** The instructor has provided definitions and other supporting materials (in collapsible boxes) throughout this section. However, students are advised **not** to read these materials in advance in order to complete the exercises sincerely and gain the most from the experience.  
 
@@ -194,14 +194,14 @@ This list of online resources are provided to support your group activity:
 
 ### Best Practices and Open Science Tools {#BestPract}
 
-### Group Activity (20 minutes)
+#### Group Activity (20 minutes)
 
 - Groups brainstorm best practices and tools to improve research reproducibility, based on their understanding and previous discussions
 - Class discussion to present our recommendations to implement reproducible science
 
-### Key Strategies and Tools (10 minutes)
+#### Key Strategies and Tools (10 minutes)
 
-The instructor will go over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
+The instructor goes over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
 
 <details>
     <summary><b>Strategies and tools for reproducible science</b></summary>
@@ -225,34 +225,26 @@ The instructor will go over the points in this collapsible box to further discus
 
 - Students share their reflections and ask any pending questions
 
-## PART 2: What Factors Break Reproducibility? {#WhatFacBreakRep}
+## What Factors Break Reproducibility? {#WhatFacBreakRep}
 
-In this chapter, we are investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. We are using results from the survey published by @Baker_2016 as baseline to support our discussions. 
+### Overview
 
-## What’s the difference between reproduction and replication?
+In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by @Baker_2016 as baseline. 
 
-Before delving into the cause leading to irreproducible science, we need to look into the differences between replication and reproduction. The material presented here has been adapted from [RESCIENCE C](http://rescience.github.io/).
+### Investigated questions
 
-- **Reproduction** of a study means running the same computation (mostly referred as code in this class) on the same input data, and then checking if the results are the same. Reproduction can be considered as software testing at the level of a complete study.
+We will be investigating the following questions:
 
-- **Replication** of a scientific study (computational or other) means repeating a published protocol, respecting its spirit and intentions, but varying the technical details. For instance, it would mean using a protocol aiming at extracting genomic DNA developed on tomato and applying it on another species (e.g., sagebrush). For computational work, this would mean using different software, running a simulation from different initial conditions, etc. The idea is to change something that everyone believes should not matter (e.g. both tomato and sagebrush are plants and have DNA), and see if the scientific conclusions are affected or not.
+- Is there a reproducibility crisis?
+- How much published work in your field is reproducible?
+- What is the scale of the reproducibility crisis?
+- What corrective measures can be implemented?
+- What factors contribute to irreproducible research?
+- What can be done to mitigate the reproducible crisis?
 
-Overall, **reproduction verifies that a computation was recorded with enough detail that it can be analyzed later or by someone else**. On the other hand, **replication explores which details matter for reaching a specific scientific conclusion**. A replication attempt is most useful if reproducibility has already been verified. Otherwise, if replication fails, leads to different conclusions, you cannot trace back the differences in the results to the underlying code and data.
+### Teaching material
 
-## Online resources
-
-The list of websites listed here have been used to design this chapter:
-
-- [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
-- [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
-- [Reproducibility and research integrity](https://www.biomedcentral.com/collections/reproducibility) - A Special Issue published in *BMC Research Notes*.
-- [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
-- [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
-- [PubPeer](https://pubpeer.com/) - An online journal club where researchers are posting comments on articles.
-
-## Teaching material
-
-The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_2_Reproducibility_crisis.pdf). The pdf of @Baker_2016 is available on our shared Google Drive at this path:
+The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf). The `pdf` of @Baker_2016 is available in our shared Google Drive at this path:
 
 `Reproducible_Science > Publications > Baker_Nature_2016.pdf`
 
