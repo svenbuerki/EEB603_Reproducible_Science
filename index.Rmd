@@ -49,7 +49,10 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 
 - Days: Tuesday & Thursday 
 - Times: 9:00 to 10:15 AM
-- Place: [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share).
+- Place: [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share)
+- Important Information: Students must bring their **Bronco Card** to access the building using key card readers located at the east, west, or north entrances. Because the Raptor Research Building is on the edge of campus, it is kept secure and requires card access for entry. **Please carry your Bronco Card to every class session held in this building, as you will not be able to enter without it.**
+
+If you forget your Bronco Card, contact **Campus Security** at 208-426-6911 to request access as a last resort.
 
 # Instructor Information
 
