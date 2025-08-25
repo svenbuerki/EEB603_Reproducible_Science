@@ -44,14 +44,16 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-<div style="text-align: right"> [Download pdf version](index_syllabus_pdf.pdf) </div>
 <div style="text-align: right"> [Raw data on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science) </div>
 
 # Meeting Time and Place
 
 - Days: Tuesday & Thursday 
 - Times: 9:00 to 10:15 AM
-- Place: [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share).
+- Place: [Raptor Research Center Building, Rm 119](https://maps.boisestate.edu/?id=715#!m/115308?share)
+- Important Information: Students must bring their **Bronco Card** to access the building using key card readers located at the east, west, or north entrances. Because the Raptor Research Building is on the edge of campus, it is kept secure and requires card access for entry. **Please carry your Bronco Card to every class session held in this building, as you will not be able to enter without it.**
+
+If you forget your Bronco Card, contact **Campus Security** at 208-426-6911 to request access as a last resort.
 
 # Instructor Information
 
@@ -135,7 +137,7 @@ Learning outcomes for each chapter are available on the [course website](https:/
 
 # Course Schedule
 
-The tentative schedule for this course is available [here](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html). The instructor wants to warn students that he might adjust the schedule to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
+The tentative schedule for this course is available [here](Timetable.html). The instructor wants to warn students that he might adjust the schedule to accommodate any needs. However, in case of changes, the instructor will make sure to contact enrolled students to keep them posted.
 
 # Course Resources
 
@@ -151,8 +153,8 @@ The reading material at the basis of this course is composed of a mixture of pub
 
 | Chapter | Reference(s)  |
 | :--- |-------------|
-| **Chap. 1** | Chapter 3 of @Gandrud2015 |
-| **Chap. 2** | @Baker_2016; @Freedman_2015; @Munafo; @Peng2021; @Sarewitz_2016 |
+| **Chap. 1** | @Baker_2016; @Freedman_2015; @Munafo; ; @NAP25303; @Peng2021; @Sarewitz_2016 |
+| **Chap. 2** | Chapter 3 of @Gandrud2015 |
 | **Chap. 3** | @Bone2015; @Markowetz2015; @Smith2016 |
 | **Chap. 4** | @Carroll2021; [Creative Commons](https://creativecommons.org/); @Wagner2022; @Williams2023 |
 | **Chap. 5** | @DataMan & Chapter 4 of @Gandrud2015; @RepCode & Chapter 2 of @Gandrud2015; @Trisovic2022 |

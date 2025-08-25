@@ -186,6 +186,7 @@ This list of online resources are provided to support your group activity:
 - [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
 - [PubPeer](https://pubpeer.com/) - An online journal club where researchers are posting comments on articles.
 - [Tools such as ChatGPT threaten transparent science; here are our ground rules for their use](https://www.nature.com/articles/d41586-023-00191-1) - A *Nature* editorial discussing the inclusion of AI in research articles.
+- [Reproducibility and Replicability in Science](https://doi.org/10.17226/25303) - A report published by the National Academies of Sciences, Engineering, and Medicine.
     
 #### Group Presentations and Class Discussion (20 minutes)
 
@@ -229,7 +230,7 @@ The instructor goes over the points in this collapsible box to further discuss i
 
 ### Overview
 
-In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by @Baker_2016 as baseline. 
+In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by @Baker_2016 and recommendations from the report published by the National Academies of Sciences, Engineering, and Medicine [@NAP25303]. 
 
 ### Investigated questions
 

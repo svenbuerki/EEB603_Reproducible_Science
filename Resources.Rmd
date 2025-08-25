@@ -134,9 +134,9 @@ Please see the full documentation (with examples) at this url: https://rstudio.g
 
 *BMC Research Notes* published a special issue on Reproducibility and research integrity in 2022. You can consult all the publications [here](https://www.biomedcentral.com/collections/reproducibility).
 
-# Publications used in this class
+# Publications
 
-Here is a list of the publications used in this class.
+Here is a list of publications used in this course
 
 ```{r references, eval = T, results="asis", cache = F, echo=F, warning = FALSE, message=FALSE}
 library("knitcitations")
