@@ -72,12 +72,12 @@ This is a face to face course that will meet two times a week. Our class session
 
 # Course Description and Goals
 
-The scientific community widely acknowledges that we are in the midst of a reproducibility crisis [e.g. @Baker_2016]. This course begins by reviewing the evidence for, and causes of, this crisis, and aims to highlight key factors that can improve reproducibility in science—especially within Ecology, Evolution & Behavior. It also provides a platform to develop, practice, and strengthen science communication skills [e.g. @Soltis2023 for some innovative ways to share your research]. 
+The scientific community widely acknowledges that we are in the midst of a ***reproducibility crisis*** [e.g. @Baker_2016]. This course begins by reviewing the evidence for, and causes of, this crisis, and aims to highlight key factors that can improve reproducibility in science—especially within Ecology, Evolution & Behavior. It also provides a platform to develop, practice, and strengthen science communication skills [e.g. @Soltis2023 for some innovative ways to share your research]. 
 
-The overarching aim of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research. Throughout the course, students will learn to use open-source software for research, including [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further develop these skills—and improve communication and teaching competencies—students will 
+The overarching ***goal*** of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research. Throughout the course, students will learn to use open-source software for research, including [R](https://cran.r-project.org), [RStudio](https://www.rstudio.com) and [R Markdown](https://rmarkdown.rstudio.com) (incl. [knitr](https://kbroman.org/knitr_knutshell/)). To further develop these skills—and improve communication and teaching competencies—students will: 
 
-1. design bioinformatics tutorials and teach them to peers
-2. design, implement, and present individual projects aimed at developing a reproducible workflow tailored to their research interests
+1. Design bioinformatics tutorials and teach them to peers
+2. Design, implement, and present individual projects aimed at developing a reproducible workflow tailored to their research interests
 
 Overall, this course **provides students with key knowledge to gather, store, share, prepare, and analyze data, as well as communicate results to the scientific community and various stakeholders** (see Figure \@ref(fig:part2)).
 
