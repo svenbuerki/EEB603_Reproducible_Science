@@ -277,7 +277,11 @@ During the first two weeks, students will [sign up](#GoogleBioTut) for a chapter
 
 Tutorials must be written using *knitr*/*rmarkdown* in RStudio and focus on a set of exercises designed to build key bioinformatics skills related to the chosen chapter (see [Course Content - PART 2](#courseCont)). Students are encouraged to use materials from @Gandrud2015 and @Wickham2017, or other properly cited sources. For additional resources, see the [Publications and Textbooks](#Publis) and [RStudio Cheat Sheets](#Cheat) sections.
 
-Each tutorial should be designed to fit within two laboratory sessions (see [Teaching Tutorials](#TeachTut)). **Tutorials must be submitted to the instructor one week before presentation for review and uploading to the shared Google Drive.**
+Each tutorial must:
+
+- Be designed to fit within two laboratory sessions (see [Teaching Tutorials](#TeachTut))
+- Be submitted to the instructor one week prior to the presentation for review
+- Be uploaded to the shared Google Drive, and an email must be sent to the class to introduce the tutorial and share the resources
 
 ### What Should You Keep in Mind?
 
