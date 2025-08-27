@@ -125,15 +125,13 @@ This list of online resources supports our group activities:
 
 ## What is Reproducible Science? {#WhatRepSci}
 
-### Goal
-
-Students engage in self-reflection and group activities to explore the meaning of reproducible science and how it is implemented in research and scientific publications.
+To investigate this question, students engage in self-reflection and group activities designed to explore the meaning of reproducible science and its implementation in research and scientific publications.
 
 **Disclaimer:** The instructor has provided definitions and other supporting materials (in collapsible boxes) throughout this section. However, students are advised not to read these materials in advance, in order to complete the exercises sincerely and derive the greatest benefit from the experience.  
 
 ### Class Outline
 
-The structure of this class, held over one to two sessions, is as follows:
+The structure of this class, held over two sessions, is as follows:
 
 1. [Introduction and Definitions](#IntroDef)
 2. [Case Studies and Challenges](#CaseStudies)
