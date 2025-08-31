@@ -237,6 +237,23 @@ Each group:
 - 🧭 **Facilitated Discussion Tip:**  
   Guide the discussion by drawing links across different case studies — uncover **systemic challenges** and the **interconnected factors** that shape reproducibility across disciplines.
 
+#### Reasons Behind the Retractions of Case Studies <span style="color:gray;">(10 minutes)</span>
+
+The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Note that the article assigned to Group 3 has not been formally retracted; however, several experts have raised concerns on [PubPeer](https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8). These concerns relate to: (***i***) the use of machine-generated passages, (***ii***) the inclusion of references that do not appear to exist, and (***iii***) references to figures in the article that are themselves nonexistent.
+
+```{r retractionwatch, warning=FALSE, echo=FALSE}
+###~~~
+# Load data
+###~~~
+retractioncsv <- read.csv("Chapters_files/Chapter_1_PartA_Case_Studies.csv") 
+
+###~~~
+#Plot timetable in doc
+###~~~
+knitr::kable(retractioncsv,  caption = "Reasons behind the retractions of case studies sourced from the Retraction Watch database.") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
 ### Best Practices and Open Science Tools {#BestPract}
 
 #### 🧠 Group Brainstorm <span style="color:gray;">(20 minutes)</span>
@@ -270,7 +287,7 @@ The instructor goes over the points in this collapsible box to further discuss i
 
 In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by @Baker_2016 and recommendations from the report published by the National Academies of Sciences, Engineering, and Medicine [@NAP25303]. 
 
-### Investigated questions
+### Investigated Questions
 
 We will be investigating the following questions:
 
@@ -281,11 +298,12 @@ We will be investigating the following questions:
 - What factors contribute to irreproducible research?
 - What can be done to mitigate the reproducible crisis?
 
-### Teaching material
+### Teaching Material
 
-The `pdf` of the presentation can be downloaded [here](Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf). The `pdf` of @Baker_2016 is available in our shared Google Drive at this path:
+The `PDF` of the presentation can be downloaded [here](Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf). The PDFs of @Baker_2016 and @NAP25303 are available in our shared Google Drive at the following paths:
 
-`Reproducible_Science > Publications > Baker_Nature_2016.pdf`
+`Reproducible_Science > Publications > Baker_Nature_2016.pdf`  
+`Reproducible_Science > Publications > Reproducibility_and_Replicability_in_Science_2019.pdf`
 
 # Chapter 2 {#chap2}
 
