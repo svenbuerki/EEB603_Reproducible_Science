@@ -118,6 +118,7 @@ This list of online resources supports our group activities:
 - [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
 - [Retraction Watch Database](https://retractiondatabase.org/RetractionSearch.aspx?&AspxAutoDetectCookieSupport=1) - The database associated with Retraction Watch.
 - [PubPeer](https://pubpeer.com/) - An online journal club where researchers are posting comments on articles.
+- [PubMed](https://pubmed.ncbi.nlm.nih.gov/) - This database comprises more than 39 million citations for biomedical literature from MEDLINE, life science journals, and online books. Citations may include links to full text content from PubMed Central and publisher web sites.
 - [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
 - [Peer Review Week](https://peerreviewweek.wordpress.com/) - Peer Review Week is a community-led yearly global virtual event celebrating the essential role that peer review plays in maintaining research quality. The event brings together individuals, institutions, and organizations committed to sharing the central message that quality peer review in whatever shape or form it may take is critical to scholarly communication.
 - [Research Integrity and Peer Review](https://researchintegrityjournal.biomedcentral.com/) - An international, open access, peer reviewed journal that encompasses all aspects of integrity in research publication, including peer review, study reporting, and research and publication ethics.
@@ -239,7 +240,9 @@ Each group:
 
 #### Reasons Behind the Retractions of Case Studies <span style="color:gray;">(10 minutes)</span>
 
-The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Note that the article assigned to Group 3 has not been formally retracted; however, several experts have raised concerns on [PubPeer](https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8). These concerns relate to: (***i***) the use of machine-generated passages, (***ii***) the inclusion of references that do not appear to exist, and (***iii***) references to figures in the article that are themselves nonexistent.
+The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Digital Object Identifiers ([DOI](https://www.doi.org/)) and [PubMed IDs]([PubMed](https://pubmed.ncbi.nlm.nih.gov/)) are provided for each case study.  
+
+Note that the article assigned to Group 3 has not been formally retracted; however, several experts have raised concerns on [PubPeer](https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8). These concerns relate to: (***i***) the use of machine-generated passages, (***ii***) the inclusion of references that do not appear to exist, and (***iii***) references to figures in the article that are themselves nonexistent.
 
 ```{r retractionwatch, warning=FALSE, echo=FALSE}
 ###~~~
