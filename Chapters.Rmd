@@ -292,12 +292,27 @@ The instructor goes over the points in this collapsible box to further discuss i
 
 In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by @Baker_2016 and recommendations from the report published by the National Academies of Sciences, Engineering, and Medicine [@NAP25303]. 
 
-### Teaching Material
+### Investigated Questions
 
-The `PDF` of the presentation can be downloaded [here](Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf). The PDFs of @Baker_2016 and @NAP25303 are available in our shared Google Drive at the following paths:
+We will be investigating the following questions:
+
+- Is there a reproducibility crisis?
+- How much published work in your field is reproducible?
+- What is the scale of the reproducibility crisis?
+- What corrective measures can be implemented?
+- What factors contribute to irreproducible research?
+- What can be done to mitigate the reproducible crisis?
+
+### Resources
+
+The PDFs of @Baker_2016 and @NAP25303 are available in our shared Google Drive at the following paths:
 
 `Reproducible_Science > Publications > Baker_Nature_2016.pdf`  
 `Reproducible_Science > Publications > Reproducibility_and_Replicability_in_Science_2019.pdf`
+
+### Teaching Material
+
+The presentation associated with this class is available here:
 
 <!-- Container for the iframe and button -->
 <div style="text-align: center;">
@@ -328,20 +343,9 @@ function toggleFullScreen() {
 }
 </script>
 
-### Investigated Questions
-
-We will be investigating the following questions:
-
-- Is there a reproducibility crisis?
-- How much published work in your field is reproducible?
-- What is the scale of the reproducibility crisis?
-- What corrective measures can be implemented?
-- What factors contribute to irreproducible research?
-- What can be done to mitigate the reproducible crisis?
-
 ### Recommendations
 
-The most relevant recommendations proposed by @NAP25303 for our course are listed in the following table.
+The most relevant recommendations proposed by the @NAP25303 for our course are listed in the table below.
 
 ```{r recommendations, eval = T, echo = F, warning = FALSE, message = FALSE, escape = F}
 ###~~~
@@ -371,7 +375,8 @@ DT::datatable(rec,
               extensions = 'Buttons',  # Remove Markdown extension
               options = list(
                 dom = 'Blfrtip', 
-                buttons = c('copy', 'csv', 'excel', 'pdf', 'print')
+                buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+                pageLength = 5  # Set to display 5 rows by default
               ), 
               rownames = FALSE,
               escape = FALSE) %>%  # Allow HTML rendering
