@@ -387,48 +387,27 @@ DT::datatable(rec,
 
 ## Introduction
 
-In this chapter, we will introduce the **bioinformatic tools to write and disseminate reproducible reports** as implemented in RStudio [@RStudio]. More specifically, we will learn procedures to **link and execute data and code into a unified environment** (see Figure \@ref(fig:ReproScience)). This chapter focuses on learning the R Markdown syntax and protocols allowing to include text, code, figures, tables and bibliography into a document. This document will then be compiled into an output file (in either `pdf`, `HTML` or `Word` formats) allowing sharing your research. More specifically, this tutorial provides students with the minimum knowledge allowing them to complete their bioinformatic tutorials (PART 2) and individual projects (PART 3). The chapter will be subdivided into four parts as follows:
+In this chapter, we introduce the use of **bioinformatics tools for writing and disseminating reproducible reports**, as implemented in RStudio [@RStudio]. More specifically, we will learn how to **link and execute data and code within a unified environment** (see Figure \@ref(fig:ReproScience)). 
 
-- [**PART A:**](#partA) Learning the basics.
-- [**PART B:**](#partB) Tables, Figures and References.
-- [**PART C:**](#partC) Advanced R Markdown settings.
-- [**PART D:**](#partD) User Defined Functions in R.
-- [**PART E:**](#partE) Interactive tutorials.
+This chapter focuses on mastering R Markdown syntax and protocols that allow the inclusion of text, code, figures, tables, and references within a single document. The resulting document can then be compiled into an output file—such as `PDF`, `HTML`, or `Word` to facilitate the sharing of your research.
 
-In an effort to maximize time, we will not cover Part E in class, but students are encouraged to study this material on their own. Indeed, this latter material could provide examples and ideas for your assignments. 
+This tutorial provides students with the foundational knowledge necessary to complete their bioinformatics tutorials (**PART 2**) and individual projects (**PART 3**). The chapter is divided into five parts:
+
+- [**PART A:**](#partA) Learning the Basics  
+- [**PART B:**](#partB) Tables, Figures, and References  
+- [**PART C:**](#partC) Advanced R Markdown settings  
+- [**PART D:**](#partD) User-defined functions in R  
+- [**PART E:**](#partE) Interactive tutorials  
 
 ```{r ReproScience, echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Fig1.png")
 ```
 
-### Learning outcomes
+### Supporting Files {#Files}
 
-Learning outcomes associated to this chapter are provided at the top of each part. 
+Files supporting this chapter are available on [Google Drive](https://drive.google.com/drive/folders/1Olb6huHcBfv02OxL50WEbQR-uJvkuX7O?usp=drive_link).
 
-### Files supporting this tutorial {#Files}
-
-#### GitHub
-
-The final files associated to Chapter 1 are all deposited on the instructor's GitHub account at this URL:
-
-- https://github.com/svenbuerki/EEB603_Reproducible_Science/tree/master/Exercises/Chapter_1
-
-#### Google Drive
-
-Although less used in PART A, a set of files are provided to support teaching of material presented in this chapter. These files are deposited in the shared Google Drive under this path: 
-  
-  + `Reproducible_Science/Chapters/Chapter_1/Tutorial_files`
-
-If you have difficulties accessing the Google Drive, click [here](https://drive.google.com/drive/folders/1JnGop4WBuToNDNFf7fgLthLDJ-re36o3?usp=drive_link).
-
-Files are as follows:
-
-- `EEB603_Syllabus_BUERKI.Rmd`: This is the `.Rmd` file used to compile the syllabus of this class. This file provides a good source of information for the syntax and protocols described in this tutorial.
-- `Bibliography_Reproducible_Science_2.bib`: This file contains references cited in `BibTex` format. 
-- `AmJBot.csl`: This citation style language (CSL) file allows formatting citations and bibliography following citation style of *American Journal of Botany*.
-- `Bioinformatic workflow_PART2.pdf`: A `pdf` file containing the bioinformatic workflow taught in this class. This file will be used to learn how to incorporate a figure into R Markdown file.
-
-### Install RMarkdown software
+### Install R Markdown software
 
 Software and packages required to perform this tutorial are detailed below. Students should install those software and packages on their personal computers to be able to complete this course. Additional packages might need to be installed and the instructor will provide guidance on how to install those as part of the forthcoming tutorials.
 
@@ -440,111 +419,133 @@ install.packages(c("bookdown","knitr", "rmarkdown"))
 - **RStudio**: https://www.rstudio.com/products/rstudio/download/
 - **TeX**: This software is required to compile document into `pdf` format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux. **For this class, you are not requested to install this software**, which takes significant hard drive space and is harder to operate on Windows OS. 
 
-**NOTE:** The instructor is using the following version of `RStudio`: Version 2022.12.0+353 (2022.12.0+353). If your computer is experiencing issues running the latest version of the software, you can install previous versions [here](https://docs.posit.co/previous-versions/rstudio/).
+**NOTE:** The instructor is using the following version of `RStudio`: Version 2025.05.0+496 (2025.05.0+496). If your computer is experiencing issues running the latest version of the software, you can install previous versions [here](https://docs.posit.co/previous-versions/rstudio/).
 
-### RStudio
+### What is RStudio?
 
-RStudio [@RStudio] is an integrated development environment (IDE) that allows you to interact with R more readily. RStudio is similar to the standard RGUI, but it is considerably more user friendly. It has more drop-down menus, windows with multiple tabs, and many customization options (see Figure \@ref(fig:IDE)). Detailed information on using RStudio can be found at at [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
+RStudio [@RStudio] is an **integrated development environment (IDE)** that allows you to interact with R more efficiently. While similar to the standard R GUI, RStudio is significantly more user-friendly. It offers more drop-down menus, tabbed windows, and extensive customization options (see Figure \@ref(fig:IDE)). 
+
+Detailed information on using RStudio can be found on [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
 
 ```{r IDE, echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/IDE.png")
 ```
 
-### Web resources
+### Web Resources
 
-Please find below URLs to webpages that are providing key information for chapter 1:
+Below are URLs to web resources that provide key information related to Chapter 2:
 
-- **R Markdown:** https://RMarkdown.rstudio.com
-- **R Markdown: The Definitive Guide (by Yihui Xie, J. J. Allaire, Garrett Grolemund):** https://bookdown.org/yihui/RMarkdown/
-- **Write HTML, PDF, ePub, and Kindle books with R Markdown:** https://bookdown.org
-- **bookdown: Authoring Books and Technical Documents with R Markdown (by Yihui Xie):** https://bookdown.org/yihui/bookdown/
-- **knitr:** http://yihui.name/knitr/
-- **Pandoc: A universal document converter:** https://pandoc.org
-- **Bibliographies and Citations in R Markdown:** https://RMarkdown.rstudio.com/authoring_bibliographies_and_citations.html
-- **Tutorial on knitr with R Markdown (by Karl Broman):** http://kbroman.org/knitr_knutshell/pages/RMarkdown.html
+- **R Markdown:** https://rmarkdown.rstudio.com  
+- **R Markdown: The Definitive Guide** (by Yihui Xie, J. J. Allaire, and Garrett Grolemund): https://bookdown.org/yihui/rmarkdown/  
+- **Write HTML, PDF, ePub, and Kindle books with R Markdown:** https://bookdown.org  
+- **bookdown: Authoring Books and Technical Documents with R Markdown** (by Yihui Xie): https://bookdown.org/yihui/bookdown/  
+- **knitr:** http://yihui.name/knitr/  
+- **Pandoc: A Universal Document Converter:** https://pandoc.org  
+- **Bibliographies and Citations in R Markdown:** https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html  
+- **Tutorial on knitr with R Markdown** (by Karl Broman): http://kbroman.org/knitr_knutshell/pages/RMarkdown.html
 
-## PART A: Learning the basics {#partA}
+## PART A: Learning the Basics {#partA}
 
 In this part, we will provide a survey of the procedures to create and render (or knitting) your first R Markdown document.
 
-### Learning outcomes
+### Learning Outcomes
 
-This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
+This tutorial corresponds to **Part B** of Chapter 1 and provides students with the opportunity to learn how to:
 
-- Create and render (or knitting) your first R Markdown document.
-- Learn the following basic R Markdown syntax and protocols:
-    + Headers
-    + Inside text commenting
-    + Lists
-    + Italicize and bold words
-    + Create hyperlinks
-    + Include code chunks and inline code
-    + Check spelling
+- Create and render (or "knit") your first R Markdown document  
+- Understand basic Markdown syntax and conventions, including:
+    + Headers  
+    + Inline text formatting  
+    + Lists  
+    + Italicizing and bolding text  
+    + Creating hyperlinks  
+    + Including code chunks and inline code  
+    + Checking spelling
 
 ### Introduction to R Markdown
 
-Markdown is a simple formatting syntax language used for authoring HTML, PDF, and MS Word documents, which is implemented in the `rmarkdown` package. An R Markdown document is usually subdivided into three sections (see Figure \@ref(fig:RMdown)):
+Markdown is a simple formatting syntax used for authoring HTML, PDF, and Microsoft Word documents. It is implemented in the `rmarkdown` package. An R Markdown document is typically divided into three sections (see Figure \@ref(fig:RMdown)):
 
-1. **YAML metadata section:** This section provides high level information about the output format of the R Markdown file. Information stored in this section will be used by the Pandoc program to format the output document (see Figure \@ref(fig:RMdown)).
-2. **Publication core text:** This section represents the core of your document/publication and uses Markdown syntax.
-3. **Code chunk:** This section allows to import and analyze data as well as produce figures and tables that will be directly displayed in the output file. 
+1. **YAML metadata section:** This section provides high-level information about the output format of the R Markdown file. The information defined here is used by the Pandoc program to format the final document (see Figure \@ref(fig:RMdown)).
+
+2. **Main body text:** This section represents the core content of your document or publication and uses Markdown syntax.
+
+3. **Code chunks:** This section allows you to import and analyze data, and to produce figures and tables that are directly embedded in the output document.
 
 ```{r RMdown, echo=FALSE, fig.cap="Example of an R Markdown file showing the three major sections.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Presentation_RMarkdown.png")
 ```
 
-### Creating an R Markdown file
+### Our First R Markdown Document
+
+In this section, you will learn how to create and knit your first R Markdown document.
+
+#### Create Document
+
+To create an R Markdown document, follow these steps in RStudio:
+
+1. Navigate to: `File -> New File -> R Markdown...`  
+2. Enter a title for your document and set the output format to `HTML` (see Figure \@ref(fig:RMdownscreen))
+    - **Title:** `Chapter 2 - Part A` (This is the title of your document, not the name of your file; see below)
+    - **Note:** We will knit documents to the `HTML` format, which is the default output in RStudio. If you prefer to generate a `PDF` document, you must have a version of the `TeX` program installed on your computer (see Figure \@ref(fig:RMdownscreen)).  
+3. Save the `.Rmd` file by selecting: `File -> Save As...`  
+    - **File name:** `Chapter_2_part_A.Rmd`  
+    - **Project path:** `Reproducible_Science/Chapters/Chapter_2`  
+    - **Warning:** Because the knitting process generates multiple files, you should save your `.Rmd` file in a dedicated project folder.
 
 ```{r RMdownscreen, echo=FALSE, fig.cap="Snapshot of window to create an R Markdown file.", fig.show="asis", out.width = '40%', fig.align="center"}
 knitr::include_graphics("Figures/Create_RMarkdown.png")
 ```
 
-To create an R Markdown document execute the following steps in RStudio:
+#### Knit Document
 
-1. Select: `File -> New File -> R Markdown...` 
-2. Provide title for the document and define `Default output format` (see Figure \@ref(fig:RMdownscreen)).
-If you want to knit your document in `pdf` format, a version of the `TeX` program has to be installed on your computer (see Figure \@ref(fig:RMdownscreen)). 
-3. Save the `.Rmd` document (using `File -> Save As...`). Save this file in a new folder devoted to the project (**Warning:** Knitting the document will generate several files).
+To knit ![](Figures/knit_2.png) or render your R Markdown document into an HTML file, follow these steps in RStudio:
 
-### Rendering (or knitting) an R Markdown document
+1. Click the `Knit` button (Figure \@ref(fig:RMdown)) in the top toolbar to render the document.  
+2. There are several output format options; however, if you simply click the button, RStudio will automatically knit the document using the settings specified in the YAML metadata section (Figure \@ref(fig:RMdown)).  
+3. The output file will be created in the same directory as your `.Rmd` file (Figure \@ref(fig:MyFirstRMfolder)). You can monitor the progress in the **R Markdown** console.  
+    - If the knitting process fails, error messages will appear in the console, often indicating the line in the script where the error occurred (although this is not always the case). These messages are helpful for debugging your R Markdown document.
 
-To render or knit ![](Figures/knit_2.png) your R Markdown document/script into the format specified in the YAML metadata section do the following steps in RStudio:
+```{r MyFirstRMfolder, echo=FALSE, fig.cap="Snapshot of your project folder with the knitted html document.", fig.show="asis", out.width = '100%', fig.align="center"}
+knitr::include_graphics("Figures/MyFirstRMarkdown_HTML.png")
+```
 
-1. Select the `Knit` button (Figure \@ref(fig:RMdown)) in the upper bar of your window to render document.
-2. There are several options depending on the output format; however if you just push the button it will automatically knit the document following settings provided in the YAML metadata section (Figure \@ref(fig:RMdown)).
-3. The output file will automatically be created in the same directory as the `.Rmd` file. You can track progress in the `R Markdown` console. If the knitting fails, error messages will be printed in the `R Markdown` console (including information on which line of the script the error occurred, but it might not always be the case). Error messages are very useful to debug your R Markdown document.  
+#### <a name="compilation"></a>How Does the Knitting Process Work?
 
-### <a name="compilation"></a>How does the knitting process work?
+When you knit your document, R Markdown passes the `.Rmd` file to the R *knitr* package, which executes all code chunks and generates a new Markdown (`.md`) file. This Markdown file includes both the code and its output (see Figure \@ref(fig:Rflow)).
 
-When you knit your document, R Markdown will feed the `.Rmd` file to the R *knitr* package, which executes all of the code chunks and creates a new markdown (`.md`) document. This latter document includes the code and its output (Figure \@ref(fig:Rflow)). The markdown file generated by `knitr` is then processed by the Pandoc program, which is responsible for creating the finished format (Figure \@ref(fig:Rflow)).
+The `.md` file created by *knitr* is then processed by the Pandoc program, which converts it into the final output format (e.g., HTML, PDF, or Word) as illustrated in Figure \@ref(fig:Rflow).
 
 ```{r Rflow, echo=FALSE, fig.cap="R Markdown flow.", out.width = '100%'}
 knitr::include_graphics("Figures/rmarkdownflow.png")
 ```
 
-### Basic R Markdown syntax and protocols
+### Basic R Markdown Syntax and Protocols
 
-We will focus here on learning the syntax and protocols to produce:
+In this section, we will focus on learning the syntax and protocols needed to create:
 
-- Headers.
-- Inside text commenting.
-- Lists.
-- Italicize and bold words.
-- Embed code chunks and inline code.
-- Check spelling.
+- Headers  
+- Inline text formatting  
+- Lists  
+- Italicized, bold, and combined formatting  
+- Embedded code chunks and inline code  
+- Spell checking
 
+To master these skills, edit your `.Rmd` file as we progress, and knit the document to view the final result.
 
-More syntax are available in the R Markdown Reference Guide. You can access this document as follows in RStudio:
+Additional syntax and formatting options are available in the **R Markdown Reference Guide**, which you can access in RStudio as follows:
 
 - Select: `Help -> Cheatsheets -> R Markdown Reference Guide`
 
-**Notice:** The Cheatsheet section also allows accessing additional supporting documents related to R Markdown and Data manipulation. Those documents will be very useful for this class.
+**Note:** The **Cheatsheets** section also provides access to other helpful resources related to R Markdown and data manipulation. These documents will be very useful throughout this course.
+
+---
 
 ### Headers
 
-Please find below the syntax to create headers (3 levels):
+Below is the syntax to create headers at three levels:
 
-Syntax:
+**Syntax:**
 ```{r eval=FALSE}
 The "#" refers to the level of the header
 # Header 1  
@@ -552,18 +553,26 @@ The "#" refers to the level of the header
 ### Header 3  
 ```  
 
-### Inside text commenting
+**💡 Practice this syntax in your document.**
 
-Markdown does not have a syntax to add comments in your text, but this function can be borrowed from HTML as follows:
+---
+
+### Inside Text Commenting
+
+Markdown does not have a built-in syntax for adding comments within text, but you can use HTML-style comments instead:
 
 ```{r eval = FALSE, echo = TRUE}
 # HTML syntax to comment inside text
 <!-- COMMENT -->
 ```
 
-Usually, we are using this syntax to e.g. highlight where the text needs improvement/work or editing points. Comments will not be visible when your document is knitted.
+This syntax is typically used to highlight areas of the text that need revision, clarification, or further work. Comments inserted this way will not be visible in the knitted document.
 
 You can learn more about this HTML syntax on this [webpage](https://www.w3schools.com/html/html_comments.asp).
+
+**💡 Practice this syntax in your document.**
+
+---
 
 ### Lists
 
@@ -574,8 +583,7 @@ There are two types of lists:
 
 #### Syntax for unordered lists
 
-Syntax:
-
+**Syntax:**
 ```{r eval=FALSE}
 * unordered list
 * item 2
@@ -585,16 +593,18 @@ Syntax:
 
 **Note:** For each sub-level include two tabs to create the hierarchy.
 
-Output:
+**Output:**
 
 * unordered list
 * item 2
   + sub-item 1
   + sub-item 2   
 
+**💡 Practice this syntax in your document.**
+
 #### Syntax for ordered lists
 
-Syntax:
+**Syntax:**
 ```{r eval=FALSE}
 1. ordered list
 2. item 2
@@ -602,16 +612,20 @@ Syntax:
    + sub-item 2
 ```
 
-Output:
+**Output:**
 
 1. ordered list
 2. item 2
    + sub-item 1
    + sub-item 2
 
-### Italicize and bold words
+**💡 Practice this syntax in your document.**
 
-The following syntax will render text in italics or bold: 
+---
+
+### Italicize and Bold Words
+
+The following syntax renders text in *italics*, **bold**, or ***both italics and bold***: 
 
 ```{r eval=FALSE}
 #Syntax for italics
@@ -619,9 +633,22 @@ The following syntax will render text in italics or bold:
 
 #Syntax for bold
 **bold**
+
+#Syntax for italic and bold
+***italic and bold***
 ```
 
-### Create hyperlinks
+**Output:**
+
+- *Italic*
+- **Bold**
+- ***Italic and bold***
+
+**💡 Practice this syntax in your document.**
+
+---
+
+### Create Hyperlinks
 
 Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax:
 
@@ -635,23 +662,33 @@ Adding hyperlinks to your documents support reproducible science and it can be e
 
 When knitted, the example with RStudio turns like that [RStudio](https://www.rstudio.com).
 
-### Include code chunks
+**💡 Practice this syntax in your document.**
 
-One of the most exciting features of working with the R Markdown format is the implementation of functions allowing to directly "plug" the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). In other words, when you compile your `.Rmd` file, R Markdown will automatically run and process each code chunk and code lines (see below) and embed their results in your final document. If the output of the code is a table or a figure, you will be able to assign a label to this item (by adding information in the code chunk; see part B) and refer to it (= cross-referencing) in your `pdf` or `html` document. Cross-referencing is possible thanks to the `\@ref()` function implemented in the R `bookdown` package. 
+---
 
-#### Code chunk
+### Include Code Chunks
 
-A code chunk could easily be inserted in your document as follows:
+One of the most exciting features of working with the R Markdown format is the ability to directly *embed* the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). 
 
-- Using the keyboard shortcut **Ctrl + Alt + I** (OS X: **Cmd + Option + I**).
-- Pressing on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
-- Typing ```{r} and ````.
+In other words, when you compile your `.Rmd` file, R Markdown will automatically execute each code chunk and inline code expression (see example below), and insert their results into the final document.
 
-By default the code chunk will expect R code, but you can also insert code chunks supporting different computer languages (e.g. Bash, Python).
+If the output is a table or a figure, you can assign a label to it (by adding metadata within the code chunk; see Part B) and refer to it later in your `PDF` or `HTML` document. This process—known as *cross-referencing*—is made possible through the `\@ref()` function, which is implemented in the R `bookdown` package.
+ 
+#### Code Chunk
 
-#### Chunk options
+A code chunk can be easily inserted into your document using one of the following methods:
 
-Chunk output can be customized with *knitr* options arguments set in the `{}` of a chunk header. In the examples displayed in Figure \@ref(fig:RChunk) five arguments are used:
+- Using the keyboard shortcut **Ctrl + Alt + I** (on macOS: **Cmd + Option + I**).
+- Clicking the `Insert` button ![](Figures/insert_code_chunk.png) in the editor toolbar.
+- Typing ```{r} to open the chunk and ``` to close it.
+
+By default, the code chunk expects R code, but you can also insert chunks for other programming languages (e.g., Bash, Python).
+
+**💡 Practice this syntax in your document.**
+
+#### Chunk Options
+
+Chunk output can be customized with *knitr* options arguments set in the `{}` of a code chunk header. In the examples displayed in Figure \@ref(fig:RChunk) five arguments are used:
 
 - `include = FALSE` prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.
 - `echo = FALSE` prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.
@@ -659,15 +696,26 @@ Chunk output can be customized with *knitr* options arguments set in the `{}` of
 - `warning = FALSE` prevents warnings that are generated by code from appearing in the finished.
 - `fig.cap = "..."` adds a caption to graphical results.
 
-We will delve more into chunk options in part C of chapter 1, but in the meantime please see the R Markdown Reference Guide for more details. 
+We will delve more into chunk options in part C of chapter 2, but in the meantime please see the R Markdown Reference Guide for more details. 
 
 ```{r RChunk, echo=FALSE, fig.cap="Example of code chunks.", out.width = '100%'}
 knitr::include_graphics("Figures/code-1-options.png")
 ```
 
-### Inline code
+**💡 Practice this syntax in your document.**
 
-Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code with ``r ``.
+---
+
+### Inline Code
+
+Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code as follows:
+```{r eval=FALSE}
+# Syntax for inline code
+``r 2+2`` # Please amend to include only 1 back tick
+```
+
+**Output:**
+`r 2+2`
 
 R Markdown will always:
 
@@ -678,31 +726,17 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 **Warning:** Inline expressions do not take *knitr* options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; `r 4*4`)
 
-### Check spelling
+**💡 Practice this syntax in your document.**
+
+---
+
+### Check Spelling
 
 There are three ways to access spell checking in an R Markdown document in RStudio:
 
 1. A spell check button ![](Figures/ABC.png) to the right of the save button.
 2. `Edit > Check Spelling...`
 3. The F7 key.
-
-
-### Exercises
-
-Students will work individually to complete the following exercises:
-
-1. Create an `*.Rmd` file entitled `Exercises chapter 2: part A` and select `HTML` as output format.
-2. Save this document as `Exe_chap2_partA.Rmd` in a folder called `Exercises` located in:
-    + `Reproducible_Science/Chapters/Chapter_2`
-3. Practice syntax to do:
-    + headers
-    + inside text commenting
-    + lists
-    + include R code chunk 
-    + include inline code
-4. Confirm that your syntax works by knitting your document and inspecting the output.
-
-To further learn syntax and protocols, please look at associated files provided by the instructor (see above for more details).
 
 ## PART B: Tables, Figures and References {#partB}
 
