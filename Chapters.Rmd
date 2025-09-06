@@ -553,7 +553,15 @@ The "#" refers to the level of the header
 ### Header 3  
 ```  
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
@@ -570,7 +578,15 @@ This syntax is typically used to highlight areas of the text that need revision,
 
 You can learn more about this HTML syntax on this [webpage](https://www.w3schools.com/html/html_comments.asp).
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
@@ -600,7 +616,15 @@ There are two types of lists:
   + sub-item 1
   + sub-item 2   
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 #### Syntax for ordered lists
 
@@ -619,7 +643,15 @@ There are two types of lists:
    + sub-item 1
    + sub-item 2
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
@@ -644,7 +676,15 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
 - **Bold**
 - ***Italic and bold***
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
@@ -662,7 +702,15 @@ Adding hyperlinks to your documents support reproducible science and it can be e
 
 When knitted, the example with RStudio turns like that [RStudio](https://www.rstudio.com).
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
@@ -684,7 +732,15 @@ A code chunk can be easily inserted into your document using one of the followin
 
 By default, the code chunk expects R code, but you can also insert chunks for other programming languages (e.g., Bash, Python).
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 #### Chunk Options
 
@@ -702,7 +758,15 @@ We will delve more into chunk options in part C of chapter 2, but in the meantim
 knitr::include_graphics("Figures/code-1-options.png")
 ```
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
@@ -726,7 +790,15 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 **Warning:** Inline expressions do not take *knitr* options and is therefore less versatile. We usually use inline code to perform simple stats (e.g. 4x4; `r 4*4`)
 
-**💡 Practice this syntax in your document.**
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+</div>
 
 ---
 
