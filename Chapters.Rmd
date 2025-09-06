@@ -504,7 +504,17 @@ To knit ![](Figures/knit_2.png) or render your R Markdown document into an HTML 
 1. Click the `Knit` button (Figure \@ref(fig:RMdown)) in the top toolbar to render the document.  
 2. There are several output format options; however, if you simply click the button, RStudio will automatically knit the document using the settings specified in the YAML metadata section (Figure \@ref(fig:RMdown)).  
 3. The output file will be created in the same directory as your `.Rmd` file (Figure \@ref(fig:MyFirstRMfolder)). You can monitor the progress in the **R Markdown** console.  
-    - If the knitting process fails, error messages will appear in the console, often indicating the line in the script where the error occurred (although this is not always the case). These messages are helpful for debugging your R Markdown document.
+
+<style>
+.info {
+  background-color: #e73fe;
+  border-left: 6px solid #2196F3;
+}
+</style>
+<div class="info">
+  <p><strong>💡 Info</strong> If the knitting process fails, error messages will appear in the Render console, often indicating the line in the script where the error occurred (although this is not always the case). These messages are helpful for debugging your R Markdown document.
+  </p>
+</div>
 
 ```{r MyFirstRMfolder, echo=FALSE, fig.cap="Snapshot of your project folder with the knitted html document.", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/MyFirstRMarkdown_HTML.png")
@@ -520,16 +530,16 @@ The `.md` file created by *knitr* is then processed by the Pandoc program, which
 knitr::include_graphics("Figures/rmarkdownflow.png")
 ```
 
-### Basic R Markdown Syntax and Protocols
+### Basic R Markdown Syntax
 
 In this section, we will focus on learning the syntax and protocols needed to create:
 
-- Headers  
-- Inside text commenting  
-- Lists  
-- Italicized, bold, and combined formatting  
-- Embedded code chunks and inline code  
-- Spell checking
+- [Headers](#headers)  
+- [Inside text commenting](#comment) 
+- [Lists](#lists)  
+- [Italicized, bold, and combined formatting](#itbold) 
+- [Embedded code chunks and inline code](#hyperlinks)  
+- [Spell checking](#checkspell)
 
 To master these skills, edit your `.Rmd` file as we progress, and knit the document to view the final result.
 
@@ -538,6 +548,16 @@ Additional syntax and formatting options are available in the **R Markdown Refer
 - Select: `Help -> Cheatsheets -> R Markdown Reference Guide`
 
 **Note:** The **Cheatsheets** section also provides access to other helpful resources related to R Markdown and data manipulation. These documents will be very useful throughout this course.
+
+---
+
+### Before Starting {#beforeyoustart}
+
+Before you start this tutorial, please delete the content of your R Markdown file starting on line 11 `## R Markdown` to the end of the document (see Figure \@ref(fig:beforestart)).
+
+```{r beforestart, echo=FALSE, fig.cap="R Markdown of Chapter 2 - Part A.", out.width = '100%'}
+knitr::include_graphics("Figures/Chapter_2_partA_Rmd.png")
+```
 
 ---
 
@@ -560,7 +580,15 @@ The "#" refers to the level of the header
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Including 2 level 1 headers</li>
+      <li>Embedding 2 level 2 headers under each level 1 header</li>
+    </ul>
+  </p>
+  <p>
+  I let you pick great names for your headers!
+  </p>
 </div>
 
 ---
@@ -585,7 +613,11 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Adding comments describing the content included under each level 1 header</li>
+    </ul>
+  </p>
 </div>
 
 ---
@@ -623,7 +655,11 @@ There are two types of lists:
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Including a 2-level unordered list under the first level 1 header</li>
+    </ul>
+  </p>
 </div>
 
 #### Syntax for ordered lists
@@ -650,7 +686,11 @@ There are two types of lists:
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Including a 2-level ordered list under the second level 1 header</li>
+    </ul>
+  </p>
 </div>
 
 ---
@@ -683,7 +723,13 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Writing a sentence in your R Markdown document that includes an italicized word</li>
+      <li>Writing a sentence that includes a word or phrase in bold</li>
+      <li>Writing a sentence where a word or phrase is both bold and italicized</li>
+    </ul>
+  </p>
 </div>
 
 ---
@@ -709,7 +755,12 @@ When knitted, the example with RStudio turns like that [RStudio](https://www.rst
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Creating a hyperlink to the Boise State website</li>
+      <li>Creating a hyperlink to download R for Mac computers</li>
+    </ul>
+  </p>
 </div>
 
 ---
@@ -739,7 +790,11 @@ By default, the code chunk expects R code, but you can also insert chunks for ot
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Creating a code chunk in your R Markdown document that prints the message "Hello world" when you knit the document</li>
+    </ul>
+  </p>
 </div>
 
 #### Chunk Options
@@ -752,7 +807,7 @@ Chunk output can be customized with *knitr* options arguments set in the `{}` of
 - `warning = FALSE` prevents warnings that are generated by code from appearing in the finished.
 - `fig.cap = "..."` adds a caption to graphical results.
 
-We will delve more into chunk options in part C of chapter 2, but in the meantime please see the R Markdown Reference Guide for more details. 
+We will delve more into chunk options in part D of chapter 2, but in the meantime please see the R Markdown Reference Guide for more details. 
 
 ```{r RChunk, echo=FALSE, fig.cap="Example of code chunks.", out.width = '100%'}
 knitr::include_graphics("Figures/code-1-options.png")
@@ -765,7 +820,11 @@ knitr::include_graphics("Figures/code-1-options.png")
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Editing the code chunk you created earlier (that prints "Hello world") so that the <b>code is hidden</b> when you knit the document, but the <b>output is still displayed</b></li>
+    </ul>
+  </p>
 </div>
 
 ---
@@ -797,7 +856,11 @@ As a result, inline output is indistinguishable from the surrounding text.
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> Your turn to practice this syntax in your document!</p>
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
+    <ul>
+      <li>Editing a sentence in your R Markdown text to include the <b>output of the line of code 2 + 2</b>, so that the result is automatically displayed when the document is knitted</li>
+    </ul>
+  </p>
 </div>
 
 ---
@@ -860,7 +923,7 @@ Please refer to [section](#Files) for more details on supporting files and their
 
 ### Create Your R Markdown Document {#creatRMDfile} 
 
-Use material from [Chapter 2 - part A](#firstMDhow) to create and save your R Markdown document for this tutorial. 
+Use the material from the [Chapter 2 – Part A](#firstMDhow) and [Before Starting](#beforeyoustart) sections to create and save your R Markdown document for this tutorial. 
 
 <style>
 .danger {
@@ -869,7 +932,14 @@ Use material from [Chapter 2 - part A](#firstMDhow) to create and save your R Ma
 }
 </style>
 <div class="danger">
-  <p><strong>💡 </strong> The title of your document should be "Chapter 2 - part B", it should be saved as "Chapter2_partB.Rmd" at this path `Reproducible_Science/Chapters/Chapter_2` </p>
+  <p><strong>💡 Guidelines</strong> 
+    <ul>
+       <li><b>Document title:</b> Chapter 2 - part B</li>
+       <li><b>Document output format:</b> HTML</li>
+       <li><b>File name:</b> Chapter2_partB.Rmd"</li>
+       <li><b>File path:</b> `Reproducible_Science/Chapters/Chapter_2`</li>
+    </ul>
+  </p>
 </div>
 
 ---
