@@ -393,11 +393,12 @@ This chapter focuses on mastering R Markdown syntax and protocols that allow the
 
 This tutorial provides students with the foundational knowledge necessary to complete their bioinformatics tutorials (**PART 2**) and individual projects (**PART 3**). The chapter is divided into five parts:
 
-- [**PART A:**](#partA) Learning the Basics  
-- [**PART B:**](#partB) Tables, Figures, and References  
-- [**PART C:**](#partC) Advanced R Markdown settings  
-- [**PART D:**](#partD) User-defined functions in R  
-- [**PART E:**](#partE) Interactive tutorials  
+- [**PART A:**](#partA) Learning the Basics
+- [**PART B:**](#partB) Setting Your R Markdown Document
+- [**PART C:**](#partC) Tables, Figures, and References  
+- [**PART D:**](#partD) Advanced R Markdown Settings  
+- [**PART E:**](#partE) User-defined Functions in R  
+- [**PART F:**](#partF) Interactive Tutorials  
 
 ```{r ReproScience, echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Fig1.png")
@@ -407,7 +408,7 @@ knitr::include_graphics("Figures/Fig1.png")
 
 Files supporting this chapter are available on [Google Drive](https://drive.google.com/drive/folders/1Olb6huHcBfv02OxL50WEbQR-uJvkuX7O?usp=drive_link).
 
-### Install R Markdown software
+### Install R Markdown Software
 
 Software and packages required to perform this tutorial are detailed below. Students should install those software and packages on their personal computers to be able to complete this course. Additional packages might need to be installed and the instructor will provide guidance on how to install those as part of the forthcoming tutorials.
 
@@ -450,33 +451,32 @@ In this part, we will provide a survey of the procedures to create and render (o
 
 ### Learning Outcomes
 
-This tutorial corresponds to **Part B** of Chapter 1 and provides students with the opportunity to learn how to:
+This tutorial provides students with the opportunity to learn how to:
 
-- Create and render (or "knit") your first R Markdown document  
+- [Create and render (or "knit") your first R Markdown document](#firstMDhow)
 - Understand basic Markdown syntax and conventions, including:
-    + Headers  
-    + Inline text formatting  
-    + Lists  
-    + Italicizing and bolding text  
-    + Creating hyperlinks  
-    + Including code chunks and inline code  
-    + Checking spelling
+    + [Headers](#headers)  
+    + [Inside text commenting](#comment)  
+    + [Lists](#lists)  
+    + [Italicizing and bolding text](#itbold) 
+    + [Creating hyperlinks](#hyperlinks)  
+    + [Including code chunks](#codechunkhow)
+    + [Inline code](#inlinecode)  
+    + [Checking spelling](#checkspell)
 
-### Introduction to R Markdown
+### Introduction to R Markdown {#IntroRMd}
 
 Markdown is a simple formatting syntax used for authoring HTML, PDF, and Microsoft Word documents. It is implemented in the `rmarkdown` package. An R Markdown document is typically divided into three sections (see Figure \@ref(fig:RMdown)):
 
 1. **YAML metadata section:** This section provides high-level information about the output format of the R Markdown file. The information defined here is used by the Pandoc program to format the final document (see Figure \@ref(fig:RMdown)).
-
 2. **Main body text:** This section represents the core content of your document or publication and uses Markdown syntax.
-
 3. **Code chunks:** This section allows you to import and analyze data, and to produce figures and tables that are directly embedded in the output document.
 
 ```{r RMdown, echo=FALSE, fig.cap="Example of an R Markdown file showing the three major sections.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Presentation_RMarkdown.png")
 ```
 
-### Our First R Markdown Document
+### Our First R Markdown Document {#firstMDhow}
 
 In this section, you will learn how to create and knit your first R Markdown document.
 
@@ -525,7 +525,7 @@ knitr::include_graphics("Figures/rmarkdownflow.png")
 In this section, we will focus on learning the syntax and protocols needed to create:
 
 - Headers  
-- Inline text formatting  
+- Inside text commenting  
 - Lists  
 - Italicized, bold, and combined formatting  
 - Embedded code chunks and inline code  
@@ -541,7 +541,7 @@ Additional syntax and formatting options are available in the **R Markdown Refer
 
 ---
 
-### Headers
+### Headers {#headers}
 
 Below is the syntax to create headers at three levels:
 
@@ -565,7 +565,7 @@ The "#" refers to the level of the header
 
 ---
 
-### Inside Text Commenting
+### Inside Text Commenting {#comment}
 
 Markdown does not have a built-in syntax for adding comments within text, but you can use HTML-style comments instead:
 
@@ -590,7 +590,7 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
 
 ---
 
-### Lists
+### Lists {#lists}
 
 There are two types of lists:
 
@@ -655,7 +655,7 @@ There are two types of lists:
 
 ---
 
-### Italicize and Bold Words
+### Italicize and Bold Words {#itbold}
 
 The following syntax renders text in *italics*, **bold**, or ***both italics and bold***: 
 
@@ -688,7 +688,7 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
 
 ---
 
-### Create Hyperlinks
+### Create Hyperlinks {#hyperlinks}
 
 Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax:
 
@@ -714,7 +714,7 @@ When knitted, the example with RStudio turns like that [RStudio](https://www.rst
 
 ---
 
-### Include Code Chunks
+### Include Code Chunks {#codechunkhow}
 
 One of the most exciting features of working with the R Markdown format is the ability to directly *embed* the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). 
 
@@ -770,7 +770,7 @@ knitr::include_graphics("Figures/code-1-options.png")
 
 ---
 
-### Inline Code
+### Inline Code {#inlinecode}
 
 Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code as follows:
 ```{r eval=FALSE}
@@ -802,7 +802,7 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 ---
 
-### Check Spelling
+### Check Spelling {#checkspell}
 
 There are three ways to access spell checking in an R Markdown document in RStudio:
 
@@ -810,31 +810,30 @@ There are three ways to access spell checking in an R Markdown document in RStud
 2. `Edit > Check Spelling...`
 3. The F7 key.
 
-## PART B: Tables, Figures and References {#partB}
+## PART B: Setting Your R Markdown Document {#partB}
 
-The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
+The **aim** of this tutorial is to develop an R Markdown document that can be used as a template to produce your reproducible reports. 
 
-In addition, the same approach and functions are used to process tables and figures, as well as to cross-reference them in the main body of the text. This tutorial will also cover how to cite references in the text, automatically generate a bibliography/references section, and format citations according to journal styles. Finally, it demonstrates how to generate an Appendix containing citations of all R packages used to conduct your research (and to produce the report).
+We will focus on learning how to configure your document to manage software dependencies, set global parameters for knitting, and produce appendices with software citations, package version information, and details about the operating system used to generate the reproducible report.
 
 ### Learning Outcomes
 
-This tutorial is devoted to Part B of Chapter 2 and provides students with opportunities to learn procedures to:
+This tutorial provides students with the opportunity to learn how to:
 
-- [**Set your R Markdown environment**](#setRMd)  
-  + Install R dependencies using an `*.R` script saved at the root of your working directory.  
-  + Define the YAML metadata section.  
-  + Load the required R packages.  
-  + Generate a citation file for all R packages used to produce the report.  
-  + Generate an appendix with citations for all R packages.  
-  + Generate an appendix with R package versions used to produce the report.
-- [**Insert tables and figures in an R Markdown document**](#insertTabFig)
-- [**Cross-reference tables and figures in the text**](#crossrefTabFig)
-- [**Cite references in the text and add a References section**](#bib)
-- [**Format citations according to journal style**](#cslForm)
+- [Study and master the structure of an R Markdown document](#structRMD)
+- [Reinforce your expertise in creating R Markdown documents in dedicated project folders](#creatRMDfile)
+- [Install R dependencies to produce the document](#instDep)  
+- [Define parameters in the YAML metadata section to control the formatting of the knitted document](#YAMLset)  
+- [Load the required R packages for your analysis](#loadRreq)  
+- [Generate a citation file for all R packages used to produce the report](#citfileRpkg)  
+- [Generate an appendix with citations for all R packages](#appendixRpkg) 
+- [Generate an appendix with R package versions used to produce the report](#appendixRverOS)
 
-### R Markdown File Structure
+---
 
-To facilitate the teaching of the learning outcomes, a roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). This structure also applies to [Chapter 2 – Part C](#partC).
+### Structure of an R Markdown Document {#structRMD}
+
+To facilitate the teaching of the learning outcomes, a roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct).
 
 To support the reproducibility of your research, we structure the R Markdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
 
@@ -851,23 +850,41 @@ To support the reproducibility of your research, we structure the R Markdown fil
 knitr::include_graphics("Figures/RMarkdown_file_structure.png")
 ```
 
+---
+
 ### Supporting Files
 
 Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
 
-### Set your R Markdown Environment {#setRMd}
+---
 
-#### Install dependencies {#instDep}
+### Create Your R Markdown Document {#creatRMDfile} 
+
+Use material from [Chapter 2 - part A](#firstMDhow) to create and save your R Markdown document for this tutorial. 
+
+<style>
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+</style>
+<div class="danger">
+  <p><strong>💡 </strong> The title of your document should be "Chapter 2 - part B", it should be saved as "Chapter2_partB.Rmd" at this path `Reproducible_Science/Chapters/Chapter_2` </p>
+</div>
+
+---
+
+### Install R Dependencies {#instDep}
 
 To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. 
 
-The best procedure to ensure reproducibility would be to copy the code below in an R script file (entitled `01_R_dependencies.R`) saved at the root of your working directory (if this directory does not exist yet, please start by creating it and naming it `Chapter_1_PartB`).
+The best procedure to ensure reproducibility would be to copy the code below in an R script file (entitled `01_R_dependencies.R`) saved at the root of your working directory (if this directory does not exist yet, please start by creating it and naming it `Chapter_2_PartB`).
 
 ```{r pck, eval=TRUE, tidy=FALSE}
 ##~~~
 # Check/Install R dependencies
 ##~~~
-# This code is dedicated to packages for Chapter 1
+# This code is dedicated to packages for Chapter 2
 
 ##~~~
 #1. List all required packages
@@ -923,7 +940,9 @@ To solve this issue apply the following procedure:
 knitr::include_graphics("Figures/MikTex.png")
 ```
 
-#### YAML metadata section {#YAMLset}
+---
+
+### YAML Metadata Section {#YAMLset}
 
 The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):
 
@@ -983,7 +1002,9 @@ Since you have declared two output documents in the YAML metadata section and th
 knitr::include_graphics("Figures/knit_drop_down.png")
 ```
 
-#### Load required R packages
+---
+
+### Load Required R Packages {#loadRreq}
 
 It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented [here](#instDep)) (see Figure \@ref(fig:RMarkdwnstrct)). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
 
@@ -1032,7 +1053,9 @@ print("Load packages and return status")
 sapply(pkg, require, character.only = TRUE)
 ```
 
-#### Generate citation file of R packages used to produce the report
+---
+
+### Generate a Citation File of R Used Packages {#citfileRpkg}
 
 I don't know about you, but I am always struggling to properly cite R packages in my publications. If you want to retrieve the citation for an R package, you can use the base R function `citation()`. For instance, citations for *knitr* can be obtained as follow:
 
@@ -1059,7 +1082,9 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 
 The `.packages()` argument returns *invisibly* the names of all packages loaded in the current R session (if you want to see a return use `.packages(all.available = TRUE)`). This makes sure all packages being used in your code will have their citation entries written to the `.bib` file. Finally, to be able to cite those references (see [Citation identifier]) in your text, the [YAML metadata section] has to be edited. See [Appendix 1] for a full list of references associated to the R packages used to generate this report. 
 
-#### Generate Appendix with citations for all R packages
+---
+
+### Generate Appendix with Citations of Used R Packages {#appendixRpkg}
 
 Although a References section will be provided at the end of your document to cite in text references (see [References] and Figure \@ref(fig:RMarkdwnstrct)), it is customized to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
 
@@ -1099,7 +1124,9 @@ read.bibtex(file = "packages.bib")
 `{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}`
 4. Knit your code to check that it produces the right output (see [Knitting procedure]). See [Appendix 1] to get an idea of the output.
 
-#### Generate Appendix with R package versions used to produce report
+---
+
+### Generate Appendix with R Package Versions and Operating System {#appendixRverOS}
 
 In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems (see Figure \@ref(fig:RMarkdwnstrct)). With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
 wants to reproduce your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
@@ -1124,9 +1151,26 @@ Version information about R, the operating system (OS) and attached or R loaded 
 sessionInfo()
 ```
 
-### All set, good to go!
+---
+
+### All Set, You Are Good to Go!
 
 We have now set our R Markdown environment and can start populating it! This means that you will be inserting your text and other code chunks directly under the `packages` code chunk. The [References] section constitutes the end of the main body of your document. If you want to add Appendices, do so under [Appendix 1], appendices will be labelled differently from the main body of the document.   
+
+## PART C: Tables, Figures and References {#partC}
+
+The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
+
+In addition, the same approach and functions are used to process tables and figures, as well as to cross-reference them in the main body of the text. This tutorial will also cover how to cite references in the text, automatically generate a bibliography/references section, and format citations according to journal styles. Finally, it demonstrates how to generate an Appendix containing citations of all R packages used to conduct your research (and to produce the report).
+
+### Learning Outcomes
+
+This tutorial is devoted to Part B of Chapter 2 and provides students with opportunities to learn procedures to:
+
+- [**Insert tables and figures in an R Markdown document**](#insertTabFig)
+- [**Cross-reference tables and figures in the text**](#crossrefTabFig)
+- [**Cite references in the text and add a References section**](#bib)
+- [**Format citations according to journal style**](#cslForm)
 
 ### Insert tables and figures in R Markdown document {#insertTabFig}
 
@@ -1373,7 +1417,7 @@ csl: AmJBot.csl
 ```
 4. Knit the R Markdown document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information stored in the YAML metadata section to format the bibliography (citations and bibliography section) following the citation style provided in the CSL file. Do not forget to add a `References` header at the end of your `.Rmd` document.
 
-## PART C: Advanced R and R Markdown settings {#partC}
+## PART D: Advanced R and R Markdown settings {#partD}
 
 ### Learning outcomes
 
@@ -1630,7 +1674,7 @@ plot(x, y)
 3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
 4. Go to step 6 in the above section and complete the exercise.
 
-## PART D: User Defined Functions in R {#partD}
+## PART E: User Defined Functions in R {#partE}
 
 ### Learning outcomes
 
@@ -2002,7 +2046,7 @@ You can learn more about the logical operators (including exercises) on the [web
 
 Update `my_log_square()` to verify the class of `base` argument and print a meaningful error message if the class is not numeric.
 
-## PART E: Interactive tutorials {#partE}
+## PART F: Interactive tutorials {#partF}
 
 The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
 
