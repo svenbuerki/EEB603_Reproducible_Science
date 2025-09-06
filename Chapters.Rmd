@@ -812,48 +812,50 @@ There are three ways to access spell checking in an R Markdown document in RStud
 
 ## PART B: Tables, Figures and References {#partB}
 
-The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and allied R packages (see [Appendix 1] for a full list). Unlike functions implemented in the R *rmarkdown* package [@rmarkdown2018, which was better suited to generating `PDF` reproducible reports], *bookdown* allows to use ONE unified set of functions to generate `HTML` and `PDF` documents. In addition, the same approach and functions are used to process tables and figures as well as cross-reference those in the main body of the text. In this tutorial, we will also cover procedures to cite references in the text, automatically generate a bibliography/references section and format citations to journal styles as well as generating an Appendix containing citations of all R packages used to conduct your research (and produce the report).
+The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
 
-### Learning outcomes
+In addition, the same approach and functions are used to process tables and figures, as well as to cross-reference them in the main body of the text. This tutorial will also cover how to cite references in the text, automatically generate a bibliography/references section, and format citations according to journal styles. Finally, it demonstrates how to generate an Appendix containing citations of all R packages used to conduct your research (and to produce the report).
 
-This tutorial is devoted to part B of chapter 1 and provides students with opportunities to learn procedures to:
+### Learning Outcomes
 
-- [**Set your R Markdown environment**](#setRMd)
-  + Install R dependencies (using an `*.R` script saved at the root of your working directory).
-  + YAML metadata section.
-  + Load required R packages.
-  + Generate citation file of R packages used to produce the report.
-  + Generate Appendix with citations for all R packages.
-  + Generate Appendix with R package versions used to produce report.
-- [**Insert tables and figures in R Markdown document**](#insertTabFig)
+This tutorial is devoted to Part B of Chapter 2 and provides students with opportunities to learn procedures to:
+
+- [**Set your R Markdown environment**](#setRMd)  
+  + Install R dependencies using an `*.R` script saved at the root of your working directory.  
+  + Define the YAML metadata section.  
+  + Load the required R packages.  
+  + Generate a citation file for all R packages used to produce the report.  
+  + Generate an appendix with citations for all R packages.  
+  + Generate an appendix with R package versions used to produce the report.
+- [**Insert tables and figures in an R Markdown document**](#insertTabFig)
 - [**Cross-reference tables and figures in the text**](#crossrefTabFig)
 - [**Cite references in the text and add a References section**](#bib)
-- [**Format citations to journal style**](#cslForm)
+- [**Format citations according to journal style**](#cslForm)
 
-### RMarkdown file structure
+### R Markdown File Structure
 
-To facilitate teaching of the learning outcomes, a roadmap with the RMarkdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). This structure also applies to [Chapter 1 - part C](#partC).
+To facilitate the teaching of the learning outcomes, a roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). This structure also applies to [Chapter 2 – Part C](#partC).
 
-To support reproducibility of your research, we are structuring the RMarkdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
+To support the reproducibility of your research, we structure the R Markdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
 
-1. The YAML metadata section (at the top of the document) must contain information about your bibliography (`*.bib`) and citation style language (`*.csl`) files, which have to be stored in the working directory .
-2. Two R code chunks are provided just under the YAML metadata section to:
-    - [Code chunk #1]{.underline}: Install and load packages and generate a packages.bib file (stored in the working directory).
-    - [Code chunk #2]{.underline}: Setting code chunk global options
-3. The Markdown section below the two R code chunks is edited to add headers associated with References and Appendices.
-4. Finally, two R code chunks are provided in the Appendices section to:
-    - [Code chunk #3]{.underline}: Provide citations of software (relying on output of Code chunk #1) associated to Appendix 1.
-    - [Code chunk #4]{.underline}: Provide software versions (relying on *sessionInfo()*) associated to Appendix 2.
+1. The YAML metadata section (at the top of the document) must include information about your bibliography (`*.bib`) and citation style language (`*.csl`) files, both of which must be stored in the working directory.
+2. Two R code chunks are provided just below the YAML metadata section:
+    - [Code chunk #1]{.underline}: Installs and loads packages, and generates a `packages.bib` file (stored in the working directory).
+    - [Code chunk #2]{.underline}: Sets global options for code chunks.
+3. The Markdown section beneath the two R code chunks is edited to add headers for the References and Appendices sections.
+4. Finally, two R code chunks are included in the Appendices section:
+    - [Code chunk #3]{.underline}: Provides citations of software (relying on the output of Code chunk #1) for Appendix 1.
+    - [Code chunk #4]{.underline}: Provides software version information (relying on *sessionInfo()*) for Appendix 2.
 
 ```{r RMarkdwnstrct, echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
 knitr::include_graphics("Figures/RMarkdown_file_structure.png")
 ```
 
-### Associated files supporting this tutorial
+### Supporting Files
 
 Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
 
-### Set your R Markdown environment {#setRMd}
+### Set your R Markdown Environment {#setRMd}
 
 #### Install dependencies {#instDep}
 
