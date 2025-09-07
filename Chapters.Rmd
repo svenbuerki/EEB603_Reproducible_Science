@@ -883,14 +883,13 @@ We will focus on learning how to configure your document to manage software depe
 
 This tutorial provides students with the opportunity to learn how to:
 
-- [Study and master the structure of an R Markdown document](#structRMD)
-- [Reinforce your expertise in creating R Markdown documents in dedicated project folders](#creatRMDfile)
-- [Install R dependencies to produce the document](#instDep)  
+- [Study and understand the structure of an R Markdown document](#structRMD)  
+- [Reinforce your skills in creating R Markdown documents within dedicated project folders](#creatRMDfile)  
 - [Define parameters in the YAML metadata section to control the formatting of the knitted document](#YAMLset)  
-- [Load the required R packages for your analysis](#loadRreq)  
-- [Generate a citation file for all R packages used to produce the report](#citfileRpkg)  
-- [Generate an appendix with citations for all R packages](#appendixRpkg) 
-- [Generate an appendix with R package versions used to produce the report](#appendixRverOS)
+- [Install R dependencies and load packages needed to produce your document](#loadRreq)
+- [Generate a citation file for the R packages used in the document](#citfileRpkg)  
+- [Generate an appendix with citations for all R packages](#appendixRpkg)  
+- [Generate an appendix with R package versions used to produce the document](#appendixRverOS)  
 
 ---
 
@@ -944,89 +943,21 @@ Use the material from the [Chapter 2 – Part A](#firstMDhow) and [Before Starti
 
 ---
 
-### Install R Dependencies {#instDep}
-
-To execute this tutorial the following R packages (declared in `pkg` object) have to be installed on your computer using the code provided below. 
-
-The best procedure to ensure reproducibility would be to copy the code below in an R script file (entitled `01_R_dependencies.R`) saved at the root of your working directory (if this directory does not exist yet, please start by creating it and naming it `Chapter_2_PartB`).
-
-```{r pck, eval=TRUE, tidy=FALSE}
-##~~~
-# Check/Install R dependencies
-##~~~
-# This code is dedicated to packages for Chapter 2
-
-##~~~
-#1. List all required packages
-##~~~
-#Object (args) provided by user with names of packages stored into a vector
-pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools")
-
-##~~~
-#2. Check if pkg are installed
-##~~~
-print("Check if packages are installed")
-#This line outputs a list of packages that are not installed
-new.pkg <- pkg[!(pkg %in% installed.packages())]
-
-##~~~
-#3. Install missing packages
-##~~~
-# Using an if/else statement to check whether packages have to be installed
-# WARNING: If your target R package is not deposited on CRAN then need to adjust code/function
-if(length(new.pkg) > 0){
-  print(paste("Install missing package(s):", new.pkg, sep=' '))
-  install.packages(new.pkg, dependencies = TRUE)
-}else{
-  print("All packages are already installed!")
-}
-
-##~~~
-#4. Load all packages
-##~~~
-print("Load packages and return status")
-#Here we use the sapply() function to require all the packages
-# To know more about the function type ?sapply() in R console
-sapply(pkg, require, character.only = TRUE)
-```
-
-#### TeX distribution {#texdistr}
-
-If you are planning to create `PDF` documents, you will need to install a `TeX` distribution on your computers. Please refer to this website for more details: https://www.latex-project.org/get/
-
-##### Set MiKTeX for compiling PDF documents on Windows computers
-
-Several students working on Windows computers shared difficulties in compiling `PDF` documents in RStudio. This issue is associated to `MiKTeX` preventing RStudio to install or update `TeX` packages required to knit your documents.
-
-To solve this issue apply the following procedure:
-
-1. Start `MiKTeX` console by searching and clicking `MiKTeX Console` in the application launcher.
-2. Enable automatic package installation by:
-  a. Clicking on `Settings` tab.
-  b. Ticking the radio button `Always install missing packages on-the-fly` under the "You can choose whether missing packages are to be installed on-the-fly" header (see Figure \@ref(fig:MikTex)).
-3. Restarting `RStudio` and you should be able to knit `pdf` documents.
-
-```{r MikTex, echo=FALSE, fig.cap="Snapshot of the MikTex Console showing the procedure to always install packages on-the-fly.", out.width = '100%'}
-knitr::include_graphics("Figures/MikTex.png")
-```
-
----
-
 ### YAML Metadata Section {#YAMLset}
 
-The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as fields) to convert their R Markdown document into its final form. In this class, we will be using functions implemented in the *knitr* [@R-knitr; @knitr2015] and *bookdown* packages [@R-bookdown; @bookdown2016] to populate this section (field names as declared in the YAML metadata section are provided between parenthesis):
+The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as *fields*) that control how an R Markdown document is converted into its final output format. In this class, we will use functions from the *knitr* [@R-knitr; @knitr2015] and *bookdown* [@R-bookdown; @bookdown2016] packages to populate this section. (Field names, as declared in the YAML metadata section, are provided in parentheses.)
 
-1. Title (`title`).
-2. Subtitle (`subtitle`).
-3. Author(s) (`author`).
-4. Date (`date`).
-5. Output format(s) (`output`).
-6. Citations link (`link-citations`).
-7. Font size (`fontsize`).
-8. Bibliography file(s) (`bibliography`).
-9. Format for citations to follow journal styles (`csl`).
+1. Title (`title`)
+2. Subtitle (`subtitle`)
+3. Author(s) (`author`)
+4. Date (`date`)
+5. Output format(s) (`output`)
+6. Citations link (`link-citations`)
+7. Font size (`fontsize`)
+8. Bibliography file(s) (`bibliography`)
+9. Citation style file for journal formatting (`csl`)
 
-The YAML code provided below outputs either an `HTML` or `PDF` document (see `output` field) with a table of content (see `toc` field) and generates in text citations and bibliography section as declared in the `AmJBot.csl` file (under the `csl` field). The bibliography has to be stored in a file (here `Bibliography_Reproducible_Science_2.bib`) deposited at the root of your working directory.
+The YAML code shown below generates either an `HTML` or `PDF` document (see the `output` field), includes a table of contents (see the `toc` field), and formats in-text citations and the bibliography section according to the journal style specified in the `AmJBot.csl` file (via the `csl` field). The bibliography must be stored in a `.bib` file (in this case, `Bibliography_Reproducible_Science_2.bib`) placed at the root of your working directory.
 
 ```{r YAML, eval=FALSE, echo=TRUE}
 --- 
@@ -1046,27 +977,38 @@ csl: AmJBot.csl
 ---
 ```
 
-##### Step-by-step procedure
+#### Step-by-Step Procedure
 
-Do the following steps to set your YAML metadata section (also see Figure \@ref(fig:RMarkdwnstrct)):
+Follow these steps to set up your YAML metadata section (also see Figure \@ref(fig:RMarkdwnstrct)):
 
-1. Create a new R Markdown document. 
-2. Save the `.Rmd` document into a new project folder in `Reproducible_Science/Chapters/Chapter_1/` (**Note:** this folder has to be created prior to executing this step). 
-3. Copy `Bibliography_Reproducible_Science_2.bib` and `AmJBot.csl` in your project folder. These files are available on the Shared Google Drive folder:
-  + `Reproducible_Science/Chapters/Chapter_1/Tutorial_files`
-4. Edit the top YAML metadata section as shown in the [section](#YAMLset) above.  
+1. Make sure you have created a document following the approach described [here](#creatRMDfile)
+2. Copy the following files, available on [Google Drive](https://drive.google.com/drive/folders/1JFjKmb0JHm96UfimO8SJLq33hE1JRu5v?usp=drive_link), into your project folder:  
+    + `Bibliography_Reproducible_Science_2.bib`  
+    + `AmJBot.csl`  
+3. Edit the YAML metadata section (at the top of your R Markdown document) as shown in the [section above](#YAMLset)
+4. Knit your document and inspect the output file. Read this [section](#knitmore) to get more details on the knitting procedure.  
 
-##### Extra information
+<div class="info">
+  <p><strong>💡 Info</strong></p>
+  <ul>
+    <li><b>Warning:</b> The `.bib` and `.csl` files must be stored in the same working directory as your `.Rmd` file.</li>
+    <li><b><code>R</code> functions in the YAML metadata section:</b> This can be done using inline R code syntax. For example, use <code>Sys.Date()</code> to automatically add the current date to the output document.</li>
+    <li><b>Bibliography files:</b> You can use multiple bibliography files by specifying them like this: <code>bibliography: [file1.bib, file2.bib]</code>.</li>
+    <li><b>Omitting parameters in the YAML metadata section:</b> You can omit parameters by commenting them out with a <code>#</code> at the beginning of the line (equivalent to commenting).</li>
+    <li><b>More information:</b> To learn more about YAML and its use in R Markdown, visit this 
+      <a href="https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html" target="_blank" rel="noopener noreferrer">website</a>.
+    </li>
+  </ul>
+</div>
 
-- **Warning:** The `.bib` and `.csl` files have to be stored in the same working directory as your `.Rmd` file.
-- **`R` functions can be used in the YAML metadata section** by using inline R code syntax (see part A for more details). Here, we use `Sys.Date()` to automatically date the output document.
-- **Multiple bibliography files** can be used in your document by using this syntax: `bibliography: [file1.bib, file2.bib]`.
-- **Fields/parameters can be omitted in the YAML metadata section** by inserting `#` in front of the command line (= equivalent of commenting). 
-- To learn more about YAML and its application to R Markdown, please visit this [website](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html).
- 
-#### Knitting procedure
+#### Knitting Procedure {#knitmore}
 
-Since you have declared two output documents in the YAML metadata section and that those are specific to `bookdown` functions, you will have to select which output format you want to use to compile your document by clicking on the drop-down list on the left side of the `Knit` button (see Figure \@ref(fig:knitout)). To use `bookdown` functions, please make sure to select one of the following options (see Figure \@ref(fig:knitout)): `Knit to html_document2` or `Knit to pdf_document2`.
+Since you have declared two output formats in the YAML metadata section, and both are specific to `bookdown` functions, you need to select which format you want to use to compile your document. To do this, click the drop-down menu to the left of the `Knit` button (see Figure \@ref(fig:knitout)).
+
+To ensure that `bookdown` functions are applied correctly, make sure to select one of the following options (see Figure \@ref(fig:knitout)):
+
+- `Knit to html_document2`
+- `Knit to pdf_document2`
 
 ```{r knitout, echo=FALSE, fig.cap="Snapshot of RStudio console showing the drop-down list associated to Knit button.", out.width = "100%", fig.align='center', dpi=72, fig.pos= "H"}
 knitr::include_graphics("Figures/knit_drop_down.png")
@@ -1074,29 +1016,31 @@ knitr::include_graphics("Figures/knit_drop_down.png")
 
 ---
 
-### Load Required R Packages {#loadRreq}
+### Install R Dependencies and Load Packages {#loadRreq}
 
-It is best practice to add an R code chunk directly under the YAML metadata section to load all the required R packages used to produce your report (same code than presented [here](#instDep)) (see Figure \@ref(fig:RMarkdwnstrct)). This feature will also allow to automatically generate a citation file with all R packages used to generate your report (see below). Applying this approach will contribute to improving the reproducibility of your research!   
+It is best practice to add an R code chunk directly below the YAML metadata section to automatically install and load the required R packages. This ensures that all dependencies needed to produce your document are installed and available (see Figure \@ref(fig:RMarkdwnstrct)).
 
-##### Step-by-step procedure
+This approach also allows you to automatically generate a citation file for all R packages used in your report (see [below](#citfileRpkg)). Applying this method contributes to improving the reproducibility of your research!
 
-1. Include an R code chunk directly under your YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)).
-2. Name code chunk `packages` and set options line as follows:
-  + `echo = FALSE`, 
-  + `warning = FALSE`, 
-  + `include = FALSE`.
-3. Add the following code to load required packages to produce your report (or copy content of `01_R_dependencies.R`):
+#### Step-by-Step Procedure
+
+1. Insert an R code chunk directly below your YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct)).
+2. Name the code chunk `packages` and set the chunk options as follows:
+   + `echo = FALSE`  
+   + `warning = FALSE`  
+   + `include = FALSE`
+3. Copy the following code into your R code chunk to install and load the packages required to produce your report:
 
 ```{r eval = FALSE, echo = TRUE, tidy = FALSE}
 ###~~~
 # Load R packages
 ###~~~
-#Create vector w/ R packages
+#Create a vector w/ the requiered R packages
 # --> If you have a new dependency, don't forget to add it in this vector
 pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools")
 
 ##~~~
-#2. Check if pkg are installed
+#2. Check if pkg are already installed on your computer
 ##~~~
 print("Check if packages are installed")
 #This line outputs a list of packages that are not installed
@@ -1105,8 +1049,8 @@ new.pkg <- pkg[!(pkg %in% installed.packages())]
 ##~~~
 #3. Install missing packages
 ##~~~
-# Using an if/else statement to check whether packages have to be installed
-# WARNING: If your target R package is not deposited on CRAN then need to adjust code/function
+# Use an if/else statement to check whether packages have to be installed
+# WARNING: If your target R package is not deposited on CRAN then you need to adjust code/function
 if(length(new.pkg) > 0){
   print(paste("Install missing package(s):", new.pkg, sep=' '))
   install.packages(new.pkg, dependencies = TRUE)
@@ -1115,7 +1059,7 @@ if(length(new.pkg) > 0){
 }
 
 ##~~~
-#4. Load all packages
+#4. Load all requiered packages
 ##~~~
 print("Load packages and return status")
 #Here we use the sapply() function to require all the packages
@@ -1123,18 +1067,24 @@ print("Load packages and return status")
 sapply(pkg, require, character.only = TRUE)
 ```
 
+4. Review the R code to ensure you understand what it does and why
+5. Knit your document and inspect the output file
+
 ---
 
-### Generate a Citation File of R Used Packages {#citfileRpkg}
+### Generate a Citation File of R Packages Used {#citfileRpkg}
 
-I don't know about you, but I am always struggling to properly cite R packages in my publications. If you want to retrieve the citation for an R package, you can use the base R function `citation()`. For instance, citations for *knitr* can be obtained as follow:
+I don’t know about you, but I often struggle to properly cite R packages in my publications. Fortunately, R provides a built-in function to help with this. If you want to retrieve the citation for an R package, you can use the base R function `citation()`.
+
+For example, the citation for the *knitr* package can be obtained as follows:
 
 ```{r cit, eval=T, echo=TRUE}
 #Generate citation for knitr
+# Type this code directly in the Console
 citation("knitr")
 ```
 
-If you want to generate those latter citation entries in [BibTeX format], you can pass the returned object of `citation()` to `toBibtex()` as follows:
+If you want to generate those citation entries in [BibTeX format], you can pass the object returned by `citation()` to `toBibtex()` as follows:
 
 ```{r cit2, eval=T, echo=TRUE}
 #Generate citation for knitr in BibTex format
@@ -1142,7 +1092,9 @@ If you want to generate those latter citation entries in [BibTeX format], you ca
 toBibtex(citation("knitr"))
 ```
 
-To use citation entries generated from `toBibtex()`, you have to copy the output to a `.bib` file and save it in your working directory. You will then be able to cite references found in this document directly in your R Markdown. This can be done by **adding the following code to your `packages` R code chunk**:
+To use citation entries generated by `toBibtex()`, copy the output to a `.bib` file and save it in your working directory. You will then be able to cite references from this file directly in your R Markdown document. 
+
+This can be done by **adding the following code at the end of your `packages` R code chunk**:
 
 ```{r cit3, eval=F, echo=TRUE}
 #Generate BibTex citation file for all loaded R packages used to produce report
@@ -1150,18 +1102,33 @@ To use citation entries generated from `toBibtex()`, you have to copy the output
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-The `.packages()` argument returns *invisibly* the names of all packages loaded in the current R session (if you want to see a return use `.packages(all.available = TRUE)`). This makes sure all packages being used in your code will have their citation entries written to the `.bib` file. Finally, to be able to cite those references (see [Citation identifier]) in your text, the [YAML metadata section] has to be edited. See [Appendix 1] for a full list of references associated to the R packages used to generate this report. 
+The `.packages()` function returns *invisibly* the names of all packages loaded in the current R session (to see the output, use `.packages(all.available = TRUE)`). This ensures that all packages used in your code will have their citation entries written to the `.bib` file.
+
+Finally, to be able to cite these references (see [Citation identifier](#citationidentifier)) in your text, you need to edit the [YAML metadata section](#YAMLset). See [Appendix 1] for a full list of references associated with the R packages used to generate this report.
+
+<div class="danger">
+  <p><strong>💡 Your turn to practice this syntax in your document by:</strong></p>
+  <ul>
+    <li>Add the code to generate <code>packages.bib</code> in your R code chunk entitled "packages".</li>
+    <li>Knit your document and inspect your project folder to observe the creation of a new file entitled <code>packages.bib</code>.</li>
+  </ul>
+</div>
 
 ---
 
 ### Generate Appendix with Citations of Used R Packages {#appendixRpkg}
 
-Although a References section will be provided at the end of your document to cite in text references (see [References] and Figure \@ref(fig:RMarkdwnstrct)), it is customized to add citations for all R packages used to generate the research in [Appendix 1]. We will learn here the procedure to assemble such Appendix.
+Although a References section will be provided at the end of your document to cite in-text references (see [References] and Figure \@ref(fig:RMarkdwnstrct)), it is useful to create a customized appendix listing citations for all R packages used to conduct the research, as shown in [Appendix 1]. 
 
-##### Step-by-step procedure
+Here, we will learn the procedure to assemble such an appendix.
 
-1. Include Appendices after the References section (see Figure \@ref(fig:RMarkdwnstrct)).
-  + This is done by using `<div id="refs"></div>` as shown below, which allows printing Appendices (or any other material) after the References section (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography) for more details):
+#### Step-by-Step Procedure
+
+1. Add a level-1 header at the end of your document titled "References".
+
+2. Include the appendices after the References section (see Figure \@ref(fig:RMarkdwnstrct)) by following the steps below:  
+   + Insert `<div id="refs"></div>` as shown below. This ensures that the appendices (or any other material) appear *after* the References section.  
+     (See [this resource](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography) for more details.)
 ```{r eval=FALSE}
 # References
 
@@ -1173,7 +1140,7 @@ Although a References section will be provided at the end of your document to ci
 
 Citations of all R packages used to generate this report.
 ```
-2. Insert an R code chunk directly under `# Appendix 1` to read in and print citations saved in `packages.bib`. This is done as follows:
+3. Insert an R code chunk directly below `# Appendix 1` to read and print the citations saved in `packages.bib`. Use the following code:
 ```{r generateBibliography1, eval=FALSE, echo=TRUE, warning = FALSE, message=FALSE}
 ###
 #Load R package
@@ -1190,21 +1157,28 @@ options("citation_format" = "pandoc")
 # Read and print bib from file
 read.bibtex(file = "packages.bib")
 ``` 
-3. Edit your R code chunk options line as follows to correctly print out references:
-`{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}`
-4. Knit your code to check that it produces the right output (see [Knitting procedure]). See [Appendix 1] to get an idea of the output.
+4. Edit your R code chunk options as follows to correctly print the references:  
+   `{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}`
+5. Knit your document to check that it produces the correct output (see [Knitting procedure]). Refer to [Appendix 1] to see an example of the expected result.
 
 ---
 
 ### Generate Appendix with R Package Versions and Operating System {#appendixRverOS}
 
-In addition to providing citations to R packages, you might also want to provide full information on R package versions and your operating systems (see Figure \@ref(fig:RMarkdwnstrct)). With R, the simplest (but a useful and important) approach to document your R environment is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone
-wants to reproduce your analysis, they will know which packages they will need to install, what versions and on which operating systems the code was executed. For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
+In addition to citing R packages, you may also want to provide detailed information about the R package versions and operating system used (see Figure \@ref(fig:RMarkdwnstrct)).
+
+In R, the simplest — yet highly useful and important — way to document your environment is to include the output of `sessionInfo()` (or `devtools::session_info()`). Among other details, this output shows all loaded packages and their versions from the R session used to run your analysis.
+
+Providing this information allows others to reproduce your work more reliably, as they will know exactly which packages, versions, and operating system were used to execute the code.
+
+For example, here is the output of `sessionInfo()` showing the R version and packages I used to create this document:
 
 ```{r eval=T, echo=T}
 # Collect Information About the Current R Session
 sessionInfo()
 ```
+
+#### Step-by-Step Procedure
 
 I have also used the approach described above to add this information in [Appendix 2]. This can be done as follows:
 
@@ -1223,10 +1197,14 @@ sessionInfo()
 
 ---
 
-### All Set, You Are Good to Go!
+### All Set — You’re Good to Go!
 
-We have now set our R Markdown environment and can start populating it! This means that you will be inserting your text and other code chunks directly under the `packages` code chunk. The [References] section constitutes the end of the main body of your document. If you want to add Appendices, do so under [Appendix 1], appendices will be labelled differently from the main body of the document.   
+You have now set up your R Markdown environment and are ready to start populating it! This means you can begin inserting your text and additional code chunks directly below the `packages` code chunk.
 
+The [References] section marks the end of the main body of your document. If you wish to add appendices, do so under [Appendix 2]. Note that appendices will be labeled differently from the main sections of the document.
+
+This R Markdown document will be used as a template for the rest of Chapter 2 and also serves as a foundation for your Bioinformatics Tutorial.
+ 
 ## PART C: Tables, Figures and References {#partC}
 
 The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
@@ -1389,7 +1367,7 @@ Please find below an example of a reference formatted in `BibTeX` format:
 }
 ```
 
-#### Citation identifier
+#### Citation identifier {#citationidentifier}
 
 The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the References section. 
 
