@@ -1024,7 +1024,7 @@ This approach also allows you to automatically generate a citation file for all 
 
 #### Step-by-Step Procedure
 
-1. Insert an R code chunk directly below your YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct)).
+1. Insert an R code chunk ![](Figures/insert_code_chunk.png) directly below your YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct)).
 2. Name the code chunk `packages` and set the chunk options as follows:
    + `echo = FALSE`  
    + `warning = FALSE`  
@@ -1109,8 +1109,8 @@ Finally, to be able to cite these references (see [Citation identifier](#citatio
 <div class="danger">
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong></p>
   <ul>
-    <li>Add the code to generate <code>packages.bib</code> in your R code chunk entitled "packages".</li>
-    <li>Knit your document and inspect your project folder to observe the creation of a new file entitled <code>packages.bib</code>.</li>
+    <li>Adding the code to generate <code>packages.bib</code> in your R code chunk entitled <q>packages</q>.</li>
+    <li>Knitting your document and inspecting your project folder to observe the creation of a new file entitled <code>packages.bib</code>.</li>
   </ul>
 </div>
 
@@ -1125,7 +1125,6 @@ Here, we will learn the procedure to assemble such an appendix.
 #### Step-by-Step Procedure
 
 1. Add a level-1 header at the end of your document titled "References".
-
 2. Include the appendices after the References section (see Figure \@ref(fig:RMarkdwnstrct)) by following the steps below:  
    + Insert `<div id="refs"></div>` as shown below. This ensures that the appendices (or any other material) appear *after* the References section.  
      (See [this resource](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html#include-appendix-after-bibliography) for more details.)
@@ -1140,7 +1139,7 @@ Here, we will learn the procedure to assemble such an appendix.
 
 Citations of all R packages used to generate this report.
 ```
-3. Insert an R code chunk directly below `# Appendix 1` to read and print the citations saved in `packages.bib`. Use the following code:
+3. Insert an R code chunk ![](Figures/insert_code_chunk.png) directly below `# Appendix 1` to read and print the citations saved in `packages.bib`. Use the following code:
 ```{r generateBibliography1, eval=FALSE, echo=TRUE, warning = FALSE, message=FALSE}
 ###
 #Load R package
@@ -1182,14 +1181,14 @@ sessionInfo()
 
 I have also used the approach described above to add this information in [Appendix 2]. This can be done as follows:
 
-1. Edit the document to add the following text below Appendix 1.
+1. Edit your document to add the following text below Appendix 1.
 ```{r eval = FALSE}
 # Appendix 2
 
 Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
 ```
 
-2. Then, add an R code chunk with the following code:
+2. Then, add an R code chunk ![](Figures/insert_code_chunk.png) with the following code:
 ```{r eval=F, echo=T, warning = FALSE, message=FALSE}
 #Load and provide all packages and versions
 sessionInfo()
@@ -1203,8 +1202,14 @@ You have now set up your R Markdown environment and are ready to start populatin
 
 The [References] section marks the end of the main body of your document. If you wish to add appendices, do so under [Appendix 2]. Note that appendices will be labeled differently from the main sections of the document.
 
-This R Markdown document will be used as a template for the rest of Chapter 2 and also serves as a foundation for your Bioinformatics Tutorial.
- 
+<div class="info">
+  <p><strong>💡 Info</strong></p>
+  <ul>
+    <li>This R Markdown document will be used as a template for the rest of Chapter 2.</li>
+    <li>This document also serves as a foundation for your <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#BioTut" target="_blank" rel="noopener noreferrer">Bioinformatics Tutorial</a>.</li>
+  </ul>
+</div>
+
 ## PART C: Tables, Figures and References {#partC}
 
 The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
@@ -1215,14 +1220,14 @@ In addition, the same approach and functions are used to process tables and figu
 
 This tutorial is devoted to Part B of Chapter 2 and provides students with opportunities to learn procedures to:
 
-- [**Insert tables and figures in an R Markdown document**](#insertTabFig)
-- [**Cross-reference tables and figures in the text**](#crossrefTabFig)
-- [**Cite references in the text and add a References section**](#bib)
-- [**Format citations according to journal style**](#cslForm)
+- [Insert tables in an R Markdown document](#inserttable)
+- [Insert and figures in an R Markdown document](#insertfigure)
+- [Cross-reference tables and figures in the text](#crossrefTabFig)
+- [Cite references in the text](#bib)
+- [Generate a References section](#refsection)
+- [Format citations according to journal style](#cslForm)
 
-### Insert tables and figures in R Markdown document {#insertTabFig}
-
-#### Tables
+### Insert Tables {#inserttable}
 
 There will be more details about tables in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:
 
@@ -1231,7 +1236,7 @@ There will be more details about tables in chapter 9; however this tutorial intr
 - Providing a unique label to the R code chunk allowing further cross-referencing in the text.
 - Displaying the table in the document.
 
-##### Step-by-step protocol
+#### Step-by-Step Protocol
 
 Here, you will learn the R Markdown syntax and R code required to replicate the grading scale presented in the Syllabus (see Table \@ref(tab:tabgrades)):
 
@@ -1258,7 +1263,7 @@ knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable
 7. Test your code to check that it produces the expected table by using the `Run` button. 
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
 
-#### Figures
+### Insert Figures {#insertfigure}
 
 There will be more details about figures in chapter 10; however this tutorial introduces key concepts related to figure making in R Markdown, more specifically on the following topics:
 
@@ -1272,7 +1277,7 @@ summary(cars)
 plot(cars)
 ```
 
-##### Step-by-step protocol
+#### Step-by-Step Protocol
 
 Here, you will learn the R Markdown syntax and R code required to replicate Figure \@ref(fig:cars):
 
@@ -1295,11 +1300,11 @@ plot(cars)
 7. Test your code to check that it produces the expected plot by using the `Run` button. 
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
 
-### Cross-reference tables and figures in the text {#crossrefTabFig}
+### Cross-reference Tables and Figures in the Text {#crossrefTabFig}
 
 Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the `\@ref()` function implemented in  the *bookdown* package (see Figure \@ref(fig:RMarkdwnstrct)). 
 
-#### General syntax
+#### General Syntax
 
 The general syntax is as follows:
 
@@ -1311,7 +1316,7 @@ The general syntax is as follows:
 \@ref(fig:code_chunk_ID)
 ```
 
-#### Step-by-step procedure
+#### Step-by-Step Procedure
 
 To cross-reference the `tabgrades` table type:
 
@@ -1325,15 +1330,15 @@ To cross-reference the `cars` figure type:
 
 Cross-reference your table and figure by adding a new level 1 header entitled `Cross-referncing tables and figures` and then typing examples as shown below in this section.
 
-### Cite references in text and add a References section {#bib}
+### Cite References in the Text {#bib}
 
-#### The bibliography file
+#### The Bibliography File
 
 To cite references in the R Markdown document those have to be saved in a bibliography file using the `BibTeX` format. Other formats can be used, but the `BibTeX` format is open-source and easy to edit. Please see this [webpage](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more details on other formats. 
  
 Most journals allow saving citation of publications directly in `BibTeX` format, but when this feature is not available formats can be converted using online services (e.g. EndNote to BibTeX: https://www.bruot.org/ris2bib/).
 
-##### Procedure to do prior to citing references in an R Markdown document  
+#### Procedure to do prior to citing references in an R Markdown document  
 
 1. Save all your `BibTeX` fromatted references in a text file and make sure to add the `.bib` extension. 
 2. The `.bib` file has to be deposited in the same folder as your `.Rmd` file (= working directory).
@@ -1367,11 +1372,11 @@ Please find below an example of a reference formatted in `BibTeX` format:
 }
 ```
 
-#### Citation identifier {#citationidentifier}
+#### Citation Identifier {#citationidentifier}
 
 The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the References section. 
 
-#### Citing references
+#### Citing References
 
 Citations go inside square brackets (`[]`) and are separated by semicolons. Each citation must have a key, composed of `@` + the citation identifier (see above) as stored into the `BibTeX` file. 
 
@@ -1412,11 +1417,11 @@ Once knitted, the above code/syntax turns into:
 
 @Baker_2016 [p. 1] says blah.
 
-##### Practice citing references
+##### Practice Citing References
 
 Students have to use their `.Rmd` document to practice citing references in the text using procedures described above. To clearly define where you practice citing references, please do so under a `Citing references` header. 
 
-### Adding a References section
+### Generate a References Section {#refsection}
 
 Upon knitting, a References section will automatically be generated and inserted at the end of the document (see Figure \@ref(fig:RMarkdwnstrct)). Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:
 
