@@ -575,8 +575,10 @@ Below is the syntax to create headers at three levels:
 **Syntax:**
 ```{r eval=FALSE}
 The "#" refers to the level of the header
-# Header 1  
+# Header 1
+
 ## Header 2  
+
 ### Header 3  
 ```  
 
