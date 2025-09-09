@@ -389,15 +389,22 @@ DT::datatable(rec,
 
 In this chapter, we introduce the use of **bioinformatics tools for writing and disseminating reproducible reports**, as implemented in RStudio [@RStudio]. More specifically, we will learn how to **link and execute data and code within a unified environment** (see Figure \@ref(fig:ReproScience)). 
 
-This chapter focuses on mastering R Markdown syntax and protocols that allow the inclusion of text, code, figures, tables, and references within a single document. The resulting document can then be compiled into an output file—such as `PDF`, `HTML`, or `Word` to facilitate the sharing of your research.
 
-This tutorial provides students with the foundational knowledge necessary to complete their bioinformatics tutorials (**PART 2**) and individual projects (**PART 3**). The chapter is divided into five parts:
+### Aim
+
+This chapter aims to equip students with the essential skills required to effectively use R Markdown for integrating text, code, figures, tables, and references into a cohesive, reproducible document. The final output can be rendered into multiple formats—including `PDF`, `HTML`, or `Word`—to streamline the communication and sharing of research findings.
+
+This tutorial provides students with the foundational knowledge necessary to complete their bioinformatics tutorials (**PART 2**) and individual projects (**PART 3**).
+
+### Objectives
+
+The chapter is divided into six parts, each with specific learning objectives:
 
 - [**PART A:**](#partA) Learning the Basics
 - [**PART B:**](#partB) Setting Your R Markdown Document
 - [**PART C:**](#partC) Tables, Figures, and References  
 - [**PART D:**](#partD) Advanced R Markdown Settings  
-- [**PART E:**](#partE) User-defined Functions in R  
+- [**PART E:**](#partE) User-Defined Functions in R  
 - [**PART F:**](#partF) Interactive Tutorials  
 
 ```{r ReproScience, echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
@@ -476,7 +483,7 @@ Markdown is a simple formatting syntax used for authoring HTML, PDF, and Microso
 knitr::include_graphics("Figures/Presentation_RMarkdown.png")
 ```
 
-### Our First R Markdown Document {#firstMDhow}
+### Your First R Markdown Document {#firstMDhow}
 
 In this section, you will learn how to create and knit your first R Markdown document.
 
@@ -584,6 +591,7 @@ The "#" refers to the level of the header
     <ul>
       <li>Including 2 level 1 headers</li>
       <li>Embedding 2 level 2 headers under each level 1 header</li>
+      <li>Checking your code by knitting the document</li>
     </ul>
   </p>
   <p>
@@ -616,6 +624,7 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Adding comments describing the content included under each level 1 header</li>
+      <li>Checking your code by knitting the document</li>
     </ul>
   </p>
 </div>
@@ -658,6 +667,7 @@ There are two types of lists:
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Including a 2-level unordered list under the first level 1 header</li>
+      <li>Checking your code by knitting the document</li>
     </ul>
   </p>
 </div>
@@ -689,6 +699,7 @@ There are two types of lists:
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Including a 2-level ordered list under the second level 1 header</li>
+      <li>Checking your code by knitting the document</li>
     </ul>
   </p>
 </div>
@@ -728,6 +739,7 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
       <li>Writing a sentence in your R Markdown document that includes an italicized word</li>
       <li>Writing a sentence that includes a word or phrase in bold</li>
       <li>Writing a sentence where a word or phrase is both bold and italicized</li>
+      <li>Checking your code by knitting the document</li>
     </ul>
   </p>
 </div>
@@ -759,6 +771,7 @@ When knitted, the example with RStudio turns like that [RStudio](https://www.rst
     <ul>
       <li>Creating a hyperlink to the Boise State website</li>
       <li>Creating a hyperlink to download R for Mac computers</li>
+      <li>Checking your code by knitting the document</li>
     </ul>
   </p>
 </div>
@@ -1727,7 +1740,7 @@ plot(x, y)
 3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
 4. Go to step 6 in the above section and complete the exercise.
 
-## PART E: User Defined Functions in R {#partE}
+## PART E: User-Defined Functions in R {#partE}
 
 ### Learning outcomes
 
