@@ -392,7 +392,7 @@ In this chapter, we introduce the use of **bioinformatics tools for writing and 
 
 ### Aim
 
-This chapter aims to equip students with the essential skills required to effectively use R Markdown for integrating text, code, figures, tables, and references into a cohesive, reproducible document. The final output can be rendered into multiple formats—including `PDF`, `HTML`, or `Word`—to streamline the communication and sharing of research findings.
+This chapter aims to ***equip students with the essential skills required to effectively use R Markdown for integrating text, code, figures, tables, and references into a cohesive, reproducible document***. The final output can be rendered into multiple formats—including `PDF`, `HTML`, or `Word`—to streamline the communication and sharing of research findings.
 
 This tutorial provides students with the foundational knowledge necessary to complete their bioinformatics tutorials (**PART 2**) and individual projects (**PART 3**).
 
