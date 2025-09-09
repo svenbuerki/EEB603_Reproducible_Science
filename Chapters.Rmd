@@ -582,6 +582,12 @@ The "#" refers to the level of the header
 ### Header 3  
 ```  
 
+<div class="info">
+  <p><strong>💡 Info</strong></p>
+  <ul>
+    <li>While Markdown headers will render correctly without blank lines, it is best practice to include blank lines both before and after headers. Doing so improves the readability of the raw Markdown and helps minimize knitting quirks. Overall, including a blank line before a header (except at the very start of a document) and after it is not strictly required, but it makes your Markdown cleaner and more consistent.</li>  </ul>
+</div>
+
 <style>
 .danger {
   background-color: #ffdddd;
