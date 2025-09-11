@@ -956,7 +956,7 @@ Use the material from the [Chapter 2 – Part A](#firstMDhow) and [Before Starti
     <ul>
        <li><b>Document title:</b> Chapter 2 - part B</li>
        <li><b>Document output format:</b> HTML</li>
-       <li><b>File name:</b> Chapter2_partB.Rmd"</li>
+       <li><b>File name:</b> Chapter2_partB.Rmd</li>
        <li><b>File path:</b> `Reproducible_Science/Chapters/Chapter_2`</li>
     </ul>
   </p>
@@ -1006,7 +1006,7 @@ Follow these steps to set up your YAML metadata section (also see Figure \@ref(f
 2. Copy the following files, available on [Google Drive](https://drive.google.com/drive/folders/1JFjKmb0JHm96UfimO8SJLq33hE1JRu5v?usp=drive_link), into your project folder:  
     + `Bibliography_Reproducible_Science_2.bib`  
     + `AmJBot.csl`  
-3. Edit the YAML metadata section (at the top of your R Markdown document) as shown in the [section above](#YAMLset)
+3. Replace your YAML metadata section (at the top of your R Markdown document) with the code as shown in the [section above](#YAMLset)
 4. Knit your document and inspect the output file. Read this [section](#knitmore) to get more details on the knitting procedure.  
 
 <div class="info">
@@ -1046,11 +1046,14 @@ This approach also allows you to automatically generate a citation file for all 
 #### Step-by-Step Procedure
 
 1. Insert an R code chunk ![](Figures/insert_code_chunk.png) directly below your YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct)).
-2. Name the code chunk `packages` and set the chunk options as follows:
+2. Name the code chunk `packages` and set the chunk options as follows (see Figure \@ref(fig:packageschunkfig)):
    + `echo = FALSE`  
    + `warning = FALSE`  
    + `include = FALSE`
-3. Copy the following code into your R code chunk to install and load the packages required to produce your report:
+```{r packageschunkfig, echo=FALSE, fig.cap = "This is how your packages R code chunk should look like at this stage of the procedure.", fig.show = "asis", out.width = '100%'}
+knitr::include_graphics("Figures/packages_code_chunk_options.png")
+```
+3. Copy the following code into your R code chunk (Figure \@ref(fig:packageschunkfig)) to install and load the packages required to produce your report:
 
 ```{r eval = FALSE, echo = TRUE, tidy = FALSE}
 ###~~~
