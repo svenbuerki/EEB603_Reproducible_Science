@@ -1240,34 +1240,51 @@ The [References] section marks the end of the main body of your document. If you
 
 ## PART C: Tables, Figures and References {#partC}
 
-The aim of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
+The **aim** of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
 
 In addition, the same approach and functions are used to process tables and figures, as well as to cross-reference them in the main body of the text. This tutorial will also cover how to cite references in the text, automatically generate a bibliography/references section, and format citations according to journal styles. Finally, it demonstrates how to generate an Appendix containing citations of all R packages used to conduct your research (and to produce the report).
 
 ### Learning Outcomes
 
-This tutorial is devoted to Part B of Chapter 2 and provides students with opportunities to learn procedures to:
+This tutorial provides students with the opportunity to learn how to:
 
 - [Insert tables in an R Markdown document](#inserttable)
-- [Insert and figures in an R Markdown document](#insertfigure)
+- [Insert figures in an R Markdown document](#insertfigure)
 - [Cross-reference tables and figures in the text](#crossrefTabFig)
 - [Cite references in the text](#bib)
 - [Generate a References section](#refsection)
 - [Format citations according to journal style](#cslForm)
 
+---
+
+### Create Your R Markdown
+
+Follow the approach described in the box below to create your R Markdown file for Chapter 2 – Part C.
+
+<div class="info">
+  <p><strong>💡 Approach to Create Your R Markdown</strong></p>
+  <ul>
+    <li><strong>Create document:</strong> Make a copy of <code>Chapter2_partB.Rmd</code> in the same project folder and rename it <code>Chapter2_partC.Rmd</code></li>
+    <li><strong>Document title:</strong> Open the file in RStudio and edit the title in the YAML section to <code>Chapter 2 – Part C</code></li>
+    <li><strong>Test document:</strong> Knit your document to ensure it works properly</li>
+  </ul>
+</div>
+
+---
+
 ### Insert Tables {#inserttable}
 
-There will be more details about tables in chapter 9; however this tutorial introduces key concepts related to table making in R Markdown, more specifically on the following topics:
+This tutorial introduces key concepts related to table creation in R Markdown, specifically the following:
 
-- Creating a table in R. 
-- Assigning a table caption.
-- Providing a unique label to the R code chunk allowing further cross-referencing in the text.
-- Displaying the table in the document.
+- Creating a table based on R code  
+- Assigning a table caption  
+- Providing a unique label to the R code chunk for cross-referencing in the text  
+- Displaying the table in the document  
 
-#### Step-by-Step Protocol
+More details on this topic will be provided in Chapter 9.
 
-Here, you will learn the R Markdown syntax and R code required to replicate the grading scale presented in the Syllabus (see Table \@ref(tab:tabgrades)):
-
+In this section, you will learn the R Markdown syntax and R code needed to replicate the grading scale presented in the syllabus (see Table \@ref(tab:tabgrades)).
+ 
 ```{r tabgrades, echo=F, fig.align='center'}
 #Create a data.frame w/ grading scale
 grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
@@ -1275,30 +1292,53 @@ grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "8
 knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
 ```
 
-1. Use the same `.Rmd` document as above to practice working with tables. 
-2. Add a first-level header entitled `Tables`.
-3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
-4. Copy/paste the following R code in your code chunk:
+#### Step-by-Step Protocol
+
+Follow these steps to reproduce Table \@ref(tab:tabgrades) in your R Mardown document: 
+
+1. Open `Chapter2_partC.Rmd` in RStudio.  
+2. Add a first-level header titled `Tables`.  
+3. Insert an R code chunk under your header by clicking the `Insert` button ![](Figures/insert.png) in the editor toolbar.  
+4. Copy and paste the following R code into your code chunk:
 ```{r tabgrades2, eval=FALSE, echo=TRUE}
+#Load package (for testing)
+library(dplyr)
 #Create a data.frame w/ grading scale
 grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
 #Plot table and add caption
-knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
+knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kableExtra::kable_styling(c("striped","scale_down"))
 ```
-5. Edit the code chunk options line by adding the following argument (**Note:** each argument should be separated by a comma):
-  - `echo = FALSE`
-6. Add the unique label `tabgrades` in the chunk options line (just after `{r`) to enable further cross-referencing.
-7. Test your code to check that it produces the expected table by using the `Run` button. 
-8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
+5. Edit the R code chunk options line by adding the following argument (**Note:** each argument should be separated by a comma):  
+   - `echo = FALSE`  
+6. Add the unique label `tabgrades` in the chunk options line (immediately after `{r`) to enable cross-referencing.  
+7. Test your R code to ensure it produces the expected table by clicking the `Play` button at the top left of the code chunk (see Fig. \@ref(fig:runcodetab)).
+```{r runcodetab, echo=FALSE, fig.cap = "Demonstrates how to test your code within the R Markdown document. Click the play icon in the top-right corner of the code chunk to execute the code and return its output directly in the R Markdown document without knitting.", fig.show = "asis", out.width = '100%'}
+knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
+```
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
+
+<div class="danger">
+  <p><strong>💡 Something is Missing...</strong></p>
+  <ul>
+    <li><strong>Challenge:</strong> Scrutinize the code provided in this section to determine how the table caption is created.</li>
+    <li><strong>Test Your Hypothesis:</strong> Once you have figured out how the caption is assigned, test your hypothesis by editing it and knitting your document.</li>
+  </ul>
+</div>
+
+---
 
 ### Insert Figures {#insertfigure}
 
-There will be more details about figures in chapter 10; however this tutorial introduces key concepts related to figure making in R Markdown, more specifically on the following topics:
+This tutorial introduces key concepts related to figure creation in R Markdown, specifically the following:
 
-- Creating a figure in R (based on the `cars` dataset; Figure \@ref(fig:cars)). 
+- Creating a figure based on R code. 
 - Assigning a figure caption.
 - Providing a unique label to the R code chunk allowing further cross-referencing in the text.
-- Displaying the figure in the document.
+- Displaying the figure in the document.  
+
+More details on this topic will be provided in Chapter 10.
+
+In this section, you will learn the R Markdown syntax and R code needed to replicate Figure \@ref(fig:cars). 
 
 ```{r cars, echo=FALSE, results="hide", fig.cap="Plot of cars' speed in relation to distance.", out.width = '100%'}
 summary(cars)
@@ -1307,26 +1347,34 @@ plot(cars)
 
 #### Step-by-Step Protocol
 
-Here, you will learn the R Markdown syntax and R code required to replicate Figure \@ref(fig:cars):
+Follow these steps to reproduce Figure \@ref(fig:cars) in your R Mardown document: 
 
-1. Use the same `.Rmd` document as above to practice working with figures. 
-2. Add a first-level header entitled `Figures`.
-3. Insert an R code chunk under your header by clicking on the `Insert` button ![](Figures/insert.png) in the editor toolbar.
-4. Copy/paste the following R code in the code chunk:
+1. If not done yet, open `Chapter2_partC.Rmd` in RStudio.
+2. Add a first-level header titled `Tables`.  
+3. Insert an R code chunk under your header by clicking the `Insert` button ![](Figures/insert.png) in the editor toolbar.
+4. Copy and paste the following R code into your code chunk:
 ```{r eval=FALSE}
-#Load and summarize cars dataset
+#Load and summarize the cars dataset
 summary(cars)
 #Plot data
 plot(cars)
 ```
-5. Edit the code chunk options line by adding the following arguments (each argument should be separated by a comma):
+5. Edit the R code chunk options line by adding the following argument (**Note:** each argument should be separated by a comma):
   - `echo = FALSE`
   - `results = "hide"`
   - `fig.cap = "Plot of cars' speed in relation to distance."`
   - `out.width = "100%"`
-6. Add the unique label `cars` in the chunk options line (just after `{r`) to enable further cross-referencing.
-7. Test your code to check that it produces the expected plot by using the `Run` button. 
-8. Knit your document using the `Knit` button ![](Figures/knit_2.png) on the editor toolbar (Figure \@ref(fig:knitout)). 
+6. Add the unique label `cars` in the chunk options line (immediately after `{r`) to enable cross-referencing. 
+7. Test your R code to ensure it produces the expected table by clicking the `Play` button at the top left of the code chunk (as done in [Tables](#inserttable)). 
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
+
+<div class="danger">
+  <p><strong>💡 Challenge</strong></p>
+  <p>What syntax is used to assign a figure caption?</p>
+  <p>How does the syntax for assigning captions to tables and figures compare?</p>
+</div>
+
+---
 
 ### Cross-reference Tables and Figures in the Text {#crossrefTabFig}
 
@@ -1338,11 +1386,16 @@ The general syntax is as follows:
 
 ```{r synt, eval=F}
 # Cross-referencing tables in main body of text
-\@ref(tab:code_chunk_ID)
+Table \@ref(tab:code_chunk_ID)
 
 # Cross-referencing figures in main body of text
-\@ref(fig:code_chunk_ID)
+Figure \@ref(fig:code_chunk_ID)
 ```
+
+<div class="info">
+  <p><strong>💡 More Info on the Syntax</strong></p>
+  <p>It is worth mentioning that you need to manually add <code>Table</code> or <code>Figure</code> in front of <code>\@ref(tab:code_chunk_ID)</code> or <code>\@ref(fig:code_chunk_ID)</code>. This design allows the user to choose how tables and figures are referenced in the text. Journals often have distinct formatting styles, which must be followed during submission.</p> 
+</div>
 
 #### Step-by-Step Procedure
 
@@ -1357,6 +1410,8 @@ To cross-reference the `cars` figure type:
 **Note:** This syntax doesn't automatically include the `Table` or `Figure` handles in front of the cross-reference. You will have to **manually add `Table` or `Figure` in front of `\@ref()`**.
 
 Cross-reference your table and figure by adding a new level 1 header entitled `Cross-referncing tables and figures` and then typing examples as shown below in this section.
+
+---
 
 ### Cite References in the Text {#bib}
 
