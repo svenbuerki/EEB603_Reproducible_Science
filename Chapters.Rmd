@@ -1370,8 +1370,10 @@ plot(cars)
 
 <div class="danger">
   <p><strong>💡 Challenge</strong></p>
-  <p>What syntax is used to assign a figure caption?</p>
-  <p>How does the syntax for assigning captions to tables and figures compare?</p>
+  <ul>
+    <li>What syntax is used to assign a figure caption?</li>
+    <li>How does the syntax for assigning captions to tables and figures compare?</li>
+  </ul>
 </div>
 
 ---
@@ -1394,7 +1396,9 @@ Figure \@ref(fig:code_chunk_ID)
 
 <div class="info">
   <p><strong>💡 More Info on the Syntax</strong></p>
-  <p>It is worth mentioning that you need to manually add <code>Table</code> or <code>Figure</code> in front of <code>\@ref(tab:code_chunk_ID)</code> or <code>\@ref(fig:code_chunk_ID)</code>. This design allows the user to choose how tables and figures are referenced in the text. Journals often have distinct formatting styles, which must be followed during submission.</p> 
+  <ul>
+    <li>It is worth mentioning that you need to manually add <code>Table</code> or <code>Figure</code> in front of <code>\@ref(tab:code_chunk_ID)</code> or <code>\@ref(fig:code_chunk_ID)</code>. This design allows the user to choose how tables and figures are referenced in the text. Journals often have distinct formatting styles, which must be followed during submission.</li>
+  </ul>
 </div>
 
 #### Step-by-Step Procedure
@@ -1413,28 +1417,48 @@ Figure \@ref(fig:code_chunk_ID)
 
 ### Cite References in the Text {#bib}
 
-#### The Bibliography File
+#### Introduction
 
-To cite references in the R Markdown document those have to be saved in a bibliography file using the `BibTeX` format. Other formats can be used, but the `BibTeX` format is open-source and easy to edit. Please see this [webpage](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more details on other formats. 
- 
-Most journals allow saving citation of publications directly in `BibTeX` format, but when this feature is not available formats can be converted using online services (e.g. EndNote to BibTeX: https://www.bruot.org/ris2bib/).
+In this section, we will cover the following topics before delving into the practical implementation of citing references in your R Markdown document:
 
-#### Procedure to do prior to citing references in an R Markdown document  
+- [The Bibliography File](#bibFile)
+- [The BibTeX Format](#BibTexFormat)
+- [Citation Identifier](#citationidentifier)
 
-1. Save all your `BibTeX` fromatted references in a text file and make sure to add the `.bib` extension. 
-2. The `.bib` file has to be deposited in the same folder as your `.Rmd` file (= working directory).
-3. Provide the name of your references file in the [YAML metadata section].
-4. You can visit this [webpage](https://academic.oup.com/botlinnean/article/186/4/435/4736317?searchresult=1) and click on the `Cite` icon to download a citation in `.bibtex` format. More details on the `BibTeX` format is provided below.
-5. References formatted in the `BibTeX` format are available in the associated file: 
-    + `Bibliography_Reproducible_Science_2.bib`.
+##### The Bibliography File {#bibFile}
 
-#### Specifying a bibliography in the RMarkdown file
+Pandoc can automatically generate citations in your text and a References section following a specific journal style (see Figure \@ref(fig:RMarkdwnstrct)). To use this feature, you need to declare a bibliography file in the [YAML metadata section].
 
-The Pandoc program can automatically generate citations in the text and a bibliography/references section following various journal styles (see Figure \@ref(fig:RMarkdwnstrct)). In order to use this feature, you need to specify a bibliography file in the [YAML metadata section]. 
+In this course, we are working with bibliography files formatted using the [`BibTeX`](#BibTexFormat) format. Other formats can also be used — please see this [resource](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more details.
 
-#### BibTeX format
+Most journals allow citations to be downloaded in `BibTeX` format, but if this feature is not available, you can convert citation formats using online services (e.g., EndNote to BibTeX: https://www.bruot.org/ris2bib/).
+
+##### The BibTeX Format {#BibTexFormat}
+
+BibTeX is a reference management tool commonly used in conjunction with LaTeX (a Markup language) to format lists of references in scientific documents. It allows users to maintain a bibliographic database (`.bib` file) and cite references in a consistent and automated way.
+
+Each entry in a `.bib` file follows this general structure:
 
 Please find below an example of a reference formatted in `BibTeX` format:
+
+```{r eval = FALSE}
+@entrytype{citationIndentifier,
+  field1 = {value1},
+  field2 = {value2},
+  ...
+}
+```
+
+<div class="info">
+  <p><strong>💡 Info on BibTeX format</strong></p>
+  <ul>
+    <li><strong><code>&#64;entrytype</code>:</strong> Type of reference (e.g., <code>&#64;article, &#64;book, &#64;inproceedings</code>).</li>
+    <li><strong>citationIdentifier:</strong> Unique ID used to cite the entry in your R Markdown document.</li>
+    <li><strong>fields:</strong> Key-value pairs with bibliographic information (e.g., author, title, year).</li>
+  </ul>
+</div>
+
+Here is an example associated with @Baker_2016:
 
 ```{r eval = FALSE}
 # Example of BibTex format for Baker (2016) published in Nature
@@ -1453,15 +1477,47 @@ Please find below an example of a reference formatted in `BibTeX` format:
 }
 ```
 
-#### Citation Identifier {#citationidentifier}
+##### Citation Identifier {#citationidentifier}
 
-The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see first line in the example provided above). This unique identifier is used to refer to the reference/publication in the R Markdown document and also allows citing references and generating the References section. 
+The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see the first lines in the examples provided above). This identifier is used to refer to the publication in the R Markdown document and also enables citing references and generating the References section.
 
-#### Citing References
+#### Step-by-Step Procedures
 
-Citations go inside square brackets (`[]`) and are separated by semicolons. Each citation must have a key, composed of `@` + the citation identifier (see above) as stored into the `BibTeX` file. 
+In this section, we will cover the following topics to implement the tools for references citing in your R Markdown document:
 
-Please find below some examples on citation protocols:
+- [Steps to Complete Before Citing References in Your Text](#stepsbeforeciting)
+- [Cite References in Your Text](#citerefintext)
+
+##### Steps to Complete Before Citing References in Your Text {#stepsbeforeciting}  
+
+1. Save all your `BibTeX`-formatted references in a bibliography text file, and make sure to add the `.bib` or `.bibtex` extension.  
+2. Place the bibliography file in your project folder (alongside your `.Rmd` file).  
+3. Declare the name of your bibliography file in the [YAML metadata section] under the `bibliography:` field.  
+4. References formatted in the `BibTeX` format are available in the following file:  
+    + `Bibliography_Reproducible_Science_2.bib`
+    
+<div class="danger">
+  <p><strong>💡 Exercise: Download a Citation in BibTeX Format</strong></p>
+  <ul>
+    <li>Visit this <a href="https://doi.org/10.1093/botlinnean/box083" target="_blank" rel="noopener noreferrer">webpage</a>.</li>
+    <li>Locate the <code>Cite</code> icon and download a citation in <code>.bibtex</code> format.</li>
+    <li>Open the <code>.bibtex</code> file in a text editor and inspect its contents.</li>
+    <li>What is the unique citation identifier of this article?</li>
+  </ul>
+</div>
+
+##### Cite References in Your Text {#citerefintext}
+
+We will examine the syntax for citing references, either as parenthetical citations or in-text citations.
+
+- **Parenthetical Citation:** The entire citation appears in parentheses, usually at the end of a sentence or clause.  
+- **In-Text Citation:** The author's name is part of the sentence, and the citation appears naturally in the flow of the text.
+
+###### Parenthetical Citation
+
+In this case, citations are placed inside square brackets (`[]`) (usually at the end of a sentence or clause) and separated by semicolons. Each citation must include a key composed of `@` followed by the citation identifier (as stored in the `BibTeX` file).
+
+Please find below some examples on citation syntax:
 
 ```{r eval=FALSE}
 #Syntax
@@ -1469,30 +1525,32 @@ Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
 Blah blah [@Baker_2016; @Smith2016].
 ```
 
-Once knitted (using the ![](Figures/knit_2.png) button), the above code/syntax turns into:
+Once knitted (using the ![](Figures/knit_2.png) button), the citation syntax is rendered as:
 
-Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
+Blah blah [see @Baker_2016, pp. 33–35; also @Smith2016, ch. 1].
 
 Blah blah [@Baker_2016; @Smith2016].
 
-A minus sign (-) before the `@` will suppress mention of the author in the citation. This can be useful when the author is already mentioned in the text:
+A minus sign (`-`) before the `@` symbol will suppress the author's name in the citation. This is useful when the author is already mentioned in the text:
 ```{r eval=FALSE}
 #Syntax
 Baker says blah blah [-@Baker_2016].
 ```
 
-Once knitted, the above code/syntax turns into:
+Once knitted, the citation is rendered as:
 
 Baker says blah blah [-@Baker_2016].
 
-You can also write an in-text citation, as follows:
+###### In-Text Citation
+
+In this case, in-text citations can be rendered with the following syntax:
 ```{r eval=FALSE}
 #Syntax
 @Baker_2016 says blah.
 @Baker_2016 [p. 1] says blah.
 ```
 
-Once knitted, the above code/syntax turns into:
+Once knitted, the citation is rendered as:
 
 @Baker_2016 says blah.
 
@@ -1500,11 +1558,21 @@ Once knitted, the above code/syntax turns into:
 
 ##### Practice Citing References
 
-Students have to use their `.Rmd` document to practice citing references in the text using procedures described above. To clearly define where you practice citing references, please do so under a `Citing references` header. 
+<div class="danger">
+  <p><strong>💡 Your turn to practice citing references in your document by:</strong></p>
+  <ul>
+    <li>Write a sentence citing &#64;Baker_2016 using parenthetical citation syntax.</li>
+    <li>Write a sentence citing &#64;Baker_2016 using in-text citation syntax.</li>
+  </ul>
+</div>
+
+---
 
 ### Generate a References Section {#refsection}
 
-Upon knitting, a References section will automatically be generated and inserted at the end of the document (see Figure \@ref(fig:RMarkdwnstrct)). Usually, we recommend adding a References header (level 1) just after the last paragraph of the document as displayed below:
+Upon knitting, a References section will automatically be generated and inserted at the end of your document (see Figure \@ref(fig:RMarkdwnstrct)). 
+
+We recommend adding a level-1 "References" header immediately after the final paragraph of the document, as shown below:
 
 ```{r eval=FALSE}
 last paragraph...
@@ -1512,15 +1580,24 @@ last paragraph...
 # References
 ```
 
-The bibliography will be inserted after this header (please see [References] section of this tutorial for more details).
+The bibliography will be inserted after this header (please see the [References] section of this tutorial for more details).
 
-### Format citations to journal style {#cslForm}
+<div class="danger">
+  <p><strong>💡 Your Turn!</strong></p>
+  <ul>
+    <li>Edit your document to add a References section.</li>
+  </ul>
+</div>
 
-In this section, we are studying how your bibliography can be automatically formatted following a journal style. This is achieved by providing the name of a **c**itation **s**tyle **l**anguage file (containing the protocol to format citations and bibliography following a journal style) in the YAML metadata section.  
+---
 
-#### What is the citation style language (CSL)?
+### Format Citations to Journal Style {#cslForm}
 
-The **C**itation **S**tyle **L**anguage (CSL) was developed by an open-source project and aims at facilitating scholarly publishing by **automating the formatting of citations and bibliographies**. This project has developed the CSL and maintains a crowd sourced repository with over 8000 free CSL citation styles. Please see the following website for more details: https://citationstyles.org
+In this section, we will explore how your bibliography can be automatically formatted to match a specific journal style. This is done by specifying a **Citation Style Language (CSL)** file in the YAML metadata section using the `csl:` field. The CSL file contains the formatting rules required to style both in-text citations and the bibliography according to the selected journal or publication.
+
+#### What is the Citation Style Language?
+
+The **Citation Style Language (CSL)** is an open-source project designed to simplify scholarly publishing by **automating the formatting of citations and bibliographies**. The project maintains a crowdsourced repository of over 8,000 free CSL citation styles. For more information, visit: [https://citationstyles.org](https://citationstyles.org)
 
 #### CSL repositories
 
@@ -1529,27 +1606,16 @@ There are two main CSL repositories:
 - **GitHub Repository:** https://github.com/citation-style-language/styles
 - **Zotero Style Repository:** https://www.zotero.org/styles
 
-#### How to use a CSL file in an RMarkdown to format citations and bibliography?
+#### Step-by-Step Procedure
 
-Please follow the steps below to format your citations and bibliography following the citation style provided in a CSL file (see Figure \@ref(fig:RMarkdwnstrct) for more details):
+To learn this procedure and syntax, you will be tasked with downloading a `.csl` file and using it in your document (in place of `AmJBot.csl`).
 
-1. Download the CSL file using repositories provided above. Some journals provide their CSL files on their websites (one has been made available for you to use in the associated files: `AmJBot.csl`).
-2. Save the CSL file in the same working directory as the `.Rmd` file.
-3. Edit the YAML metadata section as follows to specify the CSL file:
-```{r eval=FALSE}
-# Add a "csl" argument and provide name of the CSL file (here AmJBot.csl) 
----
-title: "Sample Document"
-output:
-  bookdown::html_document2: 
-    toc: TRUE
-  bookdown::pdf_document2:
-    toc: TRUE
-bibliography: bibliography.bib
-csl: AmJBot.csl
----
-```
-4. Knit the R Markdown document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information stored in the YAML metadata section to format the bibliography (citations and bibliography section) following the citation style provided in the CSL file. Do not forget to add a `References` header at the end of your `.Rmd` document.
+Follow these steps to format your citations and bibliography according to a specific citation style (see Figure \@ref(fig:RMarkdwnstrct) for more details):
+
+1. Download a `.csl` file from one of the repositories provided above.  
+2. Place your `.csl` file in your project folder (alongside your `.Rmd` file).  
+3. Edit your YAML metadata section to specify the name of your `.csl` file.
+4. Knit your document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information specified in the YAML metadata section to format both the in-text citations and the bibliography section according to the citation style defined in the CSL file. Be sure to add a `References` header at the end of your `.Rmd` document.
 
 ## PART D: Advanced R and R Markdown settings {#partD}
 
