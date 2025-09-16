@@ -1233,12 +1233,14 @@ I have also used the approach described above to add this information in [Append
 
 Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
 ```
-
-2. Then, add an R code chunk ![](Figures/insert_code_chunk.png) with the following code:
+2. Then, add an R code chunk ![](Figures/insert_code_chunk.png) and set its options as follows to correctly print the content:  
+   `{r sessionInfo, eval = TRUE, echo = FALSE, warning = FALSE, message = FALSE}`
+3. Copy this code in your code chunk:
 ```{r eval=F, echo=T, warning = FALSE, message=FALSE}
 #Load and provide all packages and versions
 sessionInfo()
 ```
+4. Knit your document to check that it produces the correct output.
 
 ---
 
@@ -4448,6 +4450,6 @@ read.bibtex(file = "packages.bib")
 
 Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
 
-```{r eval=T, echo=F, warning = FALSE, cache = F, message=FALSE}
+```{r sessionInfo, eval = TRUE, echo = FALSE, warning = FALSE, message = FALSE}
 sessionInfo()
 ```
