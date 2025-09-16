@@ -1086,7 +1086,7 @@ if(length(new.pkg) > 0){
 }
 
 ##~~~
-#4. Load all requiered packages
+#4. Load all required packages
 ##~~~
 print("Load packages and return status")
 #Here we use the sapply() function to require all the packages
