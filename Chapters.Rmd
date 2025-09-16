@@ -1113,13 +1113,28 @@ For example, the citation for the *knitr* package can be obtained as follows:
 citation("knitr")
 ```
 
-If you want to generate those citation entries in [BibTeX format], you can pass the object returned by `citation()` to `toBibtex()` as follows:
+If you want to generate those citation entries in BibTeX format, you can pass the object returned by `citation()` to `toBibtex()` as follows:
 
 ```{r cit2, eval=T, echo=TRUE}
 #Generate citation for knitr in BibTex format
 #Note that there is no citation identifiers. Those will be automatically generated in our next code. 
-toBibtex(citation("knitr"))
+utils::toBibtex(utils::citation("knitr"))
 ```
+
+<div class="info">
+  <p><strong>💡 Info</strong></p>
+  <ul>
+    <li>
+      Note that both <code>citation()</code> and <code>toBibtex()</code> are functions in the 
+      <i>utils</i> R package.
+    </li>
+    <li>
+      <strong>To make sure that you are calling the right R function</strong>, you can add the package 
+      name in front of the function, followed by <code>::</code>. In this example, the code is as follows: 
+      <code>utils::toBibtex(utils::citation("knitr"))</code>.
+    </li>
+  </ul>
+</div>
 
 #### Step-by-Step Procedure
 
