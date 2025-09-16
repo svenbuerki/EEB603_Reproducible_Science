@@ -1039,9 +1039,12 @@ knitr::include_graphics("Figures/knit_drop_down.png")
 
 ### Install R Dependencies and Load Packages {#loadRreq}
 
-It is best practice to add an R code chunk directly below the YAML metadata section to automatically install and load the required R packages. This ensures that all dependencies needed to produce your document are installed and available (see Figure \@ref(fig:RMarkdwnstrct)).
+It is best practice to **add an R code chunk** directly below the YAML metadata section **to automatically install and load the required R packages**.
 
-This approach also allows you to automatically generate a citation file for all R packages used in your report (see [below](#citfileRpkg)). Applying this method contributes to improving the reproducibility of your research!
+This approach offers two key benefits that support the reproducibility of your research:
+
+1. It ensures that all dependencies needed to produce your document are installed and available (see Figure \@ref(fig:RMarkdwnstrct)).  
+2. It allows you to automatically generate a citation file for all R packages used in your report (see [below](#citfileRpkg)).
 
 #### Step-by-Step Procedure
 
