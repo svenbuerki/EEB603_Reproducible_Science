@@ -1039,12 +1039,34 @@ knitr::include_graphics("Figures/knit_drop_down.png")
 
 ### Install R Dependencies and Load Packages {#loadRreq}
 
+#### Introduction
+
 It is best practice to **add an R code chunk** directly below the YAML metadata section **to automatically install and load the required R packages**.
 
 This approach offers two key benefits that support the reproducibility of your research:
 
 1. It ensures that all dependencies needed to produce your document are installed and available (see Figure \@ref(fig:RMarkdwnstrct)).  
 2. It allows you to automatically generate a citation file for all R packages used in your report (see [below](#citfileRpkg)).
+
+<style>
+.disclaimer {
+  background-color: #FFEFD5;       /* Pale orange */
+  border-left: 6px solid #FFA500;  /* Slightly darker orange */
+  padding: 1em;                    /* Space inside the box */
+  margin: 1em 0;                   /* Space around the box */
+  overflow-wrap: break-word;      /* Wrap long lines */
+  box-sizing: border-box;         /* Ensure padding stays inside width */
+}
+</style>
+<div class="disclaimer">
+  <p><strong>💡 Disclaimer</strong></p>
+  <ul>
+    <li><b>Warning:</b> The code provided in this section will install the following <code>R</code> packages on your computer: "knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools".</li>
+    <li><b>More on the <code>R</code> packages:</b> These packages are required to produce your reproducible reports in RStudio. All of them are available on <a href="https://cran.r-project.org/web/packages/" target="_blank" rel="noopener noreferrer">CRAN</a>, the official repository for <code>R</code>.</li>
+    <li><b><code>R</code> package repositories:</b> Make sure you have set your <code>R</code> package repositories in RStudio before proceeding with this tutorial. You can do this by following <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/packages.html" target="_blank" rel="noopener noreferrer">this procedure</a>.</li>
+    <li><b>Questions or concerns:</b> If you have any questions, please contact the instructor at <a href="mailto:svenbuerki@boisestate.edu">svenbuerki@boisestate.edu</a>.</li>
+  </ul>
+</div>
 
 #### Step-by-Step Procedure
 
@@ -1062,7 +1084,7 @@ knitr::include_graphics("Figures/packages_code_chunk_options.png")
 ###~~~
 # Load R packages
 ###~~~
-#Create a vector w/ the requiered R packages
+#Create a vector w/ the required R packages
 # --> If you have a new dependency, don't forget to add it in this vector
 pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools")
 
