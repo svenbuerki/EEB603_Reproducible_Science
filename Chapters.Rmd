@@ -1680,7 +1680,7 @@ Follow these steps to format your citations and bibliography according to a spec
 
 ### Introduction
 
-The **aim** of this tutorial is to provide an overview of preocedures that can be applied to streamline your R Markdown document to support your computing needs and formatting style.
+The **aim** of this tutorial is to provide an overview of procedures that can be applied to streamline your R Markdown document, supporting both your computing needs and formatting style.
 
 ### Learning Outcomes
 
@@ -1694,6 +1694,7 @@ This tutorial provides students with the opportunity to learn how to:
   + [plot output (format and resolution)](#plotout)
   + [figure positioning (close to the associated code chunks)](#figpos)
 - [Implement global options for code chunks](#setupcode)
+- [Practice the global options procedure](#practglobalopt)
 
 ---
 
@@ -1875,8 +1876,6 @@ opts_chunk$set(fig.pos = "H")
 
 ---
 
-<!-- Carry on revising text from here -->
-
 ### Implement Global Options for Code Chunks {#setupcode}
 
 In this section, we will combine all the global settings discussed above into a code chunk named `setup`, which should be placed below the YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct) for more details on its location). 
@@ -1913,37 +1912,33 @@ opts_chunk$set(fig.path = "Figures_MS/", dev = c('png', 'pdf'), dpi = 300)
 opts_chunk$set(fig.pos = "H")
 ```
 
-#### Settings of the `setup` R code chunk 
+#### Settings of the `setup` R Code Chunk {#codechunkoptions}
 
-When inserting the above code into an R code chunk (see Figure \@ref(fig:RMarkdwnstrct)), please set the options of the chunk as follows:
+When inserting the code above into an R code chunk (see Figure \@ref(fig:RMarkdwnstrct)), please set the chunk options as follows:
 
 - `setup`: Unique ID of the code chunk.
-- `include = FALSE`: Nothing will be written into the output document, but the code will be evaluated and plot files will be generated (if there are any plots in the chunk).
-- `cache = FALSE`: Code chunk will not be cached (see above for more details).
-- `message = FALSE`: Messages emitted by `message()` will not be preserved. 
+- `include = FALSE`: The code will be evaluated, and any plot files will be generated, but nothing will be written to the output document.
+- `cache = FALSE`: The code chunk will not be cached (see above for more details).
+- `message = FALSE`: Messages emitted by `message()` will not be included in the output.
 
-Options (and their associated arguments) in the code chunk have to be separated by commas.
+---
 
-### Exercise to work on learning objectives 
+### Practice the Global Options Procedure {#practglobalopt}
 
-Please conduct the above exercise to get accustomed with the material presented in the tutorial. This exercise is divided into six steps as follows:
+Please follow the procedure outlined above to implement the material presented in this section and become familiar with the tutorial content. This exercise is divided into seven steps as follows:
 
-1. Open RStudio, and open your `Chapter_1_PartB.Rmd` document.
-2. Set your working directory according to file location. **Note:** This is especially important if you want to test your R code prior to knitting the document. 
-3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) directly under the YAML metadata section and entitle it `setup`. This code chunk will be used to define the global settings for the following options as implemented in the `opts_chunk$set()` function:
-    - Text results.
-    - Code decoration.
-    - Caching code.
-    - Plots.
-    - Positioning of figures.
-4. Copy the content of the code presented in this [section](#setupcode) inside of your `setup` code chunk. 
-5. Use the R code provided [below](#step5) (which generates a plot) to learn more about the effect of global settings on code outputs.
-6. Once the file is completed, compile your document using the `Knit` ![](Figures/knit_2.png) button. Please pay attention to the outputs in your folder (= working directory).
-7. Use the `bookdown` `\@ref()` function to cite your figure/plot in the text.
+1. Open RStudio and open your `Chapter_2_PartC.Rmd` document.
+2. Set your working directory according to the file location. **Note:** This step is especially important if you want to test your R code prior to knitting the document.
+3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) directly below the YAML metadata section and name it `setup`. This code chunk will be used to define the global settings via the `opts_chunk$set()` function.
+4. Copy the content of the code presented in this [section](#setupcode) into your `setup` code chunk.
+5. Edit your code chunk options as presented [above](#codechunkoptions).
+6. Use the R code provided [below](#step5) (which generates a plot) to explore the effect of global settings on code outputs.
+7. Once you have completed the procedures associated with step 6, knit your document using the `Knit` ![](Figures/knit_2.png) button. Please pay attention to the outputs in your working directory.
+8. Use the `bookdown` `\@ref()` function to cite your figure or plot in the text.
 
-#### R code for step 5 {#step5}
+#### Code for Step 6 {#step5}
 
-The R code provided below is associated with step 5 of the exercise and it produces the plot displayed in Figure \@ref(fig:PlotFig).
+The R code provided below corresponds to step 6 of the procedure and produces the plot shown in Figure \@ref(fig:PlotFig).
 
 ```{r PlotFig, echo=FALSE, results="hide", fig.cap="Plot of y ~ x."}
 # Generate a set of observations (n=100) that have a normal distribution
@@ -1956,14 +1951,14 @@ y <- jitter(x, 1000)
 plot(x, y)
 ```
 
-To get there:
+**What you have to do:**
 
-1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) and set the following options and associated arguments:
-    - `Plot`: Unique ID of code chunk.
+1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) under the `Figures` header of your document and set the following options and arguments:
+    - `Plot`: Unique ID of the code chunk.
     - `fig.cap = "Plot of y ~ x."`: Figure caption.
     - `fig.show = "asis"`: Figure display.
     - `out.width = "100%"`: Figure width on the page.
-2. Enter the following R code in the code chunk.
+2. Enter the following R code inside the code chunk.
 
 ```{r Plot2, eval = FALSE}
 # Generate a set of observations (n=100) that have a normal distribution
@@ -1976,8 +1971,8 @@ y <- jitter(x, 1000)
 plot(x, y)
 ```
 
-3. Test your code to make sure it does what it is supposed to do (using the `Run` ![](Figures/Run.png) button).
-4. Go to step 6 in the above section and complete the exercise.
+3. Test your code to ensure it performs as expected (using the `Run` ![](Figures/Run.png) button).  
+4. Proceed to step 7 in the above section and complete the procedure.
 
 ## PART E: User-Defined Functions in R {#partE}
 
