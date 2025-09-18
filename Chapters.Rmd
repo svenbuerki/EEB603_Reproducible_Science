@@ -1311,6 +1311,7 @@ Follow the approach described in the box below to create your R Markdown file fo
   <p><strong>💡 Approach to Create Your R Markdown</strong></p>
   <ul>
     <li><strong>Create document:</strong> Make a copy of <code>Chapter2_partB.Rmd</code> in the same project folder and rename it <code>Chapter2_partC.Rmd</code></li>
+    <li><strong>Download document:</strong> If you have any issues with Chapter 2 - part B, then download the instructor version on <a href="https://drive.google.com/drive/folders/1JFjKmb0JHm96UfimO8SJLq33hE1JRu5v?usp=drive_link" target="_blank" rel="noopener noreferrer">Google Drive</a></li>
     <li><strong>Document title:</strong> Open the file in RStudio and edit the title in the YAML section to <code>Chapter 2 – Part C</code></li>
     <li><strong>Test document:</strong> Knit your document to ensure it works properly</li>
   </ul>
