@@ -1288,7 +1288,7 @@ The [References] section marks the end of the main body of your document. If you
 
 The **aim** of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
 
-In addition, the same approach and functions are used to process tables and figures, as well as to cross-reference them in the main body of the text. This tutorial will also cover how to cite references in the text, automatically generate a bibliography/references section, and format citations according to journal styles. Finally, it demonstrates how to generate an Appendix containing citations of all R packages used to conduct your research (and to produce the report).
+In addition, the same approach and functions are used to **process tables and figures, as well as to cross-reference them in the main body of the text**. This tutorial will also cover **how to cite references in the text, automatically generate a references section, and format citations according to journal styles**.
 
 ### Learning Outcomes
 
@@ -1373,7 +1373,7 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
 
 <div class="danger">
-  <p><strong>💡 Something is Missing...</strong></p>
+  <p><strong>💡 Is something missing?</strong></p>
   <ul>
     <li><strong>Challenge:</strong> Scrutinize the code provided in this section to determine how the table caption is created.</li>
     <li><strong>Test Your Hypothesis:</strong> Once you have figured out how the caption is assigned, test your hypothesis by editing it and knitting your document.</li>
