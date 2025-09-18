@@ -1977,7 +1977,7 @@ plot(x, y)
 The **aim** of this tutorial is to provide an introduction to functions; more specifically, we will be studying user-defined functions (UDFs) as implemented in R.
 
 <div class="info">
-  <p><strong>💡 Information</strong></p>
+  <p><strong>💡 UDFs 101</strong></p>
   <ul>
     <li><b>What are UDFs?</b> UDFs allow users to write their own functions and make them available in the R Global Environment.</li>
     <li><b>How do they work?</b> UDFs are saved in <code>.R</code> scripts and are made available to users using the <code>source()</code> function, which reads the file content and loads the UDFs.</li>
@@ -1985,19 +1985,29 @@ The **aim** of this tutorial is to provide an introduction to functions; more sp
   </ul>
 </div>
 
-### Learning outcomes
+### Learning Outcomes
 
-This tutorial provides students with the opportunity to learn how to:
+By the end of this tutorial, students will be able to:
 
 - [Define a function and understand its applicability](#definefunc)
-- [Learn the syntax to implement user-defined functions in R](#syntaxUDFs)
-- Learn R-specific functions associated with producing and loading functions
-- Gain background on R lists and their applicability to functions returning multiple values
-- Develop, implement, and apply user-defined functions returning single and multiple values
-- Learn protocols to implement defensive programming in your code
-- Understand the use of logical operators in R
+- [Use the correct syntax to implement user-defined functions in R](#syntaxUDFs)
+- [Apply best practices for writing clear and maintainable code](#bestcodepract1)
+- [Load and call user-defined functions](#loadandcallUDFs)
+- [Develop, implement, and apply user-defined functions that return a single value](#UDFsingle)
+- Develop, implement, and apply user-defined functions that return multiple values
+- Understand the role of R lists and how they support functions that return multiple values
+- Implement defensive programming techniques to improve code robustness
+- Use logical operators effectively within R functions
 
-To gain this knowledge, students will be conducting three exercises. To demonstrate the broad applications of the teaching material, we will be using mathematical examples. Before delving into these topics, the instructor will provide some general context and touch upon what a function is, when it is best applied, best practices for writing pseudocode/code (more during [Chapter 5](#Chap5)), and approaches to calling R functions.
+To achieve these outcomes, students will complete three guided exercises. Mathematical examples will be used to demonstrate the broad applicability of the material. Before diving into the exercises, the instructor will provide context on what functions are, when to use them, and best practices for writing pseudocode and R code (explored further in [Chapter 5](#Chap5)). The tutorial will also cover effective strategies for calling and organizing R functions.
+
+<div class="disclaimer">
+  <p><strong>💡 Disclaimer</strong></p>
+  <ul>
+    <li>This tutorial will be taught using an <code>.R</code> script.</li>
+    <li>We will discuss how to integrate user-defined functions (UDFs) from an <code>.R</code> script into your R Markdown document.</li>
+  </ul>
+</div>
 
 ---
 
@@ -2035,7 +2045,7 @@ When you use built-in functions, the only things you need to worry about are how
 
 ---
 
-### Syntax to Implement User-Defined Functions in R {#syntaxUDFs}
+### Syntax to Implement UDFs in R {#syntaxUDFs}
 
 R allows users to define their own functions (UDFs), which are based on the following syntax:
 
@@ -2047,40 +2057,57 @@ function.name <- function(arguments){
 }
 ```
 
-So, in most cases, a function has a name (here `function.name`), some arguments (here `arguments`) used as input to the function (declared within the `()` following the keyword `function`); a body, which is the code within the curly braces `{}`, where you carry out the computation; and one or more return values (the output). You define the function similarly to variables by “assigning” the directive `function(arguments)` to the “variable” `function.name`, followed by the rest.
+<div class="info">
+  <p><strong>💡 In most cases, an R function has the following components:</strong></p>
+  <ul>
+    <li><b>A name:</b> In our example, <code>function.name</code>.</li>
+    <li><b>Arguments (<code>arguments</code>):</b> These are inputs to the function, declared within the parentheses <code>()</code> following the keyword <code>function</code>.</li>
+    <li><b>A body:</b> The body is the code enclosed within curly braces <code>{}</code>, where the computation is carried out.</li>
+    <li><b>One or more return values:</b> These values are output by the user-defined function (UDF).</li>
+    <li><b>Definition syntax:</b> Overall, you define the function similarly to variables, by “assigning” the directive <code>function(arguments)</code> to the “variable” <code>function.name</code>, followed by the function body.</li>
+  </ul>
+</div>
 
-#### Best Practice to Writing Code
+### Apply Best Practices for Writing Code {#bestcodepract1}
 
-This topic will be further covered in [chapter 5](#Chap5), but here is an outline of the best practice to write code associated with your UDFs. 
+This topic will be explored in more detail in [Chapter 5](#Chap5), but here we introduce some best practices for writing clear and maintainable code.
 
+**A key part of this process involves starting with pseudocode before transitioning to actual R code.** Pseudocode provides a high-level, language-agnostic description of the tasks your function needs to perform. It allows you to plan the structure and logic of your function before dealing with R syntax.
 
-**Before delving into code writing, we will usually work on developing a pseudocode, which aims at providing a high-level description of the tasks that will have to be performed by the function.** Once this job done, we will then start writing the code by turning the tasks identified into the pseudocode into real R code. This will be done by searching for existing R functions allowing to execute each task described in the pseudocode and if they don't exist develop new functions (this task might require some additional pseudocode). Please find below more detailed definitions of the two concepts described here. 
+Once the pseudocode is defined, the next step is to translate each task into actual R code. This involves identifying existing R functions that can perform the required operations. If suitable functions do not exist, you may need to write your own—potentially supported by additional pseudocode to clarify the logic.
 
-#### Writing pseudocode
+Below, you will find more detailed definitions of the two key concepts introduced here: [pseudocode](#writepseudointro) and [code writing/implementation](#writingcodeintro).
 
-**Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm.** It uses the structural conventions of a normal programming language (here `R`), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie `R` functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.  
+#### Writing Pseudocode {#writepseudointro}
 
-#### Writing code
+**Pseudocode is an informal, high-level description of the operating logic of a computer program or algorithm.** It uses the structural conventions of a programming language (in this case, `R`) but is intended for human understanding rather than machine execution.
+
+In this stage, you outline the major steps of your function and break them down into associated tasks. You then link these steps to specific `R` functions—either existing ones or those you will need to develop. This provides the backbone of your code and supports the transition to implementation.
+
+#### Writing Code {#writingcodeintro}
 
 Writing clear, reproducible code has (at least) three main benefits:
 
-1. It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. 
-2. The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. 
-3. Having clean and reproducible code available can encourage greater uptake of new methods that you have developed (and therefore citations).
+1. It makes it much easier to revisit your code months later—whether you're returning to an old project or making revisions after peer review.
+2. It allows others to more easily scrutinize the results of your analysis, helping to establish their validity.
+3. Clean, well-documented, and reproducible code can encourage others to adopt any new methods you've developed (and can lead to more citations).
 
-### Loading and calling UDFs
+---
 
-When you will be working on your project, it is highly likely that you will have developed multiple UDFs tailored to your research. In this case, it would be appropriate to create a new folder entitled `R_functions`, which will be located in the same directory as your R scripts (see Figure \@ref(fig:Structure)). Save all your UDFs as independent files (e.g. `check.install.pkg.R`) into the `R_functions` folder.
+### Load and Call UDFs {#loadandcallUDFs}
+
+When working on your project, it is highly likely that you will develop multiple UDFs tailored to your research. In this case, it is recommended to create a dedicated folder named `R_functions` within your project directory (see Figure \@ref(fig:Structure)). Save each UDF as a separate file (e.g., `check.install.pkg.R`) inside the `R_functions` folder.
 
 ```{r Structure, echo=FALSE, fig.cap="Example file structure of a simple analysis project. See Chapter 4 for more details", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Example_project_structure.png")
 ```
 
-#### The `source()` function: Read R code from a file
+#### The `source()` Function
 
-Once your project will be properly structured (see Figure \@ref(fig:Structure)), it will be easy to call specific UDFs into any R script by using the `source()` function.
+Once your project is properly structured (see Figure \@ref(fig:Structure)), it becomes easy to load specific UDFs stored in separate R scripts using the `source()` function.
 
-For instance, to load the `check.install.pkg()` (saved in `R_functions/check.install.pkg.R`) into the Global Environment enter the following code into the R console (see Figure \@ref(fig:sourceUDF)):
+For example, to load the `check.install.pkg()` function (saved as `R_functions/check.install.pkg.R`) into the Global Environment, enter the following code in the R console (see Figure \@ref(fig:sourceUDF)):
+
 
 ```{r echo=TRUE, eval=T}
 source("R_functions/check.install.pkg.R")
@@ -2090,7 +2117,7 @@ source("R_functions/check.install.pkg.R")
 knitr::include_graphics("Figures/source_view.png")
 ```
 
-Below, you will find some R code allowing to load all your UDFs stored in `R_functions` folder. This code is very handy when you have several UDFs associated to your pipeline.
+Below is an example of R code that loads all your UDFs stored in the `R_functions` folder. This approach is especially useful when you have multiple UDFs associated with your analysis pipeline.
 
 ```{r sourceallUDF, echo=T, eval=F}
 ###
@@ -2098,37 +2125,30 @@ Below, you will find some R code allowing to load all your UDFs stored in `R_fun
 ##
 
 #1. Create vector with names of UDF files in R_functions (with full path)
-files_source <- list.files("R_functions", full.names=T)
+files_source <- list.files("R_functions", full.names = T)
 
 #2. Iterative sourcing of all UDFs
 sapply(files_source, source)
 ```
 
+#### Call Your UDFs
 
-### Call your UDFs
-
-Once loaded into your Global Environment (see Figure \@ref(fig:sourceUDF) for an example), you will be able to call your functions by typing their names directly into the console. For instance:
+Once your UDFs are loaded into the Global Environment (see Figure \@ref(fig:sourceUDF) for an example), you can call them by typing their names directly into the R console. For example:
 
 ```{r echo=TRUE, eval=T}
 #Check if knitr package is installed, if not install it and then load it
 check.install.pkg(pkg=c("knitr"))
 ```
 
-### Exercises
+---
 
-#### What do you need to complete this tutorial?
+### Develop, Implement, and Apply UDFs That Return a Single Value {#UDFsingle}
 
-To complete part D, please create a new R script document (Figure \@ref(fig:Rscript)) and save it in your working directory. All the code and functions presented here should be reported in your R script. 
+In this section, we will focus on developing UDFs that return a single value. But how do we tell a function what to return?
 
-```{r Rscript, echo=FALSE, fig.cap="Snapshot of RStudio showing procedure to create a new R script document.", fig.show="asis", out.width = '100%'}
-knitr::include_graphics("Figures/R_script.png")
-```
+In R, this is done using the `return()` function.
 
-
-
-### Exercise 1: Develop, implement and apply function returning a single value
-
-In this exercise, we will be working on developing a function that returns a single value, but how do we tell our UDF to return the value? In R, this task is accomplished with the `return()` function.
+<!-- START FROM HERE -->
 
 #### Aim
 
