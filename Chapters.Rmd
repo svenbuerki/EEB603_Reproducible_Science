@@ -2148,28 +2148,40 @@ In this section, we will focus on developing UDFs that return a single value. Bu
 
 In R, this is done using the `return()` function.
 
-<!-- START FROM HERE -->
+To learn this skill, we will work on a challenge.
 
-#### Aim
+#### Challenge
 
-**Develop, implement and apply a UDF to calculate the square of a number.** 
+We are tasked with **developing, implementing, and applying a UDF to calculate the square of a number.**
 
-In math, the squared symbol ($^2$) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
+#### Writing Pseudocode
 
-#### Pseudocode
+Let's begin by understanding this challenge from a mathematical perspective. Then, we will develop a pseudocode to solve it computationally. Finally, we will implement our solution in R.
 
-Although straightforward, the function will have to execute the following tasks:
+In **mathematics**, the squared symbol ($^2$) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
 
-1. Store number inputted by user into an object entitled `base` as part of the argument(s) of the function.  
-2. Infer square of `base` by multiplying number by itself.
-3. Save output of task 2 into an object called `sq`.
-4. Return `sq` object to user (here a single value). To return `sq`, we will be using the `return()` function.
+Although this task is straightforward, the function will still need to perform the following steps (i.e., pseudocode):
 
-This also means that the class of the **input** provided by user has to be **numeric** and the **output** will also be **numeric**. We will further discuss this topic during the third exercise. The class of an object can be checked by using the `class()` function. **Note:** The `class()` function will be useful for implementing defensive programming.
+1. Store the number inputted by the user into an object called `base`, as part of the function’s argument(s).
+2. Calculate the square of `base` by multiplying the number by itself.
+3. Save the result of step 2 into an object called `sq`.
+4. Return the `sq` object to the user (a single numeric value). To do this, we will use the `return()` function.
 
-#### Turning your pseudocode into a function
+<div class="info">
+  <p><strong>💡 Let's talk about the class of input/output data</strong></p>
+  <ul>
+    <li><strong>Input:</strong> The class of the input data must be <code>numeric</code>.</li>
+    <li><strong>Output:</strong> The class of the output data must also be <code>numeric</code>.</li>
+    <li><strong>Tip:</strong> You can check the class of an object using the <code>class()</code> function.</li>
+    <li>The <code>class()</code> function is also useful when implementing defensive programming.</li>
+  </ul>
+</div>
 
-In this section, we will implement the pseudocode proposed above into a function entitled `square_number()`. This function requires one argument from the user (`base`, which is a number) and returns the square of that number (here square of `base` = `base`*`base`). 
+#### Writing Code
+
+In this section, we will implement the pseudocode outlined above in a function called `square_number()`. 
+
+This function takes one argument from the user (`base`, a number) and returns the square of that number (i.e., `base * base`).
 
 ```{r tidy = FALSE, echo=TRUE, eval=T}
 ## Create a UDF in R to calculate square number:
@@ -2183,6 +2195,8 @@ square_number <- function(base){
   return(sq)
 }
 ```
+
+<!-- START HERE -->
 
 Write the code associated to the `square_number` into your new R script (saved in your working directory) and load function by executing all lines associated to function. Please carry on populating this document with the rest of the exercises.
 
