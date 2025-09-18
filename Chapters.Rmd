@@ -2197,30 +2197,32 @@ square_number <- function(base){
 }
 ```
 
-<!-- START HERE -->
+##### Implement and Load the UDF in R
 
-Write the code associated to the `square_number` into your new R script (saved in your working directory) and load function by executing all lines associated to function. Please carry on populating this document with the rest of the exercises.
+Follow these steps to implement and load the UDF in R:
 
-#### Loading your function into the Global Environment
-
-Before being able to use your UDF, execute the code associated to the `square_number()` function in the console. The UDF should now be loaded in the Global Environment and therefore be available for use. To verify that the UDF is loaded, please check the Environment panel in RStudio (see Figure \@ref(fig:envir)).
+1. Create a new folder named `R_functions` inside your `Chapter_2` folder.
+2. In RStudio, create a new `.R` script and save it as `square_number.R` in `Chapter_2/R_functions`.
+3. Copy the code for the `square_number` function into your new R script.
+4. Load the function into the Global Environment by executing all lines related to `square_number`.
+5. Verify that `square_number` has been loaded by checking the Environment panel in RStudio (see Figure \@ref(fig:envir)).
 
 ```{r envir, echo=FALSE, fig.cap="Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Environment_RStudio.png")
 ```
 
-#### Applying your function
+#### Apply Your Function
 
-The R language is quite flexible and allows functions to be applied to a single value (e.g. `base = 2`) or a vector (e.g. `base = c(2,4,16,23,45)`). Please see below for more example:
+The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
 
-1. Apply function to one value:
+1. Apply the function to a single value:
 
 ```{r echo=TRUE, eval=T}
 #Square number of 2
 square_number(base = 2)
 ```
 
-2. Apply function to a vector containing multiple values:
+2. Apply the function to a vector containing multiple values:
 
 ```{r echo=TRUE, eval=T}
 #Create vector with numbers
@@ -2230,7 +2232,7 @@ bases <- c(2,4,16,23,45)
 square_number(base = bases)
 ```
 
-### Exercise 2: Develop, implement and apply function returning multiple values
+### Develop, implement and apply function returning multiple values
 
 In our previous exercise we developed a function returning only one value. As part of your research, there will be multiple instances where you will be performing multiple actions onto your data, which will call for multiple values to be outputted by the function. To do so, we will be **harvesting the different outputs of the function into a list, which will be returned to the users** (using `return()`).
 
