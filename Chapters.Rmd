@@ -2665,7 +2665,7 @@ knitr::include_graphics("Figures/Threats2reproducible_science.png")
 
 ### Glossary of Common Threats to the Scientific Process {#gloss}
 
-Below are definitions of common threats to the scientific process:
+Below are definitions of common threats to the scientific process (see Figure \@ref(fig:ThreatReproSci)):
 
 **HARKing:** Hypothesizing After the Results are Known. This occurs when a *post hoc* hypothesis—that is, a hypothesis developed based on or informed by the observed results—is presented in a research report as if it were an *a priori* hypothesis (formulated before the study).
 
