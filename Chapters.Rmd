@@ -1380,6 +1380,40 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
   </ul>
 </div>
 
+#### Double "Table" in Caption
+
+Several students have encountered an issue with duplicate table labels in the caption. The instructor did a web search and found a possible solution to help debug the issue:
+
+- **Problem:** When using `kableExtra::kbl()` or `knitr::kable()` in combination with `kableExtra` functions, you might see a caption like "Table Table X: Your Caption".
+- **Solution:** Specify the `format` argument in `knitr::kable()` (e.g., `format = "html"`), or use `kableExtra::kbl()` directly, which automatically handles the format. This prevents `kableExtra` from re-interpreting a markdown table as a new table and adding an extra "Table" prefix.
+
+In our case, we could try editing the code as follows (two options):
+
+```{r tabgrades3, eval=FALSE, echo=TRUE}
+###
+# Load package (for testing)
+###
+library(dplyr)
+
+###
+# Create a data.frame w/ grading scale
+###
+grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
+
+###
+# Plot table and add caption
+###
+
+# Option 1
+knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>% kableExtra::kable_styling(c("striped","scale_down"))
+
+# Option 2
+kableExtra::kbl(grades, caption = "Grading scale applied in this class.") %>%
+kableExtra::kable_styling(c("striped","scale_down"))
+```
+
+The instructor encourages students to test the options proposed above in their own documents and determine whether they resolve the issue.
+
 ---
 
 ### Insert Figures {#insertfigure}
