@@ -1597,7 +1597,7 @@ In this section, we will cover the following topics to implement the tools for r
 ###### Challenge <span style="color:gray;">(5 minutes)</span>
 
 <div class="danger">
-  <p><strong>💡 Exercise: Download a Citation in BibTeX Format</strong></p>
+  <p><strong>💡 Download a Citation in BibTeX Format</strong></p>
   <ul>
     <li>Visit this <a href="https://doi.org/10.1093/botlinnean/box083" target="_blank" rel="noopener noreferrer">webpage</a>.</li>
     <li>Locate the <code>Cite</code> icon and download a citation in <code>.bibtex</code> format.</li>
@@ -1656,7 +1656,7 @@ Once knitted, the citation is rendered as:
 
 @Baker_2016 [p. 1] says blah.
 
-###### Practice Citing References <span style="color:gray;">(10 minutes)</span>
+###### Challenge <span style="color:gray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Your turn to practice citing references in your document by:</strong></p>
@@ -1682,7 +1682,7 @@ last paragraph...
 
 The bibliography will be inserted after this header (please see the [References] section of this tutorial for more details).
 
-#### Step-by-Step Procedure <span style="color:gray;">(10 minutes)</span>
+#### Challenge <span style="color:gray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Your Turn!</strong></p>
