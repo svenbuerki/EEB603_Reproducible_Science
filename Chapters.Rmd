@@ -1339,7 +1339,7 @@ grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "8
 knitr::kable(grades, caption = "Grading scale applied in this class.") %>% kable_styling(c("striped","scale_down"))
 ```
 
-#### Step-by-Step Protocol
+#### Step-by-Step Protocol <span style="color:gray;">(10 minutes)</span>
 
 Follow these steps to reproduce Table \@ref(tab:tabgrades) in your R Mardown document: 
 
@@ -1372,6 +1372,8 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
 ```
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
 
+##### Challenge <span style="color:gray;">(10 minutes)</span>
+
 <div class="danger">
   <p><strong>💡 Is something missing?</strong></p>
   <ul>
@@ -1380,7 +1382,7 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
   </ul>
 </div>
 
-#### Double "Table" in Caption
+#### Double "Table" in Caption <span style="color:gray;">(10 minutes)</span>
 
 Several students have encountered an issue with duplicate table labels in the caption. The instructor did a web search and found a possible solution to help debug the issue:
 
@@ -1434,9 +1436,9 @@ summary(cars)
 plot(cars)
 ```
 
-#### Step-by-Step Protocol
+#### Step-by-Step Protocol <span style="color:gray;">(10 minutes)</span>
 
-Follow these steps to reproduce Figure \@ref(fig:cars) in your R Mardown document: 
+Follow these steps to reproduce Figure \@ref(fig:cars) in your R Markdown document: 
 
 1. If not done yet, open `Chapter2_partC.Rmd` in RStudio.
 2. Add a first-level header titled `Figures` below the `Tables` header.  
@@ -1461,6 +1463,8 @@ plot(cars)
 6. Add the unique label `cars` in the chunk options line (immediately after `{r`) to enable cross-referencing. 
 7. Test your R code to ensure it produces the expected table by clicking the `Play` button at the top left of the code chunk (as done in [Tables](#inserttable)). 
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
+
+##### Challenge <span style="color:gray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Challenge</strong></p>
@@ -1495,7 +1499,7 @@ Figure \@ref(fig:code_chunk_ID)
   </ul>
 </div>
 
-#### Step-by-Step Procedure
+#### Step-by-Step Procedure <span style="color:gray;">(10 minutes)</span>
 
 1. To cross-reference your table (labeled `tabgrades`) in the text, follow these steps:
     - Type the following sentence below your `Tables` header:  
@@ -1521,7 +1525,7 @@ In this section, we will cover the following topics before delving into the prac
 
 ##### The Bibliography File {#bibFile}
 
-Pandoc can automatically generate citations in your text and a References section following a specific journal style (see Figure \@ref(fig:RMarkdwnstrct)). To use this feature, you need to declare a bibliography file in the [YAML metadata section].
+Pandoc can automatically generate citations in your text and a References section following a specific journal style (see Figure \@ref(fig:RMarkdwnstrct)). To use this feature, you need to declare a bibliography file in the [YAML metadata section] under the `bibliography:` field.
 
 In this course, we are working with bibliography files formatted using the [`BibTeX`](#BibTexFormat) format. Other formats can also be used — please see this [resource](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more details.
 
@@ -1589,7 +1593,9 @@ In this section, we will cover the following topics to implement the tools for r
 3. Declare the name of your bibliography file in the [YAML metadata section] under the `bibliography:` field.  
 4. References formatted in the `BibTeX` format are available in the following file:  
     + `Bibliography_Reproducible_Science_2.bib`
-    
+
+###### Challenge <span style="color:gray;">(5 minutes)</span>
+
 <div class="danger">
   <p><strong>💡 Exercise: Download a Citation in BibTeX Format</strong></p>
   <ul>
@@ -1604,10 +1610,10 @@ In this section, we will cover the following topics to implement the tools for r
 
 We will examine the syntax for citing references, either as parenthetical citations or in-text citations.
 
-- **Parenthetical Citation:** The entire citation appears in parentheses, usually at the end of a sentence or clause.  
-- **In-Text Citation:** The author's name is part of the sentence, and the citation appears naturally in the flow of the text.
+- [Parenthetical Citation:](#parentcitation) The entire citation appears in parentheses, usually at the end of a sentence or clause.  
+- [In-Text Citation:](#intextcitation) The author's name is part of the sentence, and the citation appears naturally in the flow of the text.
 
-###### Parenthetical Citation
+###### Parenthetical Citation {#parentcitation}
 
 In this case, citations are placed inside square brackets (`[]`) (usually at the end of a sentence or clause) and separated by semicolons. Each citation must include a key composed of `@` followed by the citation identifier (as stored in the `BibTeX` file).
 
@@ -1635,7 +1641,7 @@ Once knitted, the citation is rendered as:
 
 Baker says blah blah [-@Baker_2016].
 
-###### In-Text Citation
+###### In-Text Citation {#intextcitation}
 
 In this case, in-text citations can be rendered with the following syntax:
 ```{r eval=FALSE}
@@ -1650,7 +1656,7 @@ Once knitted, the citation is rendered as:
 
 @Baker_2016 [p. 1] says blah.
 
-##### Practice Citing References
+###### Practice Citing References <span style="color:gray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Your turn to practice citing references in your document by:</strong></p>
@@ -1676,6 +1682,8 @@ last paragraph...
 
 The bibliography will be inserted after this header (please see the [References] section of this tutorial for more details).
 
+#### Step-by-Step Procedure <span style="color:gray;">(10 minutes)</span>
+
 <div class="danger">
   <p><strong>💡 Your Turn!</strong></p>
   <ul>
@@ -1700,14 +1708,18 @@ There are two main CSL repositories:
 - **GitHub Repository:** https://github.com/citation-style-language/styles
 - **Zotero Style Repository:** https://www.zotero.org/styles
 
-#### Step-by-Step Procedure
+#### Step-by-Step Procedure <span style="color:gray;">(10 minutes)</span>
 
 To learn this procedure and syntax, you will be tasked with downloading a `.csl` file and using it in your document (in place of `AmJBot.csl`).
 
 Follow these steps to format your citations and bibliography according to a specific citation style (see Figure \@ref(fig:RMarkdwnstrct) for more details):
 
-1. Download a `.csl` file from one of the repositories provided above.  
-2. Place your `.csl` file in your project folder (alongside your `.Rmd` file).  
+1. Download a `.csl` file from the [Zotero Style Repository](https://www.zotero.org/styles).
+    + To do this, type the name of your target journal in the search bar. Then, right-click on the corresponding style and select **"Save Link As..."** to download the `.csl` file. Save it in your project folder (see Figure \@ref(fig:zoterosavecsl)).
+    ```{r zoterosavecsl, echo=FALSE, fig.cap = "Procedure to save csl file for PNAS on the Zotero Style Repository.", fig.show = "asis", out.width = '100%'}
+knitr::include_graphics("Figures/zotero_save_csl_procedure.png")
+```
+2. Make sure your `.csl` file is in your project folder (alongside your `.Rmd` file).  
 3. Edit your YAML metadata section to specify the name of your `.csl` file.
 4. Knit your document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information specified in the YAML metadata section to format both the in-text citations and the bibliography section according to the citation style defined in the CSL file. Be sure to add a `References` header at the end of your `.Rmd` document.
 
