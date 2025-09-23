@@ -1533,7 +1533,7 @@ Most journals allow citations to be downloaded in `BibTeX` format, but if this f
 
 ##### The BibTeX Format {#BibTexFormat}
 
-BibTeX is a reference management tool commonly used in conjunction with LaTeX (a Markup language) to format lists of references in scientific documents. It allows users to maintain a bibliographic database (`.bib` file) and cite references in a consistent and automated way.
+**BibTeX is a reference management tool commonly used** in conjunction with LaTeX (a Markup language) **to format lists of references** in scientific documents. It allows users to maintain a bibliographic database (`.bib` file) and cite references in a consistent and automated way.
 
 Each entry in a `.bib` file follows this general structure:
 
