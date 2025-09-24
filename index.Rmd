@@ -165,6 +165,11 @@ The reading material at the basis of this course is composed of a mixture of pub
 | **Chap. 11** | Chapter 10 of @Gandrud2015, Chapters 1 and 22 of @Wickham2017 & @Yu2017 |
 | **Chap. 12** | Chapter 5 of @Gandrud2015 |
 
+The two main textbooks can be found here:  
+- @Gandrud2015 is available at this <a href="https://api.pageplace.de/preview/DT0400.9780429629594_A38620567/preview-9780429629594_A38620567.pdf" target="_blank" rel="noopener noreferrer">URL</a>.  
+- @Wickham2017 can be accessed at this <a href="https://r4ds.had.co.nz/" target="_blank" rel="noopener noreferrer">URL</a>.
+
+
 ## Examples of Reproducible Science
 
 To further illustrate how a reproducible approach can be applied to research, the instructor provides examples of publications and software produced by students who have taken this course (listed alphabetically):
