@@ -1978,7 +1978,7 @@ Please follow the procedure outlined above to implement the material presented i
 
 1. Open RStudio and open your `Chapter_2_PartC.Rmd` document.
 2. Set your working directory according to the file location. **Note:** This step is especially important if you want to test your R code prior to knitting the document.
-3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) directly below the YAML metadata section and name it `setup`. This code chunk will be used to define the global settings via the `opts_chunk$set()` function.
+3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) directly below your `packages` code chunk and name it `setup`. This code chunk will be used to define the global settings via the `opts_chunk$set()` function.
 4. Copy the content of the code presented in this [section](#setupcode) into your `setup` code chunk.
 5. Edit your code chunk options as presented [above](#codechunkoptions).
 6. Use the R code provided [below](#step5) (which generates a plot) to explore the effect of global settings on code outputs.
