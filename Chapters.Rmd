@@ -2052,11 +2052,10 @@ By the end of this tutorial, students will be able to:
 - [Implement defensive programming techniques to improve code robustness](#defensiveprog)
 - [Use logical operators effectively within R functions](#logicalop)
 
-To achieve these outcomes, students will complete three guided exercises. Mathematical examples will be used to demonstrate the broad applicability of the material. Before diving into the exercises, the instructor will provide context on what functions are, when to use them, and best practices for writing pseudocode and R code (explored further in [Chapter 5](#Chap5)). The tutorial will also cover effective strategies for calling and organizing R functions.
-
 <div class="disclaimer">
   <p><strong>💡 Disclaimer</strong></p>
   <ul>
+    <li>To achieve the learning outcomes, students will complete three guided exercises. Mathematical examples will be used to demonstrate the broad applicability of the material. Before diving into the exercises, the instructor will provide context on what functions are, when to use them, and best practices for writing pseudocode and R code (explored further in <a href="#Chap5">Chapter 5</a>). The tutorial will also cover effective strategies for calling and organizing R functions.</li>
     <li>This tutorial will be taught using an <code>.R</code> script.</li>
     <li>We will discuss how to integrate user-defined functions (UDFs) from an <code>.R</code> script into your R Markdown document.</li>
   </ul>
@@ -2564,6 +2563,8 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 
 # Chapter 3 {#chap3}
 
+## Let's start with a quote
+
 While studying the material presented in this chapter, keep in mind this quote from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman):
 
 > *The first principle is that you must not fool yourself — and you are the easiest person to fool.*
@@ -2572,7 +2573,7 @@ While studying the material presented in this chapter, keep in mind this quote f
 
 In this chapter, we engage in readings and group discussions to **develop a roadmap for implementing reproducible science** with the goal of supporting your research.
 
-We will start by reviewing the steps involved in the scientific process and identifying threats to this process. Then, we will discuss solutions to mitigate these threats and learn about initiatives that promote and reward reproducibility in science.
+We will begin by reviewing the steps involved in the scientific process and identifying threats to this process. Then, we will discuss solutions to mitigate these threats and learn about initiatives that promote and reward reproducibility in science.
 
 ---
 
@@ -2914,7 +2915,7 @@ knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 
 **Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** 
 
-Nowadays, funding agencies and journals are moving forward to promote Open Science and we started discussing this approach in [Chapter 3](#chap3). For instance, the [White House](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/) is requiring immediate public access to all U.S.-funded research papers by 2025 without an embargo or cost. You can learn more about this initiative in this *Science* news article ([doi: 10.1126/science.ade6076](https://www.science.org/content/article/white-house-requires-immediate-public-access-all-u-s--funded-research-papers-2025)).
+Nowadays, funding agencies and journals are moving forward to promote Open Science and we started discussing this approach in [Chapter 3](#chap3).
 
 ## Objectives
 
@@ -2952,7 +2953,7 @@ This chapter is based on:
 - FAIR Principles: https://www.go-fair.org/fair-principles/
 - LERU Roadmap for Open Science: https://www.leru.org/publications/open-science-and-its-role-in-universities-a-roadmap-for-cultural-change#
 - United Nations Declaration on the Rights of Indigenous Peoples: https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html
-- White House requires immediate public access to all U.S.-funded research papers by 2025: https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/
+
  
 **Publications**
 
