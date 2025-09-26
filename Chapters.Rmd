@@ -2915,18 +2915,18 @@ knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 
 ## Challenge
 
-**Balancing Open Science to support reproducibility with the values of your stakeholders can be a challenging task.**
+Today, funding agencies and journals are increasingly promoting Open Science, a topic we began discussing in [Chapter 3](#chap3). In this context:
 
-Today, funding agencies and journals are increasingly promoting Open Science, a topic we began discussing in [Chapter 3](#chap3).
+> *Balancing the promotion of Open Science to support reproducibility with the values of your stakeholders can be a challenging task.*
 
 ---
 
 ## Aim
 
-The ***aim*** of this chapter is to **examine the mechanisms used to promote Open Science, while also recognizing situations in which other principles must be adopted to respect diverse perspectives, values, or data sovereignty (a.k.a., the CARE Principles)**.
+This chapter aims to **explore how Open Science is promoted while recognizing when other principles, like the CARE Principles, must be applied to respect diverse perspectives, values, and data sovereignty**.
 
-Overall, this chapter aims to **provide solutions for addressing threats to the scientific process** (introduced in Chapters [1](#chap1) and [3](#chap3)), as well as **guidance on managing the data life cycle and disseminating research responsibly**.
- 
+It also provides **solutions to address threats to the scientific process** (introduced in Chapters [1](#chap1) and [3](#chap3)) and **guidance on managing the data life cycle and responsibly sharing research**.
+
 ---
 
 ## Learning Outcomes
@@ -2934,17 +2934,10 @@ Overall, this chapter aims to **provide solutions for addressing threats to the 
 By the end of this chapter, you will be able to:
 
 - [Understand what Open Science is](#WhatisOS)
-- Identify and describe the seven pillars of Open Science:
-    + [FAIR Data](#FAIR)
-    + [Research Integrity](#RI)
-    + [Next Generation Metrics](#NGSMet) 
-    + [Future of Scholarly Communication](#FSC) 
-    + [Citizen Science](#CS)
-    + [Education and Skills](#ES)
-    + [Rewards and Incentives](#EI)
-- Explain the Open Access mechanism and how it supports Open Science
-- Describe the purpose and use of Creative Commons licenses in scientific publications
-- Understand the CARE Principles and the concept of data sovereignty, particularly in relation to Indigenous Peoples
+- [Identify and describe the seven pillars of Open Science:](#pillars)
+- [Explain the Open Access mechanism and how it supports Open Science](#openaccess)
+- [Describe the purpose and use of Creative Commons licenses in scientific publications](#CClicenses)
+- [Understand the CARE Principles and data sovereignty, especially concerning Indigenous Peoples](#CARE)
 
 ---
 
@@ -2986,9 +2979,7 @@ While this definition focuses on access to research outputs, several other organ
 
 ---
 
-<!-- START FROM HERE -->
-
-## What are the pillars of Open Science?
+## What are the Pillars of Open Science? {#pillars}
 
 The 7 pillars of Open Science are: 
 
@@ -3002,18 +2993,21 @@ The 7 pillars of Open Science are:
 
 ### FAIR Data {#FAIR}
 
-The FAIR Principles [@Wilkinson2016] steward researchers in making outputs of research that are (Figure \@ref(fig:FAIR)):
+The [FAIR Principles](https://doi.org/10.1038/sdata.2016.18) [@Wilkinson2016] guide researchers in ensuring that research outputs are (Figure \@ref(fig:FAIR)):
 
-- **F**indable: making research outputs **discoverable** by the wider academic community and the public.
-- **A**ccessible: using **unique identifiers**, metadata and a clear use of language and access protocols.
-- **I**nteroperable: applying **standards to encode and exchange** data and metadata. Interoperability is the ability of different systems, devices, applications or products to connect and communicate in a coordinated way, without effort from the end user.
-- **R**eusable: enabling the **re-purposing** of research outputs to maximize their research potential.
+- **F**indable: Research outputs should be **discoverable** by the broader academic community and the public.
+- **A**ccessible: Data should be accompanied by **unique identifiers**, metadata, and clear language, using standardized access protocols.
+- **I**nteroperable: Data and metadata should follow **recognized standards** that allow them to be shared and integrated across systems. Interoperability means that different tools, platforms, or systems can connect and communicate **seamlessly**, without extra effort from the user.
+- **R**eusable: Research outputs should be designed for **reuse and re-purposing**, allowing others to maximize their research potential.
 
-When combined, these four elements are designed to help:
-
-- Lower barriers to research outputs 
-- Facilitate potential secondary researchers finding, understanding, reusing and re-purposing data to realize additional research opportunities
-- Maximize existing resources
+<div class="info">
+  <p><strong>💡 Why FAIR Matters:</strong></p>
+  <ul>
+    <li>Reduces barriers to accessing and using research outputs.</li>
+    <li>Helps secondary researchers find, understand, and reuse data to generate new insights.</li>
+    <li>Maximizes the value of existing research resources.</li>
+  </ul>
+</div>
 
 ```{r FAIR, echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
 knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
@@ -3021,140 +3015,200 @@ knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
 
 #### The FAIR Guiding Principles
 
-@Wilkinson2016 have provided the following guidelines that have to be applied to support the FAIR Principles:
+@Wilkinson2016 outline a set of guidelines that support the implementation of the FAIR Principles. These guidelines ensure that data and metadata are structured in a way that promotes discovery, access, integration, and reuse.
 
 1. **To be Findable:**
-    - F1. (meta)data are assigned a globally unique and persistent identifier
-    - F2. data are described with rich metadata (defined by R1 below)
-    - F3. metadata clearly and explicitly include the identifier of the data it describes
-    - F4. (meta)data are registered or indexed in a searchable resource
+    - **F1.** (Meta)data are assigned a globally unique and persistent identifier.  
+    - **F2.** Data are described with rich metadata (as defined by R1 below).  
+    - **F3.** Metadata clearly and explicitly include the identifier of the data they describe.  
+    - **F4.** (Meta)data are registered or indexed in a searchable resource.
 
 2. **To be Accessible:**
-    - A1. (meta)data are retrievable by their identifier using a standardized communications protocol
-      - A1.1 the protocol is open, free, and universally implementable
-      - A1.2 the protocol allows for an authentication and authorization procedure, where necessary
-      - A2. metadata are accessible, even when the data are no longer available
+    - **A1.** (Meta)data are retrievable by their identifier using a standardized communication protocol.  
+        - **A1.1.** The protocol is open, free, and universally implementable.  
+        - **A1.2.** The protocol allows for authentication and authorization, where necessary.  
+    - **A2.** Metadata remain accessible even when the data are no longer available.
 
 3. **To be Interoperable:**
-    - I1. (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
-    - I2. (meta)data use vocabularies that follow FAIR principles
-    - I3. (meta)data include qualified references to other (meta)data
+    - **I1.** (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.  
+    - **I2.** (Meta)data use vocabularies that themselves follow FAIR principles.  
+    - **I3.** (Meta)data include qualified references to other (meta)data.
 
 4. **To be Reusable:**
-    - R1. meta(data) are richly described with a plurality of accurate and relevant attributes
-      - R1.1. (meta)data are released with a clear and accessible data usage license
-      - R1.2. (meta)data are associated with detailed provenance
-      - R1.3. (meta)data meet domain-relevant community standards
+    - **R1.** (Meta)data are richly described with a plurality of accurate and relevant attributes.  
+        - **R1.1.** (Meta)data are released with a clear and accessible data usage license.  
+        - **R1.2.** (Meta)data are associated with detailed provenance.  
+        - **R1.3.** (Meta)data conform to domain-relevant community standards.
+        
+---
 
 ### Research Integrity {#RI}
 
-This is the practice of researchers acting honestly, reliably, respectfully and are accountable for their actions. 
+Research integrity refers to the commitment of researchers to act **honestly, reliably, respectfully**, and to be **accountable** for their actions throughout the research process.
 
-At BSU, the [Office of Research Compliance](https://www.boisestate.edu/research-compliance/) is providing some information and guidance associated with research integrity.  
+At Boise State University, the [Office of Research Compliance](https://www.boisestate.edu/research-compliance/) provides resources and guidance to support best practices in research integrity.
+
+---
 
 ### Next Generation Metrics {#NGSMet}
 
-The next-generation metrics pillar of Open Science seeks to catalyze a shift in cultural thinking around the way in which [bibliometrics](https://en.wikipedia.org/wiki/Bibliometrics) are utilized in research, particularly when evaluating quality, and go beyond simply citation counts and journal impact (Figure \@ref(fig:NGSMetrics)). Appropriate metrics, drawn from different sources and describing different things, can help us **gain a broader understanding of the significance and impact of research**.
+The **Next Generation Metrics** pillar of Open Science aims to shift cultural thinking around how research is evaluated. It encourages moving beyond traditional metrics—such as citation counts and journal impact factors—toward more diverse, meaningful indicators of research quality and influence.
+
+These metrics, drawn from a variety of sources and describing different aspects of scholarly impact, can help us **gain a broader and more nuanced understanding of the significance and reach of research**.
+
+In this chapter, we demonstrate this topic with two examples:
+
+- [The San Francisco Declaration on Research Assessment](#DORA)
+- [Altmetric](#altmetric)
+
+##### The San Francisco Declaration on Research Assessment {#DORA}
+
+The [San Francisco Declaration on Research Assessment (DORA)](https://sfdora.org/) exemplifies the growing shift in how research quality is evaluated. Increasingly, institutions and funding bodies are supporting DORA and **openly rejecting the use of journal impact factors and other quantitative metrics** as primary indicators of research quality.
+
+Among many others, **Springer Nature** has endorsed DORA. You can view their specific commitments [here](https://www.springernature.com/gp/researchers/dora).
+
+##### Altmetric {#altmetric}
+
+Another example is [Altmetric](https://www.altmetric.com/), a tool that tracks and demonstrates the **reach and influence of research outputs**—particularly among key stakeholders—by focusing primarily on social media and other online platforms (Figure \@ref(fig:NGSMetrics)).
+
 
 ```{r NGSMetrics, echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
 knitr::include_graphics("Figures/Metrics_example.png")
 ```
 
-##### The San Francisco Declaration of Research Assessment - DORA
-
-As an example showing changes in how research is perceived, more institutions and funders are supporting the [San Francisco Declaration of Research Assessment - DORA](https://sfdora.org/) and openly reject the use of quantitative metrics commonly associated with journal impact factors as a measure of research quality. Among many others, Springer Nature has joined DORA and [here](https://www.springernature.com/gp/researchers/dora) are their commitments.
-
-##### Altmetric
-
-Another example is the [Altmetric](https://www.altmetric.com/), which tracks and demonstrates the **reach and influence of your work to key stakeholders** by mainly focusing on social media (Figure \@ref(fig:NGSMetrics)).
+---
 
 ### Future of Scholarly Communication {#FSC}
 
-The future of scholarly communication is one of the most prominent pillars of Open Scholarship given its intention to **shift the current academic publishing model towards fully Open Access**. We will be developing more this topic below in our section on open access and associated licenses.
+The future of scholarly communication is one of the most prominent pillars of Open Scholarship, as it aims to **shift the current academic publishing model toward fully Open Access**. We will explore this topic further in the section on Open Access and associated licenses below.
+
+---
 
 ### Citizen Science {#CS}
 
-Movement towards **members of the public having a greater role within research** and recognizing the invaluable role they play in providing insights a researcher may not typically have. Examples of such initiatives are e.g. [eBird](https://ebird.org/home) or [iNaturalist](https://www.inaturalist.org/).
+Citizen Science refers to the **increased involvement of the public in the research process**, recognizing the invaluable insights that non-academic contributors can offer. These contributions often provide perspectives or data that researchers might not otherwise access. Examples of such initiatives include [eBird](https://ebird.org/home) and [iNaturalist](https://www.inaturalist.org/).
 
-Harnessing the advantages of the internet, openly available software packages and local knowledge, citizen science brings about a change in the way research is conducted – no longer limited to academic researchers, it encourages collaboration from groups across society.
+Leveraging the internet, openly available tools, and local knowledge, citizen science is transforming how research is conducted. No longer limited to academic researchers, it encourages collaboration across society.
 
-@Wagenknecht2021 discuss this topic and its implementation in the case of a European Citizen Science project and @Groom2017 are reflecting on the role of Citizen Science in biodiversity research. Overall, citizen science could really propel your research forward, but you have to be aware of the potential pitfalls. Please see this [section in Chapter 3](#biodiv) where this topic was discussed.
+@Wagenknecht2021 discuss this concept through a European Citizen Science project, while @Groom2017 reflect on its role in biodiversity research. Citizen science has the potential to significantly enhance your research—but it's important to be aware of its challenges. For more on this topic, refer to [this section in Chapter 3](#biodiv).
+
+---
 
 ### Education and Skills {#ES}
 
-This pillar focuses on **identifying which are the training needs of researchers and sufficiently addressing any gaps in knowledge and skills around engaging with Open Science** such as making publications openly accessible, managing research data in-line with the FAIR Principles (Figure \@ref(fig:FAIR)) and acting with integrity. 
+This pillar focuses on **identifying researchers' training needs and addressing gaps in knowledge and skills related to Open Science**—such as making publications openly accessible, managing research data in alignment with the FAIR Principles (Figure \@ref(fig:FAIR)), and upholding research integrity.
 
-All researchers at all levels should have access to education and skills programmes to support their work and continued learning. Further, skill development programmes should be opened up to other stakeholders in research such as professional staff including librarians and data managers and members of the public to facilitate the undertaking of citizen science. At BSU, the [Alberstons library](https://www.boisestate.edu/library/) has resources on this topic and also runs workshops and seminars.  
+All researchers, regardless of career stage, should have access to training and professional development opportunities that support Open Science practices. Additionally, skills development should be extended to other stakeholders in the research ecosystem, including librarians, data managers, and the public, particularly in support of citizen science initiatives.
+
+At Boise State University, the [Albertsons Library](https://www.boisestate.edu/library/) offers resources, workshops, and seminars on these topics.
+
+---
 
 ### Rewards and Initiatives {#EI}
 
-**Fostering engagement with the principle of Open Science requires reward and recognition of the efforts to do so** – this pillar addresses barriers and champions best practice.
+**Promoting engagement with Open Science requires recognizing and rewarding the efforts of those who contribute to it.** This pillar addresses systemic barriers while advocating for best practices.
 
-A perceived lack of reward and recognition for work undertaken to manage research data and make publications openly accessible discourages researchers from engaging with the principle of Open Science. Work falling under this pillar seeks to address these challenges and champion engagement with Open Science practices. Please see [Chapter 3](#chap3) for more details on some of these initiatives and rewards to promote Open Science. 
+A common barrier is the perceived lack of recognition for tasks such as managing research data or publishing open access. These efforts are often undervalued in traditional academic assessments, discouraging wider adoption of Open Science practices.
 
-## Open Access: A tool to promote Open Science?
+Work under this pillar seeks to overcome these challenges and promote greater participation in Open Science. For more on current initiatives and reward systems, refer to [Chapter 3](#chap3).
 
-Open access (OA) is a set of principles and a range of practices through which research outputs are distributed online, free of access charges or other barriers (Figure \@ref(fig:EcolEvolCC)). Although publications are free of charges to the users, researchers will have to pay publication fees (usually between \$1500 and \$2500) to publish their research as OA. With open access strictly defined (according to the 2001 definition), barriers to copying or reuse are also reduced or removed by applying an open license for copyright. An open license is a license which allows others to reuse another creator’s work as they wish. Without a special license, these uses are normally prohibited by copyright, patent or commercial license. Most free licenses are worldwide, royalty-free, non-exclusive, and perpetual.
+---
 
-### The Open Access conundrum 
+## Open Access: A Tool to Promote Open Science? {#openaccess}
 
-Since the revenue of most open access journals is earned from publication fees charged to the authors, **OA publishers are motivated to increase their profits by accepting low-quality papers and by not performing thorough peer review.** On the other hand, the prices for OA publications in the most prestigious journals have exceeded \$5000, making such publishing model unaffordable to a large number of researchers. 
+**Open Access (OA)** refers to a set of principles and practices that make research outputs freely available online, without access charges or other barriers (Figure \@ref(fig:EcolEvolCC)). While OA publications are free for users to read, researchers often pay publication fees—typically between **\$1,500 and \$2,500**—to make their work openly accessible.
 
-The increase in publishing cost has been called the "Open-Access Sequel to [the] Serials Crisis" [@Khoo_2019]. To provide further context, the serial crisis involves unsustainable budgetary pressures on libraries due to hyperinflation of subscription costs. In this framework, OA was proposed as one way of coping with these costs because articles would not require ongoing subscriptions to remain accessible, but findings by @Khoo_2019 might suggest that both systems have limitations. 
+According to the 2001 definition of Open Access, it also involves **removing or reducing barriers to copying and reuse** by applying an open license. An **open license** allows others to reuse a creator’s work freely, in ways that are typically restricted by copyright, patent, or commercial licenses.
 
-## Creative Common licences
+Most open licenses are:
 
-Most open access journals will be using ([Creative Common](https://creativecommons.org/); CC) licenses and it is important that you and your co-authors are aware of their implications prior to submitting your manuscript, especially in regard to potential commercial usage of your work by third parties (Figure \@ref(fig:EcolEvolCC)). A CC license is one of several **public copyright licenses that enable the free distribution of an otherwise copyrighted "work".** 
+- **Worldwide** in scope
+- **Royalty-free**
+- **Non-exclusive**
+- **Perpetual** (they do not expire)
 
-A CC license is used when an author wants to give other people the **right to share, use, and build upon a work that the author has created**. CC provides an author flexibility (e.g., they might choose to allow only non-commercial uses of a given work) and protects the people who use or redistribute an author's work from concerns of copyright infringement as long as they abide by the conditions that are specified in the license by which the author distributes the work. To support this fexibility, the CC initiative is providing an [online tool](https://creativecommons.org/choose/) to choose the best license to share your work, which I would advise you to consult to identify what license best suits your work. To know more about CC licenses, please visit this [wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
+These characteristics ensure that research can be reused, adapted, and redistributed in alignment with the goals of Open Science.
+
+### The Open Access Conundrum
+
+Since most Open Access (OA) journals rely on **publication fees paid by authors** to generate revenue, there is concern that some OA publishers may be motivated to **accept lower-quality papers and forgo rigorous peer review** in order to maximize profits.
+
+At the same time, **publication fees in prestigious OA journals can exceed \$5,000**, making this publishing model inaccessible for many researchers, particularly those without institutional funding or support.
+
+This situation has been described as the "**Open Access sequel to the Serials Crisis**" [@Khoo_2019]. The original *Serials Crisis* refers to the unsustainable pressure on library budgets caused by the rapid inflation of journal subscription costs. Open Access was initially proposed as a solution to this problem—by removing subscription barriers, research would remain accessible without ongoing costs. However, as @Khoo_2019 notes, both traditional subscription models and Open Access publishing **present their own challenges** and limitations.
+
+---
+
+## Creative Commons Licenses {#CClicenses}
+
+Most Open Access journals use [Creative Commons (CC)](https://creativecommons.org/) licenses, so it is important that you and your co-authors understand their implications before submitting your manuscript—especially regarding potential commercial use of your work by third parties (Figure \@ref(fig:EcolEvolCC)).
+
+A CC license is a type of **public copyright license that enables the free distribution of a copyrighted work**. It allows authors to grant others the **right to share, use, and build upon their work** while retaining some control over how it is used.
+
+Creative Commons licenses provide flexibility; for example, authors can choose to allow only non-commercial uses. They also protect users and redistributors from copyright infringement claims, provided they follow the license terms set by the author.
+
+To help authors select the most appropriate license for their work, the Creative Commons initiative offers an [online tool](https://creativecommons.org/choose/), which I recommend consulting. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
 ```
 
-### Available CC licenses
+### Available CC Licenses
 
-The available licenses provided by the CC initiative are shown in Figure \@ref(fig:CC).
+The Creative Commons licenses provided by the CC initiative are summarized in Figure \@ref(fig:CC).
 
 ```{r CC, echo=FALSE, fig.cap="Overview of Creative Common licenses sorted from most open to most restrictive (provided by Andrew Child).", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/CC_licenses_comparison.png")
 ```
 
-The description of these licenses are always presented in this format:
+The description of these licenses is always presented in this format:
 
 1. **You are free to:**
-    - Share - Conditions.
-    - Adapt - Conditions.
+    - Share — copy and redistribute the material under specified conditions.
+    - Adapt — remix, transform, and build upon the material under specified conditions.
 2. **Under the following terms:**
-    - Attribution - Conditions.
-    - No additional restrictions - Conditions.
+    - Attribution — give appropriate credit to the original author.
+    - No additional restrictions — you may not apply legal terms or technological measures that restrict others from doing anything the license permits.
     
-Here is the list of some of the mostly used CC licenses with URLs leading to their descriptions:
+Here is a list of some of the most commonly used CC licenses with URLs leading to their descriptions:
 
 - [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 - [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
 - [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
 - [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-## CARE Principles
+---
 
-We have been promoting Open Science, but is this approach always possible?
+## The CARE Principles and Data Sovereignty {#CARE}
 
-As pointed out by @Carroll2021, **as big data, open data, and open science advance to increase access to complex and large datasets for innovation, discovery, and decision-making, Indigenous Peoples’ rights to control and access their data within these data environments remain limited.** Operationalizing the FAIR Principles for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability and brings people and purpose to the fore to resolve Indigenous Peoples’ rights to and interests in their data across the data lifecycle (Figure \@ref(fig:CARE)).
+In this chapter, we will investigate both the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov), emphasizing how these concepts are closely connected.
+
+As noted by @Carroll2021:
+
+> *"while big data, open data, and Open Science increase access to complex and large datasets for innovation, discovery, and decision-making, Indigenous Peoples’ rights to control and access their data within these environments remain limited."*
+
+Integrating the [FAIR Principles](#FAIR) for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability while prioritizing people and purpose. This combined approach supports Indigenous Peoples’ rights and interests in their data throughout the data lifecycle (Figure \@ref(fig:CARE)).
+
 
 ```{r CARE, echo=FALSE, fig.cap="Be FAIR and CARE (source: https://www.gida-global.org/care).", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/BeFAIRandCARE.png")
 ```
 
+### The CARE Principles {#CAREPrinc}
+
 **The CARE Principles detail that the use of Indigenous data should result in tangible benefits for Indigenous collectives through inclusive development and innovation, improved governance and citizen engagement, and result in equitable outcomes.** 
 
 **Collective benefit** is more likely to be realized when data ecosystems are designed to support Indigenous nations and when the use/reuse of data for resource allocation is consistent with community values. The [United Nations Declaration on the Rights of Indigenous Peoples](https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html) asserts Indigenous Peoples’ rights and interests in data and their **authority to control** their data. Access to ‘data for governance’ is vital to support self-determination and Indigenous nations should be actively involved in ‘governance of data’ to ensure ethical reuse of data. Given the majority of Indigenous data is controlled by non-Indigenous institutions there is a **responsibility** to engage respectfully with those communities to ensure the use of Indigenous data supports capacity development, increasing community data capabilities, and the strengthening of Indigenous languages and cultures. Similarly, Indigenous Peoples’ **ethics** should inform the use of data across time in order to minimize harm, maximize benefits, promote justice, and allow for future use [see @Carroll2021 for more details].
 
-## Data sovereignty
+### Data Sovereignty {#datasov}
 
-The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We will provide a definition here and it is especially important to cover such material in this course since data sovereignty could impact your data sharing protocols. More on this topic will be discussed in [Chapter 5](#partDM).
+The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We provide a definition here because it is especially important for this course, as data sovereignty can impact your data sharing protocols. More on this topic will be discussed in [Chapter 5](#partDM).
 
-**Data sovereignty is the idea that data are subject to the laws and governance structures of the nation where they are collected.** The concept of data sovereignty is closely linked with data security, cloud computing, network sovereignty and technological sovereignty. Unlike technological sovereignty, which is vaguely defined and can be used as an umbrella term in policymaking, data sovereignty is specifically concerned with questions surrounding the data itself. Data sovereignty as the idea that data is subject to the laws and governance structures within one nation is usually discussed in two ways: in relation to Indigenous groups and Indigenous autonomy from post-colonial states or in relation to transnational data flow. With the rise of cloud computing, many countries have passed various laws around control and storage of data, which all reflects measures of data sovereignty. More than 100 countries have some sort of data sovereignty laws in place. With self-sovereign identity (SSI) the individual identity holders can fully create and control their credentials, although a nation can still issue a digital identity in that paradigm.
+**Data sovereignty is the idea that data are subject to the laws and governance structures of the nation where they are collected.** This concept is closely linked with data security, cloud computing, network sovereignty, and technological sovereignty. Unlike technological sovereignty, which is vaguely defined and often used as an umbrella term in policymaking, data sovereignty specifically concerns the governance of data itself.
+
+Data sovereignty is usually discussed in two contexts: Indigenous groups and their autonomy from post-colonial states, and the control of transnational data flows. With the rise of cloud computing, many countries have enacted laws governing data control and storage, reflecting measures of data sovereignty. More than 100 countries now have data sovereignty laws in place.
+
+In the context of self-sovereign identity (SSI), individuals can fully create and control their credentials, although nations may still issue digital identities within this framework.
 
 # Chapter 5 {#Chap5}
 
