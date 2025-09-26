@@ -92,7 +92,7 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 
 Please see this [webpage](index.html) for more details on the Syllabus.
 
-# Chapter 1
+# Chapter 1 {#chap1}
 
 ## Goal
 
@@ -2569,21 +2569,23 @@ While studying the material presented in this chapter, keep in mind this quote f
 
 > *The first principle is that you must not fool yourself — and you are the easiest person to fool.*
 
-## Goal
+## Aim
 
-In this chapter, we engage in readings and group discussions to **develop a roadmap for implementing reproducible science** with the goal of supporting your research.
+The ***aim*** of this chapter is to engage in readings and group discussions that **equip you with the knowledge and tools needed to implement reproducible science practices** in support of your research.
 
-We will begin by reviewing the steps involved in the scientific process and identifying threats to this process. Then, we will discuss solutions to mitigate these threats and learn about initiatives that promote and reward reproducibility in science.
+We will begin by reviewing the steps of the scientific process and identifying potential threats to its integrity. Then, we will discuss strategies to mitigate these threats and explore initiatives that promote and reward reproducibility in science.
 
 ---
 
 ## Learning Outcomes
 
-- [Review the steps involved in the scientific process](#scientificprocess)  
-- [Identify and define threats to the scientific process](#threatstoprocess) 
-- [Discuss solutions to mitigate threats to the scientific process](#soltothreats)  
-- [Learn about the Transparency and Openness Promotion guidelines and their application in scientific publications and funding activities](#TOP)  
+By the end of this chapter, you will be able to:
 
+- [Review the key steps involved in the scientific process](#scientificprocess)  
+- [Identify and define common threats to the scientific process](#threatstoprocess)  
+- [Discuss strategies to mitigate these threats](#soltothreats)  
+- [Explain the Transparency and Openness Promotion (TOP) Guidelines and their application in scientific publishing and funding contexts](#TOP)
+ 
 ---
 
 ## Resources
@@ -2911,34 +2913,42 @@ knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 
 # Chapter 4 {#chap4}
 
-## Introduction
+## Challenge
 
-**Balancing Open Science to support reproducibility with values of your stakeholders could be a challenging task.** 
+**Balancing Open Science to support reproducibility with the values of your stakeholders can be a challenging task.**
 
-Nowadays, funding agencies and journals are moving forward to promote Open Science and we started discussing this approach in [Chapter 3](#chap3).
+Today, funding agencies and journals are increasingly promoting Open Science, a topic we began discussing in [Chapter 3](#chap3).
 
-## Objectives
+---
 
-The overarching objective of this chapter is to **study the mechanisms implemented to promote Open Science while highlighting circumstances where other principles might have to be adopted to respect different views, opinions and/or data sovereignty**. 
+## Aim
 
-Overall, content of this chapter aims at **providing solutions to tackles threats to the scientific process** (discussed in Chapters 2 and 3) **as well as information to manage the data life cycle and research dissemination**. 
+The ***aim*** of this chapter is to **examine the mechanisms used to promote Open Science, while also recognizing situations in which other principles must be adopted to respect diverse perspectives, values, or data sovereignty (a.k.a., the CARE Principles)**.
 
-## Learning outcomes
+Overall, this chapter aims to **provide solutions for addressing threats to the scientific process** (introduced in Chapters [1](#chap1) and [3](#chap3)), as well as **guidance on managing the data life cycle and disseminating research responsibly**.
+ 
+---
 
-- Learn what Open Science is
-- Learn what are the seven pillars of Open Science:
+## Learning Outcomes
+
+By the end of this chapter, you will be able to:
+
+- [Understand what Open Science is](#WhatisOS)
+- Identify and describe the seven pillars of Open Science:
     + [FAIR Data](#FAIR)
     + [Research Integrity](#RI)
     + [Next Generation Metrics](#NGSMet) 
     + [Future of Scholarly Communication](#FSC) 
     + [Citizen Science](#CS)
     + [Education and Skills](#ES)
-    + [Rewards and Initiatives](#EI)
-- Introduce the Open Access mechanism to promote Open Science
-- Provide an overview of the Creative Common licenses and their applications in scientific publications
-- Introduce the CARE Principles and Data sovereignty concepts and how these apply to Indigenous Peoples
+    + [Rewards and Incentives](#EI)
+- Explain the Open Access mechanism and how it supports Open Science
+- Describe the purpose and use of Creative Commons licenses in scientific publications
+- Understand the CARE Principles and the concept of data sovereignty, particularly in relation to Indigenous Peoples
 
-## Web resources and publications
+---
+
+## Resources
 
 This chapter is based on:
 
@@ -2954,7 +2964,6 @@ This chapter is based on:
 - LERU Roadmap for Open Science: https://www.leru.org/publications/open-science-and-its-role-in-universities-a-roadmap-for-cultural-change#
 - United Nations Declaration on the Rights of Indigenous Peoples: https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html
 
- 
 **Publications**
 
 - `r capture.output(print(refs["Carroll2021"]))`
@@ -2963,13 +2972,21 @@ This chapter is based on:
 - `r capture.output(print(refs["Wagenknecht2021"]))`
 - `r capture.output(print(refs["Wilkinson2016"]))`
 
-## What is Open Science?
+---
 
-The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines [Open Science](https://www.oecd.org/sti/inno/open-science.htm) as follows:
+## What is Open Science? {#WhatisOS}
 
-“*to make the primary outputs of publicly funded research results – publications and the research data – publicly accessible in digital format with no or minimal restriction*”. 
+The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines [Open Science](https://www.oecd.org/sti/inno/open-science.htm) as:
 
-Several other agencies argue that the definition of Open Science should be expanded. For them, [Open Science](https://www.fosteropenscience.eu/content/what-open-science-introduction) is about *extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible thus entailing a systemic change to the way science and research is done*.
+> *“to make the primary outputs of publicly funded research results – publications and the research data – publicly accessible in digital format with no or minimal restriction.”*
+
+While this definition focuses on access to research outputs, several other organizations advocate for a broader view of Open Science. According to the [FOSTER Open Science initiative](https://www.fosteropenscience.eu/content/what-open-science-introduction), Open Science involves:
+
+> *“extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible, thus entailing a systemic change to the way science and research is done.”*
+
+---
+
+<!-- START FROM HERE -->
 
 ## What are the pillars of Open Science?
 
