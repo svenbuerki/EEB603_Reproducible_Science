@@ -272,7 +272,7 @@ The grading scale for this course is in Table \@ref(tab:mygrade).
 library(bookdown)
 #
 grades <- data.frame("Percentage" = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
-knitr::kable(grades, caption = "Grading scale applied in this course.") %>%
+knitr::kable(grades, caption = "Grading scale applied in this course.", format = "html") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
