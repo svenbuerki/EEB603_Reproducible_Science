@@ -2025,7 +2025,7 @@ plot(x, y)
 
 ## PART E: User-Defined Functions in R {#partE}
 
-### Introduction
+### Aim
 
 The **aim** of this tutorial is to provide an introduction to functions; more specifically, we will be studying user-defined functions (UDFs) as implemented in R.
 
@@ -2064,6 +2064,8 @@ By the end of this tutorial, students will be able to:
 ---
 
 ### Define a Function and Understand its Applicability {#definefunc}
+
+#### What is a Function?
 
 In programming, you use functions to incorporate sets of instructions that you want to use repeatedly or that, because of their complexity, are better self-contained in a subprogram and called when needed.
 
