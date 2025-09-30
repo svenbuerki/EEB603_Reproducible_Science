@@ -2206,13 +2206,15 @@ To learn this skill, we will work on a challenge.
 
 #### Challenge <span style="color:gray;">(15 minutes)</span> {.tabset}
 
-We are tasked with **developing, implementing, and applying a UDF to calculate the square of a number.**
+We are tasked with
+
+> *Developing, implementing, and applying a UDF to calculate the square of a number.*
 
 ##### Writing Pseudocode
 
 Let's begin by understanding this challenge from a mathematical perspective. Then, we will develop a pseudocode to solve it computationally. Finally, we will implement our solution in R.
 
-In **mathematics**, the squared symbol ($^2$) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
+In **mathematics**, the **squared symbol** ($^2$) is an arithmetic operator that signifies **multiplying a number by itself**. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
 
 Although this task is straightforward, the **pseudocode** to implement the function requires the following steps:
 
@@ -2384,7 +2386,9 @@ To learn this skill, we will work on a challenge.
 
 #### Challenge
 
-We are tasked with **developing, implementing, and applying a UDF to calculate both the logarithm and the square of a number.**
+We are tasked with
+
+> *Developing, implementing, and applying a UDF to calculate both the logarithm and the square of a number.*
 
 To accomplish this, we will **collect the different outputs into a list, which will then be returned to the user using `return()`**.
 
