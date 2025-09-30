@@ -2218,7 +2218,7 @@ In **mathematics**, the **squared symbol** ($^2$) is an arithmetic operator that
 
 Although this task is straightforward, the **pseudocode** to implement the function requires the following steps:
 
-1. Store the number inputted by the user into an object called `base`, as part of the function’s argument(s).
+1. Store the number inputted by the user into an argument called `base`, as part of the function’s argument(s).
 2. Calculate the square of `base` by multiplying the number by itself.
 3. Save the result of step 2 into an object called `sq`.
 4. Return the `sq` object to the user (a single numeric value). To do this, we will use the `return()` function.
