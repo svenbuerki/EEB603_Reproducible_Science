@@ -2198,23 +2198,23 @@ check.install.pkg(pkg=c("knitr"))
 
 ### Develop, Implement, and Apply UDFs That Return a Single Value {#UDFsingle}
 
-In this section, we will focus on developing UDFs that return a single value. But how do we tell a function what to return?
+In this section, we ***aim*** at developing UDFs that return a single value. But how do we tell a function what to return?
 
 In R, this is done using the `return()` function.
 
 To learn this skill, we will work on a challenge.
 
-#### Challenge
+#### Challenge <span style="color:gray;">(15 minutes)</span> {.tabset}
 
 We are tasked with **developing, implementing, and applying a UDF to calculate the square of a number.**
 
-#### Writing Pseudocode
+##### Writing Pseudocode
 
 Let's begin by understanding this challenge from a mathematical perspective. Then, we will develop a pseudocode to solve it computationally. Finally, we will implement our solution in R.
 
 In **mathematics**, the squared symbol ($^2$) is an arithmetic operator that signifies multiplying a number by itself. The “square” of a number is the product of the number and itself. Multiplying a number by itself is called “squaring” the number.
 
-Although this task is straightforward, the function will still need to perform the following steps (i.e., pseudocode):
+Although this task is straightforward, the **pseudocode** to implement the function requires the following steps:
 
 1. Store the number inputted by the user into an object called `base`, as part of the function’s argument(s).
 2. Calculate the square of `base` by multiplying the number by itself.
@@ -2231,7 +2231,7 @@ Although this task is straightforward, the function will still need to perform t
   </ul>
 </div>
 
-#### Writing Code
+##### Writing Code
 
 In this section, we will implement the pseudocode outlined above in a function called `square_number()`. 
 
@@ -2250,7 +2250,7 @@ square_number <- function(base){
 }
 ```
 
-##### Implement and Load the UDF in R
+#### Implement and Load the UDF in R <span style="color:gray;">(10 minutes)</span>
 
 Follow these steps to implement and load the UDF in R:
 
@@ -2264,7 +2264,7 @@ Follow these steps to implement and load the UDF in R:
 knitr::include_graphics("Figures/Environment_RStudio.png")
 ```
 
-##### Apply Your Function
+#### Apply Your Function <span style="color:gray;">(5 minutes)</span>
 
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
 
@@ -2379,7 +2379,7 @@ We are tasked with **developing, implementing, and applying a UDF to calculate b
 
 To accomplish this, we will **collect the different outputs into a list, which will then be returned to the user using `return()`**.
 
-#### Student Activity and Solution {.tabset}
+#### Student Activity and Solution <span style="color:gray;">(20 minutes)</span> {.tabset}
 
 ##### Students Work in Groups
 
