@@ -2279,14 +2279,25 @@ knitr::include_graphics("Figures/Environment_RStudio.png")
 
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
 
-1. Apply the function to a single value:
 
+1. Create a new `.R` script titled `Chapter_2_partE.R` saved in `Chapter_2/`.
+2. Edit your `.R` script as follows to load your UDF using the `source()` function.
+```{r echo=TRUE, eval=FALSE}
+###
+# Source UDFs
+###
+# Source the square_number function
+source("R_functions/square_number.R")
+```
+3. Apply your UDF to a single value:
 ```{r echo=TRUE, eval=T}
+###
+# Apply your UDFs
+###
 #Square number of 2
 square_number(base = 2)
 ```
-
-2. Apply the function to a vector containing multiple values:
+4. Apply your UDF to a vector containing multiple values:
 
 ```{r echo=TRUE, eval=T}
 #Create vector with numbers
@@ -2314,7 +2325,7 @@ More specifically, this section provides procedures and syntax for:
 <div class="info">
   <p><strong>💡 Create Your R Script to Practice</strong></p>
   <ul>
-    <li><b>R Script:</b> Create an <code>R</code> script titled <code>R_lists.R</code> and save it in your project folder.</li>
+    <li><b>R Script:</b> If not done yet, create an <code>R</code> script titled <code>Chapter_2_partE.R</code> and save it in your project folder (<code>Chapter_2</code>).</li>
     <li>Copy and paste the code provided in this section into your script to practice and reinforce these new protocols and syntax.</li>
   </ul>
 </div>
