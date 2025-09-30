@@ -2264,6 +2264,15 @@ Follow these steps to implement and load the UDF in R:
 knitr::include_graphics("Figures/Environment_RStudio.png")
 ```
 
+<div class="info">
+  <p><strong>💡 Use the <code>source()</code> function to load the UDF.</strong></p>
+  <ul>
+    <li>You can also load the <code>square_number()</code> function by typing the following command in the console: 
+      <code>source("R_functions/square_number.R")</code>.
+    </li>
+  </ul>
+</div>
+
 #### Apply Your Function <span style="color:gray;">(5 minutes)</span>
 
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
@@ -2354,10 +2363,10 @@ list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2), list(
 names(list_data) <- c("1st_Quarter", "A_Matrix", "An_inner_list")
 
 # Access the first element of the list
-print(list_data[1])
+print(list_data[[1]])
 
 # Access the thrid element. As it is also a list, all its elements will be printed
-print(list_data[3])
+print(list_data[[3]])
 
 # Access the list element using the name of the element
 print(list_data$A_Matrix)
