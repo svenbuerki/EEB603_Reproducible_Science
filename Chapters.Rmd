@@ -2332,11 +2332,13 @@ More specifically, this section provides procedures and syntax for:
 
 #### What is a List in R? {#WhatList}
 
-Lists are **R objects that can contain elements of different types**, such as numbers, strings, vectors, or even another list. A list can also include a matrix or a function as an element. Lists are created using the `list()` function.
+Lists are **R objects that can contain elements of different types**, such as numbers, strings, vectors, or even another list. A list can also include a matrix or a function as an element. 
+
+Lists are created using the `list()` function.
 
 #### How to Create a List {#HowCreateList}
 
-Below is an example of how to create a list containing strings, numbers, vectors, and logical values:
+Below is an example of how to create a list containing strings, numbers, vectors, and logical values using the `list()` function:
 
 ```{r echo=TRUE, eval=T}
 #Create a list containing strings, numbers, vectors and a logical value
@@ -2348,7 +2350,7 @@ print(list_data)
 
 #### How to Name List Elements {#HowNameList}
 
-List elements can be assigned names, which allows them to be accessed using those names, as shown below:
+List elements can be assigned names using the `names()` function, allowing them to be accessed by those names, as shown below:
 
 ```{r echo=TRUE, eval=T}
 # Create a list containing a vector, a matrix and a list
@@ -2364,7 +2366,7 @@ print(list_data)
 
 #### How to Access List Elements {#HowAccessList}
 
-Elements of a list can be accessed using their **index** or, in the case of named lists, using their **names**. 
+Elements of a list can be accessed using their **index** or, in the case of named lists, using their **names** (combined with the `$` symbol).
 
 The following example illustrates how to access list elements using both methods:
 
@@ -2381,11 +2383,11 @@ print(list_data[[1]])
 # Access the thrid element. As it is also a list, all its elements will be printed
 print(list_data[[3]])
 
-# Access the list element using the name of the element
+# Access the list element using the name of the element (combined with $ in front)
 print(list_data$A_Matrix)
 ```
 
-We will now apply what you have learned to return multiple values in a UDF.
+We will now apply what you have learned to return multiple values from a UDF.
 
 ---
 
@@ -2403,7 +2405,7 @@ We are tasked with
 
 To accomplish this, we will **collect the different outputs into a list, which will then be returned to the user using `return()`**.
 
-#### Student Activity and Solution <span style="color:gray;">(20 minutes)</span> {.tabset}
+#### Student Activity and Solution <span style="color:gray;">(25 minutes)</span> {.tabset}
 
 ##### Students Work in Groups
 
@@ -2445,9 +2447,9 @@ my_log_square(base = 2)
 
 Defensive programming is a technique used to ensure that code fails with well-defined errors—that is, in situations where you *know* it should not work. **The key idea is to ‘fail fast’ by ensuring the code throws an error as soon as something unexpected occurs.** This may require a bit more effort from the programmer, but it makes debugging much easier later on.
 
-#### Example
+#### Case Study <span style="color:gray;">(25 minutes)</span>
 
-To demonstrate how to apply defensive programming in your code, a power function `y = x^n` is implemented as a user-defined function (UDF) and used as an example.
+To demonstrate how to apply defensive programming in your code, a power function `y = x^n` is implemented as a UDF and used as an example.
 
 <div class="info">
   <p><strong>💡 Create Your R Script to Practice</strong></p>
