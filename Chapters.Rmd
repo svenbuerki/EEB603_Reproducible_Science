@@ -3284,6 +3284,12 @@ This chapter is divided into two parts:
 
 ## Data Management {#partDM}
 
+### Aim
+
+This part of Chapter 5 aims to **help students navigate data management** by first explaining what data and data management are, and why data sharing is important. It then provides advice and examples of best practices in data management.
+
+---
+
 ### Introduction
 
 Good data management is essential for research excellence. It ensures that research data are of high quality, accessible to others, and usable in the future (see the [TOP Guidelines](#TOP) in Chapter 3).  
@@ -3295,12 +3301,6 @@ To ensure data citations are properly acknowledged, they must be included in pub
 ```{r DataAvail, echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
 knitr::include_graphics("Figures/Data_availibility_satement.png")
 ```
-
----
-
-### Aim
-
-This chapter aims to **help students navigate data management** by first explaining what data and data management are, and why data sharing is important. It then provides advice and examples of best practices in data management.
 
 ---
 
@@ -3848,66 +3848,173 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 - How will you make your data accessible to future users?
 
 
-## Reproducible code {#repcode}
+## Reproducible Code {#repcode}
+
+### Aim
+
+This section of Chapter 5 aims to **introduce students to the principles and practices of reproducible coding**. It provides guidance on organizing projects, maintaining clean and transparent code, and managing software dependencies to support reproducible research workflows.
+
+---
 
 ### Introduction
 
-The following steps have to be fully integrated in order to produce a reproducible code:
+The following steps must be fully integrated to produce reproducible code:
 
-- **Step 1:** Establish a reproducible project workflow.
-- **Step 2:** Organize project for reproducibility.
-- **Step 3:** Ensure basic programming standards.
-- **Step 4:** Document and manage dependencies.
-- **Step 5:** Produce a reproducible report (with R Markdown).
-- **Step 6:** Implement a version control protocol (with Git).
-- **Step 7:** Ensure archiving and citation of code.
+- **Step 1:** Establish a reproducible project workflow.  
+- **Step 2:** Organize the project for reproducibility.  
+- **Step 3:** Ensure basic programming standards.  
+- **Step 4:** Document and manage software dependencies.  
+- **Step 5:** Produce a reproducible report (using R Markdown).  
+- **Step 6:** Implement version control (using Git).  
+- **Step 7:** Archive and cite code appropriately.
 
-In this chapter, we will cover steps 1 to 4. Steps 5 and 7 have been respectively studied in chapters [2](#chap2) and 5 ([Data management](#partDM)), whereas step 6 will be covered in the bioinformatic tutorial associated to chapter 12.
+In this chapter, we will cover Steps 1 to 4. Step 5 was introduced in Chapter [2](#chap2), and Step 7 is covered in Chapter [5](#partDM) under Data Management. Step 6 will be addressed in the bioinformatics tutorial associated with Chapter 12.
 
-### Learning outcomes
+---
 
-- Learn protocol to organize projects for reproducibility.
-- Discuss licenses for code and software.
-- Learn basic programming standards to ensure transparency and broad understanding of the data workflow.
-- Learn how to use R to infer data structure and files organization.
-- Learn about code portability: Absolute vs. Relative paths.
-- Review knowledge on documenting and managing software dependencies.
+### Learning Outcomes
 
-### Literature and web resources
+- [Learn how to organize projects to support reproducibility](#orgprjrep) 
+- Understand the importance of software licenses and how to apply them.  
+- Apply basic programming standards to promote clarity and transparency.  
+- Use R to explore and summarize data structure and file organization.  
+- Understand code portability, including the difference between absolute and relative paths.  
+- Learn how to document and manage software dependencies effectively.  
 
-This chapter is based on:
+---
 
-- @RepCode -- *A Guide to Reproducible Code in Ecology and Evolution* published by the [British Ecological Society](https://www.britishecologicalsociety.org).
-- @wickham2014advanced -- *Advanced R* by Hadley Wickham (https://adv-r.hadley.nz)
-- Hadley Wickham’s R Style Guides: http://adv-r.had.co.nz/Style.html
-- Absolute vs relative paths: https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths
-- Comparison of free and open-source software licenses: https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
-- [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html): This type of license is commonly used for code and software
+### Resources
 
-### Teaching material
+This chapter draws on the following resources:
 
-The presentation slides for Chapter 5 - part B can be downloaded [here](Chapters_files/Chapter_5_Reproducible_code.pdf).
+- @RepCode — *A Guide to Reproducible Code in Ecology and Evolution*, published by the [British Ecological Society](https://www.britishecologicalsociety.org).
+- @wickham2014advanced — *Advanced R* by Hadley Wickham ([Online version](https://adv-r.hadley.nz)).
+- Hadley Wickham’s [R Style Guide](http://adv-r.had.co.nz/Style.html), which outlines best practices for writing clear and consistent R code.
+- [Absolute vs. relative paths](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) — Wikipedia article explaining the difference between path types in computing.
+- [Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses) — Overview of common open-source licenses and their implications for software sharing and reuse.
+- [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) — A widely used license for free and open-source software, particularly relevant for ensuring freedom to use and share code.
 
-### Data and dependencies
+---
 
-To conduct the exercises presented in this chapter, you will need to:
+### Teaching Material
 
-1. Download a [folder](#dataProjectID) from the shared Google Drive
-2. Install [R packages](#RpkgRepCode)
+The presentation associated with this class is available here:
 
-More information on these items is provided below. 
+<div style="text-align: center;">
+  <button id="toggleButton" onclick="toggleFullScreen()">Enter Full Screen</button>
+  <iframe id="pdfFrameRC" allowfullscreen src="Chapters_files/Chapter_5_Reproducible_code.pdf" width="100%" height="600px" style="border:none;">
+    <p>Your browser does not support PDFs. <a href="Chapters_files/Chapter_5_Reproducible_code.pdf">Download the PDF</a>.</p>
+  </iframe>
+</div>
+
+<script>
+function toggleFullScreen() {
+  var elem = document.getElementById("pdfFrameRC");
+  var button = document.getElementById("toggleButton");
+  
+  // Refresh iframe source with timestamp to avoid caching issues
+  var pdfUrl = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
+  elem.src = pdfUrl;
+
+  if (!document.fullscreenElement) {
+    // Request fullscreen
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else if (elem.mozRequestFullScreen) { // Firefox
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+      elem.msRequestFullscreen();
+    }
+  } else {
+    // Exit fullscreen
+    if (document.exitFullscreen) {
+      document.exitFullscreen().catch(err => {
+        console.error(`Error exiting full-screen mode: ${err.message}`);
+      });
+    }
+  }
+}
+
+// Update button text and refresh on fullscreen state change (handles Esc key exits)
+document.addEventListener("fullscreenchange", function() {
+  var button = document.getElementById("toggleButton");
+  var elem = document.getElementById("pdfFrameUnique");
+  
+  if (document.fullscreenElement) {
+    button.textContent = "Exit Full Screen";
+  } else {
+    button.textContent = "Enter Full Screen";
+    // Refresh iframe on exit to ensure clean fallback
+    elem.src = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
+  }
+});
+
+// For older browser compatibility (optional, but harmless)
+document.addEventListener("mozfullscreenchange", updateButton);
+document.addEventListener("webkitfullscreenchange", updateButton);
+document.addEventListener("MSFullscreenChange", updateButton);
+
+function updateButton() {
+  var button = document.getElementById("toggleButton");
+  button.textContent = document.fullscreenElement ? "Exit Full Screen" : "Enter Full Screen";
+}
+</script>
+
+---
+
+### Data and Dependencies
+
+To complete the exercises in this chapter, you will need to:
+
+1. Download the required dataset folder from the shared Google Drive.
+2. Install and load the necessary R packages.
+
+Further details for each step are provided below.
 
 #### Data {#dataProjectID}
 
-The data (`Project_ID`) used for this chapter are deposited on our shared [Google Drive](https://drive.google.com/drive/folders/1ZNNfDcn6b1vLscjbg66aU5cWtx773lnw?usp=drive_link) at this address:
+The dataset for this chapter is contained in the `Project_ID` folder, available via our shared [Google Drive](https://drive.google.com/drive/folders/1ZNNfDcn6b1vLscjbg66aU5cWtx773lnw?usp=drive_link):
 
+**Path:**  
 `Reproducible_Science > Exercises > Chapter_5 > Project_ID`
 
-Please download this whole folder prior to starting the exercises.
+Please download the entire `Project_ID` folder to your local machine before starting the exercises.
 
-#### R packages {#RpkgRepCode}
+#### R Packages {#RpkgRepCode}
 
-Here, we are using code developed in Chapter 1 to make sure the R dependencies (*data.tree*, *DiagrammeR*) are installed and loaded prior to pursuing the exercises.
+To ensure all required R packages are available, we will reuse code introduced in Chapter 1. The exercises rely on the following packages:
+
+- `data.tree`
+- `DiagrammeR`
+
+Please make sure these packages are installed and loaded in your R environment before proceeding. This cane be done by using the R code provided below. Before proceeding read the disclaimer.
+
+<style>
+.disclaimer {
+  background-color: #FFEFD5;       /* Pale orange */
+  border-left: 6px solid #FFA500;  /* Slightly darker orange */
+  padding: 1em;                    /* Space inside the box */
+  margin: 1em 0;                   /* Space around the box */
+  overflow-wrap: break-word;      /* Wrap long lines */
+  box-sizing: border-box;         /* Ensure padding stays inside width */
+}
+</style>
+
+<div class="disclaimer">
+  <p><strong>💡 Disclaimer</strong></p>
+  <ul>
+    <li><strong>Warning:</strong> The code in this section will install the following <code>R</code> packages (including their dependencies) on your computer: <code>data.tree</code> and <code>DiagrammeR</code>.</li>
+    <li><strong>About the <code>R</code> packages:</strong> These packages are required to help you organize your project for reproducibility. Both are available on <a href="https://cran.r-project.org/web/packages/" target="_blank" rel="noopener noreferrer">CRAN</a>, the official repository for <code>R</code> packages.</li>
+    <li><strong><code>R</code> package repositories:</strong> Before running the installation code, ensure that your <code>R</code> package repositories are properly set in RStudio. You can follow <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/packages.html" target="_blank" rel="noopener noreferrer">this guide</a> for detailed instructions.</li>
+    <li><strong>Questions or concerns:</strong> If you need assistance, please contact the instructor at <a href="mailto:svenbuerki@boisestate.edu">svenbuerki@boisestate.edu</a>.</li>
+  </ul>
+</div>
+
+Code to install R packages for this section of Chapter 5: 
 
 ```{r eval = TRUE, echo = TRUE}
 ##~~~
@@ -3941,56 +4048,64 @@ print("Load packages and return status")
 sapply(pkg, require, character.only = TRUE)
 ```
 
-### Organize project for reproducibility
+---
 
-#### "Draw" a reproducible project workflow
+### Organize Your Project for Reproducibility {#orgprjrep}
 
-Organizing your project for reproducibility starts by drawing a workflow serving as basis to guide your project implementation. An example of a reproducible project workflow is displayed in Figure \@ref(fig:ReproWorkflow). This workflow will be used as template for the material presented in this chapter.
+#### "Draw" a Reproducible Project Workflow
+
+Organizing your project for reproducibility begins with drawing a workflow that will guide your project implementation. An example of a reproducible project workflow is displayed in Figure \@ref(fig:ReproWorkflow). This workflow will be used as a template for the material presented in this chapter.
 
 ```{r ReproWorkflow, echo=FALSE, fig.align="center", fig.cap="A simple reproducible project workflow.", out.width = '100%'}
 knitr::include_graphics("Figures/Reproducible_code_workflow.png")
 ```
 
-#### The repeatable, reproducible analysis workflow
+#### The Repeatable, Reproducible Analysis Workflow
 
-The fundamental idea behind a robust, reproducible analysis is **a clean, repeatable script-based workflow** (i.e. the sequence of tasks from the start to the end of a project) **linking raw data through to clean data and to final analysis outputs**.
+The fundamental idea behind a robust, reproducible analysis is **a clean, repeatable, script-based workflow** (i.e. the sequence of tasks from the start to the end of a project), **linking raw data through to clean data and final analysis outputs**.
 
-#### Principles of a good analysis workflow
+#### Principles of a Good Analysis Workflow
 
 Please find below some key concepts associated with this task:
 
-- Start your analysis from copies of your raw data.
-- Any cleaning, merging, transforming, etc. of data should be done in scripts, not manually.
-- Split your workflow (scripts) into logical thematic units. For example, you might separate your code into scripts that 
-  (i) load, merge and clean data, 
-  (ii) analyse data, 
-  (iii) produce outputs like figures and tables.
-- Eliminate code duplication by packaging up useful code into custom functions (see Step3 : Ensure basic programming standards). Make sure to **comment your functions thoroughly, explaining their expected inputs and outputs (as well as the associated arguments and their options), and what they are doing and why**.
-- Document your code and data as comments in your scripts and by producing separate documentation (using the R Markdown format).
-- Any intermediary outputs generated by your workflow should be kept separate from raw data.
+- Start your analysis using copies of your raw data.
+- Any cleaning, merging, transforming, etc. of data should be done using scripts, not manually.
+- Split your workflow (scripts) into logical thematic units. For example, you might separate your code into scripts that  
+  (i) load, merge, and clean data,  
+  (ii) analyze data,  
+  (iii) produce outputs such as figures and tables.
+- Eliminate code duplication by packaging useful code into custom functions (see Step 3: Ensure basic programming standards). Make sure to **comment your functions thoroughly, explaining their expected inputs and outputs (as well as the associated arguments and their options), and what they do and why**.
+- Document your code and data using comments within scripts and by producing separate documentation (using the R Markdown format).
+- Any intermediate outputs generated by your workflow should be kept separate from raw data.
 - Keep your raw data raw.
 
-#### Organizing and documenting workflows
+#### Organizing and Documenting Workflows
 
-The simplest and most effective way of documenting your workflow – its inputs and outputs – is through good file system organization, and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible on what a file contains, why it exists, and how it relates to other files in the project. These principles extend to all files in your project (not just scripts) and are also intimately linked to good research data management (see Chapter 5: Data management).
+The simplest and most effective way to document your workflow—its inputs and outputs—is through good file system organization and informative, consistent naming of materials associated with your analysis. The name and location of files should be as informative as possible regarding what a file contains, why it exists, and how it relates to other files in the project. These principles apply to all files in your project (not just scripts) and are also closely linked to good research data management (see Chapter 5: Data Management).
 
-#### File system structure
+#### File System Structure
 
-It is best to keep all files associated with a particular project in a single root directory. RStudio projects offer a great way to keep everything together in a self-contained and portable (i.e. so they can be moved from computer to computer) manner, allowing internal pathways to data and other scripts to remain valid even when shared or moved.
+It is best to keep all files associated with a particular project in a single root directory. RStudio Projects offer a great way to keep everything together in a self-contained and portable manner (i.e. so files can be moved from computer to computer), allowing internal pathways to data and scripts to remain valid even when shared or relocated.
 
 ```{r ProjStuct, echo=FALSE, fig.align="center", fig.cap="Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered.", out.width = '100%'}
 knitr::include_graphics("Figures/Example_project_structure.png")
 ```
 
-There is no single best way to organize a file system. The key is to make sure that the structure of directories and location of files are consistent, informative and works for you. Please find below an example of basic project directory structure (Figure \@ref(fig:ProjStuct)):
+There is no single best way to organize a file system. The key is to ensure that the structure of directories and the location of files are **consistent**, **informative**, and **tailored to your workflow**.
 
-- The `data` folder contains all input data (and metadata) used in the analysis.
-- The `MS` folder contains the manuscript.
-- The `Figures_&_Tables` folder contains figures and tables generated by the analyses.
-- The `Output` folder contains any type of intermediate or output files (e.g. simulation outputs, models, processed datasets, etc.). You might separate this and also have a `cleaned-data` folder.
-- The `R_functions` folder contains R scripts with function definitions.
-- The `Reports` folder contains RMarkdown files that document the analysis or report on results.
-- The scripts (`*.R`) that actually do things are stored in the root directory together with the `README.md` file. If your project has too many scripts, you might consider organizing them in a separate folder.
+Below is an example of a basic project directory structure (Figure \@ref(fig:ProjStuct)):
+
+- The `data` folder contains all input data and associated metadata used in the analysis.
+- The `MS` folder contains the manuscript files.
+- The `Figures_&_Tables` folder stores all figures and tables generated by the analyses.
+- The `Output` folder includes any intermediate or final output files (e.g., simulation outputs, models, processed datasets).  
+  You may choose to further separate outputs by creating subfolders such as `cleaned-data`.
+- The `R_functions` folder stores R scripts that define custom functions used throughout the project.
+- The `Reports` folder includes R Markdown (`.Rmd`) files that document the analysis process or summarize results.
+- The main analysis scripts (`*.R`) are stored in the root directory, along with the `README.md` file.  
+  If your project contains many scripts, consider placing them in a dedicated folder for better organization.
+
+<!-- STOPPED HERE -->
 
 #### License file
 
