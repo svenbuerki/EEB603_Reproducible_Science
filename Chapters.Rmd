@@ -88,6 +88,59 @@ knitr::opts_chunk$set(fig.pos = 'H')
 refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 ```
 
+<!-- THIS CODE CHUNK is used for pdf viewing -->
+
+```{r embendpdf, echo = F, results='hide'}
+embed_pdf <- function(pdf_path, unique_id) {
+  cat(glue::glue('
+<div style="text-align: center;">
+  <button id="toggleButton{unique_id}" onclick="toggleFullScreen{unique_id}()">Enter Full Screen</button>
+  <iframe id="pdfFrame{unique_id}" allowfullscreen src="{pdf_path}" width="100%" height="600px" style="border:none;">
+    <p>Your browser does not support PDFs. <a href="{pdf_path}">Download the PDF</a>.</p>
+  </iframe>
+</div>
+
+<script>
+function toggleFullScreen{unique_id}() {{
+  var elem = document.getElementById("pdfFrame{unique_id}");
+  var button = document.getElementById("toggleButton{unique_id}");
+  
+  // Refresh iframe source with timestamp to avoid caching issues
+  var pdfUrl = "{pdf_path}?" + new Date().getTime();
+  elem.src = pdfUrl;
+
+  if (!document.fullscreenElement) {{
+    // Request fullscreen
+    elem.requestFullscreen().catch(err => {{
+      console.error(`Error attempting to enable full-screen mode: ${{err.message}}`);
+    }});
+  }} else {{
+    // Exit fullscreen
+    document.exitFullscreen().catch(err => {{
+      console.error(`Error exiting full-screen mode: ${{err.message}}`);
+    }});
+  }}
+}}
+
+// Update button text and refresh on fullscreen state change (handles Esc key exits)
+document.addEventListener("fullscreenchange", function() {{
+  var button = document.getElementById("toggleButton{unique_id}");
+  var elem = document.getElementById("pdfFrame{unique_id}");
+  
+  if (document.fullscreenElement) {{
+    button.textContent = "Exit Full Screen";
+  }} else {{
+    button.textContent = "Enter Full Screen";
+    // Refresh iframe on exit to ensure clean fallback
+    elem.src = "{pdf_path}?" + new Date().getTime();
+  }}
+}});
+</script>
+  '))
+}
+```
+
+
 # Syllabus
 
 Please see this [webpage](index.html) for more details on the Syllabus.
@@ -2636,69 +2689,9 @@ The website of the [**Center for Open Science**](https://cos.io) was also used t
 
 The presentation associated with this class is available here:
 
-<div style="text-align: center;">
-  <button id="toggleButton" onclick="toggleFullScreen()">Enter Full Screen</button>
-  <iframe id="pdfFrameUnique" allowfullscreen src="Chapters_files/Chapter_3_Scientific_process.pdf" width="100%" height="600px" style="border:none;">
-    <p>Your browser does not support PDFs. <a href="Chapters_files/Chapter_3_Scientific_process.pdf">Download the PDF</a>.</p>
-  </iframe>
-</div>
-
-<script>
-function toggleFullScreen() {
-  var elem = document.getElementById("pdfFrameUnique");
-  var button = document.getElementById("toggleButton");
-  
-  // Refresh iframe source with timestamp to avoid caching issues
-  var pdfUrl = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
-  elem.src = pdfUrl;
-
-  if (!document.fullscreenElement) {
-    // Request fullscreen
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen().catch(err => {
-        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-      });
-    } else if (elem.mozRequestFullScreen) { // Firefox
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // IE/Edge
-      elem.msRequestFullscreen();
-    }
-  } else {
-    // Exit fullscreen
-    if (document.exitFullscreen) {
-      document.exitFullscreen().catch(err => {
-        console.error(`Error exiting full-screen mode: ${err.message}`);
-      });
-    }
-  }
-}
-
-// Update button text and refresh on fullscreen state change (handles Esc key exits)
-document.addEventListener("fullscreenchange", function() {
-  var button = document.getElementById("toggleButton");
-  var elem = document.getElementById("pdfFrameUnique");
-  
-  if (document.fullscreenElement) {
-    button.textContent = "Exit Full Screen";
-  } else {
-    button.textContent = "Enter Full Screen";
-    // Refresh iframe on exit to ensure clean fallback
-    elem.src = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
-  }
-});
-
-// For older browser compatibility (optional, but harmless)
-document.addEventListener("mozfullscreenchange", updateButton);
-document.addEventListener("webkitfullscreenchange", updateButton);
-document.addEventListener("MSFullscreenChange", updateButton);
-
-function updateButton() {
-  var button = document.getElementById("toggleButton");
-  button.textContent = document.fullscreenElement ? "Exit Full Screen" : "Enter Full Screen";
-}
-</script>
+```{r echo = F, results='asis'}
+embed_pdf("Chapters_files/Chapter_3_Scientific_process.pdf", "1")
+```
 
 ---
 
@@ -3335,69 +3328,9 @@ This chapter is based on the following sources:
 
 The presentation associated with this class is available here:
 
-<div style="text-align: center;">
-  <button id="toggleButton" onclick="toggleFullScreen()">Enter Full Screen</button>
-  <iframe id="pdfFrameDM" allowfullscreen src="Chapters_files/Chapter_5_PartA.pdf" width="100%" height="600px" style="border:none;">
-    <p>Your browser does not support PDFs. <a href="Chapters_files/Chapter_5_PartA.pdf">Download the PDF</a>.</p>
-  </iframe>
-</div>
-
-<script>
-function toggleFullScreen() {
-  var elem = document.getElementById("pdfFrameDM");
-  var button = document.getElementById("toggleButton");
-  
-  // Refresh iframe source with timestamp to avoid caching issues
-  var pdfUrl = "Chapters_files/Chapter_5_PartA.pdf?" + new Date().getTime();
-  elem.src = pdfUrl;
-
-  if (!document.fullscreenElement) {
-    // Request fullscreen
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen().catch(err => {
-        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-      });
-    } else if (elem.mozRequestFullScreen) { // Firefox
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // IE/Edge
-      elem.msRequestFullscreen();
-    }
-  } else {
-    // Exit fullscreen
-    if (document.exitFullscreen) {
-      document.exitFullscreen().catch(err => {
-        console.error(`Error exiting full-screen mode: ${err.message}`);
-      });
-    }
-  }
-}
-
-// Update button text and refresh on fullscreen state change (handles Esc key exits)
-document.addEventListener("fullscreenchange", function() {
-  var button = document.getElementById("toggleButton");
-  var elem = document.getElementById("pdfFrameDM");
-  
-  if (document.fullscreenElement) {
-    button.textContent = "Exit Full Screen";
-  } else {
-    button.textContent = "Enter Full Screen";
-    // Refresh iframe on exit to ensure clean fallback
-    elem.src = "Chapters_files/Chapter_5_PartA.pdf?" + new Date().getTime();
-  }
-});
-
-// For older browser compatibility (optional, but harmless)
-document.addEventListener("mozfullscreenchange", updateButton);
-document.addEventListener("webkitfullscreenchange", updateButton);
-document.addEventListener("MSFullscreenChange", updateButton);
-
-function updateButton() {
-  var button = document.getElementById("toggleButton");
-  button.textContent = document.fullscreenElement ? "Exit Full Screen" : "Enter Full Screen";
-}
-</script>
+```{r echo = F, results='asis'}
+embed_pdf("Chapters_files/Chapter_5_PartA.pdf", "2")
+```
 
 ---
 
@@ -3900,69 +3833,9 @@ This chapter draws on the following resources:
 
 The presentation associated with this class is available here:
 
-<div style="text-align: center;">
-  <button id="toggleButton" onclick="toggleFullScreen()">Enter Full Screen</button>
-  <iframe id="pdfFrameRC" allowfullscreen src="Chapters_files/Chapter_5_Reproducible_code.pdf" width="100%" height="600px" style="border:none;">
-    <p>Your browser does not support PDFs. <a href="Chapters_files/Chapter_5_Reproducible_code.pdf">Download the PDF</a>.</p>
-  </iframe>
-</div>
-
-<script>
-function toggleFullScreen() {
-  var elem = document.getElementById("pdfFrameRC");
-  var button = document.getElementById("toggleButton");
-  
-  // Refresh iframe source with timestamp to avoid caching issues
-  var pdfUrl = "Chapters_files/Chapter_5_Reproducible_code.pdf?" + new Date().getTime();
-  elem.src = pdfUrl;
-
-  if (!document.fullscreenElement) {
-    // Request fullscreen
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen().catch(err => {
-        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-      });
-    } else if (elem.mozRequestFullScreen) { // Firefox
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // IE/Edge
-      elem.msRequestFullscreen();
-    }
-  } else {
-    // Exit fullscreen
-    if (document.exitFullscreen) {
-      document.exitFullscreen().catch(err => {
-        console.error(`Error exiting full-screen mode: ${err.message}`);
-      });
-    }
-  }
-}
-
-// Update button text and refresh on fullscreen state change (handles Esc key exits)
-document.addEventListener("fullscreenchange", function() {
-  var button = document.getElementById("toggleButton");
-  var elem = document.getElementById("pdfFrameRC");
-  
-  if (document.fullscreenElement) {
-    button.textContent = "Exit Full Screen";
-  } else {
-    button.textContent = "Enter Full Screen";
-    // Refresh iframe on exit to ensure clean fallback
-    elem.src = "Chapters_files/Chapter_5_Reproducible_code.pdf?" + new Date().getTime();
-  }
-});
-
-// For older browser compatibility (optional, but harmless)
-document.addEventListener("mozfullscreenchange", updateButton);
-document.addEventListener("webkitfullscreenchange", updateButton);
-document.addEventListener("MSFullscreenChange", updateButton);
-
-function updateButton() {
-  var button = document.getElementById("toggleButton");
-  button.textContent = document.fullscreenElement ? "Exit Full Screen" : "Enter Full Screen";
-}
-</script>
+```{r echo = F, results='asis'}
+embed_pdf("Chapters_files/Chapter_5_Reproducible_code.pdf", "3")
+```
 
 ---
 
