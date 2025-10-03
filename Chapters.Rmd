@@ -3348,7 +3348,7 @@ function toggleFullScreen() {
   var button = document.getElementById("toggleButton");
   
   // Refresh iframe source with timestamp to avoid caching issues
-  var pdfUrl = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
+  var pdfUrl = "Chapters_files/Chapter_5_PartA.pdf?" + new Date().getTime();
   elem.src = pdfUrl;
 
   if (!document.fullscreenElement) {
@@ -3377,14 +3377,14 @@ function toggleFullScreen() {
 // Update button text and refresh on fullscreen state change (handles Esc key exits)
 document.addEventListener("fullscreenchange", function() {
   var button = document.getElementById("toggleButton");
-  var elem = document.getElementById("pdfFrameUnique");
+  var elem = document.getElementById("pdfFrameDM");
   
   if (document.fullscreenElement) {
     button.textContent = "Exit Full Screen";
   } else {
     button.textContent = "Enter Full Screen";
     // Refresh iframe on exit to ensure clean fallback
-    elem.src = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
+    elem.src = "Chapters_files/Chapter_5_PartA.pdf?" + new Date().getTime();
   }
 });
 
@@ -3913,7 +3913,7 @@ function toggleFullScreen() {
   var button = document.getElementById("toggleButton");
   
   // Refresh iframe source with timestamp to avoid caching issues
-  var pdfUrl = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
+  var pdfUrl = "Chapters_files/Chapter_5_Reproducible_code.pdf?" + new Date().getTime();
   elem.src = pdfUrl;
 
   if (!document.fullscreenElement) {
@@ -3942,14 +3942,14 @@ function toggleFullScreen() {
 // Update button text and refresh on fullscreen state change (handles Esc key exits)
 document.addEventListener("fullscreenchange", function() {
   var button = document.getElementById("toggleButton");
-  var elem = document.getElementById("pdfFrameUnique");
+  var elem = document.getElementById("pdfFrameRC");
   
   if (document.fullscreenElement) {
     button.textContent = "Exit Full Screen";
   } else {
     button.textContent = "Enter Full Screen";
     // Refresh iframe on exit to ensure clean fallback
-    elem.src = "Chapters_files/Chapter_3_Scientific_process.pdf?" + new Date().getTime();
+    elem.src = "Chapters_files/Chapter_5_Reproducible_code.pdf?" + new Date().getTime();
   }
 });
 
