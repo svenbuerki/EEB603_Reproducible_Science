@@ -94,48 +94,10 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 embed_pdf <- function(pdf_path, unique_id) {
   cat(glue::glue('
 <div style="text-align: center;">
-  <button id="toggleButton{unique_id}" onclick="toggleFullScreen{unique_id}()">Enter Full Screen</button>
   <iframe id="pdfFrame{unique_id}" allowfullscreen src="{pdf_path}" width="100%" height="600px" style="border:none;">
     <p>Your browser does not support PDFs. <a href="{pdf_path}">Download the PDF</a>.</p>
   </iframe>
 </div>
-
-<script>
-function toggleFullScreen{unique_id}() {{
-  var elem = document.getElementById("pdfFrame{unique_id}");
-  var button = document.getElementById("toggleButton{unique_id}");
-  
-  // Refresh iframe source with timestamp to avoid caching issues
-  var pdfUrl = "{pdf_path}?" + new Date().getTime();
-  elem.src = pdfUrl;
-
-  if (!document.fullscreenElement) {{
-    // Request fullscreen
-    elem.requestFullscreen().catch(err => {{
-      console.error(`Error attempting to enable full-screen mode: ${{err.message}}`);
-    }});
-  }} else {{
-    // Exit fullscreen
-    document.exitFullscreen().catch(err => {{
-      console.error(`Error exiting full-screen mode: ${{err.message}}`);
-    }});
-  }}
-}}
-
-// Update button text and refresh on fullscreen state change (handles Esc key exits)
-document.addEventListener("fullscreenchange", function() {{
-  var button = document.getElementById("toggleButton{unique_id}");
-  var elem = document.getElementById("pdfFrame{unique_id}");
-  
-  if (document.fullscreenElement) {{
-    button.textContent = "Exit Full Screen";
-  }} else {{
-    button.textContent = "Enter Full Screen";
-    // Refresh iframe on exit to ensure clean fallback
-    elem.src = "{pdf_path}?" + new Date().getTime();
-  }}
-}});
-</script>
   '))
 }
 ```
@@ -2644,17 +2606,19 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 
 # Chapter 3 {#chap3}
 
-## Let's start with a quote
-
-While studying the material presented in this chapter, keep in mind this quote from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman):
-
-> *The first principle is that you must not fool yourself — and you are the easiest person to fool.*
-
 ## Aim
 
 The ***aim*** of this chapter is to engage in readings and group discussions that **equip you with the knowledge and tools needed to implement reproducible science practices** in support of your research.
 
 We will begin by reviewing the steps of the scientific process and identifying potential threats to its integrity. Then, we will discuss strategies to mitigate these threats and explore initiatives that promote and reward reproducibility in science.
+
+---
+
+## Let's Start with a Quote
+
+While studying the material presented in this chapter, keep in mind this quote from [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman):
+
+> *The first principle is that you must not fool yourself — and you are the easiest person to fool.*
 
 ---
 
@@ -2692,6 +2656,13 @@ The presentation associated with this class is available here:
 ```{r echo = F, results='asis'}
 embed_pdf("Chapters_files/Chapter_3_Scientific_process.pdf", "1")
 ```
+
+<div class="info">
+  <p><strong>💡 Best browser to view presentation</strong></p>
+  <ul>
+    <li>For optimal viewing of this presentation in full-screen presentation mode, the instructor recommends using Mozilla Firefox. Its built-in PDF viewer supports seamless full-screen display with easy navigation tools, making it ideal for presentations without the need for external plugins. Other browsers may not handle PDF presentation features as reliably.</li>
+  </ul>
+</div>
 
 ---
 
@@ -3332,6 +3303,13 @@ The presentation associated with this class is available here:
 embed_pdf("Chapters_files/Chapter_5_PartA.pdf", "2")
 ```
 
+<div class="info">
+  <p><strong>💡 Best browser to view presentation</strong></p>
+  <ul>
+    <li>For optimal viewing of this presentation in full-screen presentation mode, the instructor recommends using Mozilla Firefox. Its built-in PDF viewer supports seamless full-screen display with easy navigation tools, making it ideal for presentations without the need for external plugins. Other browsers may not handle PDF presentation features as reliably.</li>
+  </ul>
+</div>
+
 ---
 
 ### Types of Research Data and Their Specific Characteristics {#researchdata}
@@ -3836,6 +3814,13 @@ The presentation associated with this class is available here:
 ```{r echo = F, results='asis'}
 embed_pdf("Chapters_files/Chapter_5_Reproducible_code.pdf", "3")
 ```
+
+<div class="info">
+  <p><strong>💡 Best browser to view presentation</strong></p>
+  <ul>
+    <li>For optimal viewing of this presentation in full-screen presentation mode, the instructor recommends using Mozilla Firefox. Its built-in PDF viewer supports seamless full-screen display with easy navigation tools, making it ideal for presentations without the need for external plugins. Other browsers may not handle PDF presentation features as reliably.</li>
+  </ul>
+</div>
 
 ---
 
