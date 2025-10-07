@@ -2698,7 +2698,7 @@ Recognizing the post-study category is equally important, as it encourages both 
 ## 🤝 Group Sharing and Discussion <span style="color:gray;">(20 minutes)</span>
 
 - Form 4 small groups (3–4 students each)
-- Each group will present a definition of one of the [common key threats](#gloss) to the scientific process and explain where it occurs. Additionally, each group must propose a [solution](#soltothreats) to mitigate this threat. Use the resources provided in this document to carry out your group assignment.
+- Each group presents a definition of one of the [common key threats](#gloss) to the scientific process and explains at which step(s) it occurs (and how it **biases** research outcomes). Additionally, each group must propose a [solution](#soltothreats) to mitigate this threat. Use the resources provided in this document to carry out your group assignment.
     + Group 1: **HARKing**
     + Group 2: **Outcome switching**
     + Group 3: **P-hacking**
