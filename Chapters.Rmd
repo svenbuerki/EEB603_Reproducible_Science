@@ -2695,6 +2695,17 @@ Recognizing the post-study category is equally important, as it encourages both 
 
 ---
 
+## 🤝 Group Sharing and Discussion <span style="color:gray;">(20 minutes)</span>
+
+- Form 4 small groups (3–4 students each)
+- Each group will present a definition of one of the [common key threats](#gloss) to the scientific process and explain where it occurs. Additionally, each group must propose a [solution](#soltothreats) to mitigate this threat. Use the resources provided in this document to carry out your group assignment.
+    + Group 1: **HARKing**
+    + Group 2: **Outcome switching**
+    + Group 3: **P-hacking**
+    + Group 4: **Publication bias**
+
+---
+
 ## Identify and Define Threats to the Scientific Process {#threatstoprocess}
 
 A hallmark of scientific creativity is the ability to recognize novel and unexpected patterns in data. However, a major challenge for scientists is remaining open to new and important insights while also avoiding the tendency to be misled by perceived structure in randomness.
@@ -2897,14 +2908,22 @@ Collectively, and at scale, these efforts can shift incentives so that what bene
 
 The Transparency and Openness Promotion (TOP) guidelines [published in @Nosek1422] provide a framework for journals and funders to incentivize or require greater transparency in the planning and reporting of research. The guidelines consist of eight modular standards, each with three levels of increasing stringency (see Figure \@ref(fig:OSF)). Journals choose which of the eight standards to adopt and at what level, allowing flexibility that accommodates disciplinary differences while establishing community-wide transparency standards.
 
-### TOP Transparency Modular Standards
+### 🤝 Group Sharing and Discussion <span style="color:gray;">(20 minutes)</span>
+
+- Form 4 small groups (3–4 students each)
+- Each group is tasked to:
+    1. Study the [TOP Guidelines](#TOPguidelines).  
+    2. Select a target journal and determine how it applies these guidelines. Here is an example of how *Science* applies the TOP Guidelines in its journal: https://www.science.org/content/page/science-journals-editorial-policies#TOP-guidelines  
+    3. Report their findings and conclusions to the class.
+
+### TOP Transparency Modular Standards {#TOPguidelines}
 
 The eight modular standards are:
 
 1. **Citation standards:** Proper citation of data sets and other research outputs.  
 2. **Data transparency:** Archiving and sharing of research data.  
 3. **Analytic methods transparency:** Archiving and sharing of analytic code.  
-4. **Research materials transparency:** Archiving and sharing of materials used in the research.  
+4. **Research materials transparency:** Archiving and sharing of materials used in the research.
 5. **Design and analysis transparency:** Reporting detailed methods and results.  
 6. **Pre-registration of studies:** Registering study plans prior to initiation.  
 7. **Pre-registration of analysis plans:** Registering analysis plans before conducting the study.  
