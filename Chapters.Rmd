@@ -2906,15 +2906,38 @@ Collectively, and at scale, these efforts can shift incentives so that what bene
 
 ## The Transparency and Openness Promotion Guidelines {#TOP}
 
-The Transparency and Openness Promotion (TOP) guidelines [published in @Nosek1422] provide a framework for journals and funders to incentivize or require greater transparency in the planning and reporting of research. The guidelines consist of eight modular standards, each with three levels of increasing stringency (see Figure \@ref(fig:OSF)). Journals choose which of the eight standards to adopt and at what level, allowing flexibility that accommodates disciplinary differences while establishing community-wide transparency standards.
+The **Transparency and Openness Promotion (TOP) Guidelines** [published in @Nosek1422] provide a framework for journals and funders to encourage greater transparency in research planning and reporting.
 
-### 🤝 Group Sharing and Discussion <span style="color:gray;">(20 minutes)</span>
+The guidelines consist of **eight modular standards**, each addressing a key aspect of research transparency.  
+Each standard includes **three levels of increasing stringency**, allowing for a gradual implementation of open science practices (see Figure \@ref(fig:TOP)).
 
-- Form 4 small groups (3–4 students each)
-- Each group is tasked to:
-    1. Study the [TOP Guidelines](#TOPguidelines).  
-    2. Select a target journal and determine how it applies these guidelines. Here is an example of how *Science* applies the TOP Guidelines in its journal: https://www.science.org/content/page/science-journals-editorial-policies#TOP-guidelines  
-    3. Report their findings and conclusions to the class.
+Journals can **choose which standards to adopt** and **at what level**, providing flexibility to account for disciplinary norms.
+
+This structure helps establish **community-wide transparency standards** while respecting the diversity of research practices across fields.
+
+### 🤝 Group Sharing and Discussion <span style="color:gray;">(15 minutes)</span>
+
+##### 🎯 Learning Objective
+
+Students explore how journals implement the **Transparency and Openness Promotion (TOP) Guidelines** and reflect on how these practices support open science.
+
+#### 👥 Instructions
+
+1. **Form 4 groups of 3–4 students.**
+2. **Each group member should:**
+    - Review the [TOP Guidelines](#TOPguidelines).
+    - Select a journal of interest in your field.
+    - Investigate how that journal applies the TOP Guidelines.  
+      - For example, see how *Science* applies the TOP Guidelines:  
+        https://www.science.org/content/page/science-journals-editorial-policies#TOP-guidelines  
+    - Identify:
+        - Which of the eight TOP standards the journal addresses
+        - What level of transparency (Level 0–3) is adopted, if available
+        - Any notable gaps or strengths in the journal’s approach
+3. **As a group**, discuss your findings and prepare a 1-minute summary that includes:
+    - One key **insight or observation** about how journals are applying the TOP Guidelines
+    - One **suggestion** for how journals could improve transparency or openness in publishing
+4. Each **group shares their findings** with the class to foster a broader discussion on transparency in scholarly communication.
 
 ### TOP Transparency Modular Standards {#TOPguidelines}
 
@@ -2969,7 +2992,7 @@ Today, funding agencies and journals are increasingly promoting Open Science, a 
 
 ## Aim
 
-This chapter aims to **explore how Open Science is promoted while recognizing when other principles, like the CARE Principles, must be applied to respect diverse perspectives, values, and data sovereignty**.
+This chapter aims to **explore how Open Science is promoted while recognizing when other principles, like the [CARE Principles](#CAREPrinc), must be applied to respect diverse perspectives, values, and data sovereignty**.
 
 It also provides **solutions to address threats to the scientific process** (introduced in Chapters [1](#chap1) and [3](#chap3)) and **guidance on managing the data life cycle and responsibly sharing research**.
 
@@ -3025,6 +3048,84 @@ While this definition focuses on access to research outputs, several other organ
 
 ---
 
+### 🤝 Group Sharing and Discussions 
+
+In this section, we conduct three group activities to study the material presented in this chapter. We focus on ensuring open science while respecting data governance for our stakeholders. Use the resources provided in this chapter to complete the group assignments below.
+
+#### FAIR Principles Group Activity <span style="color:gray;">(15 minutes)</span>
+
+##### 🎯 Learning Objective
+
+Students collaboratively explore how the **FAIR Principles** apply to real-world research data and reflect on challenges and best practices for making data FAIR.
+
+#### 👥 Instructions
+
+1. **Form 4 groups of 3–4 students.**
+2. **Assign one FAIR Principle to each group**:
+    - Group 1: **Findable**
+    - Group 2: **Accessible**
+    - Group 3: **Interoperable**
+    - Group 4: **Reusable**  
+3. **Each group member should:**
+    - Review the definition of the FAIR Principles.
+    - Focus on their group's assigned principle.
+    - Think of a dataset (e.g., survey data, lab experiment results, environmental data) and consider:
+        - How would you apply this principle to your dataset?
+        - What challenge or barrier might arise?
+4. **As a group**, discuss your responses and prepare a 1-minute summary that includes:
+    - One key **insight** or **challenge** discussed.
+    - One **tip** or **best practice** for making data more FAIR.
+5. Each **group reports their findings** to the class to foster discussion.
+
+#### CARE Principles Group Activity <span style="color:gray;">(15 minutes)</span>
+
+##### 🎯 Learning Objective
+
+Students collaboratively explore how the **CARE Principles** apply to data involving Indigenous Peoples and reflect on ethical, cultural, and governance considerations in data stewardship.
+
+#### 👥 Instructions
+
+1. **Form 4 groups of 3–4 students.**
+2. **Assign one CARE Principle to each group**:
+    - Group 1: **Collective Benefit**
+    - Group 2: **Authority to Control**
+    - Group 3: **Responsibility**
+    - Group 4: **Ethics**
+3. **Each group member should:**
+    - Review the definition of the CARE Principles.
+    - Focus on their group's assigned principle.
+    - Consider a dataset or research scenario involving Indigenous data (e.g., health records, environmental monitoring, traditional knowledge) and discuss:
+        - How would this principle apply to the dataset or scenario?
+        - What challenges or considerations might arise?
+4. **As a group**, discuss your responses and prepare a 1-minute summary that includes:
+    - One key **insight** or **challenge** you discussed.
+    - One **recommendation** or **best practice** for respecting this principle in research or data governance.
+5. Each **group shares their findings** with the class to encourage shared learning and discussion.
+
+#### FAIR & CARE Principles Comparison Activity <span style="color:gray;">(10 minutes)</span>
+
+##### 🎯 Learning Objective
+
+Students critically compare the **FAIR** and **CARE** Principles and explore how they can be applied together to support ethical, inclusive, and technically sound data practices.
+
+#### 👥 Instructions
+
+1. **Form 4 groups of 3–4 students.**
+2. **As a group, discuss the following prompts**:
+    - What are the key differences between FAIR and CARE?
+    - How might the two frameworks **complement** each other in practice?
+    - Where might they **conflict** or require trade-offs?
+    - Think of a dataset involving Indigenous or sensitive data (e.g., health, education, environmental data):
+        - How could you apply **both FAIR and CARE** to this dataset?
+        - What challenges or tensions might arise?
+        - What strategies or practices could help balance technical openness with ethical responsibility?
+3. **Prepare a 1–2 minute group summary** that includes:
+    - One key **insight or takeaway** from your discussion.
+    - One **practical suggestion** for applying both FAIR and CARE in real-world data stewardship.
+4. Each **group shares their findings** with the class to encourage shared learning and discussion.
+
+---
+
 ## What are the Pillars of Open Science? {#pillars}
 
 The 7 pillars of Open Science are: 
@@ -3068,18 +3169,15 @@ knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
     - **F2.** Data are described with rich metadata (as defined by R1 below).  
     - **F3.** Metadata clearly and explicitly include the identifier of the data they describe.  
     - **F4.** (Meta)data are registered or indexed in a searchable resource.
-
 2. **To be Accessible:**
     - **A1.** (Meta)data are retrievable by their identifier using a standardized communication protocol.  
         - **A1.1.** The protocol is open, free, and universally implementable.  
         - **A1.2.** The protocol allows for authentication and authorization, where necessary.  
     - **A2.** Metadata remain accessible even when the data are no longer available.
-
 3. **To be Interoperable:**
     - **I1.** (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.  
     - **I2.** (Meta)data use vocabularies that themselves follow FAIR principles.  
     - **I3.** (Meta)data include qualified references to other (meta)data.
-
 4. **To be Reusable:**
     - **R1.** (Meta)data are richly described with a plurality of accurate and relevant attributes.  
         - **R1.1.** (Meta)data are released with a clear and accessible data usage license.  
@@ -3227,7 +3325,7 @@ Here is a list of some of the most commonly used CC licenses with URLs leading t
 
 ## The CARE Principles and Data Sovereignty {#CARE}
 
-In this chapter, we will investigate both the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov), emphasizing how these concepts are closely connected.
+In this section, we investigate both the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov), emphasizing how these concepts are closely connected.
 
 As noted by @Carroll2021:
 
@@ -3240,11 +3338,18 @@ Integrating the [FAIR Principles](#FAIR) for scientific data with the CARE Princ
 knitr::include_graphics("Figures/BeFAIRandCARE.png")
 ```
 
-### The CARE Principles {#CAREPrinc}
+### The CARE Principles for Indigenous Data Governance {#CAREPrinc}
 
-**The CARE Principles detail that the use of Indigenous data should result in tangible benefits for Indigenous collectives through inclusive development and innovation, improved governance and citizen engagement, and result in equitable outcomes.** 
+The **CARE Principles** emphasize the importance of **people and purpose** in data governance, particularly for **Indigenous communities**. CARE stands for:
 
-**Collective benefit** is more likely to be realized when data ecosystems are designed to support Indigenous nations and when the use/reuse of data for resource allocation is consistent with community values. The [United Nations Declaration on the Rights of Indigenous Peoples](https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html) asserts Indigenous Peoples’ rights and interests in data and their **authority to control** their data. Access to ‘data for governance’ is vital to support self-determination and Indigenous nations should be actively involved in ‘governance of data’ to ensure ethical reuse of data. Given the majority of Indigenous data is controlled by non-Indigenous institutions there is a **responsibility** to engage respectfully with those communities to ensure the use of Indigenous data supports capacity development, increasing community data capabilities, and the strengthening of Indigenous languages and cultures. Similarly, Indigenous Peoples’ **ethics** should inform the use of data across time in order to minimize harm, maximize benefits, promote justice, and allow for future use [see @Carroll2021 for more details].
+- 🧩 **Collective Benefit**: Data ecosystems should be designed and operated in ways that enable **Indigenous Peoples to derive meaningful benefits** from data. This includes supporting governance, innovation, and community development.
+- 🛡 **Authority to Control**: **Indigenous Peoples have the right to control** the creation, collection, access, analysis, interpretation, management, dissemination, and reuse of data relating to their people, lands, and resources.
+- 📣 **Responsibility**: Researchers and data stewards must take **responsibility for how Indigenous data is used**, ensuring ethical practices and supporting capacity building within Indigenous communities.
+- ⚖️ **Ethics**: The use of Indigenous data must prioritize the **rights, dignity, and well-being** of Indigenous Peoples. This goes beyond formal compliance to include meaningful engagement and respect.
+
+> 📝 *The CARE Principles complement the FAIR Principles by adding a crucial human- and rights-centered lens to data governance.*
+
+Finally, the [United Nations Declaration on the Rights of Indigenous Peoples](https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html) affirms Indigenous Peoples’ rights and interests in data and their **authority to control** it. Access to *data for governance* is essential to support self-determination, and Indigenous nations should be actively involved in the *governance of data* to ensure ethical data use and reuse.
 
 ### Data Sovereignty {#datasov}
 
