@@ -398,6 +398,8 @@ DT::datatable(rec,
   DT::formatStyle('Topic', fontWeight = 'bold')
 ```
 
+<hr style="border: 2px solid #333; margin: 2em 0;">
+
 # Chapter 2 {#chap2}
 
 ## Introduction
@@ -2604,6 +2606,8 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 - Include multiple choices questions.
 - Embed a YouTube video.
 
+<hr style="border: 2px solid #333; margin: 2em 0;">
+
 # Chapter 3 {#chap3}
 
 ## Aim
@@ -2974,11 +2978,11 @@ As a workflow system, OSF integrates with many existing research tools, enabling
 knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 ```
 
----
-
 [^1]: What is a Hypothesis? A hypothesis is a tentative, testable answer to a scientific question. Once a scientist has a scientific question they perform a literature review to find out what is already known on the topic. Then this information is used to form a tentative answer to the scientific question. Keep in mind, that the hypothesis also has to be testable since the next step is to do an experiment to determine whether or not the hypothesis is right! A hypothesis leads to one or more predictions that can be tested by experimenting. Predictions often take the shape of "If ____then ____" statements, but do not have to. Predictions should include both an independent variable (the factor you change in an experiment) and a dependent variable (the factor you observe or measure in an experiment). A single hypothesis can lead to multiple predictions.
 [^2]: GBIF — the Global Biodiversity Information Facility — is an international network and research infrastructure funded by the world’s governments and aimed at providing anyone, anywhere, open access to data about all types of life on Earth.
 [^3]: Postdiction involves explanation after the fact.
+
+<hr style="border: 2px solid #333; margin: 2em 0;">
 
 # Chapter 4 {#chap4}
 
@@ -3360,6 +3364,8 @@ The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the conce
 Data sovereignty is usually discussed in two contexts: Indigenous groups and their autonomy from post-colonial states, and the control of transnational data flows. With the rise of cloud computing, many countries have enacted laws governing data control and storage, reflecting measures of data sovereignty. More than 100 countries now have data sovereignty laws in place.
 
 In the context of self-sovereign identity (SSI), individuals can fully create and control their credentials, although nations may still issue digital identities within this framework.
+
+<hr style="border: 2px solid #333; margin: 2em 0;">
 
 # Chapter 5 {#Chap5}
 
@@ -3882,6 +3888,7 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 - How and where will you preserve your research data for the long term?  
 - How will you make your data accessible to future users?
 
+---
 
 ## Reproducible Code {#repcode}
 
@@ -4363,6 +4370,8 @@ This topic will not be covered in this class, but it is worth noting that there 
 
 The instructor encourages students to discuss with their supervisors whether these packages might be useful for their projects.
 
+<hr style="border: 2px solid #333; margin: 2em 0;">
+
 # Chapter 6
 
 ## Introduction
@@ -4810,6 +4819,8 @@ knitr::include_graphics("Figures/Compiled_file.png")
 To get familiar with this procedure, please practice by applying the above approach to different journal templates by favoring those where you might be submitting to. 
 
 Enjoy writing scientific publications in R Markdown!
+
+<hr style="border: 2px solid #333; margin: 2em 0;">
 
 # Chapter 7
 
