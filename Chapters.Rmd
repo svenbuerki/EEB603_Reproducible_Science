@@ -3893,7 +3893,7 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 
 ### Introduction
 
-The following steps must be fully integrated to produce reproducible code:
+To produce reproducible code, the following steps must be integrated:
 
 - **Step 1:** Establish a reproducible project workflow.  
 - **Step 2:** Organize the project for reproducibility.  
@@ -3903,18 +3903,18 @@ The following steps must be fully integrated to produce reproducible code:
 - **Step 6:** Implement version control (using Git).  
 - **Step 7:** Archive and cite code appropriately.
 
-In this chapter, we will cover Steps 1 to 4. Step 5 was introduced in Chapter [2](#chap2), and Step 7 is covered in Chapter [5](#partDM) under Data Management. Step 6 will be addressed in the bioinformatics tutorial associated with Chapter 12.
+In this chapter, we will cover Steps 1 to 4. Step 5 was introduced in [Chapter 2](#chap2), and Step 7 is discussed in [Chapter 5](#partDM) under Data Management. Step 6 will be addressed in the bioinformatics tutorial associated with Chapter 12.
 
 ---
 
 ### Learning Outcomes
 
 - [Learn how to organize projects to support reproducibility](#orgprjrep) 
-- Understand the importance of software licenses and how to apply them.  
-- Apply basic programming standards to promote clarity and transparency.  
-- Use R to explore and summarize data structure and file organization.  
-- Understand code portability, including the difference between absolute and relative paths.  
-- Learn how to document and manage software dependencies effectively.  
+- [Use R to explore and summarize data structure and file organization](#Rfordatastruct) 
+- [Understand the importance of software licenses and how to apply them](#softwarelicenses) 
+- [Apply basic programming standards to promote clarity and transparency](#basiccodestdr)
+- [Understand code portability, including the difference between absolute and relative paths](#codeport)  
+- [Learn how to document and manage software dependencies effectively](#docsoftdep)  
 
 ---
 
@@ -3950,30 +3950,32 @@ embed_pdf("Chapters_files/Chapter_5_Reproducible_code.pdf", "3")
 
 ### Data and Dependencies
 
-To complete the exercises in this chapter, you will need to:
+To complete the exercise associated with the [use of R to explore and summarize data structure and file organization](#Rfordatastruct), you will need to:
 
-1. Download the required dataset folder from the shared Google Drive.
+1. Download the required dataset folder from the shared Google Drive.  
 2. Install and load the necessary R packages.
 
-Further details for each step are provided below.
+Detailed instructions for each step are provided below.
 
 #### Data {#dataProjectID}
 
-The dataset for this chapter is contained in the `Project_ID` folder, available via our shared [Google Drive](https://drive.google.com/drive/folders/1ZNNfDcn6b1vLscjbg66aU5cWtx773lnw?usp=drive_link):
+The dataset for this chapter is contained in the `Project_ID` folder, which you can access via our shared [Google Drive](https://drive.google.com/drive/folders/1ZNNfDcn6b1vLscjbg66aU5cWtx773lnw?usp=drive_link):
 
 **Path:**  
 `Reproducible_Science > Exercises > Chapter_5 > Project_ID`
 
-Please download the entire `Project_ID` folder to your local machine before starting the exercises.
+Please download the entire `Project_ID` folder to your local computer before starting the exercises.
 
 #### R Packages {#RpkgRepCode}
 
-To ensure all required R packages are available, we will reuse code introduced in Chapter 1. The exercises rely on the following packages:
+To ensure you have all the necessary R packages, we will reuse code introduced in Chapter 1. The exercises depend on the following packages:
 
-- `data.tree`
-- `DiagrammeR`
+- `data.tree`  
+- `DiagrammeR`  
 
-Please make sure these packages are installed and loaded in your R environment before proceeding. This cane be done by using the R code provided below. Before proceeding read the disclaimer.
+Please make sure these packages are installed and loaded in your R environment before proceeding. You can use the R code provided below to do this.
+
+Before running the code, please read the disclaimer:
 
 <style>
 .disclaimer {
@@ -3989,14 +3991,14 @@ Please make sure these packages are installed and loaded in your R environment b
 <div class="disclaimer">
   <p><strong>💡 Disclaimer</strong></p>
   <ul>
-    <li><strong>Warning:</strong> The code in this section will install the following <code>R</code> packages (including their dependencies) on your computer: <code>data.tree</code> and <code>DiagrammeR</code>.</li>
-    <li><strong>About the <code>R</code> packages:</strong> These packages are required to help you organize your project for reproducibility. Both are available on <a href="https://cran.r-project.org/web/packages/" target="_blank" rel="noopener noreferrer">CRAN</a>, the official repository for <code>R</code> packages.</li>
-    <li><strong><code>R</code> package repositories:</strong> Before running the installation code, ensure that your <code>R</code> package repositories are properly set in RStudio. You can follow <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/packages.html" target="_blank" rel="noopener noreferrer">this guide</a> for detailed instructions.</li>
+    <li><strong>Warning:</strong> The code in this section will install the following <code>R</code> packages (and their dependencies) on your computer: <code>data.tree</code> and <code>DiagrammeR</code>.</li>
+    <li><strong>About the <code>R</code> packages:</strong> These packages help you organize your project for reproducibility. Both are available on <a href="https://cran.r-project.org/web/packages/" target="_blank" rel="noopener noreferrer">CRAN</a>, the official repository for <code>R</code> packages.</li>
+    <li><strong><code>R</code> package repositories:</strong> Before running the installation code, ensure your <code>R</code> package repositories are properly set in RStudio. You can follow <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/packages.html" target="_blank" rel="noopener noreferrer">this guide</a> for detailed instructions.</li>
     <li><strong>Questions or concerns:</strong> If you need assistance, please contact the instructor at <a href="mailto:svenbuerki@boisestate.edu">svenbuerki@boisestate.edu</a>.</li>
   </ul>
 </div>
 
-Code to install R packages for this section of Chapter 5: 
+The code to install R packages is as follows: 
 
 ```{r eval = TRUE, echo = TRUE}
 ##~~~
@@ -4034,9 +4036,9 @@ sapply(pkg, require, character.only = TRUE)
 
 ### Organize Your Project for Reproducibility {#orgprjrep}
 
-#### "Draw" a Reproducible Project Workflow
+#### Visualize Your Reproducible Project Workflow
 
-Organizing your project for reproducibility begins with drawing a workflow that will guide your project implementation. An example of a reproducible project workflow is displayed in Figure \@ref(fig:ReproWorkflow). This workflow will be used as a template for the material presented in this chapter.
+A key step to organizing your project for reproducibility is to create a clear workflow diagram that outlines how your project will be structured and executed. An example of such a reproducible project workflow is shown in Figure \@ref(fig:ReproWorkflow). We will use this workflow as a guiding template throughout this chapter to help you implement your own reproducible project.
 
 ```{r ReproWorkflow, echo=FALSE, fig.align="center", fig.cap="A simple reproducible project workflow.", out.width = '100%'}
 knitr::include_graphics("Figures/Reproducible_code_workflow.png")
@@ -4087,42 +4089,42 @@ Below is an example of a basic project directory structure (Figure \@ref(fig:Pro
 - The main analysis scripts (`*.R`) are stored in the root directory, along with the `README.md` file.  
   If your project contains many scripts, consider placing them in a dedicated folder for better organization.
 
-<!-- STOPPED HERE -->
+---
 
-#### License file
+### Using R to Infer Data Structure and File Organization {#Rfordatastruct}
 
-Usually, code and software are licensed under a [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html). This is a free, copyleft license for software and other kinds of works, specifically designed to ensure cooperation with the community in the case of network server software. For instance, this is the licence that the instructor has used for this [class](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE.md). 
-
-#### Using R to infer data structure and files organization
-
-Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project as well as track versioning. The R base functions *list.files()* and *file.info()* can be combined to obtain information on files stored in your project. Please see code below for an example associated to Figure \@ref(fig:ProjStuct).  
+Inferring the directory tree structure of your project provides a simple and efficient way to summarize the data structure and organization of files related to your project, as well as to track versioning. The R base functions *list.files()* and *file.info()* can be combined to obtain information about the files stored in your project. Please see the code below for an example associated with Figure \@ref(fig:ProjStuct).
 
 ```{r TreeDir2, echo=TRUE, tidy=TRUE, warning=FALSE}
 #Produce a list of all files in working directory (Project-ID) together with info related to those files
 file.info(list.files(path="Project_ID", recursive = TRUE, full.name = TRUE))
 ```
 
-#### Pseudocode and associated R script
+#### Pseudocode and Associated R Script
 
-The code presented above could be at the core of a user-defined function that would aim at managing files and ensuring data reliability for your project. To help you define such a function, let's investigate this further and produce a diagram summarizing your project structure. This objective is achieved in three steps (see Figure \@ref(fig:plotProjStr)):
+The code presented above could be at the core of a [user-defined function](#partE) designed to manage files and ensure data reliability for your project. To help you define such a function, let's investigate this further and produce a diagram summarizing your project structure. This objective is achieved in four steps (see Figure \@ref(fig:plotProjStr)):
 
-- **Step 1:** Produce a list of all files in your working directory using *file.info()* and *list.files()* functions. The output of this code is a `data.frame`
-- **Step 2:** Convert the `data.frame` into a `data.tree` class object. This is done using the *data.tree::as.Node()* function from the `data.tree` package.
-- **Step 3:** Prepare and plot diagram of project structure. This is done using set of functions from `data.tree` and plotting the output using `DiagrammR` package.
-- **Step 4:** Save the output from step 3.
+- **Step 1:** Produce a list of all files in your working directory using the *file.info()* and *list.files()* functions. The output of this code is a `data.frame`.
+- **Step 2:** Convert the `data.frame` into a `data.tree` class object using the *data.tree::as.Node()* function from the `data.tree` package.
+- **Step 3:** Prepare and plot a diagram of the project structure. This is done using a set of functions from `data.tree`, and the output is plotted using the `DiagrammeR` package.
+- **Step 4:** Save the output from Step 3.
 
-**WARNING:** Prior to starting the exercise, please go on the shared Google Drive and download the `Project_ID` folder at this path: 
+<div class="disclaimer">
+  <p><strong>💡 Disclaimer</strong></p>
+  <ul>
+    <li><strong>Warning:</strong> Before starting the exercise, please go to the shared Google Drive and download the <code>Project_ID</code> folder located at: <code>Reproducible_Science > Exercises > Chapter_5 > Project_ID</code>.</li>
+    <li><strong>Questions or concerns:</strong> If you need assistance, please contact the instructor at <a href="mailto:svenbuerki@boisestate.edu">svenbuerki@boisestate.edu</a>.</li>
+  </ul>
+</div>
 
-`Reproducible_Science > Exercises > Chapter_5 > Project_ID`
-
-##### R code and associated outputs
+#### R Code and Associated Outputs
 
 Procedure to follow:
 
-1. Copy `Project_ID/` in a directory entitled `Chapter_5_PartB`.
-2. Create and save an `R` script and save it in `Chapter_5_PartB`.
-3. Make sure R packages are installed. See [here](#RpkgRepCode) for more details.
-4. Study and execute the R code below to infer the file structure in `Project_ID/`. Also read the text below, which further explains the approach.   
+1. Copy the `Project_ID/` folder into a directory named `Chapter_5_PartB`.
+2. Create an R script and save it in `Chapter_5_PartB`.
+3. Ensure that the required R packages are installed. See [here](#RpkgRepCode) for more details.
+4. Study and execute the R code below to infer the file structure of `Project_ID/`. Also, read the accompanying text, which further explains the approach.
 
 ```{r plotProjStr, echo = T, eval = T, fig.cap = "Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.", fig.dim = c(6,6)}
 ### Load R packages
@@ -4156,48 +4158,61 @@ data.tree::SetNodeStyle(myproj$R_functions, style = "box", penwidth = "2px")
 plot(myproj)
 ```
 
-Finally, the R DiagrammeR package sadly doesn't allow to easily save the graph into a file (step 4) using e.g. the *pdf()* and *dev.off()* functions, but this task can be done in RStudio as follows:
+Finally, the R `DiagrammeR` package unfortunately doesn't allow you to easily save the graph to a file (Step 4) using, for example, the *pdf()* and *dev.off()* functions. However, this task can be accomplished in RStudio as follows:
 
-1. The diagram outputted by step 3 is displayed in the `Viewer` window (in the bottom right panel) and can be exported by clicking on the ![](Figures/Export_button.png) button and select `Save as Image...` as shown in Figure \@ref(fig:ExportDiag1).
+1. The diagram generated in Step 3 is displayed in the `Viewer` window (bottom right panel). It can be exported by clicking the ![](Figures/Export_button.png) button and selecting `Save as Image...`, as shown in Figure \@ref(fig:ExportDiag1).
 
 ```{r ExportDiag1, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to export the diagram in RStudio.", out.width = '60%'}
 knitr::include_graphics("Figures/Save_DiagrammR.png")
 ```
 
-2. Once you have executed the latter step, a window will open allowing you to select the image format, directory and file name as shown in Figure \@ref(fig:ExportDiag2). 
+2. Once you have executed the previous step, a window will open allowing you to select the image format, directory, and file name, as shown in Figure \@ref(fig:ExportDiag2).
 
 ```{r ExportDiag2, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to save the diagram in RStudio.", out.width = '60%'}
 knitr::include_graphics("Figures/Save_DiagrammR_2.png")
 ```
 
-To find out more about your options to export/save DiagrammeR graphs please visit this website:
+To learn more about the options for exporting or saving `DiagrammeR` graphs, please visit the following website:
 
 https://rich-iannone.github.io/DiagrammeR/io.html
 
-#### Informative, consistent naming
+---
 
-Good naming extends to all files, folders and even objects in your analysis and serves to make the contents and relationships among elements of your analysis understandable, searchable and organised in a logical fashion (see Figure \@ref(fig:ProjStuct) for examples and Chapter 5: Data management for more details).
+### Software Licenses {#softwarelicenses}
 
-### Ensure basic programming standards
+Code and software are typically licensed under the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html). This is a free, copyleft license for software and other types of works, specifically designed to promote community cooperation, especially in the context of network server software. 
 
-#### Writing pseudocode
+For example, this is the license used by the instructor for this [class](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE.md).
 
-Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language (here R), but is intended for human reading rather than machine reading. Here, you will establish the big steps (and their associated tasks) and tie R functions (existing or that have to be made) to those steps. This provides the backbone of your code and will support writing it.  
+---
 
-#### Writing code
+### Apply Basic Programming Standards {#basiccodestdr}
 
-Writing clear, reproducible code has (at least) three main benefits:
-1. It makes returning to the code much easier a few months down the line; whether revisiting an old project, or making revisions following peer review. 
-2. The results of your analysis are more easily scrutinized by the readers of your paper, meaning it is easier to show their validity. 
-3. Having clean and reproducible code available can encourage greater uptake of new methods that you have developed.
+#### Informative, Consistent Naming
 
-To write clear and reproducible code, it is recommended to follow the workflow depicted in Figure \@ref(fig:ReproWorkflow). The following section explains each part of the workflow along with some tips for writing code. Although this workflow would be the ‘gold standard’, just picking up some of the elements can help to make your code more effective and readable. 
+Good naming practices should extend to all files, folders, and even objects in your analysis. This helps make the contents and relationships among the elements of your analysis understandable, searchable, and logically organized (see Figure \@ref(fig:ProjStuct) for examples, and Chapter 5: Data Management for more details).
 
-#### Style guides
+#### Writing Pseudocode
 
-The foundation of writing readable code is to choose a logical and readable coding style, and to stick to it. Some key elements to consider when developing a coding style are:
+Pseudocode is an informal, high-level description of how a computer program or algorithm operates. It uses the structural conventions of a standard programming language (in this case, R) but is intended for human understanding rather than execution by a machine. 
 
-- Using meaningful file names, and numbering these if they are in a sequence (see Figure \@ref(fig:ProjStuct) for examples and Chapter 5: Data management for more details).
+Here, you will define the major steps in your process (and their associated tasks) and link them to R functions—either existing ones or those you need to create. This serves as the backbone of your code and supports the process of writing it.
+
+#### Writing Code
+
+Writing clear, reproducible code has (at least) three major benefits:
+
+1. It makes returning to the code much easier months later—whether you're revisiting an old project or making revisions after peer review.  
+2. The results of your analysis are easier for others (e.g., readers or reviewers) to examine and validate.  
+3. Clean, reproducible code can encourage broader adoption of any new methods you develop.
+
+To support writing effective code, it is recommended to follow the workflow shown in Figure \@ref(fig:ReproWorkflow). The next section explains each part of this workflow and offers tips for writing better code. Although the workflow represents a 'gold standard,' even adopting a few of its elements can significantly improve the clarity and quality of your code.
+
+#### Style Guides
+
+The foundation of writing readable code is choosing a clear and consistent coding style—and sticking to it. Some key elements to consider when developing your coding style include:
+
+- Using meaningful file names, and numbering them if they are part of a sequence (see Figure \@ref(fig:ProjStuct) for examples, and Chapter 5: Data Management for more details).
 
 ```{r tidy=F, eval=FALSE}
 ### Naming files
@@ -4210,7 +4225,7 @@ foo.r
 stuff.r
 ```
 
-- Concise and descriptive object names. Variable names should usually be nouns and function names verbs. Using names of existing variables or functions should be avoided.
+- Use concise and descriptive object names. Variable names should typically be nouns, while function names should be verbs. Avoid using names that already exist as variables or functions in R.
 
 ```{r tidy=F, eval=FALSE}
 ### Naming objects
@@ -4225,7 +4240,7 @@ dayone
 djm1
 ```
 
-- Spacing should be used to improve visual effect: use spaces around operators (`=`, `+`, `-`, `<-`, etc.), and after commas (much like in a sentence).
+- Use spacing to improve readability: add spaces around operators (`=`, `+`, `-`, `<-`, etc.) and after commas, just as you would in a sentence.
 
 ```{r tidy=F, eval=FALSE}
 ### Spacing
@@ -4236,7 +4251,8 @@ average <- mean(feet / 12 + inches, na.rm = TRUE)
 average<-mean(feet/12+inches,na.rm=TRUE)
 ```
 
-- Indentation should be with two spaces, not tabs, and definitely not a mixture of tabs and spaces.
+- Use two spaces for indentation—avoid tabs, and never mix tabs and spaces.
+
 ```{r tidy=F, eval=FALSE}
 ### Indentation
 long_function_name <- function(a = "a long argument", 
@@ -4246,7 +4262,7 @@ long_function_name <- function(a = "a long argument",
 }
 ```
 
-- Assignment. Use `<-`, not `=`, for assignment.
+- Use `<-` for assignment, not `=`.
 
 ```{r tidy=F, eval=FALSE}
 ### Assignment
@@ -4257,16 +4273,46 @@ x <- 5
 x = 5
 ```
 
-The most important role of a style guide, however, is to introduce consistency to scripts.
+The most important role of a style guide, however, is to ensure consistency across scripts.
 
-#### Portable code: Absolute vs. Relative paths
+#### Commenting Code
 
-When working collaboratively, portability between machines is very important, i.e. will your code work on someone else’s computer? Portability is also important if code is being run on another server, for example a High Performance Cluster. One way to improve portability of code is to avoid using absolute paths and use only relative paths (see https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths). 
+How often have you revisited an old script six months later and struggled to remember what you were doing? Or taken on a script from a collaborator and found it difficult to understand what their code does and why? 
 
-- **An absolute path** is one that gives the full address to a folder or file. 
-- **A relative path** gives the location of the file from the current working directory. Relative paths are favored to promote code portability.
+An easy way to make code more readable and reproducible is the liberal—and effective—use of comments. A comment is a line of text that is visible in the script but is not executed. In both R and Python, comments begin with a `#`.
 
-For example based on `species_data.csv` stored in the `Data` folder shown in Figure \@ref(fig:ProjStuct):
+**A good principle to follow is to comment the ‘why’ rather than the ‘what’**. The code itself shows what is being done; it is far more important to explain the reasoning behind a particular section, or to clarify any nonstandard or complex parts of the code.
+
+It is also good practice to use comments to provide an overview at the beginning of a script and to use commented lines of `---` to visually break up the script—for example, in R:
+
+```{r eval=FALSE}
+# Load data -------
+```
+
+#### Writing Functions
+
+When analyzing data, you often need to repeat the same task multiple times. For example, you might have several files that all require loading and cleaning in the same way, or you might need to perform the same analysis for multiple species or parameters. The best way to handle these tasks is to write functions and store them in a dedicated folder (e.g., `R_functions` as shown in \@ref(fig:ProjStuct)). These functions can then be loaded into the R environment—and made available for use—by calling the `source()` function, which should be placed at the top of your R script. For more details, please see Chapter 1, Part D.
+
+#### Testing Scientific Code
+
+In the experimental sciences, rigorous testing ensures that results are accurate, reproducible, and reliable. Testing confirms that the experimental setup functions as intended and helps quantify any systematic biases. Since experimental results are not trusted without such validation, the same standard should apply to your code.
+
+Testing scientific code helps ensure it works as intended and allows you to understand and quantify any limitations. Additionally, using tests can speed up code development by identifying errors early.
+
+While establishing formal testing protocols is especially important when designing R packages, informal testing is also valuable. The instructor recommends that students load their written functions and run *ad hoc* tests in the command line to verify that the functions perform as expected.
+
+---
+
+### Code Portability {#codeport}
+
+When working collaboratively, ensuring code portability between machines is crucial—that is, will your code run correctly on someone else’s computer? Portability is also important when running code on different servers, such as a High Performance Cluster. 
+
+One effective way to improve code portability is to avoid using absolute paths and instead use relative paths (see https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths).
+
+- **An absolute path** provides the full address to a folder or file.  
+- **A relative path** specifies the location of a file relative to the current working directory. Relative paths are preferred because they enhance code portability.
+
+For example, consider the file `species_data.csv` stored in the `Data` folder shown in Figure \@ref(fig:ProjStuct):
 
 ```{r eval=FALSE}
 # Absolute path -----------------------------
@@ -4278,64 +4324,44 @@ Project_ID = Project root folder = working directory
 Data/species_data.csv
 ```
 
-Relative paths are particularly useful when transferring between computers because while I may have stored my project folder in ‘C:/Project_ID/’, you may have yours stored in ‘C:/Users/My Documents’. Using relative paths and running from the project folder will ensure that *file-not-found errors* are avoided. 
+Relative paths are especially useful when transferring projects between computers. For example, while you might have stored your project folder in `C:/Project_ID/`, someone else might have theirs in `C:/Users/My Documents`. Using relative paths—and running your code from the project folder—helps avoid *file-not-found errors*.
 
-RStudio is especially designed to help portability of code. For instance, you can easily set the working directory in RStudio by clicking:
+RStudio is specifically designed to facilitate code portability. For instance, you can easily set the working directory in RStudio by clicking:
 
 ```{r eval=FALSE}
 Session > Set Working Directory > To Source File Location
 ```
 
-or using the *setwd()* function. Please see Chapter 1 for more details.
+Alternatively, you can use the *setwd()* function. For more details, please see [Chapter 2](#chap2).
 
-#### Commenting code
+---
 
-How often have you revisited an old script six months down the line and not been able to figure out what you had been doing? Or have taken on a script from a collaborator and not been able to understand what their code is doing and why? An easy win for making code more readable and reproducible is the liberal, and effective, use of comments. A comment is a line of code that is visible, but does not get run with the rest of the script. In R and Python this is signified by beginning the line with a #.
+### Document and Manage Software Dependencies {#docsoftdep}
 
-**One good principle to adhere to is to comment the ‘why’ rather than the ‘what’**. The code itself tells the reader what is being done, it is far more important to document the reasoning behind a particular section of code or, if it is doing something nonstandard or complicated, to take some time to describe that section of code.
+Reproducibility also means ensuring that someone else can reuse your code to obtain the same results as you (see [Appendix 1] for more details).
 
-It is also good practice to use comments to add an overview at the beginning of a script, and commented lines of `---` to break up the script: e.g. in R
+To enable others to reproduce the results in your report, you need to provide more than just the code and data. You must also document the exact versions of all packages, libraries, and software used, as well as potentially your operating system and hardware.
 
-```{r eval=FALSE}
-# Load data -------
-```
+R itself is quite stable, and the core development team takes backward compatibility seriously—meaning old code generally works with recent versions of R. However, default values for some functions can change, and new functions are regularly introduced. If you wrote your code on a recent R version and share it with someone using an older version, they might not be able to run it. Similarly, code written for one package version may produce different results with a newer version.
 
-#### Writing functions
+#### Reporting R Packages and Versions
 
-Often when you are analyzing data, you need to repeat the same task many times. For example, you might have several files that all need loading and cleaning in the same way, or you might need to perform the same analysis for multiple species or parameters. The best way (by far) to handle those tasks is to write functions and store those in a specific folder (e.g. `R_functions` in \@ref(fig:ProjStuct)). Those functions will be loaded into the R environment (and therefore made available to users) by using the `source()` function, which will be placed at the top of your R script. Please see Chapter 1 part D for more details.
+In R, the simplest—and a very useful—way to document your dependencies is to include the output of `sessionInfo()` (or `devtools::session_info()`). This output shows all the packages and their versions loaded in the session used to run your analysis. Anyone wishing to recreate your work will then know which packages and versions to install. See [Appendix 2] for more details.
 
-#### Testing scientific code
-
-In the experimental sciences, rigorous testing is applied to ensure that results are accurate, reproducible and reliable. Testing will show that the experimental setup is doing what it is meant to do and will quantify any systematic biases. Results of experiments will not be trusted without such tests; why should your code be any different? Testing scientific code allows you to be sure that it is working as intended and to understand and quantify any limitations of the code. Using tests can also help to speed up the code development process by finding errors early on.
-
-Although the instructor recognizes the importance of establishing protocols, those tests will be especially relevant if you were to design R packages. However, the instructor would recommend informal testing by loading functions that have been written by the students and running *ad hoc* tests in the command line to make sure that they perform as expected.
-
-### Document and manage dependencies
-
-Reproducibility is also about making sure someone else can re-use your code to obtain the same results as you (see [Appendix 1] for more details).
-
-For someone else to be able to reproduce the results included in your report, you need to provide more than the code and the data. You also need to document the exact versions of all the packages, libraries, and software you used, and potentially your operating system as well as your hardware.
-
-R itself is very stable, and the core team of developers takes backward compatibility (old code works with recent versions of R) very seriously. However, default values in some functions change, and new functions get introduced regularly. If you wrote your code on a recent version of R and give it to someone who has not upgraded recently, they may not be able to run your code. Code written for one version of a package may produce very different results with a more recent version.
-
-#### Reporting R packages and versions
-
-With R, the simplest (but a useful and important) approach to document your dependencies is to report the output of `sessionInfo()` (or `devtools::session_info()`). Among other information, this will show all the packages and their versions that are loaded in the session you used to run your analysis. If someone wants to recreate your analysis, they will know which packages they will need to install. Please see [Appendix 2] for more details.
-
-For instance, here is the output of `sessionInfo()` showing the R version and packages that I used to create this document:
+For example, here is the output of `sessionInfo()` showing the R version and packages used to create this document:
 
 ```{r echo=T, eval=T}
 sessionInfo()
 ```
 
-#### Using R packages to help managing dependencies and recreate setup
+#### Using R Packages to Help Manage Dependencies and Recreate Setup
 
-This will not be covered in this class, but it is worth noting that there are at least two R packages allowing to better manage dependencies and recreate your setup. Those packages are:
+This topic will not be covered in this class, but it is worth noting that there are at least two R packages designed to better manage dependencies and help recreate your project setup. These packages are:
 
-- *checkpoint*: https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html
-- *packrat*: https://rstudio.github.io/packrat/ 
+- *checkpoint*: https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html  
+- *packrat*: https://rstudio.github.io/packrat/  
 
-The instructor expects students to discuss with their supervisors to identify if those packages are potentially useful for their projects. 
+The instructor encourages students to discuss with their supervisors whether these packages might be useful for their projects.
 
 # Chapter 6
 
