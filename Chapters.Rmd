@@ -27,42 +27,46 @@ $(document).ready(function() {
 });
 ```
 
-```{r packages, echo=FALSE, warning=FALSE, include=FALSE, cache = FALSE}
+```{r packages, echo = FALSE, warning = FALSE, include = FALSE, cache = FALSE}
 ###~~~
 # Load R packages
 ###~~~
-#Create vector w/ R packages
+# Create vector w/ R packages
 # --> If you have a new dependency, don't forget to add it in this vector
-pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools", "kfigr", "data.tree", "DT", "DiagrammeR", "rticles")
+pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", 
+         "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", 
+         "bibtex", "devtools", "kfigr", "data.tree", "DT", 
+         "DiagrammeR", "rticles", "klippy")  # Added klippy
 
 ##~~~
-#2. Check if pkg are installed
+# 2. Check if pkg are installed
 ##~~~
 print("Check if packages are installed")
-#This line outputs a list of packages that are not installed
 new.pkg <- pkg[!(pkg %in% installed.packages())]
 
 ##~~~
-#3. Install missing packages
+# 3. Install missing packages
 ##~~~
-# Using an if/else statement to check whether packages have to be installed
-# WARNING: If your target R package is not deposited on CRAN then need to adjust code/function
-if(length(new.pkg) > 0){
-  print(paste("Install missing package(s):", new.pkg, sep=' '))
-  install.packages(new.pkg, dependencies = TRUE)
-}else{
+if (length(new.pkg) > 0) {
+  print(paste("Install missing package(s):", new.pkg, sep = ' '))
+  for (p in new.pkg) {
+    if (p == "klippy") {
+      devtools::install_github("rlesur/klippy")  # or use remotes::install_github()
+    } else {
+      install.packages(p, dependencies = TRUE)
+    }
+  }
+} else {
   print("All packages are already installed!")
 }
 
 ##~~~
-#4. Load all packages
+# 4. Load all packages
 ##~~~
 print("Load packages and return status")
-#Here we use the sapply() function to require all the packages
-# To know more about the function type ?sapply() in R console
 sapply(pkg, require, character.only = TRUE)
 
-#Generate BibTex citation file for all R packages used to produce report
+# Generate BibTeX citation file for all R packages used to produce report
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
@@ -86,6 +90,12 @@ knitr::opts_chunk$set(fig.pos = 'H')
 
 # Read bibtex file
 refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
+```
+
+<!-- THIS code adds a copy/paste button to copy code -->
+```{r klippy-code, echo=FALSE, results='asis'}
+# Enable klippy button
+if (requireNamespace("klippy", quietly = TRUE)) klippy::klippy()
 ```
 
 <!-- THIS CODE CHUNK is used for pdf viewing -->
