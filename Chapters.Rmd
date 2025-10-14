@@ -95,7 +95,7 @@ refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
 <!-- THIS code adds a copy/paste button to copy code -->
 ```{r klippy-code, echo=FALSE, results='asis'}
 # Enable klippy button
-if (requireNamespace("klippy", quietly = TRUE)) klippy::klippy()
+if (requireNamespace("klippy", quietly = TRUE)) klippy::klippy(position = c("top", "right"))
 ```
 
 <!-- THIS CODE CHUNK is used for pdf viewing -->
