@@ -1744,8 +1744,8 @@ Follow these steps to format your citations and bibliography according to a spec
 1. Download a `.csl` file from the [Zotero Style Repository](https://www.zotero.org/styles).
     + To do this, type the name of your target journal in the search bar. Then, right-click on the corresponding style and select **"Save Link As..."** to download the `.csl` file. Save it in your project folder (see Figure \@ref(fig:zoterosavecsl)).
     ```{r zoterosavecsl, echo=FALSE, fig.cap = "Procedure to save csl file for PNAS on the Zotero Style Repository.", fig.show = "asis", out.width = '100%'}
-knitr::include_graphics("Figures/zotero_save_csl_procedure.png")
-```
+    knitr::include_graphics("Figures/zotero_save_csl_procedure.png")
+    ```
 2. Make sure your `.csl` file is in your project folder (alongside your `.Rmd` file).  
 3. Edit your YAML metadata section to specify the name of your `.csl` file.
 4. Knit your document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information specified in the YAML metadata section to format both the in-text citations and the bibliography section according to the citation style defined in the CSL file. Be sure to add a `References` header at the end of your `.Rmd` document.
