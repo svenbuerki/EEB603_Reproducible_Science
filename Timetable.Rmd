@@ -42,13 +42,16 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-**This page is the single source of all due dates for this course** -- deadlines are not posted in Canvas.
+# Course Information Hub
 
-To facilitate communication, **deadlines** and **point allocations** for all assessments are provided in Table \@ref(tab:deadlines). Because the bioinformatics tutorials are taught on a rolling basis, their deadlines depend on which chapter you sign up for: those are listed separately in Table \@ref(tab:tutdeadlines). Sign up for a chapter using the [Google Sheet](https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing) during the first two weeks of the semester, then find your chapter's row in Table \@ref(tab:tutdeadlines) and note the two dates that apply to you.
+Welcome to the central hub for course organization in EEB 603 – Reproducible Science. This webpage consolidates all essential information related to **assignment deadlines** (they are not posted in Canvas), and the **weekly schedule**.
 
-The full session-by-session schedule follows in Table \@ref(tab:timetab). I may adjust the schedule to accommodate the course's progress and your needs; if I do, I will let everyone enrolled know in good time and update this page, which is always the current version.
+Here you will find:
 
-Please also read the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#late-work-policy) in the syllabus: **submitting your bioinformatics tutorial one week before you teach it is a firm deadline with no extensions**, and the individual report is accepted at most one week late.
+- [Assignment Deadlines](#deadlinesheader): Dates and point allocations for graded work, along with submission instructions.
+- [Tentative Weekly Schedule](#schedule): Topics, and homework for each class session.
+
+This page serves as a single reference point to help you plan your semester, stay on top of coursework, and engage fully with both theoretical and applied aspects of reproducible science.
 
 ```{r setup-dates, echo=FALSE}
 ###~~~
@@ -137,6 +140,14 @@ dl_date <- function(pattern) {
 }
 ```
 
+# Assignment Deadlines {#deadlinesheader}
+
+To facilitate communication and help you plan your work, **deadlines** and **point allocations** for all assessments are provided in Table \@ref(tab:deadlines).
+
+The bioinformatics tutorials are taught on a rolling basis, so their deadlines depend on the chapter you sign up to teach. These deadlines are listed separately in Table \@ref(tab:tutdeadlines). During the first two weeks of the semester, sign up for a chapter using the [Google Sheet](https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing). Once you have signed up, find your chapter in Table \@ref(tab:tutdeadlines) and note the **two deadlines** that apply to you.
+
+Please also read the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#late-work-policy) in the syllabus. In particular, **your bioinformatics tutorial must be submitted one week before you teach it. This is a firm deadline, and extensions are not available.** The individual report may be submitted up to **one week late**, but late submissions are subject to the consequences described in the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#late-work-policy). **I strongly recommend submitting your report by the deadline whenever possible.**
+
 ```{r deadlines, echo=FALSE}
 ###~~~
 # Table 1: deadlines and points for all assessments
@@ -211,6 +222,11 @@ knitr::kable(tut,
   format = "html", row.names = FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
+
+
+# Schedule {#schedule}
+
+The full session-by-session schedule follows in Table \@ref(tab:timetab). I may adjust the schedule to accommodate the course's progress and your needs; if I do, I will let everyone enrolled know in good time and update this page, which is always the current version.
 
 ```{r timetab, echo=FALSE}
 ###~~~
