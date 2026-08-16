@@ -99,6 +99,8 @@ Welcome to the course! I am looking forward to getting to know you this semester
 
 This is an in-person course that will meet two times a week. Our class sessions include important information and opportunities to apply what you are learning with your peers. To best achieve the learning outcomes for the course, it is important that you attend class and be engaged with the content, me and each other. You should expect to spend approximately 9 hours each week on work for this course (including in and out of class time).
 
+**We take a short break in the middle of each session.** Our classes run for 75 minutes, and roughly halfway through I will call a **five-minute break**. I aim for a natural pause in the material rather than a fixed time on the clock, so it may fall a little either side of the midpoint. Use it however you need: step out, stretch, get some air, look away from your screen. During the bioinformatics laboratories the break doubles as a checkpoint -- before we stop, the teaching group and I will check that everyone's code is running, so that nobody spends the second half of the session stuck on something we could have sorted out in a minute.
+
 **The course changes shape as it goes**, and it is worth knowing this from the start:
 
 - **[PARTS 1 and 2](#Structure) are taught in class.** Sessions combine short lectures, group discussion of the assigned readings, and hands-on computing laboratories in which you work directly in R and RStudio. This is where the theory and the tools are taught, and where you and your peers teach one another -- so being present matters, and it is [assessed](#Participation).
