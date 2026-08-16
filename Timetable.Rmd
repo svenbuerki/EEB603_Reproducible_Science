@@ -228,6 +228,8 @@ knitr::kable(tut,
 
 The full session-by-session schedule follows in Table \@ref(tab:timetab). I may adjust the schedule to accommodate the course's progress and your needs; if I do, I will let everyone enrolled know in good time and update this page, which is always the current version.
 
+Our classes run for 75 minutes, and roughly halfway through I will call a five-minute break. I aim for a natural pause in the material rather than a fixed time on the clock, so it may fall a little either side of the midpoint.
+
 ```{r timetab, echo=FALSE}
 ###~~~
 #Produce final timetable
