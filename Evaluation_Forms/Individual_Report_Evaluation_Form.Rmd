@@ -1,0 +1,215 @@
+---
+title: "Individual Project --- Final Report"
+subtitle: "Evaluation Form --- 150 points"
+author: "EEB 603 Reproducible Science --- Boise State University"
+date: "Fall 2026"
+output:
+  pdf_document:
+    number_sections: false
+    includes:
+      in_header: _form_preamble.tex
+geometry: margin=2.2cm
+fontsize: 11pt
+urlcolor: blue
+---
+
+\noindent\textbf{Student:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Project type:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\noindent\textbf{Date:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Evaluator:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\sectionrule
+
+## 1. Overview of the Assignment
+
+This rubric is designed to evaluate individual reports in which students develop and document a reproducible workflow tailored to their thesis project or a selected publication. The rubric accommodates both **full projects** (with real data and completed analyses) and **pre-studies** (for students who have not yet generated data but are preparing for thesis research).
+
+The report is the second of the three stages of the individual project. The first stage --- the **project proposal**, worth 50 points --- is evaluated on its own form, and the third --- the **oral presentation**, worth 100 points --- on another; both scores are carried forward into the summary at the end of this document. Sections 1--3 below are weighted more lightly than the execution sections precisely because the framing, data identification and workflow planning were already assessed at the proposal stage; what is assessed here is what the student actually built.
+
+## 2. Rubric
+
+### 1. Framing of the Scientific Problem --- 15 points
+
+Evaluates clarity of scientific context and purpose.
+
+**Criteria**
+
+- **Problem statement and rationale (5 pts):** Clear introduction to the scientific question, its relevance, and its context within the field.
+- **Objectives and hypotheses (5 pts):** Well-defined objectives, hypotheses, or guiding research questions.
+- **Integration into the scientific process (5 pts):** Demonstrates understanding of how the project or pre-study fits within the broader research workflow.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+### 2. Use and Identification of Data Sources --- 15 points
+
+Accommodates both existing data (for projects) and conceptual data exploration (for pre-studies).
+
+**Criteria**
+
+- **Published/existing data or literature basis (6 pts):**
+    - *Projects:* Identification of relevant published datasets and where they are deposited.
+    - *Pre-studies:* Identification of key literature describing the data landscape and availability.
+- **Preliminary, simulated, or intended data (3 pts):** Description of thesis-generated, preliminary, or hypothetical data including characteristics and constraints.
+- **Assessment of reproducibility of existing work (6 pts):**
+    - *Projects:* Attempt or assessment of reproducing published analyses.
+    - *Pre-studies:* Critical evaluation of potential reproducibility based on data availability and published methods.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+\newpage
+
+### 3. Data Management Workflow --- 25 points
+
+Evaluates planning and documentation across the data life cycle.
+
+**Criteria**
+
+- **Coverage of the data life cycle (Create, Process, Document, Preserve, Share, Reuse) (12 pts):**
+    - *Projects:* Concrete workflow applied to actual data.
+    - *Pre-studies:* Conceptual workflow outlining intended procedures once data become available.
+- **Documentation practices (9 pts):** Clear description of metadata, file structure, naming conventions, versioning, and storage.
+- **Field-specific standards (4 pts):** Appropriate reference to established standards (e.g., Donoho 2010; Smith et al. 2016).
+
+*Comments:*
+
+\commentspace
+
+\scoreline{25}
+
+\sectionrule
+
+### 4. Reproducible Code & Computational Workflow --- 45 points
+
+This section accommodates variability in project maturity and is flexible for pre-studies.
+
+**Expectations based on project type**
+
+- **Full project:** Complete reproducible pipeline (import $\rightarrow$ tidy $\rightarrow$ transform $\rightarrow$ visualize $\rightarrow$ model $\rightarrow$ communicate).
+- **Pre-study:** Demonstration of reproducible coding practices using example, published, or simulated data; partial workflows are acceptable if well-justified.
+
+**Criteria**
+
+- **Reproducible scripting structure (10 pts):** Use of RMarkdown, clear code chunks, relative paths, and good computational hygiene.
+- **Demonstration of key data-analytic steps (15 pts):**
+    - *Projects:* Full pipeline from raw data to outputs.
+    - *Pre-studies:* Partial or prototype workflow using example data.
+- **Use of reproducible tools and best practices (10 pts):** Includes version control, data integrity checks, automation, or workflow diagrams.
+- **Communication and integration in RMarkdown (10 pts):** Clear presentation of results (real or example), integrated narrative, and appropriate figure/table inclusion.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{45}
+
+\sectionrule
+
+\newpage
+
+### 5. Reproducibility, Transparency, and Replicability --- 30 points
+
+Evaluates how well the student demonstrates or plans for reproducibility.
+
+**Criteria**
+
+- **End-to-end reproducibility (13 pts):** For projects: full execution from raw to final results. For pre-studies: clear plan or demonstration using example workflows.
+- **Transparency and methodological justification (9 pts):** Clear explanation of why methods were chosen, supported by citations.
+- **Effective use of RMarkdown/knitr or a well-structured document (in e.g. docx) (8 pts):** Integration of code, output, and narrative in a reproducible manner.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{30}
+
+\sectionrule
+
+### 6. Citations and Reference Use --- 12 points
+
+**Criteria**
+
+- **In-text citations (6 pts):** All referenced methods, data sources, and concepts are cited in the text, not just listed.
+- **Relevance and quality of references (3 pts):** References support methodological choices and enhance transparency.
+- **Bibliography formatting (3 pts):** Consistent, complete reference list.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{12}
+
+\sectionrule
+
+### 7. Writing Quality & Organization --- 8 points
+
+**Criteria**
+
+- **Clarity and logical flow (5 pts):** The report is well-structured, coherent, and easy to follow.
+- **Professional writing and formatting (3 pts):** Clear figures and tables, appropriate labeling, academic tone, and minimal errors.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{8}
+
+\sectionrule
+
+\newpage
+
+## 3. Score Summary
+
+| Section | Points | Score |
+|:---|---:|---:|
+| 1. Framing of the Scientific Problem | 15 | |
+| 2. Use and Identification of Data Sources | 15 | |
+| 3. Data Management Workflow | 25 | |
+| 4. Reproducible Code & Computational Workflow | 45 | |
+| 5. Reproducibility, Transparency, and Replicability | 30 | |
+| 6. Citations and Reference Use | 12 | |
+| 7. Writing Quality & Organization | 8 | |
+| **REPORT TOTAL** | **150** | |
+
+\vspace{4mm}
+
+### Individual Project --- Combined Total
+
+\vspace{1mm}
+
+| Stage | Points | Score |
+|:---|---:|---:|
+| Project proposal *(carried forward from the proposal evaluation form)* | 50 | |
+| **Final report** *(from the table above)* | 150 | |
+| Oral presentation *(carried forward from the presentation evaluation form)* | 100 | |
+| **INDIVIDUAL PROJECT TOTAL** | **300** | |
+
+## 4. Feedback Summary
+
+**Strengths**
+
+\commentspace[28mm]
+
+**Areas for Improvement**
+
+\commentspace[28mm]
+
+**Progress Since the Proposal**
+
+*How far did the student act on the feedback given at the proposal stage?*
+
+\commentspace[26mm]
+
+**Final Comments**
+
+\commentspace[26mm]

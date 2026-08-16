@@ -58,6 +58,20 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 
 This syllabus provides the course information required by [University Policy 4095 (Course Information Policy)](https://www.boisestate.edu/policy/academic-affairs-faculty-administration/course-information-policy-policy-4095/).
 
+## Quick Links
+
+Whether you are reading this on the web or from a downloaded pdf, everything for this course is one click away:
+
+| | |
+| :--- | :--- |
+| **Course website (home / syllabus)** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html> |
+| **Schedule and all due dates** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html> |
+| **Assignments and evaluation rubrics** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/Assignments.html> |
+| **Course chapters and teaching material** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html> |
+| **Additional resources** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/Resources.html> |
+| **Downloadable pdf of this syllabus** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/index_syllabus_pdf.pdf> |
+| **GitHub repository (source of everything)** | <https://github.com/svenbuerki/EEB603_Reproducible_Science> |
+
 # Meeting Time, Place and Modality
 
 - Instructional mode: **In-person** (see the Registrar's [Course Delivery Type page](https://www.boisestate.edu/registrar/general-information-and-policies/course-delivery-type/) for how these terms are defined at Boise State)
@@ -316,17 +330,19 @@ There will not be any classical exams in this course, but we will rather focus o
 
 ## Assessments
 
-Students will be graded on the following five mandatory assessments:
+Students will be graded on the following four mandatory assessments, worth 600 points in total:
 
 1. Produce a bioinformatics tutorial based on a chapter from [Course Content - PART 2](#courseCont), normally as a group (150 points).
 2. Teach the bioinformatics tutorial to their peers over two sessions (100 points).
-3. Produce an individual report on their thesis project or a related publication (200 points).
-4. Deliver an oral presentation on their thesis project or publication (100 points).
-5. [Participate and engage](#Participation) in class sessions across PARTS 1 and 2 (50 points).
+3. Produce an **[individual project](#Report)** on their thesis project or a related publication, in three stages totalling 300 points:
+    a. a mandatory [2-page proposal](#Proposal), due about a third of the way through the semester (50 points);
+    b. the [final report](#Report) (150 points);
+    c. the [oral presentation](#Oral) in the final week (100 points).
+4. [Participate and engage](#Participation) in class sessions across PARTS 1 and 2 (50 points).
 
 These assessments total **600 points**. Table \@ref(tab:mygrade) shows the grading scale used in this course.
 
-**There are no proctored exams or proctored assessments in this course.** Your grade is based entirely on the five assessments listed above, each of which is aligned with the [Course Learning Outcomes](#Outcomes): the bioinformatics tutorial and its teaching address outcomes 4--6; the individual report and oral presentation address outcomes 3--5 and 7; and participation in PART 1 addresses outcomes 1--2, where the reproducibility crisis and the factors that break reproducibility are studied through discussion of the assigned readings.
+**There are no proctored exams or proctored assessments in this course.** Your grade is based entirely on the assessments listed above, each of which is aligned with the [Course Learning Outcomes](#Outcomes): the bioinformatics tutorial and its teaching address outcomes 4--6; the individual report and oral presentation address outcomes 3--5 and 7; and participation in PART 1 addresses outcomes 1--2, where the reproducibility crisis and the factors that break reproducibility are studied through discussion of the assigned readings.
 
 # Grading Policy 
 
@@ -400,13 +416,62 @@ This course is built on the assumption that you are in the room. **PART 1** give
 
 These 50 points are earned by attending class sessions in [PARTS 1 and 2](#courseCont) and engaging with them in good faith: doing the pre-class readings, taking part in discussions, working through the tutorial exercises, asking questions when you are stuck, and helping your classmates when you can.
 
-- **You may miss one class session with no effect on these points, and you do not need to tell me why.**
-- Absences excused under [Policy 3120 or Policy 3125](#Attendance), an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, or the [Communicable Disease Policy](#Disease) **never** count against these points, and are not limited to two.
-- Beyond that one forgiven absence, each additional unexcused absence reduces this component by **5 points**, to a minimum of zero. This is a graduate course and the sessions are few, so if you need to miss more, **please get in touch with me** -- that is what the excused categories above are for, and I would much rather hear from you than mark you absent.
+- **I take attendance at every session in PARTS 1 and 2.** I record who is present and, where relevant, who arrived late; these records are what the points below are based on. If you ever think a record is wrong, tell me and I will check it.
+- **Your first absence or late arrival is forgiven**, with no effect on these points and no need to tell me why.
+- Absences and lateness excused under [Policy 3120 or Policy 3125](#Attendance), an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, or the [Communicable Disease Policy](#Disease) **never** count against these points, and are not limited to one.
+- After that first forgiven session, deductions are as set out in the table below, to a minimum of zero. This is a graduate course and the sessions are few, so if you need to miss more, **please get in touch with me** -- that is what the excused categories above are for, and I would much rather hear from you than mark you absent.
+
+### What Counts as Being Present
+
+So that there is no ambiguity about how these points are recorded:
+
+| Recorded as | What it means | Effect |
+| :--- | :--- | :---: |
+| **Present** | You arrive by **9:00 AM** and stay for the session. | -- |
+| **Present (slightly late)** | You arrive **before 9:10 AM**. Please come in quietly and settle in without disrupting whoever is teaching. | -- |
+| **Late** | You arrive at **9:10 AM or later**. | **--2 points** |
+| **Absent** | You do not attend, or you leave part-way through without having arranged it with me beforehand. | **--5 points** |
+
+Our sessions are 75 minutes long and they start promptly. The first ten minutes are usually where I set up what we are doing and why, or where the teaching group frames their tutorial -- arriving after that means you have missed the part that makes the rest make sense, and walking in mid-explanation interrupts a peer who is teaching for a grade.
+
+**Note that arriving late always costs you less than not coming at all.** If you are running badly behind, still come: a late arrival costs 2 points, while skipping the session costs 5, and you will have learned something either way.
+
+**If you know you are going to be late, tell me.** An email or a message beforehand is enough. If your lateness is for a reason covered by the [excused categories above](#Participation) -- a University-recognized activity, a religious observance, an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, illness -- it is excused and costs you nothing, and that applies to lateness just as it does to a full absence. The same is true if something genuinely unforeseen happens on the day: a delayed bus, an accident on the way in, a building access problem. **Talk to me and it will be fine.** What this rule is aimed at is habitual, unexplained lateness, not the occasional bad morning.
+
+One practical note specific to our room: the Raptor Research Building requires **Bronco Card** access and sits on the edge of campus, so please allow yourself time to get in. If you are ever locked out, contact me or [Campus Security](tel:2084266911) straight away and I will not count it against you.
 
 **You are not graded on how much you speak.** I know that people differ in how comfortable they are talking in a group, and quietly doing the reading and working through the exercises alongside your classmates counts as full participation. If anything about this component is difficult for you -- for any reason -- come and talk to me and we will find an arrangement that works.
 
-## <a name="Report"></a>Individual Report on Thesis Project/Publication (200 points) {#Report}
+## <a name="Report"></a>Individual Project on Thesis Project/Publication (300 points, in three stages) {#Report}
+
+Your individual project runs across **three stages**: a **project proposal (50 points)**, due about a third of the way through the semester; the **final report (150 points)**, due near the end; and the **[oral presentation](#Oral) (100 points)** in the final week. Together they are worth **300 points** -- half the marks in this course.
+
+The proposal exists so that I can give you feedback while you still have most of the semester to act on it -- a good report is very hard to write if the first time anyone else sees the plan is the week it is due. The presentation is not a separate assignment bolted on at the end: it is where you communicate the same project to an audience, which is the last stage of the reproducible workflow you have been building all semester.
+
+### <a name="Proposal"></a>Project Proposal (50 points) {#Proposal}
+
+**A two-page proposal is mandatory**, and is due on the date given in the [course schedule](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html) (roughly one third of the way through the semester). It should set out what you intend to do for your individual project, and should cover:
+
+1. **The scientific question** at the core of your project, and why it matters.
+2. **The data** you will use: whether it is your own or published, where it lives or will live, its format and approximate size, and any restrictions on sharing it.
+3. **The workflow** you plan to build -- which steps of import, tidying, transformation, modelling, visualization and communication you will implement, and with which tools.
+4. **How your project supports reproducible science, and which part of that process you are focusing on.** You are not expected to solve reproducibility in general, and a proposal that claims to address all of it at once will score poorly. Tell me *where* in the research workflow your project sits -- data management, reproducible code, workflow automation, version control, transparent reporting -- and then tell me concretely **what will be reproducible at the end that is not reproducible now, and for whom**: your future self, your lab, your advisor, or the wider field.
+5. **How you will know whether your approach works.** State, in advance, what would count as success and how you will test it. The strongest answers are ones somebody could actually check -- for example: a colleague can re-run my workflow from a clean environment and get identical output; the published analysis is reproduced to within a stated tolerance; the pipeline runs end to end from raw data with a single command; the report knits from scratch on another machine. Then tell me **what you will do if it does not work.** Naming a risk honestly is worth more than not noticing it.
+6. **A rough timeline** for the rest of the semester.
+
+Two pages is a limit, not a target -- a clear, concrete two pages is worth far more than a padded five.
+
+**The proposal must itself be a reproducible document.** This is not an extra hoop: it is the point. Write it in *knitr*/*rmarkdown* and submit a source that **knits successfully**, contains **at least one code chunk that actually runs** (reading or simulating your data, summarising your dataset, or even just `sessionInfo()`), and manages its **citations through a bibliography file**. Ten of the fifty points are for this.
+
+Doing it this way means you set up your project environment in week 6 rather than in December, you find out early if something in your toolchain is broken while there is still time to fix it, and your proposal becomes the skeleton of your final report instead of a document you write once and throw away.
+
+**I will read every proposal and return written feedback**, normally within one week. That feedback is the point of the exercise: it is where I can tell you that your question is too broad, that your data will not support the analysis you have in mind, or that you are about to reinvent something a package already does -- at a stage when you can still change course. You then have the rest of the semester to build the project and to prepare your oral presentation without a last-minute scramble.
+
+Marks for the proposal are for its **clarity and feasibility**, not for having all the answers. It is entirely acceptable, and often sensible, to propose something you are not yet certain will work; say so, and say what you will do if it does not.
+
+**The full rubric is on the [Assignments](Assignments.html) page, and I would like you to write with it open.** It sets out exactly how the 50 points are allocated across each of the elements above, so there should be no mystery about what I am expecting or how your proposal will be judged. The same is true of every other assessment in this course: each has its evaluation form published in advance, and you should treat those forms as a description of what good work looks like rather than as something I apply to you afterwards.
+
+### Final Report (150 points)
 
 You will work with me to develop a reproducible workflow tailored to your thesis project. If you do not yet have a defined thesis topic, I will help you select a relevant publication to serve as the basis for your individual project. Please reach out as early as you can so that we can start designing it together.
 
@@ -449,13 +514,15 @@ When considering your individual project, keep the following questions in mind:
 
 ## <a name="Oral"></a>Oral Presentation on Thesis Project/Publication (100 points) {#Oral}
 
+This is the **third and final stage of your [individual project](#Report)**, following the proposal and the report. Its evaluation form records the combined total across all three stages (300 points).
+
 Each student will have to present their report during final week. The presentation should follow the same structure as the report and not exceed 15 minutes. There will be 5 minutes at the end of the presentation allocated for questions. 
 
 # Expectation for Student Success
 
 My goal is that every student is successful in this course, but I need your help to achieve that. In order to do your part to ensure your success in this course, please: 
 
-- **Attend class.** We will be using class time to practice and apply what we are learning, so it is important for your and your fellow students’ learning that you are present and participatory. You can miss one class period without it affecting your grade; beyond that, please talk to me. See [Attendance and Participation](#Attendance) for the full policy, including University-recognized absences and religious observances.
+- **Attend class, and arrive on time.** We will be using class time to practice and apply what we are learning, so it is important for your and your fellow students’ learning that you are present and participatory. I take attendance, and your first absence or late arrival is forgiven; beyond that, please talk to me. See [Attendance and Participation](#Attendance) for the full policy, including University-recognized absences and religious observances.
 - **Ask questions.** Learning is all about asking questions, so always feel free to do so in this class. 
 - **Be respectful of your fellow students.** While working together to build this community, we ask all members to:
   - Share their unique experiences, values, and beliefs, if comfortable doing so.
@@ -520,7 +587,7 @@ This course is about reproducibility, so a word on what integrity looks like her
 
 Attendance and participation matter in this course because class time is where we practice: you will run code, teach your peers, and work through problems together. Much of that is difficult to reconstruct after the fact.
 
-**How attendance relates to your grade.** Attendance and engagement in **[PARTS 1 and 2](#courseCont)** are worth **50 points** through the [Participation and Engagement](#Participation) component. PART 1 is where you acquire the theory and the tools that your tutorial and individual project are built on, and PART 2 is where you and your peers teach one another. **You may miss one class session with no effect on your grade and without needing to explain why**; see [that section](#Participation) for exactly how the points work. Beyond that, I ask you to be in touch with me rather than simply not appear.
+**How attendance relates to your grade.** Attendance and engagement in **[PARTS 1 and 2](#courseCont)** are worth **50 points** through the [Participation and Engagement](#Participation) component. PART 1 is where you acquire the theory and the tools that your tutorial and individual project are built on, and PART 2 is where you and your peers teach one another. **I take attendance at every session in PARTS 1 and 2**, and your first absence or late arrival is forgiven, with no effect on your grade and no need to explain why. After that, an absence costs 5 points and arriving 10 minutes or more after the start costs 2; see [that section](#Participation) for the full table. Beyond the forgiven session, I ask you to be in touch with me rather than simply not appear.
 
 PART 3 is individual work done largely outside class time, so it is not covered by the participation points. The exception is the final week of oral presentations: these are scheduled sessions and **I expect you to attend your classmates' presentations as well as give your own.** Presenting your semester's work to an empty room is a poor end to the course, and listening to how your peers solved problems in their own fields is one of the most useful sessions we have.
 
@@ -626,6 +693,7 @@ Categories 1--4 are governed by University policy and I apply them as written. C
 This course is built around work that your peers depend on, so **two deadlines are firm and are not covered by the flexibility described above**:
 
 - **Bioinformatics tutorial -- due one week before you teach it, no extensions.** Your tutorial must reach me a full week ahead of your session so that I can review it and so that the whole class can install the required packages and read it in advance. A tutorial that arrives late cannot be reviewed, distributed, or taught as scheduled, and it costs your peers their preparation time as well as your own grade. If illness or an emergency puts this deadline at risk, contact me **immediately** -- the realistic remedy is rescheduling your teaching slot, which requires several days' notice, not extending the submission date.
+- **Project proposal -- due about a third of the way through the semester.** The whole point of the proposal is that I read it and return feedback in time for you to act on it, so a late proposal defeats the exercise. The 10% automatic penalty applies, and a proposal submitted more than one week late may not receive written feedback.
 - **Individual report -- accepted up to one week late, and no later.** Beyond one week past the due date, the report cannot be accepted for credit, because the oral presentations and the end of term leave no room to absorb further delay. The 10% automatic penalty applies to any report submitted late within that one-week window.
 
 Oral presentations take place during the final week and are scheduled in advance, so they cannot be submitted late. If you are unable to present at your scheduled time, contact me as soon as you know so that we can find another slot within the presentation period.

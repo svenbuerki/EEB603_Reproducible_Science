@@ -42,13 +42,43 @@ library(tufte)
 knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
-The tentative schedule for this course is provided in Table \@ref(tab:timetab). Please note that the instructor may adjust our schedule to accommodate the course’s progress and students’ needs. Any changes will be communicated to enrolled students in a timely manner.
+**This page is the single source of all due dates for this course** -- deadlines are not posted in Canvas.
 
-```{r timetab, echo=FALSE}
+To facilitate communication, **deadlines** and **point allocations** for all assessments are provided in Table \@ref(tab:deadlines). Because the bioinformatics tutorials are taught on a rolling basis, their deadlines depend on which chapter you sign up for: those are listed separately in Table \@ref(tab:tutdeadlines). Sign up for a chapter using the [Google Sheet](https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing) during the first two weeks of the semester, then find your chapter's row in Table \@ref(tab:tutdeadlines) and note the two dates that apply to you.
+
+The full session-by-session schedule follows in Table \@ref(tab:timetab). I may adjust the schedule to accommodate the course's progress and your needs; if I do, I will let everyone enrolled know in good time and update this page, which is always the current version.
+
+Please also read the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#late-work-policy) in the syllabus: **submitting your bioinformatics tutorial one week before you teach it is a firm deadline with no extensions**, and the individual report is accepted at most one week late.
+
+```{r setup-dates, echo=FALSE}
+###~~~
+# Key dates for the semester, taken from the Boise State academic calendar:
+# https://www.boisestate.edu/registrar/boise-state-academic-calendars/fall-2026-academic-calendar/
+#
+# Fall 2026:
+#   First day of classes ............ Mon 24 Aug 2026
+#   Labor Day (no classes) .......... Mon  7 Sep 2026  (falls on a Monday, so does
+#                                                       not affect our Tue/Thu class)
+#   Fall Break & Thanksgiving ....... Mon 23 - Sun 29 Nov 2026
+#   Last day of classes ............. Fri 11 Dec 2026
+#   Finals week ..................... Mon 14 - Fri 18 Dec 2026
+#
+# The end date below runs into finals week because the two oral-presentation
+# sessions are held then. NOTE: during finals week the class meets at its
+# assigned final examination slot, which may not be our usual Tue/Thu 9:00 AM.
+# Confirm the slot with the Registrar and adjust if needed.
+###~~~
+semester_start <- as.Date("2026/08/24")   # first day of classes
+semester_end   <- as.Date("2026/12/18")   # end of finals week (presentations)
+break_start    <- as.Date("2026/11/23")   # Fall Break & Thanksgiving
+break_end      <- as.Date("2026/11/29")
+class_days     <- c("Tuesday", "Thursday")
+n_weeks        <- 17
+
 ###~~~
 # Build a data frame with all dates from beginning to end of Fall semester
 ###~~~
-dates <- data.frame(seq.Date(from=as.Date("2025/08/25"), to=as.Date("2025/12/19"), by="day"))
+dates <- data.frame(seq.Date(from=semester_start, to=semester_end, by="day"))
 #Assign a name to the col (allows using $)
 colnames(dates) <- "Date"
 
@@ -62,19 +92,20 @@ dates$Weekday <- weekdays(dates$Date)
 # Classes only take place on Tuesday and Thursday. So, extract dates matching class weekdays
 ###~~~
 #Subset dates based on selected weedays
-datesclass <- subset(dates, dates$Weekday %in% c("Tuesday", "Thursday"))
+datesclass <- subset(dates, dates$Weekday %in% class_days)
 
 ###~~~
-# Add week ID (from 1 to 16) to object from step 4
+# Add week ID to object from step 4
 ###~~~
 #Create weekID vector and add it in front of dataframe
-datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=17, by=1), 2)), datesclass)
+stopifnot(nrow(datesclass) == n_weeks * length(class_days))
+datesclass <- data.frame(WeekID = sort(rep(seq(from=1, to=n_weeks, by=1), length(class_days))), datesclass)
 
 ###~~~
 # Exclude dates falling during holiday break
 ###~~~
 #Establish vector of dates related to holidays
-holiday <- seq.Date(from=as.Date("2025/11/24"), to=as.Date("2025/11/30"), by="day")
+holiday <- seq.Date(from=break_start, to=break_end, by="day")
 
 #Find and exclude holidays
 datesclass <- datesclass[-which(datesclass$Date %in% holiday),]
@@ -82,23 +113,129 @@ datesclass <- datesclass[-which(datesclass$Date %in% holiday),]
 ###~~~
 #Read in csv with topics and tasks
 ###~~~
-topic <- read.csv("Data/Timetable_EEB603_topic_tasks.csv") 
+topic <- read.csv("Data/Timetable_EEB603_topic_tasks.csv")
 
+# The csv must have exactly one row per class session. If the academic calendar
+# changes the number of sessions from one year to the next, this is where it
+# will bite -- data.frame() would otherwise silently recycle rows and misalign
+# every topic and deadline in the table.
+if (nrow(topic) != nrow(datesclass)) {
+  stop(sprintf(
+    "Timetable mismatch: %d class sessions but %d rows in Timetable_EEB603_topic_tasks.csv.\nAdd or remove rows in the csv so the two match.",
+    nrow(datesclass), nrow(topic)))
+}
+
+###~~~
+# Helper: look up the class date carrying a given deadline. Dates are derived
+# from the csv rather than typed out, so the summary tables below can never
+# drift away from the schedule itself.
+###~~~
+dl_date <- function(pattern) {
+  i <- grep(pattern, topic$Deadline)
+  if (!length(i)) return("TBC")
+  format(datesclass$Date[i[1]], "%Y-%m-%d")
+}
+```
+
+```{r deadlines, echo=FALSE}
+###~~~
+# Table 1: deadlines and points for all assessments
+###~~~
+FORMS <- "Evaluation_Forms/"
+rubric <- function(file, label = "Rubric") sprintf("[%s](%s%s)", label, FORMS, file)
+
+deadlines <- data.frame(
+  Assessment = c(
+    "Individual project -- proposal",
+    "Bioinformatics tutorial (written)",
+    "Teaching your bioinformatics tutorial",
+    "Participation and engagement (PARTS 1 & 2)",
+    "Individual project -- final report",
+    "Oral presentation -- slides",
+    "Oral presentation",
+    "TOTAL"),
+  Points = c("50", "150", "100", "50", "150", "--", "100", "**600**"),
+  Date = c(
+    dl_date("proposal"),
+    "varies by chapter -- see Table 2",
+    "varies by chapter -- see schedule below",
+    "throughout PARTS 1 and 2",
+    dl_date("Turn in individual projects"),
+    dl_date("Upload slides"),
+    paste(format(tail(datesclass$Date, 2), "%Y-%m-%d"), collapse = " & "),
+    ""),
+  Time = c("5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
+  `Evaluation form` = c(
+    rubric("Project_Proposal_Evaluation_Form.pdf"),
+    rubric("Bioinformatics_Tutorial_Evaluation_Form.pdf"),
+    rubric("Teaching_Tutorial_Evaluation_Form.pdf"),
+    "[Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#Participation)",
+    rubric("Individual_Report_Evaluation_Form.pdf"),
+    "--",
+    rubric("Oral_Presentation_Evaluation_Form.pdf"),
+    ""),
+  check.names = FALSE)
+
+knitr::kable(deadlines,
+  caption = "Deadlines, point allocations and evaluation rubrics for all assessments in EEB603, Fall 2026. Times are Mountain Time. Every rubric is also on the Assignments page.",
+  format = "html", row.names = FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  row_spec(nrow(deadlines), bold = TRUE)
+```
+
+```{r tutdeadlines, echo=FALSE}
+###~~~
+# Table 2: bioinformatics tutorial deadlines, by chapter.
+# Derived from the csv so that shifting a date in the schedule updates this too.
+###~~~
+i_submit <- grep("Turn in tutorial for Chap", topic$Deadline)
+i_upload <- grep("Upload tutorial of Chap", topic$Deadline)
+chapters <- sub(".*Chap\\. ([0-9]+).*", "\\1", topic$Deadline[i_submit])
+
+# Dates on which each chapter's tutorial is taught in class
+taught <- vapply(chapters, function(ch) {
+  j <- grep(paste0("^Bioinfo\\. tutorial - Chap\\. ", ch, "$"), topic$Topic)
+  if (!length(j)) return("TBC")
+  paste(format(datesclass$Date[j], "%b %d"), collapse = " & ")
+}, character(1))
+
+tut <- data.frame(
+  Chapter = paste("Chapter", chapters),
+  `Submit to me for review` = format(datesclass$Date[i_submit], "%Y-%m-%d"),
+  `Upload to Google Drive` = format(datesclass$Date[i_upload], "%Y-%m-%d"),
+  `Taught in class` = as.character(taught),
+  check.names = FALSE)
+
+knitr::kable(tut,
+  caption = "Bioinformatics tutorial deadlines by chapter. Find the chapter you signed up for and note your dates. Submitting to me one week before you teach is a firm deadline: your peers need that week to prepare.",
+  format = "html", row.names = FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+```{r timetab, echo=FALSE}
 ###~~~
 #Produce final timetable
 ###~~~
 
 timetable <- data.frame(datesclass, topic)
+
+# Keep only the columns students need here. The URL column is internal, and
+# Deadline is deliberately dropped: deadlines now live in Tables 1 and 2 above,
+# so that there is exactly one place to look them up and no risk of the two
+# disagreeing after an edit.
+#
+# "Completed" is filled in as the semester progresses -- put a checkmark in that
+# column of the csv after each session so students can see where we have got to.
+timetable <- timetable[, c("WeekID", "Date", "Weekday", "Topic", "Homework", "Completed")]
+colnames(timetable)[1] <- "Week"
+
 #Some editing to better print table in pdf doc
 timetable <- as.matrix(timetable)
 rownames(timetable) <- rep("", nrow(timetable))
-colnames(timetable)[5] <- "Homework"
-# Discrad larst column with URLs
-timetable <- timetable[,-ncol(timetable)]
 ###~~~
 #Plot timetable in doc
 ###~~~
-knitr::kable(timetable,  caption = "Tentative schedule for EEB603 Reproducible Science, Fall 2025 semester.", format = "html") %>%
+knitr::kable(timetable,  caption = "Tentative schedule for EEB603 Reproducible Science, Fall 2026 semester.", format = "html") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
 #PDF

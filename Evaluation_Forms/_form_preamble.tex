@@ -1,0 +1,15 @@
+% Shared LaTeX preamble for all EEB 603 evaluation forms.
+% Keeping this in one file is what makes the five forms look like one family.
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+% A grey rule used to separate rubric sections
+\newcommand{\sectionrule}{\vspace{-1mm}\textcolor{gray!55}{\rule{\textwidth}{0.4pt}}\vspace{1mm}}
+
+% Space for the evaluator to write free-text comments
+\newcommand{\commentspace}[1][14mm]{\vspace{1mm}\rule{0pt}{1pt}\vspace{#1}}
+
+% Consistent score line: \scoreline{25} -> "Score: ______ / 25"
+\newcommand{\scoreline}[1]{%
+  \vspace{1mm}\noindent\textbf{Score:}~\underline{\hspace{1.6cm}}~\textbf{/~#1}\vspace{2mm}}

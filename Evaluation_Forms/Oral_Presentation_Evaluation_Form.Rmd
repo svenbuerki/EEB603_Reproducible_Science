@@ -1,0 +1,167 @@
+---
+title: "Oral Presentation"
+subtitle: "Evaluation Form --- 100 points"
+author: "EEB 603 Reproducible Science --- Boise State University"
+date: "Fall 2026"
+output:
+  pdf_document:
+    number_sections: false
+    includes:
+      in_header: _form_preamble.tex
+geometry: margin=2.2cm
+fontsize: 11pt
+urlcolor: blue
+---
+
+\noindent\textbf{Student:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Project type:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\noindent\textbf{Date:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Evaluator:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\sectionrule
+
+## 1. Overview of the Assignment
+
+This is the **third and final stage of the individual project**. The first two stages --- the **project proposal (50 points)** and the **final report (150 points)** --- are evaluated on their own forms. Together the three stages make up the individual project, worth **300 points**; the combined total is recorded at the end of this form.
+
+Each student will deliver an **8-minute oral presentation**, followed by optional audience questions. Your presentation should introduce your research topic clearly, explain the scientific question you addressed, and describe how your work contributes to your field. Because your audience consists of scientists with broad backgrounds in biology, ecology, evolution, and behavior --- but not necessarily specialists in your area --- you should present your ideas in an accessible and well-structured way.
+
+A central goal of this assignment is to demonstrate how you applied the **tools and practices of reproducible science** covered in the course. Your talk should highlight the reproducibility-oriented aspects of your project, including workflows, documentation, version control, data organization, and transparent analytical approaches.
+
+Presentations should use approximately **5--6 slides** (animations permitted for clarity) and should be organized to guide the audience logically from background and motivation through methods, results, and broader implications. Clear communication, thoughtful slide design, and appropriate pacing are essential for an effective scientific presentation.
+
+## 2. Rubric
+
+### A. Topic Introduction & Background --- 20 points
+
+**Criteria**
+
+- Clear and accessible introduction (8 pts)
+- Context and importance explained (6 pts)
+- Research question or objectives stated (6 pts)
+
+*Comments:*
+
+\commentspace
+
+\scoreline{20}
+
+\sectionrule
+
+### B. Project Description & Scientific Content --- 25 points
+
+**Criteria**
+
+- Methods and approach explained clearly (10 pts)
+- Rigorous, logical scientific reasoning (10 pts)
+- Contribution to the field described (5 pts)
+
+*Comments:*
+
+\commentspace
+
+\scoreline{25}
+
+\sectionrule
+
+### C. Reproducible Science Practices --- 20 points
+
+**Criteria**
+
+- Use of reproducibility tools and approaches (10 pts)
+- Transparent, organized, replicable workflow (10 pts)
+
+*Comments:*
+
+\commentspace
+
+\scoreline{20}
+
+\sectionrule
+
+\newpage
+
+### D. Slide Design & Visual Communication --- 15 points
+
+**Criteria**
+
+- Clear, readable visuals (7 pts)
+- Logical organization and flow (5 pts)
+- Effective use of animations (3 pts)
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+### E. Oral Delivery --- 15 points
+
+**Criteria**
+
+- Clear speech, pacing, articulation (6 pts)
+- Engaging and confident delivery (5 pts)
+- Effective time management (4 pts)
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+### F. Audience Accessibility --- 5 points
+
+**Criteria**
+
+- Appropriate for broad scientific audience (3 pts)
+- Minimal or well-explained jargon (2 pts)
+
+*Comments:*
+
+\commentspace
+
+\scoreline{5}
+
+\sectionrule
+
+## 3. Score Summary
+
+| Section | Points | Score |
+|:---|---:|---:|
+| A. Topic Introduction & Background | 20 | |
+| B. Project Description & Scientific Content | 25 | |
+| C. Reproducible Science Practices | 20 | |
+| D. Slide Design & Visual Communication | 15 | |
+| E. Oral Delivery | 15 | |
+| F. Audience Accessibility | 5 | |
+| **PRESENTATION TOTAL** | **100** | |
+
+\vspace{4mm}
+
+### Individual Project --- Combined Total
+
+\vspace{1mm}
+
+| Stage | Points | Score |
+|:---|---:|---:|
+| Project proposal *(carried forward from the proposal evaluation form)* | 50 | |
+| Final report *(carried forward from the report evaluation form)* | 150 | |
+| **Oral presentation** *(from the table above)* | 100 | |
+| **INDIVIDUAL PROJECT TOTAL** | **300** | |
+
+## 4. Feedback Summary
+
+**Strengths**
+
+\commentspace[30mm]
+
+**Areas for Improvement**
+
+\commentspace[30mm]
+
+**Final Comments**
+
+\commentspace[30mm]

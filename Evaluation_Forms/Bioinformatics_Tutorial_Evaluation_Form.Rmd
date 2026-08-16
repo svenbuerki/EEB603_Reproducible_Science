@@ -1,0 +1,199 @@
+---
+title: "Bioinformatics Tutorial"
+subtitle: "Evaluation Form --- 150 points"
+author: "EEB 603 Reproducible Science --- Boise State University"
+date: "Fall 2026"
+output:
+  pdf_document:
+    number_sections: false
+    includes:
+      in_header: _form_preamble.tex
+geometry: margin=2.2cm
+fontsize: 11pt
+urlcolor: blue
+---
+
+\noindent\textbf{Student(s):}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Chapter:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\noindent\textbf{Date:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Evaluator:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\sectionrule
+
+## 1. Overview of the Assignment
+
+This evaluation rubric is designed to assess student-developed bioinformatics tutorials created using **knitr/RMarkdown** in **RStudio**. Each tutorial should introduce key bioinformatics concepts, use real or simulated datasets, and demonstrate practical computational skills. Tutorials must be designed to fit within two laboratory sessions and meet the criteria specified in the assignment description.
+
+## 2. Rubric
+
+### A. Introduction and Theoretical Background --- 25 points
+
+**Criteria**
+
+- **Context & Relevance (10 pts):** Explains the scientific context and links to the scientific process and data life cycle.
+- **Objectives (10 pts):** Clearly states tutorial aims and learning goals aligned with the chosen chapter.
+- **Clarity & Cohesion (5 pts):** Introduction is well-structured, engaging, and sets up the tutorial logically.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{25}
+
+\sectionrule
+
+### B. Learning Outcomes --- 15 points
+
+**Criteria**
+
+- **Specificity & Actionability (10 pts):** Outcomes use measurable verbs (e.g., import, visualize, annotate, model).
+- **Alignment (5 pts):** Outcomes align with activities, tools, and data used in the tutorial.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+### C. R Package Requirements and Installation Instructions --- 20 points
+
+**Criteria**
+
+- **Package Identification (10 pts):** Includes all necessary R packages and tools.
+- **Installation & Dependencies (10 pts):** Provides installation commands, explanations, and troubleshooting notes.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{20}
+
+\sectionrule
+
+### D. Dataset Description and Access --- 15 points
+
+**Criteria**
+
+- **Dataset Explanation (10 pts):** Clearly introduces the dataset, origin, variables, and relevance to tutorial aims.
+- **Access Instructions (5 pts):** Provides clear download instructions or embedded loading steps.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+\newpage
+
+### E. Content Quality and Concept Explanations --- 25 points
+
+**Criteria**
+
+- **Conceptual Accuracy (10 pts):** Concepts are explained correctly using appropriate detail.
+- **Rationale & Stepwise Explanation (10 pts):** Clear reasoning, pseudocode, or workflow descriptions accompany each task.
+- **Input/Output Documentation (5 pts):** Defines expected data types, formats, and outputs for each function or analysis step.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{25}
+
+\sectionrule
+
+### F. R Code Quality and Annotation --- 25 points
+
+**Criteria**
+
+- **Correctness of Code (10 pts):** Code runs without errors and produces expected outputs.
+- **Commenting & Readability (10 pts):** Code is clearly annotated and easy to follow.
+- **Reproducibility (5 pts):** Tutorial knits successfully; file paths and package calls are properly set.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{25}
+
+\sectionrule
+
+### G. Structure, Organization, and Flow --- 10 points
+
+**Criteria**
+
+- **Logical Flow (5 pts):** Tutorial moves naturally from theory $\rightarrow$ data $\rightarrow$ methods $\rightarrow$ exercises $\rightarrow$ interpretation.
+- **User Experience (5 pts):** Sections are well-organized, readable, and accessible to peers.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{10}
+
+\sectionrule
+
+### H. References and Attribution --- 10 points
+
+**Criteria**
+
+- **Proper Citation (5 pts):** All sources (e.g., textbooks, manuals, online documentation) cited correctly.
+- **Useful Resources (5 pts):** Provides links to package documentation, vignettes, or relevant literature.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{10}
+
+\sectionrule
+
+### I. Professionalism and Submission Requirements --- 5 points
+
+**Criteria**
+
+- **Submission Protocol (5 pts):**
+  - Submitted 1 week before presentation
+  - Uploaded to Google Drive
+  - Email sent to class introducing the tutorial and resources
+
+*Comments:*
+
+\commentspace
+
+\scoreline{5}
+
+\sectionrule
+
+\newpage
+
+## 3. Score Summary
+
+| Section | Points | Score |
+|:---|---:|---:|
+| A. Introduction and Theoretical Background | 25 | |
+| B. Learning Outcomes | 15 | |
+| C. R Package Requirements and Installation | 20 | |
+| D. Dataset Description and Access | 15 | |
+| E. Content Quality and Concept Explanations | 25 | |
+| F. R Code Quality and Annotation | 25 | |
+| G. Structure, Organization, and Flow | 10 | |
+| H. References and Attribution | 10 | |
+| I. Professionalism and Submission Requirements | 5 | |
+| **TOTAL** | **150** | |
+
+## 4. Feedback Summary
+
+**Strengths**
+
+\commentspace[30mm]
+
+**Areas for Improvement**
+
+\commentspace[30mm]
+
+**Final Comments**
+
+\commentspace[30mm]

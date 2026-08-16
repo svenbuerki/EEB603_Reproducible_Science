@@ -7,6 +7,8 @@ navbar:
       href: index.html
     - text: "Schedule"
       href: Timetable.html
+    - text: "Assignments"
+      href: Assignments.html
     - text: "Chapters"
       href: Chapters.html
     - text: "Resources"

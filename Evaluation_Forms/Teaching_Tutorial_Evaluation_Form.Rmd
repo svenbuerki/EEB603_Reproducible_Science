@@ -1,0 +1,149 @@
+---
+title: "Teaching the Bioinformatics Tutorial"
+subtitle: "Evaluation Form --- 100 points"
+author: "EEB 603 Reproducible Science --- Boise State University"
+date: "Fall 2026"
+output:
+  pdf_document:
+    number_sections: false
+    includes:
+      in_header: _form_preamble.tex
+geometry: margin=2.2cm
+fontsize: 11pt
+urlcolor: blue
+---
+
+\noindent\textbf{Student(s):}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Chapter:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\noindent\textbf{Date:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Evaluator:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\sectionrule
+
+## 1. Overview of the Assignment
+
+This rubric evaluates the quality of students' presentations and their effectiveness in teaching bioinformatics tutorials during laboratory sessions. Students are expected to:
+
+- Deliver their tutorial clearly and engagingly.
+- Support peers by answering questions, guiding through exercises, and troubleshooting issues.
+- Develop exercises and activities that reinforce the tutorial content and align with learning outcomes.
+
+## 2. Rubric
+
+### A. Presentation Quality and Clarity --- 20 points
+
+**Criteria**
+
+- **Organization and Structure (8 pts):** Presentation is clear, well-organized, and follows a logical flow.
+- **Delivery and Communication (8 pts):** Presenter speaks clearly, maintains pace, and engages the audience.
+- **Visual Quality of Slides or Materials (4 pts):** Visuals are readable, well-designed, and support understanding.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{20}
+
+\sectionrule
+
+### B. Explanation of Key Concepts --- 20 points
+
+**Criteria**
+
+- **Accuracy and Depth (10 pts):** Concepts from the tutorial are explained correctly with appropriate detail.
+- **Clarity of Instruction (10 pts):** Presenter explains steps, functions, and workflows in a way peers can follow.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{20}
+
+\sectionrule
+
+### C. Guidance Through the Tutorial --- 20 points
+
+**Criteria**
+
+- **Demonstration of Steps (10 pts):** Presenter walks peers through the tutorial clearly and methodically.
+- **Support and Troubleshooting (10 pts):** Offers helpful guidance for common issues, errors, or misunderstandings.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{20}
+
+\sectionrule
+
+\newpage
+
+### D. Development of Exercises and Activities --- 15 points
+
+**Criteria**
+
+- **Alignment with Learning Outcomes (8 pts):** Exercises and activities clearly reinforce the stated learning outcomes.
+- **Creativity and Engagement (7 pts):** Activities are well-designed, interactive, and encourage active learning.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+### E. Engagement and Facilitation During Lab Session --- 15 points
+
+**Criteria**
+
+- **Interaction with Peers (8 pts):** Encourages questions, checks understanding, and involves peers in discussion.
+- **Responsiveness (7 pts):** Effectively answers questions and provides helpful explanations or clarifications.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{15}
+
+\sectionrule
+
+### F. Professionalism and Preparedness --- 10 points
+
+**Criteria**
+
+- **Preparation (5 pts):** Presentation is uploaded on time; presenter is ready with all materials.
+- **Professional Conduct (5 pts):** Demonstrates responsibility, respect, and leadership during the teaching session.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{10}
+
+\sectionrule
+
+## 3. Score Summary
+
+| Section | Points | Score |
+|:---|---:|---:|
+| A. Presentation Quality and Clarity | 20 | |
+| B. Explanation of Key Concepts | 20 | |
+| C. Guidance Through the Tutorial | 20 | |
+| D. Development of Exercises and Activities | 15 | |
+| E. Engagement and Facilitation During Lab Session | 15 | |
+| F. Professionalism and Preparedness | 10 | |
+| **TOTAL** | **100** | |
+
+## 4. Feedback Summary
+
+**Strengths**
+
+\commentspace[30mm]
+
+**Areas for Improvement**
+
+\commentspace[30mm]
+
+**Final Comments**
+
+\commentspace[30mm]

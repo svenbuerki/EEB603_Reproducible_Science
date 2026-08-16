@@ -1,0 +1,209 @@
+---
+title: "Individual Project --- Proposal"
+subtitle: "Evaluation Form --- 50 points"
+author: "EEB 603 Reproducible Science --- Boise State University"
+date: "Fall 2026"
+output:
+  pdf_document:
+    number_sections: false
+    includes:
+      in_header: _form_preamble.tex
+geometry: margin=2.2cm
+fontsize: 11pt
+urlcolor: blue
+---
+
+\noindent\textbf{Student:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Project type:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\noindent\textbf{Date:}\hspace{2mm}\underline{\hspace{5.5cm}} \hfill \textbf{Evaluator:}\hspace{2mm}\underline{\hspace{4cm}}
+
+\sectionrule
+
+## 1. Overview of the Assignment
+
+This rubric evaluates the **project proposal**, the first of the three stages of the individual project. It is submitted about one third of the way through the semester so that written feedback can be returned while there is still most of a semester in which to act on it. The second and third stages --- the **final report (150 points)** and the **oral presentation (100 points)** --- are evaluated on their own forms. Together the three stages make up the individual project, worth **300 points**.
+
+**Use this form as your guide while you write.** It states exactly what I am looking for and how the 50 points are allocated, so there should be no surprises about how your proposal will be judged.
+
+As with the final report, this rubric accommodates both **full projects** (students with data and a defined thesis topic) and **pre-studies** (students preparing for thesis research, or working from a published dataset). Where the two differ, the criteria indicate what is expected of each.
+
+**Expectations Based on Project Type**
+
+- **Full project:** the proposal describes work on real data that the student holds or can obtain now.
+- **Pre-study:** the proposal describes intended work, using published, example or simulated data to prototype the workflow. A pre-study is not a lesser proposal; it is judged on the quality of its reasoning and planning rather than on data in hand.
+
+## 2. Rubric
+
+### 1. Scientific Question and Rationale --- 7 points
+
+Evaluates clarity of the scientific problem and its framing.
+
+**Criteria**
+
+- **Question clearly stated and scoped (4 pts):** The scientific question at the core of the project is stated explicitly and is narrow enough to be addressed within a semester.
+- **Relevance and context (3 pts):** Explains why the question matters and situates it in the field, supported by citations.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{7}
+
+\sectionrule
+
+### 2. Data --- 8 points
+
+Evaluates identification and understanding of the data underlying the project.
+
+**Criteria**
+
+- **Source, type and format (4 pts):** Identifies whether the data are the student's own, published, or simulated, and describes type, format and approximate size.
+    - *Projects:* the actual dataset to be used.
+    - *Pre-studies:* the intended or example dataset, and the literature describing the data landscape.
+- **Availability and constraints (4 pts):** States where the data are, or will be, deposited, and identifies any sharing, licensing, ethical or confidentiality constraints.
+    - *Projects:* concrete deposition and access arrangements.
+    - *Pre-studies:* anticipated constraints and how they will be checked.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{8}
+
+\sectionrule
+
+### 3. Planned Reproducible Workflow --- 9 points
+
+Evaluates the design of the computational workflow the student intends to build.
+
+**Criteria**
+
+- **Steps identified (5 pts):** Sets out which stages of the workflow will be implemented --- import, tidy, transform, visualize, model, communicate --- and what each will do for this particular project.
+    - *Projects:* the full pipeline the student expects to run.
+    - *Pre-studies:* the prototype workflow, with the stages that will be demonstrated on example data clearly marked.
+- **Tools named and justified (4 pts):** Names the R packages and other tools to be used, with a brief reason for each choice rather than a bare list.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{9}
+
+\sectionrule
+
+\newpage
+
+### 4. Contribution to Reproducible Science --- 8 points
+
+Evaluates where the project sits within the reproducible research process, and what it makes more reproducible. This is the section that distinguishes a project in *this* course from a project in any other.
+
+**Criteria**
+
+- **Part of the process being targeted (4 pts):** Identifies explicitly which part of the research workflow the project addresses --- data management, reproducible code, workflow automation, version control, transparent reporting, or another stage of the data life cycle. A proposal that claims to address all of reproducibility at once scores poorly here; a proposal that picks one part and is clear about why scores well.
+- **What becomes more reproducible, and for whom (4 pts):** Explains concretely what will be reproducible at the end that is not reproducible now, and who benefits --- the student's future self, their lab or advisor, or the wider field. Vague appeals to "good practice" are not sufficient.
+    - *Projects:* the gain relative to how the work is currently done.
+    - *Pre-studies:* the gain relative to how the published work or the field currently operates.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{8}
+
+\sectionrule
+
+### 5. Evaluating Success of the Approach --- 7 points
+
+Evaluates whether the student has defined, in advance, how they will know their approach works.
+
+**Criteria**
+
+- **Criteria for success (4 pts):** States what would count as success and how it will be judged. Strong answers are testable by someone else --- for example: a colleague can re-run the workflow from a clean environment and obtain identical output; the published analysis is reproduced to within a stated tolerance; the pipeline runs end to end from raw data with a single command; the report knits from scratch on another machine.
+- **Validation and fallback (3 pts):** Describes how those criteria will actually be tested during the semester, and what the student will do if the approach does not work. Identifying a risk honestly is worth more than not noticing it.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{7}
+
+\sectionrule
+
+### 6. The Proposal as a Reproducible Document --- 8 points
+
+Evaluates the proposal as an artefact in its own right. The proposal is not a description of reproducible practice; it is an instance of it, and becomes the skeleton of the final report.
+
+**Criteria**
+
+- **Knits successfully (3 pts):** Submitted as an R Markdown source that renders without error; relative paths; no manual steps required.
+- **Working code chunk (3 pts):** Contains at least one code chunk that runs --- for example reading or simulating the data, a summary of the dataset, or `sessionInfo()`.
+- **Bibliography (2 pts):** Citations are managed through a bibliography file and render correctly in the text and reference list.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{8}
+
+\sectionrule
+
+### 7. Feasibility, Timeline and Clarity --- 3 points
+
+Evaluates whether the plan can realistically be completed in the time remaining.
+
+**Criteria**
+
+- **Timeline (2 pts):** Provides a realistic plan for the remainder of the semester.
+- **Clarity and concision (1 pt):** The proposal is clear and within the two-page limit. A concrete two pages is worth more than a padded five.
+
+*Comments:*
+
+\commentspace
+
+\scoreline{3}
+
+\sectionrule
+
+\newpage
+
+## 3. Score Summary
+
+| Section | Points | Score |
+|:---|---:|---:|
+| 1. Scientific Question and Rationale | 7 | |
+| 2. Data | 8 | |
+| 3. Planned Reproducible Workflow | 9 | |
+| 4. Contribution to Reproducible Science | 8 | |
+| 5. Evaluating Success of the Approach | 7 | |
+| 6. The Proposal as a Reproducible Document | 8 | |
+| 7. Feasibility, Timeline and Clarity | 3 | |
+| **PROPOSAL TOTAL** | **50** | |
+
+\vspace{4mm}
+
+### Individual Project --- Combined Total
+
+\vspace{1mm}
+
+| Stage | Points | Score |
+|:---|---:|---:|
+| **Project proposal** *(this form)* | 50 | |
+| Final report *(evaluated separately)* | 150 | |
+| Oral presentation *(evaluated separately)* | 100 | |
+| **INDIVIDUAL PROJECT TOTAL** | **300** | |
+
+## 4. Feedback Summary
+
+This is the feedback the student will use for the rest of the semester. Be concrete about what to change.
+
+**Strengths**
+
+\commentspace[26mm]
+
+**What to change before the report**
+
+\commentspace[32mm]
+
+**Final Comments**
+
+\commentspace[26mm]
