@@ -201,9 +201,17 @@ The tentative schedule for this course is available on the [course schedule page
 
 ## Shared Google Drive {#GoogleSite}
 
-A shared Google Drive has been set up for data sharing and uploading [bioinformatic tutorials](#BioTut).
+A shared Google Drive folder has been set up for this course. **I will grant you access during the first week of the semester**, so you do not need to request it -- if you have not received access by the end of week 1, email me.
 
-- [Shared Google Drive folder for this course](https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=sharing)
+- **[Shared Google Drive folder for EEB 603](https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=drive_link)**
+
+We use it for three things:
+
+- **Sharing publications** and other reading material for the course.
+- **Uploading your assignments**, in the relevant subfolder: `Bioinformatics_tutorials` for your [bioinformatics tutorial](#BioTut), and `Individual_reports` for your [individual project](#Report).
+- **Coordinating who is doing what**, which means it contains the names of students alongside their assignments.
+
+**Please keep this folder private.** Because it contains your classmates' names and their work, it is for the people enrolled in this course only. Do not share the link, forward its contents, or give access to anyone outside the class. If you want to share something of your own from it more widely -- your own tutorial, for instance -- that is entirely your call to make with your own material, but share it directly rather than by passing on access to the folder.
 
 ##  Publications and Textbooks {#Publis}
 
