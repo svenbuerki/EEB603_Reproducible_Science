@@ -368,6 +368,20 @@ During the first two weeks, students will [sign up](#GoogleBioTut) for a chapter
 
 **How groups are formed depends on enrollment.** In a small cohort the numbers may not divide evenly, and in some years a student has ended up working on a chapter alone. **If that happens to you, you are not disadvantaged.** I adjust my support accordingly -- I work more closely with you while you develop the tutorial, and I take a larger share of the teaching load during your two sessions, so that the workload and the grading expectations are comparable to those of a group. I will tell you which arrangement applies when chapters are allocated in the first two weeks, and if you have a concern about it at any point, come and talk to me.
 
+### <a name="GroupWork"></a>Group Work and How It Is Graded {#GroupWork}
+
+**Where the tutorial is developed in a group, both the [tutorial](#BioTut) (150 points) and the [teaching](#TeachTut) (100 points) receive a single group grade**, awarded to every member of the group.
+
+That group grade rests on an expectation, and I want to state it plainly. This is a **collaborative effort**, and I expect that:
+
+- **the work of producing the tutorial is shared** among all group members;
+- **the work of teaching it is shared** -- every member takes an active part across both laboratory sessions, rather than one person presenting while the others watch;
+- **every member actively supports the class during the sessions**, by answering questions, helping classmates get the code running, and helping them understand what it does.
+
+**If a group does not work this way, I will grade its members individually.** In that case I will ask each of you to tell me exactly what you produced and what you contributed to the teaching, and I will mark each of you on that basis. I would much rather not do this, and usually I do not have to -- but a shared grade is only fair when the work behind it was genuinely shared.
+
+If something is going wrong inside your group -- someone has gone quiet, or the division of work has become lopsided -- **come and talk to me early**, while it can still be fixed. That is far easier in week three than in week ten, and raising it is never held against you.
+
 Tutorials must be written using *knitr*/*rmarkdown* in RStudio and focus on a set of exercises designed to build key bioinformatics skills related to the chosen chapter (see [Course Content - PART 2](#courseCont)). Students are encouraged to use materials from @Gandrud2015 and @Wickham2017, or other properly cited sources. For additional resources, see the [Publications and Textbooks](#Publis) and [RStudio Cheat Sheets](#Cheat) sections.
 
 **Come and talk to me while you are building it.** Designing a tutorial is harder than it looks -- choosing the right scope, finding a dataset that behaves, and pitching the exercises so your peers can actually finish them in two sessions all take some thought. Please **book time with me during my [student hours](#Instructor)** as you plan and draft, rather than waiting for the one-week-before deadline when it is too late to change direction. Email me and we will find a slot, in person or on Zoom. I am glad to help you scope the topic, suggest data, test-run an exercise, or work out why your document will not knit.
@@ -411,6 +425,8 @@ Please sign up to design and teach a bioinformatics tutorial using the Google Sh
 Students are expected to prepare a 10–20 minute presentation that provides general guidance on completing their tutorial. Presentations will be uploaded to the shared Google Drive and made accessible to all students. During the tutorial sessions, students must run through their tutorial with their peers, ensuring they understand the key concepts and are able to complete the assignments or tasks. Students are expected to support their peers by answering questions throughout. I will also be on hand to assist, but you will take the lead in teaching the bioinformatics laboratories.
 
 Grading will be based on your ability to effectively teach your tutorial, facilitate understanding, and respond to questions. I may also consider peer feedback when assigning grades for this component.
+
+Where a tutorial is taught by a group, this component is graded as a group, and **I expect every member to take an active part in both sessions** -- teaching, answering questions, and helping classmates run and understand the code. See [Group Work and How It Is Graded](#GroupWork) for what happens if that is not the case.
 
 ## <a name="Participation"></a>Participation and Engagement (50 points) {#Participation}
 
