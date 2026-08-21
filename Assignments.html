@@ -11,7 +11,7 @@
 
 <meta name="author" content="" />
 
-<meta name="date" content="2026-08-16" />
+<meta name="date" content="2026-08-21" />
 
 <title>Assignments</title>
 
@@ -351,7 +351,7 @@ div.tocify {
 <h1 class="title toc-ignore">Assignments</h1>
 <h3 class="subtitle">Evaluation forms and rubrics</h3>
 <h4 class="author"></h4>
-<h4 class="date">2026-08-16</h4>
+<h4 class="date">2026-08-21</h4>
 
 </div>
 
@@ -367,9 +367,17 @@ $(document).ready(function() {
 <p>Every assessment in EEB 603 has an <strong>evaluation form</strong> setting out the criteria I use and how the points are allocated. All of them are published here, in advance.</p>
 <p><strong>Please write with the relevant form open.</strong> These forms are not something applied to your work after the fact — they are a description of what good work looks like in this course. If anything in them is unclear, or if you think your project does not fit the criteria as written, come and talk to me <em>before</em> the deadline rather than afterwards.</p>
 <p>Deadlines for each assessment are on the <a href="Timetable.html">course schedule</a>; the rules on late work and firm deadlines are in the <a href="index.html#LateWork">syllabus</a>.</p>
+<div id="how-the-assessments-fit-together" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> How the Assessments Fit Together</h2>
+<p>The six assessments in this course form <strong>two arcs of three</strong>, each worth <strong>300 points</strong> — half the course each. Each arc builds on itself, and the second arc repeats the shape of the first on work of your own.</p>
+<ul>
+<li><strong><a href="#arc1">Bioinformatics for Reproducible Science</a></strong> (PARTS 1–2) takes you from <em>learning</em> the theory and the tools, to <em>building</em> something with them, to <em>teaching</em> it to your peers.</li>
+<li><strong><a href="#arc2">The Individual Project</a></strong> (PART 3) takes you from <em>planning</em> a piece of reproducible research, to <em>building</em> it, to <em>communicating</em> it.</li>
+</ul>
+<p>The two arcs have exactly the same shape — a small piece of work, a large one, and a piece of communication (50, 150 and 100 points respectively). The first arc rehearses on shared material; the second applies the same sequence to your own research.</p>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:overview">Table 1.1: </span>All assessments in EEB 603, with their point allocations and evaluation forms.
+<span id="tab:overview">Table 1.1: </span>All assessments in EEB 603, grouped into the two arcs. Each arc is worth 300 points, and the course totals 600. Learning outcome numbers refer to the Course Learning Outcomes in the syllabus.
 </caption>
 <thead>
 <tr>
@@ -380,107 +388,147 @@ Assessment
 Points
 </th>
 <th style="text-align:left;">
+Learning outcomes
+</th>
+<th style="text-align:left;">
 Evaluation form
 </th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Bioinformatics tutorial (written)
-</td>
-<td style="text-align:left;">
-150
-</td>
-<td style="text-align:left;">
-<a href="Evaluation_Forms/Bioinformatics_Tutorial_Evaluation_Form.pdf">Download pdf</a>
+<tr grouplength="3">
+<td colspan="4" style="background-color: #0033A0; color: #fff;">
+<strong>ARC 1 — Bioinformatics for Reproducible Science (PARTS 1–2) — 300 points</strong>
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-Teaching the bioinformatics tutorial
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:left;">
-<a href="Evaluation_Forms/Teaching_Tutorial_Evaluation_Form.pdf">Download pdf</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Individual project — proposal
-</td>
-<td style="text-align:left;">
-50
-</td>
-<td style="text-align:left;">
-<a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf">Download pdf</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Individual project — final report
-</td>
-<td style="text-align:left;">
-150
-</td>
-<td style="text-align:left;">
-<a href="Evaluation_Forms/Individual_Report_Evaluation_Form.pdf">Download pdf</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Oral presentation
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:left;">
-<a href="Evaluation_Forms/Oral_Presentation_Evaluation_Form.pdf">Download pdf</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 Participation and engagement
 </td>
 <td style="text-align:left;">
 50
 </td>
 <td style="text-align:left;">
+1, 2, 3, 6
+</td>
+<td style="text-align:left;">
 <a href="index.html#Participation">See the syllabus</a>
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;">
-TOTAL
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bioinformatics tutorial (written)
 </td>
-<td style="text-align:left;font-weight: bold;">
-<strong>600</strong>
+<td style="text-align:left;">
+150
 </td>
-<td style="text-align:left;font-weight: bold;">
+<td style="text-align:left;">
+4, 5, 6
+</td>
+<td style="text-align:left;">
+<a href="Evaluation_Forms/Bioinformatics_Tutorial_Evaluation_Form.pdf">Rubric (pdf)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Teaching the tutorial
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+6, 7
+</td>
+<td style="text-align:left;">
+<a href="Evaluation_Forms/Teaching_Tutorial_Evaluation_Form.pdf">Rubric (pdf)</a>
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="4" style="background-color: #0033A0; color: #fff;">
+<strong>ARC 2 — Individual Project (PART 3) — 300 points</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Project proposal
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+1, 2, 3, 4
+</td>
+<td style="text-align:left;">
+<a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf">Rubric (pdf)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Final report
+</td>
+<td style="text-align:left;">
+150
+</td>
+<td style="text-align:left;">
+1, 2, 3, 4, 5
+</td>
+<td style="text-align:left;">
+<a href="Evaluation_Forms/Individual_Report_Evaluation_Form.pdf">Rubric (pdf)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Oral presentation
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+<a href="Evaluation_Forms/Oral_Presentation_Evaluation_Form.pdf">Rubric (pdf)</a>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="the-assessments" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> The Assessments</h1>
-<div id="bioinformatics-tutorial-150-points" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Bioinformatics Tutorial — 150 points</h2>
-<p>You design a tutorial on a chapter from <a href="index.html#courseCont">PART 2</a> of the course, written in <em>knitr</em>/<em>rmarkdown</em>, built around exercises that give your peers a defined set of computational skills. This is normally a <strong>group</strong> assignment.</p>
+</div>
+<div id="arc1" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <a name="arc1"></a>Arc 1 — Bioinformatics for Reproducible Science</h1>
+<p><strong>300 points, across PARTS 1 and 2.</strong></p>
+<p>This arc is about acquiring the theory and the computational tools of reproducible science, and then proving you have them in the most demanding way there is: by teaching them to somebody else. It runs in three steps — you <strong>learn</strong> the material in class, you <strong>build</strong> a tutorial from it, and you <strong>teach</strong> that tutorial to your peers.</p>
+<p>The three components are deliberately sequential. What you learn in PART 1 is what your tutorial is built from; the tutorial you write is what you then teach. Falling behind in the first makes the next two harder.</p>
+<div id="participation-and-engagement-50-points" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Participation and Engagement — 50 points</h2>
+<p><em>Learning outcomes 1, 2, 3 and 6.</em></p>
+<p>Attendance and engagement in <a href="index.html#courseCont">PARTS 1 and 2</a>. PART 1 is where the reproducibility crisis, open science, the CARE principles and data management are studied through discussion of the assigned readings — which is where you <strong>first</strong> meet outcomes 1–3. You will meet them again in the <a href="#arc2">individual project</a>, where you are asked to apply that understanding to research of your own. Class time is also where I teach you <strong>how to build a tutorial in the first place</strong> — how to scope it, structure the exercises, and pitch it so your peers can finish it in two sessions — which is why outcome 6 begins here rather than at the point you start writing. PART 2 is then where you and your peers teach one another, and a laboratory cannot be taught to an empty room.</p>
+<p>This component has no separate rubric; the criteria, including what counts as being present, are set out in full in the <a href="index.html#Participation">syllabus</a>.</p>
+</div>
+<div id="bioinformatics-tutorial-150-points" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Bioinformatics Tutorial — 150 points</h2>
+<p><em>Learning outcomes 4, 5 and 6.</em></p>
+<p>You design a tutorial on a chapter from <a href="index.html#courseCont">PART 2</a> of the course, written in <em>knitr</em>/<em>rmarkdown</em>, built around exercises that give your peers a defined set of computational skills. This is normally a <strong>group</strong> assignment — see <a href="index.html#GroupWork">Group Work and How It Is Graded</a>.</p>
 <p>The rubric covers the introduction and theoretical background, learning outcomes, package requirements, dataset description, content quality, code quality, structure, references, and submission protocol.</p>
 <p><strong>Firm deadline:</strong> your tutorial must reach me <strong>one week before you teach it</strong> — your peers need that week to install packages and prepare. See the <a href="Timetable.html">schedule</a> for your chapter’s dates.</p>
 <p><a href="Evaluation_Forms/Bioinformatics_Tutorial_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Bioinformatics Tutorial rubric (pdf)</a></p>
 </div>
-<div id="teaching-the-bioinformatics-tutorial-100-points" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Teaching the Bioinformatics Tutorial — 100 points</h2>
-<p>You teach your tutorial to the class over two laboratory sessions, guiding your peers through the exercises and troubleshooting as they work.</p>
+<div id="teaching-the-bioinformatics-tutorial-100-points" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Teaching the Bioinformatics Tutorial — 100 points</h2>
+<p><em>Learning outcomes 6 and 7.</em></p>
+<p>You teach your tutorial to the class over two laboratory sessions, guiding your peers through the exercises and troubleshooting as they work. This is the communication step of the first arc: explaining a technical workflow clearly enough that somebody else can run it is a different skill from being able to run it yourself.</p>
 <p>The rubric covers presentation quality, explanation of key concepts, guidance through the tutorial, the exercises you developed, engagement and facilitation during the session, and professionalism.</p>
 <p><a href="Evaluation_Forms/Teaching_Tutorial_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Teaching rubric (pdf)</a></p>
 </div>
-<div id="individual-project-proposal-50-points" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Individual Project — Proposal — 50 points</h2>
+</div>
+<div id="arc2" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> <a name="arc2"></a>Arc 2 — The Individual Project</h1>
+<p><strong>300 points, across three stages.</strong></p>
+<p>This arc applies the same sequence to your own research: you <strong>plan</strong> a piece of reproducible work, you <strong>build</strong> it, and you <strong>communicate</strong> it. Where the first arc rehearses on shared course material, this one is yours — your thesis project, or a published study if your topic is not yet defined.</p>
+<p>All three stages are assessed on their own form, and each form records the <strong>combined total across all three</strong>, so you can always see where you stand in the arc as a whole.</p>
+<div id="project-proposal-50-points" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Project Proposal — 50 points</h2>
+<p><em>Learning outcomes 1, 2, 3 and 4.</em></p>
 <p>A short proposal, due about a third of the way through the semester, setting out what you intend to do. <strong>I read every proposal and return written feedback</strong>, so that you can act on it while there is still most of a semester left.</p>
 <p>Two things are asked of this proposal beyond a conventional project plan:</p>
 <ul>
@@ -489,27 +537,127 @@ TOTAL
 </ul>
 <p><a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Proposal rubric (pdf)</a></p>
 </div>
-<div id="individual-project-final-report-150-points" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Individual Project — Final Report — 150 points</h2>
+<div id="final-report-150-points" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Final Report — 150 points</h2>
+<p><em>Learning outcomes 1, 2, 3, 4 and 5.</em></p>
 <p>The full reproducible workflow, tailored to your thesis project or a selected publication. The rubric accommodates both <strong>full projects</strong> and <strong>pre-studies</strong> for students who do not yet have data.</p>
-<p>The rubric covers framing of the scientific problem, use of data sources, the data management workflow, reproducible code and computational workflow, reproducibility and transparency, citations, and writing quality. The <strong>proposal score carries forward</strong> onto this form, giving an individual project total of 200 points.</p>
+<p>The rubric covers framing of the scientific problem, use of data sources, the data management workflow, reproducible code and computational workflow, reproducibility and transparency, citations, and writing quality.</p>
 <p><strong>Deadline:</strong> accepted up to one week late, and no later — see the <a href="index.html#LateWork">Late Work Policy</a>.</p>
 <p><a href="Evaluation_Forms/Individual_Report_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Report rubric (pdf)</a></p>
 </div>
-<div id="individual-project-oral-presentation-100-points" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Individual Project — Oral Presentation — 100 points</h2>
-<p>The <strong>third and final stage of the individual project</strong>. An 8-minute presentation of your project during the final week, to an audience of scientists who are not specialists in your area. A central goal is to show how you applied the tools and practices of reproducible science.</p>
-<p>Taken together, the three stages — proposal (50), report (150) and presentation (100) — make up the individual project, worth <strong>300 points</strong>, or half the marks in this course. The presentation form records the combined total across all three.</p>
+<div id="oral-presentation-100-points" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Oral Presentation — 100 points</h2>
+<p><em>Learning outcome 7.</em></p>
+<p>The third and final stage. An 8-minute presentation of your project during the final week, to an audience of scientists who are not specialists in your area. A central goal is to show how you applied the tools and practices of reproducible science.</p>
 <p>The rubric covers topic introduction, scientific content, reproducible science practices, slide design, oral delivery, and accessibility to a broad audience.</p>
 <p><a href="Evaluation_Forms/Oral_Presentation_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Presentation rubric (pdf)</a></p>
 </div>
-<div id="participation-and-engagement-50-points" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Participation and Engagement — 50 points</h2>
-<p>Attendance and engagement in <a href="index.html#courseCont">PARTS 1 and 2</a>. This component has no separate form; the criteria, including what counts as being present, are set out in full in the <a href="index.html#Participation">syllabus</a>.</p>
 </div>
+<div id="how-the-assessments-map-onto-the-learning-outcomes" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> How the Assessments Map onto the Learning Outcomes</h1>
+<p>Every <a href="index.html#Outcomes">Course Learning Outcome</a> is assessed somewhere, and Table <a href="#tab:outcomes">4.1</a> shows where. If you want to know why a particular assignment asks what it asks, this is the answer.</p>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:outcomes">Table 4.1: </span>Course Learning Outcomes and the assessments in which each is evaluated.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+#
+</th>
+<th style="text-align:left;">
+Learning outcome
+</th>
+<th style="text-align:left;">
+Where it is assessed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2em; ">
+1
+</td>
+<td style="text-align:left;">
+<strong>Explain</strong> the evidence for, and causes of, the reproducibility crisis; distinguish reproducibility from replicability.
+</td>
+<td style="text-align:left;">
+Participation (PART 1 discussion); project proposal; final report
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2em; ">
+2
+</td>
+<td style="text-align:left;">
+<strong>Evaluate</strong> the factors that break reproducibility in Ecology, Evolution &amp; Behavior, and identify strategies that mitigate them.
+</td>
+<td style="text-align:left;">
+Participation (PART 1 discussion); project proposal; final report
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2em; ">
+3
+</td>
+<td style="text-align:left;">
+<strong>Apply</strong> open science, data management and the CARE principles across the full data life cycle.
+</td>
+<td style="text-align:left;">
+Participation; project proposal; final report
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2em; ">
+4
+</td>
+<td style="text-align:left;">
+<strong>Build</strong> reproducible workflows using R, RStudio, R Markdown and <em>knitr</em>.
+</td>
+<td style="text-align:left;">
+Bioinformatics tutorial; project proposal; final report
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2em; ">
+5
+</td>
+<td style="text-align:left;">
+<strong>Use</strong> version control with Git and GitHub to track, document and share code.
+</td>
+<td style="text-align:left;">
+Bioinformatics tutorial; final report
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2em; ">
+6
+</td>
+<td style="text-align:left;">
+<strong>Design and teach</strong> a bioinformatics tutorial that gives peers a defined set of computational skills.
+</td>
+<td style="text-align:left;">
+Participation (tutorial design taught in class); bioinformatics tutorial; teaching the tutorial
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2em; ">
+7
+</td>
+<td style="text-align:left;">
+<strong>Communicate</strong> research rationale, methods and results to scientific and non-specialist audiences.
+</td>
+<td style="text-align:left;">
+Teaching the tutorial; oral presentation
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Six of the seven outcomes are assessed in both arcs.</strong> You meet them first on shared course material, and then again on your own research. Only outcome 6 — designing and teaching a tutorial — belongs to the first arc alone.</p>
+<p>That is particularly true of <strong>outcomes 1 and 2, on understanding the reproducibility crisis</strong>. You first meet them in the PART 1 readings and discussion, but they are not left behind there: the proposal asks you to say <strong>which part of the reproducibility problem your project addresses</strong> and what will be reproducible at the end that is not now, and the report asks you to <strong>assess the reproducibility of existing work</strong> and to distinguish what is reproducible from what is merely replicable. Understanding why reproducibility fails is not background reading for this course — it is what your individual project is built on.</p>
 </div>
-<div id="a-note-on-these-forms" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> A Note on These Forms</h1>
+<div id="a-note-on-these-forms" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> A Note on These Forms</h1>
 <p>These rubrics are themselves written in R Markdown and rendered to pdf from source held in the <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science">course GitHub repository</a>, alongside everything else in this course. If you spot an error in one, please tell me — and note that you now know how to fix it yourself.</p>
 </div>
 

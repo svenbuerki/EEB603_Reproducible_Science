@@ -37,42 +37,69 @@ Every assessment in EEB 603 has an **evaluation form** setting out the criteria 
 
 Deadlines for each assessment are on the [course schedule](Timetable.html); the rules on late work and firm deadlines are in the [syllabus](index.html#LateWork).
 
+## How the Assessments Fit Together
+
+The six assessments in this course form **two arcs of three**, each worth **300 points** --- half the course each. Each arc builds on itself, and the second arc repeats the shape of the first on work of your own.
+
+- **[Bioinformatics for Reproducible Science](#arc1)** (PARTS 1--2) takes you from *learning* the theory and the tools, to *building* something with them, to *teaching* it to your peers.
+- **[The Individual Project](#arc2)** (PART 3) takes you from *planning* a piece of reproducible research, to *building* it, to *communicating* it.
+
+The two arcs have exactly the same shape --- a small piece of work, a large one, and a piece of communication (50, 150 and 100 points respectively). The first arc rehearses on shared material; the second applies the same sequence to your own research.
+
 ```{r overview, echo=FALSE}
 FORMS <- "Evaluation_Forms/"
-pdf_link <- function(f, label = "Download pdf") sprintf("[%s](%s%s)", label, FORMS, f)
+pdf_link <- function(f, label = "Rubric (pdf)") sprintf("[%s](%s%s)", label, FORMS, f)
 
 tab <- data.frame(
   Assessment = c(
-    "Bioinformatics tutorial (written)",
-    "Teaching the bioinformatics tutorial",
-    "Individual project --- proposal",
-    "Individual project --- final report",
-    "Oral presentation",
     "Participation and engagement",
-    "TOTAL"),
-  Points = c("150", "100", "50", "150", "100", "50", "**600**"),
+    "Bioinformatics tutorial (written)",
+    "Teaching the tutorial",
+    "Project proposal",
+    "Final report",
+    "Oral presentation"),
+  Points = c("50", "150", "100", "50", "150", "100"),
+  `Learning outcomes` = c("1, 2, 3, 6", "4, 5, 6", "6, 7", "1, 2, 3, 4", "1, 2, 3, 4, 5", "7"),
   `Evaluation form` = c(
+    "[See the syllabus](index.html#Participation)",
     pdf_link("Bioinformatics_Tutorial_Evaluation_Form.pdf"),
     pdf_link("Teaching_Tutorial_Evaluation_Form.pdf"),
     pdf_link("Project_Proposal_Evaluation_Form.pdf"),
     pdf_link("Individual_Report_Evaluation_Form.pdf"),
-    pdf_link("Oral_Presentation_Evaluation_Form.pdf"),
-    "[See the syllabus](index.html#Participation)",
-    ""),
+    pdf_link("Oral_Presentation_Evaluation_Form.pdf")),
   check.names = FALSE)
 
 knitr::kable(tab,
-  caption = "All assessments in EEB 603, with their point allocations and evaluation forms.",
+  caption = "All assessments in EEB 603, grouped into the two arcs. Each arc is worth 300 points, and the course totals 600. Learning outcome numbers refer to the Course Learning Outcomes in the syllabus.",
   format = "html", row.names = FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
-  row_spec(nrow(tab), bold = TRUE)
+  pack_rows("ARC 1 — Bioinformatics for Reproducible Science (PARTS 1–2) — 300 points", 1, 3,
+            label_row_css = "background-color: #0033A0; color: #fff;") %>%
+  pack_rows("ARC 2 — Individual Project (PART 3) — 300 points", 4, 6,
+            label_row_css = "background-color: #0033A0; color: #fff;")
 ```
 
-# The Assessments
+# <a name="arc1"></a>Arc 1 --- Bioinformatics for Reproducible Science {#arc1}
+
+**300 points, across PARTS 1 and 2.**
+
+This arc is about acquiring the theory and the computational tools of reproducible science, and then proving you have them in the most demanding way there is: by teaching them to somebody else. It runs in three steps --- you **learn** the material in class, you **build** a tutorial from it, and you **teach** that tutorial to your peers.
+
+The three components are deliberately sequential. What you learn in PART 1 is what your tutorial is built from; the tutorial you write is what you then teach. Falling behind in the first makes the next two harder.
+
+## Participation and Engagement --- 50 points
+
+*Learning outcomes 1, 2, 3 and 6.*
+
+Attendance and engagement in [PARTS 1 and 2](index.html#courseCont). PART 1 is where the reproducibility crisis, open science, the CARE principles and data management are studied through discussion of the assigned readings --- which is where you **first** meet outcomes 1--3. You will meet them again in the [individual project](#arc2), where you are asked to apply that understanding to research of your own. Class time is also where I teach you **how to build a tutorial in the first place** --- how to scope it, structure the exercises, and pitch it so your peers can finish it in two sessions --- which is why outcome 6 begins here rather than at the point you start writing. PART 2 is then where you and your peers teach one another, and a laboratory cannot be taught to an empty room.
+
+This component has no separate rubric; the criteria, including what counts as being present, are set out in full in the [syllabus](index.html#Participation).
 
 ## Bioinformatics Tutorial --- 150 points
 
-You design a tutorial on a chapter from [PART 2](index.html#courseCont) of the course, written in *knitr*/*rmarkdown*, built around exercises that give your peers a defined set of computational skills. This is normally a **group** assignment.
+*Learning outcomes 4, 5 and 6.*
+
+You design a tutorial on a chapter from [PART 2](index.html#courseCont) of the course, written in *knitr*/*rmarkdown*, built around exercises that give your peers a defined set of computational skills. This is normally a **group** assignment --- see [Group Work and How It Is Graded](index.html#GroupWork).
 
 The rubric covers the introduction and theoretical background, learning outcomes, package requirements, dataset description, content quality, code quality, structure, references, and submission protocol.
 
@@ -82,13 +109,25 @@ The rubric covers the introduction and theoretical background, learning outcomes
 
 ## Teaching the Bioinformatics Tutorial --- 100 points
 
-You teach your tutorial to the class over two laboratory sessions, guiding your peers through the exercises and troubleshooting as they work.
+*Learning outcomes 6 and 7.*
+
+You teach your tutorial to the class over two laboratory sessions, guiding your peers through the exercises and troubleshooting as they work. This is the communication step of the first arc: explaining a technical workflow clearly enough that somebody else can run it is a different skill from being able to run it yourself.
 
 The rubric covers presentation quality, explanation of key concepts, guidance through the tutorial, the exercises you developed, engagement and facilitation during the session, and professionalism.
 
 <a href="Evaluation_Forms/Teaching_Tutorial_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Teaching rubric (pdf)</a>
 
-## Individual Project --- Proposal --- 50 points
+# <a name="arc2"></a>Arc 2 --- The Individual Project {#arc2}
+
+**300 points, across three stages.**
+
+This arc applies the same sequence to your own research: you **plan** a piece of reproducible work, you **build** it, and you **communicate** it. Where the first arc rehearses on shared course material, this one is yours --- your thesis project, or a published study if your topic is not yet defined.
+
+All three stages are assessed on their own form, and each form records the **combined total across all three**, so you can always see where you stand in the arc as a whole.
+
+## Project Proposal --- 50 points
+
+*Learning outcomes 1, 2, 3 and 4.*
 
 A short proposal, due about a third of the way through the semester, setting out what you intend to do. **I read every proposal and return written feedback**, so that you can act on it while there is still most of a semester left.
 
@@ -99,29 +138,63 @@ Two things are asked of this proposal beyond a conventional project plan:
 
 <a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Proposal rubric (pdf)</a>
 
-## Individual Project --- Final Report --- 150 points
+## Final Report --- 150 points
+
+*Learning outcomes 1, 2, 3, 4 and 5.*
 
 The full reproducible workflow, tailored to your thesis project or a selected publication. The rubric accommodates both **full projects** and **pre-studies** for students who do not yet have data.
 
-The rubric covers framing of the scientific problem, use of data sources, the data management workflow, reproducible code and computational workflow, reproducibility and transparency, citations, and writing quality. The **proposal score carries forward** onto this form, giving an individual project total of 200 points.
+The rubric covers framing of the scientific problem, use of data sources, the data management workflow, reproducible code and computational workflow, reproducibility and transparency, citations, and writing quality.
 
 **Deadline:** accepted up to one week late, and no later --- see the [Late Work Policy](index.html#LateWork).
 
 <a href="Evaluation_Forms/Individual_Report_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Report rubric (pdf)</a>
 
-## Individual Project --- Oral Presentation --- 100 points
+## Oral Presentation --- 100 points
 
-The **third and final stage of the individual project**. An 8-minute presentation of your project during the final week, to an audience of scientists who are not specialists in your area. A central goal is to show how you applied the tools and practices of reproducible science.
+*Learning outcome 7.*
 
-Taken together, the three stages --- proposal (50), report (150) and presentation (100) --- make up the individual project, worth **300 points**, or half the marks in this course. The presentation form records the combined total across all three.
+The third and final stage. An 8-minute presentation of your project during the final week, to an audience of scientists who are not specialists in your area. A central goal is to show how you applied the tools and practices of reproducible science.
 
 The rubric covers topic introduction, scientific content, reproducible science practices, slide design, oral delivery, and accessibility to a broad audience.
 
 <a href="Evaluation_Forms/Oral_Presentation_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Presentation rubric (pdf)</a>
 
-## Participation and Engagement --- 50 points
+# How the Assessments Map onto the Learning Outcomes
 
-Attendance and engagement in [PARTS 1 and 2](index.html#courseCont). This component has no separate form; the criteria, including what counts as being present, are set out in full in the [syllabus](index.html#Participation).
+Every [Course Learning Outcome](index.html#Outcomes) is assessed somewhere, and Table \@ref(tab:outcomes) shows where. If you want to know why a particular assignment asks what it asks, this is the answer.
+
+```{r outcomes, echo=FALSE}
+lo <- data.frame(
+  `#` = c("1", "2", "3", "4", "5", "6", "7"),
+  `Learning outcome` = c(
+    "**Explain** the evidence for, and causes of, the reproducibility crisis; distinguish reproducibility from replicability.",
+    "**Evaluate** the factors that break reproducibility in Ecology, Evolution & Behavior, and identify strategies that mitigate them.",
+    "**Apply** open science, data management and the CARE principles across the full data life cycle.",
+    "**Build** reproducible workflows using R, RStudio, R Markdown and *knitr*.",
+    "**Use** version control with Git and GitHub to track, document and share code.",
+    "**Design and teach** a bioinformatics tutorial that gives peers a defined set of computational skills.",
+    "**Communicate** research rationale, methods and results to scientific and non-specialist audiences."),
+  `Where it is assessed` = c(
+    "Participation (PART 1 discussion); project proposal; final report",
+    "Participation (PART 1 discussion); project proposal; final report",
+    "Participation; project proposal; final report",
+    "Bioinformatics tutorial; project proposal; final report",
+    "Bioinformatics tutorial; final report",
+    "Participation (tutorial design taught in class); bioinformatics tutorial; teaching the tutorial",
+    "Teaching the tutorial; oral presentation"),
+  check.names = FALSE)
+
+knitr::kable(lo,
+  caption = "Course Learning Outcomes and the assessments in which each is evaluated.",
+  format = "html", row.names = FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(1, width = "2em")
+```
+
+**Six of the seven outcomes are assessed in both arcs.** You meet them first on shared course material, and then again on your own research. Only outcome 6 --- designing and teaching a tutorial --- belongs to the first arc alone.
+
+That is particularly true of **outcomes 1 and 2, on understanding the reproducibility crisis**. You first meet them in the PART 1 readings and discussion, but they are not left behind there: the proposal asks you to say **which part of the reproducibility problem your project addresses** and what will be reproducible at the end that is not now, and the report asks you to **assess the reproducibility of existing work** and to distinguish what is reproducible from what is merely replicable. Understanding why reproducibility fails is not background reading for this course --- it is what your individual project is built on.
 
 # A Note on These Forms
 

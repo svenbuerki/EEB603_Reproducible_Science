@@ -340,19 +340,45 @@ There will not be any classical exams in this course, but we will rather focus o
 
 ## Assessments
 
-Students will be graded on the following four mandatory assessments, worth 600 points in total:
+The six assessments in this course form **two arcs of three**, each worth **300 points** -- half the course each. The two arcs have exactly the same shape: a small piece of work, a large one, and a piece of communication.
 
-1. Produce a bioinformatics tutorial based on a chapter from [Course Content - PART 2](#courseCont), normally as a group (150 points).
-2. Teach the bioinformatics tutorial to their peers over two sessions (100 points).
-3. Produce an **[individual project](#Report)** on their thesis project or a related publication, in three stages totalling 300 points:
-    a. a mandatory [2-page proposal](#Proposal), due about a third of the way through the semester (50 points);
-    b. the [final report](#Report) (150 points);
-    c. the [oral presentation](#Oral) in the final week (100 points).
-4. [Participate and engage](#Participation) in class sessions across PARTS 1 and 2 (50 points).
+**Arc 1 -- Bioinformatics for Reproducible Science (PARTS 1--2), 300 points.** You *learn* the theory and the tools, you *build* something with them, and you *teach* it to your peers.
 
-These assessments total **600 points**. Table \@ref(tab:mygrade) shows the grading scale used in this course.
+1. [Participate and engage](#Participation) in class sessions across PARTS 1 and 2 (50 points).
+2. Produce a [bioinformatics tutorial](#BioTut) based on a chapter from [Course Content - PART 2](#courseCont), normally as a group (150 points).
+3. [Teach that tutorial](#TeachTut) to your peers over two sessions (100 points).
 
-**There are no proctored exams or proctored assessments in this course.** Your grade is based entirely on the assessments listed above, each of which is aligned with the [Course Learning Outcomes](#Outcomes): the bioinformatics tutorial and its teaching address outcomes 4--6; the individual report and oral presentation address outcomes 3--5 and 7; and participation in PART 1 addresses outcomes 1--2, where the reproducibility crisis and the factors that break reproducibility are studied through discussion of the assigned readings.
+**Arc 2 -- The [Individual Project](#Report) (PART 3), 300 points.** The same sequence applied to your own research: you *plan* a piece of reproducible work, you *build* it, and you *communicate* it.
+
+4. A mandatory [project proposal](#Proposal), due about a third of the way through the semester (50 points).
+5. The [final report](#Report) (150 points).
+6. The [oral presentation](#Oral) in the final week (100 points).
+
+Together these total **600 points**. Table \@ref(tab:mygrade) shows the grading scale used in this course.
+
+**There are no proctored exams or proctored assessments in this course.** Your grade is based entirely on the six assessments above, and every [Course Learning Outcome](#Outcomes) is assessed in at least one of them (Table \@ref(tab:loalign)). **Six of the seven outcomes are assessed in both arcs**, so that you meet them first on shared course material and then again on your own research; only outcome 6, designing and teaching a tutorial, belongs to the first arc alone. That double coverage matters most for **outcomes 1 and 2, on understanding the reproducibility crisis**: you first meet them in the PART 1 readings, but the [proposal](#Proposal) then asks which part of the reproducibility problem your project addresses, and the [report](#Report) asks you to assess the reproducibility of existing work. Understanding why reproducibility fails is not background reading in this course -- it is what your individual project is built on.
+
+```{r loalign, echo=FALSE}
+loalign <- data.frame(
+  Assessment = c(
+    "Participation and engagement",
+    "Bioinformatics tutorial (written)",
+    "Teaching the tutorial",
+    "Project proposal",
+    "Final report",
+    "Oral presentation"),
+  Arc = c("1", "1", "1", "2", "2", "2"),
+  Points = c("50", "150", "100", "50", "150", "100"),
+  `Learning outcomes` = c("1, 2, 3, 6", "4, 5, 6", "6, 7", "1, 2, 3, 4", "1, 2, 3, 4, 5", "7"),
+  check.names = FALSE)
+
+knitr::kable(loalign,
+  caption = "Alignment of each assessment with the Course Learning Outcomes, and the arc it belongs to.",
+  row.names = FALSE) %>%
+  kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+The full rubrics for each assessment, together with a detailed outcome-by-outcome breakdown, are on the [Assignments](https://svenbuerki.github.io/EEB603_Reproducible_Science/Assignments.html) page.
 
 # Grading Policy 
 

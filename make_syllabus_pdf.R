@@ -80,10 +80,26 @@ x <- gsub("\\]\\((?!https?://|#|mailto:)([A-Za-z0-9_.-]+\\.(?:html|pdf))\\)",
 ## ---------------------------------------------------------------------------
 ## 4. Table formatting: html-specific kable arguments -> LaTeX equivalents
 ## ---------------------------------------------------------------------------
-x <- gsub(', format = "html"', "", x, fixed = TRUE)
+# Strip the `format = "html"` argument from kable() calls. These substitutions run
+# line by line, so both orderings have to be handled: the argument may carry the
+# comma before it (same line as the previous argument) or after it (first thing on
+# its own line). Missing either form leaves format="html" in a document targeting
+# LaTeX, which fails with "Functions that produce HTML output found in document
+# targeting latex output".
+x <- gsub('\\s*,\\s*format\\s*=\\s*"html"', "", x, perl = TRUE)   # comma before
+x <- gsub('format\\s*=\\s*"html"\\s*,\\s*', "", x, perl = TRUE)   # comma after
+
 x <- gsub('kable_styling(bootstrap_options = c("striped", "hover", "condensed"))',
           'kable_styling(latex_options = c("striped", "hold_position"))',
           x, fixed = TRUE)
+
+# Fail loudly rather than producing a broken pdf if anything html-only survives.
+leftover <- grep('format\\s*=\\s*"html"|bootstrap_options|label_row_css', x)
+if (length(leftover)) {
+  stop("html-only table arguments still present on line(s) ",
+       paste(leftover, collapse = ", "), " of the derived source:\n  ",
+       paste(trimws(x[leftover]), collapse = "\n  "))
+}
 
 ## ---------------------------------------------------------------------------
 ## 5. Write the derived source and render it
