@@ -130,6 +130,24 @@ Overall, this course **provides students with key knowledge to gather, store, sh
 knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")
 ```
 
+## Course Learning Outcomes {#Outcomes}
+
+After successful completion of this course, students will be able to:
+
+1. **Explain** the evidence for, and the causes of, the reproducibility crisis in science, and distinguish between reproducibility and replicability in research.
+2. **Evaluate** the factors that break reproducibility in Ecology, Evolution & Behavior, and identify strategies that mitigate them.
+3. **Apply** the principles of open science, data management, and the CARE principles to the full data life cycle (create, process, document, preserve, share, reuse).
+4. **Build** reproducible workflows using R, RStudio, R Markdown and *knitr*, from data import and tidying through to modelling, visualization, and reporting.
+5. **Use** version control with Git and GitHub to track, document, and share code and research outputs.
+6. **Design and teach** a bioinformatics tutorial that enables peers to acquire a defined set of computational skills.
+7. **Communicate** research rationale, methods, and results to scientific and non-specialist audiences, in writing and orally, with complete and correctly formatted citations.
+
+Detailed, chapter-level learning outcomes are available on the [course website](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html).
+
+## Program Learning Outcomes
+
+This course supports the **Ecology, Evolution and Behavior (EEB) Ph.D. program** and the graduate programs in **Biological Sciences** by developing students' capacity to conduct rigorous, transparent, and well-documented research, and to communicate that research effectively. These competencies underpin doctoral and thesis work directly: a dissertation chapter that cannot be reproduced cannot be defended, and the data management and version control practices taught here are the ones you will rely on across the whole of your degree. They also align with the [University Learning Outcomes](https://www.boisestate.edu/academics-provost/university-learning-outcomes/) for graduate education.
+
 ## Course Structure {#Structure}
 
 The course is subdivided into three parts: 
@@ -175,43 +193,27 @@ The course is subdivided into three parts:
    - Produce individual reports showcasing reproducible workflows tailored to thesis projects.
    - Oral presentations of individual students' projects. 
 
-## Course Learning Outcomes {#Outcomes}
-
-After successful completion of this course, students will be able to:
-
-1. **Explain** the evidence for, and the causes of, the reproducibility crisis in science, and distinguish between reproducibility and replicability in research.
-2. **Evaluate** the factors that break reproducibility in Ecology, Evolution & Behavior, and identify strategies that mitigate them.
-3. **Apply** the principles of open science, data management, and the CARE principles to the full data life cycle (create, process, document, preserve, share, reuse).
-4. **Build** reproducible workflows using R, RStudio, R Markdown and *knitr*, from data import and tidying through to modelling, visualization, and reporting.
-5. **Use** version control with Git and GitHub to track, document, and share code and research outputs.
-6. **Design and teach** a bioinformatics tutorial that enables peers to acquire a defined set of computational skills.
-7. **Communicate** research rationale, methods, and results to scientific and non-specialist audiences, in writing and orally, with complete and correctly formatted citations.
-
-Detailed, chapter-level learning outcomes are available on the [course website](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html).
-
-## Program Learning Outcomes
-
-This course supports the **Ecology, Evolution and Behavior (EEB) Ph.D. program** and the graduate programs in **Biological Sciences** by developing students' capacity to conduct rigorous, transparent, and well-documented research, and to communicate that research effectively. These competencies underpin doctoral and thesis work directly: a dissertation chapter that cannot be reproduced cannot be defended, and the data management and version control practices taught here are the ones you will rely on across the whole of your degree. They also align with the [University Learning Outcomes](https://www.boisestate.edu/academics-provost/university-learning-outcomes/) for graduate education.
-
 # Course Schedule
 
 The tentative schedule for this course is available on the [course schedule page](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html). I may adjust the schedule during the semester to accommodate the needs of the class -- if I do, I will contact everyone enrolled and post the change, so that you always have an up-to-date version.
 
-# Course Resources
+# Course Materials and Resources
 
-## Shared Google Drive {#GoogleSite}
+## Required Materials and Technology Requirements
 
-A shared Google Drive folder has been set up for this course. **I will grant you access during the first week of the semester**, so you do not need to request it -- if you have not received access by the end of week 1, email me.
+Class time includes hands-on computing laboratories, so you need access to a computer in every session. You have two options:
 
-- **[Shared Google Drive folder for EEB 603](https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=drive_link)**
+- **Bring your own laptop (preferred).** Setting up and troubleshooting the software on the machine you actually use for your research is itself part of the learning in this course, and it means your projects, files, and configuration stay with you after the semester ends.
+- **Use a classroom computer.** Our classroom (Raptor Research Center Building, Rm 119) is equipped with computers that have all of the required software installed. These are available to you for every class session, so **you do not need to own a laptop to take this course.** If you need computer access outside of our meeting times, come and talk to me and we will sort it out -- [Albertsons Library](https://library.boisestate.edu/) also lends laptops from the Circulation Desk.
 
-We use it for three things:
+Whichever option you choose, you will need:
 
-- **Sharing publications** and other reading material for the course.
-- **Uploading your assignments**, in the relevant subfolder: `Bioinformatics_tutorials` for your [bioinformatics tutorial](#BioTut), and `Individual_reports` for your [individual project](#Report).
-- **Coordinating who is doing what**, which means it contains the names of students alongside their assignments.
+- **R and RStudio**, plus the R packages listed [below](#Rpack). Both are free and open-source, and installation is covered in the first weeks of class. They are already installed on the classroom computers.
+- **A LaTeX distribution** if you wish to produce pdf output (see [Installing Markup Software](#Markup)). Also already installed on the classroom computers.
+- **A GitHub account** (free) for the version control component of the course.
+- **Internet access** and your Boise State account for the **course website**, **Google Drive**, **Zoom**, and **Canvas** (grades only).
 
-**Please keep this folder private.** Because it contains your classmates' names and their work, it is for the people enrolled in this course only. Do not share the link, forward its contents, or give access to anyone outside the class. If you want to share something of your own from it more widely -- your own tutorial, for instance -- that is entirely your call to make with your own material, but share it directly rather than by passing on access to the folder.
+There is **no required textbook to purchase.** All readings are either open access, available through [Albertsons Library](https://library.boisestate.edu/), or provided by me (see [Publications and Textbooks](#Publis)).
 
 ##  Publications and Textbooks {#Publis}
 
@@ -240,6 +242,19 @@ The two main textbooks are available online:
 
 **A note on editions:** chapter numbering changed between editions of both books. If you are reading a newer edition than the one cited above, match the chapter *title* rather than the number, and ask me if you are unsure which section is intended.
 
+## Shared Google Drive {#GoogleSite}
+
+A shared Google Drive folder has been set up for this course. **I will grant you access during the first week of the semester**, so you do not need to request it -- if you have not received access by the end of week 1, email me.
+
+- **[Shared Google Drive folder for EEB 603](https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=drive_link)**
+
+We use it for three things:
+
+- **Sharing publications** and other reading material for the course.
+- **Uploading your assignments**, in the relevant subfolder: `Bioinformatics_tutorials` for your [bioinformatics tutorial](#BioTut), and `Individual_reports` for your [individual project](#Report).
+- **Coordinating who is doing what**, which means it contains the names of students alongside their assignments.
+
+**Please keep this folder private.** Because it contains your classmates' names and their work, it is for the people enrolled in this course only. Do not share the link, forward its contents, or give access to anyone outside the class. If you want to share something of your own from it more widely -- your own tutorial, for instance -- that is entirely your call to make with your own material, but share it directly rather than by passing on access to the folder.
 
 ## Examples of Reproducible Science
 
@@ -259,21 +274,7 @@ Research is often presented in the form of slideshows, articles or books. These 
 
 This course will equip you with tools to integrate your research with clear and reproducible presentation of your findings. The first is a reproducible research workflow, which applies the principles of reproducibility throughout your entire project—from data collection to statistical analysis and results presentation. To support this, you will learn to use a range of computing tools that make this workflow possible.
 
-## Required Materials and Technology Requirements
 
-Class time includes hands-on computing laboratories, so you need access to a computer in every session. You have two options:
-
-- **Bring your own laptop (preferred).** Setting up and troubleshooting the software on the machine you actually use for your research is itself part of the learning in this course, and it means your projects, files, and configuration stay with you after the semester ends.
-- **Use a classroom computer.** Our classroom (Raptor Research Center Building, Rm 119) is equipped with computers that have all of the required software installed. These are available to you for every class session, so **you do not need to own a laptop to take this course.** If you need computer access outside of our meeting times, come and talk to me and we will sort it out -- [Albertsons Library](https://library.boisestate.edu/) also lends laptops from the Circulation Desk.
-
-Whichever option you choose, you will need:
-
-- **R and RStudio**, plus the R packages listed [below](#Rpack). Both are free and open-source, and installation is covered in the first weeks of class. They are already installed on the classroom computers.
-- **A LaTeX distribution** if you wish to produce pdf output (see [Installing Markup Software](#Markup)). Also already installed on the classroom computers.
-- **A GitHub account** (free) for the version control component of the course.
-- **Internet access** and your Boise State account for the **course website**, **Google Drive**, **Zoom**, and **Canvas** (grades only).
-
-There is **no required textbook to purchase.** All readings are either open access, available through [Albertsons Library](https://library.boisestate.edu/), or provided by me (see [Publications and Textbooks](#Publis)).
 
 ## Bioinformatics Tools
 
@@ -284,7 +285,7 @@ The main bioinformatics tools covered in this course are:
 - The *knitr* and *rmarkdown* **packages** for R and other tools, including **command-line shell programs** like GNU Make and Git version control, for dynamically tiding your data gathering, analysis, and presentation documents together so that they can be easily reproduced.
 - **RStudio**, a program that brings all of these tools together in one place.
 
-## Installing Software
+## Installing Software {#InstallSoftware}
 
 As shown above, **R** and **RStudio** are at the core of this course and will have to be installed on your computers. This can be easily done by downloading the software from the following websites:
 
@@ -338,7 +339,7 @@ Please find below two documents providing a comprehensive introduction to R:
 
 There will not be any classical exams in this course, but we will rather focus on developing theoretical and bioinformatics skills and applying those to your research. In this context, each student will be asked to produce a bioinformatics tutorial and teach it to their peers (see [Course Content - PART 2](#courseCont)). Each student will also be tasked to produce a report (tailored to their thesis project or a publication) and present their results and conclusions in class. 
 
-## Assessments
+## Assessments {#Assess}
 
 The six assessments in this course form **two arcs of three**, each worth **300 points** -- half the course each. The two arcs have exactly the same shape: a small piece of work, a large one, and a piece of communication.
 
@@ -354,7 +355,7 @@ The six assessments in this course form **two arcs of three**, each worth **300 
 5. The [final report](#Report) (150 points).
 6. The [oral presentation](#Oral) in the final week (100 points).
 
-Together these total **600 points**. Table \@ref(tab:mygrade) shows the grading scale used in this course.
+Together these total **600 points**, which are converted to a letter grade using the scale in the [Grading Policy](#Grading) below (Table \@ref(tab:mygrade)).
 
 **There are no proctored exams or proctored assessments in this course.** Your grade is based entirely on the six assessments above, and every [Course Learning Outcome](#Outcomes) is assessed in at least one of them (Table \@ref(tab:loalign)). **Six of the seven outcomes are assessed in both arcs**, so that you meet them first on shared course material and then again on your own research; only outcome 6, designing and teaching a tutorial, belongs to the first arc alone. That double coverage matters most for **outcomes 1 and 2, on understanding the reproducibility crisis**: you first meet them in the PART 1 readings, but the [proposal](#Proposal) then asks which part of the reproducibility problem your project addresses, and the [report](#Report) asks you to assess the reproducibility of existing work. Understanding why reproducibility fails is not background reading in this course -- it is what your individual project is built on.
 
@@ -380,9 +381,9 @@ knitr::kable(loalign,
 
 The full rubrics for each assessment, together with a detailed outcome-by-outcome breakdown, are on the [Assignments](https://svenbuerki.github.io/EEB603_Reproducible_Science/Assignments.html) page.
 
-# Grading Policy 
+## Grading Policy {#Grading}
 
-The grading scale for this course is in Table \@ref(tab:mygrade).
+The grading scale for this course is in Table \@ref(tab:mygrade). It applies to the **600 points** across the six [assessments](#Assess) described above.
 
 ```{r mygrade, echo=FALSE}
 library(bookdown)
@@ -393,6 +394,38 @@ knitr::kable(grades, caption = "Grading scale applied in this course.") %>%
 ```
 
 You can look at all of your scores by accessing **Grades** in the Canvas course menu. Grades are the only thing Canvas is used for in this course -- everything else, including the schedule and all due dates, is on the [course website](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html).
+
+## Participation and Engagement (50 points) {#Participation}
+
+This course is built on the assumption that you are in the room. **PART 1** gives you the theory and the tools -- R, RStudio, R Markdown, data management, open science -- that you then need in order to build a tutorial and an individual project. **PART 2** is where you and your peers teach one another, and a laboratory cannot be taught to an empty room: your classmates' grades depend on having engaged colleagues in front of them, just as yours depends on theirs. Engagement in both parts is therefore assessed directly.
+
+These 50 points are earned by attending class sessions in [PARTS 1 and 2](#courseCont) and engaging with them in good faith: doing the pre-class readings, taking part in discussions, working through the tutorial exercises, asking questions when you are stuck, and helping your classmates when you can.
+
+- **I take attendance at every session in PARTS 1 and 2.** I record who is present and, where relevant, who arrived late; these records are what the points below are based on. If you ever think a record is wrong, tell me and I will check it.
+- **Your first absence or late arrival is forgiven**, with no effect on these points and no need to tell me why.
+- Absences and lateness excused under [Policy 3120 or Policy 3125](#Attendance), an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, or the [Communicable Disease Policy](#Disease) **never** count against these points, and are not limited to one.
+- After that first forgiven session, deductions are as set out in the table below, to a minimum of zero. This is a graduate course and the sessions are few, so if you need to miss more, **please get in touch with me** -- that is what the excused categories above are for, and I would much rather hear from you than mark you absent.
+
+### What Counts as Being Present
+
+So that there is no ambiguity about how these points are recorded:
+
+| Recorded as | What it means | Effect |
+| :--- | :--- | :---: |
+| **Present** | You arrive by **9:00 AM** and stay for the session. | -- |
+| **Present (slightly late)** | You arrive **before 9:10 AM**. Please come in quietly and settle in without disrupting whoever is teaching. | -- |
+| **Late** | You arrive at **9:10 AM or later**. | **--2 points** |
+| **Absent** | You do not attend, or you leave part-way through without having arranged it with me beforehand. | **--5 points** |
+
+Our sessions are 75 minutes long and they start promptly. The first ten minutes are usually where I set up what we are doing and why, or where the teaching group frames their tutorial -- arriving after that means you have missed the part that makes the rest make sense, and walking in mid-explanation interrupts a peer who is teaching for a grade.
+
+**Note that arriving late always costs you less than not coming at all.** If you are running badly behind, still come: a late arrival costs 2 points, while skipping the session costs 5, and you will have learned something either way.
+
+**If you know you are going to be late, tell me.** An email or a message beforehand is enough. If your lateness is for a reason covered by the [excused categories above](#Participation) -- a University-recognized activity, a religious observance, an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, illness -- it is excused and costs you nothing, and that applies to lateness just as it does to a full absence. The same is true if something genuinely unforeseen happens on the day: a delayed bus, an accident on the way in, a building access problem. **Talk to me and it will be fine.** What this rule is aimed at is habitual, unexplained lateness, not the occasional bad morning.
+
+One practical note specific to our room: the Raptor Research Building requires **Bronco Card** access and sits on the edge of campus, so please allow yourself time to get in. If you are ever locked out, contact me or [Campus Security](tel:2084266911) straight away and I will not count it against you.
+
+**You are not graded on how much you speak.** I know that people differ in how comfortable they are talking in a group, and quietly doing the reading and working through the exercises alongside your classmates counts as full participation. If anything about this component is difficult for you -- for any reason -- come and talk to me and we will find an arrangement that works.
 
 ## Bioinformatics Tutorial (150 points) {#BioTut}
 
@@ -461,38 +494,6 @@ Students are expected to prepare a 10–20 minute presentation that provides gen
 Grading will be based on your ability to effectively teach your tutorial, facilitate understanding, and respond to questions. I may also consider peer feedback when assigning grades for this component.
 
 Where a tutorial is taught by a group, this component is graded as a group, and **I expect every member to take an active part in both sessions** -- teaching, answering questions, and helping classmates run and understand the code. See [Group Work and How It Is Graded](#GroupWork) for what happens if that is not the case.
-
-## Participation and Engagement (50 points) {#Participation}
-
-This course is built on the assumption that you are in the room. **PART 1** gives you the theory and the tools -- R, RStudio, R Markdown, data management, open science -- that you then need in order to build a tutorial and an individual project. **PART 2** is where you and your peers teach one another, and a laboratory cannot be taught to an empty room: your classmates' grades depend on having engaged colleagues in front of them, just as yours depends on theirs. Engagement in both parts is therefore assessed directly.
-
-These 50 points are earned by attending class sessions in [PARTS 1 and 2](#courseCont) and engaging with them in good faith: doing the pre-class readings, taking part in discussions, working through the tutorial exercises, asking questions when you are stuck, and helping your classmates when you can.
-
-- **I take attendance at every session in PARTS 1 and 2.** I record who is present and, where relevant, who arrived late; these records are what the points below are based on. If you ever think a record is wrong, tell me and I will check it.
-- **Your first absence or late arrival is forgiven**, with no effect on these points and no need to tell me why.
-- Absences and lateness excused under [Policy 3120 or Policy 3125](#Attendance), an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, or the [Communicable Disease Policy](#Disease) **never** count against these points, and are not limited to one.
-- After that first forgiven session, deductions are as set out in the table below, to a minimum of zero. This is a graduate course and the sessions are few, so if you need to miss more, **please get in touch with me** -- that is what the excused categories above are for, and I would much rather hear from you than mark you absent.
-
-### What Counts as Being Present
-
-So that there is no ambiguity about how these points are recorded:
-
-| Recorded as | What it means | Effect |
-| :--- | :--- | :---: |
-| **Present** | You arrive by **9:00 AM** and stay for the session. | -- |
-| **Present (slightly late)** | You arrive **before 9:10 AM**. Please come in quietly and settle in without disrupting whoever is teaching. | -- |
-| **Late** | You arrive at **9:10 AM or later**. | **--2 points** |
-| **Absent** | You do not attend, or you leave part-way through without having arranged it with me beforehand. | **--5 points** |
-
-Our sessions are 75 minutes long and they start promptly. The first ten minutes are usually where I set up what we are doing and why, or where the teaching group frames their tutorial -- arriving after that means you have missed the part that makes the rest make sense, and walking in mid-explanation interrupts a peer who is teaching for a grade.
-
-**Note that arriving late always costs you less than not coming at all.** If you are running badly behind, still come: a late arrival costs 2 points, while skipping the session costs 5, and you will have learned something either way.
-
-**If you know you are going to be late, tell me.** An email or a message beforehand is enough. If your lateness is for a reason covered by the [excused categories above](#Participation) -- a University-recognized activity, a religious observance, an [Educational Access Center](https://www.boisestate.edu/eac/) accommodation, illness -- it is excused and costs you nothing, and that applies to lateness just as it does to a full absence. The same is true if something genuinely unforeseen happens on the day: a delayed bus, an accident on the way in, a building access problem. **Talk to me and it will be fine.** What this rule is aimed at is habitual, unexplained lateness, not the occasional bad morning.
-
-One practical note specific to our room: the Raptor Research Building requires **Bronco Card** access and sits on the edge of campus, so please allow yourself time to get in. If you are ever locked out, contact me or [Campus Security](tel:2084266911) straight away and I will not count it against you.
-
-**You are not graded on how much you speak.** I know that people differ in how comfortable they are talking in a group, and quietly doing the reading and working through the exercises alongside your classmates counts as full participation. If anything about this component is difficult for you -- for any reason -- come and talk to me and we will find an arrangement that works.
 
 ## Individual Project on Thesis Project/Publication (300 points, in three stages) {#Report}
 
@@ -614,7 +615,7 @@ As your instructor, my goal is to make sure that our learning environment is eff
 
 If you are struggling for any reason (e.g., family emergency, financial/basic needs, mental/physical health concerns, caregiving responsibilities, etc.) and believe these struggles may impact your performance in the course, I encourage you to reach out to me if you are comfortable doing so, and I will refer you to an appropriate university resource. You may also reach out directly to the outreach team in the Office of the Dean of Students at (208) 426-1527 or email studentoutreach@boisestate.edu for support. The [Student Life Essentials page](https://www.boisestate.edu/student-life/) is also a great place to find helpful resources. If you notice a significant change in your mood, sleep, feelings of hopelessness or a lack of self worth, consider connecting immediately with [Counseling Services](https://www.boisestate.edu/healthservices/counseling/) (1529 Belmont Street, Norco Building) at (208) 426-1459 or email healthservices@boisestate.edu.
 
-# What Do you Need?
+# Campus Resources and Support
 
 The university has many resources designed to support you as a learner and human being. Among these are:
 
