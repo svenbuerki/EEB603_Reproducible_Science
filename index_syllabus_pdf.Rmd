@@ -670,18 +670,29 @@ In this course, I want to see *your* thoughts, understand *your* reasoning, and 
 
 ```{r aitable, echo=FALSE}
 ai <- data.frame(
-  "Assessment" = c("Bioinformatics tutorial (150 pts)",
+  "Assessment" = c("Participation and engagement (50 pts)",
+                   "Bioinformatics tutorial (150 pts)",
                    "Teaching the tutorial (100 pts)",
-                   "Individual report (200 pts)",
+                   "Project proposal (50 pts)",
+                   "Final report (150 pts)",
                    "Oral presentation (100 pts)"),
-  "AI use" = c("Limited", "Not used during teaching", "Permitted", "Permitted in preparation"),
-  "Core condition" = c("You write and knit the code yourself",
+  "AI use" = c("Not applicable -- in class",
+               "Limited",
+               "Not used during teaching",
+               "Permitted",
+               "Permitted",
+               "Permitted in preparation"),
+  "Core condition" = c("Contribute in your own words",
+                       "You write and knit the code yourself",
                        "You lead and answer questions live",
+                       "Disclose use; the plan must be yours",
                        "Disclose use; follow research ethics",
                        "Delivery and Q&A are your own"),
   check.names = FALSE)
 knitr::kable(ai, caption = "Summary of generative AI expectations by assessment. The full conditions are given in the text below and in each assignment's instructions.") %>%
-  kable_styling(latex_options = c("striped", "hold_position"))
+  kable_styling(latex_options = c("striped", "hold_position")) %>%
+  pack_rows("ARC 1 -- Bioinformatics for Reproducible Science", 1, 3) %>%
+  pack_rows("ARC 2 -- Individual Project", 4, 6)
 ```
 
 ### Bioinformatics Tutorial and Teaching (limited use)
@@ -696,7 +707,7 @@ Within those limits, generative AI is a legitimate study aid for this assignment
 
 ### Individual Project (AI permitted)
 
-For your [individual report](#Report) and its [oral presentation](#Oral), **you may use generative AI tools**, provided that your use is consistent with scientific integrity and research ethics. This is deliberate: AI tools are becoming part of the research workflow you will enter after this course, and learning to use them well -- critically, transparently, and reproducibly -- is itself a reproducible-science skill.
+Across all three stages of your individual project --- the [proposal](#Proposal), the [final report](#Report) and the [oral presentation](#Oral) --- **you may use generative AI tools**, provided that your use is consistent with scientific integrity and research ethics. This is deliberate: AI tools are becoming part of the research workflow you will enter after this course, and learning to use them well -- critically, transparently, and reproducibly -- is itself a reproducible-science skill.
 
 Using AI in line with scientific integrity and ethics means, in this course:
 
