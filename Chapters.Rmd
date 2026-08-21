@@ -18,11 +18,12 @@ bibliography: [Bibliography_Reproducible_Science_2.bib, packages.bib]
 editor_options: 
   markdown: 
     wrap: sentence
+lang: en
 ---
 
 ```{js logo-js, echo=FALSE}
 $(document).ready(function() {
-  $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" style=\"position:absolute; top:0; right:0; padding:10px; height:120px\"></div>');
+  $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" alt=\"\" style=\"position:absolute; top:0; right:0; padding:10px; height:120px\"></div>');
   $('#header').css('margin-right', '120px')
 });
 ```
@@ -117,8 +118,7 @@ embed_pdf <- function(pdf_path, unique_id) {
 
 Please see this [webpage](index.html) for more details on the Syllabus.
 
-# Chapter 1 {#chap1}
-
+# Chapt. 1 -- The Reproducibility Crisis {#chap1}
 ## Goal
 
 In this chapter, we engage in group activities and literature reading to **explore the concept of reproducible science**, including its challenges, benefits, and practical implementation in research. Overall, this chapter aims to provide a broader understanding of reproducible science and the context that underpins the material covered throughout the course.
@@ -169,13 +169,13 @@ Please ensure that you have identified the reproducibility challenges in your as
 
 ### Introduction and Definitions {#IntroDef}
 
-#### ✍️ Individual Self-Reflection <span style="color:gray;">(5 minutes)</span>
+#### ✍️ Individual Self-Reflection <span style="color:dimgray;">(5 minutes)</span>
 
 Students reflect on what **“reproducible science”** means to them and write down a personal definition.
 
 ---
 
-#### 🤝 Group Sharing and Discussion <span style="color:gray;">(15 minutes)</span>
+#### 🤝 Group Sharing and Discussion <span style="color:dimgray;">(15 minutes)</span>
 
 - Form small groups (3–4 students)
 - Small groups share and compare their definitions
@@ -183,7 +183,7 @@ Students reflect on what **“reproducible science”** means to them and write 
 
 ---
 
-#### 📘 Formal Definitions <span style="color:gray;">(10 minutes)</span>
+#### 📘 Formal Definitions <span style="color:dimgray;">(10 minutes)</span>
 
 Standard definitions are introduced to clarify the distinction between **reproducibility** and **replicability**.  
 Students are invited to relate them to their own research experience.
@@ -218,7 +218,7 @@ Reproducible science means **achieving the same findings** using the **original 
 
 ### Case Studies and Challenges {#CaseStudies}
 
-#### 👥 Group Work Activity <span style="color:gray;">(50 minutes)</span>
+#### 👥 Group Work Activity <span style="color:dimgray;">(50 minutes)</span>
 
 Each group is given a real-world **publication that illustrates challenges to reproducibility**, such as:
 
@@ -254,7 +254,7 @@ Each group:
 
 ---
 
-#### 📢 Group Presentations & Class Discussion <span style="color:gray;">(20 minutes)</span>
+#### 📢 Group Presentations & Class Discussion <span style="color:dimgray;">(20 minutes)</span>
 
 - Each group presents:
   - The **reproducibility challenges** in their case study
@@ -263,7 +263,7 @@ Each group:
 - 🧭 **Facilitated Discussion Tip:**  
   Guide the discussion by drawing links across different case studies — uncover **systemic challenges** and the **interconnected factors** that shape reproducibility across disciplines.
 
-#### Reasons Behind the Retractions of Case Studies <span style="color:gray;">(10 minutes)</span>
+#### Reasons Behind the Retractions of Case Studies <span style="color:dimgray;">(10 minutes)</span>
 
 The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Digital Object Identifiers ([DOI](https://www.doi.org/)) and [PubMed IDs]([PubMed](https://pubmed.ncbi.nlm.nih.gov/)) are provided for each case study.  
 
@@ -286,7 +286,7 @@ knitr::kable(retractioncsv, caption = "Reasons behind the retractions of case st
 
 ### Best Practices and Open Science Tools {#BestPract}
 
-#### 🧠 Group Brainstorm <span style="color:gray;">(20 minutes)</span>
+#### 🧠 Group Brainstorm <span style="color:dimgray;">(20 minutes)</span>
 
 In small groups, students:
 
@@ -297,7 +297,7 @@ Afterward, we will share and compare our recommendations as a class.
 
 ---
 
-#### 🚀 Key Strategies & Tools <span style="color:gray;">(10 minutes)</span>
+#### 🚀 Key Strategies & Tools <span style="color:dimgray;">(10 minutes)</span>
 
 The instructor goes over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
 
@@ -410,8 +410,7 @@ DT::datatable(rec,
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
-# Chapter 2 {#chap2}
-
+# Chapt. 2 -- R, R Markdown and User-Defined Functions {#chap2}
 ## Introduction
 
 In this chapter, we introduce the use of **bioinformatics tools for writing and disseminating reproducible reports**, as implemented in RStudio [@RStudio]. More specifically, we will learn how to **link and execute data and code within a unified environment** (see Figure \@ref(fig:ReproScience)). 
@@ -434,7 +433,7 @@ The chapter is divided into six parts, each with specific learning objectives:
 - [**PART E:**](#partE) User-Defined Functions in R  
 - [**PART F:**](#partF) Interactive Tutorials  
 
-```{r ReproScience, echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
+```{r ReproScience, fig.alt="A left-to-right gradient scale from blue to gold: a blue box labeled Publication only sits at the not reproducible end, a wide middle box labeled Publication plus contains three graded levels (Data, then Data and code, then Linked and executable data and code), and a gold box labeled Full replication sits at the gold standard end.", echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Fig1.png")
 ```
 
@@ -462,7 +461,7 @@ RStudio [@RStudio] is an **integrated development environment (IDE)** that allow
 
 Detailed information on using RStudio can be found on [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
 
-```{r IDE, echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
+```{r IDE, fig.alt="Screenshot of the RStudio window with labels overlaid on each of its four panes: Source with an open .Rmd file top left, Console/Terminal/RMarkdown bottom left, Environment/History/Connections top right, and Files/Plots/Packages/Help bottom right.", echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/IDE.png")
 ```
 
@@ -506,7 +505,7 @@ Markdown is a simple formatting syntax used for authoring HTML, PDF, and Microso
 2. **Main body text:** This section represents the core content of your document or publication and uses Markdown syntax.
 3. **Code chunks:** This section allows you to import and analyze data, and to produce figures and tables that are directly embedded in the output document.
 
-```{r RMdown, echo=FALSE, fig.cap="Example of an R Markdown file showing the three major sections.", fig.show="asis", out.width = '100%'}
+```{r RMdown, fig.alt="Screenshot of an R Markdown file open in the RStudio source editor, with overlaid labels marking the YAML metadata section between the triple dashes at the top, the publication core text in the middle, a shaded code chunk labeled importing data, and a second shaded chunk labeled analyze data and output figures and tables.", echo=FALSE, fig.cap="Example of an R Markdown file showing the three major sections.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Presentation_RMarkdown.png")
 ```
 
@@ -527,13 +526,13 @@ To create an R Markdown document, follow these steps in RStudio:
     - **Project path:** `Reproducible_Science/Chapters/Chapter_2`  
     - **Warning:** Because the knitting process generates multiple files, you should save your `.Rmd` file in a dedicated project folder.
 
-```{r RMdownscreen, echo=FALSE, fig.cap="Snapshot of window to create an R Markdown file.", fig.show="asis", out.width = '40%', fig.align="center"}
+```{r RMdownscreen, fig.alt="Screenshot of the RStudio New R Markdown dialog box, with Document selected in the left-hand list, a Title field, a date field, HTML selected among the Default Output Format radio buttons, and Create Empty Document, OK and Cancel buttons along the bottom.", echo=FALSE, fig.cap="Snapshot of window to create an R Markdown file.", fig.show="asis", out.width = '40%', fig.align="center"}
 knitr::include_graphics("Figures/Create_RMarkdown.png")
 ```
 
 #### Knit Document
 
-To knit ![](Figures/knit_2.png) or render your R Markdown document into an HTML file, follow these steps in RStudio:
+To knit ![](Figures/knit_2.png){alt=""} or render your R Markdown document into an HTML file, follow these steps in RStudio:
 
 1. Click the `Knit` button (Figure \@ref(fig:RMdown)) in the top toolbar to render the document.  
 2. There are several output format options; however, if you simply click the button, RStudio will automatically knit the document using the settings specified in the YAML metadata section (Figure \@ref(fig:RMdown)).  
@@ -550,7 +549,7 @@ To knit ![](Figures/knit_2.png) or render your R Markdown document into an HTML 
   </p>
 </div>
 
-```{r MyFirstRMfolder, echo=FALSE, fig.cap="Snapshot of your project folder with the knitted html document.", fig.show="asis", out.width = '100%', fig.align="center"}
+```{r MyFirstRMfolder, fig.alt="Screenshot of a macOS Finder list view showing an expanded folder named Chapter_2 containing two files, Chapter_2_part_A.html and Chapter_2_part_A.Rmd.", echo=FALSE, fig.cap="Snapshot of your project folder with the knitted html document.", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/MyFirstRMarkdown_HTML.png")
 ```
 
@@ -560,7 +559,7 @@ When you knit your document, R Markdown passes the `.Rmd` file to the R *knitr* 
 
 The `.md` file created by *knitr* is then processed by the Pandoc program, which converts it into the final output format (e.g., HTML, PDF, or Word) as illustrated in Figure \@ref(fig:Rflow).
 
-```{r Rflow, echo=FALSE, fig.cap="R Markdown flow.", out.width = '100%'}
+```{r Rflow, fig.alt="A left-to-right pipeline of five stages joined by arrows: an .Rmd file icon, a knitr box, an .md file icon, a pandoc box, and finally a stack of output document icons.", echo=FALSE, fig.cap="R Markdown flow.", out.width = '100%'}
 knitr::include_graphics("Figures/rmarkdownflow.png")
 ```
 
@@ -589,7 +588,7 @@ Additional syntax and formatting options are available in the **R Markdown Refer
 
 Before you start this tutorial, please delete the content of your R Markdown file starting on line 11 `## R Markdown` to the end of the document (see Figure \@ref(fig:beforestart)).
 
-```{r beforestart, echo=FALSE, fig.cap="R Markdown of Chapter 2 - Part A.", out.width = '100%'}
+```{r beforestart, fig.alt="Screenshot of the RStudio source editor showing the top of Chapter_2_part_A.Rmd, with the YAML header giving the title, html_document output and a date, followed by a shaded setup code chunk calling knitr opts_chunk set echo TRUE, then the default R Markdown headings and text.", echo=FALSE, fig.cap="R Markdown of Chapter 2 - Part A.", out.width = '100%'}
 knitr::include_graphics("Figures/Chapter_2_partA_Rmd.png")
 ```
 
@@ -826,7 +825,7 @@ If the output is a table or a figure, you can assign a label to it (by adding me
 A code chunk can be easily inserted into your document using one of the following methods:
 
 - Using the keyboard shortcut **Ctrl + Alt + I** (on macOS: **Cmd + Option + I**).
-- Clicking the `Insert` button ![](Figures/insert_code_chunk.png) in the editor toolbar.
+- Clicking the `Insert` button ![](Figures/insert_code_chunk.png){alt=""} in the editor toolbar.
 - Typing ```{r} to open the chunk and ``` to close it.
 
 By default, the code chunk expects R code, but you can also insert chunks for other programming languages (e.g., Bash, Python).
@@ -857,7 +856,7 @@ Chunk output can be customized with *knitr* options arguments set in the `{}` of
 
 We will delve more into chunk options in part D of chapter 2, but in the meantime please see the R Markdown Reference Guide for more details. 
 
-```{r RChunk, echo=FALSE, fig.cap="Example of code chunks.", out.width = '100%'}
+```{r RChunk, fig.alt="Screenshot of RStudio split between the source editor on the left, showing an .Rmd file whose code chunks carry different options such as include equals FALSE, message and warning equals FALSE, and fig.cap, and the Viewer pane on the right showing the knitted page with a purple-to-yellow heatmap and its caption.", echo=FALSE, fig.cap="Example of code chunks.", out.width = '100%'}
 knitr::include_graphics("Figures/code-1-options.png")
 ```
 
@@ -917,7 +916,7 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 There are three ways to access spell checking in an R Markdown document in RStudio:
 
-1. A spell check button ![](Figures/ABC.png) to the right of the save button.
+1. A spell check button ![](Figures/ABC.png){alt=""} to the right of the save button.
 2. `Edit > Check Spelling...`
 3. The F7 key.
 
@@ -958,7 +957,7 @@ To support the reproducibility of your research, we structure the R Markdown fil
     - [Code chunk #3]{.underline}: Provides citations of software (relying on the output of Code chunk #1) for Appendix 1.
     - [Code chunk #4]{.underline}: Provides software version information (relying on *sessionInfo()*) for Appendix 2.
 
-```{r RMarkdwnstrct, echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
+```{r RMarkdwnstrct, fig.alt="A stacked block diagram of an .Rmd file read top to bottom: a green YAML metadata block, then blue code chunks for packages and setup, a white YOUR RESEARCH block, and headings for References and Appendices followed by two further blue code chunks for software citations and package versions; arrows on the right connect four blocks to notes about declaring .bib and .csl files, loading and analyzing data, automatic formatting of references, and using packages.bib to build the software bibliography.", echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
 knitr::include_graphics("Figures/RMarkdown_file_structure.png")
 ```
 
@@ -1060,7 +1059,7 @@ To ensure that `bookdown` functions are applied correctly, make sure to select o
 - `Knit to html_document2`
 - `Knit to pdf_document2`
 
-```{r knitout, echo=FALSE, fig.cap="Snapshot of RStudio console showing the drop-down list associated to Knit button.", out.width = "100%", fig.align='center', dpi=72, fig.pos= "H"}
+```{r knitout, fig.alt="Screenshot of the RStudio source editor with the Knit button drop-down menu open at the top left, listing Knit to html_document2, Knit to pdf_document2, Knit with Parameters, Knit Directory and Clear Knitr Cache.", echo=FALSE, fig.cap="Snapshot of RStudio console showing the drop-down list associated to Knit button.", out.width = "100%", fig.align='center', dpi=72, fig.pos= "H"}
 knitr::include_graphics("Figures/knit_drop_down.png")
 ```
 
@@ -1099,12 +1098,12 @@ This approach offers two key benefits that support the reproducibility of your r
 
 #### Step-by-Step Procedure
 
-1. Insert an R code chunk ![](Figures/insert_code_chunk.png) directly below your YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct)).
+1. Insert an R code chunk ![](Figures/insert_code_chunk.png){alt=""} directly below your YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct)).
 2. Name the code chunk `packages` and set the chunk options as follows (see Figure \@ref(fig:packageschunkfig)):
    + `echo = FALSE`  
    + `warning = FALSE`  
    + `include = FALSE`
-```{r packageschunkfig, echo=FALSE, fig.cap = "This is how your packages R code chunk should look like at this stage of the procedure.", fig.show = "asis", out.width = '100%'}
+```{r packageschunkfig, fig.alt="Close-up of a single R Markdown chunk header that opens with three backticks and reads r packages, echo=FALSE, warning=FALSE, include=FALSE, followed by the closing backticks on the next line.", echo=FALSE, fig.cap = "This is how your packages R code chunk should look like at this stage of the procedure.", fig.show = "asis", out.width = '100%'}
 knitr::include_graphics("Figures/packages_code_chunk_options.png")
 ```
 3. Copy the following code into your R code chunk (Figure \@ref(fig:packageschunkfig)) to install and load the packages required to produce your report:
@@ -1236,7 +1235,7 @@ Here, we will learn the procedure to assemble such an appendix.
 
 Citations of all R packages used to generate this report.
 ```
-3. Insert an R code chunk ![](Figures/insert_code_chunk.png) directly below `# Appendix 1` to read and print the citations saved in `packages.bib`. Use the following code:
+3. Insert an R code chunk ![](Figures/insert_code_chunk.png){alt=""} directly below `# Appendix 1` to read and print the citations saved in `packages.bib`. Use the following code:
 ```{r generateBibliography1, eval=FALSE, echo=TRUE, warning = FALSE, message=FALSE}
 ###
 #Load R package
@@ -1284,7 +1283,7 @@ I have also used the approach described above to add this information in [Append
 
 Version information about R, the operating system (OS) and attached or R loaded packages. This appendix was generated using `sessionInfo()`.
 ```
-2. Then, add an R code chunk ![](Figures/insert_code_chunk.png) and set its options as follows to correctly print the content:  
+2. Then, add an R code chunk ![](Figures/insert_code_chunk.png){alt=""} and set its options as follows to correctly print the content:  
    `{r sessionInfo, eval = TRUE, echo = FALSE, warning = FALSE, message = FALSE}`
 3. Copy this code in your code chunk:
 ```{r eval=F, echo=T, warning = FALSE, message=FALSE}
@@ -1366,13 +1365,13 @@ grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "8
 knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>% kable_styling(c("striped","scale_down"))
 ```
 
-#### Step-by-Step Protocol <span style="color:gray;">(10 minutes)</span>
+#### Step-by-Step Protocol <span style="color:dimgray;">(10 minutes)</span>
 
 Follow these steps to reproduce Table \@ref(tab:tabgrades) in your R Mardown document: 
 
 1. Open `Chapter2_partC.Rmd` in RStudio.  
 2. Add a first-level header titled `Tables` below the `packages`code chunk.  
-3. Insert an R code chunk under your header by clicking the `Insert` button ![](Figures/insert.png) in the editor toolbar.  
+3. Insert an R code chunk under your header by clicking the `Insert` button ![](Figures/insert.png){alt=""} in the editor toolbar.  
 4. Copy and paste the following R code into your code chunk:
 ```{r tabgrades2, eval=FALSE, echo=TRUE}
 ###
@@ -1394,12 +1393,12 @@ knitr::kable(grades, caption = "Grading scale applied in this class.", format = 
    - `echo = FALSE`  
 6. Add the unique label `tabgrades` in the chunk options line (immediately after `{r`) to enable cross-referencing.  
 7. Test your R code to ensure it produces the expected table by clicking the `Play` button at the top left of the code chunk (see Fig. \@ref(fig:runcodetab)).
-```{r runcodetab, echo=FALSE, fig.cap = "Demonstrates how to test your code within the R Markdown document. Click the play icon in the top-right corner of the code chunk to execute the code and return its output directly in the R Markdown document without knitting.", fig.show = "asis", out.width = '100%'}
+```{r runcodetab, fig.alt="An R Markdown code chunk with a green Run arrow highlighted at the top right, and below it the inline preview pane showing the resulting grading scale table with Percentage and Grade columns starting at 100-98 for A+.", echo=FALSE, fig.cap = "Demonstrates how to test your code within the R Markdown document. Click the play icon in the top-right corner of the code chunk to execute the code and return its output directly in the R Markdown document without knitting.", fig.show = "asis", out.width = '100%'}
 knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
 ```
-8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
 
-##### Challenge <span style="color:gray;">(10 minutes)</span>
+##### Challenge <span style="color:dimgray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Is something missing?</strong></p>
@@ -1409,7 +1408,7 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
   </ul>
 </div>
 
-#### Double "Table" in Caption <span style="color:gray;">(10 minutes)</span>
+#### Double "Table" in Caption <span style="color:dimgray;">(10 minutes)</span>
 
 Several students have encountered an issue with duplicate table labels in the caption. The instructor did a web search and found a possible solution to help debug the issue:
 
@@ -1463,13 +1462,13 @@ summary(cars)
 plot(cars)
 ```
 
-#### Step-by-Step Protocol <span style="color:gray;">(10 minutes)</span>
+#### Step-by-Step Protocol <span style="color:dimgray;">(10 minutes)</span>
 
 Follow these steps to reproduce Figure \@ref(fig:cars) in your R Markdown document: 
 
 1. If not done yet, open `Chapter2_partC.Rmd` in RStudio.
 2. Add a first-level header titled `Figures` below the `Tables` header.  
-3. Insert an R code chunk under your header by clicking the `Insert` button ![](Figures/insert.png) in the editor toolbar.
+3. Insert an R code chunk under your header by clicking the `Insert` button ![](Figures/insert.png){alt=""} in the editor toolbar.
 4. Copy and paste the following R code into your code chunk:
 ```{r eval=FALSE}
 ###
@@ -1489,9 +1488,9 @@ plot(cars)
   - `out.width = "100%"`
 6. Add the unique label `cars` in the chunk options line (immediately after `{r`) to enable cross-referencing. 
 7. Test your R code to ensure it produces the expected table by clicking the `Play` button at the top left of the code chunk (as done in [Tables](#inserttable)). 
-8. Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
+8. Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
 
-##### Challenge <span style="color:gray;">(10 minutes)</span>
+##### Challenge <span style="color:dimgray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Challenge</strong></p>
@@ -1526,17 +1525,17 @@ Figure \@ref(fig:code_chunk_ID)
   </ul>
 </div>
 
-#### Step-by-Step Procedure <span style="color:gray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(10 minutes)</span>
 
 1. To cross-reference your table (labeled `tabgrades`) in the text, follow these steps:
     - Type the following sentence below your `Tables` header:  
       `The grading scale presented in the syllabus is available in Table \@ref(tab:tabgrades).`
-    - Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and verify that the syntax and code are working correctly.
+    - Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and verify that the syntax and code are working correctly.
 
 2. To cross-reference your figure (labeled `cars`) in the text, follow these steps:
     - Type the following sentence below your `Figures` header:  
       `The plot of the cars data is available in Figure \@ref(fig:cars).`
-    - Knit your document using the `Knit` button ![](Figures/knit_2.png) in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and verify that the syntax and code are working correctly.
+    - Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and verify that the syntax and code are working correctly.
 
 ---
 
@@ -1621,7 +1620,7 @@ In this section, we will cover the following topics to implement the tools for r
 4. References formatted in the `BibTeX` format are available in the following file:  
     + `Bibliography_Reproducible_Science_2.bib`
 
-###### Challenge <span style="color:gray;">(5 minutes)</span>
+###### Challenge <span style="color:dimgray;">(5 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Download a Citation in BibTeX Format</strong></p>
@@ -1652,7 +1651,7 @@ Blah blah [see @Baker_2016, pp. 33-35; also @Smith2016, ch. 1].
 Blah blah [@Baker_2016; @Smith2016].
 ```
 
-Once knitted (using the ![](Figures/knit_2.png) button), the citation syntax is rendered as:
+Once knitted (using the ![Knit](Figures/knit_2.png) button), the citation syntax is rendered as:
 
 Blah blah [see @Baker_2016, pp. 33–35; also @Smith2016, ch. 1].
 
@@ -1683,7 +1682,7 @@ Once knitted, the citation is rendered as:
 
 @Baker_2016 [p. 1] says blah.
 
-###### Challenge <span style="color:gray;">(10 minutes)</span>
+###### Challenge <span style="color:dimgray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Your turn to practice citing references in your document by:</strong></p>
@@ -1709,7 +1708,7 @@ last paragraph...
 
 The bibliography will be inserted after this header (please see the [References] section of this tutorial for more details).
 
-#### Challenge <span style="color:gray;">(10 minutes)</span>
+#### Challenge <span style="color:dimgray;">(10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Your Turn!</strong></p>
@@ -1735,7 +1734,7 @@ There are two main CSL repositories:
 - **GitHub Repository:** https://github.com/citation-style-language/styles
 - **Zotero Style Repository:** https://www.zotero.org/styles
 
-#### Step-by-Step Procedure <span style="color:gray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(10 minutes)</span>
 
 To learn this procedure and syntax, you will be tasked with downloading a `.csl` file and using it in your document (in place of `AmJBot.csl`).
 
@@ -1748,7 +1747,7 @@ Follow these steps to format your citations and bibliography according to a spec
     ```
 2. Make sure your `.csl` file is in your project folder (alongside your `.Rmd` file).  
 3. Edit your YAML metadata section to specify the name of your `.csl` file.
-4. Knit your document using the `Knit` ![](Figures/knit_2.png) button. The Pandoc program will use the information specified in the YAML metadata section to format both the in-text citations and the bibliography section according to the citation style defined in the CSL file. Be sure to add a `References` header at the end of your `.Rmd` document.
+4. Knit your document using the `Knit` ![](Figures/knit_2.png){alt=""} button. The Pandoc program will use the information specified in the YAML metadata section to format both the in-text citations and the bibliography section according to the citation style defined in the CSL file. Be sure to add a `References` header at the end of your `.Rmd` document.
 
 ## PART D: Advanced R and R Markdown settings {#partD}
 
@@ -1796,7 +1795,7 @@ Before knitting your document, you will be testing your code (see Figure \@ref(f
 
 `Session --> Set Working Directory --> To Source File Location`
 
-```{r setwd, echo=FALSE, fig.cap="Snapshot of RStudio showing procedure to set your working directory to allow testing your code prior to knitting.", out.width = "100%"}
+```{r setwd, fig.alt="Screenshot of the RStudio menu bar with the Session menu open, the Set Working Directory submenu expanded and 'To Source File Location' highlighted, over an R Markdown editor pane in the background.", echo=FALSE, fig.cap="Snapshot of RStudio showing procedure to set your working directory to allow testing your code prior to knitting.", out.width = "100%"}
 knitr::include_graphics("Figures/Setwkd.png")
 ```
 
@@ -2005,11 +2004,11 @@ Please follow the procedure outlined above to implement the material presented i
 
 1. Open RStudio and open your `Chapter_2_PartC.Rmd` document.
 2. Set your working directory according to the file location. **Note:** This step is especially important if you want to test your R code prior to knitting the document.
-3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) directly below your `packages` code chunk and name it `setup`. This code chunk will be used to define the global settings via the `opts_chunk$set()` function.
+3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png){alt=""} button) directly below your `packages` code chunk and name it `setup`. This code chunk will be used to define the global settings via the `opts_chunk$set()` function.
 4. Copy the content of the code presented in this [section](#setupcode) into your `setup` code chunk.
 5. Edit your code chunk options as presented [above](#codechunkoptions).
 6. Use the R code provided [below](#step5) (which generates a plot) to explore the effect of global settings on code outputs.
-7. Once you have completed the procedures associated with step 6, knit your document using the `Knit` ![](Figures/knit_2.png) button. Please pay attention to the outputs in your working directory.
+7. Once you have completed the procedures associated with step 6, knit your document using the `Knit` ![](Figures/knit_2.png){alt=""} button. Please pay attention to the outputs in your working directory.
 8. Use the `bookdown` `\@ref()` function to cite your figure or plot in the text.
 
 #### Code for Step 6 {#step5}
@@ -2029,7 +2028,7 @@ plot(x, y)
 
 ##### Step-by-Step Procedure
 
-1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png) button) under the `Figures` header of your document and set the following options and arguments:
+1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png){alt=""} button) under the `Figures` header of your document and set the following options and arguments:
     - `plotcache`: Unique ID of the code chunk.
     - `fig.cap = "Plot of y ~ x."`: Figure caption.
     - `fig.show = "asis"`: Figure display.
@@ -2047,7 +2046,7 @@ y <- jitter(x, 1000)
 plot(x, y)
 ```
 
-3. Test your code to ensure it performs as expected (using the `Run` ![](Figures/Run.png) button).  
+3. Test your code to ensure it performs as expected (using the `Run` ![](Figures/Run.png){alt=""} button).  
 4. Proceed to step 7 in the above section and complete the procedure.
 
 ## PART E: User-Defined Functions in R {#partE}
@@ -2179,7 +2178,7 @@ Writing clear, reproducible code has (at least) three main benefits:
 
 When working on your project, it is highly likely that you will develop multiple UDFs tailored to your research. In this case, it is recommended to create a dedicated folder named `R_functions` within your project directory (see Figure \@ref(fig:Structure)). Save each UDF as a separate file (e.g., `check.install.pkg.R`) inside the `R_functions` folder.
 
-```{r Structure, echo=FALSE, fig.cap="Example file structure of a simple analysis project. See Chapter 4 for more details", fig.show="asis", out.width = '100%'}
+```{r Structure, fig.alt="Screenshot of a macOS Finder window for a folder named Project_ID, listing six subfolders (Data, MS, Figures and Tables, Output, Reports, R_functions) above five numbered R scripts (01_download_data.R through 05_generate_figures.R) and a README.md file.", echo=FALSE, fig.cap="Example file structure of a simple analysis project. See Chapter 4 for more details", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Example_project_structure.png")
 ```
 
@@ -2194,7 +2193,7 @@ For example, to load the `check.install.pkg()` function (saved as `R_functions/c
 source("R_functions/check.install.pkg.R")
 ```
 
-```{r sourceUDF, echo=FALSE, fig.cap="Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.", fig.show="asis", out.width = '100%'}
+```{r sourceUDF, fig.alt="Screenshot of the full RStudio window: the source editor on the left shows the check.install.pkg function definition, the console below shows source() and View() calls being run, and the Environment panel on the right lists check.install.pkg under a Functions heading.", echo=FALSE, fig.cap="Snapshot of RStudio showing output of source() function and the UDF made available in the Global Environment. You can also view the code unperpinning the UDF.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/source_view.png")
 ```
 
@@ -2231,7 +2230,7 @@ In R, this is done using the `return()` function.
 
 To learn this skill, we will work on a challenge.
 
-#### Challenge <span style="color:gray;">(15 minutes)</span> {.tabset}
+#### Challenge <span style="color:dimgray;">(15 minutes)</span> {.tabset}
 
 We are tasked with
 
@@ -2279,7 +2278,7 @@ square_number <- function(base){
 }
 ```
 
-#### Implement and Load the UDF in R <span style="color:gray;">(10 minutes)</span>
+#### Implement and Load the UDF in R <span style="color:dimgray;">(10 minutes)</span>
 
 Follow these steps to implement and load the UDF in R:
 
@@ -2289,7 +2288,7 @@ Follow these steps to implement and load the UDF in R:
 4. Load the function into the Global Environment by executing all lines related to `square_number`.
 5. Verify that `square_number` has been loaded by checking the Environment panel in RStudio (see Figure \@ref(fig:envir)).
 
-```{r envir, echo=FALSE, fig.cap="Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.", fig.show="asis", out.width = '100%'}
+```{r envir, fig.alt="Close-up screenshot of the RStudio Environment tab set to Global Environment, showing a single Functions section with one entry, square_number, described as function (base).", echo=FALSE, fig.cap="Close-up of the Environment panel in RStudio showing that the UDF is loaded in the Global Environment and can be used.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Environment_RStudio.png")
 ```
 
@@ -2302,7 +2301,7 @@ knitr::include_graphics("Figures/Environment_RStudio.png")
   </ul>
 </div>
 
-#### Apply Your Function <span style="color:gray;">(5 minutes)</span>
+#### Apply Your Function <span style="color:dimgray;">(5 minutes)</span>
 
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
 
@@ -2432,7 +2431,7 @@ We are tasked with
 
 To accomplish this, we will **collect the different outputs into a list, which will then be returned to the user using `return()`**.
 
-#### Student Activity and Solution <span style="color:gray;">(25 minutes)</span> {.tabset}
+#### Student Activity and Solution <span style="color:dimgray;">(25 minutes)</span> {.tabset}
 
 ##### Students Work in Groups
 
@@ -2474,7 +2473,7 @@ my_log_square(base = 2)
 
 Defensive programming is a technique used to ensure that code fails with well-defined errors—that is, in situations where you *know* it should not work. **The key idea is to ‘fail fast’ by ensuring the code throws an error as soon as something unexpected occurs.** This may require a bit more effort from the programmer, but it makes debugging much easier later on.
 
-#### Case Study <span style="color:gray;">(25 minutes)</span>
+#### Case Study <span style="color:dimgray;">(25 minutes)</span>
 
 To demonstrate how to apply defensive programming in your code, a power function `y = x^n` is implemented as a UDF and used as an example.
 
@@ -2618,8 +2617,7 @@ The procedure to develop interactive tutorials using *learnr* is presented [here
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
-# Chapter 3 {#chap3}
-
+# Chapt. 3 -- A Roadmap for Reproducible Science {#chap3}
 ## Aim
 
 The ***aim*** of this chapter is to engage in readings and group discussions that **equip you with the knowledge and tools needed to implement reproducible science practices** in support of your research.
@@ -2691,7 +2689,7 @@ The scientific process can be subdivided into six phases (Figure \@ref(fig:SciPr
 5. Interpret results.  
 6. Publish and/or conduct the next experiment.
 
-```{r SciProcess, echo=FALSE, fig.align="center", fig.cap="Overview of the scientific process.", out.width = '80%'}
+```{r SciProcess, fig.alt="A clockwise circular cycle of six numbered stages linked by grey chevron arrows: ask a question, review literature and generate hypothesis; design study; collect data; analyze data and test hypothesis; interpret results; and publish or conduct the next experiment, which feeds back into stage one.", echo=FALSE, fig.align="center", fig.cap="Overview of the scientific process.", out.width = '80%'}
 knitr::include_graphics("Figures/Steps_scientific_process.jpg")
 ```
 
@@ -2709,7 +2707,7 @@ Recognizing the post-study category is equally important, as it encourages both 
 
 ---
 
-## 🤝 Group Sharing and Discussion <span style="color:gray;">(20 minutes)</span>
+## 🤝 Group Sharing and Discussion <span style="color:dimgray;">(20 minutes)</span>
 
 - Form 4 small groups (3–4 students each)
 - Each group presents a definition of one of the [common key threats](#gloss) to the scientific process and explains at which step(s) it occurs (and how it **biases** research outcomes). Additionally, each group must propose a [solution](#soltothreats) to mitigate this threat. Use the resources provided in this document to carry out your group assignment.
@@ -2732,7 +2730,7 @@ iii) **Hindsight bias** (also known as the *knew-it-all-along effect*): the tend
 
 These factors can easily lead us to false conclusions and therefore pose significant threats to the scientific process. Some of these threats—such as HARKing and p-hacking—are illustrated in Figure \@ref(fig:ThreatReproSci), and definitions are provided in the [Glossary](#gloss) section.
  
-```{r ThreatReproSci, echo=FALSE, fig.align="center", fig.cap="Overview of the scientific process and threats preventing reproducibility of the study (indicated in red). Abbreviations: HARKing: hypothesizing after the results are known; P-hacking: data dredging.", out.width = '80%'}
+```{r ThreatReproSci, fig.alt="The six-stage circular research cycle in black, with threats added in red beside each stage: failure to control for bias at stage one, low statistical power and lack of replication at study design, poor quality control at data collection, P-hacking at analysis and interpretation, and publication bias, outcome switching and no data sharing at publication; a red double-headed arrow labelled HARKing cuts across the circle from interpret results back to hypothesis generation.", echo=FALSE, fig.align="center", fig.cap="Overview of the scientific process and threats preventing reproducibility of the study (indicated in red). Abbreviations: HARKing: hypothesizing after the results are known; P-hacking: data dredging.", out.width = '80%'}
 knitr::include_graphics("Figures/Threats2reproducible_science.png")
 ```
 
@@ -2929,9 +2927,9 @@ Journals can **choose which standards to adopt** and **at what level**, providin
 
 This structure helps establish **community-wide transparency standards** while respecting the diversity of research practices across fields.
 
-### 🤝 Group Sharing and Discussion <span style="color:gray;">(15 minutes)</span>
+### 🤝 Group Sharing and Discussion <span style="color:dimgray;">(15 minutes)</span>
 
-##### 🎯 Learning Objective
+#### 🎯 Learning Objective
 
 Students explore how journals implement the **Transparency and Openness Promotion (TOP) Guidelines** and reflect on how these practices support open science.
 
@@ -2968,7 +2966,7 @@ The eight modular standards are:
 
 Each standard has three levels of transparency (Level 1, Level 2, and Level 3) reflecting increasing rigor (see Figure \@ref(fig:OSF)). Journals select levels based on their readiness and disciplinary norms, balancing implementation feasibility with the desire for stronger transparency requirements.
 
-```{r TOP, echo=FALSE, fig.cap="Table presenting the TOP standards and their associated levels of transparency.", fig.show="asis", out.width = '100%'}
+```{r TOP, fig.alt="A grid with eight transparency standards as rows (citation standards, data transparency, analytic methods or code transparency, research materials transparency, design and analysis transparency, study preregistration, analysis plan preregistration, replication) and four columns of increasing stringency: Not Implemented, Level I, Level II and Level III, each cell describing the journal or article requirement.", echo=FALSE, fig.cap="Table presenting the TOP standards and their associated levels of transparency.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/TableSummary.png")
 ```
 
@@ -2984,7 +2982,7 @@ As a collaboration tool, OSF allows researchers to work privately with selected 
 
 As a workflow system, OSF integrates with many existing research tools, enabling researchers to manage their entire projects from one place. This connectivity helps eliminate data silos and information gaps by allowing tools to work together seamlessly, reflecting how researchers actually collaborate and share knowledge (see Figure \@ref(fig:OSF)).
 
-```{r OSF, echo=FALSE, fig.cap="Overview of the OSF workflow and connections with other widely used software.", fig.show="asis", out.width = '80%', fig.align="center"}
+```{r OSF, fig.alt="A circular wheel of research lifecycle stages running clockwise from search and discover, develop idea, design study, acquire materials, collect data, store data, analyze data, interpret findings, write report and publish report, with the OSF logo at the hub; logos of third-party services ring the outside next to the stage each supports, including Zotero and Mendeley for discovery, GitHub, Dropbox and Google Drive for data storage, and Zenodo, figshare and Dryad for publication.", echo=FALSE, fig.cap="Overview of the OSF workflow and connections with other widely used software.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 ```
 
@@ -2994,8 +2992,7 @@ knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
-# Chapter 4 {#chap4}
-
+# Chapt. 4 -- Open Science and CARE Principles {#chap4}
 ## Challenge
 
 Today, funding agencies and journals are increasingly promoting Open Science, a topic we began discussing in [Chapter 3](#chap3). In this context:
@@ -3062,11 +3059,11 @@ While this definition focuses on access to research outputs, several other organ
 
 ---
 
-### 🤝 Group Sharing and Discussions 
+### 🤝 Group Sharing and Discussions {#OSgroupwork}
 
 In this section, we conduct three group activities to study the material presented in this chapter. We focus on ensuring open science while respecting data governance for our stakeholders. Use the resources provided in this chapter to complete the group assignments below.
 
-#### FAIR Principles Group Activity <span style="color:gray;">(15 minutes)</span>
+#### FAIR Principles Group Activity <span style="color:dimgray;">(15 minutes)</span>
 
 ##### 🎯 Learning Objective
 
@@ -3091,7 +3088,7 @@ Students collaboratively explore how the **FAIR Principles** apply to real-world
     - One **tip** or **best practice** for making data more FAIR.
 5. Each **group reports their findings** to the class to foster discussion.
 
-#### CARE Principles Group Activity <span style="color:gray;">(15 minutes)</span>
+#### CARE Principles Group Activity <span style="color:dimgray;">(15 minutes)</span>
 
 ##### 🎯 Learning Objective
 
@@ -3116,7 +3113,7 @@ Students collaboratively explore how the **CARE Principles** apply to data invol
     - One **recommendation** or **best practice** for respecting this principle in research or data governance.
 5. Each **group shares their findings** with the class to encourage shared learning and discussion.
 
-#### FAIR & CARE Principles Comparison Activity <span style="color:gray;">(10 minutes)</span>
+#### FAIR & CARE Principles Comparison Activity <span style="color:dimgray;">(10 minutes)</span>
 
 ##### 🎯 Learning Objective
 
@@ -3170,7 +3167,7 @@ The [FAIR Principles](https://doi.org/10.1038/sdata.2016.18) [@Wilkinson2016] gu
   </ul>
 </div>
 
-```{r FAIR, echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
+```{r FAIR, fig.alt="Four black-and-white icons in a row, each paired with a word: a magnifying glass for Findable, a hand tapping a screen for Accessible, three interlocking gears for Interoperable, and a recycling triangle for Reusable.", echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
 knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
 ```
 
@@ -3219,18 +3216,18 @@ In this chapter, we demonstrate this topic with two examples:
 - [The San Francisco Declaration on Research Assessment](#DORA)
 - [Altmetric](#altmetric)
 
-##### The San Francisco Declaration on Research Assessment {#DORA}
+#### The San Francisco Declaration on Research Assessment {#DORA}
 
 The [San Francisco Declaration on Research Assessment (DORA)](https://sfdora.org/) exemplifies the growing shift in how research quality is evaluated. Increasingly, institutions and funding bodies are supporting DORA and **openly rejecting the use of journal impact factors and other quantitative metrics** as primary indicators of research quality.
 
 Among many others, **Springer Nature** has endorsed DORA. You can view their specific commitments [here](https://www.springernature.com/gp/researchers/dora).
 
-##### Altmetric {#altmetric}
+#### Altmetric {#altmetric}
 
 Another example is [Altmetric](https://www.altmetric.com/), a tool that tracks and demonstrates the **reach and influence of research outputs**—particularly among key stakeholders—by focusing primarily on social media and other online platforms (Figure \@ref(fig:NGSMetrics)).
 
 
-```{r NGSMetrics, echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
+```{r NGSMetrics, fig.alt="Screenshot of a journal article Metrics panel showing 1,062 total views (781 pageviews, 281 PDF downloads), a red line chart of monthly views peaking above 300, a Dimensions citation badge reading 2 total citations, and an Altmetric donut of 22 broken down into 1 news outlet, 1 blog, 10 tweets, and 7 Mendeley readers.", echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
 knitr::include_graphics("Figures/Metrics_example.png")
 ```
 
@@ -3307,7 +3304,7 @@ Creative Commons licenses provide flexibility; for example, authors can choose t
 
 To help authors select the most appropriate license for their work, the Creative Commons initiative offers an [online tool](https://creativecommons.org/choose/), which I recommend consulting. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
-```{r EcolEvolCC, echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
+```{r EcolEvolCC, fig.alt="Screenshot of a journal masthead in teal type with an Open Access badge, listing the editors-in-chief, the online ISSN and Wiley copyright, and a closing note that articles accepted from 14 August 2012 carry a Creative Commons Attribution License while earlier ones carry an Attribution Non-Commercial License.", echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
 ```
 
@@ -3315,7 +3312,7 @@ knitr::include_graphics("Figures/License_EcolEvol.png")
 
 The Creative Commons licenses provided by the CC initiative are summarized in Figure \@ref(fig:CC).
 
-```{r CC, echo=FALSE, fig.cap="Overview of Creative Common licenses sorted from most open to most restrictive (provided by Andrew Child).", fig.show="asis", out.width = '100%', fig.align="center"}
+```{r CC, fig.alt="Dark slide titled Understanding CC Data License Options, with a vertical arrow on the left shading from green at the top labeled Most Open down to red at the bottom labeled Most Restrictive; alongside it a list running CC0 No Rights Reserved, CC BY, CC BY-SA, CC BY-NC-SA, and -ND NoDerivatives, matched on the right by the corresponding badge icons.", echo=FALSE, fig.cap="Overview of Creative Common licenses sorted from most open to most restrictive (provided by Andrew Child).", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/CC_licenses_comparison.png")
 ```
 
@@ -3348,7 +3345,7 @@ As noted by @Carroll2021:
 Integrating the [FAIR Principles](#FAIR) for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability while prioritizing people and purpose. This combined approach supports Indigenous Peoples’ rights and interests in their data throughout the data lifecycle (Figure \@ref(fig:CARE)).
 
 
-```{r CARE, echo=FALSE, fig.cap="Be FAIR and CARE (source: https://www.gida-global.org/care).", fig.show="asis", out.width = '100%', fig.align="center"}
+```{r CARE, fig.alt="Teal graphic with two rounded panels linked by circuit-board style traces: the upper panel spells FAIR with Findable, Accessible, Interoperable, Reusable beneath each letter, the word 'and' sits between them, and the lower panel spells CARE with Collective Benefit, Authority to Control, Responsibility, Ethics beneath each letter.", echo=FALSE, fig.cap="Be FAIR and CARE (source: https://www.gida-global.org/care).", fig.show="asis", out.width = '100%', fig.align="center"}
 knitr::include_graphics("Figures/BeFAIRandCARE.png")
 ```
 
@@ -3377,8 +3374,7 @@ In the context of self-sovereign identity (SSI), individuals can fully create an
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
-# Chapter 5 {#Chap5}
-
+# Chapt. 5 -- Data Management and Reproducible Code {#Chap5}
 ## Introduction
 
 This chapter is divided into two parts:
@@ -3402,7 +3398,7 @@ The value of data is increasingly recognized through formal citation. Repositori
 
 To ensure data citations are properly acknowledged, they must be included in publications—typically in a dedicated **"Data Availability Statement"** section at the end of the article. (See Figure \@ref(fig:DataAvail) for an example.)
 
-```{r DataAvail, echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
+```{r DataAvail, fig.alt="Excerpt of typeset journal text listing where each dataset lives: NCBI GenBank accession ranges for ITS and rbcL sequences, a BioProject and BioSample accession, SRA run numbers for raw sequence files, and a Zenodo DOI for the DNA alignments.", echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
 knitr::include_graphics("Figures/Data_availibility_satement.png")
 ```
 
@@ -3471,7 +3467,7 @@ A key challenge facing researchers today is the need to work with diverse data s
 
 Data have a longer lifespan than the project they were created for, as illustrated by the data life-cycle displayed in Figure \@ref(fig:LifeCycle).
 
-```{r LifeCycle, echo=FALSE, fig.align="center", fig.cap="The data lifecycle", out.width = '60%'}
+```{r LifeCycle, fig.alt="Circular diagram of seven grey ellipses: a central Plan node sends arrows outward to every other stage, while a ring of double-headed arrows connects Create, Process, Document, Preserve, Share, and Reuse in sequence back around to Create.", echo=FALSE, fig.align="center", fig.cap="The data lifecycle", out.width = '60%'}
 knitr::include_graphics("Figures/Data_lifecycle.png")
 ```
 
@@ -3628,7 +3624,7 @@ A clearly structured directory tree offers a simple yet powerful way to summariz
 
 In UNIX-based systems, you can generate a directory tree using the `tree` command or package (see Figure \@ref(fig:TreeDir)).
 
-```{r TreeDir, echo=FALSE, fig.align="center", fig.cap="Infer directory tree structure using the UNIX tree package.", out.width = '60%'}
+```{r TreeDir, fig.alt="Screenshot of a macOS terminal running tree on the Project_ID folder, printing five numbered R scripts, a README.md, and the subdirectories Data (containing species_data.csv), Figures and Tables, MS, Output, R_functions, and Reports, each with size and date, ending with 6 directories, 7 files.", echo=FALSE, fig.align="center", fig.cap="Infer directory tree structure using the UNIX tree package.", out.width = '60%'}
 knitr::include_graphics("Figures/Tree_directory.png")
 ```
 
@@ -4057,7 +4053,7 @@ sapply(pkg, require, character.only = TRUE)
 
 A key step to organizing your project for reproducibility is to create a clear workflow diagram that outlines how your project will be structured and executed. An example of such a reproducible project workflow is shown in Figure \@ref(fig:ReproWorkflow). We will use this workflow as a guiding template throughout this chapter to help you implement your own reproducible project.
 
-```{r ReproWorkflow, echo=FALSE, fig.align="center", fig.cap="A simple reproducible project workflow.", out.width = '100%'}
+```{r ReproWorkflow, fig.alt="Four grey text boxes in a clockwise loop joined by arrows: Before starting (folder structure, naming, coding style, install Git), then First steps (create folders, README, version control repo, LICENSE, reproducible report), then Write reproducible code, an inner top-to-bottom chain from write pseudocode to write code, program defensively, comment, test, and document code, then Prepare for publication (record package versions, update README, get colleague review, make repo public, archive with DOIs).", echo=FALSE, fig.align="center", fig.cap="A simple reproducible project workflow.", out.width = '100%'}
 knitr::include_graphics("Figures/Reproducible_code_workflow.png")
 ```
 
@@ -4088,7 +4084,7 @@ The simplest and most effective way to document your workflow—its inputs and o
 
 It is best to keep all files associated with a particular project in a single root directory. RStudio Projects offer a great way to keep everything together in a self-contained and portable manner (i.e. so files can be moved from computer to computer), allowing internal pathways to data and scripts to remain valid even when shared or relocated.
 
-```{r ProjStuct, echo=FALSE, fig.align="center", fig.cap="Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered.", out.width = '100%'}
+```{r ProjStuct, fig.alt="Screenshot of a macOS Finder list view for a folder named Project_ID, showing six folders (Data, MS, Figures and Tables, Output, Reports, R_functions) above five numbered R source files from 01_download_data.R to 05_generate_figures.R and a README.md.", echo=FALSE, fig.align="center", fig.cap="Example file structure of a simple analysis project. Make sure you left-pad single digit numbers with a zero for the R scripts to avoid having those misordered.", out.width = '100%'}
 knitr::include_graphics("Figures/Example_project_structure.png")
 ```
 
@@ -4177,15 +4173,15 @@ plot(myproj)
 
 Finally, the R `DiagrammeR` package unfortunately doesn't allow you to easily save the graph to a file (Step 4) using, for example, the *pdf()* and *dev.off()* functions. However, this task can be accomplished in RStudio as follows:
 
-1. The diagram generated in Step 3 is displayed in the `Viewer` window (bottom right panel). It can be exported by clicking the ![](Figures/Export_button.png) button and selecting `Save as Image...`, as shown in Figure \@ref(fig:ExportDiag1).
+1. The diagram generated in Step 3 is displayed in the `Viewer` window (bottom right panel). It can be exported by clicking the ![Export](Figures/Export_button.png) button and selecting `Save as Image...`, as shown in Figure \@ref(fig:ExportDiag1).
 
-```{r ExportDiag1, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to export the diagram in RStudio.", out.width = '60%'}
+```{r ExportDiag1, fig.alt="Screenshot of the RStudio Viewer pane with the Export dropdown open, offering Save as Image, Copy to Clipboard, and Save as Web Page; behind the menu is a node diagram branching from a Project_ID node to folder and file nodes such as Data, Figures and Tables, MS, Output, Reports, README.md, and Scripts leading to the five numbered R scripts.", echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to export the diagram in RStudio.", out.width = '60%'}
 knitr::include_graphics("Figures/Save_DiagrammR.png")
 ```
 
 2. Once you have executed the previous step, a window will open allowing you to select the image format, directory, and file name, as shown in Figure \@ref(fig:ExportDiag2).
 
-```{r ExportDiag2, echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to save the diagram in RStudio.", out.width = '60%'}
+```{r ExportDiag2, fig.alt="Screenshot of the RStudio Save Plot as Image dialog, with the Image format dropdown open showing PNG highlighted plus JPEG and TIFF, Directory and File name fields on the left, Width and Height with a Maintain aspect ratio checkbox on the right, and a preview of the Project_ID node diagram above the Save and Cancel buttons.", echo=FALSE, fig.align="center", fig.cap="Snapshot showing how to save the diagram in RStudio.", out.width = '60%'}
 knitr::include_graphics("Figures/Save_DiagrammR_2.png")
 ```
 
@@ -4382,8 +4378,7 @@ The instructor encourages students to discuss with their supervisors whether the
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
-# Chapter 6
-
+# Chapt. 6 -- Getting Published and Peer Review {#chap6}
 ## Introduction
 
 This chapter is subdivided into two parts as follows:
@@ -4790,13 +4785,13 @@ File -> New File -> R Markdown...
 
 3. In the `New R Markdown` window, click on `From Template` in the left panel and select the journal style that you would like to follow for your article (here PNAS Journal Article; see Figure \@ref(fig:RMarkTemplate)). Before pushing the `OK` button, provide a name for your project and set a location where the project will be saved (see Figure \@ref(fig:RMarkTemplate)). 
 
-```{r RMarkTemplate, echo=FALSE, fig.cap="R Markdown window allowing to select templates following journal styles.", fig.align = 'center', out.width = '60%'}
+```{r RMarkTemplate, fig.alt="Screenshot of the RStudio New R Markdown dialog with the From Template option selected in the left sidebar and a scrollable list of journal templates on the right, where PNAS Journal Article from the rticles package is highlighted, and Name and Location fields below.", echo=FALSE, fig.cap="R Markdown window allowing to select templates following journal styles.", fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("Figures/New_RMarkdown_window.png")
 ```
 
 4. Once you completed this task, a folder will be created (and saved in the path that you provided) containing files associated with the article submission process and the template will be automatically opened in RStudio (see Figure \@ref(fig:filestr)).
 
-```{r filestr, echo=FALSE, fig.cap="Snapshot showing the template R Markdown and the associated folder created to generate your submission.", fig.align = 'center', out.width = '100%'}
+```{r filestr, fig.alt="Screenshot of the RStudio editor on the left showing the Submission_PNAS.Rmd tab open at its YAML header, alongside a macOS Finder window on the right listing the project contents including _site.yml, AmJBot.csl, a bibliography .bib file, Figures, index.html, index.Rmd, README.md, site_libs, and a highlighted Submission_PNAS folder.", echo=FALSE, fig.cap="Snapshot showing the template R Markdown and the associated folder created to generate your submission.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/Structure_files.png")
 ```
 
@@ -4806,21 +4801,21 @@ knitr::include_graphics("Figures/Structure_files.png")
   - `pnas.csl` and `pnas-new.cls`: Files containing information about the formatting of citations and bibliography adapted to journal policies. 
   - `frog.png`: A `.png` file used to show you how to include figures in `.Rmd` document.
 
-```{r filestr2, echo=FALSE, fig.cap="Snapshot showing the suite of files associated to your submission and saved in your project folder.", fig.align = 'center', out.width = '80%'}
+```{r filestr2, fig.alt="Screenshot of a macOS Finder list view showing seven items inside the template folder: frog.png, pnas-new.cls, pnas-sample.bib, pnas.csl, pnasresearcharticle.sty, Submission_PNAS.Rmd, and widetext.sty, with their sizes and file kinds.", echo=FALSE, fig.cap="Snapshot showing the suite of files associated to your submission and saved in your project folder.", fig.align = 'center', out.width = '80%'}
 knitr::include_graphics("Figures/Structure_files_2.png")
 ```
 
 6. Start writing your article
   - Open `Submission_PNAS.Rmd` and update the YAML metadata section with information on authors, your abstract, summary and keywords (see Figure \@ref(fig:YAML2)).
 
-```{r YAML2, echo=FALSE, fig.cap="Update YAML metadata section with information on authors, your abstract, summary and keywords.", fig.align = 'center', out.width = '100%'}
+```{r YAML2, fig.alt="Close-up of the color-coded YAML header of an R Markdown file, listing the title field followed by an author block with two entries, each with affiliation codes, an address block mapping those codes to institutions, and a corresponding_author block with an email.", echo=FALSE, fig.cap="Update YAML metadata section with information on authors, your abstract, summary and keywords.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/YAML_section.png")
 ```
   - Write your manuscript by following the journal's structure. You can take advantage of the R Markdown language in your manuscript (e.g. include R code chunks and outputs) and those will be converted by *knitr* and *rticles* packages during the compilation procedure.
 
 7. Compile your document and use both `.pdf` and `.tex` files to submit your article (see Figure \@ref(fig:Subm)). The output files will be saved in your project folder.
 
-```{r Subm, echo=FALSE, fig.cap="Snapshot of the procedure to knit the document.", fig.align = 'center', out.width = '100%'}
+```{r Subm, fig.alt="Screenshot of the RStudio editor toolbar with the Knit dropdown menu open over the Submission_PNAS.Rmd file, showing the highlighted Knit to pnas_article option above Knit with Parameters, Knit Directory, and Clear Knitr Cache.", echo=FALSE, fig.cap="Snapshot of the procedure to knit the document.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/Compiled_file.png")
 ```
 
@@ -4832,8 +4827,7 @@ Enjoy writing scientific publications in R Markdown!
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
-# Chapter 7
-
+# Chapt. 7 -- Organize and Import Data with R {#chap7}
 ## Introduction
 
 In this chapter, we will **study protocols to import and gather data with R**. As stated by @Gandrud2015 in the chapter 6 of his book, **how you gather your data directly impacts how reproducible your research will be**. In this context, it is your duty to try your best to document every step of your data gathering process. Reproduction will be easier if all of your data gathering steps are tied together by your source code, then independent researchers (and you) can more easily regather the data. Regathering data will be easiest if running your code allows you to get all the way back to the raw data files (the rawer the better). Of course, this may not always be possible. You may need to conduct interviews or compile information from paper based archives, for example. The best you can sometimes do is describe your data gathering process in detail. Nonetheless, R’s automated data gathering capabilities for internet-based information is extensive. Learning how to take full advantage of these capabilities greatly increases reproducibility and can save you considerable time and effort over the long run. 
@@ -4842,7 +4836,7 @@ Gathering data can be done by either importing locally stored data sets (= files
 
 Learning skills to import and gather data sets is especially important in the fields of Ecology, Evolution and Behavior since your research is highly likely to depend on large and complex data sets (see Figure \@ref(fig:datainter)). In addition, testing your hypotheses will rely on your ability to manage your data sets to test for complex interactions (e.g. does abiotic factors such as temperature drive selection processes in plants?; Figure \@ref(fig:datainter)).
 
-```{r datainter, echo=FALSE, fig.cap="Example of datasets involved in Ecology, Evolution and Behavior and their intercations.", fig.align = 'center', out.width = '60%'}
+```{r datainter, fig.alt="Three overlapping circles in a Venn arrangement labeled Genome in red at upper left, Phenome in blue at upper right, and Environment in green at bottom center, with all three sharing a common central overlap plus three pairwise overlaps.", echo=FALSE, fig.cap="Example of datasets involved in Ecology, Evolution and Behavior and their intercations.", fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("Figures/Data_interactions.png")
 ```
 
@@ -4874,7 +4868,7 @@ We will be covering the last option during Chapter 11.
 
 To create a new project in RStudio, do `File > New Project...` and then a window will pop-up allowing you to select among the 3 options (see Figure \@ref(fig:newproj)).
 
-```{r newproj, echo=FALSE, fig.cap="Window allowing you to create a New RStudio project. See text for more details.", fig.align = 'center', out.width = '60%'}
+```{r newproj, fig.alt="Screenshot of the RStudio New Project Wizard dialog titled Create Project, offering three stacked options with icons and descriptions: New Directory to start in a brand new working directory, Existing Directory to associate a project with an existing directory, and Version Control to check out a project from a repository.", echo=FALSE, fig.cap="Window allowing you to create a New RStudio project. See text for more details.", fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("Figures/New_project_window.png")
 ```
 
@@ -4925,7 +4919,7 @@ This repository is dedicated to this course and is used to demonstrate the proce
 
 This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository on your local computer and then extracting all `csv` files in the `01_Raw_Data/` folder and saving them on your local computer using R (see Figure \@ref(fig:GitHubRawDatashot) for more details on file content). 
 
-```{r GitHubRawDatashot, echo=FALSE, fig.cap="Snapshot showing files in the 01_Raw_Data folder that we will be targeting in the GitHub repository.", fig.align = 'center', out.width = '100%'}
+```{r GitHubRawDatashot, fig.alt="Screenshot of a GitHub folder listing for the 01_Raw_Data directory of the Sagebrush_rooting_in_vitro_prop repository, with a header row showing the last commit and a table of eight files including five block CSVs, Phenotypes_sagebrush_in_vitro.csv, and Survival_height_clones.csv, each with its commit message and age.", echo=FALSE, fig.cap="Snapshot showing files in the 01_Raw_Data folder that we will be targeting in the GitHub repository.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/GitHub_01_Raw_data.png")
 ```
 
@@ -4991,11 +4985,11 @@ Before being able to import a `csv` file deposited in GitHub into R you have to 
 To retrieve the *raw* URL associated to `Timetable_EEB603_topic_tasks.csv` do the following:
 
 1. Navigate to the file location on the GitHub repository by clicking [here](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv) (see Figure \@ref(fig:repoURL1)).
-```{r repoURL1, echo=FALSE, fig.cap="Location of Timetable_EEB603_topic_tasks.csv on the EEB603_Reproducible_Science GitHub repository.", fig.align = 'center', out.width = '100%'}
+```{r repoURL1, fig.alt="Screenshot of the GitHub file view for Timetable_EEB603_topic_tasks.csv in the Data folder of the EEB603_Reproducible_Science repository, with the breadcrumb path and Raw and Blame buttons above a rendered two-column table of Topic and Task Deadline entries.", echo=FALSE, fig.cap="Location of Timetable_EEB603_topic_tasks.csv on the EEB603_Reproducible_Science GitHub repository.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/GitHub_csv_URL1.png")
 ```
 2. Click on the `Raw` button on the right just above the file preview (Figure \@ref(fig:repoURL1)). This action should open a new window showing you the *raw* `csv` file (see Figure \@ref(fig:repoURL2)). 
-```{r repoURL2, echo=FALSE, fig.cap="Raw csv file associated to Timetable_EEB603_topic_tasks.csv. See text for more details.", fig.align = 'center', out.width = '100%'}
+```{r repoURL2, fig.alt="Screenshot of a browser window at raw.githubusercontent.com displaying the plain-text CSV contents, starting with the header line Topic,Task Deadline and followed by comma-separated rows pairing course topics with their deadlines.", echo=FALSE, fig.cap="Raw csv file associated to Timetable_EEB603_topic_tasks.csv. See text for more details.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/GitHub_csv_URL2.png")
 ```
 3. The *raw* URL for this `csv` file can be retrieved by copying the URL address (see Figure \@ref(fig:repoURL2)). In this case, the URL is as follows:
@@ -5041,12 +5035,12 @@ print(csvTimeTable)
 Retrieving the `csv` file associated to a specific `commit` can be done by applying the following approach (here using the same example than above):
 
 1. To find a file's particular `commit` *raw* URL navigate to its location on GitHub by clicking [here](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Data/Timetable_EEB603_topic_tasks.csv).
-2. Click the ![](Figures/History.png) button. This action will take you to a page listing all of the file's versions (see Figure \@ref(fig:hist)).
-```{r hist, echo=FALSE, fig.cap="Page showing commit history associated to Timetable_EEB603_topic_tasks.csv.", fig.align = 'center', out.width = '100%'}
+2. Click the ![History](Figures/History.png) button. This action will take you to a page listing all of the file's versions (see Figure \@ref(fig:hist)).
+```{r hist, fig.alt="Screenshot of the GitHub commit history page for Timetable_EEB603_topic_tasks.csv, showing four commits grouped by date, each row listing the commit message and its short SHA on the right, with Newer and Older paging buttons at the bottom.", echo=FALSE, fig.cap="Page showing commit history associated to Timetable_EEB603_topic_tasks.csv.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/History2.png")
 ```
-3. Click on the ![](Figures/View_history_button.png) button next to the version of the file that you want to use (here `Commits on Aug 23, 2021`; Figure \@ref(fig:hist)). This will take you to the version of the file at this point in history. 
-```{r hist2, echo=FALSE, fig.cap="Page showing prior commit associated to Timetable_EEB603_topic_tasks.csv.", fig.align = 'center', out.width = '100%'}
+3. Click on the ![Browse the repository at this point in the history](Figures/View_history_button.png) button next to the version of the file that you want to use (here `Commits on Aug 23, 2021`; Figure \@ref(fig:hist)). This will take you to the version of the file at this point in history. 
+```{r hist2, fig.alt="Screenshot of the GitHub file view of an earlier version of Timetable_EEB603_topic_tasks.csv, selected in the branch dropdown, with the header noting the commit and the table below listing topics alongside their deadlines.", echo=FALSE, fig.cap="Page showing prior commit associated to Timetable_EEB603_topic_tasks.csv.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/History3.png")
 ```
 4. Clicking on the `Raw` button will load the `csv` file and allow you to retrieve the URL (as done above).
@@ -5084,12 +5078,12 @@ Before being able to download a GitHub repository and work with its files into R
 To retrieve the URL associated to the compressed `zip` file containing all files for the repository do the following:
 
 1. Navigate to the GitHub repository page by clicking [here](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop) (see Figure \@ref(fig:repo)).
-```{r repo, echo=FALSE, fig.cap="GitHub repository page for Sagebrush_rooting_in_vitro_prop.", fig.align = 'center', out.width = '100%'}
+```{r repo, fig.alt="Screenshot of the GitHub code page for the Sagebrush_rooting_in_vitro_prop repository with the green Code button clicked, showing the Clone panel with the HTTPS URL and, over its Download ZIP entry, a browser right-click menu where Copy Link is highlighted.", echo=FALSE, fig.cap="GitHub repository page for Sagebrush_rooting_in_vitro_prop.", fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("Figures/URL_GitHub_repo.png")
 ```
 2. To copy the URL pointing to the compressed `zip` file do the following actions:
-  - Click on the ![](Figures/Code_button.png) button.
-  - Navigate to the ![](Figures/Download_section.png) section.
+  - Click on the ![Code](Figures/Code_button.png) button.
+  - Navigate to the ![Download ZIP](Figures/Download_section.png) section.
   - Right-click to copy the link (as shown in Figure \@ref(fig:repo)).
 3. The copied URL (https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop/archive/refs/heads/master.zip) will serve as input for downloading the repository on your local computer (see below).
 

@@ -16,6 +16,7 @@ bibliography: Bibliography_Reproducible_Science_2.bib
 editor_options:
   markdown:
     wrap: sentence
+lang: en
 ---
 
 ```{js logo-js, echo=FALSE}

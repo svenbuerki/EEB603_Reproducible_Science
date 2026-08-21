@@ -1,6 +1,5 @@
 ---
 title: "Schedule"
-author: ""
 date: '`r Sys.Date()`'
 output:
   bookdown::html_document2:
@@ -17,11 +16,12 @@ bibliography: Bibliography_Reproducible_Science_2.bib
 editor_options:
   markdown:
     wrap: sentence
+lang: en
 ---
 
 ```{js logo-js, echo=FALSE}
 $(document).ready(function() {
-  $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" style=\"position:absolute; top:4; right:0; padding:10px; height:120px\"></div>');
+  $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" alt=\"\" style=\"position:absolute; top:4; right:0; padding:10px; height:120px\"></div>');
   $('#header').css('margin-right', '120px')
 });
 ```

@@ -1,6 +1,5 @@
 ---
 title: "Assignments"
-author: ""
 date: '`r Sys.Date()`'
 output:
   bookdown::html_document2:
@@ -14,6 +13,7 @@ urlcolor: blue
 editor_options:
   markdown:
     wrap: sentence
+lang: en
 ---
 
 ```{js logo-js, echo=FALSE}
