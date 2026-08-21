@@ -669,24 +669,27 @@ In this course, I want to see *your* thoughts, understand *your* reasoning, and 
 **Generative AI use is permitted in this course, with limits that differ by assignment.** You may use generative AI tools for specified activities and assignments if their use supports, rather than undermines, your learning. While generative AI can help to advance your learning, its usefulness depends on the purpose of each activity or assignment. You will find guidelines for generative AI use in the instructions for each assignment; please read them very carefully, as **these guidelines differ by assignment** and are summarized in Table \@ref(tab:aitable).
 
 ```{r aitable, echo=FALSE}
+# Points are deliberately omitted here -- they are in Table \@ref(tab:loalign)
+# and on the Assignments page. Keeping this table narrow stops it overflowing
+# the right margin of the pdf.
 ai <- data.frame(
-  "Assessment" = c("Participation and engagement (50 pts)",
-                   "Bioinformatics tutorial (150 pts)",
-                   "Teaching the tutorial (100 pts)",
-                   "Project proposal (50 pts)",
-                   "Final report (150 pts)",
-                   "Oral presentation (100 pts)"),
-  "AI use" = c("Not applicable -- in class",
+  "Assessment" = c("Participation and engagement",
+                   "Bioinformatics tutorial",
+                   "Teaching the tutorial",
+                   "Project proposal",
+                   "Final report",
+                   "Oral presentation"),
+  "AI use" = c("Not applicable",
                "Limited",
-               "Not used during teaching",
+               "Not during teaching",
                "Permitted",
                "Permitted",
-               "Permitted in preparation"),
+               "Preparation only"),
   "Core condition" = c("Contribute in your own words",
-                       "You write and knit the code yourself",
-                       "You lead and answer questions live",
-                       "Disclose use; the plan must be yours",
-                       "Disclose use; follow research ethics",
+                       "You write and knit the code",
+                       "You answer questions live",
+                       "Disclose use; the plan is yours",
+                       "Disclose use; research ethics",
                        "Delivery and Q&A are your own"),
   check.names = FALSE)
 knitr::kable(ai, caption = "Summary of generative AI expectations by assessment. The full conditions are given in the text below and in each assignment's instructions.") %>%
