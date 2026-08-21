@@ -4,8 +4,9 @@ author: ""
 date: '`r Sys.Date()`'
 output:
   bookdown::html_document2:
-    toc: no
-    toc_float: no
+    toc: yes
+    toc_float: yes
+    toc_depth: 2
     self_contained: yes
 subtitle:
 link-citations: yes
