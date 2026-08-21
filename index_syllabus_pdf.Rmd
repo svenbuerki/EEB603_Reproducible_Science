@@ -53,7 +53,7 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 - Term: **Fall 2026**
 - Department: Biological Sciences, Boise State University
 - **Where to find things:** the [course website](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html) is the home of this course. The syllabus, the [schedule and all due dates](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html), the [chapters](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html), and all teaching material live there, and are available from the first day of class. **Canvas is used for one purpose only in this course: posting your grades.** Do not look to Canvas for deadlines or course content -- it will not have them.
-- This syllabus is available as an accessible [pdf version](https://svenbuerki.github.io/EEB603_Reproducible_Science/index_syllabus_pdf.pdf) that you can download and keep.
+- This syllabus is available in two formats with **identical content**: the [web version](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html) and a [pdf version](https://svenbuerki.github.io/EEB603_Reproducible_Science/index_syllabus_pdf.pdf) you can download and keep. **If you use assistive technology, the web version is the recommended one** -- it works better with screen readers and lets you adjust text size, spacing and contrast in your browser. Nothing is missing from either; use whichever suits you.
 - Course source: all course materials, including the source of this syllabus, are openly available in the [course GitHub repository](https://github.com/svenbuerki/EEB603_Reproducible_Science) -- this syllabus is itself a reproducible document.
 
 This syllabus provides the course information required by [University Policy 4095 (Course Information Policy)](https://www.boisestate.edu/policy/academic-affairs-faculty-administration/course-information-policy-policy-4095/).
@@ -251,7 +251,7 @@ A shared Google Drive folder has been set up for this course. **I will grant you
 We use it for three things:
 
 - **Sharing publications** and other reading material for the course.
-- **Uploading your assignments**, in the relevant subfolder: `Bioinformatics_tutorials` for your [bioinformatics tutorial](#BioTut), and `Individual_reports` for your [individual project](#Report).
+- **Uploading your assignments.** Everything lives in that one folder, organised into subfolders: put your [bioinformatics tutorial](#BioTut) in [`Bioinformatics_tutorials`](https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=drive_link), and your [individual project](#Report) in [`Individual_reports`](https://drive.google.com/drive/folders/1eZyjGQ478vaKiGD01hcryyNtdGp9t1J7?usp=drive_link). Both links open the main folder, so you can see how it is laid out and find the subfolder you need.
 - **Coordinating who is doing what**, which means it contains the names of students alongside their assignments.
 
 **Please keep this folder private.** Because it contains your classmates' names and their work, it is for the people enrolled in this course only. Do not share the link, forward its contents, or give access to anyone outside the class. If you want to share something of your own from it more widely -- your own tutorial, for instance -- that is entirely your call to make with your own material, but share it directly rather than by passing on access to the folder.
@@ -370,7 +370,7 @@ loalign <- data.frame(
     "Oral presentation"),
   Arc = c("1", "1", "1", "2", "2", "2"),
   Points = c("50", "150", "100", "50", "150", "100"),
-  `Learning outcomes` = c("1, 2, 3, 6", "4, 5, 6", "6, 7", "1, 2, 3, 4", "1, 2, 3, 4, 5", "7"),
+  `Learning outcomes` = c("1, 2, 3, 6", "4, 5, 6", "6, 7", "1, 2, 3, 4", "1, 2, 3, 4, 5", "3, 4, 7"),
   check.names = FALSE)
 
 knitr::kable(loalign,

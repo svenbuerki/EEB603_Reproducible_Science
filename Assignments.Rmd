@@ -59,7 +59,7 @@ tab <- data.frame(
     "Final report",
     "Oral presentation"),
   Points = c("50", "150", "100", "50", "150", "100"),
-  `Learning outcomes` = c("1, 2, 3, 6", "4, 5, 6", "6, 7", "1, 2, 3, 4", "1, 2, 3, 4, 5", "7"),
+  `Learning outcomes` = c("1, 2, 3, 6", "4, 5, 6", "6, 7", "1, 2, 3, 4", "1, 2, 3, 4, 5", "3, 4, 7"),
   `Evaluation form` = c(
     "[See the syllabus](index.html#Participation)",
     pdf_link("Bioinformatics_Tutorial_Evaluation_Form.pdf"),
@@ -152,11 +152,11 @@ The rubric covers framing of the scientific problem, use of data sources, the da
 
 ## Oral Presentation --- 100 points
 
-*Learning outcome 7.*
+*Learning outcomes 3, 4 and 7.*
 
 The third and final stage. An 8-minute presentation of your project during the final week, to an audience of scientists who are not specialists in your area. A central goal is to show how you applied the tools and practices of reproducible science.
 
-The rubric covers topic introduction, scientific content, reproducible science practices, slide design, oral delivery, and accessibility to a broad audience.
+The rubric covers topic introduction, scientific content, reproducible science practices, slide design, oral delivery, and accessibility to a broad audience. A fifth of the marks go to **Reproducible Science Practices** --- the tools and workflow you used, and how transparent and replicable they are --- so this is not only a test of how well you speak.
 
 <a href="Evaluation_Forms/Oral_Presentation_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Presentation rubric (pdf)</a>
 
@@ -178,8 +178,8 @@ lo <- data.frame(
   `Where it is assessed` = c(
     "Participation (PART 1 discussion); project proposal; final report",
     "Participation (PART 1 discussion); project proposal; final report",
-    "Participation; project proposal; final report",
-    "Bioinformatics tutorial; project proposal; final report",
+    "Participation; project proposal; final report; oral presentation",
+    "Bioinformatics tutorial; project proposal; final report; oral presentation",
     "Bioinformatics tutorial; final report",
     "Participation (tutorial design taught in class); bioinformatics tutorial; teaching the tutorial",
     "Teaching the tutorial; oral presentation"),
