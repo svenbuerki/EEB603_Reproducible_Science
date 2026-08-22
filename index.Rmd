@@ -72,6 +72,7 @@ Whether you are reading this on the web or from a downloaded pdf, everything for
 | **Additional resources** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/Resources.html> |
 | **Downloadable pdf of this syllabus** | <https://svenbuerki.github.io/EEB603_Reproducible_Science/index_syllabus_pdf.pdf> |
 | **GitHub repository (source of everything)** | <https://github.com/svenbuerki/EEB603_Reproducible_Science> |
+| **Report an error or ask a question** | <https://github.com/svenbuerki/EEB603_Reproducible_Science/issues/new/choose> |
 
 # Meeting Time, Place and Modality
 
