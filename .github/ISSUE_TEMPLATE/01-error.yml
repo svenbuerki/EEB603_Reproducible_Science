@@ -1,0 +1,55 @@
+name: Report an error in the course material
+description: A typo, a broken link, an out-of-date date, a figure that does not display, or anything else that is simply wrong.
+title: "[Error] "
+labels: ["error"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting this. Correcting the record in the open is exactly
+        what this course is about, and reports from students genuinely improve the
+        material for the next cohort.
+
+        Please note that issues are **public**. For anything personal — grades,
+        extensions, accommodations — email me instead.
+
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you find it?
+      options:
+        - Home / Syllabus
+        - Schedule
+        - Assignments
+        - Chapters
+        - Resources
+        - An evaluation form (pdf)
+        - A data file
+        - Somewhere else
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Exact location
+      description: Paste the URL of the page. If you can, click the section heading first so the URL carries the section anchor, then paste that.
+      placeholder: https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#chap3
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Quote the text or describe what you see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: What did you expect, or how would you fix it?
+      description: Optional, but very welcome — you now know how to fix these yourself.
+    validations:
+      required: false

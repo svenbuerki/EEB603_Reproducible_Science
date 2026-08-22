@@ -1,4 +1,43 @@
+# ---------------------------------------------------------------------------
+# R / RStudio
+# ---------------------------------------------------------------------------
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# ---------------------------------------------------------------------------
+# macOS
+# ---------------------------------------------------------------------------
+.DS_Store
+
+# ---------------------------------------------------------------------------
+# Working backups
+#
+# Timestamped copies made before editing the timetable csv. Useful locally
+# while making a change, but not part of the course materials.
+# ---------------------------------------------------------------------------
+*.bak
+*.bak[0-9]
+
+# ---------------------------------------------------------------------------
+# Build artifacts from rendering the syllabus pdf
+#
+# NOTE: only the generated files are listed here. Do NOT add a blanket *.tex
+# rule -- Evaluation_Forms/_form_preamble.tex is a source file that all five
+# evaluation forms depend on, and ignoring it would break them.
+# ---------------------------------------------------------------------------
+index_syllabus_pdf.log
+index_syllabus_pdf.tex
+*.knit.md
+*.utf8.md
+
+# ---------------------------------------------------------------------------
+# Source material kept locally, not published
+#
+# Boise State policy documents and templates downloaded for reference, plus
+# the original .docx evaluation forms. The authoritative versions of the forms
+# are the .Rmd sources in Evaluation_Forms/, which are tracked.
+# ---------------------------------------------------------------------------
+BSU_documents_syllabus/
+Data/Evaluations_forms_rubrics/

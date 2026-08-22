@@ -1,0 +1,57 @@
+name: Code from a chapter does not run
+description: An R code chunk, a knit, or an installation that fails on your machine.
+title: "[Code] "
+labels: ["code"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reporting a broken analysis well *is* reproducible science. The fields below
+        ask for the minimum another person needs to reproduce your problem: the code,
+        the error, and your computational environment. Practise this here and you will
+        be doing it for the rest of your career.
+
+  - type: input
+    id: location
+    attributes:
+      label: Which chapter and section?
+      placeholder: Chapt. 7 -- Organize and Import Data with R, "Importing a csv from GitHub"
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: The code you ran
+      description: Paste the smallest piece of code that still produces the problem. It will be formatted as R automatically.
+      render: r
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: The error message
+      description: Copy the message in full, exactly as R printed it — do not paraphrase or screenshot it.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: sessioninfo
+    attributes:
+      label: Your session information
+      description: Run `sessionInfo()` in the R console and paste the whole output here. This tells me your R version, operating system and package versions, and is usually where the answer is.
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I restarted R and ran the code in a fresh session.
+          required: true
+        - label: I checked that the required packages are installed and loaded.
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Personal, grading or scheduling question
+    url: mailto:svenbuerki@boisestate.edu
+    about: Grades, extensions, accommodations or anything personal — email me directly. Issues opened here are public and visible to everyone.
+  - name: Course website
+    url: https://svenbuerki.github.io/EEB603_Reproducible_Science/
+    about: Syllabus, schedule, assignments and all course chapters.

@@ -80,7 +80,7 @@ To render an R Markdown file (e.g. to update a chapter draft):
 
 ## Contributing
 
-This repository is maintained by the course instructor. Students enrolled in the course should **not push changes to the main branch**. If you identify errors or improvements, please contact the instructor or open a GitHub Issue.
+This repository is maintained by the course instructor. Students enrolled in the course should **not push changes to the main branch**. If you identify errors or improvements, please [open an issue](https://github.com/svenbuerki/EEB603_Reproducible_Science/issues/new/choose). A free GitHub account is all that is required, and reporting a problem clearly and reproducibly is itself part of the course. For anything personal — grades, extensions, accommodations — email the instructor instead, as issues are public.
 
 ---
 
