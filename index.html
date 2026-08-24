@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2026-08-22" />
+<meta name="date" content="2026-08-24" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -373,7 +373,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Syllabus – Fall 2026</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2026-08-22</h4>
+<h4 class="date">2026-08-24</h4>
 
 </div>
 
@@ -491,15 +491,19 @@ $(document).ready(function() {
 <p>Graduate students from other programs are also welcome, and I regularly accept them: if your research involves gathering, managing, analyzing, or communicating data, the needs this course addresses are probably yours too. Please contact me and we will discuss whether it is a good fit for your project.</p>
 <p><strong>No prior experience with R, Markdown, or version control is assumed</strong> – the course builds these skills from the ground up.</p>
 </div>
-<div id="course-description-and-goals" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Course Description and Goals</h1>
+<div id="Description" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> <a name="Description"></a>Course Description, Goals and Learning Outcomes</h1>
 <p>The scientific community widely acknowledges that we are in the midst of a <strong><em>reproducibility crisis</em></strong> <span class="citation">(e.g. <a href="#ref-Baker_2016">Baker, 2016</a>)</span>. This course begins by reviewing the evidence for, and causes of, this crisis, and aims to highlight key factors that can improve reproducibility in science—especially within Ecology, Evolution &amp; Behavior. It also provides a platform to develop, practice, and strengthen science communication skills <span class="citation">(e.g. <a href="#ref-Soltis2023">Soltis et al., 2023</a> for some innovative ways to share your research)</span>.</p>
-<p>The overarching <strong><em>goal</em></strong> of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research. Throughout the course, students will learn to use open-source software for research, including <a href="https://cran.r-project.org">R</a>, <a href="https://www.rstudio.com">RStudio</a> and <a href="https://rmarkdown.rstudio.com">R Markdown</a> (incl. <a href="https://kbroman.org/knitr_knutshell/">knitr</a>). To further develop these skills—and improve communication and teaching competencies—students will:</p>
+<blockquote>
+<p><strong>The goal of this course is to equip students with the theoretical knowledge and bioinformatics tools necessary to enhance transparency, reproducibility, and efficiency in scientific research.</strong></p>
+</blockquote>
+<p>Students will work throughout in open-source software: <a href="https://cran.r-project.org">R</a>, <a href="https://www.rstudio.com">RStudio</a> and <a href="https://rmarkdown.rstudio.com">R Markdown</a> (incl. <a href="https://kbroman.org/knitr_knutshell/">knitr</a>). To develop these skills further, and to strengthen communication and teaching, students will do two things:</p>
 <ol style="list-style-type: decimal">
-<li>Design bioinformatics tutorials and teach them to peers</li>
-<li>Design, implement, and present individual projects aimed at developing a reproducible workflow tailored to their research interests</li>
+<li><strong>Design bioinformatics tutorials and teach them to peers.</strong></li>
+<li><strong>Design, implement, and present an individual project</strong> aimed at developing a reproducible workflow tailored to their research interests.</li>
 </ol>
-<p>Overall, this course <strong>provides students with key knowledge to gather, store, share, prepare, and analyze data, as well as communicate results to the scientific community and various stakeholders</strong> (see Figure <a href="#fig:part2">7.1</a>).</p>
+<p>Together, these give students key knowledge to <strong>gather, store, share, prepare, and analyze data, and to communicate results</strong> to the scientific community and various stakeholders (Figure <a href="#fig:part2">7.1</a>).</p>
+<p>The rest of this section sets out what students will be able to do by the end (<a href="#Outcomes">Course Learning Outcomes</a>), how the semester is organized (<a href="#Structure">Course Structure</a>), and the topics covered (<a href="#courseCont">Course Content</a>).</p>
 <div class="figure"><span style="display:block;" id="fig:part2"></span>
 <img src="Images/Bioinformatic_workflow_PART2.png" alt="Diagram of a reproducible data analysis workflow. On the left, a box labelled Prepare contains Import followed by Tidy. An arrow leads to a larger box labelled Explore and understand, in which Transform, Visualize and Model are connected in a repeating cycle. An arrow then leads out of that box to Communicate. The entire workflow is enclosed in an outer box labelled Program." width="100%" />
 <p class="caption">
@@ -532,9 +536,9 @@ Figure 7.1: Overview of workflow studied in PART2.
 <li><em>PART 2: Bioinformatics for Reproducible Science</em></li>
 <li><em>PART 3: Apply a Reproducible Approach to your Data</em></li>
 </ul>
-<p><strong>Part 1</strong> provides students with key theoretical knowledge on reproducible science, enabling them to design and implement a reproducible approach tailored to Ecology, Evolution &amp; Behavior. This section also covers topics related to open science and data management, and how these practices intersect with scientific publishing.</p>
-<p><strong>Part 2</strong> offers students the opportunity to further develop and apply coding and bioinformatics tools essential for building reproducible workflows (Figure <a href="#fig:part2">7.1</a>). In this section, students—supported by me—will develop and teach a tutorial on a specific bioinformatics topic over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. This is normally a <strong>group</strong> assignment; where enrollment does not divide evenly, a student may work on a chapter alone, in which case I provide additional support so that the workload remains comparable (see <a href="#BioTut">Bioinformatics Tutorial</a>).</p>
-<p><strong>Part 3</strong> is designed to give students the chance to develop an individual reproducible workflow tailored to their own research project (or using data from a publication, if they have not yet defined a thesis topic). This assignment builds on knowledge gained in the earlier parts of the course and will involve collaboration with me—and in some cases, with your thesis advisor. <strong>Unlike Parts 1 and 2, this is individual work carried out mostly outside class time.</strong> I dedicate <strong>one full class session to working on your individual projects</strong>, with feedback from me as you go, and expect to allocate further time later in the semester; the class then reconvenes in the final week for everyone’s oral presentations. The remainder of the work is done outside class, so I strongly encourage you to arrange meetings with me during the semester to get my input as your project develops. The <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html">course schedule</a> shows when the in-class sessions fall.</p>
+<p><strong><em>Part 1 builds the theoretical foundation.</em></strong> It provides students with key theoretical knowledge on reproducible science, enabling them to design and implement a reproducible approach tailored to Ecology, Evolution &amp; Behavior. This section also covers topics related to open science and data management, and how these practices intersect with scientific publishing.</p>
+<p><strong><em>Part 2 turns that theory into working code.</em></strong> It offers students the opportunity to further develop and apply coding and bioinformatics tools essential for building reproducible workflows (Figure <a href="#fig:part2">7.1</a>). In this section, students—supported by me—will develop and teach a tutorial on a specific bioinformatics topic over two full classes. Tutorials will be written in RMarkdown and distributed to the class one week in advance. This is normally a <strong>group</strong> assignment; where enrollment does not divide evenly, a student may work on a chapter alone, in which case I provide additional support so that the workload remains comparable (see <a href="#BioTut">Bioinformatics Tutorial</a>).</p>
+<p><strong><em>Part 3 applies the whole approach to your own research.</em></strong> It is designed to give students the chance to develop an individual reproducible workflow tailored to their own research project (or using data from a publication, if they have not yet defined a thesis topic). This assignment builds on knowledge gained in the earlier parts of the course and will involve collaboration with me—and in some cases, with your thesis advisor. <strong>Unlike Parts 1 and 2, this is individual work carried out mostly outside class time.</strong> I dedicate <strong>one full class session to working on your individual projects</strong>, with feedback from me as you go, and expect to allocate further time later in the semester; the class then reconvenes in the final week for everyone’s oral presentations. The remainder of the work is done outside class, so I strongly encourage you to arrange meetings with me during the semester to get my input as your project develops. The <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html">course schedule</a> shows when the in-class sessions fall.</p>
 </div>
 <div id="courseCont" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Course Content</h2>
