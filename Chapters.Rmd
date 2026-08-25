@@ -239,7 +239,7 @@ Each group is given a real-world **publication that illustrates challenges to re
 
 I assign one of the retracted articles below to each group at the start of the session, and hand out copies in class. The links are here so that you can find your article again afterwards. The reasons behind each retraction are given at the end of this section --- **work through your article and reach your own conclusions before opening that table.**
 
-```{r caseassign, echo=FALSE, results='asis'}
+```{r caseassign, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
 ###~~~
 # Case-study assignments.
 #
