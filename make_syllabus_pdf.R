@@ -32,7 +32,7 @@ pdf_output <- c(
   "output:",
   "  bookdown::pdf_document2:",
   "    toc: yes",
-  "    toc_depth: 2",
+  "    toc_depth: 3",
   "    number_sections: yes",
   "    geometry: margin=1in",
   "    keep_tex: yes"
