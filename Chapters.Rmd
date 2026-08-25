@@ -235,6 +235,47 @@ Each group is given a real-world **publication that illustrates challenges to re
 - 🧪 **Data manipulation or selective reporting**  
   Deliberate or unintentional exclusion, alteration, or cherry-picking of data that misrepresents findings.
 
+#### 📄 Publications Used in This Activity
+
+I assign one of the retracted articles below to each group at the start of the session, and hand out copies in class. The links are here so that you can find your article again afterwards. The reasons behind each retraction are given at the end of this section --- **work through your article and reach your own conclusions before opening that table.**
+
+```{r caseassign, echo=FALSE, results='asis'}
+###~~~
+# Case-study assignments.
+#
+# Groups 1, 2 and 4 are derived from the Retraction Watch csv used for Table
+# \@ref(tab:retractionwatch), so the titles and DOIs here can never drift away
+# from that table.
+#
+# Group 3's article has NOT been formally retracted, so it has no row in that
+# csv and is defined here instead. If its DOI is left empty, the entry falls
+# back to the PubPeer thread rather than emitting a broken doi.org link.
+###~~~
+PUBPEER <- "https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8"
+
+group3 <- data.frame(
+  GroupID          = 3,
+  Title            = "PubPeer discussion thread (article not formally retracted)",
+  Journal          = "",
+  OriginalPaperDOI = "")          # <- add the DOI here if you want to link the article itself
+
+cols  <- c("GroupID", "Title", "Journal", "OriginalPaperDOI")
+cases <- read.csv("Chapters_files/Chapter_1_PartA_Case_Studies.csv")[, cols]
+cases <- rbind(cases, group3)
+cases <- cases[order(cases$GroupID), ]
+
+for (i in seq_len(nrow(cases))) {
+  url <- if (nzchar(cases$OriginalPaperDOI[i])) {
+    paste0("https://doi.org/", cases$OriginalPaperDOI[i])
+  } else {
+    PUBPEER
+  }
+  journal <- if (nzchar(cases$Journal[i])) sprintf(", *%s*", cases$Journal[i]) else ""
+  cat(sprintf("- **Group %s** --- [%s](%s)%s\n",
+              cases$GroupID[i], cases$Title[i], url, journal))
+}
+```
+
 The instructor will hand out copies of the publications, but they are also available on our [Google Drive](https://drive.google.com/drive/folders/1AeoPIzzs4mEUMIhUiACT7TYtUHS9U0Nu?usp=drive_link).
 
 ---
@@ -269,6 +310,9 @@ The data supporting the retractions of the case studies are presented in Table \
 
 Note that the article assigned to Group 3 has not been formally retracted; however, several experts have raised concerns on [PubPeer](https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8). These concerns relate to: (***i***) the use of machine-generated passages, (***ii***) the inclusion of references that do not appear to exist, and (***iii***) references to figures in the article that are themselves nonexistent.
 
+<details>
+<summary><b>📊 Show Table \@ref(tab:retractionwatch) --- the reasons behind each retraction</b></summary>
+
 ```{r retractionwatch, warning = FALSE, echo = FALSE}
 ###~~~
 # Load data
@@ -283,6 +327,8 @@ knitr::kable(retractioncsv, caption = "Reasons behind the retractions of case st
                 fixed_thead = TRUE) %>%  # Fix header for scrolling
   scroll_box(width = "100%", height = "700px")  # Add scrollable box
 ```
+
+</details>
 
 ### Best Practices and Open Science Tools {#BestPract}
 
