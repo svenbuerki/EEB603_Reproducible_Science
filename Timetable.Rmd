@@ -147,6 +147,15 @@ dl_date <- function(pattern) {
 ###~~~
 SHEET <- "https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing"
 signup_date <- format(max(datesclass$Date[datesclass$WeekID == 2]), "%Y-%m-%d")
+
+###~~~
+# Chapters I teach myself rather than assigning to a student group -- set by
+# enrollment each year. They keep their sessions in the schedule below, but
+# carry no student deadlines, so they are dropped from Table 2 and cannot be
+# signed up for. To hand a chapter back to the students, remove it here.
+###~~~
+INSTRUCTOR_LED <- c("7", "8")
+instructor_led_txt <- paste("Chapter", paste(INSTRUCTOR_LED, collapse = " and "))
 ```
 
 # Assignment Deadlines {#deadlinesheader}
@@ -154,6 +163,8 @@ signup_date <- format(max(datesclass$Date[datesclass$WeekID == 2]), "%Y-%m-%d")
 To facilitate communication and help you plan your work, **deadlines** and **point allocations** for all assessments are provided in Table \@ref(tab:deadlines).
 
 The bioinformatics tutorials are taught on a rolling basis, so their deadlines depend on the chapter you sign up to teach. These deadlines are listed separately in Table \@ref(tab:tutdeadlines). **You must sign up for a chapter by `r signup_date`**, using the [Google Sheet](`r SHEET`) and respecting the number of students indicated for each chapter. Once you have signed up, find your chapter in Table \@ref(tab:tutdeadlines) and note the **two deadlines** that apply to you. Everything else in your tutorial timeline follows from that choice, which is why this is the first deadline of the semester.
+
+This year I am teaching **`r instructor_led_txt`** myself, given the size of the cohort. Those sessions still run as scheduled below, but they are not available to sign up for and carry no student deadlines, so they do not appear in Table \@ref(tab:tutdeadlines).
 
 Please also read the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#LateWork) in the syllabus. In particular, **your bioinformatics tutorial must be submitted one week before you teach it. This is a firm deadline, and extensions are not available.** The individual report may be submitted up to **one week late**, but late submissions are subject to the consequences described in the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#LateWork). **I strongly recommend submitting your report by the deadline whenever possible.**
 
@@ -215,6 +226,16 @@ i_submit <- grep("Turn in tutorial for Chap", topic$Deadline)
 i_upload <- grep("Upload tutorial of Chap", topic$Deadline)
 chapters <- sub(".*Chap\\. ([0-9]+).*", "\\1", topic$Deadline[i_submit])
 
+# The two deadline series must pair up chapter for chapter, otherwise the dates
+# below would be silently mismatched.
+stopifnot(identical(chapters,
+                    sub(".*Chap\\. ([0-9]+).*", "\\1", topic$Deadline[i_upload])))
+
+keep     <- !chapters %in% INSTRUCTOR_LED
+chapters <- chapters[keep]
+i_submit <- i_submit[keep]
+i_upload <- i_upload[keep]
+
 # Dates on which each chapter's tutorial is taught in class
 taught <- vapply(chapters, function(ch) {
   j <- grep(paste0("^Bioinfo\\. tutorial - Chap\\. ", ch, "$"), topic$Topic)
@@ -230,7 +251,7 @@ tut <- data.frame(
   check.names = FALSE)
 
 knitr::kable(tut,
-  caption = "Bioinformatics tutorial deadlines by chapter. Find the chapter you signed up for and note your dates. Submitting to me one week before you teach is a firm deadline: your peers need that week to prepare.",
+  caption = "Bioinformatics tutorial deadlines by chapter, for the chapters taught by student groups. Find the chapter you signed up for and note your dates. Submitting to me one week before you teach is a firm deadline: your peers need that week to prepare.",
   format = "html", row.names = FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
