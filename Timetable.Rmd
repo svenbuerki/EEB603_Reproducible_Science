@@ -139,13 +139,21 @@ dl_date <- function(pattern) {
   if (!length(i)) return("TBC")
   format(datesclass$Date[i[1]], "%Y-%m-%d")
 }
+
+###~~~
+# Sign-up deadline for the bioinformatics tutorial chapters. The syllabus says
+# "during the first two weeks", so this is the last class session of week 2 --
+# derived rather than typed, so it follows the academic calendar automatically.
+###~~~
+SHEET <- "https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing"
+signup_date <- format(max(datesclass$Date[datesclass$WeekID == 2]), "%Y-%m-%d")
 ```
 
 # Assignment Deadlines {#deadlinesheader}
 
 To facilitate communication and help you plan your work, **deadlines** and **point allocations** for all assessments are provided in Table \@ref(tab:deadlines).
 
-The bioinformatics tutorials are taught on a rolling basis, so their deadlines depend on the chapter you sign up to teach. These deadlines are listed separately in Table \@ref(tab:tutdeadlines). During the first two weeks of the semester, sign up for a chapter using the [Google Sheet](https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing). Once you have signed up, find your chapter in Table \@ref(tab:tutdeadlines) and note the **two deadlines** that apply to you.
+The bioinformatics tutorials are taught on a rolling basis, so their deadlines depend on the chapter you sign up to teach. These deadlines are listed separately in Table \@ref(tab:tutdeadlines). **You must sign up for a chapter by `r signup_date`**, using the [Google Sheet](`r SHEET`) and respecting the number of students indicated for each chapter. Once you have signed up, find your chapter in Table \@ref(tab:tutdeadlines) and note the **two deadlines** that apply to you. Everything else in your tutorial timeline follows from that choice, which is why this is the first deadline of the semester.
 
 Please also read the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#LateWork) in the syllabus. In particular, **your bioinformatics tutorial must be submitted one week before you teach it. This is a firm deadline, and extensions are not available.** The individual report may be submitted up to **one week late**, but late submissions are subject to the consequences described in the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#LateWork). **I strongly recommend submitting your report by the deadline whenever possible.**
 
@@ -158,6 +166,7 @@ rubric <- function(file, label = "Rubric") sprintf("[%s](%s%s)", label, FORMS, f
 
 deadlines <- data.frame(
   Assessment = c(
+    sprintf("[Sign up](%s) for a bioinformatics tutorial chapter", SHEET),
     "Individual project -- proposal",
     "Bioinformatics tutorial (written)",
     "Teaching your bioinformatics tutorial",
@@ -166,8 +175,9 @@ deadlines <- data.frame(
     "Oral presentation -- slides",
     "Oral presentation",
     "TOTAL"),
-  Points = c("50", "150", "100", "50", "150", "--", "100", "**600**"),
+  Points = c("--", "50", "150", "100", "50", "150", "--", "100", "**600**"),
   Date = c(
+    signup_date,
     dl_date("proposal"),
     "varies by chapter -- see Table 2",
     "varies by chapter -- see schedule below",
@@ -176,8 +186,9 @@ deadlines <- data.frame(
     dl_date("Upload slides"),
     paste(format(tail(datesclass$Date, 2), "%Y-%m-%d"), collapse = " & "),
     ""),
-  Time = c("5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
+  Time = c("5 PM MT", "5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
   `Evaluation form` = c(
+    "--",
     rubric("Project_Proposal_Evaluation_Form.pdf"),
     rubric("Bioinformatics_Tutorial_Evaluation_Form.pdf"),
     rubric("Teaching_Tutorial_Evaluation_Form.pdf"),
@@ -189,7 +200,7 @@ deadlines <- data.frame(
   check.names = FALSE)
 
 knitr::kable(deadlines,
-  caption = "Deadlines, point allocations and evaluation rubrics for all assessments in EEB603, Fall 2026. Times are Mountain Time. Every rubric is also on the Assignments page.",
+  caption = "Deadlines, point allocations and evaluation rubrics for EEB603, Fall 2026. The first row is not graded, but signing up on time is what sets your tutorial deadlines in Table 2. Times are Mountain Time. Every rubric is also on the Assignments page.",
   format = "html", row.names = FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
   row_spec(nrow(deadlines), bold = TRUE)
