@@ -274,11 +274,23 @@ timetable <- data.frame(datesclass, topic)
 # Deadline is deliberately dropped: deadlines now live in Tables 1 and 2 above,
 # so that there is exactly one place to look them up and no risk of the two
 # disagreeing after an edit.
-#
-# "Completed" is filled in as the semester progresses -- put a checkmark in that
-# column of the csv after each session so students can see where we have got to.
 timetable <- timetable[, c("WeekID", "Date", "Weekday", "Topic", "Homework", "Completed")]
 colnames(timetable)[1] <- "Week"
+
+###~~~
+# "Completed" is a hand-edited tracker: after each session, put ANY marker in
+# that column of the csv (an x, a 1, the word yes -- whatever is quickest) and
+# a check mark is rendered here.
+#
+# Do NOT rely on pasting a check glyph into the csv itself: spreadsheet
+# applications routinely drop or re-encode non-ASCII characters when saving to
+# csv, which is exactly what happened on 2026-08-26 (the pasted symbol arrived
+# as a plain underscore). Keeping the csv ASCII and generating the symbol here
+# means the tracker cannot be broken by an editor's encoding.
+###~~~
+done <- trimws(as.character(timetable$Completed))
+timetable$Completed <- ifelse(is.na(done) | done == "" | toupper(done) == "NA",
+                              "", "✔")
 
 #Some editing to better print table in pdf doc
 timetable <- as.matrix(timetable)

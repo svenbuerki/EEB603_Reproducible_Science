@@ -177,7 +177,7 @@ Students reflect on what **“reproducible science”** means to them and write 
 
 #### 🤝 Group Sharing and Discussion <span style="color:dimgray;">(15 minutes)</span>
 
-- Form small groups (3–4 students)
+- Form small groups (2-3 students)
 - Small groups share and compare their definitions
 - Each group presents insights to the class to foster open discussion
 
