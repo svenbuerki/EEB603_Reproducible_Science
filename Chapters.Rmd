@@ -159,10 +159,10 @@ To investigate this question, students engage in self-reflection and group activ
 
 The structure of this class, held over two sessions, is as follows:
 
-1. [Introduction and Definitions](#IntroDef)
-2. [Case Studies and Challenges](#CaseStudies)
-3. [Best Practices and Open Science Tools](#BestPract)
-4. [Wrap-up and Future Directions](#WrapUp)
+1. [Introduction and Definitions](#IntroDef) <span style="color:dimgray;">(30 minutes)</span>
+2. [Case Studies and Challenges](#CaseStudies) <span style="color:dimgray;">(80 minutes over two sessions)</span>
+3. [Best Practices and Open Science Tools](#BestPract) <span style="color:dimgray;">(20 minutes)</span>
+4. [Wrap-up and Future Directions](#WrapUp) <span style="color:dimgray;">(10 minutes)</span>
 
 The first two sections will be covered during Session 1, while the remaining sections will be addressed in Session 2.  
 Please ensure that you have identified the reproducibility challenges in your assigned publication (see [Case Studies and Challenges](#CaseStudies)) prior to attending the second session. 
@@ -237,46 +237,28 @@ Each group is given a real-world **publication that illustrates challenges to re
 
 #### 📄 Publications Used in This Activity
 
-I assign one of the retracted articles below to each group at the start of the session, and hand out copies in class. The links are here so that you can find your article again afterwards. The reasons behind each retraction are given at the end of this section --- **work through your article and reach your own conclusions before opening that table.**
+I assign one of the retracted articles below to each group at the start of the activity. The links are here so that you can find your article again afterwards. The reasons behind each retraction are given at the end of this section --- **work through your article and reach your own conclusions before opening that table.** The articles are also available on our [Google Drive](https://drive.google.com/drive/folders/1AeoPIzzs4mEUMIhUiACT7TYtUHS9U0Nu?usp=drive_link).
 
 ```{r caseassign, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
 ###~~~
-# Case-study assignments.
-#
-# Groups 1, 2 and 4 are derived from the Retraction Watch csv used for Table
-# \@ref(tab:retractionwatch), so the titles and DOIs here can never drift away
-# from that table.
-#
-# Group 3's article has NOT been formally retracted, so it has no row in that
-# csv and is defined here instead. If its DOI is left empty, the entry falls
-# back to the PubPeer thread rather than emitting a broken doi.org link.
+# Case-study assignments, derived from the same Retraction Watch csv that feeds
+# Table \@ref(tab:retractionwatch), so the group numbers, titles and DOIs here
+# can never drift away from that table. Each link goes to the ORIGINAL article
+# (OriginalPaperDOI), which is what the group has to read -- not to the
+# retraction notice.
 ###~~~
-PUBPEER <- "https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8"
-
-group3 <- data.frame(
-  GroupID          = 3,
-  Title            = "PubPeer discussion thread (article not formally retracted)",
-  Journal          = "",
-  OriginalPaperDOI = "")          # <- add the DOI here if you want to link the article itself
-
 cols  <- c("GroupID", "Title", "Journal", "OriginalPaperDOI")
 cases <- read.csv("Chapters_files/Chapter_1_PartA_Case_Studies.csv")[, cols]
-cases <- rbind(cases, group3)
 cases <- cases[order(cases$GroupID), ]
 
+stopifnot(all(nzchar(cases$OriginalPaperDOI)))   # no group left without a link
+
 for (i in seq_len(nrow(cases))) {
-  url <- if (nzchar(cases$OriginalPaperDOI[i])) {
-    paste0("https://doi.org/", cases$OriginalPaperDOI[i])
-  } else {
-    PUBPEER
-  }
-  journal <- if (nzchar(cases$Journal[i])) sprintf(", *%s*", cases$Journal[i]) else ""
-  cat(sprintf("- **Group %s** --- [%s](%s)%s\n",
-              cases$GroupID[i], cases$Title[i], url, journal))
+  cat(sprintf("- **Group %s** --- [%s](https://doi.org/%s), *%s*\n",
+              cases$GroupID[i], cases$Title[i],
+              cases$OriginalPaperDOI[i], cases$Journal[i]))
 }
 ```
-
-The instructor will hand out copies of the publications, but they are also available on our [Google Drive](https://drive.google.com/drive/folders/1AeoPIzzs4mEUMIhUiACT7TYtUHS9U0Nu?usp=drive_link).
 
 ---
 
@@ -307,8 +289,6 @@ Each group:
 #### Reasons Behind the Retractions of Case Studies <span style="color:dimgray;">(10 minutes)</span>
 
 The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Digital Object Identifiers ([DOI](https://www.doi.org/)) and [PubMed IDs]([PubMed](https://pubmed.ncbi.nlm.nih.gov/)) are provided for each case study.  
-
-Note that the article assigned to Group 3 has not been formally retracted; however, several experts have raised concerns on [PubPeer](https://pubpeer.com/publications/0905A70AF6A77C4309B743FFCD21F8). These concerns relate to: (***i***) the use of machine-generated passages, (***ii***) the inclusion of references that do not appear to exist, and (***iii***) references to figures in the article that are themselves nonexistent.
 
 <details>
 <summary><b>📊 Show Table \@ref(tab:retractionwatch) --- the reasons behind each retraction</b></summary>
@@ -341,11 +321,11 @@ In small groups, students:
 
 Afterward, we will share and compare our recommendations as a class.
 
----
+### Wrap-up and Future Directions {#WrapUp}
 
 #### 🚀 Key Strategies & Tools <span style="color:dimgray;">(10 minutes)</span>
 
-The instructor goes over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
+We are going over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
 
 <details>
     <summary><b> ✅ Strategies and tools for reproducible science</b></summary>
