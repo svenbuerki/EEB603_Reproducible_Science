@@ -141,7 +141,6 @@ This list of online resources supports our group activities:
 
 - [Reproducibility and Replicability in Science](https://doi.org/10.17226/25303) - A report published by the National Academies of Sciences, Engineering, and Medicine.
 - [Retraction Watch](https://retractionwatch.com/) - Tracking retractions as a window into the scientific process.
-- [Retraction Watch Database](https://retractiondatabase.org/RetractionSearch.aspx?&AspxAutoDetectCookieSupport=1) - The database associated with Retraction Watch.
 - [PubPeer](https://pubpeer.com/) - An online journal club where researchers are posting comments on articles.
 - [PubMed](https://pubmed.ncbi.nlm.nih.gov/) - This database comprises more than 39 million citations for biomedical literature from MEDLINE, life science journals, and online books. Citations may include links to full text content from PubMed Central and publisher web sites.
 - [RESCIENCE C](http://rescience.github.io/) - Reproducible Science is good. Replicated Science is better.
