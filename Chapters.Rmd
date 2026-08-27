@@ -269,10 +269,12 @@ for (i in seq_len(nrow(cases))) {
 
 Each group:
 
-1. **Read** their assigned publication  
-2. **Identify** specific reproducibility challenges  
-3. **Discuss** how these challenges might impact the broader research community  
-4. **Brainstorm** strategies or solutions to mitigate these issues and improve reproducibility  
+1. **Read** their assigned publication
+2. **Identify** specific reproducibility challenges
+3. **Investigate** the journal where the article was published, including its policies and practices related to **research ethics, integrity, transparency, and reproducibility**, as well as its **impact and influence** in the field
+4. **Discuss** how these challenges and the journal’s practices might impact the broader research community
+5. **Brainstorm** strategies or solutions to mitigate these issues and improve reproducibility, considering both **researchers and journals**
+
 <blockquote>
 💡 <b>Note:</b> Students are encouraged to explore their assigned study online and consult the provided <a href="#OnlineResChap1">resources</a>.  
 <b>However, please form your own conclusions before researching externally.</b>
