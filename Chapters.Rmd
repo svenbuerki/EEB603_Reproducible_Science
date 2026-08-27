@@ -150,7 +150,7 @@ This list of online resources supports our group activities:
 
 ## What is Reproducible Science? {#WhatRepSci}
 
-To investigate this question, students engage in self-reflection and group activities designed to explore the meaning of reproducible science and its implementation in research and scientific publications.
+To investigate this question, **students engage in self-reflection and group activities designed to explore the meaning of reproducible science and its implementation in research** and scientific publications.
 
 **Disclaimer:** The instructor has provided definitions and other supporting materials (in collapsible boxes) throughout this section. However, students are advised not to read these materials in advance, in order to complete the exercises sincerely and derive the greatest benefit from the experience.  
 
@@ -212,6 +212,10 @@ Reproducible science means **achieving the same findings** using the **original 
 - **Replication** tests **what aspects of a study matter** for the results to hold.
 
 <blockquote><b>Key insight:</b> Replication is most useful <i>after</i> reproduction is verified.</blockquote>
+
+<br>
+
+<b>💭 Think about it:</b> Can you think of examples of scientific studies, methods, or protocols where replication would be particularly important? What would you learn by repeating them with intentional variations?
 
 </details>
 
