@@ -361,7 +361,7 @@ We will be investigating the following questions:
 
 ### Resources
 
-The PDFs of @Baker_2016 and @NAP25303 are available in our shared Google Drive at the following paths:
+The PDFs of @Baker_2016 and @NAP25303 are available in our shared [Google Drive](https://drive.google.com/drive/folders/13aOxsvVgyxA3sm8bf1RBXLvrR5nCHVhp?usp=drive_link) at the following paths:
 
 `Reproducible_Science > Publications > Baker_Nature_2016.pdf`  
 `Reproducible_Science > Publications > Reproducibility_and_Replicability_in_Science_2019.pdf`
