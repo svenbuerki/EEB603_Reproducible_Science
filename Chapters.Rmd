@@ -317,20 +317,42 @@ knitr::kable(retractioncsv, caption = "Reasons behind the retractions of case st
 
 ### Best Practices and Open Science Tools {#BestPract}
 
-#### 🧠 Group Brainstorm <span style="color:dimgray;">(20 minutes)</span>
+#### 🧠 Whiteboard Brainstorm <span style="color:dimgray;">(20 minutes)</span>
 
-In small groups, students:
+Working in **2--3 groups, each at a whiteboard**, you will build a two-column list: on the left the **issues** that break reproducibility, and on the right the **best practice or open science tool** that addresses each one.
 
-- Identify **best practices** and **open science tools** that enhance research reproducibility
-- Draw from earlier discussions and real-world case studies  
+**Start from the retracted articles you have just worked on.** The case studies in [Case Studies and Challenges](#CaseStudies) and the reasons behind their retractions in Table \@ref(tab:retractionwatch) are your raw material: every entry in the *Reason* column of that table is something that somebody failed to prevent. Begin by asking what would have had to be different for your article never to have been retracted.
 
-Afterward, we will share and compare our recommendations as a class.
+**The order matters --- diagnose before you prescribe.**
+
+1. **List the issues first** <span style="color:dimgray;">(~8 minutes)</span>
+   What actually went wrong in [your group's article](#CaseStudies), and what does Table \@ref(tab:retractionwatch) say went wrong in the other two? Add anything from the challenge types listed in that section, or from your own research experience. Be specific: *"the raw data were never deposited anywhere"* is workable; *"bad practice"* is not.
+
+2. **Then pair each issue with a solution** <span style="color:dimgray;">(~8 minutes)</span>
+   Work along your list and, for every issue, name the practice, habit or tool that would have prevented it. Some issues will attract several solutions; some solutions will fix several issues. Both are worth noticing.
+
+3. **Report back** <span style="color:dimgray;">(~4 minutes)</span>
+   Each group walks the class through its board. We will then compare the boards to see which issues everyone found, and which were spotted by only one group.
+
+<blockquote>
+💡 <b>One rule:</b> every practice or tool on the right must answer a specific issue on the left. A tool nobody can attach to a problem is a tool you do not yet have a reason to use --- and saying so out loud is a perfectly good contribution.
+</blockquote>
 
 ### Wrap-up and Future Directions {#WrapUp}
 
 #### 🚀 Key Strategies & Tools <span style="color:dimgray;">(10 minutes)</span>
 
-We are going over the points in this collapsible box to further discuss implementing reproducible science in your research. Please don't look at the content of the box before we get here!
+**With your boards from [the brainstorm](#BestPract) still up**, we now compare them against the short list below and turn the discussion towards your own work.
+
+Three questions guide this last part:
+
+1. **What did we all find?** Which practices appeared on every board, and which on only one? A tool that only one group thought of is usually the one worth talking about.
+2. **What is missing from the list below --- and what is missing from your boards?** The list is deliberately short. If your board names something it does not, that is not an error on your part; it is a gap in the list, and I would like to hear it.
+3. **What will you actually deploy?** For each strategy, ask whether it belongs in *your* research: could you start using it this semester, does it need a tool you do not yet have, or is it not relevant to the kind of data you work with? Naming one practice you will adopt is worth more than agreeing that all of them are good.
+
+Every item below is developed further in [Chapt. 5 -- Data Management and Reproducible Code](#Chap5), so this is a map of where we are going as much as a summary of where we have been.
+
+Please don't look at the content of the box before we get here!
 
 <details>
     <summary><b> ✅ Strategies and tools for reproducible science</b></summary>
