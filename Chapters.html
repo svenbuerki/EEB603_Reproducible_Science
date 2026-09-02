@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2026-09-01" />
+<meta name="date" content="2026-09-02" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -397,7 +397,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Chapters</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2026-09-01</h4>
+<h4 class="date">2026-09-02</h4>
 
 </div>
 
@@ -770,12 +770,28 @@ Each group walks the class through its board. We will then compare the boards to
 </div>
 <div id="WhatFacBreakRep" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> What Factors Break Reproducibility?</h2>
-<div id="overview" class="section level3" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Overview</h3>
-<p>In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> and recommendations from the report published by the National Academies of Sciences, Engineering, and Medicine <span class="citation">(<a href="#ref-NAP25303">National Academies of Sciences and Medicine, 2019</a>)</span>.</p>
+<div id="goal-1" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Goal</h3>
+<p>Part A asked what reproducible science <em>is</em>, and why it fails. Part B asks <strong>which factors break it</strong> — and then does something about them.</p>
+<p>We work from two sources of evidence: the survey of 1,576 researchers published by <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span>, which reports what the scientific community itself blames for irreproducible work, and the report of the National Academies of Sciences, Engineering, and Medicine <span class="citation">(<a href="#ref-NAP25303">National Academies of Sciences and Medicine, 2019</a>)</span>, which sets out what should be done about it.</p>
+<p><strong>The goal of Part B is to turn that evidence into a defence.</strong> By the end of these two sessions your group will have written a <strong>reproducibility charter</strong>: a set of standards your research team commits to, each one chosen to block a specific factor known to break reproducible science. The diagnosis is where we start; the charter is what we are here to produce.</p>
 </div>
-<div id="investigated-questions" class="section level3" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> Investigated Questions</h3>
+<div id="class-outline-1" class="section level3" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Class Outline</h3>
+<p>The structure of this class, held over two sessions, is as follows:</p>
+<ol style="list-style-type: decimal">
+<li><a href="#recall">What Do You Remember?</a> <span style="color:dimgray;">(10 minutes)</span></li>
+<li><a href="#reviewres">Review the Resources</a> <span style="color:dimgray;">(10 minutes)</span></li>
+<li><a href="#factors">The Factors, Together</a> <span style="color:dimgray;">(10 minutes)</span></li>
+<li><a href="#draftcharter">Draft Your Charter</a> <span style="color:dimgray;">(30 minutes)</span></li>
+<li><a href="#stresstest">Stress-Test Another Team’s Charter</a> <span style="color:dimgray;">(20 minutes)</span></li>
+<li><a href="#commitcharter">Revise and Commit</a> <span style="color:dimgray;">(15 minutes)</span></li>
+</ol>
+<p>The first four sections will be covered during Session 1, while the remaining sections will be addressed in Session 2.<br />
+<strong>Each group finishes its draft charter as homework between the two sessions</strong>, because Session 2 opens with another group taking it apart (see <a href="#draftcharter">Draft Your Charter</a>).</p>
+</div>
+<div id="investigated-questions" class="section level3" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Investigated Questions</h3>
 <p>We will be investigating the following questions:</p>
 <ul>
 <li>Is there a reproducibility crisis?</li>
@@ -786,8 +802,57 @@ Each group walks the class through its board. We will then compare the boards to
 <li>What can be done to mitigate the reproducible crisis?</li>
 </ul>
 </div>
-<div id="FactorsActivity" class="section level3" number="2.5.3">
-<h3><span class="header-section-number">2.5.3</span> 👥 Group Activity: Write Your Lab’s Reproducibility Charter</h3>
+<div id="PartBresources" class="section level3" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> Resources</h3>
+<div id="PartBpubs" class="section level4" number="2.5.4.1">
+<h4><span class="header-section-number">2.5.4.1</span> Publications</h4>
+<p>The PDFs of <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> and <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span> are available in our shared <a href="https://drive.google.com/drive/folders/13aOxsvVgyxA3sm8bf1RBXLvrR5nCHVhp?usp=drive_link">Google Drive</a> at the following paths:</p>
+<p><code>Reproducible_Science &gt; Publications &gt; Baker_Nature_2016.pdf</code><br />
+<code>Reproducible_Science &gt; Publications &gt; Reproducibility_and_Replicability_in_Science_2019.pdf</code></p>
+</div>
+<div id="PartBteaching" class="section level4" number="2.5.4.2">
+<h4><span class="header-section-number">2.5.4.2</span> Teaching Material</h4>
+<p>The presentation associated with this class is below. We work through it in <a href="#factors">The Factors, Together</a>, after you have committed to your own answers — and it is here afterwards for revision.</p>
+<!-- Container for the iframe and button -->
+<div style="text-align: center;">
+<button onclick="toggleFullScreen()">Toggle Full Screen</button>
+<iframe id="pdfFrame" src="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf" width="100%" height="600px" style="border:none;">
+<p>
+Your browser does not support PDFs. <a href="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf">Download the PDF</a>.
+</p>
+<p></iframe></p>
+</div>
+<script>
+function toggleFullScreen() {
+  var elem = document.getElementById("pdfFrame");
+  if (!document.fullscreenElement) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { // Firefox
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+      elem.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+</script>
+</div>
+<div id="NASEMrec" class="section level4" number="2.5.4.3">
+<h4><span class="header-section-number">2.5.4.3</span> Recommendations</h4>
+<p>The most relevant recommendations proposed by the <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span> for our course are listed in the table below. It is searchable, so in <a href="#reviewres">Review the Resources</a> you can look up the three factors on your shortlist rather than reading the whole table.</p>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ca8fb17d13c45375bf86" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ca8fb17d13c45375bf86">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["Reproducibility","The Extent of Non-Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Confidence in Science","Confidence in Science"],["R4-1","R5-1","R6-1","R6-2","R6-3","R6-6","R6-7","R7-1","R7-3"],["To help ensure the reproducibility of computational results, researchers should convey clear, specific, and complete information about any computational methods and data products that support their published results in order to enable other researchers to repeat the analysis, unless such information is restricted by nonpublic data policies","Researchers should, as applicable to the specific study, provide an accurate and appropriate characterization of relevant uncertainties when they report or publish their research. Researchers should thoughtfully communicate all recognized uncertainties and estimate or acknowledge other potential sources of uncertainty that bear on their results, including stochastic uncertainties and uncertainties in measurement, computation, knowledge, modeling, and methods of analysis","All researchers should include a clear, specific, and complete description of how the reported result was reached. Different areas of study or types of inquiry may require different kinds of information","Academic institutions and institutions managing scientific work such as industry and the national laboratories should include training in the proper use of statistical analysis and inference. Researchers who use statistical inference analyses should learn to use them properly","Funding agencies and organizations should consider investing in research and development of open-source, usable tools and infrastructure that support reproducibility for a broad range of studies across different domains in a seamless fashion. Concurrently, investments would be helpful in outreach to inform and train researchers on best practices and how to use these tools","Many stakeholders have a role to play in improving computational reproducibility, including educational institutions, professional societies, researchers, and funders","Journals and scientific societies requesting submissions for conferences should disclose their policies relevant to achieving reproducibility and replicability. The strength of the claims made in a journal article or conference submission should reflect the reproducibility and replicability standards to which an article is held, with stronger claims reserved for higher expected levels of reproducibility and replicability.","Scientists should take care to avoid overstating the implications of their research and also exercise caution in their review of press releases, especially when the results bear directly on matters of keen public interest and possible action","Anyone making personal or policy decisions based on scientific evidence should be wary of making a serious decision based on the results, no matter how promising, of a single study. Similarly, no one should take a new, single contrary study as refutation of scientific conclusions supported by multiple lines of previous evidence"],["That information should include the data, study methods, and computational environment: <strong>i<\/strong>) the input data used in the study either in extension (e.g., a text file or a binary) or in intension (e.g., a script to generate the data), as well as intermediate results and output data for steps that are nondeterministic and cannot be reproduced in principle; <strong>ii<\/strong>) a detailed description of the study methods (ideally in executable form) together with its computational steps and associated parameters; and <strong>iii<\/strong>) information about the computational environment where the study was originally executed, such as operating system, hardware architecture, and library dependencies. (Library dependency, in the context of research software as used here, is the relationship of pieces of software that are needed for another software to run. Problems often occur when installed software has dependencies on specific versions of other software.)","","Reports should include details appropriate for the type of research, including: <strong>i<\/strong>) a clear description of all methods, instruments, materials, procedures, measurements, and other variables involved in the study; <strong>ii<\/strong>) a clear description of the analysis of data and decisions for exclusion of some data and inclusion of other; <strong>iii<\/strong>) for results that depend on statistical inference, a description of the analytic decisions and when these decisions were made and whether the study is exploratory or confirmatory; <strong>iv<\/strong>) a discussion of the expected constraints on generality, such as which methodological features the authors think could be varied without affecting the result and which must remain constant; <strong>v<\/strong>) reporting of precision or statistical power; and <strong>vi<\/strong>) a discussion of the uncertainty of the measurements, results, and inferences.","","","<strong>i<\/strong>) Educational institutions should educate and train students and faculty about computational methods and tools to improve the quality of data and code and to produce reproducible research; <strong>ii<\/strong>) professional societies should take responsibility for educating the public and their professional members about the importance and limitations of computational research. Societies have an important role in educating the public about the evolving nature of science and the tools and methods that are used; <strong>iii<\/strong>) researchers should collaborate with expert colleagues when their education and training are not adequate to meet the computational requirements of their research; <strong>iv<\/strong>) in line with its priority for harnessing the data revolution, the National Science Foundation (and other funders) should consider funding of activities to promote computational reproducibility"," Journals and conference organizers are encouraged to: <strong>i<\/strong>) set and implement desired standards of reproducibility and replicability and make this one of their priorities, such as deciding which level they wish to achieve for each Transparency and Openness Promotion guideline and working toward that goal; <strong>ii<\/strong>) adopt policies to reduce the likelihood of non-replicability, such as considering incentives or requirements for research materials transparency, design, and analysis plan transparency, enhanced review of statistical methods, study or analysis plan preregistration, and replication studies; and <strong>iii<\/strong>) require as a review criterion that all research reports include a thoughtful discussion of the uncertainty in measurements and conclusions","",""],[7,10,13,13,14,15,15,18,19]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Topic<\/th>\n      <th>Rec...<\/th>\n      <th>Recommendation<\/th>\n      <th>Detailed.Recommendation<\/th>\n      <th>Page<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"pageLength":5,"columnDefs":[{"className":"dt-right","targets":4},{"name":"Topic","targets":0},{"name":"Rec...","targets":1},{"name":"Recommendation","targets":2},{"name":"Detailed.Recommendation","targets":3},{"name":"Page","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<hr style="border: 2px solid #333; margin: 2em 0;">
+</div>
+</div>
+<div id="FactorsActivity" class="section level3" number="2.5.5">
+<h3><span class="header-section-number">2.5.5</span> 👥 Group Activity: Write Your Lab’s Reproducibility Charter</h3>
 <p>In this session we cover the material of Part B — the survey evidence of <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span>, the recommendations of <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span>, and the <a href="#WhatFacBreakRep">questions listed above</a> — and then put it to work. You will use it to write something of your own: a <strong>reproducibility charter</strong>.</p>
 <blockquote>
 📜 <b>Charter</b> <i>(noun)</i> — a short written document in which a group sets out the standards it binds <i>itself</i> to.
@@ -796,8 +861,8 @@ A charter is not advice, and not a summary of good practice. Guidelines describe
 <br><br>
 Research groups, laboratories and consortia write these for exactly this reason — so that standards survive a deadline, a new student, or a change of principal investigator, instead of living in one person’s head.
 </blockquote>
-<div id="why-we-are-doing-this" class="section level4" number="2.5.3.1">
-<h4><span class="header-section-number">2.5.3.1</span> Why we are doing this</h4>
+<div id="why-we-are-doing-this" class="section level4" number="2.5.5.1">
+<h4><span class="header-section-number">2.5.5.1</span> Why we are doing this</h4>
 <p><strong>You already have the evidence you need.</strong> Three things feed this charter, and every clause you write should be traceable to one of them:</p>
 <ol style="list-style-type: decimal">
 <li><strong>What you saw in <a href="#WhatRepSci">Part A</a>.</strong> You examined retracted articles and the reasons behind their retractions (Table <a href="#tab:retractionwatch">2.1</a>). Those are documented failures — your charter should make them harder to repeat.</li>
@@ -835,26 +900,44 @@ Research groups, laboratories and consortia write these for exactly this reason 
 </table>
 <p>Between them these three cover the whole data life cycle, so nothing in the charter is unowned. <strong>You are responsible for your section and you will be the one defending it</strong>, so choose the role closest to the research you actually do — or the one furthest from it, if you would rather learn something new.</p>
 </div>
-<div id="what-do-you-remember-10-minutes" class="section level4" number="2.5.3.2">
-<h4><span class="header-section-number">2.5.3.2</span> 1. What do you remember? <span style="color:dimgray;">(10 minutes)</span></h4>
-<p>You have read <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> for today. <strong>Without opening it</strong>, agree as a group and write down:</p>
+<div id="recall" class="section level4" number="2.5.5.2">
+<h4><span class="header-section-number">2.5.5.2</span> 🧠 What Do You Remember? <span style="color:dimgray;">(10 minutes)</span></h4>
+<p><strong>Books closed.</strong> No paper, no slides, no notes, no laptops. You read <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> for today, and this is where you find out how much of it stayed with you.</p>
+<p>Working as a group, agree on four answers and <strong>write them on a single sheet</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><strong>The scale.</strong> Of the 1,576 researchers surveyed, what share reported a <em>significant</em> reproducibility crisis? Give a percentage.</li>
+<li><strong>Your own field.</strong> What proportion of published work in your field do you believe is reproducible? This one is not recall — it is your own judgement, and there is no answer at the back of the book.</li>
+<li><strong>The causes.</strong> Which <strong>three factors</strong> did respondents most often blame for irreproducible research? Name them as precisely as you can.</li>
+<li><strong>Your shortlist.</strong> From those, a <strong>provisional</strong> list of the three factors you think are most dangerous to <em>your</em> research. Provisional because you are about to check your answers, and may want to change your mind.</li>
+</ol>
+<p><strong>Commit to specifics.</strong> “Quite a lot of people” is not an answer; “about 70%” is. Recalling something and getting it wrong fixes the right answer in memory far better than reading it a second time does — which is the whole point of doing this before you open anything.</p>
+<blockquote>
+📄 <b>What you take out of this step:</b> one sheet per group, with four answers on it. You will mark it up in <a href="#reviewres">Review the Resources</a>, and your shortlist becomes what the charter has to defend against.
+</blockquote>
+</div>
+<div id="reviewres" class="section level4" number="2.5.5.3">
+<h4><span class="header-section-number">2.5.5.3</span> 📖 Review the Resources <span style="color:dimgray;">(10 minutes)</span></h4>
+<p><strong>Now confirm your answers against the evidence.</strong> You have committed to four answers from memory; this step is where you find out which of them hold up. The PDFs are on our shared Google Drive as well as linked below.</p>
+<p>Work <strong>individually, and in silence</strong>. Go to <a href="#PartBresources">Resources</a> and give each of the three a few minutes:</p>
 <ul>
-<li>of the 1,576 researchers surveyed, what share reported a <em>significant</em> crisis?</li>
-<li>what proportion of published work in <strong>your own field</strong> do you believe is reproducible?</li>
-<li>which <strong>three factors</strong> did respondents blame most often?</li>
+<li>the <a href="#PartBpubs">publications</a> — check the figures you have just tried to recall, and read around the ones you got wrong;</li>
+<li>the <a href="#PartBteaching">teaching material</a> — skim the slides for anything you have not already met;</li>
+<li>the <a href="#NASEMrec">recommendations</a> — the table is searchable, so look up the three factors on your group’s shortlist.</li>
 </ul>
-<p><strong>Commit to numbers.</strong> Recalling something and getting it wrong fixes the correct answer in memory far better than reading it a second time does.</p>
-<p>Now check. Where were you furthest out, and which factor did you under-estimate?</p>
-<p>Finish this step by agreeing the <strong>three factors your team judges most dangerous to your own research</strong>. Those three are what your charter has to defend against.</p>
+<p>Mark up your sheet as you go: correct the numbers you got wrong, and note which of your three factors you now want to keep, and which you want to swap.</p>
+<p><strong>Read with your own role in mind.</strong> You will shortly be drafting as the data, analysis or reporting lead, and this is the only part of the session where you are reading rather than arguing — so note down what you will want when it is your turn to write.</p>
+<p>By the end of this step your group should have a <strong>corrected sheet and a settled shortlist</strong> — the evidence checked, the three factors chosen. That is everything the charter needs to be built on.</p>
 </div>
-<div id="the-factors-together-5-minutes" class="section level4" number="2.5.3.3">
-<h4><span class="header-section-number">2.5.3.3</span> 2. The factors, together <span style="color:dimgray;">(5 minutes)</span></h4>
+<div id="factors" class="section level4" number="2.5.5.4">
+<h4><span class="header-section-number">2.5.5.4</span> 📊 The Factors, Together <span style="color:dimgray;">(10 minutes)</span></h4>
 <p>I will take us through the factors that break reproducibility, drawing on the <a href="#PartBteaching">slides</a> and on the recommendations of <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span>. Since you have read <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> already, this is a short synthesis rather than a walk through the paper.</p>
-<p>Keep your three factors in front of you: if something named here is not on your list, add it — your charter is about to have to deal with it.</p>
+<p>Keep the three factors from the <a href="#recall">previous step</a> in front of you: if something named here is not on your list, add it — your charter is about to have to deal with it.</p>
 </div>
-<div id="draft-the-charter-20-minutes" class="section level4" number="2.5.3.4">
-<h4><span class="header-section-number">2.5.3.4</span> 3. Draft the charter <span style="color:dimgray;">(20 minutes)</span></h4>
-<p>Each lead drafts the clauses for their own section. Between you, the charter must address all three factors from step 1, and you may consult the <a href="#NASEMrec">recommendations table</a> for wording and for what others have proposed.</p>
+<div id="draftcharter" class="section level4" number="2.5.5.5">
+<h4><span class="header-section-number">2.5.5.5</span> ✍️ Draft Your Charter <span style="color:dimgray;">(30 minutes)</span></h4>
+<p><strong>Write it in a shared document.</strong> Before you start, one member of each group creates a <strong>Google Doc</strong> (preferred, because all three of you can type in it at once) or a <strong>Word document</strong>, names it <code>Charter_Group1</code> or <code>Charter_Group2</code>, and saves it in our shared Google Drive at <a href="https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link"><code>Reproducible_Science &gt; Chapters &gt; Chapter_1 &gt; Part_B</code></a>. Give it three headings — <strong>Data</strong>, <strong>Analysis</strong>, <strong>Reporting</strong> — and each lead writes under their own.</p>
+<p>Keeping it in that folder is what makes the rest of the activity work: it is how the three of you draft together, how you carry on after class, and how the other group opens your charter to stress-test it.</p>
+<p>Each lead drafts the clauses for their own section. Between you, the charter must address all three factors from the <a href="#recall">first step</a>, and you may consult the <a href="#NASEMrec">recommendations table</a> for wording and for what others have proposed.</p>
 <p><strong>Be ready to say where each clause comes from</strong> — a failure you saw in <a href="#CaseStudies">Part A</a>, a factor reported by <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span>, or a recommendation from <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span>. A clause nobody can source is usually a habit, not a standard.</p>
 <p><strong>The standard is that a clause must be checkable.</strong> Somebody outside your group should be able to tell whether you followed it:</p>
 <ul>
@@ -931,71 +1014,28 @@ What do you report when an analysis did not work, or was abandoned?
 <em>Example clause:</em> “Data and code are deposited before submission, not after acceptance, and every software package is cited with its version.”
 </p>
 </details>
+<blockquote>
+📌 <b>Before Session 2:</b> finish the draft. You are not expected to leave today with a complete charter — you are expected to leave with every section started and the hard arguments had. Each lead completes their own clauses as homework <b>in the shared document</b>, so the group arrives with <b>one agreed draft</b> rather than three sets of notes. Have it finished before the next session starts — the other group opens it straight away.
+</blockquote>
 </div>
-<div id="stress-test-another-teams-charter-15-minutes" class="section level4" number="2.5.3.5">
-<h4><span class="header-section-number">2.5.3.5</span> 4. Stress-test another team’s charter <span style="color:dimgray;">(15 minutes)</span></h4>
-<p>Swap charters with the other group — you review theirs, they review yours. Your job now is to be the sceptic:</p>
+<div id="stresstest" class="section level4" number="2.5.5.6">
+<h4><span class="header-section-number">2.5.5.6</span> 🔍 Stress-Test Another Team’s Charter <span style="color:dimgray;">(20 minutes)</span></h4>
+<p><strong>Open the other group’s charter</strong> from <a href="https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link"><code>Reproducible_Science &gt; Chapters &gt; Chapter_1 &gt; Part_B</code></a> — you review theirs, they review yours. Add your challenges as <strong>comments in their document</strong>, so they can see exactly which clause each objection lands on. Your job now is to be the sceptic:</p>
 <ol style="list-style-type: lower-alpha">
 <li><strong>Which clause breaks first</strong> when a deadline is three days away?</li>
 <li><strong>Which clause is unenforceable</strong> — how would anyone know it had been broken?</li>
 <li><strong>What is missing?</strong> Look at the retracted articles and Table <a href="#tab:retractionwatch">2.1</a> in <a href="#CaseStudies">Part A</a>: would this charter have prevented those retractions?</li>
 </ol>
-<p>Then hand it back with your challenges. <strong>Each lead answers the challenges to their own section</strong> — defend the clause, or concede and rewrite it. Both are good answers; neither is a loss.</p>
+<p>Then hand it back. <strong>Each lead answers the challenges to their own section</strong>, replying to the comments on their own clauses — defend the clause, or concede and rewrite it. Both are good answers; neither is a loss. The comment thread is worth keeping: it is a record of which standards survived scrutiny and which did not.</p>
 </div>
-<div id="revise-and-commit-10-minutes" class="section level4" number="2.5.3.6">
-<h4><span class="header-section-number">2.5.3.6</span> 5. Revise and commit <span style="color:dimgray;">(10 minutes)</span></h4>
+<div id="commitcharter" class="section level4" number="2.5.5.7">
+<h4><span class="header-section-number">2.5.5.7</span> ✅ Revise and Commit <span style="color:dimgray;">(15 minutes)</span></h4>
 <p>Revise your charter in the light of the challenges, then each student states, out loud, <strong>one clause from their own section that they will apply to their own project this semester</strong> — starting now, not in principle.</p>
 <p>We will keep the charters, and they will guide the rest of the course. What you have written today is developed in <a href="#chap4">Chapt. 4 – Open Science and CARE Principles</a>, in <a href="#partDM">Data Management</a> and <a href="#repcode">Reproducible Code</a> in Chapt. 5, and in <a href="#chap6">Chapt. 6 – Getting Published and Peer Review</a>. We will return to your charter as we go: each time, you should be able to take a clause you wrote today and say how you would now actually implement it.</p>
 <blockquote>
 💡 <b>Why a charter?</b> Diagnosing other people’s failures is comparatively easy. Deciding what <i>your</i> group will always do — knowing it will cost you something, and that colleagues can hold you to it — is what a research lead actually does. That is the skill this activity is for.
 </blockquote>
 </div>
-</div>
-<div id="PartBresources" class="section level3" number="2.5.4">
-<h3><span class="header-section-number">2.5.4</span> Resources</h3>
-<p>The PDFs of <span class="citation">Baker (<a href="#ref-Baker_2016">2016</a>)</span> and <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span> are available in our shared <a href="https://drive.google.com/drive/folders/13aOxsvVgyxA3sm8bf1RBXLvrR5nCHVhp?usp=drive_link">Google Drive</a> at the following paths:</p>
-<p><code>Reproducible_Science &gt; Publications &gt; Baker_Nature_2016.pdf</code><br />
-<code>Reproducible_Science &gt; Publications &gt; Reproducibility_and_Replicability_in_Science_2019.pdf</code></p>
-</div>
-<div id="PartBteaching" class="section level3" number="2.5.5">
-<h3><span class="header-section-number">2.5.5</span> Teaching Material</h3>
-<p>The presentation associated with this class is below. We work through it in <a href="#FactorsActivity">step 2 of the activity</a>, after you have committed to your own answers — and it is here afterwards for revision.</p>
-<!-- Container for the iframe and button -->
-<div style="text-align: center;">
-<button onclick="toggleFullScreen()">Toggle Full Screen</button>
-<iframe id="pdfFrame" src="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf" width="100%" height="600px" style="border:none;">
-<p>
-Your browser does not support PDFs. <a href="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf">Download the PDF</a>.
-</p>
-<p></iframe></p>
-</div>
-<script>
-function toggleFullScreen() {
-  var elem = document.getElementById("pdfFrame");
-  if (!document.fullscreenElement) {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { // Firefox
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // IE/Edge
-      elem.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-}
-</script>
-</div>
-<div id="NASEMrec" class="section level3" number="2.5.6">
-<h3><span class="header-section-number">2.5.6</span> Recommendations</h3>
-<p>The most relevant recommendations proposed by the <span class="citation">National Academies of Sciences and Medicine (<a href="#ref-NAP25303">2019</a>)</span> for our course are listed in the table below. It is searchable, so in <a href="#FactorsActivity">step 4 of the activity</a> you can look up the factor you were assigned rather than reading the whole table.</p>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-38783d4e083970032acf" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-38783d4e083970032acf">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["Reproducibility","The Extent of Non-Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Improving Reproducibility and Replicability in Research","Confidence in Science","Confidence in Science"],["R4-1","R5-1","R6-1","R6-2","R6-3","R6-6","R6-7","R7-1","R7-3"],["To help ensure the reproducibility of computational results, researchers should convey clear, specific, and complete information about any computational methods and data products that support their published results in order to enable other researchers to repeat the analysis, unless such information is restricted by nonpublic data policies","Researchers should, as applicable to the specific study, provide an accurate and appropriate characterization of relevant uncertainties when they report or publish their research. Researchers should thoughtfully communicate all recognized uncertainties and estimate or acknowledge other potential sources of uncertainty that bear on their results, including stochastic uncertainties and uncertainties in measurement, computation, knowledge, modeling, and methods of analysis","All researchers should include a clear, specific, and complete description of how the reported result was reached. Different areas of study or types of inquiry may require different kinds of information","Academic institutions and institutions managing scientific work such as industry and the national laboratories should include training in the proper use of statistical analysis and inference. Researchers who use statistical inference analyses should learn to use them properly","Funding agencies and organizations should consider investing in research and development of open-source, usable tools and infrastructure that support reproducibility for a broad range of studies across different domains in a seamless fashion. Concurrently, investments would be helpful in outreach to inform and train researchers on best practices and how to use these tools","Many stakeholders have a role to play in improving computational reproducibility, including educational institutions, professional societies, researchers, and funders","Journals and scientific societies requesting submissions for conferences should disclose their policies relevant to achieving reproducibility and replicability. The strength of the claims made in a journal article or conference submission should reflect the reproducibility and replicability standards to which an article is held, with stronger claims reserved for higher expected levels of reproducibility and replicability.","Scientists should take care to avoid overstating the implications of their research and also exercise caution in their review of press releases, especially when the results bear directly on matters of keen public interest and possible action","Anyone making personal or policy decisions based on scientific evidence should be wary of making a serious decision based on the results, no matter how promising, of a single study. Similarly, no one should take a new, single contrary study as refutation of scientific conclusions supported by multiple lines of previous evidence"],["That information should include the data, study methods, and computational environment: <strong>i<\/strong>) the input data used in the study either in extension (e.g., a text file or a binary) or in intension (e.g., a script to generate the data), as well as intermediate results and output data for steps that are nondeterministic and cannot be reproduced in principle; <strong>ii<\/strong>) a detailed description of the study methods (ideally in executable form) together with its computational steps and associated parameters; and <strong>iii<\/strong>) information about the computational environment where the study was originally executed, such as operating system, hardware architecture, and library dependencies. (Library dependency, in the context of research software as used here, is the relationship of pieces of software that are needed for another software to run. Problems often occur when installed software has dependencies on specific versions of other software.)","","Reports should include details appropriate for the type of research, including: <strong>i<\/strong>) a clear description of all methods, instruments, materials, procedures, measurements, and other variables involved in the study; <strong>ii<\/strong>) a clear description of the analysis of data and decisions for exclusion of some data and inclusion of other; <strong>iii<\/strong>) for results that depend on statistical inference, a description of the analytic decisions and when these decisions were made and whether the study is exploratory or confirmatory; <strong>iv<\/strong>) a discussion of the expected constraints on generality, such as which methodological features the authors think could be varied without affecting the result and which must remain constant; <strong>v<\/strong>) reporting of precision or statistical power; and <strong>vi<\/strong>) a discussion of the uncertainty of the measurements, results, and inferences.","","","<strong>i<\/strong>) Educational institutions should educate and train students and faculty about computational methods and tools to improve the quality of data and code and to produce reproducible research; <strong>ii<\/strong>) professional societies should take responsibility for educating the public and their professional members about the importance and limitations of computational research. Societies have an important role in educating the public about the evolving nature of science and the tools and methods that are used; <strong>iii<\/strong>) researchers should collaborate with expert colleagues when their education and training are not adequate to meet the computational requirements of their research; <strong>iv<\/strong>) in line with its priority for harnessing the data revolution, the National Science Foundation (and other funders) should consider funding of activities to promote computational reproducibility"," Journals and conference organizers are encouraged to: <strong>i<\/strong>) set and implement desired standards of reproducibility and replicability and make this one of their priorities, such as deciding which level they wish to achieve for each Transparency and Openness Promotion guideline and working toward that goal; <strong>ii<\/strong>) adopt policies to reduce the likelihood of non-replicability, such as considering incentives or requirements for research materials transparency, design, and analysis plan transparency, enhanced review of statistical methods, study or analysis plan preregistration, and replication studies; and <strong>iii<\/strong>) require as a review criterion that all research reports include a thoughtful discussion of the uncertainty in measurements and conclusions","",""],[7,10,13,13,14,15,15,18,19]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Topic<\/th>\n      <th>Rec...<\/th>\n      <th>Recommendation<\/th>\n      <th>Detailed.Recommendation<\/th>\n      <th>Page<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"pageLength":5,"columnDefs":[{"className":"dt-right","targets":4},{"name":"Topic","targets":0},{"name":"Rec...","targets":1},{"name":"Recommendation","targets":2},{"name":"Detailed.Recommendation","targets":3},{"name":"Page","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
-<hr style="border: 2px solid #333; margin: 2em 0;">
 </div>
 </div>
 </div>
@@ -5399,8 +5439,8 @@ data.tree::SetNodeStyle(myproj$R_functions, style = &quot;box&quot;, penwidth = 
 # Plot diagram
 plot(myproj)</code></pre>
 <div class="figure"><span style="display:block;" id="fig:plotProjStr"></span>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c3e8497d74a7051f8e69" style="width:576px;height:576px;"></div>
-<script type="application/json" data-for="htmlwidget-c3e8497d74a7051f8e69">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b01387a9f12fa14ab0f8" style="width:576px;height:576px;"></div>
+<script type="application/json" data-for="htmlwidget-b01387a9f12fa14ab0f8">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Project_ID\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Data\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"species_data.csv\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Figures_&_Tables\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Fig_01_Data_lifecycle.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"MS\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"MS_et_al.docx\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"Output\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"DataStr_network.html\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"DataStr_tree.pdf\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"R_functions\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"check.install.pkg.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"README.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"Reports\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"Documentation.md\", style = \"rounded\", shape = \"box\", penwidth = \"\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"Scripts\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"01_download_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"02_clean_data.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"03_exploratory_analyses.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"04_fit_models.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"05_generate_figures.R\", style = \"box\", shape = \"box\", penwidth = \"2px\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"11\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"13\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"14\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"1\"->\"16\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"4\"->\"5\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"8\"->\"10\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"11\"->\"12\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"14\"->\"15\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"17\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"18\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"19\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"20\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n\"16\"->\"21\" [arrowhead = \"vee\", color = \"grey\", penwidth = \"2px\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 6.6: Diagram of project structure for the Project_ID directory. Nodes representing folders and files associated to R code are symbolized by boxes, whereas the others are rounded.
 </p>
@@ -6180,8 +6220,8 @@ Figure 8.3: Snapshot showing files in the 01_Raw_Data folder that we will be tar
 <div id="list-of-r-functions-covered-in-this-chapter" class="section level2" number="8.6">
 <h2><span class="header-section-number">8.6</span> List of R functions covered in this chapter</h2>
 <p>The list of major R functions covered in this chapter are provided in the Table below.</p>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-97488ac8c3e80535a4f5" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-97488ac8c3e80535a4f5">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[{"name":"Function","targets":0},{"name":"Package","targets":1},{"name":"Purpose","targets":2}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-719db6615ce727d39e2d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-719db6615ce727d39e2d">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["dir.create","dir.exists","download.file","file.exists","file.size","grepl","paste","print","read.csv","round","source_data","strsplit","unz","which","write.csv"],["base","base","utils","base","base","base","base","base","utils","base","repmis","base","base","base","base"],["Create a New Directory","Check if Directory Exist","Download File from the Internet","Return a logical vector indicating whether the files named by its argument exist","Return size of file in bytes","Pattern Matching and Replacement","Concatenate Strings","Prints argument in function","Read CSV File","Rounding of Numbers","Load plain-text data and RData from a URL","Split the Elements of a Character Vector","Extract or List Zip Archives","Which indices are TRUE?","Write Object in CSV file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Function<\/th>\n      <th>Package<\/th>\n      <th>Purpose<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Blfrtip","buttons":["copy","csv","excel","pdf","print"],"columnDefs":[{"name":"Function","targets":0},{"name":"Package","targets":1},{"name":"Purpose","targets":2}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-weight':'bold'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <div id="getting-started" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Getting started!</h2>

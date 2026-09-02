@@ -364,11 +364,30 @@ Please don't look at the content of the box before we get here!
 </ul>
 </details>
 
+
 ## What Factors Break Reproducibility? {#WhatFacBreakRep}
 
-### Overview
+### Goal
 
-In Part B, we are further investigating the causes leading to irreproducible science and discussing ways to mitigate this crisis. For this purpose, we are using results from the survey published by @Baker_2016 and recommendations from the report published by the National Academies of Sciences, Engineering, and Medicine [@NAP25303]. 
+Part A asked what reproducible science *is*, and why it fails. Part B asks **which factors break it** --- and then does something about them.
+
+We work from two sources of evidence: the survey of 1,576 researchers published by @Baker_2016, which reports what the scientific community itself blames for irreproducible work, and the report of the National Academies of Sciences, Engineering, and Medicine [@NAP25303], which sets out what should be done about it.
+
+**The goal of Part B is to turn that evidence into a defence.** By the end of these two sessions your group will have written a **reproducibility charter**: a set of standards your research team commits to, each one chosen to block a specific factor known to break reproducible science. The diagnosis is where we start; the charter is what we are here to produce.
+
+### Class Outline
+
+The structure of this class, held over two sessions, is as follows:
+
+1. [What Do You Remember?](#recall) <span style="color:dimgray;">(10 minutes)</span>
+2. [Review the Resources](#reviewres) <span style="color:dimgray;">(10 minutes)</span>
+3. [The Factors, Together](#factors) <span style="color:dimgray;">(10 minutes)</span>
+4. [Draft Your Charter](#draftcharter) <span style="color:dimgray;">(30 minutes)</span>
+5. [Stress-Test Another Team's Charter](#stresstest) <span style="color:dimgray;">(20 minutes)</span>
+6. [Revise and Commit](#commitcharter) <span style="color:dimgray;">(15 minutes)</span>
+
+The first four sections will be covered during Session 1, while the remaining sections will be addressed in Session 2.  
+**Each group finishes its draft charter as homework between the two sessions**, because Session 2 opens with another group taking it apart (see [Draft Your Charter](#draftcharter)).
 
 ### Investigated Questions
 
@@ -381,6 +400,93 @@ We will be investigating the following questions:
 - What factors contribute to irreproducible research?
 - What can be done to mitigate the reproducible crisis?
 
+### Resources {#PartBresources}
+
+#### Publications {#PartBpubs}
+
+The PDFs of @Baker_2016 and @NAP25303 are available in our shared [Google Drive](https://drive.google.com/drive/folders/13aOxsvVgyxA3sm8bf1RBXLvrR5nCHVhp?usp=drive_link) at the following paths:
+
+`Reproducible_Science > Publications > Baker_Nature_2016.pdf`  
+`Reproducible_Science > Publications > Reproducibility_and_Replicability_in_Science_2019.pdf`
+
+
+#### Teaching Material {#PartBteaching}
+
+The presentation associated with this class is below. We work through it in [The Factors, Together](#factors), after you have committed to your own answers --- and it is here afterwards for revision.
+
+<!-- Container for the iframe and button -->
+<div style="text-align: center;">
+  <button onclick="toggleFullScreen()">Toggle Full Screen</button>
+  <iframe id="pdfFrame" src="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf" width="100%" height="600px" style="border:none;">
+    <p>Your browser does not support PDFs. <a href="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf">Download the PDF</a>.</p>
+  </iframe>
+</div>
+
+<script>
+function toggleFullScreen() {
+  var elem = document.getElementById("pdfFrame");
+  if (!document.fullscreenElement) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { // Firefox
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+      elem.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+</script>
+
+
+#### Recommendations {#NASEMrec}
+
+The most relevant recommendations proposed by the @NAP25303 for our course are listed in the table below. It is searchable, so in [Review the Resources](#reviewres) you can look up the three factors on your shortlist rather than reading the whole table.
+
+```{r recommendations, eval = T, echo = F, warning = FALSE, message = FALSE, escape = F}
+###~~~
+# Read in CSV with recommendations
+###~~~
+rec <- read.csv("Chapters_files/Chapter_1_B_National_Academies_Report_Recommendations.csv")
+rownames(rec) <- NULL
+###~~~
+# Preprocess Markdown to HTML
+###~~~
+# Function to convert Markdown bold (**text**) to HTML <strong>text</strong>
+convert_markdown_to_html <- function(text) {
+  if (is.na(text)) return(text)
+  # Replace **text** with <strong>text</strong>
+  gsub("\\*\\*(.*?)\\*\\*", "<strong>\\1</strong>", text)
+}
+
+# Apply conversion to all character columns (adjust based on your CSV structure)
+for (col in names(rec)[sapply(rec, is.character)]) {
+  rec[[col]] <- sapply(rec[[col]], convert_markdown_to_html)
+}
+###~~~
+# Plot timetable in doc
+###~~~
+# Plot table with HTML rendering
+DT::datatable(rec, 
+              extensions = 'Buttons',  # Remove Markdown extension
+              options = list(
+                dom = 'Blfrtip', 
+                buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+                pageLength = 5  # Set to display 5 rows by default
+              ), 
+              rownames = FALSE,
+              escape = FALSE) %>%  # Allow HTML rendering
+  DT::formatStyle('Topic', fontWeight = 'bold')
+```
+
+<hr style="border: 2px solid #333; margin: 2em 0;">
+
+
 ### 👥 Group Activity: Write Your Lab's Reproducibility Charter {#FactorsActivity}
 
 In this session we cover the material of Part B --- the survey evidence of @Baker_2016, the recommendations of @NAP25303, and the [questions listed above](#WhatFacBreakRep) --- and then put it to work. You will use it to write something of your own: a **reproducibility charter**.
@@ -392,6 +498,7 @@ A charter is not advice, and not a summary of good practice. Guidelines describe
 <br><br>
 Research groups, laboratories and consortia write these for exactly this reason --- so that standards survive a deadline, a new student, or a change of principal investigator, instead of living in one person's head.
 </blockquote>
+
 
 #### Why we are doing this
 
@@ -415,29 +522,55 @@ Work in **two groups of three**. Each group is a research team, and **every memb
 
 Between them these three cover the whole data life cycle, so nothing in the charter is unowned. **You are responsible for your section and you will be the one defending it**, so choose the role closest to the research you actually do --- or the one furthest from it, if you would rather learn something new.
 
-#### 1. What do you remember? <span style="color:dimgray;">(10 minutes)</span>
 
-You have read @Baker_2016 for today. **Without opening it**, agree as a group and write down:
+#### 🧠 What Do You Remember? <span style="color:dimgray;">(10 minutes)</span> {#recall}
 
-- of the 1,576 researchers surveyed, what share reported a *significant* crisis?
-- what proportion of published work in **your own field** do you believe is reproducible?
-- which **three factors** did respondents blame most often?
+**Books closed.** No paper, no slides, no notes, no laptops. You read @Baker_2016 for today, and this is where you find out how much of it stayed with you.
 
-**Commit to numbers.** Recalling something and getting it wrong fixes the correct answer in memory far better than reading it a second time does.
+Working as a group, agree on four answers and **write them on a single sheet**:
 
-Now check. Where were you furthest out, and which factor did you under-estimate?
+1. **The scale.** Of the 1,576 researchers surveyed, what share reported a *significant* reproducibility crisis? Give a percentage.
+2. **Your own field.** What proportion of published work in your field do you believe is reproducible? This one is not recall --- it is your own judgement, and there is no answer at the back of the book.
+3. **The causes.** Which **three factors** did respondents most often blame for irreproducible research? Name them as precisely as you can.
+4. **Your shortlist.** From those, a **provisional** list of the three factors you think are most dangerous to *your* research. Provisional because you are about to check your answers, and may want to change your mind.
 
-Finish this step by agreeing the **three factors your team judges most dangerous to your own research**. Those three are what your charter has to defend against.
+**Commit to specifics.** "Quite a lot of people" is not an answer; "about 70%" is. Recalling something and getting it wrong fixes the right answer in memory far better than reading it a second time does --- which is the whole point of doing this before you open anything.
 
-#### 2. The factors, together <span style="color:dimgray;">(5 minutes)</span>
+<blockquote>
+📄 <b>What you take out of this step:</b> one sheet per group, with four answers on it. You will mark it up in <a href="#reviewres">Review the Resources</a>, and your shortlist becomes what the charter has to defend against.
+</blockquote>
+
+
+#### 📖 Review the Resources <span style="color:dimgray;">(10 minutes)</span> {#reviewres}
+
+**Now confirm your answers against the evidence.** You have committed to four answers from memory; this step is where you find out which of them hold up. The PDFs are on our shared Google Drive as well as linked below.
+
+Work **individually, and in silence**. Go to [Resources](#PartBresources) and give each of the three a few minutes:
+
+- the [publications](#PartBpubs) --- check the figures you have just tried to recall, and read around the ones you got wrong;
+- the [teaching material](#PartBteaching) --- skim the slides for anything you have not already met;
+- the [recommendations](#NASEMrec) --- the table is searchable, so look up the three factors on your group's shortlist.
+
+Mark up your sheet as you go: correct the numbers you got wrong, and note which of your three factors you now want to keep, and which you want to swap.
+
+**Read with your own role in mind.** You will shortly be drafting as the data, analysis or reporting lead, and this is the only part of the session where you are reading rather than arguing --- so note down what you will want when it is your turn to write.
+
+By the end of this step your group should have a **corrected sheet and a settled shortlist** --- the evidence checked, the three factors chosen. That is everything the charter needs to be built on.
+
+#### 📊 The Factors, Together <span style="color:dimgray;">(10 minutes)</span> {#factors}
 
 I will take us through the factors that break reproducibility, drawing on the [slides](#PartBteaching) and on the recommendations of @NAP25303. Since you have read @Baker_2016 already, this is a short synthesis rather than a walk through the paper.
 
-Keep your three factors in front of you: if something named here is not on your list, add it --- your charter is about to have to deal with it.
+Keep the three factors from the [previous step](#recall) in front of you: if something named here is not on your list, add it --- your charter is about to have to deal with it.
 
-#### 3. Draft the charter <span style="color:dimgray;">(20 minutes)</span>
 
-Each lead drafts the clauses for their own section. Between you, the charter must address all three factors from step 1, and you may consult the [recommendations table](#NASEMrec) for wording and for what others have proposed.
+#### ✍️ Draft Your Charter <span style="color:dimgray;">(30 minutes)</span> {#draftcharter}
+
+**Write it in a shared document.** Before you start, one member of each group creates a **Google Doc** (preferred, because all three of you can type in it at once) or a **Word document**, names it `Charter_Group1` or `Charter_Group2`, and saves it in our shared Google Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). Give it three headings --- **Data**, **Analysis**, **Reporting** --- and each lead writes under their own.
+
+Keeping it in that folder is what makes the rest of the activity work: it is how the three of you draft together, how you carry on after class, and how the other group opens your charter to stress-test it.
+
+Each lead drafts the clauses for their own section. Between you, the charter must address all three factors from the [first step](#recall), and you may consult the [recommendations table](#NASEMrec) for wording and for what others have proposed.
 
 **Be ready to say where each clause comes from** --- a failure you saw in [Part A](#CaseStudies), a factor reported by @Baker_2016, or a recommendation from @NAP25303. A clause nobody can source is usually a habit, not a standard.
 
@@ -484,17 +617,22 @@ For each clause, be ready to say **what it costs** --- in time, in effort, or in
 
 </details>
 
-#### 4. Stress-test another team's charter <span style="color:dimgray;">(15 minutes)</span>
+<blockquote>
+📌 <b>Before Session 2:</b> finish the draft. You are not expected to leave today with a complete charter --- you are expected to leave with every section started and the hard arguments had. Each lead completes their own clauses as homework <b>in the shared document</b>, so the group arrives with <b>one agreed draft</b> rather than three sets of notes. Have it finished before the next session starts --- the other group opens it straight away.
+</blockquote>
 
-Swap charters with the other group --- you review theirs, they review yours. Your job now is to be the sceptic:
+#### 🔍 Stress-Test Another Team's Charter <span style="color:dimgray;">(20 minutes)</span> {#stresstest}
+
+**Open the other group's charter** from [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link) --- you review theirs, they review yours. Add your challenges as **comments in their document**, so they can see exactly which clause each objection lands on. Your job now is to be the sceptic:
 
 a. **Which clause breaks first** when a deadline is three days away?
 b. **Which clause is unenforceable** --- how would anyone know it had been broken?
 c. **What is missing?** Look at the retracted articles and Table \@ref(tab:retractionwatch) in [Part A](#CaseStudies): would this charter have prevented those retractions?
 
-Then hand it back with your challenges. **Each lead answers the challenges to their own section** --- defend the clause, or concede and rewrite it. Both are good answers; neither is a loss.
+Then hand it back. **Each lead answers the challenges to their own section**, replying to the comments on their own clauses --- defend the clause, or concede and rewrite it. Both are good answers; neither is a loss. The comment thread is worth keeping: it is a record of which standards survived scrutiny and which did not.
 
-#### 5. Revise and commit <span style="color:dimgray;">(10 minutes)</span>
+
+#### ✅ Revise and Commit <span style="color:dimgray;">(15 minutes)</span> {#commitcharter}
 
 Revise your charter in the light of the challenges, then each student states, out loud, **one clause from their own section that they will apply to their own project this semester** --- starting now, not in principle.
 
@@ -504,87 +642,6 @@ We will keep the charters, and they will guide the rest of the course. What you 
 💡 <b>Why a charter?</b> Diagnosing other people's failures is comparatively easy. Deciding what <i>your</i> group will always do --- knowing it will cost you something, and that colleagues can hold you to it --- is what a research lead actually does. That is the skill this activity is for.
 </blockquote>
 
-### Resources {#PartBresources}
-
-The PDFs of @Baker_2016 and @NAP25303 are available in our shared [Google Drive](https://drive.google.com/drive/folders/13aOxsvVgyxA3sm8bf1RBXLvrR5nCHVhp?usp=drive_link) at the following paths:
-
-`Reproducible_Science > Publications > Baker_Nature_2016.pdf`  
-`Reproducible_Science > Publications > Reproducibility_and_Replicability_in_Science_2019.pdf`
-
-### Teaching Material {#PartBteaching}
-
-The presentation associated with this class is below. We work through it in [step 2 of the activity](#FactorsActivity), after you have committed to your own answers --- and it is here afterwards for revision.
-
-<!-- Container for the iframe and button -->
-<div style="text-align: center;">
-  <button onclick="toggleFullScreen()">Toggle Full Screen</button>
-  <iframe id="pdfFrame" src="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf" width="100%" height="600px" style="border:none;">
-    <p>Your browser does not support PDFs. <a href="Chapters_files/Chapter_1_Part_B_Reproducibility_crisis.pdf">Download the PDF</a>.</p>
-  </iframe>
-</div>
-
-<script>
-function toggleFullScreen() {
-  var elem = document.getElementById("pdfFrame");
-  if (!document.fullscreenElement) {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { // Firefox
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // IE/Edge
-      elem.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-}
-</script>
-
-### Recommendations {#NASEMrec}
-
-The most relevant recommendations proposed by the @NAP25303 for our course are listed in the table below. It is searchable, so in [step 4 of the activity](#FactorsActivity) you can look up the factor you were assigned rather than reading the whole table.
-
-```{r recommendations, eval = T, echo = F, warning = FALSE, message = FALSE, escape = F}
-###~~~
-# Read in CSV with recommendations
-###~~~
-rec <- read.csv("Chapters_files/Chapter_1_B_National_Academies_Report_Recommendations.csv")
-rownames(rec) <- NULL
-###~~~
-# Preprocess Markdown to HTML
-###~~~
-# Function to convert Markdown bold (**text**) to HTML <strong>text</strong>
-convert_markdown_to_html <- function(text) {
-  if (is.na(text)) return(text)
-  # Replace **text** with <strong>text</strong>
-  gsub("\\*\\*(.*?)\\*\\*", "<strong>\\1</strong>", text)
-}
-
-# Apply conversion to all character columns (adjust based on your CSV structure)
-for (col in names(rec)[sapply(rec, is.character)]) {
-  rec[[col]] <- sapply(rec[[col]], convert_markdown_to_html)
-}
-###~~~
-# Plot timetable in doc
-###~~~
-# Plot table with HTML rendering
-DT::datatable(rec, 
-              extensions = 'Buttons',  # Remove Markdown extension
-              options = list(
-                dom = 'Blfrtip', 
-                buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
-                pageLength = 5  # Set to display 5 rows by default
-              ), 
-              rownames = FALSE,
-              escape = FALSE) %>%  # Allow HTML rendering
-  DT::formatStyle('Topic', fontWeight = 'bold')
-```
-
-<hr style="border: 2px solid #333; margin: 2em 0;">
 
 # Chapt. 2 -- R, R Markdown and User-Defined Functions {#chap2}
 ## Introduction
