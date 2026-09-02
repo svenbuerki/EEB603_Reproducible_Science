@@ -381,16 +381,139 @@ We will be investigating the following questions:
 - What factors contribute to irreproducible research?
 - What can be done to mitigate the reproducible crisis?
 
-### Resources
+### 👥 Group Activity: Write Your Lab's Reproducibility Charter {#FactorsActivity}
+
+In this session we cover the material of Part B --- the survey evidence of @Baker_2016, the recommendations of @NAP25303, and the [questions listed above](#WhatFacBreakRep) --- and then put it to work. You will use it to write something of your own: a **reproducibility charter**.
+
+<blockquote>
+📜 <b>Charter</b> <i>(noun)</i> --- a short written document in which a group sets out the standards it binds <i>itself</i> to.
+<br><br>
+A charter is not advice, and not a summary of good practice. Guidelines describe what researchers in general ought to do; a charter states what <b>this group will always do</b>. Three things follow from that: it is written by the people who will be held to it, each commitment is specific enough that somebody else can tell whether it was kept, and it is public within the group, so colleagues can point to it when it is not.
+<br><br>
+Research groups, laboratories and consortia write these for exactly this reason --- so that standards survive a deadline, a new student, or a change of principal investigator, instead of living in one person's head.
+</blockquote>
+
+#### Why we are doing this
+
+**You already have the evidence you need.** Three things feed this charter, and every clause you write should be traceable to one of them:
+
+1. **What you saw in [Part A](#WhatRepSci).** You examined retracted articles and the reasons behind their retractions (Table \@ref(tab:retractionwatch)). Those are documented failures --- your charter should make them harder to repeat.
+2. **What the field reports.** @Baker_2016 tells you which factors researchers themselves blame most often. A charter that ignores the commonest causes is not serious.
+3. **What has been recommended.** @NAP25303 sets out what the National Academies concluded should change. You can adopt, adapt or argue with it, but you should know what it says.
+
+**The test for every clause is whether it supports the scientific process** --- whether it makes it more likely that a claim you publish can be checked, repeated and built on by somebody else. That is what reproducibility is *for*. A standard that is merely tidy, or that only makes your own life easier, is not yet a reproducibility standard.
+
+**And this is not a one-off exercise.** Nearly everything you write today --- data management, documentation, reproducible code, version control, deposition, citation --- is developed properly later in this course. Your charter is therefore a **map of where we are going**: at the end of the semester you should be able to return to it and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.
+
+Work in **two groups of three**. Each group is a research team, and **every member owns one section of the charter**:
+
+| Role | Owns the standards for |
+|---|---|
+| **Data lead** | How data are generated and recorded: protocols, field and laboratory notes, file naming, storage, backup and metadata |
+| **Analysis lead** | Code and statistics: the analysis plan, what is decided before the data are seen, and how an analysis is made re-runnable |
+| **Reporting lead** | What leaves the group: what is deposited and when, how results and limitations are reported, and how data, software and sources are cited |
+
+Between them these three cover the whole data life cycle, so nothing in the charter is unowned. **You are responsible for your section and you will be the one defending it**, so choose the role closest to the research you actually do --- or the one furthest from it, if you would rather learn something new.
+
+#### 1. What do you remember? <span style="color:dimgray;">(10 minutes)</span>
+
+You have read @Baker_2016 for today. **Without opening it**, agree as a group and write down:
+
+- of the 1,576 researchers surveyed, what share reported a *significant* crisis?
+- what proportion of published work in **your own field** do you believe is reproducible?
+- which **three factors** did respondents blame most often?
+
+**Commit to numbers.** Recalling something and getting it wrong fixes the correct answer in memory far better than reading it a second time does.
+
+Now check. Where were you furthest out, and which factor did you under-estimate?
+
+Finish this step by agreeing the **three factors your team judges most dangerous to your own research**. Those three are what your charter has to defend against.
+
+#### 2. The factors, together <span style="color:dimgray;">(5 minutes)</span>
+
+I will take us through the factors that break reproducibility, drawing on the [slides](#PartBteaching) and on the recommendations of @NAP25303. Since you have read @Baker_2016 already, this is a short synthesis rather than a walk through the paper.
+
+Keep your three factors in front of you: if something named here is not on your list, add it --- your charter is about to have to deal with it.
+
+#### 3. Draft the charter <span style="color:dimgray;">(20 minutes)</span>
+
+Each lead drafts the clauses for their own section. Between you, the charter must address all three factors from step 1, and you may consult the [recommendations table](#NASEMrec) for wording and for what others have proposed.
+
+**Be ready to say where each clause comes from** --- a failure you saw in [Part A](#CaseStudies), a factor reported by @Baker_2016, or a recommendation from @NAP25303. A clause nobody can source is usually a habit, not a standard.
+
+**The standard is that a clause must be checkable.** Somebody outside your group should be able to tell whether you followed it:
+
+- ❌ *"We will document our data well."*
+- ✅ *"Every dataset has a README recording who collected it, when, with what instrument, and what each column means, written before the data leave the field laptop."*
+
+For each clause, be ready to say **what it costs** --- in time, in effort, or in freedom to change your mind later. A standard nobody can afford is a standard nobody will keep.
+
+**You are not starting from nothing.** The box below gives each lead a set of questions to work through, one worked example to show the level of detail expected, and where to look in the course material. Aim for **two or three clauses per section** --- six to nine in total is a charter; twenty is a wish-list.
+
+<details>
+<summary><b>🧭 Starting points for each section</b></summary>
+
+<p><b>Everyone:</b> the four strategies in <a href="#WrapUp">Wrap-up and Future Directions</a> --- detailed protocols, laboratory notebooks, version control, and data and code repositories --- are the obvious backbone. Your charter should say something about each of them, in the section where it belongs.</p>
+
+<p><b>📊 Data lead</b> --- see <a href="#partDM">Data Management</a> (Chapt. 5) and the data life cycle: create, process, document, preserve, share, reuse.</p>
+<ul>
+  <li>Where do raw data live the moment they are created, and where is the second copy?</li>
+  <li>How would somebody who was not there know what each file, and each column, contains?</li>
+  <li>What has to be written down <em>at the time</em> because it cannot be reconstructed later?</li>
+  <li>What happens to the raw file once cleaning starts?</li>
+</ul>
+<p><em>Example clause:</em> "Raw data are never edited. All cleaning happens in a script, and the raw file is kept read-only."</p>
+
+<p><b>💻 Analysis lead</b> --- see <a href="#repcode">Reproducible Code</a> (Chapt. 5).</p>
+<ul>
+  <li>Which decisions in an analysis get made <em>after</em> seeing the data, and which should be fixed before?</li>
+  <li>If your laptop disappeared tomorrow, what would somebody need in order to re-run your analysis?</li>
+  <li>How do you record which version of which software produced a given result?</li>
+  <li>How does a number in your manuscript get traced back to the code that produced it?</li>
+</ul>
+<p><em>Example clause:</em> "Every figure and table in a manuscript is produced by code that runs from the raw data with a single command."</p>
+
+<p><b>📢 Reporting lead</b> --- see <a href="#chap4">Open Science and CARE Principles</a> and <a href="#getpub">Getting Published</a>.</p>
+<ul>
+  <li>What must a reader have in order to check your central claim for themselves?</li>
+  <li><em>When</em> does that become available --- at submission, at acceptance, on request, or never?</li>
+  <li>How are data, code and software credited, and who is an author?</li>
+  <li>What do you report when an analysis did not work, or was abandoned?</li>
+</ul>
+<p><em>Example clause:</em> "Data and code are deposited before submission, not after acceptance, and every software package is cited with its version."</p>
+
+</details>
+
+#### 4. Stress-test another team's charter <span style="color:dimgray;">(15 minutes)</span>
+
+Swap charters with the other group --- you review theirs, they review yours. Your job now is to be the sceptic:
+
+a. **Which clause breaks first** when a deadline is three days away?
+b. **Which clause is unenforceable** --- how would anyone know it had been broken?
+c. **What is missing?** Look at the retracted articles and Table \@ref(tab:retractionwatch) in [Part A](#CaseStudies): would this charter have prevented those retractions?
+
+Then hand it back with your challenges. **Each lead answers the challenges to their own section** --- defend the clause, or concede and rewrite it. Both are good answers; neither is a loss.
+
+#### 5. Revise and commit <span style="color:dimgray;">(10 minutes)</span>
+
+Revise your charter in the light of the challenges, then each student states, out loud, **one clause from their own section that they will apply to their own project this semester** --- starting now, not in principle.
+
+We will keep the charters, and they will guide the rest of the course. What you have written today is developed in [Chapt. 4 -- Open Science and CARE Principles](#chap4), in [Data Management](#partDM) and [Reproducible Code](#repcode) in Chapt. 5, and in [Chapt. 6 -- Getting Published and Peer Review](#chap6). We will return to your charter as we go: each time, you should be able to take a clause you wrote today and say how you would now actually implement it.
+
+<blockquote>
+💡 <b>Why a charter?</b> Diagnosing other people's failures is comparatively easy. Deciding what <i>your</i> group will always do --- knowing it will cost you something, and that colleagues can hold you to it --- is what a research lead actually does. That is the skill this activity is for.
+</blockquote>
+
+### Resources {#PartBresources}
 
 The PDFs of @Baker_2016 and @NAP25303 are available in our shared [Google Drive](https://drive.google.com/drive/folders/13aOxsvVgyxA3sm8bf1RBXLvrR5nCHVhp?usp=drive_link) at the following paths:
 
 `Reproducible_Science > Publications > Baker_Nature_2016.pdf`  
 `Reproducible_Science > Publications > Reproducibility_and_Replicability_in_Science_2019.pdf`
 
-### Teaching Material
+### Teaching Material {#PartBteaching}
 
-The presentation associated with this class is available here:
+The presentation associated with this class is below. We work through it in [step 2 of the activity](#FactorsActivity), after you have committed to your own answers --- and it is here afterwards for revision.
 
 <!-- Container for the iframe and button -->
 <div style="text-align: center;">
@@ -421,9 +544,9 @@ function toggleFullScreen() {
 }
 </script>
 
-### Recommendations
+### Recommendations {#NASEMrec}
 
-The most relevant recommendations proposed by the @NAP25303 for our course are listed in the table below.
+The most relevant recommendations proposed by the @NAP25303 for our course are listed in the table below. It is searchable, so in [step 4 of the activity](#FactorsActivity) you can look up the factor you were assigned rather than reading the whole table.
 
 ```{r recommendations, eval = T, echo = F, warning = FALSE, message = FALSE, escape = F}
 ###~~~
