@@ -141,12 +141,14 @@ dl_date <- function(pattern) {
 }
 
 ###~~~
-# Sign-up deadline for the bioinformatics tutorial chapters. The syllabus says
-# "during the first two weeks", so this is the last class session of week 2 --
-# derived rather than typed, so it follows the academic calendar automatically.
+# Sign-up deadline for the bioinformatics tutorial chapters: the start of the
+# first class of week 3, which is the session whose homework asks students to
+# have signed up. Derived rather than typed, so it follows the academic
+# calendar automatically. The syllabus deliberately gives no date and points
+# here instead, so there is only one place to change it.
 ###~~~
 SHEET <- "https://docs.google.com/spreadsheets/d/1gUwbqJ4gbhhSY1DfsZ7HsoDLzOKB-57xAAC1_IJ3qmk/edit?usp=sharing"
-signup_date <- format(max(datesclass$Date[datesclass$WeekID == 2]), "%Y-%m-%d")
+signup_date <- format(min(datesclass$Date[datesclass$WeekID == 3]), "%Y-%m-%d")
 
 ###~~~
 # Chapters I teach myself rather than assigning to a student group -- set by
@@ -197,7 +199,7 @@ deadlines <- data.frame(
     dl_date("Upload slides"),
     paste(format(tail(datesclass$Date, 2), "%Y-%m-%d"), collapse = " & "),
     ""),
-  Time = c("5 PM MT", "5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
+  Time = c("before class", "5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
   `Evaluation form` = c(
     "--",
     rubric("Project_Proposal_Evaluation_Form.pdf"),
@@ -295,10 +297,18 @@ timetable$Completed <- ifelse(is.na(done) | done == "" | toupper(done) == "NA",
 #Some editing to better print table in pdf doc
 timetable <- as.matrix(timetable)
 rownames(timetable) <- rep("", nrow(timetable))
+
+###~~~
+# The Homework column uses <ul>/<li> markup so that multi-part homework reads as
+# a list rather than a run-on sentence. kable escapes html in cells by default,
+# which would print the tags literally, so we render with escape = FALSE and
+# escape bare ampersands ourselves (several Topic cells contain "&").
+###~~~
+timetable[] <- gsub("&(?![A-Za-z]+;|#[0-9]+;)", "&amp;", timetable, perl = TRUE)
 ###~~~
 #Plot timetable in doc
 ###~~~
-knitr::kable(timetable,  caption = "Tentative schedule for EEB603 Reproducible Science, Fall 2026 semester.", format = "html") %>%
+knitr::kable(timetable,  caption = "Tentative schedule for EEB603 Reproducible Science, Fall 2026 semester.", format = "html", escape = FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
 #PDF
