@@ -369,17 +369,17 @@ Please don't look at the content of the box before we get here!
 
 ### Goal
 
-Part A asked what reproducible science *is*, and why it fails. Part B asks **which factors break it** --- and then does something about them.
+In Part A, we investigated what reproducible science *is*, and why it fails. In Part B, we ask **which factors break it** --- and then we do something about them.
 
 We work from two sources of evidence: the survey of 1,576 researchers published by @Baker_2016, which reports what the scientific community itself blames for irreproducible work, and the report of the National Academies of Sciences, Engineering, and Medicine [@NAP25303], which sets out what should be done about it.
 
-**The goal of Part B is to turn that evidence into a defence.** By the end of these two sessions your group will have written a **reproducibility charter**: a set of standards your research team commits to, each one chosen to block a specific factor known to break reproducible science. The diagnosis is where we start; the charter is what we are here to produce.
+**The goal of Part B is to turn that evidence into a defence.** By the end of these two sessions your group will have produced one deliverable: a **[reproducibility charter](#draftcharter)** --- a set of standards your research team commits to, each one chosen to block a specific factor known to break reproducible science. It is a short shared document, and if you want to see what a standard actually looks like before we begin, there are [worked examples of charter clauses](#chartertemplate) further down. The diagnosis is where we start; the charter is what we are here to produce.
 
 **Your charter opens by saying what it is for.** Before any of the standards, it states in three lines what your group means by *reproducible science*, and what distinguishes *reproducibility* from *replicability* --- the definitions you worked on in [Part A](#IntroDef). A charter that sets standards without saying what they are for is just a list of rules; those three lines are what the rules are in service of, which is why they sit at the top. Everything below them has to earn its place by serving them.
 
 ### Class Outline
 
-The structure of this class, held over two sessions, is as follows:
+This class is run as a single [**group activity**](#FactorsActivity) --- writing your group's reproducibility charter --- held over two sessions and divided as follows:
 
 1. [What Do You Remember?](#recall) <span style="color:dimgray;">(10 minutes)</span>
 2. [Review the Resources](#reviewres) <span style="color:dimgray;">(10 minutes)</span>
@@ -390,6 +390,8 @@ The structure of this class, held over two sessions, is as follows:
 
 The first four sections will be covered during Session 1, while the remaining sections will be addressed in Session 2.  
 **Each group finishes its draft charter as homework between the two sessions, and adds a short block of definitions at the top**, because Session 2 opens with another group taking it apart (see [Draft Your Charter](#draftcharter)).
+
+Every one of these sections draws on the [**Resources**](#PartBresources) set out below: the two **publications**, the **teaching material**, and the **recommendations** of the National Academies. They are the evidence this class is built on --- you will check your own answers against them in [Review the Resources](#reviewres), and draw on them again for every clause you write into your charter.
 
 ### Investigated Questions
 
@@ -585,7 +587,7 @@ For each clause, be ready to say **what it costs** --- in time, in effort, or in
 
 **You are not starting from nothing.** The box below gives each lead a set of questions to work through, one worked example to show the level of detail expected, and where to look in the course material. Aim for **two or three clauses per section** --- six to nine in total is a charter; twenty is a wish-list. The three definitions go at the top, and are written as homework once the clauses are settled.
 
-<details>
+<details id="chartertemplate">
 <summary><b>🧭 Starting points for each section</b></summary>
 
 <p><b>📜 Definitions</b> --- completed as homework, see <a href="#IntroDef">Introduction and Definitions</a> in Part A. One line each for <i>reproducible science</i>, <i>reproducibility</i> and <i>replicability</i>, in your own words. Write them <b>after</b> your clauses, not before: it is far easier to say what your standards are for once you can see what they actually are.</p>
