@@ -369,24 +369,25 @@ Please don't look at the content of the box before we get here!
 
 ### Goal
 
-In Part A, we investigated what reproducible science *is*, and why it fails. In Part B, we ask **which factors break it** --- and then we do something about them.
+In Part A, we investigated what reproducible science *is*, and why it fails. In Part B, we ask **which factors break it**, and then we do something about them.
 
 We work from two sources of evidence: the survey of 1,576 researchers published by @Baker_2016, which reports what the scientific community itself blames for irreproducible work, and the report of the National Academies of Sciences, Engineering, and Medicine [@NAP25303], which sets out what should be done about it.
 
 **The goal of Part B is to turn that evidence into a defence.** By the end of these two sessions your group will have produced one deliverable: a **[reproducibility charter](#draftcharter)** --- a set of standards your research team commits to, each one chosen to block a specific factor known to break reproducible science. It is a short shared document, and if you want to see what a standard actually looks like before we begin, there are [worked examples of charter clauses](#chartertemplate) further down. The diagnosis is where we start; the charter is what we are here to produce.
 
-**Your charter opens by saying what it is for.** Before any of the standards, it states in three lines what your group means by *reproducible science*, and what distinguishes *reproducibility* from *replicability* --- the definitions you worked on in [Part A](#IntroDef). A charter that sets standards without saying what they are for is just a list of rules; those three lines are what the rules are in service of, which is why they sit at the top. Everything below them has to earn its place by serving them.
+**Your charter opens by saying what it is for.** Before any of the standards, it states in three lines what your group means by *reproducible science*, and what distinguishes *reproducibility* from *replicability* (the definitions you worked on in [Part A](#IntroDef)). A charter that sets standards without saying what they are for is just a list of rules; those three lines are what the rules are in service of, which is why they sit at the top. Everything below them has to earn its place by serving them.
 
 ### Class Outline
 
-This class is run as a single [**group activity**](#FactorsActivity) --- writing your group's reproducibility charter --- held over two sessions and divided as follows:
+This class is run as a single [**group activity**](#FactorsActivity) (writing your group's reproducibility charter) held over two sessions and divided as follows:
 
-1. [What Do You Remember?](#recall) <span style="color:dimgray;">(10 minutes)</span>
-2. [Review the Resources](#reviewres) <span style="color:dimgray;">(10 minutes)</span>
-3. [The Factors, Together](#factors) <span style="color:dimgray;">(10 minutes)</span>
-4. [Draft Your Charter](#draftcharter) <span style="color:dimgray;">(30 minutes)</span>
-5. [Stress-Test Another Team's Charter](#stresstest) <span style="color:dimgray;">(20 minutes)</span>
-6. [Revise and Commit](#commitcharter) <span style="color:dimgray;">(15 minutes)</span>
+1. [Overview of the Group Activity](#FactorsActivity) <span style="color:dimgray;">(10 minutes)</span>
+2. [What Do You Remember?](#recall) <span style="color:dimgray;">(10 minutes)</span>
+3. [Review the Resources](#reviewres) <span style="color:dimgray;">(10 minutes)</span>
+4. [The Factors, Together](#factors) <span style="color:dimgray;">(10 minutes)</span>
+5. [Draft Your Charter](#draftcharter) <span style="color:dimgray;">(30 minutes)</span>
+6. [Stress-Test Another Team's Charter](#stresstest) <span style="color:dimgray;">(20 minutes)</span>
+7. [Revise and Commit](#commitcharter) <span style="color:dimgray;">(15 minutes)</span>
 
 The first four sections will be covered during Session 1, while the remaining sections will be addressed in Session 2.  
 **Each group finishes its draft charter as homework between the two sessions, and adds a short block of definitions at the top**, because Session 2 opens with another group taking it apart (see [Draft Your Charter](#draftcharter)).
@@ -493,7 +494,7 @@ DT::datatable(rec,
 
 ### 👥 Group Activity: Write Your Lab's Reproducibility Charter {#FactorsActivity}
 
-In this session we cover the material of Part B --- the survey evidence of @Baker_2016, the recommendations of @NAP25303, and the [questions listed above](#WhatFacBreakRep) --- and then put it to work. You will use it to write something of your own: a **reproducibility charter**.
+In this session we cover the material of Part B (the survey evidence of @Baker_2016, the recommendations of @NAP25303, and the [questions listed above](#WhatFacBreakRep)) and then put it to work. You will use it to write something of your own: a **reproducibility charter**.
 
 <blockquote>
 📜 <b>Charter</b> <i>(noun)</i> --- a short written document in which a group sets out the standards it binds <i>itself</i> to.
@@ -512,9 +513,9 @@ Research groups, laboratories and consortia write these for exactly this reason 
 2. **What the field reports.** @Baker_2016 tells you which factors researchers themselves blame most often. A charter that ignores the commonest causes is not serious.
 3. **What has been recommended.** @NAP25303 sets out what the National Academies concluded should change. You can adopt, adapt or argue with it, but you should know what it says.
 
-**The test for every clause is whether it supports the scientific process** --- whether it makes it more likely that a claim you publish can be checked, repeated and built on by somebody else. That is what reproducibility is *for*. A standard that is merely tidy, or that only makes your own life easier, is not yet a reproducibility standard.
+**The test for every clause is whether it supports the [scientific process](#scientificprocess)** --- whether it makes it more likely that a claim you publish can be checked, repeated and built on by somebody else. That is what reproducibility is *for*. A standard that is merely tidy, or that only makes your own life easier, is not yet a reproducibility standard.
 
-**And this is not a one-off exercise.** Nearly everything you write today --- data management, documentation, reproducible code, version control, deposition, citation --- is developed properly later in this course. Your charter is therefore a **map of where we are going**: at the end of the semester you should be able to return to it and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.
+**And this is not a one-off exercise.** Nearly everything you write today (data management, documentation, reproducible code, version control, deposition, citation) is developed properly later in this course. Your charter is therefore a **map of where we are going**: at the end of the semester you should be able to return to it and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.
 
 Work in **two groups of three**. Each group is a research team, and **every member owns one section of the charter**:
 
