@@ -571,20 +571,20 @@ Keep the three factors from the [previous step](#recall) in front of you: if som
 
 #### ✍️ Draft Your Charter <span style="color:dimgray;">(30 minutes)</span> {#draftcharter}
 
-**Write it in a shared document.** Before you start, one member of each group creates a **Google Doc** (preferred, because all three of you can type in it at once) or a **Word document**, names it `Charter_Group1` or `Charter_Group2`, and saves it in our shared Google Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). Give it four headings --- **Definitions**, **Data**, **Analysis**, **Reporting**. Each lead writes under their own section today; the **Definitions** block is completed as homework (see the end of this step).
+**Write it in a shared document.** Before you start, one member of each group creates a **Google Doc** (preferred, because all three of you can type in it at once) or a **Word document**, names it `Charter_Group1` or `Charter_Group2`, and saves it in our shared Google Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). Give it four headings: (i) **Definitions**, (ii) **Data**, (iii) **Analysis**, and (iv) **Reporting**. Each lead writes under their own section today; the **Definitions** block is completed as homework (see the end of this step).
 
 Keeping it in that folder is what makes the rest of the activity work: it is how the three of you draft together, how you carry on after class, and how the other group opens your charter to stress-test it.
 
 Each lead drafts the clauses for their own section. Between you, the charter must address all three factors from the [first step](#recall), and you may consult the [recommendations table](#NASEMrec) for wording and for what others have proposed.
 
-**Be ready to say where each clause comes from** --- a failure you saw in [Part A](#CaseStudies), a factor reported by @Baker_2016, or a recommendation from @NAP25303. A clause nobody can source is usually a habit, not a standard.
+**Be ready to say where each clause comes from**: a failure you saw in [Part A](#CaseStudies), a factor reported by @Baker_2016, or a recommendation from @NAP25303. A clause nobody can source is usually a habit, not a standard.
 
 **The standard is that a clause must be checkable.** Somebody outside your group should be able to tell whether you followed it:
 
 - ❌ *"We will document our data well."*
 - ✅ *"Every dataset has a README recording who collected it, when, with what instrument, and what each column means, written before the data leave the field laptop."*
 
-For each clause, be ready to say **what it costs** --- in time, in effort, or in freedom to change your mind later. A standard nobody can afford is a standard nobody will keep.
+For each clause, be ready to say **what it costs** in time, in effort, or in freedom to change your mind later. A standard nobody can afford is a standard nobody will keep.
 
 **You are not starting from nothing.** The box below gives each lead a set of questions to work through, one worked example to show the level of detail expected, and where to look in the course material. Aim for **two or three clauses per section** --- six to nine in total is a charter; twenty is a wish-list. The three definitions go at the top, and are written as homework once the clauses are settled.
 
