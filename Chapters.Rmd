@@ -388,8 +388,9 @@ This class is run as a single [**group activity**](#FactorsActivity) (writing yo
 5. [Draft Your Charter](#draftcharter) <span style="color:dimgray;">(30 minutes)</span>
 6. [Stress-Test Another Team's Charter](#stresstest) <span style="color:dimgray;">(20 minutes)</span>
 7. [Revise and Commit](#commitcharter) <span style="color:dimgray;">(15 minutes)</span>
+8. [Build the Class Charter](#classcharter) <span style="color:dimgray;">(10 minutes)</span>
 
-The first four sections will be covered during Session 1, while the remaining sections will be addressed in Session 2.  
+The first five sections will be covered during Session 1, while the remaining three will be addressed in Session 2.  
 **Each group finishes its draft charter as homework between the two sessions, and adds a short block of definitions at the top**, because Session 2 opens with another group taking it apart (see [Draft Your Charter](#draftcharter)).
 
 Every one of these sections draws on the [**Resources**](#PartBresources) set out below: the two **publications**, the **teaching material**, and the **recommendations** of the National Academies. They are the evidence this class is built on --- you will check your own answers against them in [Review the Resources](#reviewres), and draw on them again for every clause you write into your charter.
@@ -638,40 +639,79 @@ Use the definitions you worked on in class in <a href="#IntroDef">Introduction a
 
 #### 🔍 Stress-Test Another Team's Charter <span style="color:dimgray;">(20 minutes)</span> {#stresstest}
 
-**Open the other group's charter** from [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link) --- you review theirs, they review yours. Add your challenges as **comments in their document**, so they can see exactly which clause each objection lands on. Your job now is to be the sceptic:
+**Open the other group's charter** from [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link) --- you review theirs, they review yours.
 
-a. **Which clause breaks first** when a deadline is three days away?
+**Each of you reviews the section you wrote yourselves**: the data lead reads their **Data** section, the analysis lead their **Analysis** section, the reporting lead their **Reporting** section. You have just written standards for that part of the research process, so you are the best placed to see what is missing from theirs --- and you will be defending your own version of it in a few minutes.
+
+**Leave your challenges as comments in their document.** Select the text of the clause you are questioning, then `Insert > Comment` (**Cmd/Ctrl + Alt + M**), so that each objection is anchored to the clause it concerns rather than collected in one note at the end. Aim for **two or three substantive comments** on your section, each saying *why*: "this would slip the moment fieldwork overran" is useful; "unclear" is not.
+
+**Work on your own section for the first 15 minutes** <span style="color:dimgray;">(individually)</span>, then spend the **last 5 minutes together** <span style="color:dimgray;">(as a group)</span> agreeing an overall evaluation of the charter. Your job now is to be the sceptic:
+
+a. <span style="color:dimgray;">(on your own section)</span> **Which clause breaks first** when a deadline is three days away?
 b. **Which clause is unenforceable** --- how would anyone know it had been broken?
-c. **What is missing?** Look at the retracted articles and Table \@ref(tab:retractionwatch) in [Part A](#CaseStudies): would this charter have prevented those retractions?
-d. **Do the clauses serve the definitions?** Read the Definitions block at the top, then the clauses below it. Does this charter actually deliver what the group says reproducible science is?
+c. **What is missing?** You wrote standards for the same section, so start there: what did you cover that they did not? Then look at the retracted articles and Table \@ref(tab:retractionwatch) in [Part A](#CaseStudies) --- would this charter have prevented those retractions?
+d. <span style="color:dimgray;">(together, in the last 5 minutes)</span> **Does the charter as a whole serve its definitions?** Read their Definitions block at the top, then the standards below it. Does this charter actually deliver what the group says reproducible science is? Leave that verdict as a single comment on the document, agreed between the three of you.
 
-Then hand it back. **Each lead answers the challenges to their own section**, replying to the comments on their own clauses --- defend the clause, or concede and rewrite it. Both are good answers; neither is a loss. The comment thread is worth keeping: it is a record of which standards survived scrutiny and which did not.
+Then hand the charter back. You answer the challenges on your own section in the [next step](#commitcharter).
 
+**Resolve nothing and delete nothing.** The threads are a record of which standards survived scrutiny and which did not, and we will read them again when we build the [class charter](#classcharter).
 
 #### ✅ Revise and Commit <span style="color:dimgray;">(15 minutes)</span> {#commitcharter}
 
-Revise your charter in the light of the challenges, then each student states, out loud, **one clause from their own section that they will apply to their own project this semester** --- starting now, not in principle.
+**Each lead answers the comments on the section they wrote**, replying in each thread --- defend the clause, or concede and rewrite it there and then. Both are good answers; neither is a loss, and conceding to a good objection is the harder skill.
 
-We will keep the charters, and they will guide the rest of the course. What you have written today is developed in [Chapt. 4 -- Open Science and CARE Principles](#chap4), in [Data Management](#partDM) and [Reproducible Code](#repcode) in Chapt. 5, and in [Chapt. 6 -- Getting Published and Peer Review](#chap6). We will return to your charter as we go: each time, you should be able to take a clause you wrote today and say how you would now actually implement it.
+Once your charter has been revised in the light of the challenges, each student states, out loud, **one clause from their own section that they will apply to their own project this semester** --- starting now, not in principle.
 
 <blockquote>
 💡 <b>Why a charter?</b> Diagnosing other people's failures is comparatively easy. Deciding what <i>your</i> group will always do --- knowing it will cost you something, and that colleagues can hold you to it --- is what a research lead actually does. That is the skill this activity is for.
 </blockquote>
 
 
+#### 🤝 Build the Class Charter <span style="color:dimgray;">(10 minutes)</span> {#classcharter}
+
+Both charters now go up side by side, and we finish Part B by finding what they have in common.
+
+1. **What did you both arrive at?** <span style="color:dimgray;">(~4 minutes)</span>
+   Read across the two documents and mark every standard that appears, in some form, in **both**. Two teams working independently from the same evidence and landing on the same clause is the strongest signal we have that it matters --- that is consensus, not coincidence.
+
+2. **Where did you differ?** <span style="color:dimgray;">(~3 minutes)</span>
+   Take a clause only one group wrote. Is it a **blind spot** in the other charter, or a genuine difference between the kinds of research you do --- field data and code do not face identical risks? Both answers are worth having; say which one it is.
+
+3. **Agree the class charter** <span style="color:dimgray;">(~3 minutes)</span>
+   We settle on the clauses we hold in common, and I record them as our **class charter**, saved beside your group documents in [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link).
+
+<blockquote>
+📌 <b>This is the document we come back to.</b> What you have written today is developed properly in
+<a href="#chap4">Chapt. 4 --- Open Science and CARE Principles</a>, in <a href="#partDM">Data Management</a> and
+<a href="#repcode">Reproducible Code</a> in Chapt. 5, and in <a href="#chap6">Chapt. 6 --- Getting Published and
+Peer Review</a>. Each time we return to it you should be able to take a clause and say how you would <i>now</i>
+actually implement it --- and, by December, whether we were ambitious enough. Your group charter stays yours; the
+class charter is what we hold in common.
+</blockquote>
+
 # Chapt. 2 -- R, R Markdown and User-Defined Functions {#chap2}
+
 ## Introduction
 
-In this chapter, we introduce the use of **bioinformatics tools for writing and disseminating reproducible reports**, as implemented in RStudio [@RStudio]. More specifically, we will learn how to **link and execute data and code within a unified environment** (see Figure \@ref(fig:ReproScience)). 
+[Chapter 1](#chap1) established *why* reproducibility matters and what breaks it. This chapter is where we begin building the tools to do something about it.
 
+Reproducibility is not all-or-nothing: it is a **spectrum** (Figure \@ref(fig:ReproScience)). A publication on its own sits at the *not reproducible* end. Releasing the data moves you along it; releasing data **and** code moves you further; and **linked, executable data and code** --- a document in which the analysis actually runs as the text is written --- approaches the gold standard.
+
+This chapter teaches you to work at that end of the spectrum, using **R Markdown** in **RStudio** [@RStudio]: a single environment where text, data, code, figures, tables and references live in one document that anyone can re-run and get your results.
+
+```{r ReproScience, fig.alt="A left-to-right gradient scale from blue to gold: a blue box labeled Publication only sits at the not reproducible end, a wide middle box labeled Publication plus contains three graded levels (Data, then Data and code, then Linked and executable data and code), and a gold box labeled Full replication sits at the gold standard end.", echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
+knitr::include_graphics("Figures/Fig1.png")
+```
 
 ### Aim
 
 This chapter aims to ***equip students with the essential skills required to effectively use R Markdown for integrating text, code, figures, tables, and references into a cohesive, reproducible document***. The final output can be rendered into multiple formats—including `PDF`, `HTML`, or `Word`—to streamline the communication and sharing of research findings.
 
-This tutorial provides students with the foundational knowledge necessary to complete their bioinformatics tutorials (**PART 2**) and individual projects (**PART 3**).
+This tutorial provides students with the foundational knowledge necessary to complete their [bioinformatics tutorials](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#BioTut) (**PART 2**) and [individual projects](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#arc2) (**PART 3**).
+
 
 ### Objectives
+
 
 The chapter is divided into six parts, each with specific learning objectives:
 
@@ -682,15 +722,19 @@ The chapter is divided into six parts, each with specific learning objectives:
 - [**PART E:**](#partE) User-Defined Functions in R  
 - [**PART F:**](#partF) Interactive Tutorials  
 
-```{r ReproScience, fig.alt="A left-to-right gradient scale from blue to gold: a blue box labeled Publication only sits at the not reproducible end, a wide middle box labeled Publication plus contains three graded levels (Data, then Data and code, then Linked and executable data and code), and a gold box labeled Full replication sits at the gold standard end.", echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
-knitr::include_graphics("Figures/Fig1.png")
-```
 
-### Supporting Files {#Files}
+### Resources and Software {#chap2resources}
+
+Everything you need in order to follow this chapter --- the files, the software to install, and where to read further --- is collected here.
+
+#### Supporting Files {#Files}
+
 
 Files supporting this chapter are available on [Google Drive](https://drive.google.com/drive/folders/1Olb6huHcBfv02OxL50WEbQR-uJvkuX7O?usp=drive_link).
 
-### Install R Markdown Software
+
+#### Install R Markdown Software
+
 
 Software and packages required to perform this tutorial are detailed below. Students should install those software and packages on their personal computers to be able to complete this course. Additional packages might need to be installed and the instructor will provide guidance on how to install those as part of the forthcoming tutorials.
 
@@ -704,17 +748,9 @@ install.packages(c("bookdown","knitr", "rmarkdown"))
 
 **NOTE:** The instructor is using the following version of `RStudio`: Version 2025.05.0+496 (2025.05.0+496). If your computer is experiencing issues running the latest version of the software, you can install previous versions [here](https://docs.posit.co/previous-versions/rstudio/).
 
-### What is RStudio?
 
-RStudio [@RStudio] is an **integrated development environment (IDE)** that allows you to interact with R more efficiently. While similar to the standard R GUI, RStudio is significantly more user-friendly. It offers more drop-down menus, tabbed windows, and extensive customization options (see Figure \@ref(fig:IDE)). 
+#### Web Resources
 
-Detailed information on using RStudio can be found on [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
-
-```{r IDE, fig.alt="Screenshot of the RStudio window with labels overlaid on each of its four panes: Source with an open .Rmd file top left, Console/Terminal/RMarkdown bottom left, Environment/History/Connections top right, and Files/Plots/Packages/Help bottom right.", echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
-knitr::include_graphics("Figures/IDE.png")
-```
-
-### Web Resources
 
 Below are URLs to web resources that provide key information related to Chapter 2:
 
@@ -735,6 +771,7 @@ In this part, we will provide a survey of the procedures to create and render (o
 
 This tutorial provides students with the opportunity to learn how to:
 
+- [Find your way around the RStudio environment](#rstudioIDE)
 - [Create and render (or "knit") your first R Markdown document](#firstMDhow)
 - Understand basic Markdown syntax and conventions, including:
     + [Headers](#headers)  
@@ -745,6 +782,17 @@ This tutorial provides students with the opportunity to learn how to:
     + [Including code chunks](#codechunkhow)
     + [Inline code](#inlinecode)  
     + [Checking spelling](#checkspell)
+
+### What is RStudio? {#rstudioIDE}
+
+RStudio [@RStudio] is an **integrated development environment (IDE)** that allows you to interact with R more efficiently. While similar to the standard R GUI, RStudio is significantly more user-friendly. It offers more drop-down menus, tabbed windows, and extensive customization options (see Figure \@ref(fig:IDE)). 
+
+Detailed information on using RStudio can be found on [RStudio’s website](https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio).
+
+```{r IDE, fig.alt="Screenshot of the RStudio window with labels overlaid on each of its four panes: Source with an open .Rmd file top left, Console/Terminal/RMarkdown bottom left, Environment/History/Connections top right, and Files/Plots/Packages/Help bottom right.", echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
+knitr::include_graphics("Figures/IDE.png")
+```
+
 
 ### Introduction to R Markdown {#IntroRMd}
 
@@ -820,7 +868,9 @@ In this section, we will focus on learning the syntax and protocols needed to cr
 - [Inside text commenting](#comment) 
 - [Lists](#lists)  
 - [Italicized, bold, and combined formatting](#itbold) 
-- [Embedded code chunks and inline code](#hyperlinks)  
+- [Creating hyperlinks](#hyperlinks)  
+- [Embedded code chunks](#codechunkhow)  
+- [Inline code](#inlinecode)  
 - [Spell checking](#checkspell)
 
 To master these skills, edit your `.Rmd` file as we progress, and knit the document to view the final result.
