@@ -658,9 +658,16 @@ Then hand the charter back. You answer the challenges on your own section in the
 
 #### ✅ Revise and Commit <span style="color:dimgray;">(15 minutes)</span> {#commitcharter}
 
-**Each lead answers the comments on the section they wrote**, replying in each thread --- defend the clause, or concede and rewrite it there and then. Both are good answers; neither is a loss, and conceding to a good objection is the harder skill.
+**Before you change a single word, put the document into tracked mode.** In Google Docs, click the pencil icon at the top right and choose **Suggesting**; in Word, `Review > Track Changes`. Everything you do from here is then recorded as a suggestion rather than silently overwriting what you wrote before the review --- so you can see exactly what the stress-test changed, and so can I.
 
-Once your charter has been revised in the light of the challenges, each student states, out loud, **one clause from their own section that they will apply to their own project this semester** --- starting now, not in principle.
+Then work in this order:
+
+1. **Reply to every comment on your own section, first.** Answer them one at a time, in the thread where each was raised: defend the clause, or concede it. Both are good answers; neither is a loss, and conceding to a good objection is the harder skill. **Leave nothing unanswered** --- an objection nobody replied to is one the group has quietly ignored.
+2. **Then revise the text.** Working in suggestion mode, rewrite the clauses you conceded and tighten any that turned out to be unenforceable. Because your replies are already in the threads, each tracked change sits next to the argument that produced it.
+
+**Still resolve nothing and delete nothing.** The comments, your replies and the tracked changes together are the record of how your charter reached its final state --- which is exactly what a reproducible revision history looks like, and the same habit you will apply to code and manuscripts later in this course.
+
+Once your charter has been revised, each student states, out loud, **one clause from their own section that they will apply to their own project this semester** --- starting now, not in principle.
 
 <blockquote>
 💡 <b>Why a charter?</b> Diagnosing other people's failures is comparatively easy. Deciding what <i>your</i> group will always do --- knowing it will cost you something, and that colleagues can hold you to it --- is what a research lead actually does. That is the skill this activity is for.
