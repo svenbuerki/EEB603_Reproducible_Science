@@ -388,9 +388,10 @@ This class is run as a single [**group activity**](#FactorsActivity) (writing yo
 5. [Draft Your Charter](#draftcharter) <span style="color:dimgray;">(30 minutes)</span>
 6. [Stress-Test Another Team's Charter](#stresstest) <span style="color:dimgray;">(20 minutes)</span>
 7. [Revise and Commit](#commitcharter) <span style="color:dimgray;">(15 minutes)</span>
-8. [Build the Class Charter](#classcharter) <span style="color:dimgray;">(10 minutes)</span>
+8. [Compare the Two Charters](#comparecharters) <span style="color:dimgray;">(10 minutes)</span>
+9. [Wrap-Up: What Did This Take?](#partBwrapup) <span style="color:dimgray;">(5 minutes)</span>
 
-The first five sections will be covered during Session 1, while the remaining three will be addressed in Session 2.  
+The first five sections will be covered during Session 1, while the remaining four will be addressed in Session 2.  
 **Each group finishes its draft charter as homework between the two sessions, and adds a short block of definitions at the top**, because Session 2 opens with another group taking it apart (see [Draft Your Charter](#draftcharter)).
 
 Every one of these sections draws on the [**Resources**](#PartBresources) set out below: the two **publications**, the **teaching material**, and the **recommendations** of the National Academies. They are the evidence this class is built on --- you will check your own answers against them in [Review the Resources](#reviewres), and draw on them again for every clause you write into your charter.
@@ -654,7 +655,7 @@ d. <span style="color:dimgray;">(together, in the last 5 minutes)</span> **Does 
 
 Then hand the charter back. You answer the challenges on your own section in the [next step](#commitcharter).
 
-**Resolve nothing and delete nothing.** The threads are a record of which standards survived scrutiny and which did not, and we will read them again when we build the [class charter](#classcharter).
+**Resolve nothing and delete nothing.** The threads are a record of which standards survived scrutiny and which did not, and we will read them again when we [compare the two charters](#comparecharters).
 
 #### ✅ Revise and Commit <span style="color:dimgray;">(15 minutes)</span> {#commitcharter}
 
@@ -674,27 +675,36 @@ Once your charter has been revised, each student states, out loud, **one clause 
 </blockquote>
 
 
-#### 🤝 Build the Class Charter <span style="color:dimgray;">(10 minutes)</span> {#classcharter}
+#### 🤝 Compare the Two Charters <span style="color:dimgray;">(10 minutes)</span> {#comparecharters}
 
-Both charters now go up side by side, and we finish Part B by finding what they have in common.
+Both charters now go up side by side. We are **not** going to merge them into one class charter --- we are going to work out what it would take to get there, and what stands in the way.
 
-1. **What did you both arrive at?** <span style="color:dimgray;">(~4 minutes)</span>
-   Read across the two documents and mark every standard that appears, in some form, in **both**. Two teams working independently from the same evidence and landing on the same clause is the strongest signal we have that it matters --- that is consensus, not coincidence.
+**First, in your own group** <span style="color:dimgray;">(~4 minutes)</span> --- read the other charter through once more and agree two answers between the three of you:
 
-2. **Where did you differ?** <span style="color:dimgray;">(~3 minutes)</span>
-   Take a clause only one group wrote. Is it a **blind spot** in the other charter, or a genuine difference between the kinds of research you do --- field data and code do not face identical risks? Both answers are worth having; say which one it is.
+- **What did we hold in common?** Which standards appear, in some form, in both documents?
+- **Where did we diverge?** Which clause did we write that they did not, or write very differently?
 
-3. **Agree the class charter** <span style="color:dimgray;">(~3 minutes)</span>
-   We settle on the clauses we hold in common, and I record them as our **class charter**, saved beside your group documents in [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link).
+**Then, as a class** <span style="color:dimgray;">(~6 minutes)</span> --- each group puts those two answers to the other, and we discuss:
+
+a. **Convergence.** Two teams working independently from the same evidence and landing on the same standard is the strongest signal we have that it matters --- that is consensus, not coincidence. Which standards did that happen to?
+b. **Divergence.** For each clause only one group wrote: is it a **blind spot** in the other charter, or a real difference between the kinds of research you do? Field data, code and specimens do not face identical risks, and a standard that is essential in one laboratory can be irrelevant in another.
+c. **Could these two documents become one?** Where would you have to compromise, which clause would you refuse to give up, and what would a charter have to leave out in order for a whole department to sign it? You do not have to resolve this --- but notice how much harder agreement becomes as the group grows.
 
 <blockquote>
-📌 <b>This is the document we come back to.</b> What you have written today is developed properly in
+📌 <b>Your charter stays yours.</b> We are not producing a single class document, because the point is not the artefact --- it is that you can now argue about standards with evidence, and see why a field, a journal or a funder finds it so difficult to agree on them. What you have written is developed properly in
 <a href="#chap4">Chapt. 4 --- Open Science and CARE Principles</a>, in <a href="#partDM">Data Management</a> and
 <a href="#repcode">Reproducible Code</a> in Chapt. 5, and in <a href="#chap6">Chapt. 6 --- Getting Published and
-Peer Review</a>. Each time we return to it you should be able to take a clause and say how you would <i>now</i>
-actually implement it --- and, by December, whether we were ambitious enough. Your group charter stays yours; the
-class charter is what we hold in common.
+Peer Review</a>. We will come back to your charter as we go: each time, you should be able to take a clause and say how you would <i>now</i> actually implement it --- and, by December, whether you were ambitious enough.
 </blockquote>
+
+#### 🪞 Wrap-Up: What Did This Take? <span style="color:dimgray;">(5 minutes)</span> {#partBwrapup}
+
+To close Part B, each group answers two questions out loud --- briefly, and honestly:
+
+1. **What did you learn from writing a charter** that you would not have learned from reading about reproducibility?
+2. **What was hard?** Which part of this actually gave you trouble --- agreeing on wording, making a standard checkable, having your clause challenged, deciding what you were willing to commit to?
+
+There are no right answers here, and "we could not agree" is a finding, not a failure. Naming the difficulty is worth as much as the document you produced: the obstacles you hit in ninety minutes are the same ones that keep laboratories, journals and whole fields from adopting the practices everyone agrees are correct.
 
 # Chapt. 2 -- R, R Markdown and User-Defined Functions {#chap2}
 
