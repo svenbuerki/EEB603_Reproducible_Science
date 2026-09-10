@@ -712,9 +712,11 @@ There are no right answers here, and "we could not agree" is a finding, not a fa
 
 [Chapter 1](#chap1) established *why* reproducibility matters and what breaks it. This chapter is where we begin building the tools to do something about it.
 
-Reproducibility is not all-or-nothing: it is a **spectrum** (Figure \@ref(fig:ReproScience)). A publication on its own sits at the *not reproducible* end. Releasing the data moves you along it; releasing data **and** code moves you further; and **linked, executable data and code** --- a document in which the analysis actually runs as the text is written --- approaches the gold standard.
+Reproducibility is not all-or-nothing: it is a **spectrum** (Figure \@ref(fig:ReproScience)). A publication on its own sits at the *not reproducible* end. Releasing the data moves you along it; releasing data **and** code moves you further. **Linked, executable data and code** (a document in which the analysis actually runs as the text is written) approaches the gold standard.
 
 This chapter teaches you to work at that end of the spectrum, using **R Markdown** in **RStudio** [@RStudio]: a single environment where text, data, code, figures, tables and references live in one document that anyone can re-run and get your results.
+
+It is also where the [reproducibility charter](#draftcharter) you wrote in [Chapt. 1, Part B](#WhatFacBreakRep) stops being a statement of intent. Most of the standards you committed to (that raw data are never edited, that every figure is produced by code, that an analysis can be re-run from scratch) are difficult to keep through discipline alone, because nothing stops you breaking them. Written into an R Markdown document, they become **structural**: the document simply will not knit if the code does not run, and a figure cannot drift from the analysis that made it when the analysis is sitting directly above it. **This chapter is how your charter gets enforced.**
 
 ```{r ReproScience, fig.alt="A left-to-right gradient scale from blue to gold: a blue box labeled Publication only sits at the not reproducible end, a wide middle box labeled Publication plus contains three graded levels (Data, then Data and code, then Linked and executable data and code), and a gold box labeled Full replication sits at the gold standard end.", echo=FALSE, fig.cap="The spectrum of reproducibility.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Fig1.png")
@@ -742,7 +744,7 @@ The chapter is divided into six parts, each with specific learning objectives:
 
 ### Resources and Software {#chap2resources}
 
-Everything you need in order to follow this chapter --- the files, the software to install, and where to read further --- is collected here.
+Everything you need in order to follow this chapter is collected here: the files, the software to install, and where to read further.
 
 #### Supporting Files {#Files}
 
@@ -818,6 +820,35 @@ Markdown is a simple formatting syntax used for authoring HTML, PDF, and Microso
 1. **YAML metadata section:** This section provides high-level information about the output format of the R Markdown file. The information defined here is used by the Pandoc program to format the final document (see Figure \@ref(fig:RMdown)).
 2. **Main body text:** This section represents the core content of your document or publication and uses Markdown syntax.
 3. **Code chunks:** This section allows you to import and analyze data, and to produce figures and tables that are directly embedded in the output document.
+
+#### Structuring a Report Around the Scientific Process
+
+Those three parts are not just a file format. **They let one document carry both the narrative of a study and the analysis that produced it.** This is what moves a report towards the *linked and executable data and code* end of the reproducibility spectrum (Figure \@ref(fig:ReproScience)): the text explains what was done and why, and the code chunks *actually do it*, in the same file, in the order a reader follows.
+
+Two things follow, and you should design your documents around both.
+
+**The Markdown text can mirror the structure of a scientific article.** Use headers to lay out the familiar sections (Introduction, Materials and Methods, Results, Discussion, References) so that your report reads as a paper rather than as a script with comments. You already know this structure from the articles you examined in [Chapt. 1](#chap1); here you are writing into it.
+
+**The code chunks can follow the steps of the scientific process**, placed under the section each belongs to:
+
+| Section of the report | What the code chunks there do |
+|---|---|
+| Materials and Methods | Import the raw data, tidy and transform it, document how it was collected |
+| Results | Run the analyses, produce the tables and figures, report the statistics |
+| Discussion | Draw on those same results, referenced rather than retyped |
+| References | Cite the packages and sources used, generated from a bibliography file |
+
+Written this way, the document *is* the workflow: the Methods section does not merely describe how the data were tidied, it contains the code that tidied them, and a figure in the Results is produced by the chunk sitting directly above it rather than pasted in from elsewhere. Nothing can drift out of step with the analysis, because there is only one copy of it.
+
+**This is also how a charter clause becomes something you cannot quietly break.** Look back at what your group committed to in [Part B](#draftcharter) and notice how much of it this structure enforces on your behalf:
+
+- *"Every figure and table in a manuscript is produced by code that runs from the raw data"*. The chunk sits under the Results heading and produces the figure when the document knits. There is no other way for it to get there.
+- *"Raw data are never edited; all cleaning happens in a script"*. The cleaning code lives in Materials and Methods, so the edit history is the script itself.
+- *"Every software package used is cited with its version"*, generated from your bibliography file rather than remembered at submission.
+
+A standard that depends on somebody remembering it will eventually be forgotten. A standard the document refuses to knit without is kept. That is the difference between writing a charter and working to one, and it is why this chapter comes straight after Part B.
+
+This is the structure you will build across the rest of this chapter, and the one your [bioinformatics tutorial](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#BioTut) and [individual project](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#arc2) are expected to follow.
 
 ```{r RMdown, fig.alt="Screenshot of an R Markdown file open in the RStudio source editor, with overlaid labels marking the YAML metadata section between the triple dashes at the top, the publication core text in the middle, a shaded code chunk labeled importing data, and a second shaded chunk labeled analyze data and output figures and tables.", echo=FALSE, fig.cap="Example of an R Markdown file showing the three major sections.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/Presentation_RMarkdown.png")
