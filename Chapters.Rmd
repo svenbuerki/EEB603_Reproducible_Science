@@ -72,7 +72,7 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 ```
 
 ```{r setup, include = FALSE, cache = FALSE, message = FALSE}
-# Chunk options: see http://yihui.name/knitr/options/ ###
+# Chunk options: see https://yihui.org/knitr/options/ ###
 
 ## Text results
 #opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
@@ -777,10 +777,10 @@ Below are URLs to web resources that provide key information related to Chapter 
 - **R Markdown: The Definitive Guide** (by Yihui Xie, J. J. Allaire, and Garrett Grolemund): https://bookdown.org/yihui/rmarkdown/  
 - **Write HTML, PDF, ePub, and Kindle books with R Markdown:** https://bookdown.org  
 - **bookdown: Authoring Books and Technical Documents with R Markdown** (by Yihui Xie): https://bookdown.org/yihui/bookdown/  
-- **knitr:** http://yihui.name/knitr/  
+- **knitr:** https://yihui.org/knitr/  
 - **Pandoc: A Universal Document Converter:** https://pandoc.org  
-- **Bibliographies and Citations in R Markdown:** https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html  
-- **Tutorial on knitr with R Markdown** (by Karl Broman): http://kbroman.org/knitr_knutshell/pages/RMarkdown.html
+- **Bibliographies and Citations in R Markdown:** https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html  
+- **Tutorial on knitr with R Markdown** (by Karl Broman): https://kbroman.org/knitr_knutshell/pages/Rmarkdown.html
 
 ## PART A: Learning the Basics {#partA}
 
@@ -791,6 +791,7 @@ In this part, we will provide a survey of the procedures to create and render (o
 This tutorial provides students with the opportunity to learn how to:
 
 - [Find your way around the RStudio environment](#rstudioIDE)
+- [Describe how an R Markdown document is structured](#IntroRMd), and how that structure can be used to follow the scientific process and mirror a scientific article
 - [Create and render (or "knit") your first R Markdown document](#firstMDhow)
 - Understand basic Markdown syntax and conventions, including:
     + [Headers](#headers)  
@@ -829,7 +830,7 @@ Two things follow, and you should design your documents around both.
 
 **The Markdown text can mirror the structure of a scientific article.** Use headers to lay out the familiar sections (Introduction, Materials and Methods, Results, Discussion, References) so that your report reads as a paper rather than as a script with comments. You already know this structure from the articles you examined in [Chapt. 1](#chap1); here you are writing into it.
 
-**The code chunks can follow the steps of the scientific process**, placed under the section each belongs to:
+**The code chunks can follow the steps of the scientific process**, placed under the section each belongs to (Table \@ref(tab:sciprocess)). Those steps are the same ones you will work through in PART 2 of this course (Figure \@ref(fig:workflowPART2)): importing and tidying the data, then exploring it by transforming, visualizing and modelling, and finally communicating the result.
 
 | Section of the report | What the code chunks there do |
 |---|---|
@@ -837,6 +838,12 @@ Two things follow, and you should design your documents around both.
 | Results | Run the analyses, produce the tables and figures, report the statistics |
 | Discussion | Draw on those same results, referenced rather than retyped |
 | References | Cite the packages and sources used, generated from a bibliography file |
+
+Table: (\#tab:sciprocess) How the sections of a scientific report map onto the code that produces them.
+
+```{r workflowPART2, echo=FALSE, fig.cap="Overview of the workflow studied in PART 2, and the steps your code chunks implement.", fig.alt="Diagram of a reproducible data analysis workflow. On the left, a box labelled Prepare contains Import followed by Tidy. An arrow leads to a larger box labelled Explore and understand, in which Transform, Visualize and Model are connected in a repeating cycle. An arrow then leads out of that box to Communicate. The entire workflow is enclosed in an outer box labelled Program.", out.width = '100%'}
+knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")
+```
 
 Written this way, the document *is* the workflow: the Methods section does not merely describe how the data were tidied, it contains the code that tidied them, and a figure in the Results is produced by the chunk sitting directly above it rather than pasted in from elsewhere. Nothing can drift out of step with the analysis, because there is only one copy of it.
 
@@ -1900,7 +1907,7 @@ In this section, we will cover the following topics before delving into the prac
 
 Pandoc can automatically generate citations in your text and a References section following a specific journal style (see Figure \@ref(fig:RMarkdwnstrct)). To use this feature, you need to declare a bibliography file in the [YAML metadata section] under the `bibliography:` field.
 
-In this course, we are working with bibliography files formatted using the [`BibTeX`](#BibTexFormat) format. Other formats can also be used — please see this [resource](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more details.
+In this course, we are working with bibliography files formatted using the [`BibTeX`](#BibTexFormat) format. Other formats can also be used — please see this [resource](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) for more details.
 
 Most journals allow citations to be downloaded in `BibTeX` format, but if this feature is not available, you can convert citation formats using online services (e.g., EndNote to BibTeX: https://www.bruot.org/ris2bib/).
 
@@ -2162,7 +2169,7 @@ To improve code reproducibility and efficiency, and to comply with publication r
 
 These general settings will be configured using the `opts_chunk$set()` function provided by the `knitr` package [@R-knitr]. The following website contains valuable information on code chunk options:
 
-- https://yihui.name/knitr/options/
+- https://yihui.org/knitr/options/
 
 ##### The `opts_chunk$set()` Function
 
@@ -2315,7 +2322,7 @@ library("knitr")
 library("bookdown")
 
 ###
-# Chunk options: see http://yihui.name/knitr/options/ ###
+# Chunk options: see https://yihui.org/knitr/options/ ###
 ###
 ## Text output
 opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
