@@ -915,17 +915,30 @@ The `.md` file created by *knitr* is then processed by the Pandoc program, which
 knitr::include_graphics("Figures/rmarkdownflow.png")
 ```
 
-### Basic R Markdown Syntax
+### How to Work Through the Rest of PART A {#syntaxguide}
 
 In this section, we will focus on learning the syntax and protocols needed to create headers, comments, lists, formatted text, hyperlinks, code chunks, inline code and spell checking.
 
-Each of these comes with a **💡 Your turn** exercise, and you build them up in the **same `.Rmd` file** as you go, knitting the document after each one to see the result. That file therefore has to be ready before you begin.
+**You already have the document you need.** If you completed [Your First R Markdown Document](#firstMDhow), you created and knitted `Chapter_2_part_A.Rmd`. That is the file you will keep working in: every section below adds something new to it, so by the end of PART A you will have one document containing all of the syntax you have learned. If you have not created that file yet, go back and do it now, because nothing below will work without it.
 
 <div class="danger">
   <p><strong>🛑 Do this first:</strong> go to <a href="#beforeyoustart">Before Starting</a> and clear out the template content of your <code>.Rmd</code> file. If you skip this step, the default R Markdown text will still be sitting in your document and your own headers, lists and code chunks will be mixed in with it, which makes the exercises confusing to knit and to read.</p>
 </div>
 
-Once your file is ready, work through the sections in this order:
+**Then work through the sections on your own, at your own pace.** Each one follows the same shape:
+
+1. **Syntax:** what to type, shown in a code block.
+2. **Output:** what that syntax produces once rendered.
+3. **💡 Your turn:** an exercise to add to your own document, ending with a **knit** and something specific to check.
+4. **✅ Solution:** a worked example of the syntax that answers the exercise, hidden behind a toggle. Open it once you have tried the exercise yourself, or if you get stuck.
+
+Do the exercise before moving to the next section rather than reading ahead, and knit every time. Knitting often means that when something breaks you know it was the last thing you typed, which is far easier to fix than a document with twenty untested changes in it.
+
+<div class="info">
+  <p><strong>💡 Ask for help.</strong> I am in the room for exactly this. If your document will not knit, or the output does not look the way you expected, raise your hand rather than working around it. A document that refuses to knit is completely normal and the error message in the <b>R Markdown</b> console usually names the line that caused it. Getting used to reading those messages is part of what you are learning here.</p>
+</div>
+
+Work through the sections in this order:
 
 1. [Headers](#headers)  
 2. [Inside text commenting](#comment) 
@@ -948,7 +961,7 @@ Additional syntax and formatting options are available in the **R Markdown Refer
 
 ### Before Starting {#beforeyoustart}
 
-**This is the step to complete before any of the [syntax exercises](#basic-r-markdown-syntax).** Open the `Chapter_2_part_A.Rmd` file you created earlier and delete its content from line 11 (`## R Markdown`) to the end of the document, keeping the YAML header and the `setup` code chunk above it (see Figure \@ref(fig:beforestart)). You are left with an empty document that is ready to knit, and everything you add from here is your own.
+**This is the step to complete before any of the [syntax exercises](#syntaxguide).** Open the `Chapter_2_part_A.Rmd` file you created earlier and delete its content from line 11 (`## R Markdown`) to the end of the document, keeping the YAML header and the `setup` code chunk above it (see Figure \@ref(fig:beforestart)). You are left with an empty document that is ready to knit, and everything you add from here is your own.
 
 ```{r beforestart, fig.alt="Screenshot of the RStudio source editor showing the top of Chapter_2_part_A.Rmd, with the YAML header giving the title, html_document output and a date, followed by a shaded setup code chunk calling knitr opts_chunk set echo TRUE, then the default R Markdown headings and text.", echo=FALSE, fig.cap="R Markdown of Chapter 2 - Part A.", out.width = '100%'}
 knitr::include_graphics("Figures/Chapter_2_partA_Rmd.png")
@@ -994,6 +1007,22 @@ The "#" refers to the level of the header
   I let you pick great names for your headers!
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code># Reproducible science
+
+## What it means
+
+## Why it matters
+
+# R Markdown
+
+## The three sections
+
+## Knitting a document</code></pre>
+</details>
+
 
 ---
 
@@ -1025,6 +1054,18 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code># Reproducible science
+
+&lt;!-- This section covers definitions and why reproducibility fails. --&gt;
+
+# R Markdown
+
+&lt;!-- TO DO: add an example of a YAML header here. --&gt;</code></pre>
+</details>
+
 
 ---
 
@@ -1068,6 +1109,15 @@ There are two types of lists:
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>* Data
+* Code
+  + Analysis scripts
+  + User-defined functions</code></pre>
+</details>
+
 
 #### Syntax for ordered lists
 
@@ -1100,6 +1150,15 @@ There are two types of lists:
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>1. Import the data
+2. Tidy the data
+   + Rename the columns
+   + Drop incomplete records</code></pre>
+</details>
+
 
 ---
 
@@ -1141,6 +1200,16 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>Reproducibility is *not* the same as replicability.
+
+Raw data are **never** edited by hand.
+
+Every figure is ***produced by code*** that runs from the raw data.</code></pre>
+</details>
+
 
 ---
 
@@ -1176,6 +1245,14 @@ When knitted, the example with RStudio renders as a link: [RStudio](https://www.
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>[Boise State University](https://www.boisestate.edu)
+
+[Download R for macOS](https://cran.r-project.org/bin/macosx/)</code></pre>
+</details>
+
 
 ---
 
@@ -1193,7 +1270,7 @@ If the output is a table or a figure, you can assign a label to it (by adding me
 
 - Using the keyboard shortcut **Ctrl + Alt + I** (on macOS: **Cmd + Option + I**).
 - Clicking the `Insert` button ![](Figures/insert_code_chunk.png){alt=""} in the editor toolbar.
-- Typing ```{r} to open the chunk and ``` to close it.
+- Typing <code>&#96;&#96;&#96;{r}</code> to open the chunk and <code>&#96;&#96;&#96;</code> to close it.
 
 By default, the code chunk expects R code, but you can also insert chunks for other programming languages (e.g., Bash, Python).
 
@@ -1211,6 +1288,14 @@ By default, the code chunk expects R code, but you can also insert chunks for ot
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>```{r}
+print("Hello world")
+```</code></pre>
+</details>
+
 
 #### Chunk Options
 
@@ -1242,6 +1327,14 @@ knitr::include_graphics("Figures/code-1-options.png")
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>```{r echo=FALSE}
+print("Hello world")
+```</code></pre>
+</details>
+
 
 ---
 
@@ -1281,6 +1374,12 @@ As a result, inline output is indistinguishable from the surrounding text.
     </ul>
   </p>
 </div>
+<details>
+<summary><b>✅ Solution</b></summary>
+
+<pre><code>Adding two and two gives &#96;r 2+2&#96;, which R Markdown computes when the document is knitted.</code></pre>
+</details>
+
 
 ---
 
