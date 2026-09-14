@@ -917,18 +917,26 @@ knitr::include_graphics("Figures/rmarkdownflow.png")
 
 ### Basic R Markdown Syntax
 
-In this section, we will focus on learning the syntax and protocols needed to create:
+In this section, we will focus on learning the syntax and protocols needed to create headers, comments, lists, formatted text, hyperlinks, code chunks, inline code and spell checking.
 
-- [Headers](#headers)  
-- [Inside text commenting](#comment) 
-- [Lists](#lists)  
-- [Italicized, bold, and combined formatting](#itbold) 
-- [Creating hyperlinks](#hyperlinks)  
-- [Embedded code chunks](#codechunkhow)  
-- [Inline code](#inlinecode)  
-- [Spell checking](#checkspell)
+Each of these comes with a **💡 Your turn** exercise, and you build them up in the **same `.Rmd` file** as you go, knitting the document after each one to see the result. That file therefore has to be ready before you begin.
 
-To master these skills, edit your `.Rmd` file as we progress, and knit the document to view the final result.
+<div class="danger">
+  <p><strong>🛑 Do this first:</strong> go to <a href="#beforeyoustart">Before Starting</a> and clear out the template content of your <code>.Rmd</code> file. If you skip this step, the default R Markdown text will still be sitting in your document and your own headers, lists and code chunks will be mixed in with it, which makes the exercises confusing to knit and to read.</p>
+</div>
+
+Once your file is ready, work through the sections in this order:
+
+1. [Headers](#headers)  
+2. [Inside text commenting](#comment) 
+3. [Lists](#lists)  
+4. [Italicized, bold, and combined formatting](#itbold) 
+5. [Creating hyperlinks](#hyperlinks)  
+6. [Embedded code chunks](#codechunkhow)  
+7. [Inline code](#inlinecode)  
+8. [Spell checking](#checkspell)
+
+They are ordered deliberately: later exercises ask you to add content underneath headers you created earlier, so working out of order leaves you with nowhere to put things.
 
 Additional syntax and formatting options are available in the **R Markdown Reference Guide**, which you can access in RStudio as follows:
 
@@ -940,7 +948,7 @@ Additional syntax and formatting options are available in the **R Markdown Refer
 
 ### Before Starting {#beforeyoustart}
 
-Before you start this tutorial, please delete the content of your R Markdown file starting on line 11 `## R Markdown` to the end of the document (see Figure \@ref(fig:beforestart)).
+**This is the step to complete before any of the [syntax exercises](#basic-r-markdown-syntax).** Open the `Chapter_2_part_A.Rmd` file you created earlier and delete its content from line 11 (`## R Markdown`) to the end of the document, keeping the YAML header and the `setup` code chunk above it (see Figure \@ref(fig:beforestart)). You are left with an empty document that is ready to knit, and everything you add from here is your own.
 
 ```{r beforestart, fig.alt="Screenshot of the RStudio source editor showing the top of Chapter_2_part_A.Rmd, with the YAML header giving the title, html_document output and a date, followed by a shaded setup code chunk calling knitr opts_chunk set echo TRUE, then the default R Markdown headings and text.", echo=FALSE, fig.cap="R Markdown of Chapter 2 - Part A.", out.width = '100%'}
 knitr::include_graphics("Figures/Chapter_2_partA_Rmd.png")
@@ -979,7 +987,7 @@ The "#" refers to the level of the header
     <ul>
       <li>Including 2 level 1 headers</li>
       <li>Embedding 2 level 2 headers under each level 1 header</li>
-      <li>Checking your code by knitting the document</li>
+      <li><b>Knit</b> your document and check that each level 1 header is larger than the level 2 headers nested under it</li>
     </ul>
   </p>
   <p>
@@ -991,8 +999,9 @@ The "#" refers to the level of the header
 
 ### Inside Text Commenting {#comment}
 
-Markdown does not have a built-in syntax for adding comments within text, but you can use HTML-style comments instead:
+Markdown does not have a built-in syntax for adding comments within text, but you can use HTML-style comments instead.
 
+**Syntax:**
 ```{r eval = FALSE, echo = TRUE}
 # HTML syntax to comment inside text
 <!-- COMMENT -->
@@ -1012,7 +1021,7 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Adding comments describing the content included under each level 1 header</li>
-      <li>Checking your code by knitting the document</li>
+      <li><b>Knit</b> your document and check that your comments are <i>not</i> visible in the output</li>
     </ul>
   </p>
 </div>
@@ -1055,7 +1064,7 @@ There are two types of lists:
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Including a 2-level unordered list under the first level 1 header</li>
-      <li>Checking your code by knitting the document</li>
+      <li><b>Knit</b> your document and check that the sub-items are indented under their parent item</li>
     </ul>
   </p>
 </div>
@@ -1087,7 +1096,7 @@ There are two types of lists:
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Including a 2-level ordered list under the second level 1 header</li>
-      <li>Checking your code by knitting the document</li>
+      <li><b>Knit</b> your document and check that the items are numbered and the sub-items are not</li>
     </ul>
   </p>
 </div>
@@ -1096,8 +1105,9 @@ There are two types of lists:
 
 ### Italicize and Bold Words {#itbold}
 
-The following syntax renders text in *italics*, **bold**, or ***both italics and bold***: 
+The following syntax renders text in *italics*, **bold**, or ***both italics and bold***.
 
+**Syntax:**
 ```{r eval=FALSE}
 #Syntax for italics
 *italics*
@@ -1127,7 +1137,7 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
       <li>Writing a sentence in your R Markdown document that includes an italicized word</li>
       <li>Writing a sentence that includes a word or phrase in bold</li>
       <li>Writing a sentence where a word or phrase is both bold and italicized</li>
-      <li>Checking your code by knitting the document</li>
+      <li><b>Knit</b> your document and check all three sentences render differently from one another</li>
     </ul>
   </p>
 </div>
@@ -1136,8 +1146,9 @@ The following syntax renders text in *italics*, **bold**, or ***both italics and
 
 ### Create Hyperlinks {#hyperlinks}
 
-Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax:
+Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax.
 
+**Syntax:**
 ```{r eval=FALSE}
 #Syntax to add hyperlink
 [text](link)
@@ -1146,7 +1157,9 @@ Adding hyperlinks to your documents support reproducible science and it can be e
 [RStudio](https://www.rstudio.com)
 ```
 
-When knitted, the example with RStudio turns like that [RStudio](https://www.rstudio.com).
+**Output:**
+
+When knitted, the example with RStudio renders as a link: [RStudio](https://www.rstudio.com).
 
 <style>
 .danger {
@@ -1159,7 +1172,7 @@ When knitted, the example with RStudio turns like that [RStudio](https://www.rst
     <ul>
       <li>Creating a hyperlink to the Boise State website</li>
       <li>Creating a hyperlink to download R for Mac computers</li>
-      <li>Checking your code by knitting the document</li>
+      <li><b>Knit</b> your document and check that both links are clickable and open the right page</li>
     </ul>
   </p>
 </div>
@@ -1176,7 +1189,7 @@ If the output is a table or a figure, you can assign a label to it (by adding me
  
 #### Code Chunk
 
-A code chunk can be easily inserted into your document using one of the following methods:
+**Syntax:** a code chunk can be inserted into your document by any of the following methods.
 
 - Using the keyboard shortcut **Ctrl + Alt + I** (on macOS: **Cmd + Option + I**).
 - Clicking the `Insert` button ![](Figures/insert_code_chunk.png){alt=""} in the editor toolbar.
@@ -1193,7 +1206,8 @@ By default, the code chunk expects R code, but you can also insert chunks for ot
 <div class="danger">
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
-      <li>Creating a code chunk in your R Markdown document that prints the message "Hello world" when you knit the document</li>
+      <li>Creating a code chunk in your R Markdown document that prints the message "Hello world"</li>
+      <li><b>Knit</b> your document and check that both the code <i>and</i> its output appear in the result</li>
     </ul>
   </p>
 </div>
@@ -1224,6 +1238,7 @@ knitr::include_graphics("Figures/code-1-options.png")
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
       <li>Editing the code chunk you created earlier (that prints "Hello world") so that the <b>code is hidden</b> when you knit the document, but the <b>output is still displayed</b></li>
+      <li><b>Knit</b> your document and compare it with the previous version: the chunk should now show "Hello world" with no code above it</li>
     </ul>
   </p>
 </div>
@@ -1232,7 +1247,9 @@ knitr::include_graphics("Figures/code-1-options.png")
 
 ### Inline Code {#inlinecode}
 
-Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code as follows:
+Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code as follows.
+
+**Syntax:**
 ```{r eval=FALSE}
 # Syntax for inline code
 ``r 2+2`` # Please amend to include only 1 back tick
@@ -1259,7 +1276,8 @@ As a result, inline output is indistinguishable from the surrounding text.
 <div class="danger">
   <p><strong>💡 Your turn to practice this syntax in your document by:</strong>
     <ul>
-      <li>Editing a sentence in your R Markdown text to include the <b>output of the line of code 2 + 2</b>, so that the result is automatically displayed when the document is knitted</li>
+      <li>Editing a sentence in your R Markdown text to include the <b>output of the line of code 2 + 2</b></li>
+      <li><b>Knit</b> your document and check that the sentence reads naturally, with the number 4 in place and no code visible</li>
     </ul>
   </p>
 </div>
@@ -1270,9 +1288,20 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 There are three ways to access spell checking in an R Markdown document in RStudio:
 
+**Syntax:** there is none to learn here. Spell checking is a tool in RStudio rather than Markdown syntax, and it can be reached in three ways:
+
 1. A spell check button ![](Figures/ABC.png){alt=""} to the right of the save button.
 2. `Edit > Check Spelling...`
 3. The F7 key.
+
+<div class="danger">
+  <p><strong>💡 Your turn to practice this in your document by:</strong>
+    <ul>
+      <li>Running a spell check over everything you have written in this tutorial and correcting what it finds</li>
+      <li><b>Knit</b> your document one last time and read it through: this is the version your reader sees, and it should now contain headers, comments, lists, formatted text, hyperlinks, a code chunk and inline code</li>
+    </ul>
+  </p>
+</div>
 
 ## PART B: Setting Your R Markdown Document {#partB}
 
