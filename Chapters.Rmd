@@ -938,18 +938,24 @@ Do the exercise before moving to the next section rather than reading ahead, and
   <p><strong>💡 Ask for help.</strong> I am in the room for exactly this. If your document will not knit, or the output does not look the way you expected, raise your hand rather than working around it. A document that refuses to knit is completely normal and the error message in the <b>R Markdown</b> console usually names the line that caused it. Getting used to reading those messages is part of what you are learning here.</p>
 </div>
 
-Work through the sections in this order:
+**We have 60 minutes of class time for this.** Each section below carries a time in grey, in the same way as the group activities in [Chapt. 1](#chap1). Those timings add up to the hour and are there so that you (and I) can tell whether we are keeping pace:
 
-1. [Headers](#headers)  
-2. [Inside text commenting](#comment) 
-3. [Lists](#lists)  
-4. [Italicized, bold, and combined formatting](#itbold) 
-5. [Creating hyperlinks](#hyperlinks)  
-6. [Embedded code chunks](#codechunkhow)  
-7. [Inline code](#inlinecode)  
-8. [Spell checking](#checkspell)
+| | Section | Time |
+|---|---|---|
+| | [Before Starting](#beforeyoustart) | 3 min |
+| 1 | [Headers](#headers) | 6 min |
+| 2 | [Inside text commenting](#comment) | 5 min |
+| 3 | [Lists](#lists) | 10 min |
+| 4 | [Italicized, bold, and combined formatting](#itbold) | 6 min |
+| 5 | [Creating hyperlinks](#hyperlinks) | 6 min |
+| 6 | [Embedded code chunks](#codechunkhow) | 14 min |
+| 7 | [Inline code](#inlinecode) | 6 min |
+| 8 | [Spell checking](#checkspell) | 4 min |
+| | **Total** | **60 min** |
 
 They are ordered deliberately: later exercises ask you to add content underneath headers you created earlier, so working out of order leaves you with nowhere to put things.
+
+**Treat the times as a pace, not a deadline.** If a section takes you longer, that is worth knowing and worth telling me, because it usually means something is genuinely unclear rather than that you are slow. If you finish early, open the ✅ Solution and compare it with what you wrote, or help the person next to you. I will call out roughly where we should be as we go.
 
 Additional syntax and formatting options are available in the **R Markdown Reference Guide**, which you can access in RStudio as follows:
 
@@ -959,7 +965,7 @@ Additional syntax and formatting options are available in the **R Markdown Refer
 
 ---
 
-### Before Starting {#beforeyoustart}
+### Before Starting <span style="color:dimgray;">(3 minutes)</span> {#beforeyoustart}
 
 **This is the step to complete before any of the [syntax exercises](#syntaxguide).** Open the `Chapter_2_part_A.Rmd` file you created earlier and delete its content from line 11 (`## R Markdown`) to the end of the document, keeping the YAML header and the `setup` code chunk above it (see Figure \@ref(fig:beforestart)). You are left with an empty document that is ready to knit, and everything you add from here is your own.
 
@@ -969,7 +975,7 @@ knitr::include_graphics("Figures/Chapter_2_partA_Rmd.png")
 
 ---
 
-### Headers {#headers}
+### Headers <span style="color:dimgray;">(6 minutes)</span> {#headers}
 
 Below is the syntax to create headers at three levels:
 
@@ -1026,7 +1032,7 @@ The "#" refers to the level of the header
 
 ---
 
-### Inside Text Commenting {#comment}
+### Inside Text Commenting <span style="color:dimgray;">(5 minutes)</span> {#comment}
 
 Markdown does not have a built-in syntax for adding comments within text, but you can use HTML-style comments instead.
 
@@ -1069,14 +1075,14 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
 
 ---
 
-### Lists {#lists}
+### Lists <span style="color:dimgray;">(10 minutes)</span> {#lists}
 
 There are two types of lists:
 
 - Unordered
 - Ordered
 
-#### Syntax for unordered lists
+#### Syntax for unordered lists <span style="color:dimgray;">(~5 minutes)</span>
 
 **Syntax:**
 ```{r eval=FALSE}
@@ -1119,7 +1125,7 @@ There are two types of lists:
 </details>
 
 
-#### Syntax for ordered lists
+#### Syntax for ordered lists <span style="color:dimgray;">(~5 minutes)</span>
 
 **Syntax:**
 ```{r eval=FALSE}
@@ -1162,7 +1168,7 @@ There are two types of lists:
 
 ---
 
-### Italicize and Bold Words {#itbold}
+### Italicize and Bold Words <span style="color:dimgray;">(6 minutes)</span> {#itbold}
 
 The following syntax renders text in *italics*, **bold**, or ***both italics and bold***.
 
@@ -1213,7 +1219,7 @@ Every figure is ***produced by code*** that runs from the raw data.</code></pre>
 
 ---
 
-### Create Hyperlinks {#hyperlinks}
+### Create Hyperlinks <span style="color:dimgray;">(6 minutes)</span> {#hyperlinks}
 
 Adding hyperlinks to your documents support reproducible science and it can be easily done with the following syntax.
 
@@ -1256,7 +1262,7 @@ When knitted, the example with RStudio renders as a link: [RStudio](https://www.
 
 ---
 
-### Include Code Chunks {#codechunkhow}
+### Include Code Chunks <span style="color:dimgray;">(14 minutes)</span> {#codechunkhow}
 
 One of the most exciting features of working with the R Markdown format is the ability to directly *embed* the output of R code into the compiled document (see Figure \@ref(fig:Rflow)). 
 
@@ -1264,7 +1270,7 @@ In other words, when you compile your `.Rmd` file, R Markdown will automatically
 
 If the output is a table or a figure, you can assign a label to it (by adding metadata within the code chunk; see Part B) and refer to it later in your `PDF` or `HTML` document. This process—known as *cross-referencing*—is made possible through the `\@ref()` function, which is implemented in the R `bookdown` package.
  
-#### Code Chunk
+#### Code Chunk <span style="color:dimgray;">(~7 minutes)</span>
 
 **Syntax:** a code chunk can be inserted into your document by any of the following methods.
 
@@ -1297,7 +1303,7 @@ print("Hello world")
 </details>
 
 
-#### Chunk Options
+#### Chunk Options <span style="color:dimgray;">(~7 minutes)</span>
 
 Chunk output can be customized with *knitr* options arguments set in the `{}` of a code chunk header. In the examples displayed in Figure \@ref(fig:RChunk) five arguments are used:
 
@@ -1338,7 +1344,7 @@ print("Hello world")
 
 ---
 
-### Inline Code {#inlinecode}
+### Inline Code <span style="color:dimgray;">(6 minutes)</span> {#inlinecode}
 
 Code results can also be inserted directly into the text of a `.Rmd` file by enclosing the code as follows.
 
@@ -1383,7 +1389,7 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 ---
 
-### Check Spelling {#checkspell}
+### Check Spelling <span style="color:dimgray;">(4 minutes)</span> {#checkspell}
 
 There are three ways to access spell checking in an R Markdown document in RStudio:
 
