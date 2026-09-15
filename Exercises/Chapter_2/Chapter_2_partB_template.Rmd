@@ -1,0 +1,106 @@
+--- 
+title: "Your title"
+subtitle: "Your subtitle"
+author: "Your name"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+link-citations: yes
+fontsize: 12pt
+bibliography: Bibliography_Reproducible_Science_2.bib 
+csl: AmJBot.csl
+---
+
+<!--
+  EEB 603 -- Reproducible Science
+  Chapter 2, PART B: the finished document.
+
+  This is what your own .Rmd should look like once you have worked through
+  every section of PART B. Use it to check your work, not to replace it.
+
+  Bibliography_Reproducible_Science_2.bib and AmJBot.csl must sit in the same
+  folder as this file, or the document will not knit.
+-->
+
+<!-- CODE CHUNK #1: install and load dependencies, and write packages.bib -->
+```{r packages, echo = FALSE, warning = FALSE, include = FALSE}
+###~~~
+# Load R packages
+###~~~
+# Create a vector w/ the required R packages
+# --> If you have a new dependency, don't forget to add it in this vector
+pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra",
+         "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations",
+         "bibtex", "devtools")
+
+##~~~
+# 2. Check if pkg are already installed on your computer
+##~~~
+print("Check if packages are installed")
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+# 3. Install missing packages
+##~~~
+if(length(new.pkg) > 0){
+  print(paste("Install missing package(s):", new.pkg, sep = ' '))
+  install.packages(new.pkg, dependencies = TRUE)
+}else{
+  print("All packages are already installed!")
+}
+
+##~~~
+# 4. Load all required packages
+##~~~
+print("Load packages and return status")
+sapply(pkg, require, character.only = TRUE)
+
+###~~~
+# Generate BibTex citation file for all loaded R packages used to produce report
+###~~~
+knitr::write_bib(.packages(), file = 'packages.bib')
+```
+
+# Your research
+
+This is where your own text and code chunks go. Everything above this point is
+the scaffolding you built in PART B; everything below "References" is generated
+for you.
+
+# References
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendices {-}
+
+# Appendix 1
+
+Citations of all R packages used to generate this report.
+
+<!-- CODE CHUNK #3: print the citations saved in packages.bib -->
+```{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
+###
+# Load R package
+###
+library("knitcitations")
+###
+# Process and print citations in packages.bib
+###
+cleanbib()
+options("citation_format" = "pandoc")
+read.bibtex(file = "packages.bib")
+```
+
+# Appendix 2
+
+Version information about R, the operating system (OS) and attached or R loaded
+packages. This appendix was generated using `sessionInfo()`.
+
+<!-- CODE CHUNK #4: R package versions and operating system -->
+```{r sessionInfo, eval = TRUE, echo = FALSE, warning = FALSE, message = FALSE}
+# Load and provide all packages and versions
+sessionInfo()
+```

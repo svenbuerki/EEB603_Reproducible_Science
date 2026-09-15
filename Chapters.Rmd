@@ -1410,11 +1410,16 @@ There are three ways to access spell checking in an R Markdown document in RStud
 
 ## PART B: Setting Your R Markdown Document {#partB}
 
-### Introduction
+### Aim
 
 The **aim** of this tutorial is to develop an R Markdown document that can be used as a template to produce your reproducible reports. 
 
-We will focus on learning how to configure your document to manage software dependencies, set global parameters for knitting, and produce appendices with software citations, package version information, and details about the operating system used to generate the reproducible report.
+We will focus on learning how to configure your document so that it:
+
+1. **Manages its own software dependencies**, installing and loading the R packages it needs ([Install R Dependencies and Load Packages](#loadRreq)).
+2. **Sets global parameters for knitting**, so that every code chunk behaves consistently ([YAML Metadata Section](#YAMLset)).
+3. **Produces an appendix of software citations**, generated from the packages actually used ([Generate a Citation File](#citfileRpkg) and [Generate Appendix with Citations](#appendixRpkg)).
+4. **Produces an appendix of package versions and operating system details**, recording the environment your results came from ([Generate Appendix with Versions and OS](#appendixRverOS)).
 
 ### Learning Outcomes
 
@@ -1428,22 +1433,42 @@ This tutorial provides students with the opportunity to learn how to:
 - [Generate an appendix with citations for all R packages](#appendixRpkg)  
 - [Generate an appendix with R package versions used to produce the document](#appendixRverOS)  
 
+**We have one and a half classes for this**, and each outcome above maps to one section below. The times are a pace rather than a deadline, in the same way as in [PART A](#syntaxguide):
+
+| | Section | Time | Session |
+|---|---|---|---|
+| 1 | [Structure of an R Markdown Document](#structRMD) | 10 min | 1 |
+| 2 | [Create Your R Markdown Document](#creatRMDfile) | 10 min | 1 |
+| 3 | [YAML Metadata Section](#YAMLset) | 25 min | 1 |
+| 4 | [Install R Dependencies and Load Packages](#loadRreq) | 25 min | 1 |
+| 5 | [Generate a Citation File of R Packages Used](#citfileRpkg) | 12 min | 2 |
+| 6 | [Generate Appendix with Citations](#appendixRpkg) | 12 min | 2 |
+| 7 | [Generate Appendix with Versions and OS](#appendixRverOS) | 8 min | 2 |
+| | [All Set](#all-set-youre-good-to-go) | 3 min | 2 |
+| | **Total** | **105 min** | |
+
 ---
 
-### Structure of an R Markdown Document {#structRMD}
+### Structure of an R Markdown Document <span style="color:dimgray;">(10 minutes)</span> {#structRMD}
 
-To facilitate the teaching of the learning outcomes, a roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct).
+**What you are building.** By the end of PART B you will have one R Markdown document that works as a **template for every reproducible report you write afterwards**: it installs its own dependencies, formats its citations to a journal style, and ends with appendices listing the software it used. You will not be writing research content into it. You are building the scaffolding that research content later sits inside.
+
+**How we will work.** This runs like [PART A](#syntaxguide). You build up a single `.Rmd` file section by section, in the order given, and **knit after every section** so that a problem is always traceable to the last thing you changed. Each section ends with a **✅ Checkpoint** telling you what your file and your knitted output should look like at that point: open it before moving on. Work at your own pace and ask me as soon as something does not knit.
+
+A roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). **Three of the four code chunks named there are what you build in this tutorial**, one at a time: chunk #1 in [Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg), chunk #3 in [Generate Appendix with Citations](#appendixRpkg), and chunk #4 in [Generate Appendix with Versions and OS](#appendixRverOS). Code chunk #2, which sets global options for code chunks, comes later in [PART D](#partD).
+
+**If you want to see where this is going**, the finished document is available as [`Chapter_2_partB_template.Rmd`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_2/Chapter_2_partB_template.Rmd). It is the end state, not a shortcut: work through the sections yourself and use it to check your own file against.
 
 To support the reproducibility of your research, we structure the R Markdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
 
-1. The YAML metadata section (at the top of the document) must include information about your bibliography (`*.bib`) and citation style language (`*.csl`) files, both of which must be stored in the working directory.
+1. The YAML metadata section (at the top of the document) must include information about your bibliography (`*.bib`) and citation style language (`*.csl`) files, both of which must be stored in the working directory. ([YAML Metadata Section](#YAMLset))
 2. Two R code chunks are provided just below the YAML metadata section:
-    - [Code chunk #1]{.underline}: Installs and loads packages, and generates a `packages.bib` file (stored in the working directory).
-    - [Code chunk #2]{.underline}: Sets global options for code chunks.
-3. The Markdown section beneath the two R code chunks is edited to add headers for the References and Appendices sections.
+    - [Code chunk #1]{.underline}: Installs and loads packages, and generates a `packages.bib` file (stored in the working directory). ([Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg))
+    - [Code chunk #2]{.underline}: Sets global options for code chunks. (covered later, in [PART D](#partD))
+3. The Markdown section beneath the two R code chunks is edited to add headers for the References and Appendices sections. ([Generate Appendix with Citations](#appendixRpkg))
 4. Finally, two R code chunks are included in the Appendices section:
-    - [Code chunk #3]{.underline}: Provides citations of software (relying on the output of Code chunk #1) for Appendix 1.
-    - [Code chunk #4]{.underline}: Provides software version information (relying on *sessionInfo()*) for Appendix 2.
+    - [Code chunk #3]{.underline}: Provides citations of software (relying on the output of Code chunk #1) for Appendix 1. ([Generate Appendix with Citations](#appendixRpkg))
+    - [Code chunk #4]{.underline}: Provides software version information (relying on *sessionInfo()*) for Appendix 2. ([Generate Appendix with Versions and OS](#appendixRverOS))
 
 ```{r RMarkdwnstrct, fig.alt="A stacked block diagram of an .Rmd file read top to bottom: a green YAML metadata block, then blue code chunks for packages and setup, a white YOUR RESEARCH block, and headings for References and Appendices followed by two further blue code chunks for software citations and package versions; arrows on the right connect four blocks to notes about declaring .bib and .csl files, loading and analyzing data, automatic formatting of references, and using packages.bib to build the software bibliography.", echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
 knitr::include_graphics("Figures/RMarkdown_file_structure.png")
@@ -1451,15 +1476,10 @@ knitr::include_graphics("Figures/RMarkdown_file_structure.png")
 
 ---
 
-### Supporting Files
-
-Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
-
----
-
-### Create Your R Markdown Document {#creatRMDfile} 
+### Create Your R Markdown Document <span style="color:dimgray;">(10 minutes)</span> {#creatRMDfile}
 
 Use the material from the [Chapter 2 – Part A](#firstMDhow) and [Before Starting](#beforeyoustart) sections to create and save your R Markdown document for this tutorial. 
+
 
 <style>
 .danger {
@@ -1478,9 +1498,20 @@ Use the material from the [Chapter 2 – Part A](#firstMDhow) and [Before Starti
   </p>
 </div>
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your project folder contains** `Chapter2_partB.Rmd`, saved at `Reproducible_Science/Chapters/Chapter_2`.
+
+**Your document knits** to an HTML file without error, and the `.html` appears alongside the `.Rmd`.
+
+If it does not knit yet, fix that before going any further. Everything below is added to this file.
+
+</details>
+
 ---
 
-### YAML Metadata Section {#YAMLset}
+### YAML Metadata Section <span style="color:dimgray;">(25 minutes)</span> {#YAMLset}
 
 The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as *fields*) that control how an R Markdown document is converted into its final output format. In this class, we will use functions from the *knitr* [@R-knitr; @knitr2015] and *bookdown* [@R-bookdown; @bookdown2016] packages to populate this section. (Field names, as declared in the YAML metadata section, are provided in parentheses.)
 
@@ -1551,9 +1582,22 @@ To ensure that `bookdown` functions are applied correctly, make sure to select o
 knitr::include_graphics("Figures/knit_drop_down.png")
 ```
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your `.Rmd` begins** with a YAML block that ends `csl: AmJBot.csl`.
+
+**Your project folder also contains** `Bibliography_Reproducible_Science_2.bib` and `AmJBot.csl`, beside the `.Rmd` file.
+
+**Your knitted output** opens with your title, author and today's date, followed by a table of contents.
+
+If the document will not knit, the most common cause at this stage is one of those two files being in the wrong folder, or a stray indent in the YAML.
+
+</details>
+
 ---
 
-### Install R Dependencies and Load Packages {#loadRreq}
+### Install R Dependencies and Load Packages <span style="color:dimgray;">(25 minutes)</span> {#loadRreq}
 
 #### Introduction
 
@@ -1635,9 +1679,20 @@ sapply(pkg, require, character.only = TRUE)
 4. Review the R code to ensure you understand what it does and why
 5. Knit your document and inspect the output file
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Directly below your YAML** there is a code chunk named `packages`, with the options `echo = FALSE`, `warning = FALSE` and `include = FALSE`.
+
+**When you knit**, the R Markdown console reports the packages being checked and loaded, but **nothing from this chunk appears in the output document**. That is what those three options are for.
+
+If a package fails to install, stop and ask rather than removing it from the vector.
+
+</details>
+
 ---
 
-### Generate a Citation File of R Packages Used {#citfileRpkg}
+### Generate a Citation File of R Packages Used <span style="color:dimgray;">(12 minutes)</span> {#citfileRpkg}
 
 #### Introduction
 
@@ -1698,9 +1753,20 @@ Finally, to be able to cite these references (see [Citation identifier](#citatio
   </ul>
 </div>
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your `packages` chunk now ends** with `knitr::write_bib(.packages(), file = 'packages.bib')`.
+
+**After knitting, a new file `packages.bib` has appeared** in your project folder. Open it: it holds a BibTeX entry for every package loaded by the chunk above.
+
+No `packages.bib` means the line is outside the chunk, or the document has not been knitted since you added it.
+
+</details>
+
 ---
 
-### Generate Appendix with Citations of Used R Packages {#appendixRpkg}
+### Generate Appendix with Citations of Used R Packages <span style="color:dimgray;">(12 minutes)</span> {#appendixRpkg}
 
 Although a References section will be provided at the end of your document to cite in-text references (see [References] and Figure \@ref(fig:RMarkdwnstrct)), it is useful to create a customized appendix listing citations for all R packages used to conduct the research, as shown in [Appendix 1]. 
 
@@ -1744,9 +1810,20 @@ read.bibtex(file = "packages.bib")
    `{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}`
 5. Knit your document to check that it produces the correct output (see [Knitting procedure]). Refer to [Appendix 1] to see an example of the expected result.
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your document now ends** with, in this order: a `# References` header, `<div id="refs"></div>`, `# (APPENDIX) Appendices {-}`, `# Appendix 1`, and a chunk named `generateBibliography` carrying `results = "asis"`.
+
+**In the knitted output**, Appendix 1 appears **after** the References section and lists the citations of every R package you loaded.
+
+If the appendix appears before the references, the `<div id="refs"></div>` line is missing or misplaced.
+
+</details>
+
 ---
 
-### Generate Appendix with R Package Versions and Operating System {#appendixRverOS}
+### Generate Appendix with R Package Versions and Operating System <span style="color:dimgray;">(8 minutes)</span> {#appendixRverOS}
 
 In addition to citing R packages, you may also want to provide detailed information about the R package versions and operating system used (see Figure \@ref(fig:RMarkdwnstrct)).
 
@@ -1780,11 +1857,24 @@ sessionInfo()
 ```
 4. Knit your document to check that it produces the correct output.
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your document ends** with `# Appendix 2`, its one-sentence description, and a chunk named `sessionInfo` set to `eval = TRUE, echo = FALSE`.
+
+**In the knitted output**, Appendix 2 lists your R version, your operating system, and every attached package with its version number.
+
+That output is specific to your machine, so it will not match mine, and that is precisely the point: it records the environment your results were produced in.
+
+</details>
+
 ---
 
 ### All Set — You’re Good to Go!
 
 You have now set up your R Markdown environment and are ready to start populating it! This means you can begin inserting your text and additional code chunks directly below the `packages` code chunk.
+
+**Compare your document against the finished template**, [`Chapter_2_partB_template.Rmd`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_2/Chapter_2_partB_template.Rmd). It contains the YAML metadata section, the `packages` chunk (including the line that writes `packages.bib`), the References section with `<div id="refs"></div>`, and both appendices, in the order the figure above shows. If something in your own file is missing or out of order, this is where to look.
 
 The [References] section marks the end of the main body of your document. If you wish to add appendices, do so under [Appendix 2]. Note that appendices will be labeled differently from the main sections of the document.
 
