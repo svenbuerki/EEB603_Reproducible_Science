@@ -263,6 +263,8 @@ knitr::kable(tut,
 
 The full session-by-session schedule follows in Table \@ref(tab:timetab). I may adjust the schedule to accommodate the course's progress and your needs; if I do, I will let everyone enrolled know in good time and update this page, which is always the current version.
 
+**Homework shown as a bulleted list is confirmed.** Plain-text entries further down the table are provisional: they describe what I expect to set, and I will itemise them as each session approaches. If in doubt about what is actually due, work from the bulleted entries and from the deadlines in Table \@ref(tab:deadlines) above.
+
 Our classes run for 75 minutes, and roughly halfway through I will call a five-minute break. I aim for a natural pause in the material rather than a fixed time on the clock, so it may fall a little either side of the midpoint.
 
 ```{r timetab, echo=FALSE}
