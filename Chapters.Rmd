@@ -21,6 +21,25 @@ editor_options:
 lang: en
 ---
 
+```{js newtab-js, echo=FALSE}
+// Open links that leave this page in a new tab, so that using the back button
+// never drops the reader at the top of this very long chapter. Same-page
+// anchors and the navigation bar are deliberately left alone.
+$(document).ready(function() {
+  $('a[href]').not('.navbar a').not('#TOC a').each(function() {
+    var h = this.getAttribute('href');
+    if (!h || h.charAt(0) === '#') return;
+    var external  = /^https?:\/\//i.test(h) && this.host !== window.location.host;
+    var otherPage = /^(?!Chapters\.html)[^#?:]+\.(html|pdf|Rmd|csv)([#?].*)?$/i.test(h);
+    if (external || otherPage) {
+      this.target = '_blank';
+      this.rel = 'noopener noreferrer';
+      if (!this.title) this.title = 'Opens in a new tab';
+    }
+  });
+});
+```
+
 ```{js logo-js, echo=FALSE}
 $(document).ready(function() {
   $('#header').parent().prepend('<div id=\"logo\"><img src=\"Images/boisestate-primarylogo-2color-rgb.png\" alt=\"\" style=\"position:absolute; top:0; right:0; padding:10px; height:120px\"></div>');
@@ -1463,25 +1482,23 @@ Every section of this tutorial, and of [PART A](#partA) before it, follows the s
 
 ### Structure of an R Markdown Document <span style="color:dimgray;">(10 minutes)</span> {#structRMD}
 
+#### What You Are Building
+
 **What you are building.** By the end of PART B you will have one R Markdown document that works as a **template for every reproducible report you write afterwards**: it installs its own dependencies, formats its citations to a journal style, and ends with appendices listing the software it used. You will not be writing research content into it. You are building the scaffolding that research content later sits inside.
-
-**How we will work.** This runs like [PART A](#syntaxguide). You build up a single `.Rmd` file section by section, in the order given, and **knit after every section** so that a problem is always traceable to the last thing you changed. Each section ends with a **✅ Checkpoint** telling you what your file and your knitted output should look like at that point: open it before moving on. Work at your own pace and ask me as soon as something does not knit.
-
-A roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). **Three of the four code chunks named there are what you build in this tutorial**, one at a time: chunk #1 in [Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg), chunk #3 in [Generate Appendix with Citations](#appendixRpkg), and chunk #4 in [Generate Appendix with Versions and OS](#appendixRverOS). Code chunk #2, which sets global options for code chunks, comes later in [PART D](#partD).
-
-**The page you are reading is built exactly this way.** These course chapters are themselves one large R Markdown document, and it follows the structure in Figure \@ref(fig:RMarkdwnstrct) point for point. Open [`Chapters.Rmd` on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Chapters.Rmd) and you will find, in order:
-
-- a **YAML metadata section** declaring `csl: AmJBot.csl` and two bibliography files, one of which is `packages.bib`;
-- a **`packages` chunk** with `echo = FALSE, warning = FALSE, include = FALSE`, which installs and loads the dependencies and ends with `knitr::write_bib(.packages(), file = 'packages.bib')`;
-- a **`setup` chunk** setting the global options for every code chunk (code chunk #2, the one you meet in [PART D](#partD));
-- all of the course content, which is the *your research* block in the figure;
-- and at the very bottom, a `# References` header, `<div id="refs"></div>`, and [Appendix 1](#appendix-1) and [Appendix 2](#appendix-2), generated from `packages.bib` and `sessionInfo()`.
-
-Scroll to the end of this page and you can read those two appendices as output, then read the code that produced them on GitHub. **Nothing in this course was written by hand and described as reproducible.** The chapters, the syllabus and the schedule are all produced by the workflow you are being taught, which is the only honest way to teach it.
 
 **If you want to see where this is going**, the finished document is available as [`Chapter_2_partB_template.Rmd`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_2/Chapter_2_partB_template.Rmd). It is the end state, not a shortcut: work through the sections yourself and use it to check your own file against.
 
+#### How We Will Work
+
+**How we will work.** This runs like [PART A](#syntaxguide). You build up a single `.Rmd` file section by section, in the order given, and **knit after every section** so that a problem is always traceable to the last thing you changed. Each section ends with a **✅ Checkpoint** telling you what your file and your knitted output should look like at that point: open it before moving on. Work at your own pace and ask me as soon as something does not knit.
+
+#### The Structure of the Document
+
 To support the reproducibility of your research, we structure the R Markdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
+
+```{r RMarkdwnstrct, fig.alt="A stacked block diagram of an .Rmd file read top to bottom: a green YAML metadata block, then blue code chunks for packages and setup, a white YOUR RESEARCH block, and headings for References and Appendices followed by two further blue code chunks for software citations and package versions; arrows on the right connect four blocks to notes about declaring .bib and .csl files, loading and analyzing data, automatic formatting of references, and using packages.bib to build the software bibliography.", echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
+knitr::include_graphics("Figures/RMarkdown_file_structure.png")
+```
 
 1. The YAML metadata section (at the top of the document) must include information about your bibliography (`*.bib`) and citation style language (`*.csl`) files, both of which must be stored in the working directory. ([YAML Metadata Section](#YAMLset))
 2. Two R code chunks are provided just below the YAML metadata section:
@@ -1492,9 +1509,19 @@ To support the reproducibility of your research, we structure the R Markdown fil
     - [Code chunk #3]{.underline}: Provides citations of software (relying on the output of Code chunk #1) for Appendix 1. ([Generate Appendix with Citations](#appendixRpkg))
     - [Code chunk #4]{.underline}: Provides software version information (relying on *sessionInfo()*) for Appendix 2. ([Generate Appendix with Versions and OS](#appendixRverOS))
 
-```{r RMarkdwnstrct, fig.alt="A stacked block diagram of an .Rmd file read top to bottom: a green YAML metadata block, then blue code chunks for packages and setup, a white YOUR RESEARCH block, and headings for References and Appendices followed by two further blue code chunks for software citations and package versions; arrows on the right connect four blocks to notes about declaring .bib and .csl files, loading and analyzing data, automatic formatting of references, and using packages.bib to build the software bibliography.", echo=FALSE, fig.cap = "Representation of the RMarkdown file structure taught in this class. The following colors represent the three main computing languages found in an RMarkdown document: Black: Markdown (we also sometimes use HTML), Green: YAML, and Blue: R (included in code chunks). See text for more details.", fig.show = "asis", out.width = '100%'}
-knitr::include_graphics("Figures/RMarkdown_file_structure.png")
-```
+A roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). **Three of the four code chunks named there are what you build in this tutorial**, one at a time: chunk #1 in [Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg), chunk #3 in [Generate Appendix with Citations](#appendixRpkg), and chunk #4 in [Generate Appendix with Versions and OS](#appendixRverOS). Code chunk #2, which sets global options for code chunks, comes later in [PART D](#partD).
+
+#### This Page Is Built the Same Way
+
+**The page you are reading is built exactly this way.** These course chapters are themselves one large R Markdown document, and it follows the structure in Figure \@ref(fig:RMarkdwnstrct) point for point. Open [`Chapters.Rmd` on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Chapters.Rmd) and you will find, in order:
+
+- a **YAML metadata section** declaring `csl: AmJBot.csl` and two bibliography files, one of which is `packages.bib`;
+- a **`packages` chunk** with `echo = FALSE, warning = FALSE, include = FALSE`, which installs and loads the dependencies and ends with `knitr::write_bib(.packages(), file = 'packages.bib')`;
+- a **`setup` chunk** setting the global options for every code chunk (code chunk #2, the one you meet in [PART D](#partD));
+- all of the course content, which is the *your research* block in the figure;
+- and at the very bottom, a `# References` header, `<div id="refs"></div>`, and [Appendix 1](#appendix-1) and [Appendix 2](#appendix-2), generated from `packages.bib` and `sessionInfo()`.
+
+Scroll to the end of this page and you can read those two appendices as output, then read the code that produced them on GitHub. **Nothing in this course was written by hand and described as reproducible.** The chapters, the syllabus and the schedule are all produced by the workflow you are being taught, which is the only honest way to teach it.
 
 ---
 
