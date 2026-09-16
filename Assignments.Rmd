@@ -107,6 +107,8 @@ The rubric covers the introduction and theoretical background, learning outcomes
 
 <a href="Evaluation_Forms/Bioinformatics_Tutorial_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Bioinformatics Tutorial rubric (pdf)</a>
 
+**Write it as a protocol.** The course chapters are deliberately built the same way: an explanation of why the skill matters, then a numbered step-by-step procedure, then a checkpoint so the reader can confirm it worked. You are asked to use that format. See [How These Tutorials Are Written](Chapters.html#protocolstyle) for what it looks like from the inside.
+
 ## Teaching the Bioinformatics Tutorial --- 100 points
 
 *Learning outcomes 6 and 7.*

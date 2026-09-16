@@ -242,7 +242,7 @@ i_upload <- i_upload[keep]
 taught <- vapply(chapters, function(ch) {
   j <- grep(paste0("^Bioinfo\\. tutorial - Chap\\. ", ch, "$"), topic$Topic)
   if (!length(j)) return("TBC")
-  paste(format(datesclass$Date[j], "%b %d"), collapse = " & ")
+  paste(format(datesclass$Date[j], "%Y-%m-%d"), collapse = " & ")
 }, character(1))
 
 tut <- data.frame(

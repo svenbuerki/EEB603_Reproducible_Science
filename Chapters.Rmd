@@ -1449,6 +1449,18 @@ This tutorial provides students with the opportunity to learn how to:
 
 ---
 
+### How These Tutorials Are Written {#protocolstyle}
+
+Every section of this tutorial, and of [PART A](#partA) before it, follows the same three-part protocol. The structure is deliberate:
+
+1. **Why and what.** Each section opens by explaining what the skill is and why it matters for reproducibility, before any code appears. A procedure you can follow but cannot justify is one you will drop the first time it becomes inconvenient.
+2. **A step-by-step procedure.** The implementation itself, numbered, in the order you carry it out, with the code and the options it needs.
+3. **A ✅ Checkpoint.** What your file and your knitted output should look like once the section is done, so that you can confirm you are on track before building the next piece on top of it.
+
+**This is the format I am asking you to use for your own [bioinformatics tutorial](Assignments.html#arc1).** Your peers will work through your chapter exactly as you are working through this one: they need to know why they are doing something, precisely how to do it, and how to tell whether it worked. As you go, notice which explanations help you and which leave you stuck, and build that into what you write.
+
+---
+
 ### Structure of an R Markdown Document <span style="color:dimgray;">(10 minutes)</span> {#structRMD}
 
 **What you are building.** By the end of PART B you will have one R Markdown document that works as a **template for every reproducible report you write afterwards**: it installs its own dependencies, formats its citations to a journal style, and ends with appendices listing the software it used. You will not be writing research content into it. You are building the scaffolding that research content later sits inside.
@@ -1683,6 +1695,8 @@ sapply(pkg, require, character.only = TRUE)
 <summary><b>✅ Checkpoint</b></summary>
 
 **Directly below your YAML** there is a code chunk named `packages`, with the options `echo = FALSE`, `warning = FALSE` and `include = FALSE`.
+
+**The R code from step 3 is inside that chunk**, not just referenced from it: the `pkg` vector listing every package, the check for missing packages, the `if` statement that installs them, and the `sapply(pkg, require, character.only = TRUE)` line that loads them. A chunk with the right name and the right options but no code in it will knit perfectly and do nothing at all.
 
 **When you knit**, the R Markdown console reports the packages being checked and loaded, but **nothing from this chunk appears in the output document**. That is what those three options are for.
 
