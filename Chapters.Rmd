@@ -1469,6 +1469,16 @@ Every section of this tutorial, and of [PART A](#partA) before it, follows the s
 
 A roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). **Three of the four code chunks named there are what you build in this tutorial**, one at a time: chunk #1 in [Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg), chunk #3 in [Generate Appendix with Citations](#appendixRpkg), and chunk #4 in [Generate Appendix with Versions and OS](#appendixRverOS). Code chunk #2, which sets global options for code chunks, comes later in [PART D](#partD).
 
+**The page you are reading is built exactly this way.** These course chapters are themselves one large R Markdown document, and it follows the structure in Figure \@ref(fig:RMarkdwnstrct) point for point. Open [`Chapters.Rmd` on GitHub](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Chapters.Rmd) and you will find, in order:
+
+- a **YAML metadata section** declaring `csl: AmJBot.csl` and two bibliography files, one of which is `packages.bib`;
+- a **`packages` chunk** with `echo = FALSE, warning = FALSE, include = FALSE`, which installs and loads the dependencies and ends with `knitr::write_bib(.packages(), file = 'packages.bib')`;
+- a **`setup` chunk** setting the global options for every code chunk (code chunk #2, the one you meet in [PART D](#partD));
+- all of the course content, which is the *your research* block in the figure;
+- and at the very bottom, a `# References` header, `<div id="refs"></div>`, and [Appendix 1](#appendix-1) and [Appendix 2](#appendix-2), generated from `packages.bib` and `sessionInfo()`.
+
+Scroll to the end of this page and you can read those two appendices as output, then read the code that produced them on GitHub. **Nothing in this course was written by hand and described as reproducible.** The chapters, the syllabus and the schedule are all produced by the workflow you are being taught, which is the only honest way to teach it.
+
 **If you want to see where this is going**, the finished document is available as [`Chapter_2_partB_template.Rmd`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_2/Chapter_2_partB_template.Rmd). It is the end state, not a shortcut: work through the sections yourself and use it to check your own file against.
 
 To support the reproducibility of your research, we structure the R Markdown file as follows (Figure \@ref(fig:RMarkdwnstrct)):
@@ -1525,7 +1535,7 @@ If it does not knit yet, fix that before going any further. Everything below is 
 
 ### YAML Metadata Section <span style="color:dimgray;">(25 minutes)</span> {#YAMLset}
 
-The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as *fields*) that control how an R Markdown document is converted into its final output format. In this class, we will use functions from the *knitr* [@R-knitr; @knitr2015] and *bookdown* [@R-bookdown; @bookdown2016] packages to populate this section. (Field names, as declared in the YAML metadata section, are provided in parentheses.)
+The [YAML](https://yaml.org/) metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to provide arguments (referred to as *fields*) that control how an R Markdown document is converted into its final output format. YAML is a small, general-purpose language for writing structured settings in plain text, used well beyond R Markdown; the [anatomy of an R Markdown document](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html) shows how it fits into the rest of the file. In this class, we will use functions from the *knitr* [@R-knitr; @knitr2015] and *bookdown* [@R-bookdown; @bookdown2016] packages to populate this section. (Field names, as declared in the YAML metadata section, are provided in parentheses.)
 
 1. Title (`title`)
 2. Subtitle (`subtitle`)
@@ -1537,7 +1547,7 @@ The YAML metadata section (Figure \@ref(fig:RMarkdwnstrct)) allows users to prov
 8. Bibliography file(s) (`bibliography`)
 9. Citation style file for journal formatting (`csl`)
 
-The YAML code shown below generates either an `HTML` or `PDF` document (see the `output` field), includes a table of contents (see the `toc` field), and formats in-text citations and the bibliography section according to the journal style specified in the `AmJBot.csl` file (via the `csl` field). The bibliography must be stored in a `.bib` file (in this case, `Bibliography_Reproducible_Science_2.bib`) placed at the root of your working directory.
+The YAML code shown below generates either an `HTML` or `PDF` document (see the `output` field), includes a table of contents (see the `toc` field), and formats in-text citations and the bibliography section according to the journal style specified in the `AmJBot.csl` file (via the `csl` field). The bibliography must be stored in a `.bib` file (in this case, `Bibliography_Reproducible_Science_2.bib`) placed at the root of your working directory. **For this chapter that folder is `Reproducible_Science/Chapters/Chapter_2`**, the same folder as the `Chapter2_partB.Rmd` file you created in [Create Your R Markdown Document](#creatRMDfile). The `AmJBot.csl` file goes in there too: both files must sit beside the `.Rmd`, not in a subfolder.
 
 ```{r YAML, eval=FALSE, echo=TRUE}
 --- 
