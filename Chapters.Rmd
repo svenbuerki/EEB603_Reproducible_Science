@@ -1509,7 +1509,7 @@ knitr::include_graphics("Figures/RMarkdown_file_structure.png")
     - [Code chunk #3]{.underline}: Provides citations of software (relying on the output of Code chunk #1) for Appendix 1. ([Generate Appendix with Citations](#appendixRpkg))
     - [Code chunk #4]{.underline}: Provides software version information (relying on *sessionInfo()*) for Appendix 2. ([Generate Appendix with Versions and OS](#appendixRverOS))
 
-A roadmap of the R Markdown file (`*.Rmd`) structure is summarized in Figure \@ref(fig:RMarkdwnstrct). **Three of the four code chunks named there are what you build in this tutorial**, one at a time: chunk #1 in [Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg), chunk #3 in [Generate Appendix with Citations](#appendixRpkg), and chunk #4 in [Generate Appendix with Versions and OS](#appendixRverOS). Code chunk #2, which sets global options for code chunks, comes later in [PART D](#partD).
+**Three of the four code chunks named above are what you build in this tutorial**, one at a time: chunk #1 in [Install R Dependencies](#loadRreq) and [Generate a Citation File](#citfileRpkg), chunk #3 in [Generate Appendix with Citations](#appendixRpkg), and chunk #4 in [Generate Appendix with Versions and OS](#appendixRverOS). Code chunk #2, which sets global options for code chunks, comes later in [PART D](#partD).
 
 #### This Page Is Built the Same Way
 
