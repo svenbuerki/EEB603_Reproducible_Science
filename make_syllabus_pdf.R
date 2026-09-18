@@ -1,9 +1,15 @@
 #' Generate the printable pdf syllabus from the master syllabus
 #'
 #' `index.Rmd` is the MASTER copy of the syllabus. This script derives the
-#' pdf-flavoured source (`index_syllabus_pdf.Rmd`) from it and renders
+#' pdf-flavoured source (`_index_syllabus_pdf.Rmd`) from it and renders
 #' `index_syllabus_pdf.pdf`, which is the version students download and the
 #' version shared with the department front office for archival.
+#'
+#' The derived source is named with a LEADING UNDERSCORE on purpose.
+#' `rmarkdown::render_site()` renders every .Rmd in the project root, but skips
+#' files whose name starts with `_`. Without the underscore, a full site build
+#' picks this file up, deletes `index_syllabus_pdf.pdf` (render always clears
+#' its old output first), then fails -- leaving no pdf at all.
 #'
 #' Keeping the pdf a *derived* product means the two versions cannot drift
 #' apart: edit `index.Rmd` only, then re-run this script.
@@ -12,7 +18,7 @@
 #'   Rscript make_syllabus_pdf.R
 
 master <- "index.Rmd"
-derived <- "index_syllabus_pdf.Rmd"
+derived <- "_index_syllabus_pdf.Rmd"
 
 stopifnot(file.exists(master))
 x <- readLines(master, warn = FALSE)
@@ -35,7 +41,15 @@ pdf_output <- c(
   "    toc_depth: 3",
   "    number_sections: yes",
   "    geometry: margin=1in",
-  "    keep_tex: yes"
+  "    keep_tex: yes",
+  # kable_styling(latex_options = "striped") shades rows with \cellcolor and
+  # \rowcolor. Those are defined by colortbl, which the default rmarkdown
+  # LaTeX template does not load. Without this the build dies with
+  # "Undefined control sequence ... \cellcolor" and produces no pdf.
+  # colortbl is loaded rather than xcolor's [table] option because the template
+  # already loads xcolor, and requesting a different option would clash.
+  "header-includes:",
+  "  - \\usepackage{colortbl}"
 )
 
 yaml <- c(yaml[seq_len(out_start - 1L)], pdf_output, yaml[(out_end + 1L):length(yaml)])
@@ -121,5 +135,8 @@ x <- append(x, header, after = yaml_ends[2])
 writeLines(x, derived)
 message("Wrote ", derived)
 
-rmarkdown::render(derived, quiet = FALSE)
-message("Wrote ", sub("\\.Rmd$", ".pdf", derived))
+# output_file is given explicitly: the derived source is now `_index_...Rmd`,
+# but the published pdf must keep the name students' links already point at.
+pdf_out <- "index_syllabus_pdf.pdf"
+rmarkdown::render(derived, output_file = pdf_out, quiet = FALSE)
+message("Wrote ", pdf_out)

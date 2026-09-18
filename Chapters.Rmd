@@ -755,7 +755,7 @@ The chapter is divided into six parts, each with specific learning objectives:
 
 - [**PART A:**](#partA) Learning the Basics
 - [**PART B:**](#partB) Setting Your R Markdown Document
-- [**PART C:**](#partC) Tables, Figures, and References  
+- [**PART C:**](#partC) Tables, Figures and References  
 - [**PART D:**](#partD) Advanced R Markdown Settings  
 - [**PART E:**](#partE) User-Defined Functions in R  
 - [**PART F:**](#partF) Interactive Tutorials  
@@ -782,7 +782,7 @@ Software and packages required to perform this tutorial are detailed below. Stud
 install.packages(c("bookdown","knitr", "rmarkdown"))
 ```
 - **RStudio**: https://www.rstudio.com/products/rstudio/download/
-- **TeX**: This software is required to compile document into `pdf` format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux. **For this class, you are not requested to install this software**, which takes significant hard drive space and is harder to operate on Windows OS. 
+- **<a name="texdistr"></a>TeX**: This software is required to compile document into `pdf` format. Please install MiKTeX on Windows, MacTeX on OS X and TeXLive on Linux. **For this class, you are not requested to install this software**, which takes significant hard drive space and is harder to operate on Windows OS. 
 
 **NOTE:** The instructor is using the following version of `RStudio`: Version 2025.05.0+496 (2025.05.0+496). If your computer is experiencing issues running the latest version of the software, you can install previous versions [here](https://docs.posit.co/previous-versions/rstudio/).
 
@@ -1942,16 +1942,25 @@ The [References] section marks the end of the main body of your document. If you
 
 ## PART C: Tables, Figures and References {#partC}
 
-### Introduction
+### Aim
 
-The **aim** of this tutorial is to provide students with the expertise to generate reproducible reports using *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* allows the use of **one** unified set of functions to generate both `HTML` and `PDF` documents.
+In [PART B](#partB) you built a template. The **aim** of this tutorial is to fill it with the elements a scientific report is actually made of: **tables, figures and references**.
 
-In addition, the same approach and functions are used to **process tables and figures, as well as to cross-reference them in the main body of the text**. This tutorial will also cover **how to cite references in the text, automatically generate a references section, and format citations according to journal styles**.
+All of this is done with *bookdown* [@R-bookdown; @bookdown2016] and related R packages (see [Appendix 1] for a full list). Unlike the functions implemented in the R *rmarkdown* package [@rmarkdown2018, which is better suited for generating `PDF` reproducible reports], *bookdown* provides **one** unified set of functions that generates both `HTML` and `PDF` documents, and that same set handles tables, figures and the cross-references pointing at them.
+
+We will focus on learning how to:
+
+1. **Generate tables and figures from code**, so that they are rebuilt every time the document is knitted instead of being pasted in by hand ([Insert Tables](#inserttable) and [Insert Figures](#insertfigure)).
+2. **Cross-reference them in the text**, so that the numbering stays correct when you add, remove or reorder content ([Cross-reference Tables and Figures in the Text](#crossrefTabFig)).
+3. **Cite references from a BibTeX file**, using citation identifiers rather than typing author names and years ([Cite References in the Text](#bib)).
+4. **Generate the References section automatically**, from the citations actually present in your text ([Generate a References Section](#refsection)).
+5. **Format citations to a journal style**, by declaring a CSL file in the YAML metadata section ([Format Citations to Journal Style](#cslForm)).
 
 ### Learning Outcomes
 
 This tutorial provides students with the opportunity to learn how to:
 
+- [Build your Part C document from the template you produced in PART B](#creatRMDfileC)
 - [Insert tables in an R Markdown document](#inserttable)
 - [Insert figures in an R Markdown document](#insertfigure)
 - [Cross-reference tables and figures in the text](#crossrefTabFig)
@@ -1959,9 +1968,36 @@ This tutorial provides students with the opportunity to learn how to:
 - [Generate a References section](#refsection)
 - [Format citations according to journal style](#cslForm)
 
+**We have half a class and the homework that follows it for this**, and each outcome above maps to one section below. The times are a pace rather than a deadline, in the same way as in [PART A](#syntaxguide) and [PART B](#partB):
+
+| | Section | Time | Where |
+|---|---|---|---|
+| 1 | [Create Your R Markdown Document](#creatRMDfileC) | 5 min | In class |
+| 2 | [Insert Tables](#inserttable) | 20 min | In class |
+| 3 | [Insert Figures](#insertfigure) | 20 min | At home |
+| 4 | [Cross-reference Tables and Figures in the Text](#crossrefTabFig) | 10 min | At home |
+| 5 | [Cite References in the Text](#bib) | 15 min | At home |
+| 6 | [Generate a References Section](#refsection) | 10 min | At home |
+| 7 | [Format Citations to Journal Style](#cslForm) | 10 min | At home |
+| | **Total** | **90 min** | |
+
 ---
 
-### Create Your R Markdown
+### How This Tutorial Is Written {#protocolstyleC}
+
+PART C follows the same protocol as [PART B](#protocolstyle). Each section opens with **why and what**, gives a **step-by-step procedure**, and follows that procedure with a **✅ Checkpoint** describing what your file and your knitted output should look like before you build the next piece on top of them.
+
+**PART C adds one more element, and it is not a checkpoint.** Most sections also carry a **💡 Challenge**. A Checkpoint confirms that what the tutorial told you to do actually worked. A Challenge asks you to go past what the tutorial showed you: to work out *why* a piece of syntax behaves as it does, to test that reasoning by editing your own document and knitting it, or to go and find something nobody handed you. The procedure gets your document working. The Challenge is where you start owning the tool, which is the part that transfers to your own research.
+
+**Every Challenge has a ✅ Solution folded underneath it**, in the same way as in [PART A](#syntaxguide). Open it once you have made a real attempt, not before. The answer is worth far less than the ten minutes you spend not having it, and on your own data there will be no toggle to open.
+
+**Knit after every section**, so that a problem is always traceable to the last thing you changed. This is also the format I am asking you to use for your own [bioinformatics tutorial](Assignments.html#arc1).
+
+---
+
+### Create Your R Markdown Document <span style="color:dimgray;">(5 minutes)</span> {#creatRMDfileC}
+
+You are not starting from a blank file. The document you finished in [PART B](#partB) already knows how to install its dependencies, where to find your bibliography, and how to build its own appendices, so PART C begins by making a copy of it.
 
 Follow the approach described in the box below to create your R Markdown file for Chapter 2 – Part C.
 
@@ -1975,9 +2011,20 @@ Follow the approach described in the box below to create your R Markdown file fo
   </ul>
 </div>
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your project folder contains** `Chapter2_partC.Rmd`, sitting next to `Chapter2_partB.Rmd` at `Reproducible_Science/Chapters/Chapter_2`.
+
+**Its YAML title reads** `Chapter 2 - Part C`. Everything else in the YAML is unchanged from PART B, including the `bibliography:` and `csl:` fields, which you will rely on later in this tutorial.
+
+**It knits** to HTML without error, and the output already contains a References section and both appendices. If it knits, PART B is behind you and everything below is an addition to a document that already works.
+
+</details>
+
 ---
 
-### Insert Tables {#inserttable}
+### Insert Tables <span style="color:dimgray;">(20 minutes)</span> {#inserttable}
 
 This tutorial introduces key concepts related to table creation in R Markdown, specifically the following:
 
@@ -1997,9 +2044,9 @@ grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "8
 knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>% kable_styling(c("striped","scale_down"))
 ```
 
-#### Step-by-Step Protocol <span style="color:dimgray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(~10 minutes)</span>
 
-Follow these steps to reproduce Table \@ref(tab:tabgrades) in your R Mardown document: 
+Follow these steps to reproduce Table \@ref(tab:tabgrades) in your R Markdown document: 
 
 1. Open `Chapter2_partC.Rmd` in RStudio.  
 2. Add a first-level header titled `Tables` below the `packages`code chunk.  
@@ -2019,6 +2066,8 @@ grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "8
 ###
 # Plot table and add caption
 ###
+# format = "html" tells kable() which format to produce. Leaving it out is what
+# causes a caption to come out as "Table Table 1:" (see the note below).
 knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>% kableExtra::kable_styling(c("striped","scale_down"))
 ```
 5. Edit the R code chunk options line by adding the following argument (**Note:** each argument should be separated by a comma):  
@@ -2030,7 +2079,29 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
 ```
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
 
-##### Challenge <span style="color:dimgray;">(10 minutes)</span>
+<div class="info">
+  <p><strong>💡 <a name="doubletable"></a>If your caption comes out as "Table Table 1:"</strong></p>
+  <p>The <code>format = "html"</code> argument in the code above is what prevents this. Without it, <code>kableExtra</code> re-reads the Markdown table that <code>kable()</code> produced and treats it as a new table, adding a second "Table" prefix.</p>
+  <p>If you see the doubled caption anyway, replace that last line with <code>kableExtra::kbl()</code>, which sets the format by itself:</p>
+<pre><code>kableExtra::kbl(grades, caption = "Grading scale applied in this class.") %>%
+  kableExtra::kable_styling(c("striped", "scale_down"))</code></pre>
+  <p>Knit again and the caption should read "Table 1:" once.</p>
+</div>
+
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your document has a first-level `Tables` header** below the `packages` code chunk, and under it a code chunk labelled `tabgrades` carrying the option `echo = FALSE`.
+
+**The whole block from step 4 is inside that chunk**: the `library(dplyr)` call, the `grades` data frame, and the `knitr::kable()` call with both its `caption` argument and `format = "html"`.
+
+**In the knitted output** you see a striped table of percentages and letter grades, captioned *Table 1: Grading scale applied in this class.* You did not type that number: bookdown assigned it, which is why the numbering will still be right after you add a second table.
+
+If your caption reads *Table Table 1:*, see [the note just above](#doubletable).
+
+</details>
+
+#### Challenge <span style="color:dimgray;">(~10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Is something missing?</strong></p>
@@ -2040,43 +2111,23 @@ knitr::include_graphics("Figures/run_code_rmarkdown_table.png")
   </ul>
 </div>
 
-#### Double "Table" in Caption <span style="color:dimgray;">(10 minutes)</span>
+<details>
+<summary><b>✅ Solution</b></summary>
 
-Several students have encountered an issue with duplicate table labels in the caption. The instructor did a web search and found a possible solution to help debug the issue:
+The caption is the `caption` **argument of `knitr::kable()`**, inside the code chunk:
 
-- **Problem:** When using `kableExtra::kbl()` or `knitr::kable()` in combination with `kableExtra` functions, you might see a caption like "Table Table X: Your Caption".
-- **Solution:** Specify the `format` argument in `knitr::kable()` (e.g., `format = "html"`), or use `kableExtra::kbl()` directly, which automatically handles the format. This prevents `kableExtra` from re-interpreting a markdown table as a new table and adding an extra "Table" prefix.
+<pre><code>knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html")</code></pre>
 
-In our case, we could try editing the code as follows (two options):
+Edit that string, knit, and the caption changes. Two things are worth noticing while you do it:
 
-```{r tabgrades3, eval=FALSE, echo=TRUE}
-###
-# Load package (for testing)
-###
-library(dplyr)
+- **You never type the number.** The words *Table 1:* are added by bookdown when it knits, which is why inserting a new table above this one renumbers everything correctly instead of leaving you to fix it by hand.
+- **The caption belongs to the code, not to the text.** It lives in the same chunk that builds the table, so a table can never end up separated from its caption.
 
-###
-# Create a data.frame w/ grading scale
-###
-grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "87.9-83", "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68", "67.9-60", "59.9-0"), Grade = c("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"))
-
-###
-# Plot table and add caption
-###
-
-# Option 1
-knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>% kableExtra::kable_styling(c("striped","scale_down"))
-
-# Option 2
-kableExtra::kbl(grades, caption = "Grading scale applied in this class.") %>%
-kableExtra::kable_styling(c("striped","scale_down"))
-```
-
-The instructor encourages students to test the options proposed above in their own documents and determine whether they resolve the issue.
+</details>
 
 ---
 
-### Insert Figures {#insertfigure}
+### Insert Figures <span style="color:dimgray;">(20 minutes)</span> {#insertfigure}
 
 This tutorial introduces key concepts related to figure creation in R Markdown, specifically the following:
 
@@ -2094,7 +2145,7 @@ summary(cars)
 plot(cars)
 ```
 
-#### Step-by-Step Protocol <span style="color:dimgray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(~10 minutes)</span>
 
 Follow these steps to reproduce Figure \@ref(fig:cars) in your R Markdown document: 
 
@@ -2122,7 +2173,20 @@ plot(cars)
 7. Test your R code to ensure it produces the expected table by clicking the `Play` button at the top left of the code chunk (as done in [Tables](#inserttable)). 
 8. Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and check your syntax and code.
 
-##### Challenge <span style="color:dimgray;">(10 minutes)</span>
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your document has a first-level `Figures` header** below the `Tables` section, and under it a code chunk labelled `cars`.
+
+**Its options include** `echo = FALSE`, `results = "hide"`, `fig.cap` and `out.width`, each separated from the next by a comma.
+
+**In the knitted output** the scatter plot of speed against distance spans the full width of the page and is captioned *Figure 1: Plot of cars' speed in relation to distance.*
+
+**The numeric output of `summary(cars)` does not appear anywhere.** The code still runs, but `results = "hide"` keeps its printed output out of the document. If you can see a block of numbers above your figure, that option is missing or misspelled.
+
+</details>
+
+#### Challenge <span style="color:dimgray;">(~10 minutes)</span>
 
 <div class="danger">
   <p><strong>💡 Challenge</strong></p>
@@ -2132,9 +2196,26 @@ plot(cars)
   </ul>
 </div>
 
+<details>
+<summary><b>✅ Solution</b></summary>
+
+**A figure caption is a chunk option, `fig.cap`**, written in the chunk header:
+
+<pre><code>&#96;&#96;&#96;{r cars, echo = FALSE, results = "hide", fig.cap = "Plot of cars' speed in relation to distance.", out.width = '100%'}</code></pre>
+
+**A table caption is a function argument, `caption`**, written inside the chunk body:
+
+<pre><code>knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html")</code></pre>
+
+**Why they differ.** A figure is produced by the chunk as a whole: knitr catches whatever `plot()` draws and wraps it, so the caption has to be declared on the chunk. A table is just the value returned by `kable()`, so its caption is one of that function's arguments.
+
+**What is the same, and it is the part that matters.** Both are numbered by bookdown, and both are cross-referenced through the **chunk label** (`tab:tabgrades`, `fig:cars`). That is also why a table and a figure you want to reference separately need to be in separate chunks: the label is attached to the chunk, not to the output.
+
+</details>
+
 ---
 
-### Cross-reference Tables and Figures in the Text {#crossrefTabFig}
+### Cross-reference Tables and Figures in the Text <span style="color:dimgray;">(10 minutes)</span> {#crossrefTabFig}
 
 Cross-referencing tables and figures in the main body of your R Markdown document can easily be done by using the `\@ref()` function implemented in  the *bookdown* package (see Figure \@ref(fig:RMarkdwnstrct)). 
 
@@ -2157,7 +2238,7 @@ Figure \@ref(fig:code_chunk_ID)
   </ul>
 </div>
 
-#### Step-by-Step Procedure <span style="color:dimgray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(~10 minutes)</span>
 
 1. To cross-reference your table (labeled `tabgrades`) in the text, follow these steps:
     - Type the following sentence below your `Tables` header:  
@@ -2169,9 +2250,20 @@ Figure \@ref(fig:code_chunk_ID)
       `The plot of the cars data is available in Figure \@ref(fig:cars).`
     - Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) to inspect the output and verify that the syntax and code are working correctly.
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Below each of your two headers** there is now a sentence containing `\@ref(tab:tabgrades)` or `\@ref(fig:cars)`, with the word `Table` or `Figure` typed in front of it by hand.
+
+**In the knitted output** those sentences read *Table 1* and *Figure 1*, and both are links: click one and the page jumps to the table or the figure itself.
+
+**If you see `\@ref(tab:tabgrades)` printed literally, or a bold `??`**, the label inside the reference does not match the label on the code chunk. Compare the two character by character, and remember that `tab:` goes with tables and `fig:` with figures.
+
+</details>
+
 ---
 
-### Cite References in the Text {#bib}
+### Cite References in the Text <span style="color:dimgray;">(15 minutes)</span> {#bib}
 
 #### Introduction
 
@@ -2180,6 +2272,11 @@ In this section, we will cover the following topics before delving into the prac
 - [The Bibliography File](#bibFile)
 - [The BibTeX Format](#BibTexFormat)
 - [Citation Identifier](#citationidentifier)
+
+We will then work through the procedures that implement citing in your document:
+
+- [Steps to Complete Before Citing References in Your Text](#stepsbeforeciting)
+- [Cite References in Your Text](#citerefintext)
 
 ##### The Bibliography File {#bibFile}
 
@@ -2237,14 +2334,7 @@ Here is an example associated with @Baker_2016:
 
 The unique citation identifier of a reference (`Baker_2016` in the example above) is set by the user in the `BibTeX` citation file (see the first lines in the examples provided above). This identifier is used to refer to the publication in the R Markdown document and also enables citing references and generating the References section.
 
-#### Step-by-Step Procedures
-
-In this section, we will cover the following topics to implement the tools for references citing in your R Markdown document:
-
-- [Steps to Complete Before Citing References in Your Text](#stepsbeforeciting)
-- [Cite References in Your Text](#citerefintext)
-
-##### Steps to Complete Before Citing References in Your Text {#stepsbeforeciting}  
+#### Steps to Complete Before Citing References in Your Text {#stepsbeforeciting}  
 
 1. Save all your `BibTeX`-formatted references in a bibliography text file, and make sure to add the `.bib` or `.bibtex` extension.  
 2. Place the bibliography file in your project folder (alongside your `.Rmd` file).  
@@ -2252,26 +2342,14 @@ In this section, we will cover the following topics to implement the tools for r
 4. References formatted in the `BibTeX` format are available in the following file:  
     + `Bibliography_Reproducible_Science_2.bib`
 
-###### Challenge <span style="color:dimgray;">(5 minutes)</span>
-
-<div class="danger">
-  <p><strong>💡 Download a Citation in BibTeX Format</strong></p>
-  <ul>
-    <li>Visit this <a href="https://doi.org/10.1093/botlinnean/box083" target="_blank" rel="noopener noreferrer">webpage</a>.</li>
-    <li>Locate the <code>Cite</code> icon and download a citation in <code>.bibtex</code> format.</li>
-    <li>Open the <code>.bibtex</code> file in a text editor and inspect its contents.</li>
-    <li>What is the unique citation identifier of this article?</li>
-  </ul>
-</div>
-
-##### Cite References in Your Text {#citerefintext}
+#### Cite References in Your Text {#citerefintext}
 
 We will examine the syntax for citing references, either as parenthetical citations or in-text citations.
 
 - [Parenthetical Citation:](#parentcitation) The entire citation appears in parentheses, usually at the end of a sentence or clause.  
 - [In-Text Citation:](#intextcitation) The author's name is part of the sentence, and the citation appears naturally in the flow of the text.
 
-###### Parenthetical Citation {#parentcitation}
+##### Parenthetical Citation {#parentcitation}
 
 In this case, citations are placed inside square brackets (`[]`) (usually at the end of a sentence or clause) and separated by semicolons. Each citation must include a key composed of `@` followed by the citation identifier (as stored in the `BibTeX` file).
 
@@ -2299,7 +2377,7 @@ Once knitted, the citation is rendered as:
 
 Baker says blah blah [-@Baker_2016].
 
-###### In-Text Citation {#intextcitation}
+##### In-Text Citation {#intextcitation}
 
 In this case, in-text citations can be rendered with the following syntax:
 ```{r eval=FALSE}
@@ -2314,19 +2392,78 @@ Once knitted, the citation is rendered as:
 
 @Baker_2016 [p. 1] says blah.
 
-###### Challenge <span style="color:dimgray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(~10 minutes)</span>
+
+Now write both forms into your own document.
+
+1. If not done yet, open `Chapter2_partC.Rmd` in RStudio.
+2. Add a first-level header titled `Citing references` below your `Figures` section.
+3. Below that header, write a sentence citing Baker (2016) with **parenthetical** syntax:
+```{r eval=FALSE}
+Most researchers report having failed to reproduce another scientist's experiment [@Baker_2016].
+```
+4. Write a second sentence citing the same reference with **in-text** syntax:
+```{r eval=FALSE}
+@Baker_2016 surveyed 1,576 researchers on reproducibility.
+```
+5. Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) and check that both sentences render as citations rather than as raw text.
+
+<div class="info">
+  <p><strong>💡 Which form should you use?</strong></p>
+  <p>Choose on grammar, not on preference. Use the <strong>parenthetical</strong> form when the source is evidence for the claim, and the <strong>in-text</strong> form when the authors are the subject of your sentence.</p>
+  <p>Notice that you typed <code>&#64;Baker_2016</code> both times. The difference comes entirely from the brackets, and the author name and year are pulled from the <code>.bib</code> file, so a misspelled author name cannot enter your manuscript by hand.</p>
+</div>
+
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**`Bibliography_Reproducible_Science_2.bib` is in your project folder**, next to your `.Rmd`, and its name appears in the `bibliography:` field of your YAML metadata section.
+
+**Your document has a first-level `Citing references` header**, and below it two sentences citing Baker (2016): one parenthetical (`[@Baker_2016]`) and one in-text (`@Baker_2016 surveyed...`).
+
+**In the knitted output** the first renders inside brackets and the second as the author name followed by the year in brackets. A bibliography has also appeared at the very bottom of your document, listing Baker (2016), even though you have not yet added a References header. That header is the next section, and its job is to control **where** the bibliography lands.
+
+**If a citation renders as `@Baker_2016` or as a bold `??`**, either the identifier does not match one in the `.bib` file, or the `.bib` file is not declared in your YAML.
+
+</details>
+
+#### Challenge <span style="color:dimgray;">(~5 minutes)</span>
 
 <div class="danger">
-  <p><strong>💡 Your turn to practice citing references in your document by:</strong></p>
+  <p><strong>💡 Download a Citation in BibTeX Format</strong></p>
   <ul>
-    <li>Write a sentence citing &#64;Baker_2016 using parenthetical citation syntax.</li>
-    <li>Write a sentence citing &#64;Baker_2016 using in-text citation syntax.</li>
+    <li>Visit this <a href="https://doi.org/10.1093/botlinnean/box083" target="_blank" rel="noopener noreferrer">webpage</a>.</li>
+    <li>Locate the <code>Cite</code> icon and download a citation in <code>.bibtex</code> format.</li>
+    <li>Open the <code>.bibtex</code> file in a text editor and inspect its contents.</li>
+    <li>What is the unique citation identifier of this article?</li>
   </ul>
 </div>
 
+<details>
+<summary><b>✅ Solution</b></summary>
+
+The article is Hinsley *et al.* (2017), *A review of the trade in orchids and its implications for conservation*, published in the *Botanical Journal of the Linnean Society*.
+
+**The citation identifier is on the very first line**, between `@article{` and the first comma:
+
+<pre><code>&#64;article{THIS_IS_THE_IDENTIFIER,
+    author = {Hinsley, Amy and de Boer, Hugo J and Fay, Michael F and ...},
+    title = "{A review of the trade in orchids and its implications for conservation}",
+    journal = {Botanical Journal of the Linnean Society},
+    ...
+}</code></pre>
+
+**The exact string you got depends on who exported it.** Oxford Academic builds one automatically, and it will not look like the identifiers used in this course.
+
+**Now open `Bibliography_Reproducible_Science_2.bib` and search for `botlinnean`.** This same article is already in your bibliography file, filed under `Hinsley_et_al_2017`, because I renamed it to something I could remember and type. That is the point of [Citation Identifier](#citationidentifier): the identifier is **set by whoever maintains the `.bib` file**, not by the publisher.
+
+You are free to rename an identifier, as long as you understand the consequence: every `@key` in every document that cites it must be changed to match, or those citations will silently render as `??`.
+
+</details>
+
 ---
 
-### Generate a References Section {#refsection}
+### Generate a References Section <span style="color:dimgray;">(10 minutes)</span> {#refsection}
 
 Upon knitting, a References section will automatically be generated and inserted at the end of your document (see Figure \@ref(fig:RMarkdwnstrct)). 
 
@@ -2340,18 +2477,66 @@ last paragraph...
 
 The bibliography will be inserted after this header (please see the [References] section of this tutorial for more details).
 
-#### Challenge <span style="color:dimgray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(~5 minutes)</span>
+
+1. If not done yet, open `Chapter2_partC.Rmd` in RStudio.
+2. Add a level-1 `References` header after your last paragraph of content and **before** the `# (APPENDIX) Appendices {-}` header you built in PART B.
+3. Immediately below that header, add the line that pins the bibliography in place. Your document should then read:
+```{r eval=FALSE}
+@Baker_2016 surveyed 1,576 researchers on reproducibility.
+
+# References
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendices {-}
+
+# Appendix 1
+```
+4. Knit your document using the `Knit` button ![](Figures/knit_2.png){alt=""} in the editor toolbar (see Figure \@ref(fig:knitout)) and check that the bibliography appears under `References` and **above** your appendices.
+
+<div class="info">
+  <p><strong>💡 Why the <code>refs</code> div matters</strong></p>
+  <p>Without it, pandoc appends the bibliography to the very end of the document, which would push it below your appendices. With it, the bibliography is inserted exactly where the <code>div</code> sits, and the appendices stay last.</p>
+  <p>Either way you are not typing any references. The list is built from the citations pandoc found in your text, using the <code>.bib</code> file named in your YAML.</p>
+</div>
+
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your document has a first-level `References` header** after its last paragraph of content, and before the `# (APPENDIX) Appendices` header you built in PART B.
+
+**In the knitted output** the bibliography now sits under that header instead of being appended at the very end, and the appendices follow it.
+
+**The bibliography lists only the works you actually cited**, not everything in the `.bib` file.
+
+</details>
+
+#### Challenge <span style="color:dimgray;">(~5 minutes)</span>
 
 <div class="danger">
-  <p><strong>💡 Your Turn!</strong></p>
+  <p><strong>💡 Where does the reference list actually come from?</strong></p>
   <ul>
-    <li>Edit your document to add a References section.</li>
+    <li>Comment out one of your two citation sentences by putting <code>&lt;!--</code> before it and <code>--&gt;</code> after it. Knit, and look at the References section.</li>
+    <li>Now add a sentence citing a key that is <strong>not</strong> in your <code>.bib</code> file, such as <code>[&#64;NotARealKey]</code>. Knit again, and look at both the body text and the References section.</li>
+    <li>What do these two experiments tell you about where the reference list comes from, and about what happens when you get a key wrong?</li>
   </ul>
 </div>
 
+<details>
+<summary><b>✅ Solution</b></summary>
+
+**Commenting out a citation removes its entry from the References section.** The bibliography is not a list you maintain. It is rebuilt on every knit from the citation keys pandoc finds in your text, which means nothing you cited can be missing from it, and nothing you did not cite can appear in it. A reference list can therefore never drift out of step with the manuscript.
+
+**An unknown key renders as a bold `??`** where the citation should be, R Markdown prints a warning in the console, and nothing is added to the References section. A mistyped key fails loudly instead of quietly producing a wrong citation, which is the behaviour you want.
+
+**Undo both experiments before moving on:** restore the sentence you commented out, and delete the `@NotARealKey` sentence.
+
+</details>
+
 ---
 
-### Format Citations to Journal Style {#cslForm}
+### Format Citations to Journal Style <span style="color:dimgray;">(10 minutes)</span> {#cslForm}
 
 In this section, we will explore how your bibliography can be automatically formatted to match a specific journal style. This is done by specifying a **Citation Style Language (CSL)** file in the YAML metadata section using the `csl:` field. The CSL file contains the formatting rules required to style both in-text citations and the bibliography according to the selected journal or publication.
 
@@ -2366,7 +2551,7 @@ There are two main CSL repositories:
 - **GitHub Repository:** https://github.com/citation-style-language/styles
 - **Zotero Style Repository:** https://www.zotero.org/styles
 
-#### Step-by-Step Procedure <span style="color:dimgray;">(10 minutes)</span>
+#### Step-by-Step Procedure <span style="color:dimgray;">(~10 minutes)</span>
 
 To learn this procedure and syntax, you will be tasked with downloading a `.csl` file and using it in your document (in place of `AmJBot.csl`).
 
@@ -2381,6 +2566,35 @@ Follow these steps to format your citations and bibliography according to a spec
 3. Edit your YAML metadata section to specify the name of your `.csl` file.
 4. Knit your document using the `Knit` ![](Figures/knit_2.png){alt=""} button. The Pandoc program will use the information specified in the YAML metadata section to format both the in-text citations and the bibliography section according to the citation style defined in the CSL file. Be sure to add a `References` header at the end of your `.Rmd` document.
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**A second `.csl` file**, downloaded from the Zotero Style Repository, sits in your project folder alongside `AmJBot.csl`.
+
+**Your YAML `csl:` field names that new file**, not `AmJBot.csl`.
+
+**In the knitted output, your citations and your bibliography look different from before**: different punctuation, possibly a different author order, possibly numbers instead of names. Now switch the field back to `AmJBot.csl` and knit again. They change back.
+
+**Not one word of your text changed.** You reformatted a whole manuscript to a second journal's requirements by editing a single line, which is the argument for keeping content and formatting separate, made concrete.
+
+</details>
+
+---
+
+### All Set — Your Report Now Has Content
+
+`Chapter2_partC.Rmd` is no longer an empty template. It holds a table and a figure that are **rebuilt from code every time you knit**, text that points at them by label rather than by number, and a bibliography that formats itself to whichever journal you name. Nothing in it has to be updated by hand when the data change or the target journal changes.
+
+**Compare your document against the finished template**, [`Chapter_2_partC_template.Rmd`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_2/Chapter_2_partC_template.Rmd). It contains the `Tables` and `Figures` sections with their labelled chunks, the cross-referencing sentences, the two citation styles, and the `References` header in its correct position ahead of the appendices. If something in your own file is missing or out of order, this is where to look.
+
+<div class="info">
+  <p><strong>💡 Info</strong></p>
+  <ul>
+    <li>Everything you built here (labelled chunks, cross-references, citations from a <code>.bib</code> file) is expected in your <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#BioTut" target="_blank" rel="noopener noreferrer">Bioinformatics Tutorial</a> and your <a href="https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#Report" target="_blank" rel="noopener noreferrer">Individual Project</a>.</li>
+    <li><a href="#partD">PART D</a> comes back to the two R code chunks at the top of the document and sets the global options that govern how all of this is knitted.</li>
+  </ul>
+</div>
+
 ## PART D: Advanced R and R Markdown settings {#partD}
 
 ### Introduction
@@ -2392,7 +2606,7 @@ The **aim** of this tutorial is to provide an overview of procedures that can be
 This tutorial provides students with the opportunity to learn how to:
 
 - [Set up your working directory](#setwdir)
-- Understand how to set global options for code chunks related to:
+- [Understand how to set global options for code chunks](#globalopts) related to:
   + [text output](#textout)
   + [code formatting](#codeformat)
   + [code caching](#codecach)
@@ -2433,7 +2647,7 @@ knitr::include_graphics("Figures/Setwkd.png")
 
 ---
 
-### Set Global Options for Code Chunks
+### Set Global Options for Code Chunks {#globalopts}
 
 #### Introduction
 
@@ -5360,7 +5574,7 @@ This chapter is mostly based on the following books and web resources:
 
 ### Software requirements
 
-To apply the approach described below make sure that you have a Tex distribution installed on your computer. More information on this topic is available [here](#texdistr). You will also need to install the R *rticles* package as demonstrated [here](#rticlespkg). 
+To apply the approach described below make sure that you have a TeX distribution installed on your computer. More information on this topic is available in [Install R Markdown Software](#texdistr) (Chapter 2). You will also need to install the R *rticles* package as demonstrated in [The *rticles* package](#rticlespkg). 
 
 ### Challenges to writing publications in R Markdown
 

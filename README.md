@@ -53,7 +53,9 @@ This repository includes the following key directories and files:
 ### Build scripts and bibliography
 
 - `make_syllabus_pdf.R` — Generates the downloadable PDF syllabus from `index.Rmd`
-- `index_syllabus_pdf.Rmd` + `.pdf` — **Generated** PDF syllabus (do not edit by hand)
+- `index_syllabus_pdf.pdf` — **Generated** PDF syllabus (do not edit by hand). Its source,
+  `_index_syllabus_pdf.Rmd`, is written by the script above. The leading underscore keeps
+  `rmarkdown::render_site()` from treating it as a site page.
 - `Bibliography_Reproducible_Science_2.bib`, `packages.bib` — Bibliographies
 - `AmJBot.csl` — Citation style
 

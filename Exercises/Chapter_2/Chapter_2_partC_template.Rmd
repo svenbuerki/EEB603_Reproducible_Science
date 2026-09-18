@@ -1,0 +1,170 @@
+--- 
+title: "Chapter 2 - Part C"
+subtitle: "Your subtitle"
+author: "Your name"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2: 
+    toc: TRUE
+  bookdown::pdf_document2:
+    toc: TRUE
+link-citations: yes
+fontsize: 12pt
+bibliography: Bibliography_Reproducible_Science_2.bib 
+csl: AmJBot.csl
+---
+
+<!--
+  EEB 603 -- Reproducible Science
+  Chapter 2, PART C: the finished document.
+
+  This is what your own Chapter2_partC.Rmd should look like once you have
+  worked through every section of PART C. Use it to check your work, not to
+  replace it.
+
+  Everything above the "Tables" header is the scaffolding you built in PART B
+  and copied across. Everything from "Tables" down to "References" is what
+  PART C added.
+
+  Bibliography_Reproducible_Science_2.bib and AmJBot.csl must sit in the same
+  folder as this file, or the document will not knit.
+-->
+
+<!-- CODE CHUNK #1: install and load dependencies, and write packages.bib -->
+```{r packages, echo = FALSE, warning = FALSE, include = FALSE}
+###~~~
+# Load R packages
+###~~~
+# Create a vector w/ the required R packages
+# --> If you have a new dependency, don't forget to add it in this vector
+pkg <- c("knitr", "rmarkdown", "bookdown", "formattable", "kableExtra",
+         "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations",
+         "bibtex", "devtools")
+
+##~~~
+# 2. Check if pkg are already installed on your computer
+##~~~
+print("Check if packages are installed")
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+
+##~~~
+# 3. Install missing packages
+##~~~
+if(length(new.pkg) > 0){
+  print(paste("Install missing package(s):", new.pkg, sep = ' '))
+  # repos= names the CRAN mirror explicitly, so the install never stops to ask
+  # which mirror to use. This matters when knitting: a prompt has nowhere to
+  # appear and the document fails. cloud.r-project.org is CRAN's global mirror.
+  install.packages(new.pkg, dependencies = TRUE, repos = "https://cloud.r-project.org/")
+}else{
+  print("All packages are already installed!")
+}
+
+##~~~
+# 4. Load all required packages
+##~~~
+print("Load packages and return status")
+sapply(pkg, require, character.only = TRUE)
+
+###~~~
+# Generate BibTex citation file for all loaded R packages used to produce report
+###~~~
+knitr::write_bib(.packages(), file = 'packages.bib')
+```
+
+# Tables
+
+The grading scale presented in the syllabus is available in Table \@ref(tab:tabgrades).
+
+<!-- The chunk label "tabgrades" is what \@ref(tab:tabgrades) above points at. -->
+```{r tabgrades, echo = FALSE}
+###~~~
+# Load package (for testing)
+###~~~
+library(dplyr)
+
+###~~~
+# Create a data.frame w/ grading scale
+###~~~
+grades <- data.frame(
+  Percentage = c("100-98", "97.9-93", "92.9-90", "89.9-88", "87.9-83",
+                 "82.9-80", "79.9-78", "77.9-73", "72.9-70", "69.9-68",
+                 "67.9-60", "59.9-0"),
+  Grade = c("A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-",
+            "D+", "D", "F"))
+
+###~~~
+# Plot table and add caption
+###~~~
+# format = "html" stops kableExtra from adding a second "Table" prefix to the
+# caption ("Table Table 1:"). Leave it in.
+knitr::kable(grades, caption = "Grading scale applied in this class.",
+             format = "html") %>%
+  kableExtra::kable_styling(c("striped", "scale_down"))
+```
+
+# Figures
+
+The plot of the cars data is available in Figure \@ref(fig:cars).
+
+<!-- results = "hide" keeps the summary() output out of the document. The code
+     still runs, its printed output is simply not shown. -->
+```{r cars, echo = FALSE, results = "hide", fig.cap = "Plot of cars' speed in relation to distance.", out.width = '100%'}
+###~~~
+# Load and summarize the cars dataset
+###~~~
+summary(cars)
+
+###~~~
+# Plot data
+###~~~
+plot(cars)
+```
+
+# Citing references
+
+Parenthetical citation: reproducibility is a widespread concern across
+disciplines [@Baker_2016].
+
+In-text citation: @Baker_2016 surveyed 1,576 researchers on the subject.
+
+<!-- Baker_2016 is the citation identifier used in
+     Bibliography_Reproducible_Science_2.bib, which is named in the
+     bibliography: field of the YAML above. The csl: field decides how these
+     citations and the References section below are formatted: point it at a
+     different .csl file and everything reformats without this text changing. -->
+
+# References
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendices {-}
+
+# Appendix 1
+
+Citations of all R packages used to generate this report.
+
+<!-- CODE CHUNK #3: print the citations saved in packages.bib -->
+```{r generateBibliography, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
+###
+# Load R package
+###
+library("knitcitations")
+###
+# Process and print citations in packages.bib
+###
+cleanbib()
+options("citation_format" = "pandoc")
+read.bibtex(file = "packages.bib")
+```
+
+# Appendix 2
+
+Version information about R, the operating system (OS) and attached or R loaded
+packages. This appendix was generated using `sessionInfo()`.
+
+<!-- CODE CHUNK #4: R package versions and operating system -->
+```{r sessionInfo, eval = TRUE, echo = FALSE, warning = FALSE, message = FALSE}
+# Load and provide all packages and versions
+sessionInfo()
+```

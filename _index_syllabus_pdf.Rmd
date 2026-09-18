@@ -9,6 +9,8 @@ output:
     number_sections: yes
     geometry: margin=1in
     keep_tex: yes
+header-includes:
+  - \usepackage{colortbl}
 subtitle: 'Syllabus -- Fall 2026'
 link-citations: yes
 fontsize: 12pt
