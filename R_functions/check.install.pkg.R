@@ -11,7 +11,10 @@ check.install.pkg <- function(pkg){
   #Task 2: Install missing packages
   if(length(new.pkg)){
     print("Install missing packages")
-    install.packages(new.pkg, dependencies = TRUE)
+    # repos= names the CRAN mirror explicitly, so the install never stops to ask
+    # which mirror to use. This matters when knitting: a prompt has nowhere to
+    # appear and the document fails. cloud.r-project.org is CRAN's global mirror.
+    install.packages(new.pkg, dependencies = TRUE, repos = "https://cloud.r-project.org/")
   }
   #Task 3: Load all packages
   print("Load packages")

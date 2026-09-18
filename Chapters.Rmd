@@ -1672,7 +1672,7 @@ This approach offers two key benefits that support the reproducibility of your r
   <ul>
     <li><b>Warning:</b> The code provided in this section will install the following <code>R</code> packages on your computer: "knitr", "rmarkdown", "bookdown", "formattable", "kableExtra", "dplyr", "magrittr", "prettydoc", "htmltools", "knitcitations", "bibtex", "devtools".</li>
     <li><b>More on the <code>R</code> packages:</b> These packages are required to produce your reproducible reports in RStudio. All of them are available on <a href="https://cran.r-project.org/web/packages/" target="_blank" rel="noopener noreferrer">CRAN</a>, the official repository for <code>R</code>.</li>
-    <li><b><code>R</code> package repositories:</b> Make sure you have set your <code>R</code> package repositories in RStudio before proceeding with this tutorial. You can do this by following <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/packages.html" target="_blank" rel="noopener noreferrer">this procedure</a>.</li>
+    <li><b><code>R</code> package repositories:</b> The code below sets the CRAN mirror for you, with <code>repos = "https://cloud.r-project.org/"</code>, so the install cannot stop to ask you which mirror to use. That matters when knitting, because a prompt has nowhere to appear and the document simply fails. If you would rather set a default mirror in RStudio as well, follow <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/packages.html" target="_blank" rel="noopener noreferrer">this procedure</a>.</li>
     <li><b>Questions or concerns:</b> If you have any questions, please contact the instructor at <a href="mailto:svenbuerki@boisestate.edu">svenbuerki@boisestate.edu</a>.</li>
   </ul>
 </div>
@@ -1711,7 +1711,10 @@ new.pkg <- pkg[!(pkg %in% installed.packages())]
 # WARNING: If your target R package is not deposited on CRAN then you need to adjust code/function
 if(length(new.pkg) > 0){
   print(paste("Install missing package(s):", new.pkg, sep=' '))
-  install.packages(new.pkg, dependencies = TRUE)
+  # repos= names the CRAN mirror explicitly, so the install never stops to ask
+  # which mirror to use. This matters when knitting: a prompt has nowhere to
+  # appear and the document fails. cloud.r-project.org is CRAN's global mirror.
+  install.packages(new.pkg, dependencies = TRUE, repos = "https://cloud.r-project.org/")
 }else{
   print("All packages are already installed!")
 }
@@ -4661,7 +4664,10 @@ new.pkg <- pkg[!(pkg %in% installed.packages())]
 ##~~~
 if(length(new.pkg) > 0){
   print(paste("Install missing package(s):", new.pkg, sep=' '))
-  install.packages(new.pkg, dependencies = TRUE)
+  # repos= names the CRAN mirror explicitly, so the install never stops to ask
+  # which mirror to use. This matters when knitting: a prompt has nowhere to
+  # appear and the document fails. cloud.r-project.org is CRAN's global mirror.
+  install.packages(new.pkg, dependencies = TRUE, repos = "https://cloud.r-project.org/")
 }else{
   print("All packages are already installed!")
 }
