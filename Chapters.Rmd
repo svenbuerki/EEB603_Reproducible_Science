@@ -3659,6 +3659,8 @@ The ***aim*** of this chapter is to engage in readings and group discussions tha
 
 We will begin by reviewing the steps of the scientific process and identifying potential threats to its integrity. Then, we will discuss strategies to mitigate these threats and explore initiatives that promote and reward reproducibility in science.
 
+**This chapter has a second purpose: it puts your own charter to the test.** In [Chapter 1](#FactorsActivity) your group wrote a reproducibility charter, a short set of standards your research team binds itself to. You wrote it before you had any vocabulary for how research actually goes wrong. Both activities in this chapter send you back to that document: first to ask whether your standards would survive the specific threats described here, then to score them against what the research community now demands through the [TOP Guidelines](#TOP). **A charter that is never tested is a wish-list.**
+
 ---
 
 ## Let's Start with a Quote
@@ -3677,7 +3679,40 @@ By the end of this chapter, you will be able to:
 - [Identify and define common threats to the scientific process](#threatstoprocess)  
 - [Discuss strategies to mitigate these threats](#soltothreats)  
 - [Explain the Transparency and Openness Promotion (TOP) Guidelines and their application in scientific publishing and funding contexts](#TOP)
- 
+- [Revise your group's reproducibility charter in the light of both](#charterthreats)
+
+**This chapter runs over one and a half classes**, and each one ends with a group activity on your charter.
+
+**Class 1 --- threats, and whether your charter stops them**
+
+| Block | Time | Who |
+|---|---|---|
+| [Review the Steps Involved in the Scientific Process](#scientificprocess) | 10 min | Instructor |
+| [Identify and Define Threats to the Scientific Process](#threatstoprocess) | 10 min | Instructor |
+| *five-minute break* | 5 min | |
+| [Discuss Solutions to Mitigate Threats](#soltothreats) | 20 min | Instructor |
+| [👥 Do Your Standards Hold?](#charterthreats) | 25 min | Students, in 2 groups |
+| **Total** | **70 min** | |
+
+**Class 2 --- the community standard (first half of the session)**
+
+| Block | Time | Who |
+|---|---|---|
+| [The Transparency and Openness Promotion Guidelines](#TOP) | 10 min | Instructor |
+| [👥 Score Your Charter Against TOP](#chartertop) | 25 min | Students, in 2 groups |
+| **Total** | **35 min** | |
+
+---
+
+## Class Outline {#chap3outline}
+
+1. [Review the Steps Involved in the Scientific Process](#scientificprocess) <span style="color:dimgray;">(10 minutes)</span>
+2. [Identify and Define Threats to the Scientific Process](#threatstoprocess) <span style="color:dimgray;">(10 minutes)</span>
+3. [Discuss Solutions to Mitigate Threats to the Scientific Process](#soltothreats) <span style="color:dimgray;">(20 minutes)</span>
+4. [👥 Group Activity: Do Your Standards Hold?](#charterthreats) <span style="color:dimgray;">(25 minutes)</span>
+5. [The Transparency and Openness Promotion Guidelines](#TOP) <span style="color:dimgray;">(10 minutes)</span>
+6. [👥 Group Activity: Score Your Charter Against TOP](#chartertop) <span style="color:dimgray;">(25 minutes)</span>
+
 ---
 
 ## Resources
@@ -3713,7 +3748,7 @@ embed_pdf("Chapters_files/Chapter_3_Scientific_process.pdf", "1")
 
 ---
 
-## Review the Steps Involved in the Scientific Process {#scientificprocess}
+## Review the Steps Involved in the Scientific Process <span style="color:dimgray;">(10 minutes)</span> {#scientificprocess}
 
 The scientific process can be subdivided into six phases (Figure \@ref(fig:SciProcess)):
 
@@ -3742,18 +3777,7 @@ Recognizing the post-study category is equally important, as it encourages both 
 
 ---
 
-## 🤝 Group Sharing and Discussion <span style="color:dimgray;">(20 minutes)</span>
-
-- Form 4 small groups (3–4 students each)
-- Each group presents a definition of one of the [common key threats](#gloss) to the scientific process and explains at which step(s) it occurs (and how it **biases** research outcomes). Additionally, each group must propose a [solution](#soltothreats) to mitigate this threat. Use the resources provided in this document to carry out your group assignment.
-    + Group 1: **HARKing**
-    + Group 2: **Outcome switching**
-    + Group 3: **P-hacking**
-    + Group 4: **Publication bias**
-
----
-
-## Identify and Define Threats to the Scientific Process {#threatstoprocess}
+## Identify and Define Threats to the Scientific Process <span style="color:dimgray;">(10 minutes)</span> {#threatstoprocess}
 
 A hallmark of scientific creativity is the ability to recognize novel and unexpected patterns in data. However, a major challenge for scientists is remaining open to new and important insights while also avoiding the tendency to be misled by perceived structure in randomness.
 
@@ -3783,7 +3807,7 @@ Below are definitions of common threats to the scientific process (see Figure \@
 
 ---
 
-## Discuss Solutions to Mitigate Threats to the Scientific Process {#soltothreats}
+## Discuss Solutions to Mitigate Threats to the Scientific Process <span style="color:dimgray;">(20 minutes)</span> {#soltothreats}
 
 The **aim** of this section is to **discuss solutions for addressing threats to the scientific process by presenting measures that ensure reproducibility and transparency**.  
 
@@ -3951,7 +3975,60 @@ Collectively, and at scale, these efforts can shift incentives so that what bene
 
 ---
 
-## The Transparency and Openness Promotion Guidelines {#TOP}
+## 👥 Group Activity: Do Your Standards Hold? <span style="color:dimgray;">(25 minutes)</span> {#charterthreats}
+
+In [Chapter 1](#FactorsActivity) your group wrote a **reproducibility charter**: a short set of standards your research team binds itself to. You wrote it before you had any vocabulary for the ways research actually goes wrong. You now have that vocabulary, so the charter can be tested.
+
+<div class="disclaimer">
+  <p><strong>💡 Your roles, and the new one</strong></p>
+  <ul>
+    <li>Keep the role you took in Chapter 1: <b>Data lead</b>, <b>Analysis lead</b> or <b>Reporting lead</b>. Each of you still owns your own section of the charter.</li>
+    <li><b>Chapter 3 adds a fourth role, the Evaluation lead</b>, who owns everything that happens once work leaves the group: preprints, peer review, and how the group answers reviewers.</li>
+    <li><b>Your charter has no Evaluation section</b>, because Chapter 1 never raised the question. Today it gets one.</li>
+    <li>If your group is three today, the Reporting lead takes Evaluation as well.</li>
+  </ul>
+</div>
+
+Work in your **Chapter 1 charter document**, in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). You are revising a live document, not starting a new one.
+
+### 🧭 Take Your Two Threats <span style="color:dimgray;">(5 minutes)</span> {#taketwothreats}
+
+Two groups, four threats, so each group takes two. They are paired on purpose: the first pair is about decisions made **after seeing the data**, the second about **what gets reported and what quietly does not**.
+
+| Group | Threats |
+|---|---|
+| **Group 1** | **HARKing** and **P-hacking** |
+| **Group 2** | **Outcome switching** and **Publication bias** |
+
+For each of your two threats, agree on:
+
+1. A one-sentence definition, from the [Glossary of Common Threats](#gloss).
+2. **Which step of the [scientific process](#scientificprocess) it strikes**, and how it biases the result.
+
+### 🔍 Test Your Charter Against Them <span style="color:dimgray;">(12 minutes)</span> {#testcharter}
+
+Open your charter and take each threat in turn. **Find the clause that would stop it, and quote it.**
+
+<div class="danger">
+  <p><strong>💡 Be hard on yourselves here</strong></p>
+  <ul>
+    <li>A clause only counts if <b>somebody outside your group could check whether you followed it</b>. "We will be transparent about our analysis" stops nothing. "The analysis plan is written and committed before the data are unblinded" stops p-hacking.</li>
+    <li>Give each threat one of three verdicts: <b>covered</b>, <b>partly covered</b>, or <b>not covered</b>.</li>
+    <li>Expect gaps. Finding them is the exercise; passing is not.</li>
+  </ul>
+</div>
+
+### ✍️ Write the Missing Clauses <span style="color:dimgray;">(8 minutes)</span> {#writemissing}
+
+For every threat you marked *partly* or *not covered*, write the clause that closes the gap. Use the [solutions discussed above](#soltothreats) as your source: a clause is far stronger when it names an established practice ([pre-registration](#studyprereg), [reporting standards](#qualityreport), [open data](#reproducibility)) than when you invent one.
+
+- Each new clause goes **under the section whose lead owns it**, marked with today's date, so the charter records what you learned and when.
+- The **Evaluation lead** opens a new **Evaluation** heading and writes the group's first standards for peer review and preprints.
+- Before you finish, read the new clauses aloud and ask the Chapter 1 question again: **could an outsider check this?**
+
+---
+
+## The Transparency and Openness Promotion Guidelines <span style="color:dimgray;">(10 minutes)</span> {#TOP}
 
 The **Transparency and Openness Promotion (TOP) Guidelines** [published in @Nosek1422] provide a framework for journals and funders to encourage greater transparency in research planning and reporting.
 
@@ -3961,30 +4038,6 @@ Each standard includes **three levels of increasing stringency**, allowing for a
 Journals can **choose which standards to adopt** and **at what level**, providing flexibility to account for disciplinary norms.
 
 This structure helps establish **community-wide transparency standards** while respecting the diversity of research practices across fields.
-
-### 🤝 Group Sharing and Discussion <span style="color:dimgray;">(15 minutes)</span>
-
-#### 🎯 Learning Objective
-
-Students explore how journals implement the **Transparency and Openness Promotion (TOP) Guidelines** and reflect on how these practices support open science.
-
-#### 👥 Instructions
-
-1. **Form 4 groups of 3–4 students.**
-2. **Each group member should:**
-    - Review the [TOP Guidelines](#TOPguidelines).
-    - Select a journal of interest in your field.
-    - Investigate how that journal applies the TOP Guidelines.  
-      - For example, see how *Science* applies the TOP Guidelines:  
-        https://www.science.org/content/page/science-journals-editorial-policies#TOP-guidelines  
-    - Identify:
-        - Which of the eight TOP standards the journal addresses
-        - What level of transparency (Level 0–3) is adopted, if available
-        - Any notable gaps or strengths in the journal’s approach
-3. **As a group**, discuss your findings and prepare a 1-minute summary that includes:
-    - One key **insight or observation** about how journals are applying the TOP Guidelines
-    - One **suggestion** for how journals could improve transparency or openness in publishing
-4. Each **group shares their findings** with the class to foster a broader discussion on transparency in scholarly communication.
 
 ### TOP Transparency Modular Standards {#TOPguidelines}
 
@@ -4026,6 +4079,42 @@ knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 [^3]: Postdiction involves explanation after the fact.
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
+
+---
+
+## 👥 Group Activity: Score Your Charter Against TOP <span style="color:dimgray;">(25 minutes)</span> {#chartertop}
+
+Last class you asked whether your charter stops specific threats. Now a harder question: **how does it compare with what the research community already demands?** The [TOP Guidelines](#TOPguidelines) are the closest thing to a published version of what your group wrote, agreed across thousands of journals, and they come with levels, so you can score yourselves instead of arguing.
+
+### 📊 Score Yourselves <span style="color:dimgray;">(12 minutes)</span> {#scoreyourselves}
+
+Work through the [eight TOP standards](#TOPguidelines) as a group. For each, decide **which level your charter currently meets**, judging the charter as written rather than as intended:
+
+- **Level 0** --- the charter says nothing about it.
+- **Level 1** --- you say you will disclose whether you did it.
+- **Level 2** --- you require it.
+- **Level 3** --- you require it *and* say how it is verified.
+
+Record the result as a short table at the top of your charter, with today's date. A column of zeros is a perfectly respectable answer for a document written in week two. It is also a list of what to write next.
+
+### 📰 Compare With a Real Journal <span style="color:dimgray;">(8 minutes)</span> {#comparejournal}
+
+**Each member takes a different journal** they might realistically publish in, and finds its TOP policy. *Science* is a worked example: https://www.science.org/content/page/science-journals-editorial-policies#TOP-guidelines
+
+For your journal, identify:
+
+- which of the eight standards it addresses, and at what level;
+- one place it is **stricter than your charter**;
+- one place **your charter is stricter than it**.
+
+That second one matters. Journal policy is a floor, not a ceiling, and a group is free to hold itself to more than its publisher asks.
+
+### 🤝 Report Back <span style="color:dimgray;">(5 minutes)</span> {#reportbacktop}
+
+Each group takes two minutes to tell the class:
+
+1. The standard where you scored **highest**, and the clause that earned it.
+2. The standard where you scored **lowest**, and the one clause you are adding because of it.
 
 # Chapt. 4 -- Open Science and CARE Principles {#chap4}
 ## Challenge
