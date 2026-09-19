@@ -756,7 +756,7 @@ The chapter is divided into six parts, each with specific learning objectives:
 - [**PART A:**](#partA) Learning the Basics
 - [**PART B:**](#partB) Setting Your R Markdown Document
 - [**PART C:**](#partC) Tables, Figures and References  
-- [**PART D:**](#partD) Advanced R Markdown Settings  
+- [**PART D:**](#partD) Advanced R and R Markdown Settings  
 - [**PART E:**](#partE) User-Defined Functions in R  
 - [**PART F:**](#partF) Interactive Tutorials  
 
@@ -2595,11 +2595,17 @@ Follow these steps to format your citations and bibliography according to a spec
   </ul>
 </div>
 
-## PART D: Advanced R and R Markdown settings {#partD}
+## PART D: Advanced R and R Markdown Settings {#partD}
 
-### Introduction
+### Aim
 
-The **aim** of this tutorial is to provide an overview of procedures that can be applied to streamline your R Markdown document, supporting both your computing needs and formatting style.
+By now you have written the same chunk options over and over: `echo`, `warning`, `fig.cap`, `out.width`. The **aim** of this tutorial is to set those options **once, at the top of the document**, so that every chunk inherits them and you only name an option on a chunk that needs to differ.
+
+We will focus on learning how to:
+
+1. **Set your working directory**, so that you can test code with the `Run` button before knitting ([Set Up Your Working Directory](#setwdir)).
+2. **Understand the options that govern every code chunk**: how text output, code formatting, caching, plots and figure positioning are controlled ([Set Global Options for Code Chunks](#globalopts)).
+3. **Assemble those options into a single `setup` chunk** and apply it to your own document ([Implement Global Options for Code Chunks](#setupcode)).
 
 ### Learning Outcomes
 
@@ -2613,17 +2619,34 @@ This tutorial provides students with the opportunity to learn how to:
   + [plot output (format and resolution)](#plotout)
   + [figure positioning (close to the associated code chunks)](#figpos)
 - [Implement global options for code chunks](#setupcode)
-- [Practice the global options procedure](#practglobalopt)
+
+**We spend the first quarter of an hour reviewing [PART C](#partC)** before starting, because everything below is built on the document you produced there. The rest of the class is PART D, and the only thing left for home is the closing [Challenge](#globalchallenge).
+
+| | Block | Time | |
+|---|---|---|---|
+| | Review of [PART C](#partC) | 15 min | in class |
+| 1 | [Set Up Your Working Directory](#setwdir) | 5 min | in class, you type |
+| 2 | [Set Global Options for Code Chunks](#globalopts) | 25 min | in class, I present |
+| | *five-minute break* | 5 min | |
+| 3 | [Implement Global Options](#setupcode): Step-by-Step Procedure | 20 min | in class, you type |
+| | **Subtotal in class** | **70 min** | |
+| 4 | [Implement Global Options](#setupcode): [Challenge](#globalchallenge) | 10 min | **at home** |
+
+The break falls where it does for a reason: everything before it is background, and everything after it puts that background into your own document.
 
 ---
 
-### Supporting Files
+### How This Tutorial Is Written {#protocolstyleD}
 
-Please refer to [section](#Files) for more details on supporting files and their locations on the shared Google Drive.
+PART D follows the same protocol as [PART B](#protocolstyle) and [PART C](#protocolstyleC), with one difference worth knowing before you start: **most of this tutorial is reference material.**
+
+[Set Global Options for Code Chunks](#globalopts) explains what each family of options does. There is nothing to type there and no Checkpoint, because nothing in your document changes yet. Read it the way you would read documentation, then come back to it later when you need to remember what `cache` or `fig.pos` does.
+
+The two sections that do ask you to type ([Set Up Your Working Directory](#setwdir) and [Implement Global Options for Code Chunks](#setupcode)) carry a **Step-by-Step Procedure** and a **✅ Checkpoint**, and the last one closes with a **💡 Challenge** and its **✅ Solution**, exactly as in PART C. **That Challenge is the one piece of PART D you finish at home**, which is what the homework for the following class refers to.
 
 ---
 
-### Set Up Your Working Directory {#setwdir}
+### Set Up Your Working Directory <span style="color:dimgray;">(5 minutes)</span> {#setwdir}
 
 Unlike R scripts, where you must set your working directory or provide the path to your files, the approach implemented in an R Markdown document (`.Rmd`) automatically sets the working directory to the location of the `.Rmd` file. This behavior is managed by functions from the **knitr** package. 
 
@@ -2635,7 +2658,7 @@ Unlike R scripts, where you must set your working directory or provide the path 
   </ul>
 </div>
 
-#### Step-by-Step Procedure
+#### Step-by-Step Procedure <span style="color:dimgray;">(~5 minutes)</span>
 
 Before knitting your document, you will be testing your code (see Figure \@ref(fig:runcodetab)). To ensure smooth code testing, you need to set your working directory. This can be done in RStudio by clicking (see Figure \@ref(fig:setwd)):
 
@@ -2645,9 +2668,35 @@ Before knitting your document, you will be testing your code (see Figure \@ref(f
 knitr::include_graphics("Figures/Setwkd.png")
 ```
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your working directory is the folder holding your `.Rmd`.** Confirm it by typing `getwd()` in the Console: the path it prints should end in `Chapter_2`.
+
+**This matters only for testing code with the `Run` button.** When you *knit*, knitr sets the working directory to the location of the `.Rmd` file itself, whatever the Console happens to be pointing at.
+
+That difference is worth holding on to. Code that works in the Console but fails on knitting is very often code that reads a file from outside the document's own folder, which is also the reason such a document will not run on anyone else's machine.
+
+</details>
+
 ---
 
-### Set Global Options for Code Chunks {#globalopts}
+### Set Global Options for Code Chunks <span style="color:dimgray;">(25 minutes)</span> {#globalopts}
+
+**This section is reference material and I will walk you through it.** There is nothing to type yet:
+you meet each family of options here, and apply all of them together in
+[Implement Global Options for Code Chunks](#setupcode). The times below are how long we spend on each
+in class.
+
+| | Topic | Time | What it controls |
+|---|---|---|---|
+| 1 | [The `opts_chunk$set()` Function](#optsfun) | 5 min | how a global option is declared |
+| 2 | [Text Output](#textout) | 4 min | what the code prints into the document |
+| 3 | [Code Formatting](#codeformat) | 4 min | how the code itself is laid out |
+| 4 | [Code Caching](#codecach) | 4 min | whether results are reused between knits |
+| 5 | [Plot Output](#plotout) | 5 min | figure format, resolution and location |
+| 6 | [Figure Positioning](#figpos) | 3 min | where a figure lands on the page |
+| | **Total** | **25 min** | |
 
 #### Introduction
 
@@ -2663,7 +2712,7 @@ These general settings will be configured using the `opts_chunk$set()` function 
 
 - https://yihui.org/knitr/options/
 
-##### The `opts_chunk$set()` Function
+##### The `opts_chunk$set()` Function <span style="color:dimgray;">(~5 minutes)</span> {#optsfun}
 
 The `knitr` function `opts_chunk$set()` is used to modify the default global options in an `.Rmd` document.
 
@@ -2677,7 +2726,7 @@ We will discuss each part of the settings individually; however, these settings 
 
 ---
 
-#### Text Output {#textout}
+#### Text Output <span style="color:dimgray;">(~4 minutes)</span> {#textout}
 
 This section covers settings related to the text output generated by code chunks.
 
@@ -2699,7 +2748,7 @@ If you want some text results to use different options, please adjust those in t
 
 ---
 
-#### Code Formatting {#codeformat}
+#### Code Formatting <span style="color:dimgray;">(~4 minutes)</span> {#codeformat}
 
 This section covers settings related to code formatting (that is, how code is displayed in the final `html` or `pdf` document) generated by code chunks.
 
@@ -2718,7 +2767,7 @@ opts_chunk$set(tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60), 
 
 ---
 
-#### Code Caching {#codecach}
+#### Code Caching <span style="color:dimgray;">(~4 minutes)</span> {#codecach}
 
 To compile your `.Rmd` document faster—especially when you have computationally intensive tasks—you can cache the output of your code chunks. This process saves the results of these chunks, allowing you to reuse the output later without re-running the code.
 
@@ -2743,7 +2792,7 @@ opts_chunk$set(cache = 2, cache.path = "cache/")
   
 ---
 
-#### Plot Output {#plotout}
+#### Plot Output <span style="color:dimgray;">(~5 minutes)</span> {#plotout}
 
 Plots are a major component of your research and form the basis of your figures. You can take advantage of options provided by the `knitr` package to produce plots that meet publication requirements. This approach can save valuable time during the writing phase, as it eliminates the need to manually adjust figure size and resolution to comply with journal guidelines.
 
@@ -2777,7 +2826,7 @@ Some journals have specific requirements for figure dimensions. You can easily s
 
 ---
 
-#### Figure Positioning {#figpos}
+#### Figure Positioning <span style="color:dimgray;">(~3 minutes)</span> {#figpos}
 
 Positioning figures close to their corresponding code chunks is important for clarity and reproducibility. This can be controlled by adding another `opts_chunk$set()` option in your `setup` code chunk. 
 
@@ -2797,13 +2846,15 @@ opts_chunk$set(fig.pos = "H")
 
 ---
 
-### Implement Global Options for Code Chunks {#setupcode}
+### Implement Global Options for Code Chunks <span style="color:dimgray;">(30 minutes)</span> {#setupcode}
 
-In this section, we will combine all the global settings discussed above into a code chunk named `setup`, which should be placed below the YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct) for more details on its location). 
+Everything above described the options one family at a time. This section collects them into a single code chunk named `setup`, placed just below the YAML metadata section (see Figure \@ref(fig:RMarkdwnstrct) for its location), and then applies it to your own document.
 
-In addition to containing the global settings, it is advisable to include a code section for loading the required R packages (see [Chapter 2 - Part B](#partB) and Figure \@ref(fig:RMarkdwnstrct)).
+Alongside the global settings, it is advisable to load the R packages your document needs in the same place (see [Chapter 2 - Part B](#partB) and Figure \@ref(fig:RMarkdwnstrct)).
 
-Below is the code for the `setup` code chunk based on the options presented above:
+#### The `setup` Code Chunk {#setupchunk}
+
+Below is the code for the `setup` chunk, built from the options presented above:
 
 ```{r echo= TRUE, eval=FALSE}
 ###
@@ -2833,7 +2884,7 @@ opts_chunk$set(fig.path = "Figures_MS/", dev = c('png', 'pdf'), dpi = 300)
 opts_chunk$set(fig.pos = "H")
 ```
 
-#### Settings of the `setup` R Code Chunk {#codechunkoptions}
+##### Settings of the `setup` R Code Chunk {#codechunkoptions}
 
 When inserting the code above into an R code chunk (see Figure \@ref(fig:RMarkdwnstrct)), please set the chunk options as follows:
 
@@ -2842,24 +2893,9 @@ When inserting the code above into an R code chunk (see Figure \@ref(fig:RMarkdw
 - `cache = FALSE`: The code chunk will not be cached (see above for more details).
 - `message = FALSE`: Messages emitted by `message()` will not be included in the output.
 
----
+#### The Plot Code Used Below {#plotcode}
 
-### Practice the Global Options Procedure {#practglobalopt}
-
-Please follow the procedure outlined above to implement the material presented in this section and become familiar with the tutorial content. This exercise is divided into seven steps as follows:
-
-1. Open RStudio and open your `Chapter_2_PartC.Rmd` document.
-2. Set your working directory according to the file location. **Note:** This step is especially important if you want to test your R code prior to knitting the document.
-3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png){alt=""} button) directly below your `packages` code chunk and name it `setup`. This code chunk will be used to define the global settings via the `opts_chunk$set()` function.
-4. Copy the content of the code presented in this [section](#setupcode) into your `setup` code chunk.
-5. Edit your code chunk options as presented [above](#codechunkoptions).
-6. Use the R code provided [below](#step5) (which generates a plot) to explore the effect of global settings on code outputs.
-7. Once you have completed the procedures associated with step 6, knit your document using the `Knit` ![](Figures/knit_2.png){alt=""} button. Please pay attention to the outputs in your working directory.
-8. Use the `bookdown` `\@ref()` function to cite your figure or plot in the text.
-
-#### Code for Step 6 {#step5}
-
-The R code provided below corresponds to step 6 of the procedure and produces the plot shown in Figure \@ref(fig:PlotFig).
+To see what the global settings actually do, you need a chunk that produces output. The code below generates the plot shown in Figure \@ref(fig:PlotFig), and you will add it to your own document in the procedure that follows.
 
 ```{r PlotFig, echo=FALSE, results="hide", fig.cap="Plot of y ~ x."}
 # Generate a set of observations (n=100) that have a normal distribution
@@ -2872,28 +2908,57 @@ y <- jitter(x, 1000)
 plot(x, y)
 ```
 
-##### Step-by-Step Procedure
+#### Step-by-Step Procedure <span style="color:dimgray;">(~20 minutes)</span>
 
-1. Insert an R code chunk (using the `Insert` ![](Figures/insert.png){alt=""} button) under the `Figures` header of your document and set the following options and arguments:
+1. Open RStudio and open your `Chapter2_partC.Rmd` document. **If yours does not knit**, download [`Chapter_2_partC_template.Rmd`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_2/Chapter_2_partC_template.Rmd), save it as `Chapter2_partC.Rmd` in your `Reproducible_Science/Chapters/Chapter_2` folder and work from that instead. It is the finished PART C document, so you can start PART D on time and sort out your own copy afterwards. Make sure `Bibliography_Reproducible_Science_2.bib` and `AmJBot.csl` sit in the same folder, or it will not knit either.
+2. Set your working directory to the file location, as described in [Set Up Your Working Directory](#setwdir). **Note:** this matters if you want to test your R code before knitting.
+3. Insert an R code chunk (using the `Insert` ![](Figures/insert.png){alt=""} button) directly below your `packages` code chunk, and name it `setup`. This chunk holds the global settings defined through `opts_chunk$set()`.
+4. Copy the code from [The `setup` Code Chunk](#setupchunk) into it.
+5. Set the chunk options as listed in [Settings of the `setup` R Code Chunk](#codechunkoptions).
+6. Under your `Figures` header, insert another R code chunk and set its options as follows:
     - `plotcache`: Unique ID of the code chunk.
     - `fig.cap = "Plot of y ~ x."`: Figure caption.
     - `fig.show = "asis"`: Figure display.
     - `out.width = "100%"`: Figure width on the page.
-2. Enter the following R code inside the code chunk.
+7. Copy the code from [The Plot Code Used Below](#plotcode) into that chunk, and test it with the `Run` ![](Figures/Run.png){alt=""} button.
+8. Knit your document using the `Knit` ![](Figures/knit_2.png){alt=""} button, and **pay attention to what appears in your project folder**, not only to the document.
+9. Cite your new figure in the text with the `bookdown` `\@ref()` function, as you did in [PART C](#crossrefTabFig).
 
-```{r Plot2, eval = FALSE}
-# Generate a set of observations (n=100) that have a normal distribution
-x <- rnorm(100)
+<details>
+<summary><b>✅ Checkpoint</b></summary>
 
-# Add a small amount of noise to x to generate a new vector (y)
-y <- jitter(x, 1000)
+**Directly below your `packages` chunk** there is a chunk named `setup`, with the options `include = FALSE, cache = FALSE, message = FALSE`, containing the `library()` calls and the five `opts_chunk$set()` lines.
 
-# Plot y ~ x
-plot(x, y)
-```
+**Under your `Figures` header** there is a chunk named `plotcache` producing the scatter plot of `y ~ x`, captioned, and referenced from your text with `\@ref(fig:plotcache)`.
 
-3. Test your code to ensure it performs as expected (using the `Run` ![](Figures/Run.png){alt=""} button).  
-4. Proceed to step 7 in the above section and complete the procedure.
+**Now look in your project folder.** Two directories you never created have appeared: `cache/`, from `cache.path`, and `Figures_MS/`, from `fig.path`. `Figures_MS/` holds **both a `.png` and a `.pdf`** of your plot, because `dev = c('png', 'pdf')` asked for two formats. Those image files are what you would send to a journal, produced as a side effect of knitting rather than exported by hand.
+
+**If `Figures_MS/` is missing**, your `setup` chunk did not run. Check that it is named exactly `setup`, and that `include = FALSE` has not been mistyped as `eval = FALSE`: the first hides the output, the second stops the code running at all.
+
+</details>
+
+#### Challenge <span style="color:dimgray;">(~10 minutes)</span> {#globalchallenge}
+
+<div class="danger">
+  <p><strong>💡 Which setting wins?</strong></p>
+  <ul>
+    <li>Your <code>setup</code> chunk sets <code>echo = TRUE</code> for every chunk in the document. Change it to <code>echo = FALSE</code>, knit, and look at what happened to the R code in your output.</li>
+    <li>Now add <code>echo = TRUE</code> to the options of your <code>plotcache</code> chunk only, and knit again.</li>
+    <li>Which of the two settings won for that chunk, and what does that tell you about what <code>opts_chunk$set()</code> actually does?</li>
+    <li>Put both back the way they were before moving on.</li>
+  </ul>
+</div>
+
+<details>
+<summary><b>✅ Solution</b></summary>
+
+**The chunk-level option wins.** `opts_chunk$set()` does not force anything on your chunks: it sets the **default** for the document. Any option written in an individual chunk header overrides that default, for that chunk alone.
+
+That is why everything you wrote in [PART C](#partC) still behaves exactly as you wrote it. The `echo = FALSE` on your `tabgrades` chunk keeps working whatever the global default becomes, because a chunk option always beats a global one.
+
+**This is what makes global options worth setting at all.** You choose the behaviour you want almost everywhere, declare it once at the top, and then name an option on a chunk only where that chunk genuinely needs to differ. In a document where every chunk repeats the same six options, changing your mind means editing every chunk, and that is exactly the kind of manual, repeated edit this course exists to remove.
+
+</details>
 
 ## PART E: User-Defined Functions in R {#partE}
 
