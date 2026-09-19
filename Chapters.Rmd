@@ -1970,16 +1970,16 @@ This tutorial provides students with the opportunity to learn how to:
 
 **We have half a class and the homework that follows it for this**, and each outcome above maps to one section below. The times are a pace rather than a deadline, in the same way as in [PART A](#syntaxguide) and [PART B](#partB):
 
-| | Section | Time | Where |
-|---|---|---|---|
-| 1 | [Create Your R Markdown Document](#creatRMDfileC) | 5 min | In class |
-| 2 | [Insert Tables](#inserttable) | 20 min | In class |
-| 3 | [Insert Figures](#insertfigure) | 20 min | At home |
-| 4 | [Cross-reference Tables and Figures in the Text](#crossrefTabFig) | 10 min | At home |
-| 5 | [Cite References in the Text](#bib) | 15 min | At home |
-| 6 | [Generate a References Section](#refsection) | 10 min | At home |
-| 7 | [Format Citations to Journal Style](#cslForm) | 10 min | At home |
-| | **Total** | **90 min** | |
+| Block | Time | Where |
+|---|---|---|
+| [Create Your R Markdown Document](#creatRMDfileC) | 5 min | In class |
+| [Insert Tables](#inserttable) | 20 min | In class |
+| [Insert Figures](#insertfigure) | 20 min | At home |
+| [Cross-reference Tables and Figures in the Text](#crossrefTabFig) | 10 min | At home |
+| [Cite References in the Text](#bib) | 15 min | At home |
+| [Generate a References Section](#refsection) | 10 min | At home |
+| [Format Citations to Journal Style](#cslForm) | 10 min | At home |
+| **Total** | **90 min** | |
 
 ---
 
@@ -2622,17 +2622,15 @@ This tutorial provides students with the opportunity to learn how to:
 
 **We spend the first quarter of an hour reviewing [PART C](#partC)** before starting, because everything below is built on the document you produced there. The rest of the class is PART D, and the only thing left for home is the closing [Challenge](#globalchallenge).
 
-| | Block | Time | |
-|---|---|---|---|
-| | Review of [PART C](#partC) | 15 min | in class |
-| 1 | [Set Up Your Working Directory](#setwdir) | 5 min | in class, you type |
-| 2 | [Set Global Options for Code Chunks](#globalopts) | 25 min | in class, I present |
-| | *five-minute break* | 5 min | |
-| 3 | [Implement Global Options](#setupcode): Step-by-Step Procedure | 20 min | in class, you type |
-| | **Subtotal in class** | **70 min** | |
-| 4 | [Implement Global Options](#setupcode): [Challenge](#globalchallenge) | 10 min | **at home** |
-
-The break falls where it does for a reason: everything before it is background, and everything after it puts that background into your own document.
+| Block | Time | Who |
+|---|---|---|
+| Review of [PART C](#partC) | 15 min | Instructor |
+| [Set Up Your Working Directory](#setwdir) | 5 min | Students |
+| [Set Global Options for Code Chunks](#globalopts) | 25 min | Instructor |
+| *five-minute break* | 5 min | |
+| [Implement Global Options](#setupcode): Step-by-Step Procedure | 20 min | Students |
+| **Subtotal in class** | **70 min** | |
+| [Implement Global Options](#setupcode): [Challenge](#globalchallenge) | 10 min | Students, at home |
 
 ---
 
@@ -2988,6 +2986,35 @@ By the end of this tutorial, students will be able to:
 - [Develop, implement, and apply user-defined functions that return multiple values](#UDFmultiple)
 - [Implement defensive programming techniques to improve code robustness](#defensiveprog)
 - [Use logical operators effectively within R functions](#logicalop)
+- [Use your UDFs inside an R Markdown document](#UDFinRmd)
+
+**PART E runs over two classes**, and we write the code together as we go. The times below are a pace rather than a deadline.
+
+**Class 1 --- what a function is, and your first UDF**
+
+| Block | Time | Who |
+|---|---|---|
+| [Define a Function and Understand its Applicability](#definefunc) | 8 min | Instructor |
+| [Syntax to Implement UDFs in R](#syntaxUDFs) | 10 min | Instructor |
+| [Apply Best Practices for Writing Code](#bestcodepract1) | 8 min | Instructor |
+| [Load and Call UDFs](#loadandcallUDFs) | 9 min | Instructor |
+| *five-minute break* | 5 min | |
+| [Develop, Implement, and Apply UDFs That Return a Single Value](#UDFsingle) | 30 min | Instructor, then students |
+| **Total** | **70 min** | |
+
+**Class 2 --- returning more than one value, and failing well**
+
+| Block | Time | Who |
+|---|---|---|
+| [Create, Name, and Access Elements of a List in R](#Rlists) | 12 min | Instructor |
+| [Develop, Implement, and Apply UDFs that Return Multiple Values](#UDFmultiple) | 25 min | Students, in groups of 2--3 |
+| *five-minute break* | 5 min | |
+| [Use Logical Operators within R Functions](#logicalop) | 3 min | Instructor |
+| [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor |
+| **Total in class** | **70 min** | |
+| [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Students, at home |
+
+The last section is the one piece you finish **at home**: it connects the `.R` script you built here back to the R Markdown document you have been growing since [PART B](#partB).
 
 <div class="disclaimer">
   <p><strong>💡 Disclaimer</strong></p>
@@ -3000,7 +3027,17 @@ By the end of this tutorial, students will be able to:
 
 ---
 
-### Define a Function and Understand its Applicability {#definefunc}
+### How This Tutorial Is Written {#protocolstyleE}
+
+PART E is taught differently from [PART C](#protocolstyleC) and [PART D](#protocolstyleD). **We write the code together, live, in class.** I type, you type alongside me, and we stop whenever something does not run.
+
+That is why the exercises here are built as **a task, then pseudocode, then code**, in that order. Pseudocode first is not ceremony: deciding what a function must do, in plain sentences, before writing any R is the habit this part exists to teach, and it is the same habit the [bioinformatics tutorial](Assignments.html#arc1) will ask of you.
+
+Each exercise closes with a **✅ Checkpoint**, and those matter more here than anywhere else in this chapter. Live coding only works if nobody is quietly stuck, so **a Checkpoint is where we all stop and confirm the same thing runs on every machine** before the next piece is built on top of it. If yours does not, say so at that point rather than afterwards.
+
+---
+
+### Define a Function and Understand its Applicability <span style="color:dimgray;">(8 minutes)</span> {#definefunc}
 
 #### What is a Function?
 
@@ -3036,7 +3073,7 @@ When you use built-in functions, the only things you need to worry about are how
 
 ---
 
-### Syntax to Implement UDFs in R {#syntaxUDFs}
+### Syntax to Implement UDFs in R <span style="color:dimgray;">(10 minutes)</span> {#syntaxUDFs}
 
 R allows users to define their own functions (UDFs), which are based on the following syntax:
 
@@ -3059,7 +3096,7 @@ function.name <- function(arguments){
   </ul>
 </div>
 
-### Apply Best Practices for Writing Code {#bestcodepract1}
+### Apply Best Practices for Writing Code <span style="color:dimgray;">(8 minutes)</span> {#bestcodepract1}
 
 This topic will be explored in more detail in [Chapter 5](#Chap5), but here we introduce some best practices for writing clear and maintainable code.
 
@@ -3085,7 +3122,7 @@ Writing clear, reproducible code has (at least) three main benefits:
 
 ---
 
-### Load and Call UDFs {#loadandcallUDFs}
+### Load and Call UDFs <span style="color:dimgray;">(9 minutes)</span> {#loadandcallUDFs}
 
 When working on your project, it is highly likely that you will develop multiple UDFs tailored to your research. In this case, it is recommended to create a dedicated folder named `R_functions` within your project directory (see Figure \@ref(fig:Structure)). Save each UDF as a separate file (e.g., `check.install.pkg.R`) inside the `R_functions` folder.
 
@@ -3133,7 +3170,7 @@ check.install.pkg(pkg=c("knitr"))
 
 ---
 
-### Develop, Implement, and Apply UDFs That Return a Single Value {#UDFsingle}
+### Develop, Implement, and Apply UDFs That Return a Single Value <span style="color:dimgray;">(30 minutes)</span> {#UDFsingle}
 
 In this section, we ***aim*** at developing UDFs that return a single value. But how do we tell a function what to return?
 
@@ -3141,7 +3178,7 @@ In R, this is done using the `return()` function.
 
 To learn this skill, we will work on a challenge.
 
-#### Challenge <span style="color:dimgray;">(15 minutes)</span> {.tabset}
+#### The Task <span style="color:dimgray;">(~15 minutes)</span> {.tabset}
 
 We are tasked with
 
@@ -3189,7 +3226,7 @@ square_number <- function(base){
 }
 ```
 
-#### Implement and Load the UDF in R <span style="color:dimgray;">(10 minutes)</span>
+#### Implement and Load the UDF in R <span style="color:dimgray;">(~10 minutes)</span>
 
 Follow these steps to implement and load the UDF in R:
 
@@ -3212,7 +3249,7 @@ knitr::include_graphics("Figures/Environment_RStudio.png")
   </ul>
 </div>
 
-#### Apply Your Function <span style="color:dimgray;">(5 minutes)</span>
+#### Apply Your Function <span style="color:dimgray;">(~5 minutes)</span>
 
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
 
@@ -3244,9 +3281,24 @@ bases <- c(2,4,16,23,45)
 square_number(base = bases)
 ```
 
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**`Chapter_2/R_functions/square_number.R` exists** and contains only the `square_number` function.
+
+**`square_number` appears under Functions in your RStudio Environment panel.** If it does not, the file was saved but never run: `source("R_functions/square_number.R")` loads it.
+
+**`Chapter_2/Chapter2_partE.R` exists**, begins with that `source()` call, and running it end to end prints `4` for `square_number(base = 2)` and five values for the vector.
+
+**Notice what the vector case tells you.** You wrote `base*base` for a single number, and it worked unchanged on five numbers at once. That is R being vectorised, and it is the reason a UDF written for one value usually scales to a whole dataset without a loop.
+
+This is the end of our first class. If any of the three points above is not true on your machine, tell me now rather than next week: everything after this is built on top of it.
+
+</details>
+
 ---
 
-### Create, Name, and Access Elements of a List in R {#Rlists}
+### Create, Name, and Access Elements of a List in R <span style="color:dimgray;">(12 minutes)</span> {#Rlists}
 
 In this section, we introduce **lists** in R and learn how to create, name, and access list elements. We will also explore how lists can contain **mixed data types** and **nested structures**.
 
@@ -3328,13 +3380,13 @@ We will now apply what you have learned to return multiple values from a UDF.
 
 ---
 
-### Develop, Implement, and Apply UDFs that Return Multiple Values {#UDFmultiple}
+### Develop, Implement, and Apply UDFs that Return Multiple Values <span style="color:dimgray;">(25 minutes)</span> {#UDFmultiple}
 
 In this section, we will focus on developing UDFs that return multiple values.
 
 To learn this skill, we will work on a challenge.
 
-#### Challenge
+#### The Task
 
 We are tasked with
 
@@ -3342,17 +3394,18 @@ We are tasked with
 
 To accomplish this, we will **collect the different outputs into a list, which will then be returned to the user using `return()`**.
 
-#### Student Activity and Solution <span style="color:dimgray;">(25 minutes)</span> {.tabset}
+#### Student Activity <span style="color:dimgray;">(~25 minutes)</span>
 
-##### Students Work in Groups
+Work in groups of 2–3 to complete the following tasks:
 
-Students will work in groups of 2–3 to complete the following tasks:
-
-1. Develop a pseudocode plan to solve the challenge.  
-2. Implement the pseudocode as a UDF in R (saved in a script).  
+1. Develop a pseudocode plan to solve the task.
+2. Implement the pseudocode as a UDF in R, saved in a script named `my_log_square.R` in `Chapter_2/R_functions`.
 3. Apply and test your UDF.
 
-##### Solution proposed by the instructor
+**Write the pseudocode before opening RStudio.** The difficulty here is not the arithmetic, it is returning *two* values from a function that can only `return()` once, and that decision is easier to reason about in sentences than in code.
+
+<details>
+<summary><b>✅ Solution</b></summary>
 
 Please find below the solution proposed by the instructor:
 
@@ -3376,15 +3429,44 @@ my_log_square <- function(base){
 my_log_square(base = 2)
 ```
 
+**The list is what makes this work.** A function returns exactly one object, so returning two numbers means putting both inside a single container first. **Naming the list elements** (`log_val`, `square_val`) is not decoration: without names the caller has to remember that the first element is the logarithm, and that is exactly the kind of undocumented assumption that makes an analysis hard to reproduce.
+
+</details>
+
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**`Chapter_2/R_functions/my_log_square.R` exists**, and `source()`-ing it puts `my_log_square` in your Environment panel.
+
+**Calling `my_log_square(base = 2)` prints a list of two named elements**, not two loose numbers.
+
+**You can pull one value out on its own**: `my_log_square(base = 2)$square_val` returns `4`. Try it. That is why the names matter, and it is how you will use a multi-value UDF inside a larger script.
+
+</details>
+
 ---
 
-### Implement Defensive Programming to Improve Code Robustness {#defensiveprog}
+### Use Logical Operators within R Functions <span style="color:dimgray;">(3 minutes)</span> {#logicalop}
+
+The next section checks two things at once (*is this argument a number, **or** is that one not?*), which needs a **logical operator**. We meet them here first so that the check reads as English when you get there.
+
+In a nutshell, the most commonly used logical operators in `R` are:
+
+- **AND (`&`)**: Returns `TRUE` only if **both** values are `TRUE`.
+- **OR (`|`)**: Returns `TRUE` if **at least one** of the values is `TRUE`.
+- **NOT (`!`)**: Negates the logical value it is applied to.
+
+You can learn more about logical operators (including practice exercises) on this [website](https://builtin.com/data-science/and-in-r).
+
+---
+
+### Implement Defensive Programming to Improve Code Robustness <span style="color:dimgray;">(25 minutes)</span> {#defensiveprog}
 
 #### Introduction
 
 Defensive programming is a technique used to ensure that code fails with well-defined errors—that is, in situations where you *know* it should not work. **The key idea is to ‘fail fast’ by ensuring the code throws an error as soon as something unexpected occurs.** This may require a bit more effort from the programmer, but it makes debugging much easier later on.
 
-#### Case Study <span style="color:dimgray;">(25 minutes)</span>
+#### Case Study <span style="color:dimgray;">(~22 minutes)</span>
 
 To demonstrate how to apply defensive programming in your code, a power function `y = x^n` is implemented as a UDF and used as an example.
 
@@ -3432,9 +3514,9 @@ This routine can be implemented as follows:
 # - Arguments: base (= x) and power (= n)
 # - Output: a number (y)
 exp_number <- function(base, power){
-    # This if statement tests if classes of base and power are numeric.
-    # If one of them is not numeric it stops and return meaningful message
-    if(class(base) != "numeric" | class(power) != "numeric"){
+    # This if statement tests whether base and power are numbers.
+    # If either is not, it stops and returns a meaningful message.
+    if(!is.numeric(base) | !is.numeric(power)){
           stop("Both base and power inputs must be numeric")
     }
     #If classes are good then infer exp
@@ -3448,22 +3530,64 @@ exp_number <- function(base, power){
 exp_number(base = "hello", power = 5)
 ```
 
-Although in this case debugging the error might not take long, in more complex functions you're more likely to encounter vague error messages or code that runs for some time before failing. By applying defensive programming and adding checks to your code, you can detect unexpected behavior earlier and receive more meaningful error messages.
+<div class="info">
+  <p><strong>💡 Why <code>is.numeric()</code> and not <code>class()</code>?</strong></p>
+  <p>You may see this check written as <code>class(base) != "numeric"</code>. It looks equivalent and is not, in two ways that matter:</p>
+  <ul>
+    <li><code>class(2L)</code> is <code>"integer"</code>, not <code>"numeric"</code>, so that version <strong>rejects whole numbers</strong> typed as <code>2L</code>, which are perfectly valid input.</li>
+    <li><code>class()</code> can return more than one value (a matrix gives <code>c("matrix", "array")</code>), and comparing a length-2 vector inside <code>if()</code> is an error in current R: <code>the condition has length &gt; 1</code>.</li>
+  </ul>
+  <p>So the guard meant to produce a clear message would itself crash with an obscure one. <code>is.numeric()</code> always returns a single <code>TRUE</code> or <code>FALSE</code> and accepts both integers and doubles. <strong>Defensive code has to be more robust than the code it protects</strong>, not less.</p>
+</div>
+
+Although debugging this particular error would not take long, in more complex functions you are more likely to meet vague error messages, or code that runs for some time before failing. By adding checks like this one you detect unexpected behaviour earlier and get a message that tells you what to fix.
 
 ---
 
-### Use Logical Operators within R Functions {#logicalop}
+---
 
-As you saw in the previous example, we used a logical operator—in that case, `OR` (represented by the `|` symbol)—to implement defensive programming in our user-defined function (UDF). 
+### Use Your UDFs in an R Markdown Document <span style="color:dimgray;">(8 minutes)</span> {#UDFinRmd}
 
-In a nutshell, the most commonly used logical operators in `R` are:
+Everything so far has lived in `.R` scripts. This last section connects them back to the R Markdown document you have been building since [PART B](#partB), which is where your UDFs will actually be used.
 
-- **AND (`&`)**: Returns `TRUE` only if **both** values are `TRUE`.
-- **OR (`|`)**: Returns `TRUE` if **at least one** of the values is `TRUE`.
-- **NOT (`!`)**: Negates the logical value it is applied to.
+**The link is the same `source()` function you have been using in the console.** Because knitr sets the working directory to the location of the `.Rmd` file (see [Set Up Your Working Directory](#setwdir)), a relative path is all you need.
 
-You can learn more about logical operators (including practice exercises) on this [website](https://builtin.com/data-science/and-in-r).
- 
+#### Step-by-Step Procedure
+
+1. Copy your `R_functions` folder into the folder holding `Chapter2_partC.Rmd`, if it is not already there.
+2. Open `Chapter2_partC.Rmd` and find the `setup` chunk you built in [PART D](#setupcode).
+3. Add a `source()` call for each UDF, below the `library()` calls:
+```{r eval=FALSE}
+###
+# Source UDFs
+###
+source("R_functions/square_number.R")
+source("R_functions/my_log_square.R")
+```
+4. Anywhere below that chunk, call one of them from a normal code chunk, exactly as you would in the console:
+```{r eval=FALSE}
+square_number(base = 2)
+```
+5. Knit the document.
+
+<div class="info">
+  <p><strong>💡 Sourcing a whole folder</strong></p>
+  <p>Listing every file by hand does not scale. Once you have more than a handful of UDFs, source the folder instead, which picks up any script you add later without further edits:</p>
+<pre><code>ToSource &lt;- list.files(path = "R_functions", pattern = "\\.R$", full.names = TRUE)
+sapply(ToSource, source)</code></pre>
+</div>
+
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**Your `setup` chunk sources your UDFs**, and `Chapter2_partC.Rmd` knits without error.
+
+**A chunk below it calls `square_number()` and its output appears in the knitted document.** If you get `could not find function "square_number"`, the `source()` path is wrong relative to the `.Rmd`, not relative to wherever your console happens to be pointing.
+
+**Your functions are now in exactly one place.** Edit `square_number.R` once and every document that sources it picks up the change on the next knit. That is the whole argument for UDFs: a calculation defined in one file, not copied into five analyses that then drift apart.
+
+</details>
+
 ## PART F: Interactive Tutorials {#partF}
 
 The objective of this section is to provide students with some tools and ideas to design their bioinformatic tutorials (for PART 2). Here, students will have an overview of the tools implemented in the R package [*learnr*](https://rstudio.github.io/learnr/index.html), which was developed to produce interactive tutorials. Although developed in R, the interactive tutorials are designed to be conducted in web browsers (but it could also be entirely done within RStudio).
