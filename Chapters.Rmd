@@ -1973,13 +1973,13 @@ This tutorial provides students with the opportunity to learn how to:
 | Block | Time | Where |
 |---|---|---|
 | [Create Your R Markdown Document](#creatRMDfileC) | 5 min | In class |
-| [Insert Tables](#inserttable) | 20 min | In class |
+| [Insert Tables](#inserttable) | 23 min | In class |
 | [Insert Figures](#insertfigure) | 20 min | At home |
 | [Cross-reference Tables and Figures in the Text](#crossrefTabFig) | 10 min | At home |
 | [Cite References in the Text](#bib) | 15 min | At home |
 | [Generate a References Section](#refsection) | 10 min | At home |
 | [Format Citations to Journal Style](#cslForm) | 10 min | At home |
-| **Total** | **90 min** | |
+| **Total** | **93 min** | |
 
 ---
 
@@ -2024,7 +2024,7 @@ Follow the approach described in the box below to create your R Markdown file fo
 
 ---
 
-### Insert Tables <span style="color:dimgray;">(20 minutes)</span> {#inserttable}
+### Insert Tables <span style="color:dimgray;">(23 minutes)</span> {#inserttable}
 
 This tutorial introduces key concepts related to table creation in R Markdown, specifically the following:
 
@@ -2043,6 +2043,42 @@ grades <- data.frame(Percentage = c("100-98","97.9-93", "92.9-90", "89.9-88", "8
 #Plot table
 knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>% kable_styling(c("striped","scale_down"))
 ```
+
+#### The R Packages and Syntax Used Here <span style="color:dimgray;">(~3 minutes)</span> {#tablepkgs}
+
+Before you type the code, it is worth knowing what is doing the work in this line:
+
+```{r eval=FALSE}
+knitr::kable(grades, caption = "Grading scale applied in this class.", format = "html") %>%
+  kableExtra::kable_styling(c("striped", "scale_down"))
+```
+
+<div class="info">
+  <p><strong>💡 The R packages used here</strong></p>
+  <ul>
+    <li><b><code>knitr</code></b> provides <code>kable()</code>, which turns an R object (here a data frame) into a formatted table.</li>
+    <li><b><code>kableExtra</code></b> provides <code>kable_styling()</code>, which controls how that table <em>looks</em>: striped rows, scaling to fit the page, and so on.</li>
+    <li>You installed both in <a href="#loadRreq">Install R Dependencies and Load Packages</a>, so there is <b>nothing new to install</b>. This is the payoff for building that <code>packages</code> chunk in PART B.</li>
+  </ul>
+</div>
+
+<div class="info">
+  <p><strong>💡 Two pieces of syntax in that line</strong></p>
+  <ul>
+    <li><b><code>package::function()</code> calls a function and says which package it came from.</b> <code>knitr::kable()</code> means <em>the <code>kable()</code> function in <code>knitr</code></em>. Once a package is loaded you can write <code>kable()</code> on its own, but naming the package makes the code unambiguous, and it keeps working if another package you load later also defines a <code>kable()</code>.</li>
+    <li><b><code>%>%</code> is the pipe.</b> It takes whatever is on its left and hands it to the function on its right as that function's <b>first argument</b>, so <code>x %>% f()</code> is another way of writing <code>f(x)</code>.</li>
+  </ul>
+</div>
+
+<div class="info">
+  <p><strong>💡 The same table, with and without the pipe</strong></p>
+<pre><code># with the pipe: build the table, then style it
+knitr::kable(grades) %>% kableExtra::kable_styling("striped")
+
+# without the pipe: the same thing, read from the inside out
+kableExtra::kable_styling(knitr::kable(grades), "striped")</code></pre>
+  <p>Both produce the same table. The pipe earns its keep as soon as there are three or four steps, because it keeps them in the order you actually do them instead of nesting them inside one another. You will meet it constantly in R code.</p>
+</div>
 
 #### Step-by-Step Procedure <span style="color:dimgray;">(~10 minutes)</span>
 
@@ -2234,7 +2270,7 @@ Figure \@ref(fig:code_chunk_ID)
 <div class="info">
   <p><strong>💡 More Info on the Syntax</strong></p>
   <ul>
-    <li>It is worth mentioning that you need to manually add <code>Table</code> or <code>Figure</code> in front of <code>\@ref(tab:code_chunk_ID)</code> or <code>\@ref(fig:code_chunk_ID)</code>. This design allows the user to choose how tables and figures are referenced in the text. Journals often have distinct formatting styles, which must be followed during submission.</li>
+    <li>It is worth mentioning that you need to manually add <code>Table</code> or <code>Figure</code> in front of `\@ref(tab:code_chunk_ID)` or `\@ref(fig:code_chunk_ID)`. This design allows the user to choose how tables and figures are referenced in the text. Journals often have distinct formatting styles, which must be followed during submission.</li>
   </ul>
 </div>
 
