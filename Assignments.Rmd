@@ -136,7 +136,13 @@ A short proposal, due about a third of the way through the semester, setting out
 Two things are asked of this proposal beyond a conventional project plan:
 
 - **It must itself be a reproducible document** --- an R Markdown source that knits, with at least one working code chunk and a bibliography. Your proposal then becomes the skeleton of your report rather than something written once and discarded.
-- **It must say where your project sits within reproducible science, and how you will know whether your approach works.** You are not expected to solve reproducibility in general; pick a part of the process, and tell me what will be reproducible at the end that is not reproducible now, and how you will test that.
+- **It must say where your project sits within reproducible science, and how you will know whether your approach works.** You are not expected to solve reproducibility in general; pick a part of the process, and tell me what will be reproducible at the end that is not reproducible now, and how you will test that. The chapters give you the vocabulary for all three:
+    + **Where it sits.** Start from the [definitions in Chapter 1](Chapters.html#IntroDef): *reproducible science*, *reproducibility* and *replicability* are not synonyms, and saying which one you mean already narrows the project. Then locate the work itself. The chapters give you three maps for this, and you need only whichever fits your project best:
+        - the steps of the [scientific process](Chapters.html#scientificprocess), if your project is about how a study is designed, run or reported;
+        - the [data life cycle](Chapters.html#datalifecycle), if it is about how data are created, documented, stored, shared or reused;
+        - the [workflow in Figure 3.4](Chapters.html#fig:workflowPART2), if it is about the analysis itself, since that figure shows which step of the process each of your code chunks implements.
+    + **What is broken now.** The [glossary of threats](Chapters.html#gloss) and the [solutions that mitigate them](Chapters.html#soltothreats) in Chapter 3 are where to look. A proposal that names the specific failure it addresses is far stronger than one gesturing at reproducibility in general.
+    + **How you will test it.** Use the standard your group applied to its [reproducibility charter](Chapters.html#FactorsActivity): a commitment only counts if somebody else could check whether you kept it. The [TOP standards](Chapters.html#TOPguidelines), with their levels 0 to 3, are a ready-made way of saying how far you intend to go.
 
 <a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Proposal rubric (pdf)</a>
 
