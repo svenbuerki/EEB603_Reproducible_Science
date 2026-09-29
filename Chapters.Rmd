@@ -2066,8 +2066,17 @@ knitr::kable(grades, caption = "Grading scale applied in this class.", format = 
   <p><strong>💡 Two pieces of syntax in that line</strong></p>
   <ul>
     <li><b><code>package::function()</code> calls a function and says which package it came from.</b> <code>knitr::kable()</code> means <em>the <code>kable()</code> function in <code>knitr</code></em>. Once a package is loaded you can write <code>kable()</code> on its own, but naming the package makes the code unambiguous, and it keeps working if another package you load later also defines a <code>kable()</code>.</li>
-    <li><b><code>%>%</code> is the pipe.</b> It takes whatever is on its left and hands it to the function on its right as that function's <b>first argument</b>, so <code>x %>% f()</code> is another way of writing <code>f(x)</code>.</li>
+    <li><b><code>%>%</code> is the pipe, and it is <em>not</em> part of base R.</b> It is defined in the <b>magrittr</b> package and re-exported by <b>dplyr</b> and <b>kableExtra</b>, which is exactly why the chunk begins with <code>library(dplyr)</code>: <code>kableExtra::kable_styling()</code> uses <code>::</code>, and <code>::</code> does not attach a package, so without that <code>library()</code> call the pipe would not exist. It takes whatever is on its left and hands it to the function on its right as that function's <b>first argument</b>, so <code>x %>% f()</code> is another way of writing <code>f(x)</code>.</li>
   </ul>
+</div>
+
+<div class="info">
+  <p><strong>💡 There are two pipes in R</strong></p>
+  <ul>
+    <li><b><code>%>%</code></b> comes from <b>magrittr</b>, and is re-exported by dplyr, kableExtra and the rest of the tidyverse. <b>It only works when one of those packages is attached</b>, so any document using it carries that dependency.</li>
+    <li><b><code>|></code></b> is R's <b>native</b> pipe, added in <b>R 4.1.0</b> (2021). It needs no package at all, because it is part of the language.</li>
+  </ul>
+  <p>That difference is a reproducibility question, not a style one: <code>x |> f()</code> runs on any R 4.1 or later, while <code>x %>% f()</code> fails on a machine where magrittr is not installed. These materials use <code>%>%</code> because most published R code still does and you will need to read it, but <b><code>|></code> is a perfectly good choice in your own work</b>, and one fewer thing for a reader to install.</p>
 </div>
 
 <div class="info">
