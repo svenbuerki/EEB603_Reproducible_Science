@@ -2776,7 +2776,35 @@ These general settings will be configured using the `opts_chunk$set()` function 
 
 ##### The `opts_chunk$set()` Function <span style="color:dimgray;">(~5 minutes)</span> {#optsfun}
 
-The `knitr` function `opts_chunk$set()` is used to modify the default global options in an `.Rmd` document.
+`opts_chunk$set()` is used to modify the default global options in an `.Rmd` document. The name is worth unpacking, because **`opts_chunk` is not a function**, and that `$` is not doing anything exotic.
+
+**`opts_chunk` is a *list*, and the things inside it are functions.** You can check this yourself in the Console:
+
+```{r eval=FALSE}
+class(knitr::opts_chunk)        # "list"
+is.function(knitr::opts_chunk)  # FALSE
+names(knitr::opts_chunk)        # "get" "set" "delete" "append" "merge" "restore" "lock"
+```
+
+So `opts_chunk$set(...)` is the **same `$`** you use to pull one element out of any named list, exactly as you will do in [Create, Name, and Access Elements of a List in R](#Rlists) in PART E. It reaches into the list, takes the element called `set`, and that element happens to be a function, so the `()` afterwards calls it. Nothing special is going on: `opts_chunk` *has* a `set`, it does not *do* anything by itself, which is why you cannot write `opts_chunk(echo = TRUE)`.
+
+<div class="info">
+  <p><strong>💡 Why this is not a classical R function</strong></p>
+  <p>The functions written so far in this course, and the ones you will write in <a href="#partE">PART E</a>, are <b>pure</b>: you hand them arguments, they hand back a value, and nothing is remembered afterwards. Call <code>square_number(2)</code> a hundred times and you get <code>4</code> a hundred times.</p>
+  <p><code>opts_chunk</code> is different. Its seven functions <b>share one private environment</b> that holds the current options, so they are not independent:</p>
+<pre><code>knitr::opts_chunk$get("echo")      # TRUE
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$get("echo")      # FALSE  <- get() sees what set() did</code></pre>
+  <p><code>set()</code> returns nothing useful; what it does is <b>write the values into that shared environment</b>.</p>
+  <p><b>And knitr reads from the same environment.</b> That is the link that makes the whole thing work. When knitr processes your document it goes chunk by chunk, and for each one it asks <code>opts_chunk</code> what the current defaults are, then layers that chunk's own options on top of them:</p>
+<pre><code>knitr::opts_chunk$set(echo = FALSE, warning = FALSE)   # what your setup chunk does
+
+knitr::opts_chunk$merge(list(echo = TRUE))             # what knitr does for a chunk
+#   echo    -> TRUE     the chunk's own option wins
+#   warning -> FALSE    the chunk said nothing, so your default applies</code></pre>
+  <p>So the chain is: your <code>setup</code> chunk runs first and leaves values in the shared environment, and knitr then consults that same environment for <b>every chunk and every piece of inline code that follows</b>. A pure function could not do this, because it would forget the moment it returned, and your settings would reach nothing beyond the chunk that made them.</p>
+  <p>This pattern (a list of functions sharing a hidden environment) is a common way of building an object in R, and knitr uses it for <code>opts_knit</code> and <code>knit_hooks</code> as well.</p>
+</div>
 
 Before starting, please note the following important points about the options:
 
