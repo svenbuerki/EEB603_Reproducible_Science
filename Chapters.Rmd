@@ -1963,6 +1963,7 @@ This tutorial provides students with the opportunity to learn how to:
 - [Build your Part C document from the template you produced in PART B](#creatRMDfileC)
 - [Insert tables in an R Markdown document](#inserttable)
 - [Insert figures in an R Markdown document](#insertfigure)
+- [Insert a figure from an existing image file](#figurefromfile)
 - [Cross-reference tables and figures in the text](#crossrefTabFig)
 - [Cite references in the text](#bib)
 - [Generate a References section](#refsection)
@@ -1975,11 +1976,12 @@ This tutorial provides students with the opportunity to learn how to:
 | [Create Your R Markdown Document](#creatRMDfileC) | 5 min | In class |
 | [Insert Tables](#inserttable) | 23 min | In class |
 | [Insert Figures](#insertfigure) | 20 min | At home |
+| [Insert a Figure from an Image File](#figurefromfile) | 20 min | In class, 1 Oct |
 | [Cross-reference Tables and Figures in the Text](#crossrefTabFig) | 10 min | At home |
 | [Cite References in the Text](#bib) | 15 min | At home |
 | [Generate a References Section](#refsection) | 10 min | At home |
 | [Format Citations to Journal Style](#cslForm) | 10 min | At home |
-| **Total** | **93 min** | |
+| **Total** | **113 min** | |
 
 ---
 
@@ -2259,6 +2261,75 @@ plot(cars)
 </details>
 
 ---
+
+### Insert a Figure from an Image File <span style="color:dimgray;">(20 minutes)</span> {#figurefromfile}
+
+[Insert Figures](#insertfigure) built a figure **from code**: `plot(cars)` drew it while the document knitted. Many figures in a real report are not like that. They are **files that already exist**: a photograph, a diagram you drew, a map exported from GIS, a plot produced by software that is not R.
+
+Those go in a different way, with a function rather than a plotting command, and that is what this section is about.
+
+<div class="disclaimer">
+  <p><strong>💡 How this section works</strong></p>
+  <ul>
+    <li><b>There is no step-by-step procedure here.</b> Unlike the rest of PART C, you work this one out yourself, from a document you already have: the course syllabus.</li>
+    <li>The <b>✅ Solution</b> explains what you found, so open it <em>after</em> you have tried, not before.</li>
+    <li><b>The syntax is not the hard part.</b> The path is. Read the whole challenge before you start typing.</li>
+  </ul>
+</div>
+
+#### Challenge <span style="color:dimgray;">(~20 minutes)</span> {#figurechallenge}
+
+<div class="danger">
+  <p><strong>💡 Replicate a figure from the syllabus</strong></p>
+  <p>Figure 7.1 of the <a href="index.html#Description" target="_blank" rel="noopener noreferrer">syllabus</a>, <em>Overview of workflow studied in PART2</em>, is an image file inserted into an R Markdown document. Reproduce it in your own <code>Chapter2_partC.Rmd</code>.</p>
+  <ul>
+    <li><b>Find the code.</b> The syllabus is an R Markdown document exactly like yours. Open its source on GitHub, <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/index.Rmd" target="_blank" rel="noopener noreferrer"><code>index.Rmd</code></a>, and find the chunk that produces that figure.</li>
+    <li><b>Get the image.</b> Download <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Images/Bioinformatic_workflow_PART2.png" target="_blank" rel="noopener noreferrer"><code>Bioinformatic_workflow_PART2.png</code></a> from the repository.</li>
+    <li><b>Work out where to put it.</b> The path in the syllabus chunk will <b>not</b> work in your document, and understanding why is the point of this exercise. Decide where the file has to sit relative to <code>Chapter2_partC.Rmd</code>, and adjust the path to match.</li>
+    <li><b>Add a first-level header</b> called <code>Figures from files</code> below your <code>Figures</code> section, put your chunk under it, and knit.</li>
+    <li><b>Cross-reference it</b> in a sentence, as you did in <a href="#crossrefTabFig">Cross-reference Tables and Figures in the Text</a>.</li>
+  </ul>
+</div>
+
+<details>
+<summary><b>✅ Solution</b></summary>
+
+**The function is `knitr::include_graphics()`.** It is not a plotting command: you hand it the **path to a file** and it places that file in your document. The syllabus chunk contains one line:
+
+<pre><code>knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")</code></pre>
+
+**Its chunk header is where the work is:**
+
+<pre><code>&#96;&#96;&#96;{r part2, echo=FALSE, fig.cap="Overview of workflow studied in PART2.", fig.alt="Diagram of a reproducible data analysis workflow. On the left, a box labelled Prepare contains Import followed by Tidy. ...", out.width = '100%', fig.pos= "h"}</code></pre>
+
+- `part2` is the label, so the figure can be cross-referenced as `\@ref(fig:part2)`.
+- `echo=FALSE` hides the one line of code, which nobody needs to read.
+- `fig.cap` is the caption, exactly as for the `cars` figure.
+- `out.width = '100%'` scales it to the page width.
+- `fig.pos = "h"` asks for it to stay near this point in the text.
+
+**Why the path had to change.** `index.Rmd` sits at the **root** of the repository, so `Images/...` is correct *relative to it*. Your document lives in `Reproducible_Science/Chapters/Chapter_2`, where no `Images` folder exists, so copying the path verbatim gives you an error and an empty space where the figure should be. The fix is to create a folder next to your own `.Rmd`, put the `.png` inside it, and point at that:
+
+<pre><code>knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")   # with Images/ inside Chapter_2</code></pre>
+
+This works for the reason you met in [Create Your Document and Set Your Working Directory](#setwdir): **when knitr knits, the working directory is the folder holding the `.Rmd`**. Every path in your document is read from there, which is also why a figure kept outside that folder makes the document unknittable on anybody else's machine.
+
+**One option you have not met before: `fig.alt`.** It is the **alt text**, a description read aloud by a screen reader to someone who cannot see the image. `fig.cap` and `fig.alt` do different jobs: the caption is read by everyone and says what the figure *shows*, while the alt text describes what is *in* it for someone who cannot see it. Notice how long the one in the syllabus is; that is what a useful description costs. **Every figure in your [bioinformatics tutorial](Assignments.html#arc1) needs one.**
+
+</details>
+
+<details>
+<summary><b>✅ Checkpoint</b></summary>
+
+**The `.png` sits in a folder inside `Chapter_2`**, alongside your `.Rmd` rather than somewhere else on your computer.
+
+**Your document has a `Figures from files` header**, and under it a labelled chunk calling `knitr::include_graphics()` with a path that starts from your own folder, not from the repository root.
+
+**In the knitted output** the workflow diagram appears at full page width, captioned and numbered, and a sentence in your text refers to it by number as a link.
+
+**Move the `.png` out of that folder and knit again.** You get an error rather than a silently missing figure, which is the behaviour you want: a broken path fails loudly. Put it back before moving on.
+
+</details>
 
 ### Cross-reference Tables and Figures in the Text <span style="color:dimgray;">(10 minutes)</span> {#crossrefTabFig}
 
@@ -3084,17 +3155,21 @@ By the end of this tutorial, students will be able to:
 
 **PART E runs over two classes**, and we write the code together as we go. The times below are a pace rather than a deadline.
 
+**Class 1 opens with a 20-minute challenge from [PART C](#figurefromfile)**, filling a gap we skipped: inserting a figure that already exists as an image file. After it, each class ends with a piece you finish at home, marked in the tables below.
+
 **Class 1 --- what a function is, and your first UDF**
 
 | Block | Time | Who |
 |---|---|---|
-| [Define a Function and Understand its Applicability](#definefunc) | 8 min | Instructor |
-| [Syntax to Implement UDFs in R](#syntaxUDFs) | 10 min | Instructor |
-| [Apply Best Practices for Writing Code](#bestcodepract1) | 8 min | Instructor |
-| [Load and Call UDFs](#loadandcallUDFs) | 9 min | Instructor |
+| [👥 Insert a Figure from an Image File](#figurefromfile) (PART C) | 20 min | Students |
+| [Define a Function and Understand its Applicability](#definefunc) | 6 min | Instructor |
+| [Syntax to Implement UDFs in R](#syntaxUDFs) | 9 min | Instructor |
 | *five-minute break* | 5 min | |
-| [Develop, Implement, and Apply UDFs That Return a Single Value](#UDFsingle) | 30 min | Instructor, then students |
-| **Total** | **70 min** | |
+| [Apply Best Practices for Writing Code](#bestcodepract1) | 7 min | Instructor |
+| [Load and Call UDFs](#loadandcallUDFs) | 8 min | Instructor |
+| [UDFs That Return a Single Value](#UDFsingle): [The Task](#UDFsingle) | 15 min | Instructor, live coding |
+| **Total in class** | **70 min** | |
+| [UDFs That Return a Single Value](#UDFsingle): implement it and apply it | 15 min | Students, at home |
 
 **Class 2 --- returning more than one value, and failing well**
 
@@ -3107,6 +3182,7 @@ By the end of this tutorial, students will be able to:
 | [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor |
 | **Total in class** | **70 min** | |
 | [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Students, at home |
+| | | |
 
 The last section is the one piece you finish **at home**: it connects the `.R` script you built here back to the R Markdown document you have been growing since [PART B](#partB).
 
@@ -3386,7 +3462,7 @@ square_number(base = bases)
 
 **Notice what the vector case tells you.** You wrote `base*base` for a single number, and it worked unchanged on five numbers at once. That is R being vectorised, and it is the reason a UDF written for one value usually scales to a whole dataset without a loop.
 
-This is the end of our first class. If any of the three points above is not true on your machine, tell me now rather than next week: everything after this is built on top of it.
+**The first two points are what we do together in class; the third is your homework.** If any of them is not true on your machine when we next meet, say so at the start rather than at the end: everything in class 2 is built on top of this function.
 
 </details>
 
