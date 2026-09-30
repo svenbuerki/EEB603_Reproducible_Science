@@ -2264,16 +2264,30 @@ plot(cars)
 
 ### Insert a Figure from an Image File <span style="color:dimgray;">(20 minutes)</span> {#figurefromfile}
 
-[Insert Figures](#insertfigure) built a figure **from code**: `plot(cars)` drew it while the document knitted. Many figures in a real report are not like that. They are **files that already exist**: a photograph, a diagram you drew, a map exported from GIS, a plot produced by software that is not R.
+#### Goal
 
-Those go in a different way, with a function rather than a plotting command, and that is what this section is about.
+There are two ways a figure gets into an R Markdown report, and so far you have only met one.
+
+In [Insert Figures](#insertfigure) the figure was **generated**: `plot(cars)` drew it *while the document knitted*, and knitr caught whatever the chunk produced. No image existed before you pressed Knit, and none is left behind that you put there yourself.
+
+Many figures in a real report are the other kind. They are **files that already exist** before you start writing: a photograph, a diagram you drew by hand, a map exported from GIS, a plot produced by software that is not R. Nothing draws them at knit time, so instead of running code that makes a picture, your chunk has to **tell knitr where the picture already lives**.
+
+**The goal of this section is to do exactly that.** By the end you will have put an existing `.png` into your document, captioned it, numbered it and cross-referenced it, so that it behaves like every other figure in the report.
+
+#### How We Will Do It
+
+You are going to work this one out rather than be walked through it, and you have a good source to work from: **the course syllabus is an R Markdown document exactly like yours**, and one of its figures is an image file. The code you need is therefore already written, already working, and published where you can read it.
+
+So the method is: find that chunk, understand what each part of it does, and **adapt** it to your own document.
+
+That last word is the whole exercise. **The code cannot be copied across unchanged**, because the syllabus and your document sit in different folders, and a path that is correct in one is wrong in the other. Working out what has to change, and why, is the part of this that will still be useful to you long after you have forgotten the function name.
 
 <div class="disclaimer">
-  <p><strong>💡 How this section works</strong></p>
+  <p><strong>💡 Before you start</strong></p>
   <ul>
-    <li><b>There is no step-by-step procedure here.</b> Unlike the rest of PART C, you work this one out yourself, from a document you already have: the course syllabus.</li>
-    <li>The <b>✅ Solution</b> explains what you found, so open it <em>after</em> you have tried, not before.</li>
-    <li><b>The syntax is not the hard part.</b> The path is. Read the whole challenge before you start typing.</li>
+    <li><b>There is no step-by-step procedure in this section.</b> The <b>✅ Solution</b> is where the explanation lives, so open it <em>after</em> you have had a real attempt, not before.</li>
+    <li>Work in <code>Chapter2_partC.Rmd</code>, the document you built in PART C.</li>
+    <li><b>The syntax is not the hard part. The path is.</b> Read the whole challenge before you start typing.</li>
   </ul>
 </div>
 
