@@ -2300,7 +2300,7 @@ That last word is the whole exercise. **The code cannot be copied across unchang
     <li><b>Find the code.</b> The syllabus is an R Markdown document exactly like yours. Open its source on GitHub, <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/index.Rmd" target="_blank" rel="noopener noreferrer"><code>index.Rmd</code></a>, and find the chunk that produces that figure.</li>
     <li><b>Get the image.</b> Download <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Images/Bioinformatic_workflow_PART2.png" target="_blank" rel="noopener noreferrer"><code>Bioinformatic_workflow_PART2.png</code></a> from the repository.</li>
     <li><b>Work out where to put it.</b> The path in the syllabus chunk will <b>not</b> work in your document, and understanding why is the point of this exercise. Decide where the file has to sit relative to <code>Chapter2_partC.Rmd</code>, and adjust the path to match.</li>
-    <li><b>Add a first-level header</b> called <code>Figures from files</code> below your <code>Figures</code> section, put your chunk under it, and knit.</li>
+    <li><b>Add a second-level header</b> (<code>##</code>) called <code>Figures from files</code> <em>inside</em> your <code>Figures</code> section, put your chunk under it, and knit. It is a subsection of Figures, not a new top-level one.</li>
     <li><b>Cross-reference it</b> in a sentence, as you did in <a href="#crossrefTabFig">Cross-reference Tables and Figures in the Text</a>.</li>
   </ul>
 </div>
@@ -2337,7 +2337,7 @@ This works for the reason you met in [Create Your Document and Set Your Working 
 
 **The `.png` sits in a folder inside `Chapter_2`**, alongside your `.Rmd` rather than somewhere else on your computer.
 
-**Your document has a `Figures from files` header**, and under it a labelled chunk calling `knitr::include_graphics()` with a path that starts from your own folder, not from the repository root.
+**Your document has a second-level `Figures from files` header** (`##`) nested inside your first-level `Figures` section, and under it a labelled chunk calling `knitr::include_graphics()` with a path that starts from your own folder, not from the repository root.
 
 **In the knitted output** the workflow diagram appears at full page width, captioned and numbered, and a sentence in your text refers to it by number as a link.
 
