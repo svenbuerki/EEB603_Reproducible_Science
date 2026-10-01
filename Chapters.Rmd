@@ -2298,9 +2298,11 @@ That last word is the whole exercise. **The code cannot be copied across unchang
   <p>Figure 7.1 of the <a href="index.html#Description" target="_blank" rel="noopener noreferrer">syllabus</a>, <em>Overview of workflow studied in PART2</em>, is an image file inserted into an R Markdown document. Reproduce it in your own <code>Chapter2_partC.Rmd</code>.</p>
   <ul>
     <li><b>Find the code.</b> The syllabus is an R Markdown document exactly like yours. Open its source on GitHub, <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/index.Rmd" target="_blank" rel="noopener noreferrer"><code>index.Rmd</code></a>, and find the chunk that produces that figure.</li>
-    <li><b>Get the image.</b> Download <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Images/Bioinformatic_workflow_PART2.png" target="_blank" rel="noopener noreferrer"><code>Bioinformatic_workflow_PART2.png</code></a> from the repository.</li>
-    <li><b>Work out where to put it.</b> The path in the syllabus chunk will <b>not</b> work in your document, and understanding why is the point of this exercise. Decide where the file has to sit relative to <code>Chapter2_partC.Rmd</code>, and adjust the path to match.</li>
-    <li><b>Add a second-level header</b> (<code>##</code>) called <code>Figures from files</code> <em>inside</em> your <code>Figures</code> section, put your chunk under it, and knit. It is a subsection of Figures, not a new top-level one.</li>
+    <li><b>Get the image.</b> Open <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Images/Bioinformatic_workflow_PART2.png" target="_blank" rel="noopener noreferrer"><code>Bioinformatic_workflow_PART2.png</code></a> on GitHub. Because it is an image and not code, GitHub shows you a <em>preview</em> of it rather than text, so there is nothing to copy and paste. Look at the small toolbar <b>above the preview, on the right</b>, and click <b>Download raw file</b> (the &#8681; icon). That hands you the real file under its correct name. Save it, then move it into whichever folder you settle on in the next step, rather than leaving it in <code>Downloads</code>.</li>
+    <li><b>Put it in a folder of its own.</b> Create a folder called <code>Figures</code> in your <code>Chapter_2</code> folder, next to <code>Chapter2_partC.Rmd</code>, and save the image there. Keeping images in one named folder rather than loose beside the document is the habit worth forming: it is what makes a project you can hand to somebody else.</li>
+    <li><b>Work out the path.</b> The path in the syllabus chunk will <b>not</b> work in your document, and understanding why is the point of this exercise. Work out what the path has to be when it is read <em>from your own <code>.Rmd</code></em> rather than from the repository root, and adjust the code to match.</li>
+    <li><b>Add a second-level header</b> (<code>##</code>) called <code>Figures from files</code> <em>inside</em> your <code>Figures</code> section. It is a subsection of Figures, not a new top-level one.</li>
+    <li><b>Insert a code chunk under that header</b> with the <code>Insert</code> <img src="Figures/insert.png" alt=""> button, and write the code that places your image: <b>the function call with your corrected path</b>, and <b>chunk options</b> giving it a unique label, a caption and a width, as you did for the <code>cars</code> figure. Then knit and check the figure appears.</li>
     <li><b>Cross-reference it</b> in a sentence, as you did in <a href="#crossrefTabFig">Cross-reference Tables and Figures in the Text</a>.</li>
   </ul>
 </div>
@@ -2322,9 +2324,11 @@ That last word is the whole exercise. **The code cannot be copied across unchang
 - `out.width = '100%'` scales it to the page width.
 - `fig.pos = "h"` asks for it to stay near this point in the text.
 
-**Why the path had to change.** `index.Rmd` sits at the **root** of the repository, so `Images/...` is correct *relative to it*. Your document lives in `Reproducible_Science/Chapters/Chapter_2`, where no `Images` folder exists, so copying the path verbatim gives you an error and an empty space where the figure should be. The fix is to create a folder next to your own `.Rmd`, put the `.png` inside it, and point at that:
+**Why the path had to change.** `index.Rmd` sits at the **root** of the repository, so `Images/...` is correct *relative to it*. Your document lives in `Reproducible_Science/Chapters/Chapter_2`, where no `Images` folder exists, so copying the path verbatim gives you an error and an empty space where the figure should be. With the image in the `Figures` folder you created next to your own `.Rmd`, the path becomes:
 
-<pre><code>knitr::include_graphics("Images/Bioinformatic_workflow_PART2.png")   # with Images/ inside Chapter_2</code></pre>
+<pre><code>knitr::include_graphics("Figures/Bioinformatic_workflow_PART2.png")</code></pre>
+
+The folder name itself is yours to choose. The syllabus happens to call its folder `Images`, and **that is the only reason its path differs from yours**: what matters is that the path is read from the folder holding the `.Rmd`, not that it is spelled a particular way.
 
 This works for the reason you met in [Create Your Document and Set Your Working Directory](#setwdir): **when knitr knits, the working directory is the folder holding the `.Rmd`**. Every path in your document is read from there, which is also why a figure kept outside that folder makes the document unknittable on anybody else's machine.
 
@@ -2335,13 +2339,13 @@ This works for the reason you met in [Create Your Document and Set Your Working 
 <details>
 <summary><b>✅ Checkpoint</b></summary>
 
-**The `.png` sits in a folder inside `Chapter_2`**, alongside your `.Rmd` rather than somewhere else on your computer.
+**The `.png` sits in `Chapter_2/Figures/`**, next to your `.Rmd` rather than in `Downloads` or anywhere else on your computer.
 
 **Your document has a second-level `Figures from files` header** (`##`) nested inside your first-level `Figures` section, and under it a labelled chunk calling `knitr::include_graphics()` with a path that starts from your own folder, not from the repository root.
 
 **In the knitted output** the workflow diagram appears at full page width, captioned and numbered, and a sentence in your text refers to it by number as a link.
 
-**Move the `.png` out of that folder and knit again.** You get an error rather than a silently missing figure, which is the behaviour you want: a broken path fails loudly. Put it back before moving on.
+**Move the `.png` out of `Figures/` and knit again.** You get an error rather than a silently missing figure, which is the behaviour you want: a broken path fails loudly. Put it back before moving on.
 
 </details>
 
