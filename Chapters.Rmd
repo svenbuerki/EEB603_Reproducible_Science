@@ -2293,7 +2293,7 @@ That last word is the whole exercise. **The code cannot be copied across unchang
 
 #### Challenge <span style="color:dimgray;">(~20 minutes)</span> {#figurechallenge}
 
-<div class="danger">
+<div class="info">
   <p><strong>💡 Replicate a figure from the syllabus</strong></p>
   <p>Figure 7.1 of the <a href="index.html#Description" target="_blank" rel="noopener noreferrer">syllabus</a>, <em>Overview of workflow studied in PART2</em>, is an image file inserted into an R Markdown document. Reproduce it in your own <code>Chapter2_partC.Rmd</code>.</p>
   <ul>
