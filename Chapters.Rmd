@@ -3248,17 +3248,20 @@ There are many terms used to define and describe functions—subroutines, proced
 
 #### R Syntax for Functions
 
-In R, according to the base documentation, you define a function with the following construct:
+In R, you define a function with the following construct:
 
 ```{r Rfuncsyntax, tidy = FALSE, echo=TRUE, eval=FALSE}
-function(arglist){
+function(arguments){
    body
 }
 ```
 
-The code between the curly braces is the `body` of the function.
+A function has two parts, and both come up constantly in PART E:
 
-When you use built-in functions, the only things you need to worry about are how to effectively communicate the correct input arguments (`arglist`) and how to manage the return value(s) (or outputs), if there are any. To learn more about the arguments associated with a specific function, you can access its documentation using the following syntax (entered in the R console):
+- **`arguments`** are the **inputs**: the values you hand the function when you call it. A function can take none, one, or several.
+- **`body`** is the code between the curly braces: what the function does with those inputs.
+
+When you use a built-in function, the only two things you have to get right are **which arguments to give it** and **what it gives back**. To see which arguments a function expects, open its documentation from the R console:
 
 ```{r echo=TRUE, eval=F, tidy=F}
 #General syntax
@@ -3267,6 +3270,8 @@ When you use built-in functions, the only things you need to worry about are how
 #Example with read.csv()
 ?read.csv()
 ```
+
+**A note if you look this up yourself.** R's own help page for `function` writes the same construct as `function(arglist){ body }`. `arglist` and `arguments` mean exactly the same thing; this course says **arguments** throughout, because that is the word R uses in its error messages and in every other help page you will read.
 
 ---
 
