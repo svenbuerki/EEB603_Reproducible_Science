@@ -3200,17 +3200,6 @@ By the end of this tutorial, students will be able to:
 
 The last section is the one piece you finish **at home**: it connects the `.R` script you built here back to the R Markdown document you have been growing since [PART B](#partB).
 
-<div class="disclaimer">
-  <p><strong>💡 Disclaimer</strong></p>
-  <ul>
-    <li>To achieve the learning outcomes, students will complete three guided exercises. Mathematical examples will be used to demonstrate the broad applicability of the material. Before diving into the exercises, the instructor will provide context on what functions are, when to use them, and best practices for writing pseudocode and R code (explored further in <a href="#Chap5">Chapter 5</a>). The tutorial will also cover effective strategies for calling and organizing R functions.</li>
-    <li>This tutorial will be taught using an <code>.R</code> script.</li>
-    <li>We will discuss how to integrate user-defined functions (UDFs) from an <code>.R</code> script into your R Markdown document.</li>
-  </ul>
-</div>
-
----
-
 ### How This Tutorial Is Written {#protocolstyleE}
 
 PART E is taught differently from [PART C](#protocolstyleC) and [PART D](#protocolstyleD). **We write the code together, live, in class.** I type, you type alongside me, and we stop whenever something does not run.
@@ -3218,6 +3207,26 @@ PART E is taught differently from [PART C](#protocolstyleC) and [PART D](#protoc
 That is why the exercises here are built as **a task, then pseudocode, then code**, in that order. Pseudocode first is not ceremony: deciding what a function must do, in plain sentences, before writing any R is the habit this part exists to teach, and it is the same habit the [bioinformatics tutorial](Assignments.html#arc1) will ask of you.
 
 Each exercise closes with a **✅ Checkpoint**, and those matter more here than anywhere else in this chapter. Live coding only works if nobody is quietly stuck, so **a Checkpoint is where we all stop and confirm the same thing runs on every machine** before the next piece is built on top of it. If yours does not, say so at that point rather than afterwards.
+
+<div class="disclaimer">
+  <p><strong>💡 Disclaimer: this part is not written in R Markdown</strong></p>
+  <ul>
+    <li><b>You will not create an <code>.Rmd</code> file in PART E.</b> Everything here is written in <code>.R</code> scripts: plain R code, with no YAML, no chunks and nothing to knit.</li>
+    <li><b>Your functions go in a new folder called <code>R_functions</code>, at the root of your <code>Chapter_2</code> folder</b>, with <b>one function per script</b>. That convention is worth adopting now rather than later: a function kept in its own file can be loaded by any document that needs it, instead of being copied into each one and drifting out of step.</li>
+    <li>You will also create <b>one working script, <code>Chapter2_partE.R</code></b>, directly in <code>Chapter_2</code>. That is where you load your functions and try them out.</li>
+    <li><b>R Markdown returns at the very end</b>, in <a href="#UDFinRmd">Use Your UDFs in an R Markdown Document</a>, where these scripts get connected to the document you have been building since PART B. Until then, forget about knitting.</li>
+    <li>To reach the learning outcomes you will complete <b>three guided exercises</b>. They use mathematical examples deliberately, so that nothing depends on knowing a particular dataset. Before the exercises I will give context on what functions are, when to use them, and best practice for pseudocode and R code (taken further in <a href="#Chap5">Chapter 5</a>).</li>
+  </ul>
+  <p><strong>By the end of PART E your <code>Chapter_2</code> folder will look like this:</strong></p>
+<pre><code>Reproducible_Science/Chapters/Chapter_2/
+|-- Chapter2_partC.Rmd        &lt;- from PART C
+|-- Chapter2_partD.Rmd        &lt;- from PART D
+|-- Chapter2_partE.R          &lt;- your working script for PART E
+`-- R_functions/              &lt;- NEW: one file per function
+    |-- square_number.R
+    |-- my_log_square.R
+    `-- exp_number.R</code></pre>
+</div>
 
 ---
 
@@ -3438,7 +3447,7 @@ knitr::include_graphics("Figures/Environment_RStudio.png")
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
 
 
-1. Create a new `.R` script titled `Chapter_2_partE.R` saved in `Chapter_2/`.
+1. Create a new `.R` script titled `Chapter2_partE.R` saved in `Chapter_2/`.
 2. Edit your `.R` script as follows to load your UDF using the `source()` function.
 ```{r echo=TRUE, eval=FALSE}
 ###
@@ -3498,7 +3507,7 @@ More specifically, this section provides procedures and syntax for:
 <div class="info">
   <p><strong>💡 Create Your R Script to Practice</strong></p>
   <ul>
-    <li><b>R Script:</b> If not done yet, create an <code>R</code> script titled <code>Chapter_2_partE.R</code> and save it in your project folder (<code>Chapter_2</code>).</li>
+    <li><b>R Script:</b> If not done yet, create an <code>R</code> script titled <code>Chapter2_partE.R</code> and save it in your project folder (<code>Chapter_2</code>).</li>
     <li>Copy and paste the code provided in this section into your script to practice and reinforce these new protocols and syntax.</li>
   </ul>
 </div>
