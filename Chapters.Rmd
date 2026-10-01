@@ -3452,7 +3452,8 @@ The R language is quite flexible and allows functions to be applied to a single 
 
 
 1. Create a new `.R` script titled `Chapter2_partE.R` saved in `Chapter_2/`.
-2. Edit your `.R` script as follows to load your UDF using the `source()` function.
+2. **Set your working directory to the location of that script**: `Session --> Set Working Directory --> To Source File Location`, following the procedure in [Create Your Document and Set Your Working Directory](#setwdir). **This step is not optional here.** An `.Rmd` has knitr to set the working directory for it; a plain `.R` script has nothing of the kind, so the relative path in the next step only resolves if R is actually pointed at `Chapter_2`.
+3. Edit your `.R` script as follows to load your UDF using the `source()` function.
 ```{r echo=TRUE, eval=FALSE}
 ###
 # Source UDFs
@@ -3460,7 +3461,7 @@ The R language is quite flexible and allows functions to be applied to a single 
 # Source the square_number function
 source("R_functions/square_number.R")
 ```
-3. Apply your UDF to a single value:
+4. Apply your UDF to a single value:
 ```{r echo=TRUE, eval=T}
 ###
 # Apply your UDFs
@@ -3468,7 +3469,7 @@ source("R_functions/square_number.R")
 #Square number of 2
 square_number(base = 2)
 ```
-4. Apply your UDF to a vector containing multiple values:
+5. Apply your UDF to a vector containing multiple values:
 
 ```{r echo=TRUE, eval=T}
 #Create vector with numbers
@@ -3486,6 +3487,8 @@ square_number(base = bases)
 **`square_number` appears under Functions in your RStudio Environment panel.** If it does not, the file was saved but never run: `source("R_functions/square_number.R")` loads it.
 
 **`Chapter_2/Chapter2_partE.R` exists**, begins with that `source()` call, and running it end to end prints `4` for `square_number(base = 2)` and five values for the vector.
+
+**If `source()` fails with "cannot open file"**, your working directory is not `Chapter_2`. Check it with `getwd()` and set it again. This is the single most common way this exercise goes wrong, and it has nothing to do with your function.
 
 **Notice what the vector case tells you.** You wrote `base*base` for a single number, and it worked unchanged on five numbers at once. That is R being vectorised, and it is the reason a UDF written for one value usually scales to a whole dataset without a loop.
 
