@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2026-09-24" />
+<meta name="date" content="2026-10-02" />
 
 <title>Assignments</title>
 
@@ -349,7 +349,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Assignments</h1>
 <h3 class="subtitle">Evaluation forms and rubrics</h3>
-<h4 class="date">2026-09-24</h4>
+<h4 class="date">2026-10-02</h4>
 
 </div>
 
@@ -544,7 +544,20 @@ Oral presentation
 <li><strong>How you will test it.</strong> Use the standard your group applied to its <a href="Chapters.html#FactorsActivity">reproducibility charter</a>: a commitment only counts if somebody else could check whether you kept it. The <a href="Chapters.html#TOPguidelines">TOP standards</a>, with their levels 0 to 3, are a ready-made way of saying how far you intend to go.</li>
 </ul></li>
 </ul>
+<div id="proposalsubmit" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> How to Submit It</h3>
+<p><strong>Where it goes.</strong> Upload your submission to our course Google Drive, in <a href="https://drive.google.com/drive/folders/1djFlKe7Lz13HnOSV-ThXtR18_3sS8Lm2?usp=drive_link"><code>Individual_reports &gt; Individual_projects &gt; Project_proposal</code></a>.</p>
+<p><strong>Hand in a folder, not a single file.</strong> Inside <code>Project_proposal</code>, create a folder named with your own <strong>first and last name</strong>, for example <code>Jane_Doe</code>, and put inside it <strong>everything needed to knit the proposal on another machine</strong>:</p>
+<ul>
+<li>the R Markdown source (<code>.Rmd</code>);</li>
+<li>the bibliography file (<code>.bib</code>) and the citation style file (<code>.csl</code>);</li>
+<li>any data file your code chunks read;</li>
+<li>any image you inserted with <code>include_graphics()</code>, in the subfolder your paths point at.</li>
+</ul>
+<p><strong>The test is simple: could I knit it without asking you for anything?</strong> That is the same test as the rubric’s <a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf">reproducible document</a> criteria, and the same one your bioinformatics tutorial has to pass. A source that knits on your laptop but not in your submitted folder usually has one cause: a file that lives somewhere outside the folder, which you can find by moving the folder somewhere else and knitting again.</p>
+<p><strong>Submit the source, not an export.</strong> A PDF or a Word file cannot be knitted, so it cannot earn the marks reserved for the proposal being a working reproducible document.</p>
 <p><a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Proposal rubric (pdf)</a></p>
+</div>
 </div>
 <div id="final-report-150-points" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Final Report — 150 points</h2>

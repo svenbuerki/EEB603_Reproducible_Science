@@ -144,6 +144,21 @@ Two things are asked of this proposal beyond a conventional project plan:
     + **What is broken now.** The [glossary of threats](Chapters.html#gloss) and the [solutions that mitigate them](Chapters.html#soltothreats) in Chapter 3 are where to look. A proposal that names the specific failure it addresses is far stronger than one gesturing at reproducibility in general.
     + **How you will test it.** Use the standard your group applied to its [reproducibility charter](Chapters.html#FactorsActivity): a commitment only counts if somebody else could check whether you kept it. The [TOP standards](Chapters.html#TOPguidelines), with their levels 0 to 3, are a ready-made way of saying how far you intend to go.
 
+### How to Submit It {#proposalsubmit}
+
+**Where it goes.** Upload your submission to our course Google Drive, in [`Individual_reports > Individual_projects > Project_proposal`](https://drive.google.com/drive/folders/1djFlKe7Lz13HnOSV-ThXtR18_3sS8Lm2?usp=drive_link).
+
+**Hand in a folder, not a single file.** Inside `Project_proposal`, create a folder named with your own **first and last name**, for example `Jane_Doe`, and put inside it **everything needed to knit the proposal on another machine**:
+
+- the R Markdown source (`.Rmd`);
+- the bibliography file (`.bib`) and the citation style file (`.csl`);
+- any data file your code chunks read;
+- any image you inserted with `include_graphics()`, in the subfolder your paths point at.
+
+**The test is simple: could I knit it without asking you for anything?** That is the same test as the rubric's [reproducible document](Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf) criteria, and the same one your bioinformatics tutorial has to pass. A source that knits on your laptop but not in your submitted folder usually has one cause: a file that lives somewhere outside the folder, which you can find by moving the folder somewhere else and knitting again.
+
+**Submit the source, not an export.** A PDF or a Word file cannot be knitted, so it cannot earn the marks reserved for the proposal being a working reproducible document.
+
 <a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Proposal rubric (pdf)</a>
 
 ## Final Report --- 150 points
