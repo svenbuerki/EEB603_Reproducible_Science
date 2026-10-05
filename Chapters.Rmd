@@ -3193,11 +3193,11 @@ By the end of this tutorial, students will be able to:
 
 | Block | Time | Who |
 |---|---|---|
-| [Create, Name, and Access Elements of a List in R](#Rlists) | 12 min | Instructor |
-| [Develop, Implement, and Apply UDFs that Return Multiple Values](#UDFmultiple) | 25 min | Students, in groups of 2--3 |
+| [Create, Name, and Access Elements of a List in R](#Rlists) | 12 min | Instructor live codes, students follow along |
+| [Develop, Implement, and Apply UDFs that Return Multiple Values](#UDFmultiple) | 25 min | Students, in pairs |
 | *five-minute break* | 5 min | |
 | [Use Logical Operators within R Functions](#logicalop) | 3 min | Instructor |
-| [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor |
+| [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor live codes, students follow along |
 | **Total in class** | **70 min** | |
 | [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Students, at home |
 | | | |
@@ -3562,6 +3562,8 @@ print(list_data)
 
 Elements of a list can be accessed using their **index** or, in the case of named lists, using their **names** (combined with the `$` symbol).
 
+**You have met this `$` already.** In [PART D](#optsfun) you used `opts_chunk$set()` to set the global options for your code chunks, and that `$` is doing exactly what it does here: reaching into a named list and pulling out one element. The only difference is what the element turns out to be. In `opts_chunk` it was a **function**, so a `()` followed it to call it; here it is a matrix, so there is nothing to call.
+
 The following example illustrates how to access list elements using both methods:
 
 ```{r echo=TRUE, eval=T}
@@ -3580,6 +3582,10 @@ print(list_data[[3]])
 # Access the list element using the name of the element (combined with $ in front)
 print(list_data$A_Matrix)
 ```
+
+**This is why naming list elements matters.** `list_data$A_Matrix` says what you are asking for, while `list_data[[2]]` only says where it happens to sit, and will quietly return the wrong thing if the order ever changes.
+
+**One more thing before you move on.** Naming took two steps here: build the list, then add the names with `names()`. In the [next learning outcome](#UDFmultiple) you will meet the shorter form, which **creates a list and names its elements in a single call**. That is the form a UDF uses to hand back several values at once, so you will meet it there rather than here.
 
 We will now apply what you have learned to return multiple values from a UDF.
 
@@ -3601,13 +3607,16 @@ To accomplish this, we will **collect the different outputs into a list, which w
 
 #### Student Activity <span style="color:dimgray;">(~25 minutes)</span>
 
-Work in groups of 2–3 to complete the following tasks:
+Work in **pairs**. Two people is the right size for this: both of you can see the screen, neither of you can sit it out, and you have to say your reasoning out loud to somebody before it becomes code. **If your partner is away today, join another pair** rather than working alone.
 
-1. Develop a pseudocode plan to solve the task.
-2. Implement the pseudocode as a UDF in R, saved in a script named `my_log_square.R` in `Chapter_2/R_functions`.
-3. Apply and test your UDF.
+**The time splits in two: you have 15 minutes to plan and build your function, then 10 minutes for the pairs to present, one after the other.** Keep an eye on the clock yourselves, because the presentations are not optional extras: they are where the exercise pays off.
 
-**Write the pseudocode before opening RStudio.** The difficulty here is not the arithmetic, it is returning *two* values from a function that can only `return()` once, and that decision is easier to reason about in sentences than in code.
+1. **Plan it on paper first** <span style="color:dimgray;">(~6 minutes)</span>. Nobody opens RStudio yet. Agree three things and write them down:
+    - **Input and output.** What does the function take, and what exactly does it hand back? Give the **class** of each. *"Two numbers"* is not an answer; *"one numeric value in, a list of two named numeric values out"* is.
+    - **The steps.** In plain sentences, one per line and in the order they happen, what has to occur between the input arriving and the output leaving.
+    - **The names.** Decide now what you will call the argument, each intermediate object, and each element of the list you return. Naming is not tidying up afterwards: a name that says what the thing *is* turns the next step into transcription, and tells whoever reads the function later what you meant by it.
+2. **Implement and test it** <span style="color:dimgray;">(~9 minutes)</span>. Turn the plan into a UDF, saved as `my_log_square.R` in `Chapter_2/R_functions`, then `source()` it and apply it to a number.
+3. **Present at the whiteboard** <span style="color:dimgray;">(10 minutes, 2 to 3 per pair)</span>. Each pair takes the board in turn and shows the class **both halves**: the plan you wrote, and the code it became. With four pairs there is no time to walk through everything, so **pick the one place where the plan and the code differed** and talk about that: the decision you had to make while typing that the plan had left open. That gap is the most useful thing in this exercise, because it is exactly where your [bioinformatics tutorial](Assignments.html#arc1) will lose a reader who cannot see what you were thinking.
 
 <details>
 <summary><b>✅ Solution</b></summary>
@@ -3701,7 +3710,27 @@ exp_number(base = 2, power = 5)
 
 ##### Let's Test the UDF!
 
-You can apply defensive programming to the `exp_number` function defined above. The function requires that **both arguments be of class `numeric`**. If you provide a string (e.g., a word) as input, the function will return an error:
+**First, load the function.** You saved `exp_number` in a script of its own, so it does not exist in your Global Environment until you `source()` that file, exactly as in [Load and Call UDFs](#loadandcallUDFs):
+
+```{r eval=FALSE}
+###
+# Source the UDF
+###
+source("R_functions/exp_number.R")
+
+###
+# Check it works on valid input before trying to break it
+###
+exp_number(base = 2, power = 5)
+```
+
+<div class="info">
+  <p><strong>💡 Re-source the file after every edit</strong></p>
+  <p><code>source()</code> puts a <em>copy</em> of the function into your Global Environment. Editing and saving the script does <b>not</b> change that copy: R keeps using the one it already has until you <code>source()</code> the file again.</p>
+  <p>You are about to edit this very function in the next section, so you will need this. <b>If a change you just made appears to have no effect, this is almost always why</b>, and it is one of the most common ways an afternoon disappears.</p>
+</div>
+
+You can now apply defensive programming to the `exp_number` function defined above. The function requires that **both arguments be of class `numeric`**. If you provide a string (e.g., a word) as input, the function will return an error:
 
 ```{r echo=TRUE, eval=T, error=TRUE}
 #Example where we don't respect the class associated with the argument base
