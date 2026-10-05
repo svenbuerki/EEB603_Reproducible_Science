@@ -3685,10 +3685,12 @@ Defensive programming is a technique used to ensure that code fails with well-de
 To demonstrate how to apply defensive programming in your code, a power function `y = x^n` is implemented as a UDF and used as an example.
 
 <div class="info">
-  <p><strong>💡 Create Your R Script to Practice</strong></p>
+  <p><strong>💡 You work this section in your own script, not on this page</strong></p>
   <ul>
-    <li><b>R Script:</b> Create an <code>R</code> script titled <code>exp_number.R</code> and save it in <code>Chapter_2/R_functions</code>.</li>
-    <li>Copy and paste the code provided in this section into your script to practice and reinforce these new protocols and syntax.</li>
+    <li><b>Create the script now:</b> an <code>R</code> script titled <code>exp_number.R</code>, saved in <code>Chapter_2/R_functions</code>, holding the function below and nothing else.</li>
+    <li><b>Everything that follows happens in that file.</b> You will <code>source()</code> it to load the function, call it with input that breaks it, then <b>edit the file</b> to add the defensive check and <code>source()</code> it again to see the difference. Reading the three code blocks below without running them teaches you almost nothing: the whole point is watching a useless error message become a useful one <em>on your own machine</em>.</li>
+    <li><b>Keep your working script to hand too.</b> Load and call <code>exp_number()</code> from <code>Chapter2_partE.R</code>, as you did for the other two functions, so your calls are saved rather than typed into the console and lost.</li>
+    <li><b>Expect to see errors, and do not be alarmed by them.</b> Two of the examples below are <em>supposed</em> to fail. That is what is being taught here: code that fails clearly and early is better than code that fails vaguely and late.</li>
   </ul>
 </div>
 
@@ -3739,7 +3741,17 @@ exp_number(base = "hello", power = 5)
 
 ##### Let's Implement Defensive Programming in the UDF!
 
-To help users identify and resolve potential issues, we can implement a routine that checks the class of the arguments (i.e., the input data provided by the user). If the inputs are not of class `numeric`, the function will notify the user of the issue and provide guidance on how to fix it.
+The fix is to check the inputs **before** doing any arithmetic with them, and to stop with a message of our own if they are not what the function needs. That check is built from three pieces:
+
+1. **`is.numeric()`** asks of one object: *is this a number?* It returns a single `TRUE` or `FALSE`, and the `!` in front of it flips the question to *is this **not** a number?*
+2. **A logical operator** combines the two answers, because there are two arguments to check. This is exactly what [Use Logical Operators within R Functions](#logicalop) was for: we use **OR** (`|`), so the test is true when **at least one** of the arguments is wrong.
+3. **`stop()`** halts the function immediately and prints the message you give it, instead of letting R struggle on and fail later in its own words.
+
+<div class="info">
+  <p><strong>💡 Why <code>|</code> and not <code>&amp;</code></strong></p>
+  <p>This is the easiest place to get a guard backwards. With <b>AND</b> (<code>&amp;</code>) the function would only complain when <b>both</b> arguments were wrong, so <code>exp_number(base = "hello", power = 5)</code> would walk straight past the check and fail later with R's cryptic <em>non-numeric argument to binary operator</em>.</p>
+  <p><b>OR</b> (<code>|</code>) is what you want: <b>one bad input is enough to refuse</b>, and one bad input is by far the commonest case. A guard that only fires when everything is wrong is barely a guard at all.</p>
+</div>
 
 This routine can be implemented as follows:
 
