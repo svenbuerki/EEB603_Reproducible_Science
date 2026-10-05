@@ -1,0 +1,57 @@
+# Publish the EEB 603 course website to GitHub Pages.
+#
+# This is the "Static HTML" flow, NOT the Jekyll one. The site is already
+# rendered on Sven's machine by `rmarkdown::render_site()`, which writes the
+# HTML into the repository root (`output_dir: "."` in _site.yml) and commits it.
+# There is nothing left to build here: the job simply publishes what is in the
+# repository. Choosing the Jekyll starter workflow instead would make Jekyll
+# reprocess the rendered pages, which is exactly what `.nojekyll` exists to stop.
+#
+# Workflow: edit the .Rmd, render locally, commit the .Rmd AND the .html, push.
+# This job then deploys. Nothing about the local render workflow changes.
+
+name: Deploy course website to Pages
+
+on:
+  # every push to the default branch
+  push:
+    branches: [master]
+  # and a manual button, in Actions -> this workflow -> Run workflow,
+  # for when a deploy needs re-running without a new commit
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it, so a half-published
+# site is never left behind.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the repository root as the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # the whole repository: index.html, Chapters.html, Timetable.html,
+          # Assignments.html, Resources.html and their supporting folders
+          # (site_libs/, Figures/, Images/, Chapters_files/, Evaluation_Forms/)
+          path: '.'
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

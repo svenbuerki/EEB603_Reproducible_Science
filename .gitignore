@@ -41,3 +41,13 @@ index_syllabus_pdf.tex
 # ---------------------------------------------------------------------------
 BSU_documents_syllabus/
 Data/Evaluations_forms_rubrics/
+
+# ---------------------------------------------------------------------------
+# STUDENT RECORDS -- NEVER COMMIT
+#
+# This repository is PUBLIC. Attendance records name individual students and
+# are protected education records under FERPA; publishing them, even briefly,
+# would be a disclosure that cannot be undone by a later commit. Everything
+# under Attendance/ stays on this machine.
+# ---------------------------------------------------------------------------
+Attendance/

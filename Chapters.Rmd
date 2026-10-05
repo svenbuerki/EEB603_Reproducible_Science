@@ -3778,8 +3778,6 @@ Although debugging this particular error would not take long, in more complex fu
 
 ---
 
----
-
 ### Use Your UDFs in an R Markdown Document <span style="color:dimgray;">(8 minutes)</span> {#UDFinRmd}
 
 Everything so far has lived in `.R` scripts. This last section connects them back to the R Markdown document you have been building since [PART B](#partB), which is where your UDFs will actually be used.
