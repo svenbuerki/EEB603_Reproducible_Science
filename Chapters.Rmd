@@ -3821,6 +3821,22 @@ square_number(base = 2)
 sapply(ToSource, source)</code></pre>
 </div>
 
+**That `pattern` is a regular expression, not a filename wildcard**, so it is worth reading character by character:
+
+- `\.` means **a literal dot**. In a regular expression a bare `.` means *any character at all*, so it has to be escaped with a backslash to mean a full stop. An R string then needs that backslash escaped in turn, which is why you type **two** of them in the code above.
+- `R` is simply the letter R.
+- `$` anchors the match to the **end of the name**.
+
+Read as a whole: *names that end in a dot followed by R*. Both halves are doing work, and dropping either one breaks it in a different way:
+
+- **Without the `$`**, the pattern `"\.R"` matches anywhere in the name, so it also collects `Chapter2_partC.Rmd`, `notes.Rdata` and `proj.Rproj`. R would then try to `source()` your R Markdown document, which is not R code.
+- **Without escaping the dot**, the pattern `".R$"` means *any character, then R, at the end*, so a file called `myR` with no extension at all would be collected too.
+
+<div class="danger">
+  <p><strong>💡 The match is case-sensitive</strong></p>
+  <p>A function saved as <code>my_function.r</code> is skipped <b>in silence</b>: no error, no warning, and the function simply is not there when you call it. Keep to a capital <code>.R</code>, or pass <code>ignore.case = TRUE</code> to <code>list.files()</code>.</p>
+</div>
+
 <details>
 <summary><b>✅ Checkpoint</b></summary>
 
