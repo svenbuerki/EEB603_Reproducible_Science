@@ -3821,9 +3821,26 @@ square_number(base = 2)
 sapply(ToSource, source)</code></pre>
 </div>
 
-**That `pattern` is a regular expression, not a filename wildcard**, so it is worth reading character by character:
+**That `pattern` is a regular expression, not a filename wildcard.** Before reading it, one thing that catches everybody: **the code above has two backslashes, and the pattern itself has one. That is not a typo.** There are two layers here:
 
-- `\.` means **a literal dot**. In a regular expression a bare `.` means *any character at all*, so it has to be escaped with a backslash to mean a full stop. An R string then needs that backslash escaped in turn, which is why you type **two** of them in the code above.
+- **What the regular expression needs** is `\.` : a backslash followed by a dot, meaning *a literal dot*.
+- **What you type in R** is `"\\.R$"`, with two of them, because a backslash is *also* R's own escape character inside a quoted string. R consumes the first backslash and stores the second.
+
+You can watch that happen in the console:
+
+```{r echo=TRUE, eval=TRUE}
+# You type two backslashes, but the string only holds one
+nchar("\\.R$")
+
+# Print it and you see what the regex engine will actually receive
+cat("\\.R$")
+```
+
+**So the regex engine never sees two backslashes.** It receives `\.R$`, and that is the pattern described below. Typing a single backslash does not work either: `"\.R$"` is a *syntax error*, because `\.` is not one of R's recognised string escapes.
+
+With that settled, the pattern reads character by character:
+
+- `\.` means **a literal dot**. In a regular expression a bare `.` means *any character at all*, so it has to be escaped to mean a full stop.
 - `R` is simply the letter R.
 - `$` anchors the match to the **end of the name**.
 
