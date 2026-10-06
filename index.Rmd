@@ -515,7 +515,7 @@ The proposal exists so that I can give you feedback while you still have most of
 
 ### <a name="Proposal"></a>Project Proposal (50 points) {#Proposal}
 
-**A two-page proposal is mandatory**, and is due on the date given in the [course schedule](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html) (roughly one third of the way through the semester). It should set out what you intend to do for your individual project, and should cover:
+**A short written proposal is mandatory**, and is due on the date given in the [course schedule](https://svenbuerki.github.io/EEB603_Reproducible_Science/Timetable.html) (roughly one third of the way through the semester). It should set out what you intend to do for your individual project, and should cover:
 
 1. **The scientific question** at the core of your project, and why it matters.
 2. **The data** you will use: whether it is your own or published, where it lives or will live, its format and approximate size, and any restrictions on sharing it.
@@ -524,7 +524,9 @@ The proposal exists so that I can give you feedback while you still have most of
 5. **How you will know whether your approach works.** State, in advance, what would count as success and how you will test it. The strongest answers are ones somebody could actually check -- for example: a colleague can re-run my workflow from a clean environment and get identical output; the published analysis is reproduced to within a stated tolerance; the pipeline runs end to end from raw data with a single command; the report knits from scratch on another machine. Then tell me **what you will do if it does not work.** Naming a risk honestly is worth more than not noticing it.
 6. **A rough timeline** for the rest of the semester.
 
-Two pages is a limit, not a target -- a clear, concrete two pages is worth far more than a padded five.
+**Keep the proposal under 1000 words.** That is a limit, not a target: a clear, concrete 800 words is worth far more than a padded 1500. The count is your **prose only** -- it excludes code, output, figure captions, the bibliography and the appendices.
+
+The limit used to be stated as two pages, which does not work: you are submitting an R Markdown document that knits to `HTML`, and **an HTML page has no page breaks to count**. The Assignments page gives you a short code chunk that **counts the words in your own document** and prints the number when you knit, so you can see where you stand as you write: see [Length, and How to Check It](Assignments.html#proposallength).
 
 **The proposal must itself be a reproducible document.** This is not an extra hoop: it is the point. Write it in *knitr*/*rmarkdown* and submit a source that **knits successfully**, contains **at least one code chunk that actually runs** (reading or simulating your data, summarising your dataset, or even just `sessionInfo()`), and manages its **citations through a bibliography file**. Ten of the fifty points are for this.
 

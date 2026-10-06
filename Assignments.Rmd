@@ -144,6 +144,57 @@ Two things are asked of this proposal beyond a conventional project plan:
     + **What is broken now.** The [glossary of threats](Chapters.html#gloss) and the [solutions that mitigate them](Chapters.html#soltothreats) in Chapter 3 are where to look. A proposal that names the specific failure it addresses is far stronger than one gesturing at reproducibility in general.
     + **How you will test it.** Use the standard your group applied to its [reproducibility charter](Chapters.html#FactorsActivity): a commitment only counts if somebody else could check whether you kept it. The [TOP standards](Chapters.html#TOPguidelines), with their levels 0 to 3, are a ready-made way of saying how far you intend to go.
 
+### Length, and How to Check It {#proposallength}
+
+**Keep the proposal under 1000 words**, counting your **prose only**: code, output, figure captions, the bibliography and the appendices do not count. It is a limit rather than a target, and a concrete 800 words is worth far more than a padded 1500.
+
+That limit used to be stated as two pages. It no longer is, because you are submitting an R Markdown document that knits to `HTML`, and **an HTML page has no page breaks to count**. So instead, **let the document count its own words.**
+
+#### Step-by-Step Procedure
+
+1. Open your proposal in RStudio and scroll to the **end of your prose**, just above the `# References` header.
+2. Insert an R code chunk there with the `Insert` ![](Figures/insert.png){alt=""} button.
+3. **Set the chunk options line** to exactly `{r wordcount, echo = FALSE}`, where:
+    - `wordcount` is the **label**, so the chunk has a name you can find again.
+    - `echo = FALSE` keeps the counting code **out of** the knitted document. The count is a measurement of your proposal, not a part of it, and nobody needs to read the code that produced it.
+    - **Do not add `eval = FALSE`.** This chunk has to run, and `eval` is `TRUE` by default, so leaving it out is exactly what you want.
+4. Copy the code below into the chunk. Its last line **assigns** the number to `n_words` instead of printing it, so the chunk itself produces no visible output.
+```{r wordcount-demo, echo=TRUE, eval=FALSE}
+###
+# Count the prose words in this document
+# Excludes the YAML header, code chunks, inline code, HTML and citation keys
+###
+src <- readLines(knitr::current_input(), warn = FALSE)
+
+# Drop the YAML header
+y <- grep("^---\\s*$", src)
+if (length(y) >= 2) src <- src[-(y[1]:y[2])]
+
+# Drop fenced code chunks, fences included
+fence <- grepl("^\\s*```", src)
+src <- src[!(cumsum(fence) %% 2 == 1 | fence)]
+
+# Drop inline code, HTML tags, citation keys and Markdown punctuation
+txt <- paste(src, collapse = " ")
+txt <- gsub("`r [^`]*`", " ", txt)
+txt <- gsub("<[^>]*>", " ", txt)
+txt <- gsub("\\[@[^]]*\\]", " ", txt)
+txt <- gsub("[#*_>|`]", " ", txt)
+
+# Store the count, do not print it
+words  <- strsplit(trimws(txt), "\\s+")[[1]]
+n_words <- length(words[nzchar(words)])
+```
+5. **Below the chunk, write one line of ordinary text** that reports the number using **inline code**, the syntax you met in [Inline Code](Chapters.html#inlinecode) in PART A:
+<pre><code>This proposal contains &#96;r n_words&#96; words.</code></pre>
+6. **Knit the document.** The sentence appears with the number filled in, for example *This proposal contains 842 words.*
+
+<div class="info">
+  <p><strong>💡 Why inline code rather than letting the chunk print</strong></p>
+  <p>A chunk that prints its result gives you <code>## [1] 842</code>, which looks like debugging output in the middle of a proposal. Inline code puts the number inside a sentence you wrote, which is what you want in a document somebody is going to read.</p>
+  <p>It is also the honest version of the thing this course keeps arguing for: the number is <b>recomputed from your text every time you knit</b>, so it cannot drift out of date the way a figure typed by hand would.</p>
+</div>
+
 ### How to Submit It {#proposalsubmit}
 
 **Where it goes.** Upload your submission to our course Google Drive, in [`Individual_reports > Individual_projects > Project_proposal`](https://drive.google.com/drive/folders/1djFlKe7Lz13HnOSV-ThXtR18_3sS8Lm2?usp=drive_link).

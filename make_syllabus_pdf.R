@@ -88,7 +88,10 @@ x <- gsub('<a href="([^"]*)"[^>]*>(.*?)</a>', "[\\2](\\1)", x, perl = TRUE)
 ## published site instead of at a neighbouring file.
 ## ---------------------------------------------------------------------------
 site <- "https://svenbuerki.github.io/EEB603_Reproducible_Science/"
-x <- gsub("\\]\\((?!https?://|#|mailto:)([A-Za-z0-9_.-]+\\.(?:html|pdf))\\)",
+# The optional (?:#...)? tail matters: a link such as
+# [text](Assignments.html#proposallength) carries an anchor, and without that
+# group it is left relative, which resolves to nothing in a standalone pdf.
+x <- gsub("\\]\\((?!https?://|#|mailto:)([A-Za-z0-9_.-]+\\.(?:html|pdf)(?:#[A-Za-z0-9_.:-]+)?)\\)",
           paste0("](", site, "\\1)"), x, perl = TRUE)
 
 ## ---------------------------------------------------------------------------

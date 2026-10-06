@@ -154,7 +154,7 @@ Evaluates whether the plan can realistically be completed in the time remaining.
 **Criteria**
 
 - **Timeline (2 pts):** Provides a realistic plan for the remainder of the semester.
-- **Clarity and concision (1 pt):** The proposal is clear and within the two-page limit. A concrete two pages is worth more than a padded five.
+- **Clarity and concision (1 pt):** The proposal is clear and within the 1000-word limit, which the document reports itself. A concrete 800 words is worth more than a padded 1500.
 
 *Comments:*
 

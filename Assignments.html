@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2026-10-02" />
+<meta name="date" content="2026-10-06" />
 
 <title>Assignments</title>
 
@@ -349,7 +349,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Assignments</h1>
 <h3 class="subtitle">Evaluation forms and rubrics</h3>
-<h4 class="date">2026-10-02</h4>
+<h4 class="date">2026-10-06</h4>
 
 </div>
 
@@ -544,8 +544,67 @@ Oral presentation
 <li><strong>How you will test it.</strong> Use the standard your group applied to its <a href="Chapters.html#FactorsActivity">reproducibility charter</a>: a commitment only counts if somebody else could check whether you kept it. The <a href="Chapters.html#TOPguidelines">TOP standards</a>, with their levels 0 to 3, are a ready-made way of saying how far you intend to go.</li>
 </ul></li>
 </ul>
-<div id="proposalsubmit" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> How to Submit It</h3>
+<div id="proposallength" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Length, and How to Check It</h3>
+<p><strong>Keep the proposal under 1000 words</strong>, counting your <strong>prose only</strong>: code, output, figure captions, the bibliography and the appendices do not count. It is a limit rather than a target, and a concrete 800 words is worth far more than a padded 1500.</p>
+<p>That limit used to be stated as two pages. It no longer is, because you are submitting an R Markdown document that knits to <code>HTML</code>, and <strong>an HTML page has no page breaks to count</strong>. So instead, <strong>let the document count its own words.</strong></p>
+<div id="step-by-step-procedure" class="section level4" number="3.1.1.1">
+<h4><span class="header-section-number">3.1.1.1</span> Step-by-Step Procedure</h4>
+<ol style="list-style-type: decimal">
+<li>Open your proposal in RStudio and scroll to the <strong>end of your prose</strong>, just above the <code># References</code> header.</li>
+<li>Insert an R code chunk there with the <code>Insert</code> <img src="Figures/insert.png" alt="" /> button.</li>
+<li><strong>Set the chunk options line</strong> to exactly <code>{r wordcount, echo = FALSE}</code>, where:
+<ul>
+<li><code>wordcount</code> is the <strong>label</strong>, so the chunk has a name you can find again.</li>
+<li><code>echo = FALSE</code> keeps the counting code <strong>out of</strong> the knitted document. The count is a measurement of your proposal, not a part of it, and nobody needs to read the code that produced it.</li>
+<li><strong>Do not add <code>eval = FALSE</code>.</strong> This chunk has to run, and <code>eval</code> is <code>TRUE</code> by default, so leaving it out is exactly what you want.</li>
+</ul></li>
+<li>Copy the code below into the chunk. Its last line <strong>assigns</strong> the number to <code>n_words</code> instead of printing it, so the chunk itself produces no visible output.</li>
+</ol>
+<pre class="r"><code>###
+# Count the prose words in this document
+# Excludes the YAML header, code chunks, inline code, HTML and citation keys
+###
+src &lt;- readLines(knitr::current_input(), warn = FALSE)
+
+# Drop the YAML header
+y &lt;- grep(&quot;^---\\s*$&quot;, src)
+if (length(y) &gt;= 2) src &lt;- src[-(y[1]:y[2])]
+
+# Drop fenced code chunks, fences included
+fence &lt;- grepl(&quot;^\\s*```&quot;, src)
+src &lt;- src[!(cumsum(fence) %% 2 == 1 | fence)]
+
+# Drop inline code, HTML tags, citation keys and Markdown punctuation
+txt &lt;- paste(src, collapse = &quot; &quot;)
+txt &lt;- gsub(&quot;`r [^`]*`&quot;, &quot; &quot;, txt)
+txt &lt;- gsub(&quot;&lt;[^&gt;]*&gt;&quot;, &quot; &quot;, txt)
+txt &lt;- gsub(&quot;\\[@[^]]*\\]&quot;, &quot; &quot;, txt)
+txt &lt;- gsub(&quot;[#*_&gt;|`]&quot;, &quot; &quot;, txt)
+
+# Store the count, do not print it
+words  &lt;- strsplit(trimws(txt), &quot;\\s+&quot;)[[1]]
+n_words &lt;- length(words[nzchar(words)])</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Below the chunk, write one line of ordinary text</strong> that reports the number using <strong>inline code</strong>, the syntax you met in <a href="Chapters.html#inlinecode">Inline Code</a> in PART A:
+<pre><code>This proposal contains &#96;r n_words&#96; words.</code></pre></li>
+<li><strong>Knit the document.</strong> The sentence appears with the number filled in, for example <em>This proposal contains 842 words.</em></li>
+</ol>
+<div class="info">
+<p>
+<strong>💡 Why inline code rather than letting the chunk print</strong>
+</p>
+<p>
+A chunk that prints its result gives you <code>## [1] 842</code>, which looks like debugging output in the middle of a proposal. Inline code puts the number inside a sentence you wrote, which is what you want in a document somebody is going to read.
+</p>
+<p>
+It is also the honest version of the thing this course keeps arguing for: the number is <b>recomputed from your text every time you knit</b>, so it cannot drift out of date the way a figure typed by hand would.
+</p>
+</div>
+</div>
+</div>
+<div id="proposalsubmit" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> How to Submit It</h3>
 <p><strong>Where it goes.</strong> Upload your submission to our course Google Drive, in <a href="https://drive.google.com/drive/folders/1djFlKe7Lz13HnOSV-ThXtR18_3sS8Lm2?usp=drive_link"><code>Individual_reports &gt; Individual_projects &gt; Project_proposal</code></a>.</p>
 <p><strong>Hand in a folder, not a single file.</strong> Inside <code>Project_proposal</code>, create a folder named with your own <strong>first and last name</strong>, for example <code>Jane_Doe</code>, and put inside it <strong>everything needed to knit the proposal on another machine</strong>:</p>
 <ul>
