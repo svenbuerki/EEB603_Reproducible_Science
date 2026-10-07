@@ -155,6 +155,7 @@ That limit used to be stated as two pages. It no longer is, because you are subm
 1. Open your proposal in RStudio and scroll to the **end of your prose**, just above the `# References` header.
 2. Insert an R code chunk there with the `Insert` ![](Figures/insert.png){alt=""} button.
 3. **Set the chunk options line** to exactly `{r wordcount, echo = FALSE}`, where:
+    - **`r` comes first, and is not optional.** It tells knitr that the chunk contains R code. Leave it out, writing `{wordcount, echo = FALSE}`, and knitting fails with `Unknown language engine 'wordcount'`: knitr reads the first word inside the braces as the name of a programming language, and there is no language called `wordcount`.
     - `wordcount` is the **label**, so the chunk has a name you can find again.
     - `echo = FALSE` keeps the counting code **out of** the knitted document. The count is a measurement of your proposal, not a part of it, and nobody needs to read the code that produced it.
     - **Do not add `eval = FALSE`.** This chunk has to run, and `eval` is `TRUE` by default, so leaving it out is exactly what you want.
@@ -164,6 +165,14 @@ That limit used to be stated as two pages. It no longer is, because you are subm
 # Count the prose words in this document
 # Excludes the YAML header, code chunks, inline code, HTML and citation keys
 ###
+# knitr::current_input() returns the name of the file being knitted, so the
+# next line reads THIS document's own source. That is why the snippet needs no
+# filename: it works in anybody's proposal, whatever they called it.
+#
+# NOTE: this only works while knitting. Outside a knit there is no "current
+# input", so current_input() returns NULL and you get the error
+# 'con' is not a connection. Do not test this chunk with the Run button:
+# knit the document instead.
 src <- readLines(knitr::current_input(), warn = FALSE)
 
 # Drop the YAML header

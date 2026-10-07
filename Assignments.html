@@ -555,6 +555,7 @@ Oral presentation
 <li>Insert an R code chunk there with the <code>Insert</code> <img src="Figures/insert.png" alt="" /> button.</li>
 <li><strong>Set the chunk options line</strong> to exactly <code>{r wordcount, echo = FALSE}</code>, where:
 <ul>
+<li><strong><code>r</code> comes first, and is not optional.</strong> It tells knitr that the chunk contains R code. Leave it out, writing <code>{wordcount, echo = FALSE}</code>, and knitting fails with <code>Unknown language engine 'wordcount'</code>: knitr reads the first word inside the braces as the name of a programming language, and there is no language called <code>wordcount</code>.</li>
 <li><code>wordcount</code> is the <strong>label</strong>, so the chunk has a name you can find again.</li>
 <li><code>echo = FALSE</code> keeps the counting code <strong>out of</strong> the knitted document. The count is a measurement of your proposal, not a part of it, and nobody needs to read the code that produced it.</li>
 <li><strong>Do not add <code>eval = FALSE</code>.</strong> This chunk has to run, and <code>eval</code> is <code>TRUE</code> by default, so leaving it out is exactly what you want.</li>
@@ -565,6 +566,14 @@ Oral presentation
 # Count the prose words in this document
 # Excludes the YAML header, code chunks, inline code, HTML and citation keys
 ###
+# knitr::current_input() returns the name of the file being knitted, so the
+# next line reads THIS document&#39;s own source. That is why the snippet needs no
+# filename: it works in anybody&#39;s proposal, whatever they called it.
+#
+# NOTE: this only works while knitting. Outside a knit there is no &quot;current
+# input&quot;, so current_input() returns NULL and you get the error
+# &#39;con&#39; is not a connection. Do not test this chunk with the Run button:
+# knit the document instead.
 src &lt;- readLines(knitr::current_input(), warn = FALSE)
 
 # Drop the YAML header

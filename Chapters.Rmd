@@ -3171,9 +3171,9 @@ By the end of this tutorial, students will be able to:
 - [Use logical operators effectively within R functions](#logicalop)
 - [Use your UDFs inside an R Markdown document](#UDFinRmd)
 
-**PART E runs over two classes**, and we write the code together as we go. The times below are a pace rather than a deadline.
+**PART E runs over three classes**, and we write the code together as we go. The times below are a pace rather than a deadline, and they have been revised to match how the sessions actually ran: live coding with a room full of questions takes longer than the nominal figures, which is as it should be.
 
-**Class 1 opens with a 20-minute challenge from [PART C](#figurefromfile)**, filling a gap we skipped: inserting a figure that already exists as an image file. After it, each class ends with a piece you finish at home, marked in the tables below.
+**Class 1 opens with a 20-minute challenge from [PART C](#figurefromfile)**, filling a gap we skipped: inserting a figure that already exists as an image file. **Class 2 opens by finishing class 1's exercise together**, and **class 3 opens with the whiteboard presentations** from class 2. Each class also ends with a piece you finish at home, marked in the tables below.
 
 **Class 1 --- what a function is, and your first UDF**
 
@@ -3189,18 +3189,29 @@ By the end of this tutorial, students will be able to:
 | **Total in class** | **70 min** | |
 | [UDFs That Return a Single Value](#UDFsingle): implement it and apply it | 15 min | Students, at home |
 
-**Class 2 --- returning more than one value, and failing well**
+**Class 2 --- lists, and returning more than one value**
 
 | Block | Time | Who |
 |---|---|---|
-| [Create, Name, and Access Elements of a List in R](#Rlists) | 12 min | Instructor live codes, students follow along |
-| [Develop, Implement, and Apply UDFs that Return Multiple Values](#UDFmultiple) | 25 min | Students, in pairs |
+| [UDFs That Return a Single Value](#UDFsingle): implement it and apply it | 20 min | Students, finishing class 1 together |
+| [Create, Name, and Access Elements of a List in R](#Rlists) | 20 min | Instructor live codes, students follow along |
 | *five-minute break* | 5 min | |
+| [UDFs that Return Multiple Values](#UDFmultiple): pairs plan and build | 25 min | Students, in pairs |
+| **Total in class** | **70 min** | |
+
+**Class 3 --- showing your work, and failing well**
+
+| Block | Time | Who |
+|---|---|---|
+| [UDFs that Return Multiple Values](#UDFmultiple): pairs present at the whiteboard | 10 min | Students, in pairs |
 | [Use Logical Operators within R Functions](#logicalop) | 3 min | Instructor |
 | [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor live codes, students follow along |
-| **Total in class** | **70 min** | |
-| [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Students, at home |
-| | | |
+| [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Instructor live codes, students follow along |
+| **Total for PART E** | **46 min** | |
+
+**Nothing in PART E is left for home this time.** These are the skills your [bioinformatics tutorial](Assignments.html#arc1) is built on: writing a function, giving it standards of its own, and loading it into a report that knits. **I would rather every one of you had them working before we move on** than leave the last section to be skimmed at home, so we finish all of it together.
+
+**Class 3 is not all PART E.** Once the R Markdown integration is done, PART E is finished and the rest of that session begins [Chapter 3](#chap3), so the break falls there rather than inside the table above.
 
 The last section is the one piece you finish **at home**: it connects the `.R` script you built here back to the R Markdown document you have been growing since [PART B](#partB).
 
@@ -3609,7 +3620,7 @@ To accomplish this, we will **collect the different outputs into a list, which w
 
 Work in **pairs**. Two people is the right size for this: both of you can see the screen, neither of you can sit it out, and you have to say your reasoning out loud to somebody before it becomes code. **If your partner is away today, join another pair** rather than working alone.
 
-**The time splits in two: you have 15 minutes to plan and build your function, then 10 minutes for the pairs to present, one after the other.** Keep an eye on the clock yourselves, because the presentations are not optional extras: they are where the exercise pays off.
+**This exercise straddles two classes.** You plan and build your function in the session where it is introduced, and **the pairs present at the start of the following class**, one after the other, in about ten minutes altogether. That gap is useful rather than accidental: it gives you time to get the function actually working, and the presentations are not optional extras, they are where the exercise pays off.
 
 1. **Plan it on paper first** <span style="color:dimgray;">(~6 minutes)</span>. Nobody opens RStudio yet. Agree three things and write them down:
     - **Input and output.** What does the function take, and what exactly does it hand back? Give the **class** of each. *"Two numbers"* is not an answer; *"one numeric value in, a list of two named numeric values out"* is.
