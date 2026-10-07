@@ -3733,7 +3733,7 @@ The fix is to check the inputs **before** doing any arithmetic with them, and to
 
 1. **`is.numeric()`** asks of one object: *is this a number?* It returns a single `TRUE` or `FALSE`, and the `!` in front of it flips the question to *is this **not** a number?*
 2. **A logical operator** combines the two answers, because there are two arguments to check. This is exactly what [Use Logical Operators within R Functions](#logicalop) was for: we use **OR** (`|`), so the test is true when **at least one** of the arguments is wrong.
-3. **`stop()`** halts the function immediately and prints the message you give it, instead of letting R struggle on and fail later in its own words.
+3. **`stop()`** halts the function immediately and prints the message you give it, instead of letting R struggle on and fail later in its own words. **`call. = FALSE`** is worth adding: without it R prefixes your message with the whole failing call, as in `Error in exp_number(base = "hello", power = 5): ...`, which repeats what the user just typed. With it, they see `Error: Both base and power inputs must be numeric` and nothing else.
 
 <div class="info">
   <p><strong>💡 Why <code>|</code> and not <code>&amp;</code></strong></p>
@@ -3751,7 +3751,9 @@ exp_number <- function(base, power){
     # This if statement tests whether base and power are numbers.
     # If either is not, it stops and returns a meaningful message.
     if(!is.numeric(base) | !is.numeric(power)){
-          stop("Both base and power inputs must be numeric")
+          # call. = FALSE drops R's "Error in exp_number(...)" prefix, so the
+          # user sees only the message we wrote
+          stop("Both base and power inputs must be numeric", call. = FALSE)
     }
     #If classes are good then infer exp
     exp <- base^power
