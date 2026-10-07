@@ -747,9 +747,7 @@ This chapter aims to ***equip students with the essential skills required to eff
 
 This tutorial provides students with the foundational knowledge necessary to complete their [bioinformatics tutorials](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#BioTut) (**PART 2**) and [individual projects](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#arc2) (**PART 3**).
 
-
 ### Objectives
-
 
 The chapter is divided into six parts, each with specific learning objectives:
 
@@ -760,19 +758,15 @@ The chapter is divided into six parts, each with specific learning objectives:
 - [**PART E:**](#partE) User-Defined Functions in R  
 - [**PART F:**](#partF) Interactive Tutorials  
 
-
 ### Resources and Software {#chap2resources}
 
 Everything you need in order to follow this chapter is collected here: the files, the software to install, and where to read further.
 
 #### Supporting Files {#Files}
 
-
 Files supporting this chapter are available on [Google Drive](https://drive.google.com/drive/folders/1Olb6huHcBfv02OxL50WEbQR-uJvkuX7O?usp=drive_link).
 
-
 #### Install R Markdown Software
-
 
 Software and packages required to perform this tutorial are detailed below. Students should install those software and packages on their personal computers to be able to complete this course. Additional packages might need to be installed and the instructor will provide guidance on how to install those as part of the forthcoming tutorials.
 
@@ -786,9 +780,7 @@ install.packages(c("bookdown","knitr", "rmarkdown"))
 
 **NOTE:** The instructor is using the following version of `RStudio`: Version 2025.05.0+496 (2025.05.0+496). If your computer is experiencing issues running the latest version of the software, you can install previous versions [here](https://docs.posit.co/previous-versions/rstudio/).
 
-
 #### Web Resources
-
 
 Below are URLs to web resources that provide key information related to Chapter 2:
 
@@ -831,7 +823,6 @@ Detailed information on using RStudio can be found on [RStudio’s website](http
 ```{r IDE, fig.alt="Screenshot of the RStudio window with labels overlaid on each of its four panes: Source with an open .Rmd file top left, Console/Terminal/RMarkdown bottom left, Environment/History/Connections top right, and Files/Plots/Packages/Help bottom right.", echo=FALSE, fig.cap="Snapshot of the RStudio environment showing the four windows and their content.", fig.show="asis", out.width = '100%'}
 knitr::include_graphics("Figures/IDE.png")
 ```
-
 
 ### Introduction to R Markdown {#IntroRMd}
 
@@ -1048,7 +1039,6 @@ The "#" refers to the level of the header
 ## Knitting a document</code></pre>
 </details>
 
-
 ---
 
 ### Inside Text Commenting <span style="color:dimgray;">(5 minutes)</span> {#comment}
@@ -1090,7 +1080,6 @@ You can learn more about this HTML syntax on this [webpage](https://www.w3school
 
 &lt;!-- TO DO: add an example of a YAML header here. --&gt;</code></pre>
 </details>
-
 
 ---
 
@@ -1143,7 +1132,6 @@ There are two types of lists:
   + User-defined functions</code></pre>
 </details>
 
-
 #### Syntax for ordered lists <span style="color:dimgray;">(~5 minutes)</span>
 
 **Syntax:**
@@ -1183,7 +1171,6 @@ There are two types of lists:
    + Rename the columns
    + Drop incomplete records</code></pre>
 </details>
-
 
 ---
 
@@ -1235,7 +1222,6 @@ Raw data are **never** edited by hand.
 Every figure is ***produced by code*** that runs from the raw data.</code></pre>
 </details>
 
-
 ---
 
 ### Create Hyperlinks <span style="color:dimgray;">(6 minutes)</span> {#hyperlinks}
@@ -1277,7 +1263,6 @@ When knitted, the example with RStudio renders as a link: [RStudio](https://www.
 
 [Download R for macOS](https://cran.r-project.org/bin/macosx/)</code></pre>
 </details>
-
 
 ---
 
@@ -1321,7 +1306,6 @@ print("Hello world")
 ```</code></pre>
 </details>
 
-
 #### Chunk Options <span style="color:dimgray;">(~7 minutes)</span>
 
 Chunk output can be customized with *knitr* options arguments set in the `{}` of a code chunk header. In the examples displayed in Figure \@ref(fig:RChunk) five arguments are used:
@@ -1359,7 +1343,6 @@ knitr::include_graphics("Figures/code-1-options.png")
 print("Hello world")
 ```</code></pre>
 </details>
-
 
 ---
 
@@ -1404,7 +1387,6 @@ As a result, inline output is indistinguishable from the surrounding text.
 
 <pre><code>Adding two and two gives &#96;r 2+2&#96;, which R Markdown computes when the document is knitted.</code></pre>
 </details>
-
 
 ---
 
@@ -1528,7 +1510,6 @@ Scroll to the end of this page and you can read those two appendices as output, 
 ### Create Your R Markdown Document <span style="color:dimgray;">(10 minutes)</span> {#creatRMDfile}
 
 Use the material from the [Chapter 2 – Part A](#firstMDhow) and [Before Starting](#beforeyoustart) sections to create and save your R Markdown document for this tutorial. 
-
 
 <style>
 .danger {
@@ -3173,7 +3154,7 @@ By the end of this tutorial, students will be able to:
 
 **PART E runs over three classes**, and we write the code together as we go. The times below are a pace rather than a deadline, and they have been revised to match how the sessions actually ran: live coding with a room full of questions takes longer than the nominal figures, which is as it should be.
 
-**Class 1 opens with a 20-minute challenge from [PART C](#figurefromfile)**, filling a gap we skipped: inserting a figure that already exists as an image file. **Class 2 opens by finishing class 1's exercise together**, and **class 3 opens with the whiteboard presentations** from class 2. Each class also ends with a piece you finish at home, marked in the tables below.
+**Class 1 opens with a 20-minute challenge from [PART C](#figurefromfile)**, filling a gap we skipped: inserting a figure that already exists as an image file. **Class 2 opens by finishing class 1's exercise together**, and **class 3 opens with the whiteboard presentations** from class 2. Only class 1 leaves anything for home, marked in the table below; classes 2 and 3 are finished in the room.
 
 **Class 1 --- what a function is, and your first UDF**
 
@@ -3208,12 +3189,6 @@ By the end of this tutorial, students will be able to:
 | [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor live codes, students follow along |
 | [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Instructor live codes, students follow along |
 | **Total for PART E** | **46 min** | |
-
-**Nothing in PART E is left for home this time.** These are the skills your [bioinformatics tutorial](Assignments.html#arc1) is built on: writing a function, giving it standards of its own, and loading it into a report that knits. **I would rather every one of you had them working before we move on** than leave the last section to be skimmed at home, so we finish all of it together.
-
-**Class 3 is not all PART E.** Once the R Markdown integration is done, PART E is finished and the rest of that session begins [Chapter 3](#chap3), so the break falls there rather than inside the table above.
-
-The last section is the one piece you finish **at home**: it connects the `.R` script you built here back to the R Markdown document you have been growing since [PART B](#partB).
 
 ### How This Tutorial Is Written {#protocolstyleE}
 
@@ -3349,7 +3324,6 @@ Once your project is properly structured (see Figure \@ref(fig:Structure)), it b
 
 For example, to load the `check.install.pkg()` function (saved as `R_functions/check.install.pkg.R`) into the Global Environment, enter the following code in the R console (see Figure \@ref(fig:sourceUDF)):
 
-
 ```{r echo=TRUE, eval=T}
 source("R_functions/check.install.pkg.R")
 ```
@@ -3465,7 +3439,6 @@ knitr::include_graphics("Figures/Environment_RStudio.png")
 #### Apply Your Function <span style="color:dimgray;">(~5 minutes)</span>
 
 The R language is quite flexible and allows functions to be applied to a single value (e.g., `base = 2`) or a vector (e.g., `base = c(2, 4, 16, 23, 45)`). Let's further explore this concept by completing the following tasks in your R script:
-
 
 1. Create a new `.R` script titled `Chapter2_partE.R` saved in `Chapter_2/`.
 2. **Set your working directory to the location of that script**: `Session --> Set Working Directory --> To Source File Location`, following the procedure in [Create Your Document and Set Your Working Directory](#setwdir). **This step is not optional here.** An `.Rmd` has knitr to set the working directory for it; a plain `.R` script has nothing of the kind, so the relative path in the next step only resolves if R is actually pointed at `Chapter_2`.
@@ -3693,7 +3666,11 @@ Defensive programming is a technique used to ensure that code fails with well-de
 
 #### Case Study <span style="color:dimgray;">(~22 minutes)</span>
 
-To demonstrate how to apply defensive programming in your code, a power function `y = x^n` is implemented as a UDF and used as an example.
+We are tasked with
+
+> *Developing, implementing, and applying a UDF that raises a number to a power, and stops with a clear message when the inputs are not numbers.*
+
+The function itself is a power function, `y = x^n`, taking two arguments. **The arithmetic is deliberately trivial**: what this exercise is really about is the **guard** you put in front of it, and what that guard says when somebody uses the function wrongly.
 
 <div class="info">
   <p><strong>💡 You work this section in your own script, not on this page</strong></p>
