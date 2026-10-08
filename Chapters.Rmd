@@ -3725,6 +3725,10 @@ You can now apply defensive programming to the `exp_number` function defined abo
 ```{r echo=TRUE, eval=T, error=TRUE}
 #Example where we don't respect the class associated with the argument base
 exp_number(base = "hello", power = 5)
+
+# And the same with a "2", which LOOKS like a number but is not one:
+# the quotes make it a character string, so the arithmetic still fails
+exp_number(base = "2", power = 5)
 ```
 
 ##### Let's Implement Defensive Programming in the UDF!
@@ -3764,7 +3768,20 @@ exp_number <- function(base, power){
 
 # Call function
 exp_number(base = "hello", power = 5)
+
+# The guard catches a quoted "2" as well, which is the case that surprises people
+exp_number(base = "2", power = 5)
 ```
+
+<div class="info">
+  <p><strong>💡 <code>"2"</code> is not 2</strong></p>
+  <p>This is the example worth pausing on. <code>2</code> is a number; <code>"2"</code> is a <b>character string that happens to contain a digit</b>, and the quotation marks are the whole difference:</p>
+<pre><code>is.numeric(2)     # TRUE
+is.numeric("2")   # FALSE
+class("2")        # "character"</code></pre>
+  <p>R will not quietly convert one to the other, so <code>"2"^5</code> fails just as <code>"hello"^5</code> does. <b>Our guard is right to refuse it</b>: a function that silently accepted <code>"2"</code> would be guessing at what the user meant, and the next quoted value might be <code>"two"</code> or <code>"2,5"</code>.</p>
+  <p>If you genuinely have numbers arriving as text, which happens constantly when reading data files, convert them deliberately with <code>as.numeric()</code> before calling the function. That way the conversion is a decision you made and can see, not something the function did behind your back.</p>
+</div>
 
 <div class="info">
   <p><strong>💡 Why <code>is.numeric()</code> and not <code>class()</code>?</strong></p>
