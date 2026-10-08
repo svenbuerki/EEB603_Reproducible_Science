@@ -3948,26 +3948,26 @@ By the end of this chapter, you will be able to:
 - [Explain the Transparency and Openness Promotion (TOP) Guidelines and their application in scientific publishing and funding contexts](#TOP)
 - [Revise your group's reproducibility charter in the light of both](#charterthreats)
 
-**This chapter runs over one and a half classes**, and each one ends with a group activity on your charter.
+**This chapter runs over two classes.** The first sets out the scientific process and the ways it goes wrong. **You then read the solutions at home**, and that reading is what makes the second class work: **both charter activities happen in that second session**, and neither of them goes well if you arrive without knowing what the established mitigations are.
 
-**Class 1 --- threats, and whether your charter stops them**
+**Class 1 --- the scientific process, and what threatens it**
 
 | Block | Time | Who |
 |---|---|---|
 | [Review the Steps Involved in the Scientific Process](#scientificprocess) | 10 min | Instructor |
 | [Identify and Define Threats to the Scientific Process](#threatstoprocess) | 10 min | Instructor |
-| *five-minute break* | 5 min | |
-| [Discuss Solutions to Mitigate Threats](#soltothreats) | 20 min | Instructor |
-| [👥 Do Your Standards Hold?](#charterthreats) | 25 min | Students, in 2 groups |
-| **Total** | **70 min** | |
+| **Total in class** | **20 min** | |
+| [Discuss Solutions to Mitigate Threats](#soltothreats) | 20 min | **Students, at home** |
 
-**Class 2 --- the community standard (first half of the session)**
+**Class 2 --- testing your charter, twice**
 
 | Block | Time | Who |
 |---|---|---|
+| [👥 Do Your Standards Hold?](#charterthreats) | 25 min | Students, in 2 groups |
+| *five-minute break* | 5 min | |
 | [The Transparency and Openness Promotion Guidelines](#TOP) | 10 min | Instructor |
 | [👥 Score Your Charter Against TOP](#chartertop) | 25 min | Students, in 2 groups |
-| **Total** | **35 min** | |
+| **Total** | **65 min** | |
 
 ---
 
@@ -3975,7 +3975,7 @@ By the end of this chapter, you will be able to:
 
 1. [Review the Steps Involved in the Scientific Process](#scientificprocess) <span style="color:dimgray;">(10 minutes)</span>
 2. [Identify and Define Threats to the Scientific Process](#threatstoprocess) <span style="color:dimgray;">(10 minutes)</span>
-3. [Discuss Solutions to Mitigate Threats to the Scientific Process](#soltothreats) <span style="color:dimgray;">(20 minutes)</span>
+3. [Discuss Solutions to Mitigate Threats to the Scientific Process](#soltothreats) <span style="color:dimgray;">(20 minutes, read at home between the two classes)</span>
 4. [👥 Group Activity: Do Your Standards Hold?](#charterthreats) <span style="color:dimgray;">(25 minutes)</span>
 5. [The Transparency and Openness Promotion Guidelines](#TOP) <span style="color:dimgray;">(10 minutes)</span>
 6. [👥 Group Activity: Score Your Charter Against TOP](#chartertop) <span style="color:dimgray;">(25 minutes)</span>
@@ -4075,6 +4075,12 @@ Below are definitions of common threats to the scientific process (see Figure \@
 ---
 
 ## Discuss Solutions to Mitigate Threats to the Scientific Process <span style="color:dimgray;">(20 minutes)</span> {#soltothreats}
+
+<div class="disclaimer">
+  <p><strong>💡 Read this section at home, between the two classes</strong></p>
+  <p>This is the one part of the chapter you cover on your own. It is not background reading: the activity that opens the next class, <a href="#charterthreats">👥 Do Your Standards Hold?</a>, asks you to write new clauses for your charter, and <b>a clause is far stronger when it names an established practice than when you invent one</b>. The practices are here.</p>
+  <p>You do not need to memorise it. Know roughly what is in each of the five groups below, so that you can find the right one quickly when your group needs it.</p>
+</div>
 
 The **aim** of this section is to **discuss solutions for addressing threats to the scientific process by presenting measures that ensure reproducibility and transparency**.  
 
@@ -4287,7 +4293,7 @@ Open your charter and take each threat in turn. **Find the clause that would sto
 
 ### ✍️ Write the Missing Clauses <span style="color:dimgray;">(8 minutes)</span> {#writemissing}
 
-For every threat you marked *partly* or *not covered*, write the clause that closes the gap. Use the [solutions discussed above](#soltothreats) as your source: a clause is far stronger when it names an established practice ([pre-registration](#studyprereg), [reporting standards](#qualityreport), [open data](#reproducibility)) than when you invent one.
+For every threat you marked *partly* or *not covered*, write the clause that closes the gap. Use the [solutions you read before class](#soltothreats) as your source: a clause is far stronger when it names an established practice ([pre-registration](#studyprereg), [reporting standards](#qualityreport), [open data](#reproducibility)) than when you invent one.
 
 - Each new clause goes **under the section whose lead owns it**, marked with today's date, so the charter records what you learned and when.
 - The **Evaluation lead** opens a new **Evaluation** heading and writes the group's first standards for peer review and preprints.
