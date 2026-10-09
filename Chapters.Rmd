@@ -4885,14 +4885,14 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
   <p><strong>💡 Two things to do before class</strong></p>
   <ol>
     <li><b><a href="#preread5A">Read the seven stages of the data life cycle</a></b>. My pass over them in class is a <b>synthesis</b>, not your first contact with them. The list of sections, with links, is in the <a href="#beforeclass5A">Before Class Activity</a>.</li>
-    <li><b>Complete the rest of the <a href="#beforeclass5A">Before Class Activity</a></b>: set up a folder and a script, and download the project you are about to inherit. <b>Do not tidy that project up.</b> Its state is the exercise.</li>
+    <li><b><a href="#setup5A">Set up a folder and a script on your computer</a>, and download the project</b> you are about to inherit. This is a short piece of hands-on work, not reading. <b>Do not tidy that project up.</b> Its state is the exercise.</li>
   </ol>
 </div>
 
 | Block | Time | Who |
 |---|---|---|
 | The seven stages of the life cycle, read in advance | 25 min | **Students, at home before class** |
-| [Before Class Activity](#beforeclass5A): folder, script, download | 10 min | **Students, at home before class** |
+| [Set up a folder and a script, and download the project](#setup5A) | 10 min | **Students, at home before class** |
 | [One Pass Over the Whole Cycle](#lifecyclespine) | 18 min | Instructor |
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 7 min | Students, in 4 pairs |
 | [👥 Step 2: Diagnose Your Failure Class](#inheritstep2) | 15 min | Students, in 4 pairs |
@@ -4937,7 +4937,7 @@ By the end of this part, students are able to:
 ---
 
 
-### Before Class Activity <span style="color:dimgray;">(10 minutes, at home)</span> {#beforeclass5A}
+### Before Class Activity <span style="color:dimgray;">(35 minutes, at home)</span> {#beforeclass5A}
 
 **Do this before you come to class.** You are going to inherit a badly managed research project, and the class has only seventy minutes in it. If the download happens in the room, we lose the first fifteen of them.
 
@@ -4963,7 +4963,13 @@ There is a second reason to do it this way. **This part of the course is about m
   </ul>
 </div>
 
-#### Step 1: Create the Folders
+#### What to Set Up on Your Computer Before Class <span style="color:dimgray;">(10 minutes)</span> {#setup5A}
+
+**This part is hands-on, and it has to be done before you walk in.** In five short steps you will make a folder for this chapter, start an R script in it, and **use that script to download the project you are going to diagnose in class**. None of it is difficult, but it is the difference between starting the activity at the beginning of the hour and starting it fifteen minutes in.
+
+You end up with a small, tidy project of your own, containing one very untidy project belonging to somebody else. **That contrast is the point**, so work through all five steps rather than just grabbing the download.
+
+##### Step 1: Create the Folders
 
 **Go to your `Chapters` folder**, the one that already holds the `Chapter_2` folder you built earlier in the semester. Inside it, create a folder named **`Chapter_5`**, and inside that a subfolder named **`Data_management`**. Use Finder, File Explorer, or whatever you normally use.
 
@@ -4984,7 +4990,7 @@ Chapters/
 
 Everything for this part of the chapter goes in `Data_management`, and nothing else does. Chapter 5 has a PART B as well, which will get its own subfolder later, which is why `Chapter_5` is a folder rather than the destination itself.
 
-#### Step 2: Create Your Script
+##### Step 2: Create Your Script
 
 Open **RStudio**, then `File > New File > R Script`, and **save it immediately** as:
 
@@ -4992,7 +4998,7 @@ Open **RStudio**, then `File > New File > R Script`, and **save it immediately**
 
 inside `Chapter_5/Data_management/`. Save it before you type anything, because the next step depends on the file having a location on disk.
 
-#### Step 3: Point R at That Folder
+##### Step 3: Point R at That Folder
 
 Your script now sits in the folder you want to work in, so tell R to work there too:
 
@@ -5007,7 +5013,7 @@ getwd()
 
 If the path does not end in `Chapter_5/Data_management`, stop and fix it now. **Everything below downloads into whatever directory this returns**, which is the same lesson as [Part D of Chapter 2](#setwdir).
 
-#### Step 4: Download the Project, From Your Script
+##### Step 4: Download the Project, From Your Script
 
 Type the code below into `Chapter_5_data_management.R` and run it. **Put it in the script, not straight into the console**: the script is the record, and a line of code in the console is gone the moment you close RStudio.
 
@@ -5025,7 +5031,7 @@ unzip("Messy_Project.zip")
 list.files("Messy_Project")
 ```
 
-#### Step 5: Check You Have It
+##### Step 5: Check You Have It
 
 `list.files()` should return **eight files**:
 
