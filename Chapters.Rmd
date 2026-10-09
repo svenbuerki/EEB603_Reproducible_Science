@@ -9,7 +9,14 @@ output:
   bookdown::html_document2: 
     toc: TRUE
     toc_float: TRUE
-    self_contained: TRUE
+    # self_contained is deliberately FALSE here, unlike the other pages.
+    # Embedding inlined 72 figures and 4 PDF presentations as base64, which made
+    # Chapters.html 33 MB (79% of it payload that is ALREADY tracked elsewhere in
+    # the repo) and rewrote that whole blob on every one of 230 commits. It also
+    # made rmarkdown DELETE Chapters_files/ after each render, taking the tracked
+    # lecture PDFs and data CSVs with it. Render through rmarkdown::render_site()
+    # so the libraries land in the shared site_libs/.
+    self_contained: FALSE
 link-citations: yes
 fontsize: 12pt
 urlcolor: blue
