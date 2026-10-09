@@ -1,0 +1,2 @@
+file,defect,repairable,fix_pseudocode,practice
+"copy of data(1).csv","mass holds a unit inside the value, 12.5 g, so the whole column imports as text","Yes, but every value needs checking","strip unit; comma to point; missing codes to NA; convert to numeric; CHECK NA count","Data Digitization: atomisation, one value per cell"

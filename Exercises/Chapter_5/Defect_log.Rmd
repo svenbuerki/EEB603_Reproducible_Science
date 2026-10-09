@@ -1,0 +1,61 @@
+---
+title: "Defect log: the project we inherited"
+subtitle: "EEB 603 -- Chapter 5"
+author: "Your names here"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include = FALSE}
+###~~~
+# Global options for every chunk in this document. See Chapter 2:
+# Set Global Options for Code Chunks.
+###~~~
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(knitr)
+library(kableExtra)
+library(magrittr)   # for the %>% pipe
+```
+
+# What we inherited
+
+One or two sentences: which project, which files, and which failure class your
+pair owns.
+
+# Defects we found
+
+Each row of `Defect_log.csv` is one defect. **Add a row, re-knit, and the table
+below updates itself**: the document never holds the data, so the two can never
+disagree.
+
+```{r defects}
+###~~~
+# Read the log and render it. The data live in the csv; this chunk only
+# displays them.
+###~~~
+defects <- read.csv("Defect_log.csv")
+
+knitr::kable(defects,
+             caption = "Defects found in the inherited project.",
+             col.names = c("File(s)", "The defect", "Repairable?",
+                           "How we would fix it",
+                           "The practice that would have prevented it")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+# How many, and how bad
+
+Inline code, as in Chapter 2, so these numbers can never go stale either.
+
+- Defects logged: `r nrow(defects)`
+- Still repairable: `r sum(grepl("^Yes", defects$repairable))`
+- Permanently lost: `r sum(!grepl("^Yes", defects$repairable))`
+
+# What we could not fix, and what we would need
+
+List anything permanently lost, and say what single piece of information would
+have prevented it. These are the strongest candidates for a charter clause.
