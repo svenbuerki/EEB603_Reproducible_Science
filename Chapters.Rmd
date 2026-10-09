@@ -117,6 +117,38 @@ knitr::opts_chunk$set(fig.pos = 'H')
 
 # Read bibtex file
 refs <- bibtex::read.bib("Bibliography_Reproducible_Science_2.bib")
+
+###~~~
+# Format one bibliography entry for use in a markdown list.
+#
+# print.bibentry can emit the same DOI twice: once as a bare "doi:10.x/y" and
+# once as a resolver URL. Pandoc runs with +autolink_bare_uris, which turns
+# that bare form into <a href="doi:10.x/y"> -- a link no browser can follow.
+# So drop the bare DOI when the resolver URL is already present, and otherwise
+# turn it into a real link. Identical adjacent links are collapsed, because
+# several entries carry the same DOI in both the `doi` and the `url` field.
+#
+# Returning ONE string also avoids knitr joining the captured lines with ", ",
+# which was putting stray commas in the middle of titles.
+###~~~
+ref_txt <- function(key) {
+  x <- paste(capture.output(print(refs[key])), collapse = " ")
+  x <- gsub("[[:space:]]+", " ", trimws(x))
+  for (d in unique(unlist(regmatches(x, gregexpr("doi:[{]?10[.][^ ,;<>]+", x))))) {
+    id <- sub("[.,;]+$", "", gsub("[{}]", "", sub("^doi:", "", d)))
+    x <- if (grepl(paste0("doi.org/", id), x, fixed = TRUE)) {
+      sub(d, "", x, fixed = TRUE)
+    } else {
+      sub(d, paste0("[doi:", id, "](https://doi.org/", id, ")"), x, fixed = TRUE)
+    }
+  }
+  #collapse a URL repeated with a ", " separator (the DOI often sits in both
+  #the `doi` and the `url` field). perl = TRUE is required: the default engine
+  #does not honour the \1 backreference inside the pattern.
+  x <- gsub("(<?)(https?://[^ ,;<>]+)(>?)((, )\\1\\2\\3)+", "\\1\\2\\3", x, perl = TRUE)
+  x <- gsub("[.][[:space:]]*,", ".", x)
+  trimws(gsub("[[:space:]]{2,}", " ", x))
+}
 ```
 
 <!-- THIS code adds a copy/paste button to copy code -->
@@ -319,7 +351,7 @@ Each group:
 
 #### Reasons Behind the Retractions of Case Studies <span style="color:dimgray;">(10 minutes)</span>
 
-The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Digital Object Identifiers ([DOI](https://www.doi.org/)) and [PubMed IDs]([PubMed](https://pubmed.ncbi.nlm.nih.gov/)) are provided for each case study.  
+The data supporting the retractions of the case studies are presented in Table \@ref(tab:retractionwatch) (sourced from [Retraction Watch](https://retractionwatch.com/)). Digital Object Identifiers ([DOI](https://www.doi.org/)) and [PubMed IDs](https://pubmed.ncbi.nlm.nih.gov/) are provided for each case study.  
 
 <details>
 <summary><b>📊 Show Table \@ref(tab:retractionwatch) --- the reasons behind each retraction</b></summary>
@@ -4010,13 +4042,13 @@ By the end of this chapter, you will be able to:
 
 This chapter is primarily based on the following resources:
 
-- `r capture.output(print(refs["Kerr1998"]))` **– On HARKing (see Glossary section).**
-- `r capture.output(print(refs["Nosek2012"]))` **– On incentives.** 
-- `r capture.output(print(refs["Nosek1422"]))` **– On promoting an open research culture.**
-- `r capture.output(print(refs["Baker_2016"]))` **– Results of a reproducibility survey.**
-- `r capture.output(print(refs["Munafo"]))` **– Provides a framework to implement the measures proposed in this chapter.**
-- `r capture.output(print(refs["Nosek2600"]))` **– On the pre-registration revolution.**
-- `r capture.output(print(refs["Troudet2018"]))` **– On the accuracy of biodiversity occurrence data available in GBIF.**
+- `r ref_txt("Kerr1998")` **– On HARKing (see Glossary section).**
+- `r ref_txt("Nosek2012")` **– On incentives.** 
+- `r ref_txt("Nosek1422")` **– On promoting an open research culture.**
+- `r ref_txt("Baker_2016")` **– Results of a reproducibility survey.**
+- `r ref_txt("Munafo")` **– Provides a framework to implement the measures proposed in this chapter.**
+- `r ref_txt("Nosek2600")` **– On the pre-registration revolution.**
+- `r ref_txt("Troudet2018")` **– On the accuracy of biodiversity occurrence data available in GBIF.**
 
 The website of the [**Center for Open Science**](https://cos.io) was also used to design the chapter content. More specifically, see this [webpage](https://www.cos.io/initiatives/prereg#:~:text=When%20you%20preregister%20your%20research,%2Dtesting%20(confirmatory)%20research) on study pre-registration.
 
@@ -4484,11 +4516,11 @@ This chapter is based on:
 
 **Publications**
 
-- `r capture.output(print(refs["Carroll2021"]))`
-- `r capture.output(print(refs["Groom2017"]))`
-- `r capture.output(print(refs["Khoo_2019"]))`
-- `r capture.output(print(refs["Wagenknecht2021"]))`
-- `r capture.output(print(refs["Wilkinson2016"]))`
+- `r ref_txt("Carroll2021")`
+- `r ref_txt("Groom2017")`
+- `r ref_txt("Khoo_2019")`
+- `r ref_txt("Wagenknecht2021")`
+- `r ref_txt("Wilkinson2016")`
 
 ---
 
@@ -4852,42 +4884,125 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
   <p><strong>💡 Two things to do before class</strong></p>
   <ol>
     <li><b>Read the seven stages of the life cycle</b>: <a href="#planningDM">Planning</a>, <a href="#creatingdata">Creating</a>, <a href="#processingdata">Processing</a>, <a href="#documentingdata">Documenting</a>, <a href="#preservingdata">Preserving</a>, <a href="#sharingdata">Sharing</a> and <a href="#reusingdata">Reusing</a> data. My pass over them in class is a <b>synthesis</b>, not your first contact with them.</li>
-    <li><b>Download the project you are about to inherit</b>, using the two lines of R below. <b>Do not tidy it up.</b> Its state is the exercise.</li>
+    <li><b>Complete the <a href="#beforeclass5A">Before Class Activity</a></b>: set up a folder and a script, and download the project you are about to inherit. <b>Do not tidy that project up.</b> Its state is the exercise.</li>
   </ol>
-</div>
-
-**Fetch the project with R, not with your mouse.** This part of the course is about managing data; gathering them by clicking a button leaves no record of where they came from, and these two lines do. Run them **from the project folder you want the material to land in**, so check your working directory first, exactly as you did in [Part D of Chapter 2](#setwdir):
-
-```{r eval = FALSE, echo = TRUE}
-#Where am I? The download lands HERE
-getwd()
-
-#Fetch the inherited project.
-#mode = "wb" matters: a zip is a binary file
-download.file("https://github.com/svenbuerki/EEB603_Reproducible_Science/raw/master/Exercises/Chapter_5/Messy_Project.zip",
-              destfile = "Messy_Project.zip", mode = "wb")
-
-#Unpack it, then look at what you now have
-unzip("Messy_Project.zip")
-list.files("Messy_Project")
-```
-
-<div class="info">
-  <p><strong>💡 If the download fails</strong></p>
-  <p>Open <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Messy_Project.zip" target="_blank" rel="noopener noreferrer">the file on GitHub</a> and use the <b>Download raw file</b> ⇩ icon, the same way you fetched the image file in <a href="#figurechallenge">Chapter 2</a>, then unzip it by hand. <b>Use this as a fallback only.</b> The two lines of R are the reproducible route, and being able to say in a script where your data came from is the whole point of this chapter.</p>
 </div>
 
 | Block | Time | Who |
 |---|---|---|
 | The seven stages of the life cycle, read in advance | 25 min | **Students, at home before class** |
+| [Before Class Activity](#beforeclass5A): folder, script, download | 10 min | **Students, at home before class** |
 | [One Pass Over the Whole Cycle](#lifecyclespine) | 18 min | Instructor |
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 7 min | Students, in 4 pairs |
 | [👥 Step 2: Diagnose Your Failure Class](#inheritstep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
-| [👥 Step 3: Report the Defect and the Fix](#inheritstep3) | 12 min | Students, in 4 pairs |
+| [👥 Step 3: Report What You Found](#inheritstep3) | 12 min | Students, in 4 pairs |
 | [👥 Step 4: Write the Clause That Would Have Caught It](#inheritstep4) | 8 min | Students, in 4 pairs |
 | [👥 Step 5: Merge Into Your Charter](#inheritstep5) | 5 min | Students, in 2 groups |
 | **Total in class** | **70 min** | |
+
+---
+
+### Before Class Activity <span style="color:dimgray;">(10 minutes, at home)</span> {#beforeclass5A}
+
+**Do this before you come to class.** You are going to inherit a badly managed research project, and the class has only seventy minutes in it. If the download happens in the room, we lose the first fifteen of them.
+
+There is a second reason to do it this way. **This part of the course is about managing data, and you are going to spend the class judging somebody who gathered theirs carelessly.** Downloading a file by clicking a button leaves no record of where it came from. Doing it in a script does. So you will set up a small, tidy project of your own, and the first thing in it will be a script that says exactly where your data came from.
+
+#### Step 1: Create the Folders
+
+In your course folder, the one holding `Chapter_2` from earlier in the semester, create a folder named **`Chapter_5`**, and inside it a subfolder named **`Data_management`**. Use Finder, File Explorer, or whatever you normally use.
+
+Everything for this part of the chapter goes in `Data_management`, and nothing else does. Chapter 5 has a PART B as well, which will get its own subfolder later, which is why `Chapter_5` is a folder rather than the destination itself.
+
+#### Step 2: Create Your Script
+
+Open **RStudio**, then `File > New File > R Script`, and **save it immediately** as:
+
+&#96;Chapter_5_data_management.R&#96;
+
+inside `Chapter_5/Data_management/`. Save it before you type anything, because the next step depends on the file having a location on disk.
+
+#### Step 3: Point R at That Folder
+
+Your script now sits in the folder you want to work in, so tell R to work there too:
+
+&#96;Session > Set Working Directory > To Source File Location&#96;
+
+Then confirm it, and **read what comes back** rather than assuming:
+
+```{r eval = FALSE, echo = TRUE}
+#This must end in Chapter_5/Data_management
+getwd()
+```
+
+If the path does not end in `Chapter_5/Data_management`, stop and fix it now. **Everything below downloads into whatever directory this returns**, which is the same lesson as [Part D of Chapter 2](#setwdir).
+
+#### Step 4: Download the Project, From Your Script
+
+Type the code below into `Chapter_5_data_management.R` and run it. **Put it in the script, not straight into the console**: the script is the record, and a line of code in the console is gone the moment you close RStudio.
+
+```{r eval = FALSE, echo = TRUE}
+#Fetch the inherited project.
+#mode = "wb" matters: a zip is a binary file, and without it the
+#archive arrives corrupted on some systems
+download.file("https://github.com/svenbuerki/EEB603_Reproducible_Science/raw/master/Exercises/Chapter_5/Messy_Project.zip",
+              destfile = "Messy_Project.zip", mode = "wb")
+
+#Unpack it
+unzip("Messy_Project.zip")
+
+#Look at what you have just inherited
+list.files("Messy_Project")
+```
+
+#### Step 5: Check You Have It
+
+`list.files()` should return **eight files**:
+
+```
+[1] "analysis_USE THIS ONE.R"  "analysis.R"
+[3] "analysis2.R"              "copy of data(1).csv"
+[5] "Data final v2 FINAL.xlsx" "notes.txt"
+[7] "plot data 12-03-25.csv"   "sites_landowners.csv"
+```
+
+Your own folder should now look like this:
+
+```
+Chapter_5/
+└── Data_management/
+    ├── Chapter_5_data_management.R   <- your script: tidy, and it says where the data came from
+    ├── Messy_Project.zip
+    └── Messy_Project/               <- somebody else's work: not tidy at all
+        ├── analysis_USE THIS ONE.R
+        ├── analysis.R
+        ├── analysis2.R
+        ├── copy of data(1).csv
+        ├── Data final v2 FINAL.xlsx
+        ├── notes.txt
+        ├── plot data 12-03-25.csv
+        └── sites_landowners.csv
+```
+
+<div class="danger">
+  <p><strong>💡 Do not tidy <code>Messy_Project/</code></strong></p>
+  <p>Do not rename anything in it, do not delete the duplicates, do not convert the spreadsheet. <b>Its state is the exercise.</b> Come to class with it exactly as it arrived, and bring your laptop: you will be working in these files in your pair.</p>
+</div>
+
+<div class="info">
+  <p><strong>💡 If the download fails</strong></p>
+  <p>Open <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Messy_Project.zip" target="_blank" rel="noopener noreferrer">the file on GitHub</a> and use the <b>Download raw file</b> ⇩ icon, the same way you fetched the image file in <a href="#figurechallenge">Chapter 2</a>, then move the zip into <code>Data_management</code> and unzip it by hand. <b>Use this as a fallback only</b>, and if you need it, write a comment in your script saying so. A script that admits a manual step is still honest; a script that silently omits one is not.</p>
+</div>
+
+<div class="info">
+  <p><strong>💡 Prefer to create the folders in R?</strong></p>
+  <p>You can, and it is arguably the better habit, since it leaves the same record as the download does. Run this from your course folder <b>before</b> saving the script, then carry on from Step 2:</p>
+<pre><code>dir.create("Chapter_5/Data_management", recursive = TRUE)</code></pre>
+  <p><code>recursive = TRUE</code> is what lets it create <code>Chapter_5</code> and <code>Data_management</code> in one call. Without it, R refuses, because the parent folder does not exist yet.</p>
+</div>
+
+✅ **Checkpoint:** you have `Chapter_5/Data_management/` holding your script, the zip, and an unzipped `Messy_Project/` with eight files in it, and your script contains the `download.file()` and `unzip()` lines that produced them.
 
 ---
 
@@ -4924,7 +5039,7 @@ By the end of this part, students are able to:
 - [Apply best practices at each stage](#planningDM): file naming and organisation, open and non-proprietary formats, atomised data, documentation and metadata, backup and storage
 - [Decide what may be shared, what must be restricted and what must never leave the lab](#cantshare), and [where to deposit the rest so that it can be found and cited](#datarepos)
 - [Design and implement a data management plan using a checklist approach](#data-management-checklist) to ensure proper documentation, storage, sharing and ethical compliance
-- [Diagnose a mismanaged research project, repair what can still be repaired, identify what has been permanently lost, and turn each defect into a standard in your group's charter](#inheritproject)
+- [Diagnose a mismanaged research project, record its defects in a form somebody else can act on, identify what has been permanently lost, and turn each defect into a standard in your group's charter](#inheritproject)
 
 **The fifth and sixth of these are assessed directly.** Your individual project must include *a data management workflow specific to your research*, covering Create, Process, Document, Preserve, Share and Reuse. This part of Chapter 5 is where you acquire what you need to write it.
 
@@ -5469,62 +5584,313 @@ Earlier in this part you were asked a question (in [Benefits of Effective Data M
 
 #### 🎯 Learning Objective
 
-Students diagnose a mismanaged research project against the practices set out in this part, repair what can still be repaired, identify what has been permanently lost, and convert each defect into a standard in their group's [reproducibility charter](#FactorsActivity).
+Students diagnose a mismanaged research project against the practices set out in this part, **record its defects in a form somebody else could act on**, judge which of them can still be repaired and which are permanently lost, and convert each defect into a standard in their group's [reproducibility charter](#FactorsActivity).
 
-#### 👥 Your Pair, and the Failure Class It Owns
+<div class="info">
+  <p><strong>💡 Today you diagnose. You do not repair</strong></p>
+  <p><b>The skill being practised today is detection</b>, and it is the one that actually decides whether a dataset is trustworthy. A defect you cannot see is one you cannot fix, cannot warn anybody about, and cannot write a standard against. Most bad data does not announce itself: it loads without error, it analyses without complaint, and it produces a number that looks fine. <b>Everything downstream depends on somebody noticing first.</b></p>
+  <p><b>So nothing in this folder gets fixed today</b>, for two reasons. Diagnosis is usually the step that gets skipped: people start renaming files within a minute of opening a messy folder, before they understand what they are looking at, and destroy evidence doing it. And repairing data properly takes R skills we come to later.</p>
+  <p>So <b>you will keep this folder exactly as it is, and leave with a written record of what is wrong with it</b>. We pick that record up again in <a href="#chap7">Chapter 7</a> and in Chapter 8, where we import and tidy data with R, and these files are what we practise on. <b>The better your log today, the less guessing you do then.</b></p>
+</div>
+
+#### 👥 Your Pair, and the Failure Class It Owns {#yourpair}
 
 Work in **four pairs**. The project fails in four distinct ways, and each pair owns one of them. The sections in the third column are the ones you read before class: they are your reference, and they are also the standard you are judging the project against.
 
 | Pair | Owns the failures of | Your reference sections |
 |---|---|---|
-| **1** | **Naming and organisation**: what the files are called and where they sit | [Processing Data](#processingdata), [Data Structure and Organisation of Files](#data-structure-and-organisation-of-files) |
-| **2** | **Formats and atomisation**: what is inside the files | [Data Digitization](#digitizingdata), [Processing Data](#processingdata) |
-| **3** | **Documentation and metadata**: what a reader would need in order to interpret any of it | [Documenting Data](#documentingdata), [Metadata](#metadatasec) |
-| **4** | **Preservation and sharing**: whether the data will survive, and whether they may leave the lab | [Preserving Data](#preservingdata), [Sharing Data](#sharingdata), [Data Repositories](#datarepos), [When Data Can't Be Shared](#cantshare) |
+| [**Pair 1**](#pair1) | **Naming and organisation**: what the files are called and where they sit | [Processing Data](#processingdata), [Data Structure and Organisation of Files](#data-structure-and-organisation-of-files) |
+| [**Pair 2**](#pair2) | **Formats and atomisation**: what is inside the files | [Data Digitization](#digitizingdata), [Processing Data](#processingdata) |
+| [**Pair 3**](#pair3) | **Documentation and metadata**: what a reader would need in order to interpret any of it | [Documenting Data](#documentingdata), [Metadata](#metadatasec) |
+| [**Pair 4**](#pair4) | **Preservation and sharing**: whether the data will survive, and whether they may leave the lab | [Preserving Data](#preservingdata), [Sharing Data](#sharingdata), [Data Repositories](#datarepos), [When Data Can't Be Shared](#cantshare) |
 
 **Nobody owns Planning.** That is not an oversight, and we will come back to it in Step 3.
 
 #### 🔍 Step 1: Look at What You Have Been Given <span style="color:dimgray;">(7 minutes)</span> {#inheritstep1}
 
-**Before anyone opens a file**, get a view of the whole thing. In a terminal, from inside the folder:
+**Before anyone opens a file**, get a view of the whole thing: every file, how big it is, and when it was last touched. **Do this in R, in the script you created [before class](#beforeclass5A)**, and keep working in that script for the rest of the session.
+
+Add these lines to `Chapter_5_data_management.R`, below the download code, and run them:
 
 ```{r eval = FALSE, echo = TRUE}
-#UNIX (macOS and Linux). -s adds file sizes, -D the modification dates:
-#both are evidence here, so ask for them
-tree -sD Messy_Project
-```
-
-If `tree` is not installed, see [the installation note above](#the-unix-tree-package-supporting-data-structure-and-organisation), or get the same information from R, which works everywhere:
-
-```{r eval = FALSE, echo = TRUE}
-#The R equivalent, with sizes and modification times
+#What did we inherit? The size of each file in bytes, and when it was
+#last modified
 file.info(list.files("Messy_Project", full.names = TRUE))[, c("size", "mtime")]
 ```
 
-As a class, answer three questions from that listing alone, before reading any file:
+**Why in R rather than by clicking around a folder?** Three reasons, and they are the reasons this chapter exists. It behaves identically on macOS, Windows and Linux, so nobody is held up by what is or is not installed. It puts the same answer in front of all eight of you, in the same form. And **it leaves a record**: by the end of this class your script will say what you inherited, what you found wrong with it, and what you did about it. **The student whose project you are holding kept no such record, which is most of why you are in this situation.**
 
-1. **How many datasets are in this folder?** Not how many data files: how many datasets.
-2. **Which file is the master copy?**
-3. **Which script produced the numbers in the manuscript?**
+This is what comes back:
+
+```
+                                       size               mtime
+Messy_Project/analysis_USE THIS ONE.R   347 2026-10-09 10:37:36
+Messy_Project/analysis.R                 57 2026-10-09 10:37:36
+Messy_Project/analysis2.R               156 2026-10-09 10:37:36
+Messy_Project/copy of data(1).csv       626 2026-10-09 10:37:36
+Messy_Project/Data final v2 FINAL.xlsx 7109 2026-10-09 10:37:36
+Messy_Project/notes.txt                 343 2026-10-09 10:37:36
+Messy_Project/plot data 12-03-25.csv    345 2026-10-09 10:37:36
+Messy_Project/sites_landowners.csv      331 2026-10-09 10:37:36
+```
+
+<div class="info">
+  <p><strong>💡 Read both columns, and then read what is missing</strong></p>
+  <p><b><code>size</code></b>: eight files, nine kilobytes between them. Ask which files are suspiciously close in size to one another, and which one is far larger than everything else, and why that would be.</p>
+  <p><b><code>mtime</code></b>: every timestamp is identical, and your own will differ from the one above, because <b>it is the moment you unzipped the archive, not the moment any of this work was done</b>. That is worth sitting with. Packaging a project up destroyed the only remaining trace of what happened when, and no amount of care afterwards brings it back. <b>A project's history has to live in a written record, because file metadata will not keep it for you.</b></p>
+</div>
+
+<div class="info">
+  <p><strong>💡 You can also just look at it</strong></p>
+  <p>Nothing stops you, and it is often quicker for getting the feel of an unfamiliar folder. In <b>Finder</b> use <code>View > as List</code> and widen the Size column; in <b>File Explorer</b> use <code>View > Details</code>; the <b>Files</b> pane in RStudio, bottom right, already shows one. On macOS or Linux, <code>tree -s Messy_Project</code> in a terminal gives you the whole folder in one screen, <i>if</i> you already have <code>tree</code> (there is an <a href="#the-unix-tree-package-supporting-data-structure-and-organisation">installation note earlier in this chapter</a>, but <b>do not spend class time on it</b>).</p>
+  <p><b>Use these alongside the R output, not instead of it.</b> Only the script remembers what you did.</p>
+</div>
+
+##### How to Read a Listing
+
+**You can get a long way before opening anything, if you read the listing deliberately.** You have three kinds of evidence and nothing else, and it is worth being clear about what each one can and cannot tell you:
+
+| What you read | What it tells you | What it cannot tell you |
+|---|---|---|
+| The **extension** (`.csv`, `.xlsx`, `.R`, `.txt`) | what kind of thing this is: a table, a script, prose | whether the contents really are that. An extension is a claim by whoever named the file, not a fact |
+| The **name** | what the author thought the file was, and usually whether they believed there were several versions of it (`copy of`, `v2 FINAL`, a date, a number) | which of those versions anyone should use |
+| The **size** | which files plausibly hold the *same* content, because near-identical sizes rarely happen by accident, and which file is unlike all the others | anything at all about whether the contents are correct |
+
+**A dataset is one set of observations**, however many files it has been saved into. Three files holding the same twelve measurements are one dataset in three versions, not three datasets. That distinction is the whole of the first question.
+
+##### The Three Questions
+
+Answer these as a class, from the listing alone, **and say what your evidence is every time**. An answer without its evidence is a guess, and part of the point of this exercise is learning to tell the two apart.
+
+1. **How many datasets are in this folder?** Not how many data files: how many datasets. Work it out in two moves: first, which files could hold tabular data at all, judging by extension? Then, of those, which look like **versions of one another** rather than different things, judging by name and size? **State what made you group them the way you did.**
+2. **Which file is the master copy?** Name one, and then say precisely what in the listing justifies naming it. **If nothing does, say so**, and identify the one piece of information that would have settled it instantly. That missing thing is the finding.
+3. **Which script produced the numbers in the manuscript?** Three files end in `.R`. Give your answer and your evidence, then interrogate the evidence: is it actually evidence, or is it just a filename telling you what to think? **Being told which file to use is not the same as knowing.**
+
+<div class="info">
+  <p><strong>💡 Two of these three questions cannot be answered</strong></p>
+  <p>That is deliberate, and it is not a trick. <b>You are expected to reach "I cannot tell, and here is exactly what I would need"</b>, because that is the real experience of inheriting somebody's project, and because naming the missing evidence is what you will turn into a charter clause in <a href="#inheritstep4">Step 4</a>. A pair that answers confidently here has usually stopped reading the listing and started guessing.</p>
+</div>
 
 #### 🔬 Step 2: Diagnose Your Failure Class <span style="color:dimgray;">(15 minutes)</span> {#inheritstep2}
 
-Now open things. **Work only on your own failure class**, otherwise four pairs will spend fifteen minutes finding the same obvious problem. For every defect you find, write down three things, because this is what you will report:
+<div class="info">
+  <p><strong>👥 Go straight to your own section</strong></p>
+  <p><b>Everyone first</b>, whatever your pair: <a href="#importcsv">Importing a csv into R, and What You Get Back</a>. It is short, and all four sections depend on it.</p>
+  <p>Then you need <b>one</b> of the four below. If you are not sure which pair you are in, the <a href="#yourpair">assignment table</a> is just above.</p>
+  <ul>
+    <li><b>Pair 1</b> → <a href="#pair1">Naming and Organisation</a> <span style="color:dimgray;">(what the files are called and where they sit)</span></li>
+    <li><b>Pair 2</b> → <a href="#pair2">Formats and Atomisation</a> <span style="color:dimgray;">(what is inside the files)</span></li>
+    <li><b>Pair 3</b> → <a href="#pair3">Documentation and Metadata</a> <span style="color:dimgray;">(what a reader would need to interpret any of it)</span></li>
+    <li><b>Pair 4</b> → <a href="#pair4">Preservation and Sharing</a> <span style="color:dimgray;">(whether the data survive, and whether they may leave the lab)</span></li>
+  </ul>
+</div>
 
-1. **The defect.** Point at the file and be specific.
-2. **The repair, or the fact that there is none.** Some of what is wrong here can still be fixed. Some of it cannot, and saying so precisely is the more valuable answer.
-3. **The practice from this part that would have prevented it.** Name the section.
+Now open things. **Work only on your own failure class**, otherwise four pairs will spend fifteen minutes finding the same obvious problem.
 
-##### Pair 1: Naming and Organisation
+**Whatever your section asks, you are producing one thing: a written record.** Not a tidied folder, and not a mental note.
+
+Make a new text file in your `Data_management` folder, `File > New File > Text File` in RStudio, and save it as `Defect_log.md`. Record **one row per defect**, with these four columns:
+
+| File(s) | The defect | Repairable? | How you would fix it | The practice that would have prevented it |
+|---|---|---|---|---|
+| `copy of data(1).csv` | `mass` holds a unit inside the value, `12.5 g`, so the whole column imports as text | Yes, but every value needs checking | pseudocode, below | [Data Digitization](#digitizingdata): atomisation, one value per cell |
+
+That example row is the format, and it is also the standard: **be specific enough that somebody who has never seen this folder could act on your row.** "File names are bad" is not a row. Five things make a row useful:
+
+1. **Name the file.** Point at it, do not gesture at the folder.
+2. **Say what is wrong, concretely.** Quote the offending value or name.
+3. **Say whether it can still be repaired.** Some of this can. Some of it is gone for good, and **saying precisely which is the more valuable answer**, because it is the one that changes how people work in future.
+4. **Say how you would fix it, in pseudocode.** See below. This is the most useful column in the log.
+5. **Name the practice that would have prevented it**, and link the section. This column is where your charter clause comes from in [Step 4](#inheritstep4).
+
+###### Write the Fix as Pseudocode {#fixpseudocode}
+
+**You are not expected to know the R yet, and you do not need it to specify the repair.** [Pseudocode](#writepseudointro), which you met in Chapter 2, is a plain-language statement of the logic: the steps, in order, in the structure a program would take, written for a human rather than a machine. **It is the right output for today** because it separates *deciding what must happen* from *knowing which function does it*, and the first of those is the hard part.
+
+So for any defect where you can, add a numbered procedure. For the `mass` column, it might run:
+
+```
+FOR the mass column:
+  1. strip any unit out of the value            "12.5 g"  -> "12.5"
+  2. replace a decimal comma with a point       "11,8"    -> "11.8"
+  3. remove any thousands separator             "1,250"   -> "1250"
+       ?? CHECK: is 1,250 a mass of 1250, or of 1.250 written badly?
+          It is 100x heavier than every other animal. ASK. Do not guess.
+  4. convert every agreed missing code to NA    -999, "", "n/a", "unknown"
+  5. convert the whole column to numeric
+  6. CHECK: count the NAs. It must equal the number you counted by hand
+       in Step 2. If it does not, step 1-4 silently ate a real value.
+```
+
+<div class="info">
+  <p><strong>💡 Notice what writing that forced you to do</strong></p>
+  <p>Three things, and none of them is about R.</p>
+  <p><b>It made you put the steps in an order.</b> Converting to numeric before stripping the units destroys the data; the sequence is part of the fix, not a detail.</p>
+  <p><b>It exposed a decision the data cannot settle.</b> Step 3 is not a programming problem. No function will tell you whether <code>1,250</code> is a thousand-fold error or a misplaced decimal, and <b>a pseudocode step that says ASK is a better answer than any line of code</b>, because the alternative is a silent guess inside a published analysis.</p>
+  <p><b>It made you specify how you will know it worked.</b> Step 6 is a test. Writing the check at the same time as the procedure is a habit worth forming now: it is the same instinct as the defensive programming you wrote in <a href="#partE">Chapter 2 - PART E</a>.</p>
+</div>
+
+Where you cannot write pseudocode, **say so and say why**. "No procedure exists: the treatment key was never written down, so no amount of code recovers what 1, 2 and 3 meant" is a complete and valuable entry. It is also the entry that will matter most in [Step 4](#inheritstep4).
+
+##### Importing a csv into R, and What You Get Back {#importcsv}
+
+**Everyone needs this, whatever your failure class**, because all four sections ask you to open at least one of these files. We use **base R only**: nothing to install, nothing to load.
+
+**Read the file and keep it.** Add this to your script:
+
+```{r eval = FALSE, echo = TRUE}
+#The path is relative to your working directory, which should be
+#Chapter_5/Data_management
+d <- read.csv("Messy_Project/copy of data(1).csv")
+```
+
+Three things about that one line:
+
+- **The path is relative.** `read.csv()` looks for `Messy_Project/` inside whatever `getwd()` returns. If it cannot find the file, that is almost always the problem.
+- **The quotes do real work.** This file name contains spaces and brackets. Inside quotation marks R treats the whole thing as one piece of text and does not mind, which is the *only* reason this works. Outside quotation marks, a space ends the name. Hold on to that thought: it is [Pair 1](#pair1)'s subject.
+- **`<-` keeps the result.** Without it the file is printed once and thrown away. With it you have an object you can interrogate.
+
+**What you get back is a `data.frame`**, which is R's name for a table:
+
+```{r eval = FALSE, echo = TRUE}
+class(d)      #what kind of object is this?
+dim(d)        #how many rows, how many columns?
+names(d)      #what are the columns called?
+head(d, 3)    #show me the first three rows
+```
+
+```
+> class(d)
+[1] "data.frame"
+
+> dim(d)
+[1] 12  7
+
+> names(d)
+[1] "V1"            "x2"            "temp"          "trt"
+[5] "mass"          "biomass_index" "notes"
+
+> head(d, 3)
+  V1      x2 temp trt   mass biomass_index     notes
+1  1 3/12/25 25°C   1 12.5 g          0.84        ok
+2  2 3/12/25   25   1   11,8          0.79
+3  3 3/12/25   25   2   12.5          0.84 scale odd
+```
+
+So: **12 observations of 7 variables**. In a `data.frame`, **rows are observations and columns are variables**, and you reach a single column with the dollar sign, as in `d` followed by `$mass`.
+
+The one rule to carry with you: **each column is a vector, and a vector holds exactly one type of thing.** Different columns may hold different types, but *within* a column everything is the same type. Everything below follows from that.
+
+**`read.csv()` has to guess each column's type, and one bad value changes its answer for the whole column.** Ask R what it decided:
+
+```{r eval = FALSE, echo = TRUE}
+#What type did each column end up as?
+sapply(d, class)
+```
+
+```
+> sapply(d, class)
+           V1            x2          temp           trt          mass
+    "integer"   "character"   "character"     "integer"   "character"
+biomass_index         notes
+  "character"   "character"
+```
+
+**Look at `mass`.** It is a set of measurements, so it should be numeric, and R has made it `character` (text). It did that because the column is a vector and must hold one type: the moment R met a value it could not read as a number, the only type that could hold *everything* in that column was text. **One unusable value is enough to turn a column of measurements into a column of words**, and the same has happened to `temp` and to `biomass_index`.
+
+`str()` shows all of this in one go, and is the single most useful function here:
+
+```{r eval = FALSE, echo = TRUE}
+#Structure: dimensions, column names, types and first few values, all at once
+str(d)
+```
+
+```
+> str(d)
+'data.frame':	12 obs. of  7 variables:
+ $ V1           : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ x2           : chr  "3/12/25" "3/12/25" "3/12/25" "12.03.2025" ...
+ $ temp         : chr  "25°C" "25" "25" "24.5" ...
+ $ trt          : int  1 1 2 2 3 3 1 1 2 2 ...
+ $ mass         : chr  "12.5 g" "11,8" "12.5" "-999" ...
+ $ biomass_index: chr  "0.84" "0.79" "0.84" "-999" ...
+ $ notes        : chr  "ok" "" "scale odd" "not measured" ...
+```
+
+<div class="danger">
+  <p><strong>💡 Read the types before you read the numbers</strong></p>
+  <p><b><code>chr</code> where you expected a number is a message from R, not a detail.</b> It means that somewhere in that column is a value R could not read as a number, and <code>str()</code> is showing you the first few so you can see which. Make this the first thing you check on any dataset you are handed, including your own: it takes one line and it catches the problem while it is still cheap.</p>
+  <p>There is a quieter problem in the same output. <b><code>trt</code> came back as <code>int</code></b>, and R is perfectly happy, because 1, 2 and 3 really are integers. But they are not quantities: they are <i>labels</i> for three treatments. <b>A type can be technically correct and scientifically wrong</b>, and R will never warn you about that one. Only the documentation can, which is why <a href="#pair3">Pair 3</a>'s job matters.</p>
+</div>
+
+##### Quick Checks on Any `data.frame` {#quickchecks}
+
+**These are the first things to run on a table somebody hands you**, including one you made yourself last year. All of them are base R, so there is nothing to install, and none of them takes more than a second.
+
+| Function | What it answers |
+|---|---|
+| `str(d)` | everything at once: size, column names, types, first few values. **Start here** |
+| `dim(d)`, `nrow(d)`, `ncol(d)` | how big is it |
+| `names(d)` | what are the columns called |
+| `head(d)`, `tail(d)` | what do the first and the last rows look like. The *last* rows are where a truncated or half-finished file shows itself |
+| `summary(d)` | per column: range, quartiles and mean if numeric; length and type if not |
+| `unique(d$col)` | every distinct value in one column. **This is how you find the junk** |
+| `table(d$col)` | how many times each value occurs. Add `useNA = "ifany"` to count the missing ones too |
+| `colSums(is.na(d))` | how many missing values per column, *as R understands missing* |
+| `sum(duplicated(d))` | how many rows are exact repeats of an earlier row |
+| `View(d)` | opens it as a spreadsheet in RStudio, for when you simply want to look |
+
+**Two of those deserve running right now**, because on this dataset they reveal something the others do not.
+
+**First, every distinct value in one column:**
+
+```{r eval = FALSE, echo = TRUE}
+#What is actually IN this column?
+unique(d$mass)
+```
+
+```
+> unique(d$mass)
+ [1] "12.5 g" "11,8"   "12.5"   "-999"   "9.2"    NA       "10.4"   "10.2"
+ [9] "1,250"  "10.9"   "8.7"    ""
+```
+
+**One line, and the whole column is laid bare.** Twelve measurements of body mass, and among them a value carrying its unit, a decimal comma, a thousands separator, a sentinel `-999`, an empty string and an `NA`. You have just found most of [Pair 2](#pair2)'s work, and you found it without opening the file in anything.
+
+**Second, how much of it R thinks is missing:**
+
+```{r eval = FALSE, echo = TRUE}
+#How many missing values per column?
+colSums(is.na(d))
+```
+
+```
+> colSums(is.na(d))
+           V1            x2          temp           trt          mass
+            0             0             0             0             1
+biomass_index         notes
+            0             0
+```
+
+<div class="danger">
+  <p><strong>💡 R believes there is exactly ONE missing value in this table</strong></p>
+  <p>There are at least four, and they are written four different ways. <code>is.na()</code> finds only the one that arrived as <code>NA</code>. To R, <code>-999</code> is a perfectly good number, an empty string is a perfectly good piece of text, and <code>n/a</code> is a word. <b>None of them is missing as far as R is concerned</b>, and nothing will warn you.</p>
+  <p>This is the most expensive defect in the whole folder, because it is the one that changes published numbers rather than merely wasting your afternoon. <b>A missing value that R cannot see gets included in the mean.</b> Average that <code>mass</code> column once it has been forced to numeric and <code>-999</code> is in there, dragging the result down, silently, with no error and no warning. That is how a wrong number reaches a paper.</p>
+  <p>The fix is not clever code. It is <b>one documented missing-value code, written down where a reader will find it</b>, which is where <a href="#pair3">Pair 3</a> comes in.</p>
+</div>
+
+One last thing worth noticing, since you will reach for it constantly: run `summary(d)` and look at what it says about `mass`. It reports `Length:12`, `Class :character`, and **no mean, no range, no quartiles**, because you cannot take the mean of words. **The absence of the statistics is the signal.** When `summary()` goes quiet about a column you expected numbers from, that column is text, and you now know why.
+
+##### Pair 1: Naming and Organisation {#pair1}
 
 - There is more than one file that could be "the data". List them. **Using the file names alone, can you establish which is authoritative?** If not, say what naming convention would have made it obvious.
 - Write down everything wrong with the name `Data final v2 FINAL.xlsx`. There are at least four distinct problems.
 - Two files are dated in their names. **What date does `plot data 12-03-25.csv` refer to?** Defend your answer.
 - There are three scripts. Judging by their names only, which would you run? Now open all three and say whether your choice was right.
 - The folder is flat. **Propose the directory structure this project should have had**, and say where each existing file goes in it. Compare your answer with Figure \@ref(fig:TreeDir).
-- Rename everything according to a single convention you can state in one sentence.
+- **Write down** the naming convention you would impose, in one sentence, and show what **three** of these files would be called under it. **Do not actually rename anything**: the folder has to reach Chapter 7 in the state it arrived in.
 
-##### Pair 2: Formats and Atomisation
+##### Pair 2: Formats and Atomisation {#pair2}
 
 **Start with the format itself.** The master file is `.xlsx`. Give two reasons from [Processing Data](#processingdata) why that is the wrong format for archiving, then open it and find a **third** problem that would break `read.csv()` even after conversion.
 
@@ -5544,18 +5910,18 @@ Then work through the rest of the file:
 - **How many different ways is "missing" encoded in this dataset?** List them all, and say which R will understand without being told.
 - The `x2` column holds dates. **How many formats, and is any one of them unambiguous?**
 - `trt` holds 1, 2 and 3. What would go wrong if you fitted `lm(mass ~ trt)` as the data stand? (Open `analysis_USE THIS ONE.R`: somebody already did.)
-- Produce the repaired table: one atomic value per cell, one missing-value code, one date format, units moved into the column names, in a format that will still open in twenty years.
+- **List what would have to change** for this table to be analysable: one atomic value per cell, one missing-value code, one date format, units moved into the column names, and a format that will still open in twenty years. **You are listing, not repairing.** Doing it in R is the exercise we build in [Chapter 7](#chap7).
 
-##### Pair 3: Documentation and Metadata
+##### Pair 3: Documentation and Metadata {#pair3}
 
 - **What are the three treatments?** The answer decides what the entire analysis means. Find it, or establish that it cannot be found.
 - Write out every column name in plain English, with its unit. **Which ones can you not do?**
 - `biomass_index` is a derived variable. **From which columns, by what formula?** Can you reproduce a single one of its values?
 - The missing-value code *is* recorded somewhere in this folder. Find it, and then explain why where it is recorded makes it almost useless.
 - `notes.txt` contains at least three facts that change how the data must be analysed. Identify them, and say where each one should have been recorded instead.
-- Using [Project-Level Documentation](#project-level-documentation) and [Data-Level Documentation](#data-level-documentation) as your outline, **write the `README.md` this project needs.** Fill in everything you can, and mark everything you cannot with `UNRECOVERABLE`. That list of gaps is your real finding.
+- Using [Project-Level Documentation](#project-level-documentation) and [Data-Level Documentation](#data-level-documentation) as your outline, **sketch the `README.md` this project needs**: the headings, and whatever you can genuinely fill in. Mark everything you cannot with `UNRECOVERABLE`. **The list of `UNRECOVERABLE` items is your real finding**, and unlike most of what the other pairs report, no amount of R will ever bring those back.
 
-##### Pair 4: Preservation and Sharing
+##### Pair 4: Preservation and Sharing {#pair4}
 
 - **Which of the [five types of research data](#researchdata) is this?** Your answer determines how much everything else in this list matters, so settle it first.
 - Look at the last line of `analysis_USE THIS ONE.R`. **What does that script do to its own input, and what has been permanently lost as a result?** Relate your answer to the rule *raw data should remain raw*.
@@ -5564,9 +5930,13 @@ Then work through the rest of the file:
 - Sort every file in the folder into three piles: **deposit openly**, **deposit with restricted access**, **never leaves the lab**. Justify the boundaries.
 - Choose a [repository](#datarepos) for the depositable material and state what it would require of you that this project cannot currently supply.
 
-#### 📢 Step 3: Report the Defect and the Fix <span style="color:dimgray;">(12 minutes)</span> {#inheritstep3}
+#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(12 minutes)</span> {#inheritstep3}
 
-**Three minutes per pair.** Report, in this order: the worst defect you found, whether it can be repaired, and the practice that would have prevented it.
+**Three minutes per pair**, read straight off your `Defect_log.md`. Report, in this order: the worst defect you found, whether it can still be repaired, **your pseudocode for repairing it**, and the practice that would have prevented it.
+
+**Read the pseudocode out.** It is the part the rest of the class learns most from, because it is where somebody else's defect becomes a procedure you could follow, and because the steps that make people argue are exactly the ones where the data cannot settle the question.
+
+**A defect you cannot fix still counts, and usually counts for more.** Nobody is expected to arrive with a solution. The question this step answers is *what is wrong with this project*, and a pair that says "this column imports as text, four values are unusable, and we do not yet know how to repair them" has done the job completely.
 
 Listen to the other three reports, because **you are adopting all four of their conclusions in Step 5**, not just your own.
 
@@ -5603,6 +5973,16 @@ Chapter 1 promised you this:
 > *At the end of the semester you should be able to return to your charter and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.*
 
 **This is the first time that promise comes due.** Data management was one of the three domains your charter claimed to cover, and you have just spent a class finding out what it costs when it is absent.
+
+#### ⏭️ Where This Goes Next
+
+**Look down your `Defect_log.md` before you leave.** Most of the rows describe something you can now *see* clearly and cannot yet *do* anything about: a column of measurements that imports as text, four different ways of writing "missing", three date formats, a derived variable with no formula.
+
+**That is the right place to be, and it is not an accident.** Noticing is the hard part and the part that is usually missing; the procedures are learnable once you know what you are looking for. Having spent a class watching `as.numeric()` quietly destroy five of twelve measurements, you now have a concrete reason to want the technique that prevents it, which is a far better position than meeting the technique first and wondering when it would ever matter.
+
+So keep the log, and **keep the folder exactly as it is**. In [Chapter 7](#chap7) and in Chapter 8 we come back to these same files and work through the procedures: importing data that does not want to be imported, finding and fixing the values R has misread, settling on one missing-value code, and getting a table into a shape an analysis can trust.
+
+**Your log is the task list for those exercises, and your pseudocode is the specification.** That is the ordinary order of work: decide what has to happen, write it down in a form a human can check, and only then find the functions that do it. Turning your own pseudocode into working R is a much better exercise than following somebody else's, because you already know why every step is there.
 
 <details id="inheritspoiler">
   <summary><b>What this folder was hiding</b> (open this after class, not before)</summary>
