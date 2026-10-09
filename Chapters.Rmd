@@ -2835,7 +2835,7 @@ in class.
 To improve code reproducibility and efficiency, and to comply with publication requirements, it is customary to include a code chunk at the beginning of your `.Rmd` file that sets global options for the entire document (see Figure \@ref(fig:RMarkdwnstrct)). These settings relate to the following elements of your code:
 
 - [text output](#textout)
-- [code formatting](##codeformat)
+- [code formatting](#codeformat)
 - [code caching](#codecach)
 - [plot output (or figures)](#plotout)
 - [figure positioning](#figpos)
@@ -4839,6 +4839,58 @@ This chapter is divided into two parts:
 
 This part of Chapter 5 aims to **help students navigate data management** by first explaining what data and data management are, and why data sharing is important. It then provides advice and examples of best practices in data management.
 
+**This part runs over one class, and most of it is group work.** I open with a single pass over the whole data life cycle, so that nobody leaves with a stage missing, and we spend the rest of the session on a project you have inherited from somebody who managed none of it.
+
+<div class="disclaimer">
+  <p><strong>💡 Two things to do before class</strong></p>
+  <ol>
+    <li><b>Read the seven stages of the life cycle</b>: <a href="#planningDM">Planning</a>, <a href="#creatingdata">Creating</a>, <a href="#processingdata">Processing</a>, <a href="#documentingdata">Documenting</a>, <a href="#preservingdata">Preserving</a>, <a href="#sharingdata">Sharing</a> and <a href="#reusingdata">Reusing</a> data. My pass over them in class is a <b>synthesis</b>, not your first contact with them.</li>
+    <li><b>Download the project you are about to inherit</b>, using the two lines of R below. <b>Do not tidy it up.</b> Its state is the exercise.</li>
+  </ol>
+</div>
+
+**Fetch the project with R, not with your mouse.** This part of the course is about managing data; gathering them by clicking a button leaves no record of where they came from, and these two lines do. Run them **from the project folder you want the material to land in**, so check your working directory first, exactly as you did in [Part D of Chapter 2](#setwdir):
+
+```{r eval = FALSE, echo = TRUE}
+#Where am I? The download lands HERE
+getwd()
+
+#Fetch the inherited project.
+#mode = "wb" matters: a zip is a binary file
+download.file("https://github.com/svenbuerki/EEB603_Reproducible_Science/raw/master/Exercises/Chapter_5/Messy_Project.zip",
+              destfile = "Messy_Project.zip", mode = "wb")
+
+#Unpack it, then look at what you now have
+unzip("Messy_Project.zip")
+list.files("Messy_Project")
+```
+
+<div class="info">
+  <p><strong>💡 If the download fails</strong></p>
+  <p>Open <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Messy_Project.zip" target="_blank" rel="noopener noreferrer">the file on GitHub</a> and use the <b>Download raw file</b> ⇩ icon, the same way you fetched the image file in <a href="#figurechallenge">Chapter 2</a>, then unzip it by hand. <b>Use this as a fallback only.</b> The two lines of R are the reproducible route, and being able to say in a script where your data came from is the whole point of this chapter.</p>
+</div>
+
+| Block | Time | Who |
+|---|---|---|
+| The seven stages of the life cycle, read in advance | 25 min | **Students, at home before class** |
+| [One Pass Over the Whole Cycle](#lifecyclespine) | 18 min | Instructor |
+| [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 7 min | Students, in 4 pairs |
+| [👥 Step 2: Diagnose Your Failure Class](#inheritstep2) | 15 min | Students, in 4 pairs |
+| *five-minute break* | 5 min | |
+| [👥 Step 3: Report the Defect and the Fix](#inheritstep3) | 12 min | Students, in 4 pairs |
+| [👥 Step 4: Write the Clause That Would Have Caught It](#inheritstep4) | 8 min | Students, in 4 pairs |
+| [👥 Step 5: Merge Into Your Charter](#inheritstep5) | 5 min | Students, in 2 groups |
+| **Total in class** | **70 min** | |
+
+---
+
+### Class Outline {#chap5Aoutline}
+
+1. [One Pass Over the Whole Cycle](#lifecyclespine) <span style="color:dimgray;">(18 minutes)</span>
+2. [👥 You Have Just Inherited This Project](#inheritproject) <span style="color:dimgray;">(47 minutes, in five steps)</span>
+
+Everything between those two items in the text below is **reference material you read before class**. It is organised stage by stage so that you can find the one you need quickly while you are diagnosing, and the [Data Management Checklist](#data-management-checklist) at the end of this part is the tool you will reach for most.
+
 ---
 
 ### Introduction
@@ -4857,11 +4909,17 @@ knitr::include_graphics("Figures/Data_availibility_satement.png")
 
 ### Learning Outcomes
 
-- [Understand the different types of research data and their specific characteristics](#researchdata)  
-- [Provide an overview of the data life cycle](#datalifecycle)  
-- [Highlight the benefits of effective data management](#benefitsDM)  
-- [Learn best practices for planning data management](#planningDM)
-- [Develop skills to design and implement a comprehensive data management plan using a checklist approach to ensure proper documentation, storage, sharing, and ethical compliance](#data-management-checklist)
+By the end of this part, students are able to:
+
+- [Distinguish the different types of research data and their specific characteristics](#researchdata), and explain why the type you hold decides what a mistake costs you
+- [Walk the full data life cycle](#lifecyclespine) and, for each stage, name the failure it invites and the practice that prevents it
+- [Explain the benefits of effective data management](#benefitsDM), and why planning sits at the hub of the life cycle rather than at the start of it
+- [Apply best practices at each stage](#planningDM): file naming and organisation, open and non-proprietary formats, atomised data, documentation and metadata, backup and storage
+- [Decide what may be shared, what must be restricted and what must never leave the lab](#cantshare), and [where to deposit the rest so that it can be found and cited](#datarepos)
+- [Design and implement a data management plan using a checklist approach](#data-management-checklist) to ensure proper documentation, storage, sharing and ethical compliance
+- [Diagnose a mismanaged research project, repair what can still be repaired, identify what has been permanently lost, and turn each defect into a standard in your group's charter](#inheritproject)
+
+**The fifth and sixth of these are assessed directly.** Your individual project must include *a data management workflow specific to your research*, covering Create, Process, Document, Preserve, Share and Reuse. This part of Chapter 5 is where you acquire what you need to write it.
 
 ---
 
@@ -4924,6 +4982,28 @@ knitr::include_graphics("Figures/Data_lifecycle.png")
 
 Some projects may only focus on certain parts of the data life-cycle, such as primary data creation, or reusing others’ data. Other projects may go through several revolutions of the cycle. Either way, most researchers will work with data at all stages throughout their career.
 
+#### One Pass Over the Whole Cycle <span style="color:dimgray;">(18 minutes)</span> {#lifecyclespine}
+
+**This is the one part of this class I lecture, and it is the spine of everything that follows.** We start from the [five types of research data](#researchdata), because which type you hold decides how much a mistake costs you: an *experimental* dataset can be regenerated at a price, while an *observational* one is tied to a time and a place and is simply gone. Then we walk the cycle. Each row of the table below is a stage of Figure \@ref(fig:LifeCycle). For each one I give you what the stage is for, the failure it invites, and the practice that prevents that failure. **The third column is what you are accountable for**: it is where the clauses of your charter come from, and every defect in the project you inherited later in this class is a stage whose third column was ignored.
+
+The **Stage** column links to the detailed treatment you read before class. Use those sections as your reference during the activity.
+
+| Stage | What it is for | The failure it invites | What prevents it |
+|---|---|---|---|
+| [**Plan**](#planningDM) | Deciding, before any data exist, who does what, in which formats, backed up where, and shared under which licence | Every decision below gets made by accident, one file at a time | A written plan, reviewed as the project changes, not a template filled in once |
+| [**Create**](#creatingdata) | Collecting in field or lab and digitising into a raw dataset | The one chance to record a measurement is taken badly, and no later work can repair it | Calibrated instruments, standard templates and protocols, quality checks at each step, and context recorded as it happens |
+| [**Process**](#processingdata) | Turning the raw dataset into something analysable, without destroying the raw dataset | The raw data are edited in place, so there is no longer anything to go back to | Raw stays raw, open formats, one documented naming convention, and cleaning done in a script rather than by hand |
+| [**Document**](#documentingdata) | Writing down what a reader needs in order to interpret the data without asking you | The dataset becomes unreadable the moment you are unavailable, which includes your future self | Project-level and data-level documentation, a data dictionary with units and codes, and [metadata](#metadatasec) in a standard schema |
+| [**Preserve**](#preservingdata) | Making sure the files still exist, and still open, years from now | One laptop, one accident, and the project is gone; or the files survive in a format nothing can read | Three copies in two places, open formats, integrity checks, and migration every few years |
+| [**Share**](#sharingdata) | Putting the data where others can find, cite and reuse them | Data that cannot be found, cited or credited, or sensitive data released that should never have left | A trusted [repository](#datarepos) with a DOI, a licence, and an explicit decision about [what must not be shared](#cantshare) |
+| [**Reuse**](#reusingdata) | Letting the data answer questions you never asked | Reuse without credit in one direction, and unusable deposits in the other | Clear rights and licences, a citable DOI, stated expectations for credit, and the same standards applied to data you reuse |
+
+<div class="info">
+  <p><strong>💡 Plan sits in the middle of the figure for a reason</strong></p>
+  <p>In Figure \@ref(fig:LifeCycle) <b>Plan</b> is not the first stage of the ring; it is the hub, with an arrow to every other stage. That is the single most useful thing in the diagram. Each of the six failures in the table above is <b>cheap to prevent at the planning stage and expensive or impossible to repair later</b>: you cannot re-measure an animal you released, you cannot recover a raw file you overwrote, and you cannot un-publish a landowner's phone number.</p>
+  <p>So when you are asked to produce a data management plan, the question is not which template to fill in. It is: <b>which of these six failures is my project most likely to suffer, and what am I doing now to make it impossible?</b></p>
+</div>
+
 ---
 
 ### Benefits of Effective Data Management {#benefitsDM}
@@ -4959,7 +5039,7 @@ Benefits of sharing data include:
 - Reducing costs by avoiding duplication of data collection.  
 - Advancing science by enabling others to use data in innovative ways.
 
-#### When Data Can’t Be Shared
+#### When Data Can’t Be Shared {#cantshare}
 
 There are legitimate reasons why some data cannot be shared:
 
@@ -4991,7 +5071,7 @@ Before designing your data management workflow, consider the following:
 - **Roles and responsibilities:** While one person may draft the plan, data management often involves multiple people at different stages. A strong plan supports coordinated workflows and clear communication among team members.  
 - **Review and adapt:** Plan how you will review and update your data management approach throughout the project. Regular reviews help integrate best practices and catch problems early—before they grow into larger issues.
 
-#### Creating Data
+#### Creating Data {#creatingdata}
 
 In the data life cycle (Figure \@ref(fig:LifeCycle)), data creation begins when a researcher collects information in the field or lab and digitizes it to produce a raw dataset.
 
@@ -5015,7 +5095,7 @@ Collect data (in the field and/or lab) --> Digitize data --> Raw dataset
 - **Metadata from data collectors:** Use a short questionnaire for all data collectors to capture contextual variables or collection practices that might affect the analysis. This helps explain variability during the analytical phase.  
 - **Adding relevant variables:** Enhance the future usability and impact of your data by including additional variables (e.g., landscape features or environmental parameters) that may open up new research avenues.
 
-#### Data Digitization
+#### Data Digitization {#digitizingdata}
 
 Data may be collected directly in digital form using electronic devices, or recorded manually as handwritten notes. In either case, some processing is required to produce a structured, digital raw dataset.
 
@@ -5029,7 +5109,7 @@ Data may be collected directly in digital form using electronic devices, or reco
 - **Metadata and documentation:** Describe your dataset thoroughly in a `Readme.txt` or protocol file (ideally attached as an appendix to your manuscript). Include definitions for all variables, units of measurement, and codes for missing values.  
 - **Preserve raw data:** Always keep an untouched copy of the original dataset—raw data should remain raw.
 
-#### Processing Data
+#### Processing Data {#processingdata}
 
 **Data should be processed into a format that supports analysis and ensures long-term usability.** Data are at risk of being lost if the hardware or software used to create or process them becomes obsolete. To prevent this, data should be well organized, clearly structured, appropriately named, and version-controlled using standard, future-proof formats (see the *Data Structure and Organisation of Files* section below).
 
@@ -5098,7 +5178,7 @@ These options make it easy to identify inconsistencies in file naming, outdated 
 brew install tree
 ```
 
-#### Documenting Data
+#### Documenting Data {#documentingdata}
 
 Creating clear documentation and metadata is essential for ensuring that your data can be understood, interpreted, and reused over the long term (Figure \@ref(fig:LifeCycle)). Documentation—essentially the *manual* accompanying your dataset—should describe the data, explain any transformations or processing steps, and provide contextual information. The goal is to leave no room for misinterpretation.
 
@@ -5142,7 +5222,7 @@ This focuses on the details within individual datasets:
 
 If you are using a language like **R** or **Python** for processing, much of this data-level documentation can be embedded directly in your scripts or notebooks.
 
-#### Metadata
+#### Metadata {#metadatasec}
 
 **Metadata** support data discovery, reuse, and interoperability—especially in online repositories and databases. They also facilitate **machine-readable** access, which is increasingly important in large-scale, automated research workflows.
 
@@ -5157,7 +5237,7 @@ Metadata follow standard schemas and usually fall into three main categories:
 - **Administrative metadata** — Covers rights, permissions, file formats, and technical access details.  
 - **Structural metadata** — Explains how data are organized, such as table relationships or file hierarchies.
 
-#### Preserving Data
+#### Preserving Data {#preservingdata}
 
 To protect against data loss and ensure long-term accessibility, every research project should include a clear strategy for **data backup and storage** (see where this step fits in Figure \@ref(fig:LifeCycle)). A general recommendation is to maintain at least **three copies** of your data:
 - the **original** file,
@@ -5234,7 +5314,7 @@ While it's not always possible to protect against every risk, you should tailor 
 - **Paper Copies**  
   Surprisingly resilient, paper copies of small datasets or key documents can complement digital backups. While not ideal for all data types, **ink on paper offers long-term accessibility**—as long as it’s stored safely and can be found when needed!
 
-#### Sharing Data
+#### Sharing Data {#sharingdata}
 
 Research data can be shared in a variety of ways, each with its own advantages and limitations. Choosing the appropriate method depends on the nature of your data, institutional and funder policies, and your goals for dissemination and reuse.
 
@@ -5252,11 +5332,30 @@ This section focuses on the benefits of using **data repositories** as a preferr
 
 ---
 
-##### Data Repositories
+##### Data Repositories {#datarepos}
 
-Archiving your data in a trusted repository is one of the most effective and sustainable ways to share your research data. While repositories often require you to meet certain submission standards—such as data formatting, metada
+Archiving your data in a trusted repository is one of the most effective and sustainable ways to share your research data. Repositories do require you to meet certain submission standards (data formatting, metadata completeness, and sometimes a minimum level of documentation), but **meeting those standards is the service, not the cost**. They are the same standards that make your data usable by you in five years.
 
-#### Reusing Data
+**What a trusted repository gives you that a project website cannot:**
+
+- **A persistent identifier.** A [DOI](https://www.doi.org/) that resolves to your dataset indefinitely, so it can be cited in its own right (Figure \@ref(fig:DataAvail)) and counted as a research output.
+- **Curation and preservation.** Someone else's institutional commitment to migrating formats and checking integrity, which is the part of [Preserving Data](#preservingdata) you cannot realistically do alone for decades.
+- **Standard metadata.** A submission form built on a recognised schema, which is usually the fastest way to produce the [metadata](#metadatasec) you need anyway.
+- **Discoverability.** Indexing, so that researchers who have never heard of you can find the data.
+- **Access control.** The ability to embargo a dataset until publication, or to publish the metadata openly while the data themselves are released only on request. That is how most of the cases in [When Data Can't Be Shared](#cantshare) are handled in practice. *Restricted* is not the same as *unshared*: a record that says the data exist and how to ask for them is far better than silence.
+
+**Where to deposit.** Prefer a **disciplinary** repository where one exists, because that is where people in your field look and the metadata standards are already tailored to the data type:
+
+- **Sequence data:** NCBI GenBank, the SRA, or the ENA.
+- **Occurrence and biodiversity records:** [GBIF](https://www.gbif.org/).
+- **Anything without an obvious disciplinary home:** a generalist repository such as [Dryad](https://datadryad.org/stash) or [Zenodo](https://zenodo.org/), both of which issue DOIs and both of which are accepted by most journals.
+- **Institutional repositories**, which your library can advise on, and which may be required by your funder.
+
+**Choosing one is a planning decision, not a submission-day decision.** Before you have data, check: does my target journal or funder mandate a particular repository? Does it issue a DOI? Does it support embargo or restricted access, if I will need that? Will it accept my file formats and my file sizes? A repository chosen after the analysis is finished is how people end up reformatting everything in the week a paper is accepted.
+
+> ⚠️ Depositing is not the last step. The dataset's DOI has to appear in the paper, in a **Data Availability Statement** (Figure \@ref(fig:DataAvail)), or nobody will ever follow it.
+
+#### Reusing Data {#reusingdata}
 
 **All aspects of data management ultimately support the discovery and reuse of data by others.** This is one of the main goals of reproducible science and open research.
 
@@ -5344,6 +5443,168 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 - Do you plan to share all your data, or will you select which data to preserve and share?  
 - How and where will you preserve your research data for the long term?  
 - How will you make your data accessible to future users?
+
+---
+
+
+### 👥 You Have Just Inherited This Project <span style="color:dimgray;">(47 minutes)</span> {#inheritproject}
+
+Earlier in this part you were asked a question (in [Benefits of Effective Data Management](#benefitsDM)):
+
+> *Would a colleague be able to take over my project tomorrow if I disappeared, or make sense of the data without talking to me?*
+
+**Today you are that colleague.** The folder you downloaded belongs to a student who has left the lab. The data are real observations that cost a field season, there is a manuscript half written, and the person who knows how any of it works is not answering email. Everything you need is in that folder, or it is lost.
+
+<div class="info">
+  <p><strong>💡 This project is fictional, and every defect in it is deliberate</strong></p>
+  <p>The measurements, the site coordinates and the names in the folder are invented for this exercise. Nothing describes a real person or a real population. <b>But none of the defects are exaggerated.</b> Every one of them is something your instructor has been handed in a real project.</p>
+</div>
+
+#### 🎯 Learning Objective
+
+Students diagnose a mismanaged research project against the practices set out in this part, repair what can still be repaired, identify what has been permanently lost, and convert each defect into a standard in their group's [reproducibility charter](#FactorsActivity).
+
+#### 👥 Your Pair, and the Failure Class It Owns
+
+Work in **four pairs**. The project fails in four distinct ways, and each pair owns one of them. The sections in the third column are the ones you read before class: they are your reference, and they are also the standard you are judging the project against.
+
+| Pair | Owns the failures of | Your reference sections |
+|---|---|---|
+| **1** | **Naming and organisation**: what the files are called and where they sit | [Processing Data](#processingdata), [Data Structure and Organisation of Files](#data-structure-and-organisation-of-files) |
+| **2** | **Formats and atomisation**: what is inside the files | [Data Digitization](#digitizingdata), [Processing Data](#processingdata) |
+| **3** | **Documentation and metadata**: what a reader would need in order to interpret any of it | [Documenting Data](#documentingdata), [Metadata](#metadatasec) |
+| **4** | **Preservation and sharing**: whether the data will survive, and whether they may leave the lab | [Preserving Data](#preservingdata), [Sharing Data](#sharingdata), [Data Repositories](#datarepos), [When Data Can't Be Shared](#cantshare) |
+
+**Nobody owns Planning.** That is not an oversight, and we will come back to it in Step 3.
+
+#### 🔍 Step 1: Look at What You Have Been Given <span style="color:dimgray;">(7 minutes)</span> {#inheritstep1}
+
+**Before anyone opens a file**, get a view of the whole thing. In a terminal, from inside the folder:
+
+```{r eval = FALSE, echo = TRUE}
+#UNIX (macOS and Linux). -s adds file sizes, -D the modification dates:
+#both are evidence here, so ask for them
+tree -sD Messy_Project
+```
+
+If `tree` is not installed, see [the installation note above](#the-unix-tree-package-supporting-data-structure-and-organisation), or get the same information from R, which works everywhere:
+
+```{r eval = FALSE, echo = TRUE}
+#The R equivalent, with sizes and modification times
+file.info(list.files("Messy_Project", full.names = TRUE))[, c("size", "mtime")]
+```
+
+As a class, answer three questions from that listing alone, before reading any file:
+
+1. **How many datasets are in this folder?** Not how many data files: how many datasets.
+2. **Which file is the master copy?**
+3. **Which script produced the numbers in the manuscript?**
+
+#### 🔬 Step 2: Diagnose Your Failure Class <span style="color:dimgray;">(15 minutes)</span> {#inheritstep2}
+
+Now open things. **Work only on your own failure class**, otherwise four pairs will spend fifteen minutes finding the same obvious problem. For every defect you find, write down three things, because this is what you will report:
+
+1. **The defect.** Point at the file and be specific.
+2. **The repair, or the fact that there is none.** Some of what is wrong here can still be fixed. Some of it cannot, and saying so precisely is the more valuable answer.
+3. **The practice from this part that would have prevented it.** Name the section.
+
+##### Pair 1: Naming and Organisation
+
+- There is more than one file that could be "the data". List them. **Using the file names alone, can you establish which is authoritative?** If not, say what naming convention would have made it obvious.
+- Write down everything wrong with the name `Data final v2 FINAL.xlsx`. There are at least four distinct problems.
+- Two files are dated in their names. **What date does `plot data 12-03-25.csv` refer to?** Defend your answer.
+- There are three scripts. Judging by their names only, which would you run? Now open all three and say whether your choice was right.
+- The folder is flat. **Propose the directory structure this project should have had**, and say where each existing file goes in it. Compare your answer with Figure \@ref(fig:TreeDir).
+- Rename everything according to a single convention you can state in one sentence.
+
+##### Pair 2: Formats and Atomisation
+
+**Start with the format itself.** The master file is `.xlsx`. Give two reasons from [Processing Data](#processingdata) why that is the wrong format for archiving, then open it and find a **third** problem that would break `read.csv()` even after conversion.
+
+**Then look inside.** Load the csv and try to use the `mass` column as a number:
+
+```{r eval = FALSE, echo = TRUE}
+d <- read.csv("Messy_Project/copy of data(1).csv")
+d$mass
+as.numeric(d$mass)
+```
+
+**How many of the twelve values survive, and why does each loss happen?** Account for every one. Then explain why `as.numeric()` giving you a result at all is more dangerous than it refusing.
+
+Then work through the rest of the file:
+
+- Find the cell that contains **two** data points. Find the cells that contain a unit. Find the cells that use a comma as a decimal separator.
+- **How many different ways is "missing" encoded in this dataset?** List them all, and say which R will understand without being told.
+- The `x2` column holds dates. **How many formats, and is any one of them unambiguous?**
+- `trt` holds 1, 2 and 3. What would go wrong if you fitted `lm(mass ~ trt)` as the data stand? (Open `analysis_USE THIS ONE.R`: somebody already did.)
+- Produce the repaired table: one atomic value per cell, one missing-value code, one date format, units moved into the column names, in a format that will still open in twenty years.
+
+##### Pair 3: Documentation and Metadata
+
+- **What are the three treatments?** The answer decides what the entire analysis means. Find it, or establish that it cannot be found.
+- Write out every column name in plain English, with its unit. **Which ones can you not do?**
+- `biomass_index` is a derived variable. **From which columns, by what formula?** Can you reproduce a single one of its values?
+- The missing-value code *is* recorded somewhere in this folder. Find it, and then explain why where it is recorded makes it almost useless.
+- `notes.txt` contains at least three facts that change how the data must be analysed. Identify them, and say where each one should have been recorded instead.
+- Using [Project-Level Documentation](#project-level-documentation) and [Data-Level Documentation](#data-level-documentation) as your outline, **write the `README.md` this project needs.** Fill in everything you can, and mark everything you cannot with `UNRECOVERABLE`. That list of gaps is your real finding.
+
+##### Pair 4: Preservation and Sharing
+
+- **Which of the [five types of research data](#researchdata) is this?** Your answer determines how much everything else in this list matters, so settle it first.
+- Look at the last line of `analysis_USE THIS ONE.R`. **What does that script do to its own input, and what has been permanently lost as a result?** Relate your answer to the rule *raw data should remain raw*.
+- **How many copies of these data exist, and in how many places?** Name the single event that ends this project.
+- Open `sites_landowners.csv`. **May this file be shared?** Work through [When Data Can't Be Shared](#cantshare) and say which grounds apply, to which columns. Then connect it to the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov) from Chapter 4.
+- Sort every file in the folder into three piles: **deposit openly**, **deposit with restricted access**, **never leaves the lab**. Justify the boundaries.
+- Choose a [repository](#datarepos) for the depositable material and state what it would require of you that this project cannot currently supply.
+
+#### 📢 Step 3: Report the Defect and the Fix <span style="color:dimgray;">(12 minutes)</span> {#inheritstep3}
+
+**Three minutes per pair.** Report, in this order: the worst defect you found, whether it can be repaired, and the practice that would have prevented it.
+
+Listen to the other three reports, because **you are adopting all four of their conclusions in Step 5**, not just your own.
+
+When all four pairs have reported, we return to the stage nobody was assigned:
+
+<div class="danger">
+  <p><strong>💡 Count how many of these defects are Planning failures</strong></p>
+  <p>Go through the four reports and ask, for each defect: <b>when could this have been prevented at no cost?</b> Nearly every answer is "before any data existed". A naming convention costs nothing to decide and a fortune to retrofit. A data dictionary written during digitisation takes an hour; reconstructed afterwards it is guesswork, and for the treatments in this project it is not possible at all.</p>
+  <p>This is why <b>Plan</b> sits at the hub of Figure \@ref(fig:LifeCycle) rather than at the start of the ring, and it is why a data management plan is a research instrument rather than paperwork for your funder.</p>
+</div>
+
+#### ✍️ Step 4: Write the Clause That Would Have Caught It <span style="color:dimgray;">(8 minutes)</span> {#inheritstep4}
+
+Your pair now writes **one clause** for your group's [reproducibility charter](#FactorsActivity): the standard that, had this student's lab held it, would have prevented the defect you reported.
+
+Hold it to the charter's own test, from Chapter 1:
+
+> A charter states what **this group will always do**. Each commitment is specific enough that somebody else can tell whether it was kept.
+
+So **"we will name our files sensibly" is not a clause.** It fails the test, because no one can tell whether it was kept. These pass:
+
+- *Raw data files are written once and never edited. All cleaning happens in a script that reads from `Data/raw/` and writes to `Data/processed/`.*
+- *Every dataset is accompanied by a `README.md` defining each column, its unit, and its missing-value code, written before analysis begins.*
+- *No dataset leaves the group until a named author has checked it for personal information and for coordinates of listed species.*
+
+If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note whose job this is: the [**Data lead**](#FactorsActivity) owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of all four failure classes. **If your group's Data lead section already covered the defect you found, say so in your report.** That is the best possible outcome of this exercise, and it means your charter was ambitious enough.
+
+#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes)</span> {#inheritstep5}
+
+Back into your **two charter groups**. Each group holds two of the four pairs, but **every charter takes all four clauses**, because the whole class heard all four reports. Reconcile the wording with what your charter already says, and where a new clause contradicts an existing one, **resolve it now rather than keeping both**.
+
+Chapter 1 promised you this:
+
+> *At the end of the semester you should be able to return to your charter and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.*
+
+**This is the first time that promise comes due.** Data management was one of the three domains your charter claimed to cover, and you have just spent a class finding out what it costs when it is absent.
+
+<details id="inheritspoiler">
+  <summary><b>What this folder was hiding</b> (open this after class, not before)</summary>
+  <p>Every defect was planted, and this is the full inventory. If your pair found its own four, you did well; nobody is expected to find all of these in fifteen minutes.</p>
+  <p><b>Naming and organisation.</b> Three rival versions of one dataset, with no master copy identifiable; <code>Data final v2 FINAL.xlsx</code> (spaces, two conflicting version markers, no sequence); <code>copy of data(1).csv</code> (parentheses, "copy of", silently differs from the xlsx in two rows); <code>plot data 12-03-25.csv</code> (unresolvable: 12 March or 3 December); three analysis scripts of which the authoritative-sounding one is the worst; a flat folder with no separation of data, code and outputs.</p>
+  <p><b>Formats and atomisation.</b> Proprietary <code>.xlsx</code> master; a title row above the column names, so the header is not on row 1; <code>12.5 g, male</code> in a single cell; units inside values (<code>12.5 g</code>, <code>25°C</code>); decimal commas (<code>11,8</code>) and a thousands separator (<code>1,250</code>); non-ASCII characters including <code>±</code>, <code>°</code> and curly quotes; four missing-value codes (<code>-999</code>, empty, <code>NA</code>, <code>n/a</code>, plus <code>.</code>); three date formats; a categorical treatment coded as integers and then fitted as a continuous predictor.</p>
+  <p><b>Documentation and metadata.</b> No README, no data dictionary, no licence, no protocol, no contact information; column names <code>V1</code>, <code>x2</code>, <code>trt</code>; no units anywhere; the treatment key written down nowhere, which is unrecoverable; the missing-value code recorded only in a private note; <code>biomass_index</code> derived "in the spreadsheet", with no formula and no way to reproduce it; three analysis-critical facts (an uncalibrated balance, unrecorded juveniles, a resampled site) surviving only as shorthand in <code>notes.txt</code>.</p>
+  <p><b>Preservation and sharing.</b> Observational data, therefore irreplaceable; one copy in one folder; a script whose final line overwrites its own input, so the raw file is already gone; personal names, phone numbers and the exact coordinates of a federally Threatened species sitting unprotected beside everything else; no licence, no repository, no DOI, no data availability statement; an absolute <code>setwd()</code> that guarantees the scripts run on exactly one computer, which no longer exists.</p>
+</details>
 
 ---
 

@@ -1,0 +1,5 @@
+setwd("/Users/jdoe/Desktop/stuff/Messy_Project")
+d <- read.csv("copy of data(1).csv")
+d$mass <- as.numeric(d$mass)
+m <- lm(mass ~ trt, data = d)
+summary(m)
