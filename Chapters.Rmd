@@ -4874,6 +4874,7 @@ This chapter is divided into two parts:
 
 ## Data Management {#partDM}
 
+
 ### Aim
 
 This part of Chapter 5 aims to **help students navigate data management** by first explaining what data and data management are, and why data sharing is important. It then provides advice and examples of best practices in data management.
@@ -4883,8 +4884,8 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 <div class="disclaimer">
   <p><strong>💡 Two things to do before class</strong></p>
   <ol>
-    <li><b>Read the seven stages of the life cycle</b>: <a href="#planningDM">Planning</a>, <a href="#creatingdata">Creating</a>, <a href="#processingdata">Processing</a>, <a href="#documentingdata">Documenting</a>, <a href="#preservingdata">Preserving</a>, <a href="#sharingdata">Sharing</a> and <a href="#reusingdata">Reusing</a> data. My pass over them in class is a <b>synthesis</b>, not your first contact with them.</li>
-    <li><b>Complete the <a href="#beforeclass5A">Before Class Activity</a></b>: set up a folder and a script, and download the project you are about to inherit. <b>Do not tidy that project up.</b> Its state is the exercise.</li>
+    <li><b><a href="#preread5A">Read the seven stages of the data life cycle</a></b>. My pass over them in class is a <b>synthesis</b>, not your first contact with them. The list of sections, with links, is in the <a href="#beforeclass5A">Before Class Activity</a>.</li>
+    <li><b>Complete the rest of the <a href="#beforeclass5A">Before Class Activity</a></b>: set up a folder and a script, and download the project you are about to inherit. <b>Do not tidy that project up.</b> Its state is the exercise.</li>
   </ol>
 </div>
 
@@ -4903,15 +4904,83 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 
 ---
 
+
+### Introduction
+
+Good data management is essential for research excellence. It ensures that research data are of high quality, accessible to others, and usable in the future (see the [TOP Guidelines](#TOP) in Chapter 3).  
+
+The value of data is increasingly recognized through formal citation. Repositories such as **GBIF** and **Dryad** provide [DOIs](https://www.doi.org/) that allow datasets to be cited, giving researchers credit for sharing their data. By making data available for reuse, researchers can contribute to their field while also enhancing their own professional visibility.  
+
+To ensure data citations are properly acknowledged, they must be included in publications—typically in a dedicated **"Data Availability Statement"** section at the end of the article. (See Figure \@ref(fig:DataAvail) for an example.)
+
+```{r DataAvail, fig.alt="Excerpt of typeset journal text listing where each dataset lives: NCBI GenBank accession ranges for ITS and rbcL sequences, a BioProject and BioSample accession, SRA run numbers for raw sequence files, and a Zenodo DOI for the DNA alignments.", echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
+knitr::include_graphics("Figures/Data_availibility_satement.png")
+```
+
+---
+
+
+### Learning Outcomes
+
+By the end of this part, students are able to:
+
+- [Distinguish the different types of research data and their specific characteristics](#researchdata), and explain why the type you hold decides what a mistake costs you
+- [Walk the full data life cycle](#lifecyclespine) and, for each stage, name the failure it invites and the practice that prevents it
+- [Explain the benefits of effective data management](#benefitsDM), and why planning sits at the hub of the life cycle rather than at the start of it
+- [Apply best practices at each stage](#planningDM): file naming and organisation, open and non-proprietary formats, atomised data, documentation and metadata, backup and storage
+- [Decide what may be shared, what must be restricted and what must never leave the lab](#cantshare), and [where to deposit the rest so that it can be found and cited](#datarepos)
+- [Design and implement a data management plan using a checklist approach](#data-management-checklist) to ensure proper documentation, storage, sharing and ethical compliance
+- [Diagnose a mismanaged research project, record its defects in a form somebody else can act on, identify what has been permanently lost, and turn each defect into a standard in your group's charter](#inheritproject)
+
+**The fifth and sixth of these are assessed directly.** Your individual project must include *a data management workflow specific to your research*, covering Create, Process, Document, Preserve, Share and Reuse. This part of Chapter 5 is where you acquire what you need to write it.
+
+---
+
+
 ### Before Class Activity <span style="color:dimgray;">(10 minutes, at home)</span> {#beforeclass5A}
 
 **Do this before you come to class.** You are going to inherit a badly managed research project, and the class has only seventy minutes in it. If the download happens in the room, we lose the first fifteen of them.
 
 There is a second reason to do it this way. **This part of the course is about managing data, and you are going to spend the class judging somebody who gathered theirs carelessly.** Downloading a file by clicking a button leaves no record of where it came from. Doing it in a script does. So you will set up a small, tidy project of your own, and the first thing in it will be a script that says exactly where your data came from.
 
+#### What to Read Before Class <span style="color:dimgray;">(25 minutes)</span> {#preread5A}
+
+**Read these seven sections, in this order.** They are the seven stages of the data life cycle (Figure \@ref(fig:LifeCycle)), and they all sit under [Resources](#resources5A) below. They are short, and **the class assumes you have read them**: my eighteen minutes in the room is a synthesis of these, not a substitute for them, and the group activity asks you to judge a real project against them.
+
+1. [**Planning Data Management**](#planningDM) — what has to be decided before any data exist, and why this is the stage that prevents everything else
+2. [**Creating Data**](#creatingdata) — collection and digitisation, and the quality checks that belong at each step
+3. [**Processing Data**](#processingdata) — file formats, file naming, folder structure and version control
+4. [**Documenting Data**](#documentingdata) — project-level and data-level documentation, plus [**Metadata**](#metadatasec)
+5. [**Preserving Data**](#preservingdata) — three copies, backup strategy, storage and format obsolescence
+6. [**Sharing Data**](#sharingdata) — how and where data are shared, including [**Data Repositories**](#datarepos) and [**When Data Can't Be Shared**](#cantshare)
+7. [**Reusing Data**](#reusingdata) — rights, licences, credit and expectations
+
+<div class="info">
+  <p><strong>💡 Two short extras worth your time</strong></p>
+  <ul>
+    <li><a href="#researchdata">Types of Research Data</a>, because the group activity opens by asking which of the five types you are holding, and your answer changes how much everything else matters.</li>
+    <li><a href="#data-management-checklist">The Data Management Checklist</a>. Do not read it through; just see what is in it. <b>It is the tool you will reach for most during the activity</b>, and knowing roughly where things are in it will save you time.</li>
+  </ul>
+</div>
+
 #### Step 1: Create the Folders
 
-In your course folder, the one holding `Chapter_2` from earlier in the semester, create a folder named **`Chapter_5`**, and inside it a subfolder named **`Data_management`**. Use Finder, File Explorer, or whatever you normally use.
+**Go to your `Chapters` folder**, the one that already holds the `Chapter_2` folder you built earlier in the semester. Inside it, create a folder named **`Chapter_5`**, and inside that a subfolder named **`Data_management`**. Use Finder, File Explorer, or whatever you normally use.
+
+**`Chapter_5` must sit beside `Chapter_2`, not inside it.** When you are finished, that part of your course folder looks like this:
+
+```
+Chapters/
+├── Chapter_2/            <- already there from earlier in the semester
+└── Chapter_5/            <- new
+    └── Data_management/  <- new, and everything today goes in here
+```
+
+<div class="info">
+  <p><strong>💡 Where is <code>Chapters</code> on my machine?</strong></p>
+  <p>Wherever you put it when you set up <code>Chapter_2</code>. On the instructor's computer the path is <code>Course_Reproducible_Science/Chapters</code>, so <code>Chapter_5</code> ends up at <code>Course_Reproducible_Science/Chapters/Chapter_5</code>.</p>
+  <p><b>Yours does not have to match, and the part of the path above <code>Chapters</code> does not matter.</b> What matters is that <code>Chapter_5</code> is a sibling of <code>Chapter_2</code>, so that one folder holds your work for every chapter in the same shape. That is the <a href="#processingdata">consistent folder structure</a> this chapter asks of you, applied to your own course materials: if you cannot keep five chapters tidy, a three-year project has no chance.</p>
+</div>
 
 Everything for this part of the chapter goes in `Data_management`, and nothing else does. Chapter 5 has a PART B as well, which will get its own subfolder later, which is why `Chapter_5` is a folder rather than the destination itself.
 
@@ -4970,19 +5039,21 @@ list.files("Messy_Project")
 Your own folder should now look like this:
 
 ```
-Chapter_5/
-└── Data_management/
-    ├── Chapter_5_data_management.R   <- your script: tidy, and it says where the data came from
-    ├── Messy_Project.zip
-    └── Messy_Project/               <- somebody else's work: not tidy at all
-        ├── analysis_USE THIS ONE.R
-        ├── analysis.R
-        ├── analysis2.R
-        ├── copy of data(1).csv
-        ├── Data final v2 FINAL.xlsx
-        ├── notes.txt
-        ├── plot data 12-03-25.csv
-        └── sites_landowners.csv
+Chapters/
+├── Chapter_2/
+└── Chapter_5/
+    └── Data_management/
+        ├── Chapter_5_data_management.R   <- your script: tidy, and it says where the data came from
+        ├── Messy_Project.zip
+        └── Messy_Project/               <- somebody else's work: not tidy at all
+            ├── analysis_USE THIS ONE.R
+            ├── analysis.R
+            ├── analysis2.R
+            ├── copy of data(1).csv
+            ├── Data final v2 FINAL.xlsx
+            ├── notes.txt
+            ├── plot data 12-03-25.csv
+            └── sites_landowners.csv
 ```
 
 <div class="danger">
@@ -4997,8 +5068,11 @@ Chapter_5/
 
 <div class="info">
   <p><strong>💡 Prefer to create the folders in R?</strong></p>
-  <p>You can, and it is arguably the better habit, since it leaves the same record as the download does. Run this from your course folder <b>before</b> saving the script, then carry on from Step 2:</p>
-<pre><code>dir.create("Chapter_5/Data_management", recursive = TRUE)</code></pre>
+  <p>You can, and it is arguably the better habit, since it leaves the same record as the download does. Set your working directory to your <code>Chapters</code> folder, the one holding <code>Chapter_2</code>, then run this <b>before</b> saving the script and carry on from Step 2:</p>
+<pre><code>#Check you are in Chapters/ before running the next line
+getwd()
+
+dir.create("Chapter_5/Data_management", recursive = TRUE)</code></pre>
   <p><code>recursive = TRUE</code> is what lets it create <code>Chapter_5</code> and <code>Data_management</code> in one call. Without it, R refuses, because the parent folder does not exist yet.</p>
 </div>
 
@@ -5006,48 +5080,22 @@ Chapter_5/
 
 ---
 
+
 ### Class Outline {#chap5Aoutline}
 
 1. [One Pass Over the Whole Cycle](#lifecyclespine) <span style="color:dimgray;">(18 minutes)</span>
 2. [👥 You Have Just Inherited This Project](#inheritproject) <span style="color:dimgray;">(47 minutes, in five steps)</span>
 
-Everything between those two items in the text below is **reference material you read before class**. It is organised stage by stage so that you can find the one you need quickly while you are diagnosing, and the [Data Management Checklist](#data-management-checklist) at the end of this part is the tool you will reach for most.
+That is the whole of the class. **Everything else in this part is reference material**, gathered under [Resources](#resources5A) below and organised stage by stage, so that you can find what you need quickly while you are diagnosing. The [Data Management Checklist](#data-management-checklist) at the end of it is the tool you will reach for most.
 
 ---
 
-### Introduction
 
-Good data management is essential for research excellence. It ensures that research data are of high quality, accessible to others, and usable in the future (see the [TOP Guidelines](#TOP) in Chapter 3).  
+### Resources {#resources5A}
 
-The value of data is increasingly recognized through formal citation. Repositories such as **GBIF** and **Dryad** provide [DOIs](https://www.doi.org/) that allow datasets to be cited, giving researchers credit for sharing their data. By making data available for reuse, researchers can contribute to their field while also enhancing their own professional visibility.  
+**Everything you need to read for this part is in this section**, as the subsections below. It is organised stage by stage, in the order of the data life cycle, so that you can find the one you need quickly while you are diagnosing a project. Your [pre-reading list](#preread5A) says which of them to read before class.
 
-To ensure data citations are properly acknowledged, they must be included in publications—typically in a dedicated **"Data Availability Statement"** section at the end of the article. (See Figure \@ref(fig:DataAvail) for an example.)
-
-```{r DataAvail, fig.alt="Excerpt of typeset journal text listing where each dataset lives: NCBI GenBank accession ranges for ITS and rbcL sequences, a BioProject and BioSample accession, SRA run numbers for raw sequence files, and a Zenodo DOI for the DNA alignments.", echo=FALSE, fig.cap="Example of a Data Availability Statement.", fig.show="asis", out.width = '50%', fig.align="center"}
-knitr::include_graphics("Figures/Data_availibility_satement.png")
-```
-
----
-
-### Learning Outcomes
-
-By the end of this part, students are able to:
-
-- [Distinguish the different types of research data and their specific characteristics](#researchdata), and explain why the type you hold decides what a mistake costs you
-- [Walk the full data life cycle](#lifecyclespine) and, for each stage, name the failure it invites and the practice that prevents it
-- [Explain the benefits of effective data management](#benefitsDM), and why planning sits at the hub of the life cycle rather than at the start of it
-- [Apply best practices at each stage](#planningDM): file naming and organisation, open and non-proprietary formats, atomised data, documentation and metadata, backup and storage
-- [Decide what may be shared, what must be restricted and what must never leave the lab](#cantshare), and [where to deposit the rest so that it can be found and cited](#datarepos)
-- [Design and implement a data management plan using a checklist approach](#data-management-checklist) to ensure proper documentation, storage, sharing and ethical compliance
-- [Diagnose a mismanaged research project, record its defects in a form somebody else can act on, identify what has been permanently lost, and turn each defect into a standard in your group's charter](#inheritproject)
-
-**The fifth and sixth of these are assessed directly.** Your individual project must include *a data management workflow specific to your research*, covering Create, Process, Document, Preserve, Share and Reuse. This part of Chapter 5 is where you acquire what you need to write it.
-
----
-
-### Resources
-
-This chapter is based on the following sources:
+The whole part is based on the following sources:
 
 - @DataMan — *A Guide to Data Management in Ecology and Evolution*, published by the [British Ecological Society](https://www.britishecologicalsociety.org).
 - UK Managing and Sharing Research Data handbook:  
@@ -5062,7 +5110,8 @@ This chapter is based on the following sources:
 
 ---
 
-### Teaching Material
+
+#### Teaching Material
 
 The presentation associated with this class is available here:
 
@@ -5079,7 +5128,8 @@ embed_pdf("Chapters_files/Chapter_5_PartA.pdf", "2")
 
 ---
 
-### Types of Research Data and Their Specific Characteristics {#researchdata}
+
+#### Types of Research Data and Their Specific Characteristics {#researchdata}
 
 **Research data are the factual pieces of information used to test research hypotheses.**  
 Data can be classified into five categories:
@@ -5094,7 +5144,8 @@ A key challenge facing researchers today is the need to work with diverse data s
 
 ---
 
-### The Data Life Cycle {#datalifecycle}
+
+#### The Data Life Cycle {#datalifecycle}
 
 Data have a longer lifespan than the project they were created for, as illustrated by the data life-cycle displayed in Figure \@ref(fig:LifeCycle).
 
@@ -5104,7 +5155,7 @@ knitr::include_graphics("Figures/Data_lifecycle.png")
 
 Some projects may only focus on certain parts of the data life-cycle, such as primary data creation, or reusing others’ data. Other projects may go through several revolutions of the cycle. Either way, most researchers will work with data at all stages throughout their career.
 
-#### One Pass Over the Whole Cycle <span style="color:dimgray;">(18 minutes)</span> {#lifecyclespine}
+##### One Pass Over the Whole Cycle <span style="color:dimgray;">(18 minutes)</span> {#lifecyclespine}
 
 **This is the one part of this class I lecture, and it is the spine of everything that follows.** We start from the [five types of research data](#researchdata), because which type you hold decides how much a mistake costs you: an *experimental* dataset can be regenerated at a price, while an *observational* one is tied to a time and a place and is simply gone. Then we walk the cycle. Each row of the table below is a stage of Figure \@ref(fig:LifeCycle). For each one I give you what the stage is for, the failure it invites, and the practice that prevents that failure. **The third column is what you are accountable for**: it is where the clauses of your charter come from, and every defect in the project you inherited later in this class is a stage whose third column was ignored.
 
@@ -5128,7 +5179,8 @@ The **Stage** column links to the detailed treatment you read before class. Use 
 
 ---
 
-### Benefits of Effective Data Management {#benefitsDM}
+
+#### Benefits of Effective Data Management {#benefitsDM}
 
 Data management involves planning for all stages of the data life cycle and implementing this plan throughout your research project. When done effectively, it keeps the data life cycle moving smoothly, improves research efficiency, and ensures your data meet expectations set by yourself, funders, institutions, legislation, and publishers (e.g., copyright, data protection).
 
@@ -5148,7 +5200,7 @@ Effective data management brings several important benefits, including:
 - Preventing duplication by others.  
 - Facilitating data sharing.
 
-#### Why Should I Share My Data?
+##### Why Should I Share My Data?
 
 Data sharing is increasingly required by funders and publishers. Many funding bodies, such as the NSF, now ask for data management and sharing plans as part of grant applications. Although sharing data can feel daunting, data are valuable resources whose usefulness often extends beyond their original purpose.  
 
@@ -5161,7 +5213,7 @@ Benefits of sharing data include:
 - Reducing costs by avoiding duplication of data collection.  
 - Advancing science by enabling others to use data in innovative ways.
 
-#### When Data Can’t Be Shared {#cantshare}
+##### When Data Can’t Be Shared {#cantshare}
 
 There are legitimate reasons why some data cannot be shared:
 
@@ -5173,11 +5225,12 @@ During your project’s planning stage, identify which data cannot or should not
 
 ---
 
-### Planning Data Management {#planningDM}
+
+#### Planning Data Management {#planningDM}
 
 Whether or not your funder requires a data management or sharing plan as part of your grant application, having a plan in place **before** starting your research project will prepare you for potential data management challenges (see the *Data Management Checklist* section below).
 
-#### Before You Start Planning
+##### Before You Start Planning
 
 Before designing your data management workflow, consider the following:
 
@@ -5186,14 +5239,14 @@ Before designing your data management workflow, consider the following:
 - Consider your project’s budget.  
 - Talk to your supervisor, colleagues, and collaborators.
 
-#### Key Considerations When Planning
+##### Key Considerations When Planning
 
 - **Time:** Creating a data management plan can take significant time. It’s not just a matter of filling out a template or checklist. A well-thought-out plan ensures that good data practices are embedded throughout the entire research process.  
 - **Tailored design:** Your data management strategy should reflect the specific goals, methods, and context of your research project.  
 - **Roles and responsibilities:** While one person may draft the plan, data management often involves multiple people at different stages. A strong plan supports coordinated workflows and clear communication among team members.  
 - **Review and adapt:** Plan how you will review and update your data management approach throughout the project. Regular reviews help integrate best practices and catch problems early—before they grow into larger issues.
 
-#### Creating Data {#creatingdata}
+##### Creating Data {#creatingdata}
 
 In the data life cycle (Figure \@ref(fig:LifeCycle)), data creation begins when a researcher collects information in the field or lab and digitizes it to produce a raw dataset.
 
@@ -5207,7 +5260,7 @@ Collect data (in the field and/or lab) --> Digitize data --> Raw dataset
 
 **Quality control during data collection is essential**, as there is often only one opportunity to gather data from a given situation. Researchers should critically evaluate their methods *before* data collection begins—high-quality methods lead to high-quality data. Once collection is underway, it's equally important to document the process in detail as evidence of data quality.
 
-##### Key Things to Consider During Data Collection
+###### Key Things to Consider During Data Collection
 
 - **Logistical challenges in the field:** What potential issues might arise during fieldwork? For example, is there no access to power for charging equipment or devices?  
 - **Calibration of instruments:** Are the tools you're using—e.g., balances or sensors—accurate and suitable for your research needs?  
@@ -5217,7 +5270,7 @@ Collect data (in the field and/or lab) --> Digitize data --> Raw dataset
 - **Metadata from data collectors:** Use a short questionnaire for all data collectors to capture contextual variables or collection practices that might affect the analysis. This helps explain variability during the analytical phase.  
 - **Adding relevant variables:** Enhance the future usability and impact of your data by including additional variables (e.g., landscape features or environmental parameters) that may open up new research avenues.
 
-#### Data Digitization {#digitizingdata}
+##### Data Digitization {#digitizingdata}
 
 Data may be collected directly in digital form using electronic devices, or recorded manually as handwritten notes. In either case, some processing is required to produce a structured, digital raw dataset.
 
@@ -5231,7 +5284,7 @@ Data may be collected directly in digital form using electronic devices, or reco
 - **Metadata and documentation:** Describe your dataset thoroughly in a `Readme.txt` or protocol file (ideally attached as an appendix to your manuscript). Include definitions for all variables, units of measurement, and codes for missing values.  
 - **Preserve raw data:** Always keep an untouched copy of the original dataset—raw data should remain raw.
 
-#### Processing Data {#processingdata}
+##### Processing Data {#processingdata}
 
 **Data should be processed into a format that supports analysis and ensures long-term usability.** Data are at risk of being lost if the hardware or software used to create or process them becomes obsolete. To prevent this, data should be well organized, clearly structured, appropriately named, and version-controlled using standard, future-proof formats (see the *Data Structure and Organisation of Files* section below).
 
@@ -5271,7 +5324,7 @@ Here are some best practices for data processing (Figure \@ref(fig:LifeCycle)):
   - Synchronizing versions between collaborators or storage systems  
   - Ensuring that any files referencing one another are updated together
 
-#### Data Structure and Organisation of Files
+##### Data Structure and Organisation of Files
 
 A clearly structured directory tree offers a simple yet powerful way to summarize your project’s file organization. It improves clarity, supports reproducibility, and makes onboarding easier for collaborators.
 
@@ -5281,7 +5334,7 @@ In UNIX-based systems, you can generate a directory tree using the `tree` comman
 knitr::include_graphics("Figures/Tree_directory.png")
 ```
 
-##### The UNIX `tree` Package: Supporting Data Structure and Organisation
+###### The UNIX `tree` Package: Supporting Data Structure and Organisation
 
 The UNIX `tree` package can be used to generate a visual representation of your project’s directory structure. In this example, it was used to inspect the contents of the `Project_ID/` folder. This is a helpful way to check file names, file locations, and version control practices.
 
@@ -5300,7 +5353,7 @@ These options make it easy to identify inconsistencies in file naming, outdated 
 brew install tree
 ```
 
-#### Documenting Data {#documentingdata}
+##### Documenting Data {#documentingdata}
 
 Creating clear documentation and metadata is essential for ensuring that your data can be understood, interpreted, and reused over the long term (Figure \@ref(fig:LifeCycle)). Documentation—essentially the *manual* accompanying your dataset—should describe the data, explain any transformations or processing steps, and provide contextual information. The goal is to leave no room for misinterpretation.
 
@@ -5308,7 +5361,7 @@ Documentation requirements should be identified during the **planning phase**, s
 
 Data documentation includes information at both the **project** and **data** levels.
 
-##### Project-Level Documentation
+###### Project-Level Documentation
 
 This includes broader information about the research project and how data were collected and managed:
 
@@ -5330,7 +5383,7 @@ This includes broader information about the research project and how data were c
 - How to cite the dataset  
 - Intellectual property rights, licenses, or restrictions
 
-##### Data-Level Documentation
+###### Data-Level Documentation
 
 This focuses on the details within individual datasets:
 
@@ -5344,7 +5397,7 @@ This focuses on the details within individual datasets:
 
 If you are using a language like **R** or **Python** for processing, much of this data-level documentation can be embedded directly in your scripts or notebooks.
 
-#### Metadata {#metadatasec}
+##### Metadata {#metadatasec}
 
 **Metadata** support data discovery, reuse, and interoperability—especially in online repositories and databases. They also facilitate **machine-readable** access, which is increasingly important in large-scale, automated research workflows.
 
@@ -5359,7 +5412,7 @@ Metadata follow standard schemas and usually fall into three main categories:
 - **Administrative metadata** — Covers rights, permissions, file formats, and technical access details.  
 - **Structural metadata** — Explains how data are organized, such as table relationships or file hierarchies.
 
-#### Preserving Data {#preservingdata}
+##### Preserving Data {#preservingdata}
 
 To protect against data loss and ensure long-term accessibility, every research project should include a clear strategy for **data backup and storage** (see where this step fits in Figure \@ref(fig:LifeCycle)). A general recommendation is to maintain at least **three copies** of your data:
 - the **original** file,
@@ -5370,7 +5423,7 @@ Consult with your thesis supervisor or institutional IT team to determine the mo
 
 ---
 
-##### Data Backup
+###### Data Backup
 
 When designing a backup strategy, consider the various ways in which data could be lost or compromised, including:
 
@@ -5387,7 +5440,7 @@ While it's not always possible to protect against every risk, you should tailor 
 
 ---
 
-###### Key Considerations for a Backup Plan
+**Key considerations for a backup plan:**
 
 - Which files require backup (e.g. raw data, scripts, figures, protocols)
 - Who is responsible for backing up the files  
@@ -5400,13 +5453,13 @@ While it's not always possible to protect against every risk, you should tailor 
 
 ---
 
-##### Data Storage
+###### Data Storage
 
 **Robust data storage** is essential for both original and backup files. While this applies to paper records as well, **electronic data** present unique challenges related to format obsolescence, media degradation, and digital security.
 
 ---
 
-###### Best Practices for Electronic Data Storage
+**Best practices for electronic data storage:**
 
 - Use **high-quality and reliable storage media**
 - Save files in **non-proprietary formats** to ensure long-term readability  
@@ -5419,7 +5472,7 @@ While it's not always possible to protect against every risk, you should tailor 
 
 ---
 
-###### Where Can Data Be Stored and Backed Up?
+**Where can data be stored and backed up?**
 
 - **Network Drives**  
   Managed by institutional IT staff, these are regularly backed up, secure, and typically access-controlled.
@@ -5436,7 +5489,7 @@ While it's not always possible to protect against every risk, you should tailor 
 - **Paper Copies**  
   Surprisingly resilient, paper copies of small datasets or key documents can complement digital backups. While not ideal for all data types, **ink on paper offers long-term accessibility**—as long as it’s stored safely and can be found when needed!
 
-#### Sharing Data {#sharingdata}
+##### Sharing Data {#sharingdata}
 
 Research data can be shared in a variety of ways, each with its own advantages and limitations. Choosing the appropriate method depends on the nature of your data, institutional and funder policies, and your goals for dissemination and reuse.
 
@@ -5454,7 +5507,7 @@ This section focuses on the benefits of using **data repositories** as a preferr
 
 ---
 
-##### Data Repositories {#datarepos}
+###### Data Repositories {#datarepos}
 
 Archiving your data in a trusted repository is one of the most effective and sustainable ways to share your research data. Repositories do require you to meet certain submission standards (data formatting, metadata completeness, and sometimes a minimum level of documentation), but **meeting those standards is the service, not the cost**. They are the same standards that make your data usable by you in five years.
 
@@ -5477,7 +5530,7 @@ Archiving your data in a trusted repository is one of the most effective and sus
 
 > ⚠️ Depositing is not the last step. The dataset's DOI has to appear in the paper, in a **Data Availability Statement** (Figure \@ref(fig:DataAvail)), or nobody will ever follow it.
 
-#### Reusing Data {#reusingdata}
+##### Reusing Data {#reusingdata}
 
 **All aspects of data management ultimately support the discovery and reuse of data by others.** This is one of the main goals of reproducible science and open research.
 
@@ -5511,18 +5564,19 @@ By making your data discoverable and reusable, you help ensure that science cont
 
 ---
 
-### Data Management Checklist {#data-management-checklist}
+
+#### Data Management Checklist {#data-management-checklist}
 
 The following checklist, adapted from the [UK Data Archive](https://www.ukdataservice.ac.uk/manage-data/plan/checklist), is designed to guide you in planning effective data management and sharing. Use it to help design your own data management plan and ensure best practices throughout your research.
 
-#### Planning
+##### Planning
 
 - Who is responsible for each aspect of data management?  
 - Are there new skills or training needed to carry out data management activities?  
 - Do you need additional resources such as personnel, time, or hardware to manage data effectively?  
 - Have you accounted for costs related to depositing data for long-term preservation and access?
 
-#### Documenting
+##### Documenting
 
 - Will others be able to understand and properly use your data?  
 - Are your data self-explanatory in terms of variable names, codes, and abbreviations?  
@@ -5530,13 +5584,13 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 - How will you label and organize data, records, and files?  
 - Will your cataloging be consistent and clear?
 
-#### Formatting
+##### Formatting
 
 - Are you using standardized and consistent procedures to collect, process, transcribe, check, validate, and verify your data? (e.g., standard protocols, templates, or input forms)  
 - What data formats will you use? Do these formats and associated software enable easy sharing and long-term sustainability (preferably non-proprietary or open-standard formats)?  
 - When converting data across formats, do you verify that no data, annotations, or internal metadata have been lost or altered?
 
-#### Storing
+##### Storing
 
 - Are your digital and non-digital data—and any copies—stored securely in multiple safe locations?  
 - Do you need to securely store personal or sensitive data? If so, are appropriate protections in place?  
@@ -5547,20 +5601,20 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 - Who has access to your data during and after the research? Are access restrictions needed, and how will they be managed long-term?  
 - How long will you keep your data? Have you decided which data to preserve or destroy?
 
-#### Confidentiality, Ethics, and Consent
+##### Confidentiality, Ethics, and Consent
 
 - Does your data contain confidential or sensitive information? Have you discussed data sharing with the participants or respondents?  
 - Are you obtaining written consent to share data beyond your immediate research?  
 - Will you need to anonymize data to remove identifying or personal information before sharing?
 
-#### Copyright
+##### Copyright
 
 - Have you clarified who owns the copyright of your data? Are there joint ownership issues?  
 - Have you considered which license is appropriate for sharing your data and any restrictions on reuse?  
 - If you are using or purchasing others’ data, have you reviewed sharing permissions or negotiated licenses with the original data providers?  
 - Can personal information be preserved securely for long-term future use?
 
-#### Sharing
+##### Sharing
 
 - Do you plan to share all your data, or will you select which data to preserve and share?  
 - How and where will you preserve your research data for the long term?  
@@ -5703,7 +5757,7 @@ That example row is the format, and it is also the standard: **be specific enoug
 4. **Say how you would fix it, in pseudocode.** See below. This is the most useful column in the log.
 5. **Name the practice that would have prevented it**, and link the section. This column is where your charter clause comes from in [Step 4](#inheritstep4).
 
-###### Write the Fix as Pseudocode {#fixpseudocode}
+##### Write the Fix as Pseudocode {#fixpseudocode}
 
 **You are not expected to know the R yet, and you do not need it to specify the repair.** [Pseudocode](#writepseudointro), which you met in Chapter 2, is a plain-language statement of the logic: the steps, in order, in the structure a program would take, written for a human rather than a machine. **It is the right output for today** because it separates *deciding what must happen* from *knowing which function does it*, and the first of those is the hard part.
 
