@@ -3187,8 +3187,8 @@ By the end of this tutorial, students will be able to:
 | [UDFs that Return Multiple Values](#UDFmultiple): pairs present at the whiteboard | 10 min | Students, in pairs |
 | [Use Logical Operators within R Functions](#logicalop) | 3 min | Instructor |
 | [Implement Defensive Programming to Improve Code Robustness](#defensiveprog) | 25 min | Instructor live codes, students follow along |
-| [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | Instructor live codes, students follow along |
-| **Total for PART E** | **46 min** | |
+| **Total in class** | **38 min** | |
+| [Use Your UDFs in an R Markdown Document](#UDFinRmd) | 8 min | **Students, at home** |
 
 ### How This Tutorial Is Written {#protocolstyleE}
 
@@ -4433,6 +4433,30 @@ By the end of this chapter, you will be able to:
 - [Describe the purpose and use of Creative Commons licenses in scientific publications](#CClicenses)
 - [Understand the CARE Principles and data sovereignty, especially concerning Indigenous Peoples](#CARE)
 
+**This chapter is one class, and most of it is group work.** Three activities run back to back, which only works if you arrive having read the two frameworks they use. **That reading is the homework for this class**, and it is listed below.
+
+| Block | Time | Who |
+|---|---|---|
+| [FAIR Data](#FAIR) and [The CARE Principles](#CAREPrinc), including [Data Sovereignty](#datasov) | 25 min | **Students, at home before class** |
+| [What is Open Science?](#WhatisOS) and [the seven pillars](#pillars) | 10 min | Instructor |
+| [👥 FAIR Principles Activity](#FAIRactivity) | 15 min | Students, in 4 pairs |
+| *five-minute break* | 5 min | |
+| [👥 CARE Principles Activity](#CAREactivity) | 15 min | Students, in 4 pairs |
+| [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | Students, in 4 pairs |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | Instructor |
+| **Total in class** | **70 min** | |
+
+---
+
+## Class Outline {#chap4outline}
+
+1. [What is Open Science?](#WhatisOS) and [the seven pillars of Open Science](#pillars) <span style="color:dimgray;">(10 minutes)</span>
+2. [👥 FAIR Principles Group Activity](#FAIRactivity) <span style="color:dimgray;">(15 minutes)</span>
+3. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
+4. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
+5. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes)</span>
+6. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes)</span>
+
 ---
 
 ## Resources
@@ -4475,79 +4499,92 @@ While this definition focuses on access to research outputs, several other organ
 
 ### 🤝 Group Sharing and Discussions {#OSgroupwork}
 
-In this section, we conduct three group activities to study the material presented in this chapter. We focus on ensuring open science while respecting data governance for our stakeholders. Use the resources provided in this chapter to complete the group assignments below.
+The three activities below are the core of this chapter. They run back to back, and each one builds on the last, so **form your pairs once at the start and stay in them throughout**.
 
-#### FAIR Principles Group Activity <span style="color:dimgray;">(15 minutes)</span>
+<div class="disclaimer">
+  <p><strong>💡 Read these three sections before class</strong></p>
+  <ul>
+    <li><a href="#FAIR">FAIR Data</a>, including <a href="#FAIR">The FAIR Guiding Principles</a></li>
+    <li><a href="#CAREPrinc">The CARE Principles for Indigenous Data Governance</a></li>
+    <li><a href="#datasov">Data Sovereignty</a></li>
+  </ul>
+  <p><b>These activities apply the two frameworks rather than introduce them</b>, so a pair that arrives without having read the definitions spends its fifteen minutes looking them up instead of thinking about them. The sections are short.</p>
+</div>
+
+<div class="info">
+  <p><strong>💡 Your pair, and the principles it owns</strong></p>
+  <p>There are <b>four pairs</b>, and both frameworks have exactly <b>four</b> components, so each pair owns one of each and keeps them for all three activities:</p>
+  <table>
+    <tr><th>Pair</th><th>FAIR principle</th><th>CARE principle</th></tr>
+    <tr><td><b>1</b></td><td>Findable</td><td>Collective Benefit</td></tr>
+    <tr><td><b>2</b></td><td>Accessible</td><td>Authority to Control</td></tr>
+    <tr><td><b>3</b></td><td>Interoperable</td><td>Responsibility</td></tr>
+    <tr><td><b>4</b></td><td>Reusable</td><td>Ethics</td></tr>
+  </table>
+  <p>The pairings are arbitrary, and that is the point: in the third activity you compare <b>the two principles you happen to own</b>, which is how these frameworks meet in practice. Nobody gets to choose a convenient pair.</p>
+</div>
+
+#### 👥 FAIR Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#FAIRactivity}
 
 ##### 🎯 Learning Objective
 
 Students collaboratively explore how the **FAIR Principles** apply to real-world research data and reflect on challenges and best practices for making data FAIR.
 
-#### 👥 Instructions
+##### 👥 Instructions
 
-1. **Form 4 groups of 3–4 students.**
-2. **Assign one FAIR Principle to each group**:
-    - Group 1: **Findable**
-    - Group 2: **Accessible**
-    - Group 3: **Interoperable**
-    - Group 4: **Reusable**  
-3. **Each group member should:**
-    - Review the definition of the FAIR Principles.
-    - Focus on their group's assigned principle.
-    - Think of a dataset (e.g., survey data, lab experiment results, environmental data) and consider:
-        - How would you apply this principle to your dataset?
+1. **Work in your pair, on your assigned FAIR principle** from the table above.
+2. **Each of you should:**
+    - Re-read the definition of your principle in [The FAIR Guiding Principles](#FAIR).
+    - Think of a dataset (a survey, lab experiment results, environmental monitoring) and consider:
+        - How would you apply this principle to that dataset?
         - What challenge or barrier might arise?
-4. **As a group**, discuss your responses and prepare a 1-minute summary that includes:
-    - One key **insight** or **challenge** discussed.
-    - One **tip** or **best practice** for making data more FAIR.
-5. Each **group reports their findings** to the class to foster discussion.
+3. **Together**, agree a **1-minute summary** containing:
+    - one key **insight** or **challenge**;
+    - one **tip** or **best practice** for making data more FAIR.
+4. **Report to the class.** Four pairs, one minute each, so four minutes in total: keep to it.
 
-#### CARE Principles Group Activity <span style="color:dimgray;">(15 minutes)</span>
+#### 👥 CARE Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#CAREactivity}
 
 ##### 🎯 Learning Objective
 
 Students collaboratively explore how the **CARE Principles** apply to data involving Indigenous Peoples and reflect on ethical, cultural, and governance considerations in data stewardship.
 
-#### 👥 Instructions
+##### 👥 Instructions
 
-1. **Form 4 groups of 3–4 students.**
-2. **Assign one CARE Principle to each group**:
-    - Group 1: **Collective Benefit**
-    - Group 2: **Authority to Control**
-    - Group 3: **Responsibility**
-    - Group 4: **Ethics**
-3. **Each group member should:**
-    - Review the definition of the CARE Principles.
-    - Focus on their group's assigned principle.
-    - Consider a dataset or research scenario involving Indigenous data (e.g., health records, environmental monitoring, traditional knowledge) and discuss:
-        - How would this principle apply to the dataset or scenario?
+1. **Same pairs, now on your assigned CARE principle** from the table above.
+2. **Each of you should:**
+    - Re-read the definition of your principle in [The CARE Principles for Indigenous Data Governance](#CAREPrinc).
+    - Consider a dataset or scenario involving Indigenous data (health records, environmental monitoring, traditional knowledge) and discuss:
+        - How would this principle apply to it?
         - What challenges or considerations might arise?
-4. **As a group**, discuss your responses and prepare a 1-minute summary that includes:
-    - One key **insight** or **challenge** you discussed.
-    - One **recommendation** or **best practice** for respecting this principle in research or data governance.
-5. Each **group shares their findings** with the class to encourage shared learning and discussion.
+3. **Together**, agree a **1-minute summary** containing:
+    - one key **insight** or **challenge**;
+    - one **recommendation** for respecting this principle in research or data governance.
+4. **Report to the class**, again one minute per pair.
 
-#### FAIR & CARE Principles Comparison Activity <span style="color:dimgray;">(10 minutes)</span>
+#### 👥 FAIR & CARE Principles Comparison Activity <span style="color:dimgray;">(10 minutes)</span> {#FAIRCAREactivity}
 
 ##### 🎯 Learning Objective
 
 Students critically compare the **FAIR** and **CARE** Principles and explore how they can be applied together to support ethical, inclusive, and technically sound data practices.
 
-#### 👥 Instructions
+##### 👥 Instructions
 
-1. **Form 4 groups of 3–4 students.**
-2. **As a group, discuss the following prompts**:
-    - What are the key differences between FAIR and CARE?
-    - How might the two frameworks **complement** each other in practice?
-    - Where might they **conflict** or require trade-offs?
-    - Think of a dataset involving Indigenous or sensitive data (e.g., health, education, environmental data):
-        - How could you apply **both FAIR and CARE** to this dataset?
-        - What challenges or tensions might arise?
-        - What strategies or practices could help balance technical openness with ethical responsibility?
-3. **Prepare a 1–2 minute group summary** that includes:
-    - One key **insight or takeaway** from your discussion.
-    - One **practical suggestion** for applying both FAIR and CARE in real-world data stewardship.
-4. Each **group shares their findings** with the class to encourage shared learning and discussion.
+**You now have two principles you know well: your FAIR one and your CARE one.** This activity is about the relationship between those two specifically, so each pair is working on something different.
+
+1. **Still in your pair**, take the two principles you have spent the last half hour on and answer:
+    - Do they **pull in the same direction**, or against each other?
+    - Think of a dataset involving sensitive or Indigenous data. Applying **both** of your principles to it, what has to be decided that neither principle settles on its own?
+    - If they conflict, **which one would you let win, and on what grounds?**
+2. **Prepare a 1-minute summary** giving:
+    - the relationship you found between **your two** principles;
+    - one **practical suggestion** for holding both at once.
+3. **Report to the class.** Because each pair compared a different combination, the four reports together map most of how FAIR and CARE interact.
+
+<div class="danger">
+  <p><strong>💡 The honest answer is sometimes "they conflict"</strong></p>
+  <p>FAIR pushes data towards being open and machine-readable. CARE asks who has the authority to decide that, and in whose interest. <b>Some pairs of principles genuinely cannot both be satisfied</b>, and saying so, with reasons, is a better answer than a comfortable one that pretends the tension away.</p>
+</div>
 
 ---
 
