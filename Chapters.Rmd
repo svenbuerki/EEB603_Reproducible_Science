@@ -28,6 +28,103 @@ editor_options:
 lang: en
 ---
 
+```{r fig-aspect-ratios, echo=FALSE, results='asis'}
+###~~~
+# Reserve vertical space for every figure BEFORE it loads.
+#
+# knitr emits <img src="..." width="60%"> and never a height, so until a file
+# arrives the browser does not know how tall it will be. On a page this long
+# that means the content above a scroll target keeps growing while you are
+# scrolling to it, and a table-of-contents jump can finish above the heading it
+# was aiming at. Declaring each image's aspect-ratio lets the browser compute
+# the height from the width immediately, so the layout stops moving.
+#
+# Dimensions are read from the real files at render time, so this can never
+# drift out of step with the figures the way a hand-written list would.
+###~~~
+png_dim <- function(f) {
+  con <- file(f, "rb")
+  on.exit(close(con))
+  if (!identical(as.integer(readBin(con, "raw", 8)),
+                 c(137L, 80L, 78L, 71L, 13L, 10L, 26L, 10L))) return(NULL)
+  invisible(readBin(con, "raw", 8))   # chunk length, then the "IHDR" tag
+  readBin(con, "integer", n = 2, size = 4, endian = "big")
+}
+
+#PNG dimensions come from the header above, with no dependency. magick covers
+#the handful of jpegs, and is used only if it is installed, so a machine
+#without it still renders (those images simply keep no reserved ratio).
+any_dim <- function(f) {
+  d <- tryCatch(png_dim(f), error = function(e) NULL)
+  if (!is.null(d) && length(d) == 2) return(d)
+  if (!requireNamespace("magick", quietly = TRUE)) return(NULL)
+  i <- tryCatch(magick::image_info(magick::image_read(f)), error = function(e) NULL)
+  if (is.null(i)) return(NULL)
+  c(i$width[1], i$height[1])
+}
+
+#figure-html holds knitr's own plots. On a first render of a clean checkout it
+#is empty, which is harmless: those figures simply get no rule that time.
+imgs <- list.files(c("Figures", "Images", "Chapters_files/figure-html"),
+                   pattern = "[.](png|jpe?g)$", full.names = TRUE,
+                   ignore.case = TRUE)
+rules <- vapply(imgs, function(f) {
+  d <- any_dim(f)
+  if (is.null(d) || length(d) != 2 || any(is.na(d)) || any(d <= 0)) return(NA_character_)
+  sprintf('img[src$="%s"]{aspect-ratio:%d/%d;}', basename(f), d[1], d[2])
+}, character(1))
+rules <- rules[!is.na(rules)]
+
+cat("<style>\n", paste(rules, collapse = "\n"),
+    "\nimg{max-width:100%;height:auto;}\n</style>\n", sep = "")
+```
+
+```{js toc-anchors, echo=FALSE}
+// The floating table of contents is NOT in the html: it is built in the browser
+// by jquery.tocify, which derives each link's fragment from the heading TEXT
+// (see hashGenerator in the rmarkdown template). So "6 Chapt. 5 - Data
+// Management and Reproducible Code" becomes
+// "#6_Chapt_5_-_Data_Management_and_Reproducible_Code".
+//
+// Nothing in the page carries that id, because our section ids are the explicit
+// anchors set in the Rmd ({#Chap5}, {#partDM}, ...) and they sit on the
+// wrapping <div>, not the heading. Every TOC link is therefore a dead fragment:
+// clicking one works only for as long as tocify's own scroll animation does the
+// work, and a pasted or bookmarked TOC url resolves to nothing, leaving the
+// reader wherever they happened to be.
+//
+// Fix: give each heading the id tocify expects, so the fragments resolve
+// natively and TOC urls can be shared. Existing ids are never touched, and a
+// generated id that would collide with one already in the page is skipped.
+$(document).ready(function() {
+  $('.toc-content').find('h1,h2,h3').not('.toc-ignore').each(function() {
+    if (this.id) return;
+    var id = $(this).text().replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+    if (id && !document.getElementById(id)) { this.id = id; }
+  });
+});
+```
+
+```{js toc-instant, echo=FALSE}
+// Jump rather than animate. The page is long and its figures are loaded
+// individually, so their heights are unknown until they arrive; during a smooth
+// scroll the content above the target can still grow, and the animation then
+// finishes above the heading it was aiming at. An instant jump closes that
+// window. Runs on load so that it is applied after tocify has initialised.
+$(window).on('load', function() {
+  var t = $('#TOC').data('toc-tocify');
+  if (t && t.options) { t.options.smoothScroll = false; }
+
+  // The diagrams and the embedded pdf viewers size themselves after load, so
+  // re-assert the target once everything has settled.
+  var hash = window.location.hash;
+  if (hash.length > 1) {
+    var el = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (el) { el.scrollIntoView(); }
+  }
+});
+```
+
 ```{js newtab-js, echo=FALSE}
 // Open links that leave this page in a new tab, so that using the back button
 // never drops the reader at the top of this very long chapter. Same-page
@@ -6218,6 +6315,14 @@ So keep the log, and **keep the folder exactly as it is**. In [Chapter 7](#chap7
 This section of Chapter 5 aims to **introduce students to the principles and practices of reproducible coding**. It provides guidance on organizing projects, maintaining clean and transparent code, and managing software dependencies to support reproducible research workflows.
 
 **This part runs over one class, and most of it is group work.** In PART A you judged the *data* of a project you inherited. Here you judge its *code*, and it is the same project: three R scripts that nobody in the room has yet read a line of.
+
+<div class="disclaimer">
+  <p><strong>💡 Two things to do before class</strong></p>
+  <ol>
+    <li><b><a href="#preread5B">Read the four sections on reproducible code</a></b>: project organisation, programming standards, code portability and software dependencies. My time in class goes on applying them, not on introducing them. The list, with links, is in the <a href="#beforeclass5B">Before Class Activity</a>.</li>
+    <li><b><a href="#setup5B">Start a second script and diagram the project</a></b> you already have. This is a short piece of hands-on work, not reading. <b>Keep <code>Messy_Project</code> exactly as it is</b>, and bring the <code>Defect_log.Rmd</code> and <code>Defect_log.csv</code> you built in PART A: you add to them in class.</li>
+  </ol>
+</div>
 
 | Block | Time | Who |
 |---|---|---|
