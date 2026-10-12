@@ -168,6 +168,8 @@ The bioinformatics tutorials are taught on a rolling basis, so their deadlines d
 
 This year I am teaching **`r instructor_led_txt`** myself, given the size of the cohort. Those sessions still run as scheduled below, but they are not available to sign up for and carry no student deadlines, so they do not appear in Table \@ref(tab:tutdeadlines).
 
+**The project proposal may be revised and resubmitted for up to the full 50 points.** This is optional and open to everyone, and the deadline is in Table \@ref(tab:deadlines) below. See [Revise and Resubmit](https://svenbuerki.github.io/EEB603_Reproducible_Science/Assignments.html#proposalrevise) on the Assignments page for what to hand in.
+
 Please also read the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#LateWork) in the syllabus. In particular, **your bioinformatics tutorial must be submitted one week before you teach it. This is a firm deadline, and extensions are not available.** The individual report may be submitted up to **one week late**, but late submissions are subject to the consequences described in the [Late Work Policy](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#LateWork). **I strongly recommend submitting your report by the deadline whenever possible.**
 
 ```{r deadlines, echo=FALSE}
@@ -181,6 +183,7 @@ deadlines <- data.frame(
   Assessment = c(
     sprintf("[Sign up](%s) for a bioinformatics tutorial chapter", SHEET),
     "Individual project -- proposal",
+    "Individual project -- proposal, optional revision",
     "Bioinformatics tutorial (written)",
     "Teaching your bioinformatics tutorial",
     "Participation and engagement (PARTS 1 & 2)",
@@ -188,10 +191,11 @@ deadlines <- data.frame(
     "Oral presentation -- slides",
     "Oral presentation",
     "TOTAL"),
-  Points = c("--", "50", "150", "100", "50", "150", "--", "100", "**600**"),
+  Points = c("--", "50", "--", "150", "100", "50", "150", "--", "100", "**600**"),
   Date = c(
     signup_date,
     dl_date("proposal"),
+    dl_date("revised individual project proposal"),
     "varies by chapter -- see Table 2",
     "varies by chapter -- see schedule below",
     "throughout PARTS 1 and 2",
@@ -199,10 +203,11 @@ deadlines <- data.frame(
     dl_date("Upload slides"),
     paste(format(tail(datesclass$Date, 2), "%Y-%m-%d"), collapse = " & "),
     ""),
-  Time = c("before class", "5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
+  Time = c("before class", "5 PM MT", "5 PM MT", "5 PM MT", "in class", "--", "5 PM MT", "5 PM MT", "in class", ""),
   `Evaluation form` = c(
     "--",
     rubric("Project_Proposal_Evaluation_Form.pdf"),
+    rubric("Project_Proposal_Evaluation_Form.pdf", "Rubric (self-evaluation)"),
     rubric("Bioinformatics_Tutorial_Evaluation_Form.pdf"),
     rubric("Teaching_Tutorial_Evaluation_Form.pdf"),
     "[Syllabus](https://svenbuerki.github.io/EEB603_Reproducible_Science/index.html#Participation)",

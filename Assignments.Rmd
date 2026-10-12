@@ -219,6 +219,25 @@ n_words <- length(words[nzchar(words)])
 
 **Submit the source, not an export.** A PDF or a Word file cannot be knitted, so it cannot earn the marks reserved for the proposal being a working reproducible document.
 
+### Revise and Resubmit {#proposalrevise}
+
+<div class="info">
+  <p><strong>&#128221; Open to everyone, and entirely optional</strong></p>
+  <p><b>Every proposal has been graded and every evaluation returned, and you now have the opportunity to revise and resubmit this assignment to earn up to the full 50 points.</b></p>
+  <p>To do so, <b>address the comments I provided and implement the suggested changes</b>. You should also <b>complete the rubric</b>, indicating how you addressed each section and providing a brief self-evaluation, including how many points you would award yourself for each section.</p>
+  <p>If you choose to take advantage of it, submit your revised proposal on our course Google Drive, along with your completed self-evaluation rubric, by <b>Tuesday, 20 October at 5 PM MT</b>.</p>
+  <p><b>I encourage you to take advantage of this opportunity to learn from the feedback and improve your work.</b></p>
+</div>
+
+**What to hand in.** Two things, in the same `First_Last` folder you used before, in [`Individual_reports > Individual_projects > Project_proposal`](https://drive.google.com/drive/folders/1djFlKe7Lz13HnOSV-ThXtR18_3sS8Lm2?usp=drive_link):
+
+- **the revised proposal**, as a folder that still passes the test in [How to Submit It](#proposalsubmit): could I knit it without asking you for anything?
+- **the completed rubric**, downloaded from the button below. For each of the seven sections, write how you addressed it and the score you would award yourself.
+
+**How the revised mark works.** The score from your revised proposal **replaces** your original score, so you can only gain. The rubric and its criteria are unchanged, which is why filling it in yourself is part of the exercise: by the end of it you will have read the standard your report will be judged against from the inside.
+
+**The 1000-word limit still applies.** If the feedback asks you to add a section, you may need to trim elsewhere to make room. That is deliberate: concision is one of the criteria, and deciding what to cut is part of the work.
+
 <a href="Evaluation_Forms/Project_Proposal_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Proposal rubric (pdf)</a>
 
 ## Final Report --- 150 points
