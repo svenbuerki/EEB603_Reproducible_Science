@@ -4101,37 +4101,31 @@ By the end of this chapter, you will be able to:
 - [Explain the Transparency and Openness Promotion (TOP) Guidelines and their application in scientific publishing and funding contexts](#TOP)
 - [Revise your group's reproducibility charter in the light of both](#charterthreats)
 
-**This chapter runs over two classes.** The first sets out the scientific process and the ways it goes wrong. **You then read the solutions at home**, and that reading is what makes the second class work: **both charter activities happen in that second session**, and neither of them goes well if you arrive without knowing what the established mitigations are.
-
-**Class 1 --- the scientific process, and what threatens it**
+**This chapter runs over a single class, and it assumes you have done the reading.** You read [Discuss Solutions to Mitigate Threats](#soltothreats) and [the TOP Guidelines](#TOPguidelines) at home beforehand. **That reading is what makes the session work**: both charter activities happen in this one class, and neither of them goes well if you arrive without knowing what the established mitigations are. My pass over the scientific process and the threats to it is a **fifteen-minute synthesis from the slides**, not your first contact with the material.
 
 | Block | Time | Who |
 |---|---|---|
-| [Review the Steps Involved in the Scientific Process](#scientificprocess) | 10 min | Instructor |
-| [Identify and Define Threats to the Scientific Process](#threatstoprocess) | 10 min | Instructor |
-| **Total in class** | **20 min** | |
-| [Discuss Solutions to Mitigate Threats](#soltothreats) | 20 min | **Students, at home** |
-
-**Class 2 --- testing your charter, twice**
-
-| Block | Time | Who |
-|---|---|---|
-| [👥 Do Your Standards Hold?](#charterthreats) | 25 min | Students, in 2 groups |
+| [Review the Steps Involved in the Scientific Process](#scientificprocess) | 8 min | Instructor, from the slides |
+| [Identify and Define Threats to the Scientific Process](#threatstoprocess) | 7 min | Instructor, from the slides |
+| [👥 Do Your Standards Hold?](#charterthreats) | 30 min | Students, in 2 groups |
 | *five-minute break* | 5 min | |
 | [The Transparency and Openness Promotion Guidelines](#TOP) | 10 min | Instructor |
-| [👥 Score Your Charter Against TOP](#chartertop) | 25 min | Students, in 2 groups |
-| **Total** | **65 min** | |
+| [👥 Score Your Charter Against TOP](#chartertop) | 10 min | Students, in 2 groups |
+| **Total in class** | **70 min** | |
+| [Discuss Solutions to Mitigate Threats](#soltothreats) | 20 min | **Students, before class** |
+| [📰 Compare With a Real Journal](#comparejournal) | 10 min | **Students, before the next class** |
+| [🤝 Present both activities](#reportbacktop) | 10 min | **Students, at the start of the next class** |
 
 ---
 
 ## Class Outline {#chap3outline}
 
-1. [Review the Steps Involved in the Scientific Process](#scientificprocess) <span style="color:dimgray;">(10 minutes)</span>
-2. [Identify and Define Threats to the Scientific Process](#threatstoprocess) <span style="color:dimgray;">(10 minutes)</span>
-3. [Discuss Solutions to Mitigate Threats to the Scientific Process](#soltothreats) <span style="color:dimgray;">(20 minutes, read at home between the two classes)</span>
-4. [👥 Group Activity: Do Your Standards Hold?](#charterthreats) <span style="color:dimgray;">(25 minutes)</span>
+1. [Review the Steps Involved in the Scientific Process](#scientificprocess) <span style="color:dimgray;">(8 minutes, from the slides)</span>
+2. [Identify and Define Threats to the Scientific Process](#threatstoprocess) <span style="color:dimgray;">(7 minutes, from the slides)</span>
+3. [Discuss Solutions to Mitigate Threats to the Scientific Process](#soltothreats) <span style="color:dimgray;">(20 minutes, read at home before class)</span>
+4. [👥 Group Activity: Do Your Standards Hold?](#charterthreats) <span style="color:dimgray;">(30 minutes)</span>
 5. [The Transparency and Openness Promotion Guidelines](#TOP) <span style="color:dimgray;">(10 minutes)</span>
-6. [👥 Group Activity: Score Your Charter Against TOP](#chartertop) <span style="color:dimgray;">(25 minutes)</span>
+6. [👥 Group Activity: Score Your Charter Against TOP](#chartertop) <span style="color:dimgray;">(10 minutes in class; the journal comparison is homework and both activities are presented next class)</span>
 
 ---
 
@@ -4168,7 +4162,7 @@ embed_pdf("Chapters_files/Chapter_3_Scientific_process.pdf", "1")
 
 ---
 
-## Review the Steps Involved in the Scientific Process <span style="color:dimgray;">(10 minutes)</span> {#scientificprocess}
+## Review the Steps Involved in the Scientific Process <span style="color:dimgray;">(8 minutes, from the slides)</span> {#scientificprocess}
 
 The scientific process can be subdivided into six phases (Figure \@ref(fig:SciProcess)):
 
@@ -4197,7 +4191,7 @@ Recognizing the post-study category is equally important, as it encourages both 
 
 ---
 
-## Identify and Define Threats to the Scientific Process <span style="color:dimgray;">(10 minutes)</span> {#threatstoprocess}
+## Identify and Define Threats to the Scientific Process <span style="color:dimgray;">(7 minutes, from the slides)</span> {#threatstoprocess}
 
 A hallmark of scientific creativity is the ability to recognize novel and unexpected patterns in data. However, a major challenge for scientists is remaining open to new and important insights while also avoiding the tendency to be misled by perceived structure in randomness.
 
@@ -4227,7 +4221,7 @@ Below are definitions of common threats to the scientific process (see Figure \@
 
 ---
 
-## Discuss Solutions to Mitigate Threats to the Scientific Process <span style="color:dimgray;">(20 minutes)</span> {#soltothreats}
+## Discuss Solutions to Mitigate Threats to the Scientific Process <span style="color:dimgray;">(20 minutes, read before class)</span> {#soltothreats}
 
 <div class="disclaimer">
   <p><strong>💡 Read this section at home, between the two classes</strong></p>
@@ -4401,7 +4395,7 @@ Collectively, and at scale, these efforts can shift incentives so that what bene
 
 ---
 
-## 👥 Group Activity: Do Your Standards Hold? <span style="color:dimgray;">(25 minutes)</span> {#charterthreats}
+## 👥 Group Activity: Do Your Standards Hold? <span style="color:dimgray;">(30 minutes)</span> {#charterthreats}
 
 In [Chapter 1](#FactorsActivity) your group wrote a **reproducibility charter**: a short set of standards your research team binds itself to. You wrote it before you had any vocabulary for the ways research actually goes wrong. You now have that vocabulary, so the charter can be tested.
 
@@ -4417,23 +4411,32 @@ In [Chapter 1](#FactorsActivity) your group wrote a **reproducibility charter**:
 
 Work in your **Chapter 1 charter document**, in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). You are revising a live document, not starting a new one.
 
-### 🧭 Take Your Two Threats <span style="color:dimgray;">(5 minutes)</span> {#taketwothreats}
+### 🧭 Define All Four Threats <span style="color:dimgray;">(4 minutes)</span> {#taketwothreats}
 
-Two groups, four threats, so each group takes two. They are paired on purpose: the first pair is about decisions made **after seeing the data**, the second about **what gets reported and what quietly does not**.
+**Both groups take all four threats.** You are testing **your own charter**, and there are two groups with two charters, so splitting the list would leave half of each charter untested. The four fall into two pairs, and the contrast is worth holding onto:
 
-| Group | Threats |
-|---|---|
-| **Group 1** | **HARKing** and **P-hacking** |
-| **Group 2** | **Outcome switching** and **Publication bias** |
+| Pair | Threats | What they have in common |
+|---|---|---|
+| **1** | **HARKing** and **P-hacking** | Decisions made **after seeing the data** |
+| **2** | **Outcome switching** and **Publication bias** | What gets **reported**, and what quietly does not |
 
-For each of your two threats, agree on:
+For each of the four, agree on:
 
-1. A one-sentence definition, from the [Glossary of Common Threats](#gloss).
+1. A one-sentence definition, from the [Glossary of Common Threats](#gloss). You read it before class, so this is a check rather than a first pass.
 2. **Which step of the [scientific process](#scientificprocess) it strikes**, and how it biases the result.
 
-### 🔍 Test Your Charter Against Them <span style="color:dimgray;">(12 minutes)</span> {#testcharter}
+### 🔍 Test Your Charter Against All Four <span style="color:dimgray;">(18 minutes)</span> {#testcharter}
 
-Open your charter and take each threat in turn. **Find the clause that would stop it, and quote it.**
+Open your charter and take each threat in turn. **Find the clause that would stop it, and quote it.** Keep a table as you go, so that by the end you have a diagnosis of the whole charter rather than an impression of it:
+
+| Threat | The clause that would stop it (quote it) | Verdict |
+|---|---|---|
+| HARKing | | |
+| P-hacking | | |
+| Outcome switching | | |
+| Publication bias | | |
+
+Roughly **four minutes each**. If a threat is clearly covered, say so and move on: the ones worth your time are those where you have to argue about it.
 
 <div class="danger">
   <p><strong>💡 Be hard on yourselves here</strong></p>
@@ -4448,6 +4451,7 @@ Open your charter and take each threat in turn. **Find the clause that would sto
 
 For every threat you marked *partly* or *not covered*, write the clause that closes the gap. Use the [solutions you read before class](#soltothreats) as your source: a clause is far stronger when it names an established practice ([pre-registration](#studyprereg), [reporting standards](#qualityreport), [open data](#reproducibility)) than when you invent one.
 
+- **If you found more than two gaps, write the two that would most change how your group actually works**, and record the others in the charter as dated to-dos. Detecting every gap is the point of the previous step; closing them all is not today's work.
 - Each new clause goes **under the section whose lead owns it**, marked with today's date, so the charter records what you learned and when.
 - The **Evaluation lead** opens a new **Evaluation** heading and writes the group's first standards for peer review and preprints.
 - Before you finish, read the new clauses aloud and ask the Chapter 1 question again: **could an outsider check this?**
@@ -4508,11 +4512,11 @@ knitr::include_graphics("Figures/new-lifecycle.original_OSF.png")
 
 ---
 
-## 👥 Group Activity: Score Your Charter Against TOP <span style="color:dimgray;">(25 minutes)</span> {#chartertop}
+## 👥 Group Activity: Score Your Charter Against TOP <span style="color:dimgray;">(10 minutes in class)</span> {#chartertop}
 
-Last class you asked whether your charter stops specific threats. Now a harder question: **how does it compare with what the research community already demands?** The [TOP Guidelines](#TOPguidelines) are the closest thing to a published version of what your group wrote, agreed across thousands of journals, and they come with levels, so you can score yourselves instead of arguing.
+You have just asked whether your charter stops specific threats. Now a harder question: **how does it compare with what the research community already demands?** The [TOP Guidelines](#TOPguidelines) are the closest thing to a published version of what your group wrote, agreed across thousands of journals, and they come with levels, so you can score yourselves instead of arguing.
 
-### 📊 Score Yourselves <span style="color:dimgray;">(12 minutes)</span> {#scoreyourselves}
+### 📊 Score Yourselves <span style="color:dimgray;">(10 minutes)</span> {#scoreyourselves}
 
 Work through the [eight TOP standards](#TOPguidelines) as a group. For each, decide **which level your charter currently meets**, judging the charter as written rather than as intended:
 
@@ -4523,7 +4527,7 @@ Work through the [eight TOP standards](#TOPguidelines) as a group. For each, dec
 
 Record the result as a short table at the top of your charter, with today's date. A column of zeros is a perfectly respectable answer for a document written in week two. It is also a list of what to write next.
 
-### 📰 Compare With a Real Journal <span style="color:dimgray;">(8 minutes)</span> {#comparejournal}
+### 📰 Compare With a Real Journal <span style="color:dimgray;">(10 minutes, before the next class)</span> {#comparejournal}
 
 **Each member takes a different journal** they might realistically publish in, and finds its TOP policy. *Science* is a worked example: https://www.science.org/content/page/science-journals-editorial-policies#TOP-guidelines
 
@@ -4535,12 +4539,19 @@ For your journal, identify:
 
 That second one matters. Journal policy is a floor, not a ceiling, and a group is free to hold itself to more than its publisher asks.
 
-### 🤝 Report Back <span style="color:dimgray;">(5 minutes)</span> {#reportbacktop}
+### 🤝 Present Both Activities <span style="color:dimgray;">(10 minutes, at the start of the next class)</span> {#reportbacktop}
 
-Each group takes two minutes to tell the class:
+**You do not report back today.** Each group presents at the **start of the next class**, taking about five minutes to cover **both** of today's activities. That gap is deliberate: it gives you the evening to finish the journal comparison and to say what you did about what you found, rather than describing a gap you noticed ten minutes earlier.
 
-1. The standard where you scored **highest**, and the clause that earned it.
-2. The standard where you scored **lowest**, and the one clause you are adding because of it.
+**From [Do Your Standards Hold?](#charterthreats):**
+
+1. The threat your charter handled **best**, and the clause that earned it.
+2. The gap that **surprised you most**, and the clause you wrote to close it.
+
+**From [Score Your Charter Against TOP](#chartertop):**
+
+3. The standard where you scored **highest** and the one where you scored **lowest**.
+4. What your [journal comparison](#comparejournal) showed: one place the journal is stricter than your charter, and one place your charter is stricter than the journal.
 
 # Chapt. 4 -- Open Science and CARE Principles {#chap4}
 ## Challenge
@@ -4574,24 +4585,26 @@ By the end of this chapter, you will be able to:
 | Block | Time | Who |
 |---|---|---|
 | [FAIR Data](#FAIR) and [The CARE Principles](#CAREPrinc), including [Data Sovereignty](#datasov) | 25 min | **Students, at home before class** |
+| [🤝 Present both Chapter 3 activities](#reportbacktop) | 10 min | Students, in 2 groups |
 | [What is Open Science?](#WhatisOS) and [the seven pillars](#pillars) | 10 min | Instructor |
 | [👥 FAIR Principles Activity](#FAIRactivity) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
 | [👥 CARE Principles Activity](#CAREactivity) | 15 min | Students, in 4 pairs |
 | [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | Students, in 4 pairs |
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | Instructor |
-| **Total in class** | **70 min** | |
+| **Total in class** | **65 min** | |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | **Instructor, at the start of the [Chapter 5 PART A](#partDM) session** |
 
 ---
 
 ## Class Outline {#chap4outline}
 
-1. [What is Open Science?](#WhatisOS) and [the seven pillars of Open Science](#pillars) <span style="color:dimgray;">(10 minutes)</span>
-2. [👥 FAIR Principles Group Activity](#FAIRactivity) <span style="color:dimgray;">(15 minutes)</span>
-3. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
-4. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
-5. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes)</span>
-6. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes)</span>
+1. [🤝 Present both Chapter 3 activities](#reportbacktop) <span style="color:dimgray;">(10 minutes)</span>
+2. [What is Open Science?](#WhatisOS) and [the seven pillars of Open Science](#pillars) <span style="color:dimgray;">(10 minutes)</span>
+3. [👥 FAIR Principles Group Activity](#FAIRactivity) <span style="color:dimgray;">(15 minutes)</span>
+4. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
+5. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
+6. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
+7. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
 
 ---
 
@@ -4990,14 +5003,15 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 |---|---|---|
 | The seven stages of the life cycle, read in advance | 25 min | **Students, at home before class** |
 | [Set up your folder and script, and download the project](#setup5A) | 10 min | **Students, at home before class** |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from Chapter 4 | 15 min | Instructor |
 | [One Pass Over the Whole Cycle](#lifecyclespine) | 15 min | Instructor |
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 5 min | Whole class |
 | [👥 Step 2: Build Your Log, then Diagnose Your Failure Class](#inheritstep2) | 20 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
-| [👥 Step 3: Report What You Found](#inheritstep3) | 12 min | Students, in 4 pairs |
-| [👥 Step 4: Write the Clause That Would Have Caught It](#inheritstep4) | 8 min | Students, in 4 pairs |
-| [👥 Step 5: Merge Into Your Charter](#inheritstep5) | 5 min | Students, in 2 groups |
+| [👥 Step 3: Report What You Found](#inheritstep3) | 10 min | Students, in 4 pairs |
 | **Total in class** | **70 min** | |
+| [👥 Step 4: Write the Clause That Would Have Caught It](#inheritstep4) | 8 min | Students, **at the start of the PART B session** |
+| [👥 Step 5: Merge Into Your Charter](#inheritstep5) | 5 min | Students, **at the start of the PART B session** |
 
 ---
 
@@ -6228,7 +6242,7 @@ Then work through the rest of the file:
 - Sort every file in the folder into three piles: **deposit openly**, **deposit with restricted access**, **never leaves the lab**. Justify the boundaries.
 - Choose a [repository](#datarepos) for the depositable material and state what it would require of you that this project cannot currently supply.
 
-#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(12 minutes)</span> {#inheritstep3}
+#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(10 minutes)</span> {#inheritstep3}
 
 **Three minutes per pair**, read straight off your knitted `Defect_log`. Report, in this order: the worst defect you found, whether it can still be repaired, **your pseudocode for repairing it**, and the practice that would have prevented it.
 
@@ -6246,7 +6260,7 @@ When all four pairs have reported, we return to the stage nobody was assigned:
   <p>This is why <b>Plan</b> sits at the hub of Figure \@ref(fig:LifeCycle) rather than at the start of the ring, and it is why a data management plan is a research instrument rather than paperwork for your funder.</p>
 </div>
 
-#### ✍️ Step 4: Write the Clause That Would Have Caught It <span style="color:dimgray;">(8 minutes)</span> {#inheritstep4}
+#### ✍️ Step 4: Write the Clause That Would Have Caught It <span style="color:dimgray;">(8 minutes, at the start of the PART B session)</span> {#inheritstep4}
 
 Your pair now writes **one clause** for your group's [reproducibility charter](#FactorsActivity): the standard that, had this student's lab held it, would have prevented the defect you reported.
 
@@ -6266,7 +6280,7 @@ This is not administration. **Two of the four clauses will be written into a cha
 
 If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note whose job this is: the [**Data lead**](#FactorsActivity) owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of all four failure classes. **If your group's Data lead section already covered the defect you found, say so in your report.** That is the best possible outcome of this exercise, and it means your charter was ambitious enough.
 
-#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes)</span> {#inheritstep5}
+#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes, at the start of the PART B session)</span> {#inheritstep5}
 
 **There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
 
@@ -6328,14 +6342,15 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 |---|---|---|
 | [The four sections, read in advance](#preread5B) | 25 min | **Students, at home before class** |
 | [Set up your script and diagram the project](#setup5B) | 10 min | **Students, at home before class** |
+| [👥 PART A Steps 4 and 5](#inheritstep4): write the clause, then merge into your charter | 13 min | Students, in 4 pairs then 2 groups |
 | [One Pass Over the Workflow](#codespine), with the slides | 18 min | Instructor |
 | [👥 Step 1: Try to Run It](#codestep1) | 7 min | Whole class |
 | [👥 Step 2: Diagnose Your Failure Class](#codestep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
 | [👥 Step 3: Report What You Found](#codestep3) | 12 min | Students, in 4 pairs |
-| [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, in 4 pairs |
-| [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, in 2 groups |
 | **Total in class** | **70 min** | |
+| [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, **at the start of the [Chapter 6](#chap6) session** |
+| [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, **at the start of the [Chapter 6](#chap6) session** |
 
 ---
 
@@ -7127,7 +7142,7 @@ mean(d$mass, na.rm = TRUE)          #write this number down
 
 Listen to all four reports. **You adopt all four conclusions in Step 5.**
 
-#### ✍️ Step 4: Write the Clause <span style="color:dimgray;">(8 minutes)</span> {#codestep4}
+#### ✍️ Step 4: Write the Clause <span style="color:dimgray;">(8 minutes, at the start of the Chapter 6 session)</span> {#codestep4}
 
 One clause per pair, into the **Analysis lead** section of your charter this time, which owns "code and statistics: the analysis plan, what is decided before the data are seen, and how an analysis is made re-runnable". The charter is in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). Same test as always: **specific enough that somebody else can tell whether it was kept.**
 
@@ -7142,7 +7157,7 @@ These pass:
 
 **Deposit it, as in PART A**: your clause and your updated defect log go into your pair's subfolder in [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), so that the group that did not write it can insert the exact words rather than an approximation.
 
-#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes)</span> {#codestep5}
+#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes, at the start of the Chapter 6 session)</span> {#codestep5}
 
 **Same mechanism as PART A.** Split into your two charter groups, open your charter in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link), and insert **all four clauses**, this time into the **Analysis lead** section: the two your group wrote, and the two you read out of [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link). Then check you gained four and not two.
 
