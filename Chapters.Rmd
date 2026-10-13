@@ -674,7 +674,7 @@ Research groups, laboratories and consortia write these for exactly this reason 
 
 **And this is not a one-off exercise.** Nearly everything you write today (data management, documentation, reproducible code, version control, deposition, citation) is developed properly later in this course. Your charter is therefore a **map of where we are going**: at the end of the semester you should be able to return to it and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.
 
-Work in **two groups of three**. Each group is a research team, and **every member owns one section of the charter**:
+Work in **two groups of four**. Each group is a research team, and **every member owns a section of the charter**:
 
 | Role | Owns the standards for |
 |---|---|
@@ -682,7 +682,7 @@ Work in **two groups of three**. Each group is a research team, and **every memb
 | **Analysis lead** | Code and statistics: the analysis plan, what is decided before the data are seen, and how an analysis is made re-runnable |
 | **Reporting lead** | What leaves the group: what is deposited and when, how results and limitations are reported, and how data, software and sources are cited |
 
-Between them these three cover the whole data life cycle, so nothing in the charter is unowned. **You are responsible for your section and you will be the one defending it**, so choose the role closest to the research you actually do --- or the one furthest from it, if you would rather learn something new.
+Between them these three cover the whole data life cycle, so nothing in the charter is unowned. **With four of you, one section has two co-leads**: agree which, and both of you answer for it. [Chapter 3](#charterthreats) adds a fourth role, so by then everyone has a section of their own. **You are responsible for your section and you will be the one defending it**, so choose the role closest to the research you actually do --- or the one furthest from it, if you would rather learn something new.
 
 
 #### 🧠 What Do You Remember? <span style="color:dimgray;">(10 minutes)</span> {#recall}
@@ -4402,12 +4402,14 @@ In [Chapter 1](#FactorsActivity) your group wrote a **reproducibility charter**:
 
 <div class="disclaimer">
   <p><strong>💡 Your roles, and the new one</strong></p>
+  <p>You are <b>four to a group, and from today there are four roles</b>, so everyone owns a section of their own.</p>
   <ul>
-    <li>Keep the role you took in Chapter 1: <b>Data lead</b>, <b>Analysis lead</b> or <b>Reporting lead</b>. Each of you still owns your own section of the charter.</li>
-    <li><b>Chapter 3 adds a fourth role, the Evaluation lead</b>, who owns everything that happens once work leaves the group: preprints, peer review, and how the group answers reviewers.</li>
-    <li><b>Your charter has no Evaluation section</b>, because Chapter 1 never raised the question. Today it gets one.</li>
-    <li>If your group is three today, the Reporting lead takes Evaluation as well.</li>
+    <li>Keep the role you took in Chapter 1: <b>Data lead</b>, <b>Analysis lead</b> or <b>Reporting lead</b>.</li>
+    <li><b>The fourth member becomes the Evaluation lead</b>, who owns everything that happens once work leaves the group: preprints, peer review, and how the group answers reviewers. If a section had two co-leads in Chapter 1, one of them takes this role now.</li>
+    <li><b>Your charter has no Evaluation section</b>, because Chapter 1 never raised the question. Today it gets one, written from scratch.</li>
   </ul>
+  <p><strong>How the work divides.</strong> <b>The diagnosis is done together; the writing is done alone.</b> In <a href="#testcharter">Step 2</a> the whole group works through all four threats at one table, but each threat is pinned to <b>the section that should have stopped it</b>, and that section's lead has to produce the clause or say out loud that there is none. In <a href="#writemissing">Step 3</a> you each write in your own section.</p>
+  <p><strong>And the Evaluation lead is not a spectator.</strong> You own <b>publication bias</b> outright in Step 2, because deciding not to submit a null result is precisely "what happens once work leaves the group". You also <b>keep the table</b> and hold everyone else to the Chapter 1 test: could an outsider check this? Then in Step 3 you draft the entire new Evaluation section, which is the largest single piece of writing in this activity.</p>
 </div>
 
 Work in your **Chapter 1 charter document**, in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). You are revising a live document, not starting a new one.
@@ -4428,16 +4430,22 @@ For each of the four, agree on:
 
 ### 🔍 Test Your Charter Against All Four <span style="color:dimgray;">(18 minutes)</span> {#testcharter}
 
-Open your charter and take each threat in turn. **Find the clause that would stop it, and quote it.** Keep a table as you go, so that by the end you have a diagnosis of the whole charter rather than an impression of it:
+**Work at one table, with the Evaluation lead keeping the record.** Take each threat in turn and do two things: **decide which section of your charter should have stopped it**, then make **that section's lead** either quote the clause or state plainly that there is none. Nobody diagnoses their own section in private, and nobody gets to hide behind the group.
 
-| Threat | The clause that would stop it (quote it) | Verdict |
-|---|---|---|
-| HARKing | | |
-| P-hacking | | |
-| Outcome switching | | |
-| Publication bias | | |
+| Threat | Whose section should stop it? | The clause that would stop it (quote it) | Verdict |
+|---|---|---|---|
+| HARKing | | | |
+| P-hacking | | | |
+| Outcome switching | | | |
+| Publication bias | | | |
 
 Roughly **four minutes each**. If a threat is clearly covered, say so and move on: the ones worth your time are those where you have to argue about it.
+
+<div class="info">
+  <p><strong>💡 Expect to argue about the second column, and do not resolve it too quickly</strong></p>
+  <p><b>Two of these threats land on the Analysis lead</b> (HARKing and p-hacking are both about decisions made after seeing the data) and <b>publication bias lands on the Evaluation lead</b>. That leaves <b>outcome switching</b> genuinely contestable: is it the Analysis lead's, for changing the measure, or the Reporting lead's, for not disclosing the change?</p>
+  <p><b>Notice what is missing.</b> None of the four is primarily a <b>Data lead</b> threat, which is worth a minute of your time rather than a shrug: either your data section is already the safest part of your charter, or these four threats simply do not reach the place where data are generated. Both answers are interesting, and the second one tells you what a fifth threat would have to be.</p>
+</div>
 
 <div class="danger">
   <p><strong>💡 Be hard on yourselves here</strong></p>
@@ -4550,14 +4558,32 @@ You have just asked whether your charter stops specific threats. Now a harder qu
 
 ### 📊 Score Yourselves <span style="color:dimgray;">(10 minutes)</span> {#scoreyourselves}
 
-Work through the [seven TOP research practices](#TOPguidelines) as a group. For each, decide **which level your charter currently meets**, judging the charter as written rather than as intended:
+**Score in parallel, then reconcile.** Seven practices is too many for one conversation in ten minutes, so **each lead scores the practices that belong to their own section first**, and the group then pools the results and argues about the ones that do not fit:
+
+| Lead | Practices you score |
+|---|---|
+| **Data lead** | Study Protocol, Research Materials Transparency |
+| **Analysis lead** | Analysis Plan, Analytic Code Transparency |
+| **Reporting lead** | Data Transparency, Reporting Transparency |
+| **Evaluation lead** | Study Registration, and you keep the table and audit the other three |
+
+Two of these allocations are worth a word. **Data Transparency is the Reporting lead's**, not the Data lead's, because Chapter 1 gave them *"what is deposited and when, and how data, software and sources are cited"*, which is Level 2's requirement in your own words. **Study Registration is the Evaluation lead's**, because a registered report is submitted and reviewed **before the results exist**, which is squarely what happens once work leaves the group.
+
+For each practice, decide **which level your charter currently meets**, judging the charter as written rather than as intended:
 
 - **Not addressed** --- the charter says nothing about it. This is not a TOP level; TOP starts at Level 1. It is simply where a charter can be, and it is the most useful thing this exercise finds.
 - **Level 1, Disclosed** --- you commit to **stating** whether you did it, and where.
 - **Level 2, Shared and Cited** --- you commit to **doing** it, depositing the output and **citing** it.
 - **Level 3, Certified** --- you commit to having it **checked by somebody outside the group**.
 
-Record the result as a short table at the top of your charter, with today's date. A column of zeros is a perfectly respectable answer for a document written in week two. It is also a list of what to write next.
+**Timing.** Roughly **3 minutes** scoring your own, **6 minutes** pooling them into one table and arguing the contested ones, **1 minute** to date it and save.
+
+Record the result as a seven-row table at the top of your charter, with today's date. **A charter that reads "Not addressed" most of the way down is a perfectly respectable result for a document written in week two.** It is also a list of what to write next, in priority order.
+
+<div class="info">
+  <p><strong>&#128161; Evaluation lead: note the two practices that are not on the list</strong></p>
+  <p>TOP 2025 also defines two <b>verification practices</b>: <b>results transparency</b> and <b>computational reproducibility</b>. They sit outside the seven, so you cannot score your charter against them today, and they are yours. <b>Write them at the bottom of the table as your group's stretch target</b>, because computational reproducibility is what the rest of this course teaches you to do: by December you should be able to claim it rather than aspire to it.</p>
+</div>
 
 ### 📰 Compare With a Real Journal <span style="color:dimgray;">(10 minutes, before the next class)</span> {#comparejournal}
 
