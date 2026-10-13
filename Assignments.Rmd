@@ -225,7 +225,7 @@ n_words <- length(words[nzchar(words)])
   <p><strong>&#128221; Open to everyone, and entirely optional</strong></p>
   <p><b>Every proposal has been graded and every evaluation returned, and you now have the opportunity to revise and resubmit this assignment to earn up to the full 50 points.</b></p>
   <p>To do so, <b>address the comments I provided and implement the suggested changes</b>. You should also <b>complete the rubric</b>, indicating how you addressed each section and providing a brief self-evaluation, including how many points you would award yourself for each section.</p>
-  <p>If you choose to take advantage of it, submit your revised proposal on our course Google Drive, along with your completed self-evaluation rubric, by <b>Tuesday, 20 October at 5 PM MT</b>.</p>
+  <p>If you choose to take advantage of it, submit your revised proposal on our course Google Drive, along with your completed self-evaluation rubric, by <b>Thursday, 22 October at 5 PM MT</b>.</p>
   <p><b>I encourage you to take advantage of this opportunity to learn from the feedback and improve your work.</b></p>
 </div>
 
