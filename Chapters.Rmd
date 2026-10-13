@@ -4136,6 +4136,7 @@ This chapter is primarily based on the following resources:
 - `r ref_txt("Kerr1998")` **– On HARKing (see Glossary section).**
 - `r ref_txt("Nosek2012")` **– On incentives.** 
 - `r ref_txt("Nosek1422")` **– On promoting an open research culture.**
+- `r ref_txt("Grant2026")` **– TOP 2025, the current version of the guidelines: seven research practices, and three levels renamed to say who is responsible.**
 - `r ref_txt("Baker_2016")` **– Results of a reproducibility survey.**
 - `r ref_txt("Munafo")` **– Provides a framework to implement the measures proposed in this chapter.**
 - `r ref_txt("Nosek2600")` **– On the pre-registration revolution.**
@@ -4462,33 +4463,64 @@ For every threat you marked *partly* or *not covered*, write the clause that clo
 
 The **Transparency and Openness Promotion (TOP) Guidelines** [published in @Nosek1422] provide a framework for journals and funders to encourage greater transparency in research planning and reporting.
 
-The guidelines consist of **eight modular standards**, each addressing a key aspect of research transparency.  
-Each standard includes **three levels of increasing stringency**, allowing for a gradual implementation of open science practices (see Figure \@ref(fig:TOP)).
+**The guidelines were revised in 2025** [@Grant2026]. The 2015 framework published in @Nosek1422 had **eight modular standards**; **TOP 2025 has seven research practices**, and its three levels were renamed so that each one says who does what. Both the count and the level names changed, so material written against the older version no longer matches the current guidelines.
+
+Each practice still has **three levels of increasing stringency**, allowing for gradual implementation of open science practices.
 
 Journals can **choose which standards to adopt** and **at what level**, providing flexibility to account for disciplinary norms.
 
 This structure helps establish **community-wide transparency standards** while respecting the diversity of research practices across fields.
 
-### TOP Transparency Modular Standards {#TOPguidelines}
+### The Seven TOP Research Practices {#TOPguidelines}
 
-The eight modular standards are:
+**The three levels are the key to reading this table.** They are no longer only about how strict a journal is; they say **who is responsible** at each step:
 
-1. **Citation standards:** Proper citation of data sets and other research outputs.  
-2. **Data transparency:** Archiving and sharing of research data.  
-3. **Analytic methods transparency:** Archiving and sharing of analytic code.  
-4. **Research materials transparency:** Archiving and sharing of materials used in the research.
-5. **Design and analysis transparency:** Reporting detailed methods and results.  
-6. **Pre-registration of studies:** Registering study plans prior to initiation.  
-7. **Pre-registration of analysis plans:** Registering analysis plans before conducting the study.  
-8. **Replication:** Conducting studies designed to replicate previously published research.
+- **Level 1, Disclosed** --- the authors **state** whether they did it, and where.
+- **Level 2, Shared and Cited** --- the authors **do** it, deposit the output and **cite** it.
+- **Level 3, Certified** --- an **independent party verifies** that it was done properly.
 
-Each standard has three levels of transparency (Level 1, Level 2, and Level 3) reflecting increasing rigor (see Figure \@ref(fig:OSF)). Journals select levels based on their readiness and disciplinary norms, balancing implementation feasibility with the desire for stronger transparency requirements.
+| Research practice | Level 1: Disclosed | Level 2: Shared and Cited | Level 3: Certified |
+|---|---|---|---|
+| **Study Registration** | Authors state whether the study was registered, and if so, where and when | Researchers register the study and cite the registration | An independent party certifies the registration was timely and complete for the design |
+| **Study Protocol** | Authors state whether the protocol is available, and if so, where and when it was shared | Researchers publicly share the protocol and cite it | An independent party certifies the protocol was shared on time and is complete |
+| **Analysis Plan** | Authors state whether the analysis plan is available, and if so, where and when | Researchers publicly share the analysis plan and cite it | An independent party certifies the plan was shared on time and is complete |
+| **Research Materials Transparency** | Authors state whether materials are available, and if so, where | Researchers cite materials deposited in a trusted repository | An independent party certifies the materials were deposited and documented to best practice |
+| **Analytic Code Transparency** | Authors state whether analytic code is available, and if so, where | Researchers cite code deposited in a trusted repository | An independent party certifies the code was deposited and documented to best practice |
+| **Data Transparency** | Authors state whether data are available, and if so, where | Researchers cite data deposited in a trusted repository | An independent party certifies the data were deposited with metadata to best practice |
+| **Reporting Transparency** | Authors state whether they used a reporting guideline, and if so, which one | Authors publicly share a completed reporting checklist and cite the guideline | An independent party certifies the appropriate guideline was followed |
 
-```{r TOP, fig.alt="A grid with eight transparency standards as rows (citation standards, data transparency, analytic methods or code transparency, research materials transparency, design and analysis transparency, study preregistration, analysis plan preregistration, replication) and four columns of increasing stringency: Not Implemented, Level I, Level II and Level III, each cell describing the journal or article requirement.", echo=FALSE, fig.cap="Table presenting the TOP standards and their associated levels of transparency.", fig.show="asis", out.width = '100%'}
-knitr::include_graphics("Figures/TableSummary.png")
-```
+Journals select levels based on their readiness and disciplinary norms, balancing implementation feasibility against stronger transparency requirements.
 
-Over 1,000 journals and organizations had adopted one or more TOP-compliant policies as of August 2018, including *Ecology Letters*, *The Royal Society*, and *Science*. The full list of journals implementing the TOP guidelines can be found here: https://osf.io/2sk9f/
+<div class="info">
+  <p><strong>&#128161; What happened to replication?</strong></p>
+  <p>In the 2015 framework there were eight standards rather than seven, and <b>Replication</b> was the eighth. TOP 2025 moves it out of the research practices and into a separate set of <b>verification study types</b>, alongside <b>registered reports</b>, <b>multiverse</b> analyses and <b>many-analyst</b> studies. It also adds two <b>verification practices</b>: <b>results transparency</b> and <b>computational reproducibility</b>. <b>That second one is this entire course</b>: the claim that somebody else can re-run your analysis and obtain your numbers is now a named part of the framework rather than an implication of it.</p>
+</div>
+
+**Citation standards**, the first of the 2015 standards, no longer has a row of its own. Citing the data, code and materials you use is now **built into Level 2 of each practice**, which is a stronger position: you cannot reach Level 2 on data transparency without citing a deposit.
+
+Over 1,000 journals and organizations had adopted one or more TOP-compliant policies as of August 2018, including *Ecology Letters*, *The Royal Society*, and *Science*. **Over 3,000 journal policies have now been scored.**
+
+### Where to Look Up a Journal {#toplookup}
+
+The entry point is the Center for Open Science's [TOP Guidelines page](https://www.cos.io/initiatives/top-guidelines), which links the current data. The three files you are most likely to want:
+
+| Source | What it holds | Last updated |
+|---|---|---|
+| [`top-factor.csv`](https://osf.io/qatkz) | Over 3,000 **journal policies scored** against each standard and level. The most useful single file | March 2025 |
+| [`TOP_signatories.csv`](https://osf.io/y2rr6) | Journals and organisations that have **declared support** for TOP | February 2023 |
+| [`TOP_implementors.csv`](https://osf.io/2sk9f) | The older list of journals that had **implemented** a TOP policy | June 2019 |
+
+The scoring [evaluation rubric](https://osf.io/t2yu5) explains how a policy was turned into a score, which is worth a look before you quote one.
+
+<div class="danger">
+  <p><strong>&#128161; Two traps when you look up a journal</strong></p>
+  <ul>
+    <li><b>TOP Factor has been retired.</b> The site <code>topfactor.org</code> now redirects to the guidelines page, so a search result or a slide pointing you there is out of date. The scored data above is what replaced it.</li>
+    <li><b>Everything in those files is scored against the 2015 eight-standard framework</b>, because all of it predates TOP 2025. A journal's own published policy will usually be in that older language too. <b>So expect to translate</b>: work out which of the seven current practices each old standard corresponds to, and say so when you report. That translation is part of the exercise, not an obstacle to it.</li>
+  </ul>
+</div>
+
+The current guidelines themselves are maintained at <https://www.cos.io/initiatives/top-guidelines>.
 
 ### Promoting Linkage of Publication, Data, Code, and Analyses into a Unified Environment
 
@@ -4518,12 +4550,12 @@ You have just asked whether your charter stops specific threats. Now a harder qu
 
 ### 📊 Score Yourselves <span style="color:dimgray;">(10 minutes)</span> {#scoreyourselves}
 
-Work through the [eight TOP standards](#TOPguidelines) as a group. For each, decide **which level your charter currently meets**, judging the charter as written rather than as intended:
+Work through the [seven TOP research practices](#TOPguidelines) as a group. For each, decide **which level your charter currently meets**, judging the charter as written rather than as intended:
 
-- **Level 0** --- the charter says nothing about it.
-- **Level 1** --- you say you will disclose whether you did it.
-- **Level 2** --- you require it.
-- **Level 3** --- you require it *and* say how it is verified.
+- **Not addressed** --- the charter says nothing about it. This is not a TOP level; TOP starts at Level 1. It is simply where a charter can be, and it is the most useful thing this exercise finds.
+- **Level 1, Disclosed** --- you commit to **stating** whether you did it, and where.
+- **Level 2, Shared and Cited** --- you commit to **doing** it, depositing the output and **citing** it.
+- **Level 3, Certified** --- you commit to having it **checked by somebody outside the group**.
 
 Record the result as a short table at the top of your charter, with today's date. A column of zeros is a perfectly respectable answer for a document written in week two. It is also a list of what to write next.
 
@@ -4533,7 +4565,7 @@ Record the result as a short table at the top of your charter, with today's date
 
 For your journal, identify:
 
-- which of the eight standards it addresses, and at what level;
+- which of the seven practices it addresses, and at what level (if its policy is written in the 2015 language, say which practice each old standard maps onto);
 - one place it is **stricter than your charter**;
 - one place **your charter is stricter than it**.
 

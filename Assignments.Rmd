@@ -142,7 +142,7 @@ Two things are asked of this proposal beyond a conventional project plan:
         - the [data life cycle](Chapters.html#datalifecycle), if it is about how data are created, documented, stored, shared or reused;
         - the [workflow in Figure 3.4](Chapters.html#fig:workflowPART2), if it is about the analysis itself, since that figure shows which step of the process each of your code chunks implements.
     + **What is broken now.** The [glossary of threats](Chapters.html#gloss) and the [solutions that mitigate them](Chapters.html#soltothreats) in Chapter 3 are where to look. A proposal that names the specific failure it addresses is far stronger than one gesturing at reproducibility in general.
-    + **How you will test it.** Use the standard your group applied to its [reproducibility charter](Chapters.html#FactorsActivity): a commitment only counts if somebody else could check whether you kept it. The [TOP standards](Chapters.html#TOPguidelines), with their levels 0 to 3, are a ready-made way of saying how far you intend to go.
+    + **How you will test it.** Use the standard your group applied to its [reproducibility charter](Chapters.html#FactorsActivity): a commitment only counts if somebody else could check whether you kept it. The [seven TOP research practices](Chapters.html#TOPguidelines), with their three levels (**Disclosed**, **Shared and Cited**, **Certified**), are a ready-made way of saying how far you intend to go.
 
 ### Length, and How to Check It {#proposallength}
 
