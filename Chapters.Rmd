@@ -4601,46 +4601,49 @@ That second one matters. Journal policy is a floor, not a ceiling, and a group i
 
 ## 🤝 Report Back on Both Activities <span style="color:dimgray;">(10 minutes, at the start of the next class)</span> {#reportbacktop}
 
-**You do not report back today.** Each group presents at the **start of the next class**, taking **five minutes**, and covers **both** of today's activities. That gap is deliberate: it gives you the evening to finish the journal comparison and to say what you **did** about what you found, rather than describing a gap you noticed ten minutes earlier.
+**You do not report back today.** Each group presents at the **start of the next class**, taking **five minutes**. That gap is deliberate: it gives you the evening to finish the journal comparison and to say what you **did** about what you found, rather than describing a gap you noticed ten minutes earlier.
 
-**Have the charter open and read from it.** I want to hear your actual clauses, in your actual words, not a description of them.
+**This report draws on both of today's activities:**
+
+- [👥 Do Your Standards Hold?](#charterthreats), where you tested your charter against four threats and wrote the clauses that were missing;
+- [👥 Score Your Charter Against TOP](#chartertop), where you scored it against the seven research practices and compared it with a real journal's policy.
+
+**Have the charter open and read from it**, so that what we hear is your own wording.
 
 ### What to report {#reportspec}
 
-**1. One threat your charter already handled** <span style="color:dimgray;">(about 1 minute)</span>
+| | Comes from | What you give us | Time |
+|---|---|---|---|
+| **1** | [Do Your Standards Hold?](#testcharter) | One threat your charter **already** handled | 1 min |
+| **2** | [Do Your Standards Hold?](#writemissing) | **One or two clauses you changed**, before and after | 2 min |
+| **3** | [Score Your Charter Against TOP](#scoreyourselves) and the [journal comparison](#comparejournal) | Your highest and lowest practice, and the next clause you would write | 1.5 min |
+| **4** | Both | One sentence on where the charter stands now | 30 s |
 
-Name the threat, **read the clause that stops it word for word**, and say who outside your group could check whether you followed it.
+#### 1. One threat your charter already handled <span style="color:dimgray;">(1 minute, from [Testing Your Charter](#testcharter))</span>
 
-**2. One or two clauses you changed** <span style="color:dimgray;">(about 2 minutes, and this is the part that matters most)</span>
+Name the threat, **read the clause that stops it**, and say who outside your group could check whether you followed it.
 
-For each clause, give four things:
+#### 2. One or two clauses you changed <span style="color:dimgray;">(2 minutes, from [Writing the Missing Clauses](#writemissing))</span>
+
+**This is the centre of the report.** For each clause, four things:
 
 - the **threat or TOP practice** that exposed the gap;
 - **how the clause read before**, or "there was nothing there";
 - **how it reads now**;
 - what somebody outside the group would have to **do** to check it.
 
-A clause that moved from *"we will be transparent about our analysis"* to *"the analysis plan is committed to the repository before the data are unblinded"* is exactly the kind of change to show. **The before and after is the point**: it is the evidence that the charter changed rather than that you read about threats.
+For example, a clause that moved from *"we will be transparent about our analysis"* to *"the analysis plan is committed to the repository before the data are unblinded"* shows the whole arc: a threat identified, a vague commitment found, and a checkable one written in its place.
 
-**3. Your TOP result** <span style="color:dimgray;">(about 1.5 minutes)</span>
+#### 3. Your TOP result <span style="color:dimgray;">(1.5 minutes, from [Score Yourselves](#scoreyourselves) and the [journal comparison](#comparejournal))</span>
 
 - the practice where you scored **highest**, and the clause that earned it;
 - the practice where you scored **lowest** or **Not addressed**, and **the one clause you would write to move it up a single level**;
-- from your [journal comparison](#comparejournal): one place the journal is **stricter than you**, and one place **you are stricter than the journal**.
+- one place the journal is **stricter than you**, and one place **you are stricter than the journal**.
 
-**4. One sentence to finish** <span style="color:dimgray;">(about 30 seconds)</span>
+#### 4. One sentence to finish <span style="color:dimgray;">(30 seconds)</span>
 
 What would you tell somebody **joining your group next week** about what your charter now commits them to?
 
-<div class="disclaimer">
-  <p><strong>&#128161; What makes this a good report rather than a summary</strong></p>
-  <ul>
-    <li><b>Quote, do not paraphrase.</b> "We tightened our data clause" tells me nothing. Reading the old line and the new one tells me everything.</li>
-    <li><b>Do not narrate the activity.</b> I know what the activity was. What I do not know is what your charter now says.</li>
-    <li><b>"Not addressed" is a perfectly good answer</b>, and a charter written in week two that scores low on five practices is normal. <b>Naming which one you would fix first is the part that earns credit.</b></li>
-    <li><b>Disagreements are worth reporting.</b> If your group could not agree whose section owned outcome switching, say so and say how you settled it. That argument is the actual work of writing standards.</li>
-  </ul>
-</div>
 
 # Chapt. 4 -- Open Science and CARE Principles {#chap4}
 ## Challenge
@@ -4675,9 +4678,11 @@ By the end of this chapter, you will be able to:
 |---|---|---|
 | [FAIR Data](#FAIR) and [The CARE Principles](#CAREPrinc), including [Data Sovereignty](#datasov) | 25 min | **Students, at home before class** |
 | [🤝 Present both Chapter 3 activities](#reportbacktop) | 10 min | Students, in 2 groups |
-| [What is Open Science?](#WhatisOS) and [the seven pillars](#pillars) | 10 min | Instructor |
+| [What is Open Science?](#WhatisOS) | 4 min | Instructor |
+| Quick pass over [FAIR Data](#FAIR) | 3 min | Instructor |
 | [👥 FAIR Principles Activity](#FAIRactivity) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
+| Quick pass over [CARE](#CAREPrinc) and [Data Sovereignty](#datasov) | 3 min | Instructor |
 | [👥 CARE Principles Activity](#CAREactivity) | 15 min | Students, in 4 pairs |
 | [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | Students, in 4 pairs |
 | **Total in class** | **65 min** | |
@@ -4688,12 +4693,14 @@ By the end of this chapter, you will be able to:
 ## Class Outline {#chap4outline}
 
 1. [🤝 Present both Chapter 3 activities](#reportbacktop) <span style="color:dimgray;">(10 minutes)</span>
-2. [What is Open Science?](#WhatisOS) and [the seven pillars of Open Science](#pillars) <span style="color:dimgray;">(10 minutes)</span>
-3. [👥 FAIR Principles Group Activity](#FAIRactivity) <span style="color:dimgray;">(15 minutes)</span>
-4. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
-5. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
-6. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
-7. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
+2. [What is Open Science?](#WhatisOS) <span style="color:dimgray;">(4 minutes)</span>
+3. Quick pass over [FAIR Data](#FAIR) <span style="color:dimgray;">(3 minutes)</span>
+4. [👥 FAIR Principles Group Activity](#FAIRactivity) <span style="color:dimgray;">(15 minutes)</span>
+5. Quick pass over [the CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov) <span style="color:dimgray;">(3 minutes)</span>
+6. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
+7. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
+8. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
+9. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
 
 ---
 
@@ -4721,9 +4728,13 @@ This chapter is based on:
 - `r ref_txt("Wagenknecht2021")`
 - `r ref_txt("Wilkinson2016")`
 
+**Everything below is reading, and the three group activities at the end of the chapter apply it.** Read [FAIR Data](#FAIR), [the CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov) before class: I go over each of them briefly, immediately before the activity that uses it, so the pass in class is a reminder rather than your first contact.
+
 ---
 
-## What is Open Science? {#WhatisOS}
+---
+
+### What is Open Science? {#WhatisOS}
 
 The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines [Open Science](https://www.oecd.org/sti/inno/open-science.htm) as:
 
@@ -4735,7 +4746,254 @@ While this definition focuses on access to research outputs, several other organ
 
 ---
 
-### 🤝 Group Sharing and Discussions {#OSgroupwork}
+---
+
+### What are the Pillars of Open Science? {#pillars}
+
+The 7 pillars of Open Science are: 
+
+- [FAIR Data](#FAIR)
+- [Research Integrity](#RI)
+- [Next Generation Metrics](#NGSMet) 
+- [Future of Scholarly Communication](#FSC) 
+- [Citizen Science](#CS)
+- [Education and Skills](#ES)
+- [Rewards and Initiatives](#EI)
+
+#### FAIR Data {#FAIR}
+
+The [FAIR Principles](https://doi.org/10.1038/sdata.2016.18) [@Wilkinson2016] guide researchers in ensuring that research outputs are (Figure \@ref(fig:FAIR)):
+
+- **F**indable: Research outputs should be **discoverable** by the broader academic community and the public.
+- **A**ccessible: Data should be accompanied by **unique identifiers**, metadata, and clear language, using standardized access protocols.
+- **I**nteroperable: Data and metadata should follow **recognized standards** that allow them to be shared and integrated across systems. Interoperability means that different tools, platforms, or systems can connect and communicate **seamlessly**, without extra effort from the user.
+- **R**eusable: Research outputs should be designed for **reuse and re-purposing**, allowing others to maximize their research potential.
+
+<div class="info">
+  <p><strong>💡 Why FAIR Matters:</strong></p>
+  <ul>
+    <li>Reduces barriers to accessing and using research outputs.</li>
+    <li>Helps secondary researchers find, understand, and reuse data to generate new insights.</li>
+    <li>Maximizes the value of existing research resources.</li>
+  </ul>
+</div>
+
+```{r FAIR, fig.alt="Four black-and-white icons in a row, each paired with a word: a magnifying glass for Findable, a hand tapping a screen for Accessible, three interlocking gears for Interoperable, and a recycling triangle for Reusable.", echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
+knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
+```
+
+##### The FAIR Guiding Principles
+
+@Wilkinson2016 outline a set of guidelines that support the implementation of the FAIR Principles. These guidelines ensure that data and metadata are structured in a way that promotes discovery, access, integration, and reuse.
+
+1. **To be Findable:**
+    - **F1.** (Meta)data are assigned a globally unique and persistent identifier.  
+    - **F2.** Data are described with rich metadata (as defined by R1 below).  
+    - **F3.** Metadata clearly and explicitly include the identifier of the data they describe.  
+    - **F4.** (Meta)data are registered or indexed in a searchable resource.
+2. **To be Accessible:**
+    - **A1.** (Meta)data are retrievable by their identifier using a standardized communication protocol.  
+        - **A1.1.** The protocol is open, free, and universally implementable.  
+        - **A1.2.** The protocol allows for authentication and authorization, where necessary.  
+    - **A2.** Metadata remain accessible even when the data are no longer available.
+3. **To be Interoperable:**
+    - **I1.** (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.  
+    - **I2.** (Meta)data use vocabularies that themselves follow FAIR principles.  
+    - **I3.** (Meta)data include qualified references to other (meta)data.
+4. **To be Reusable:**
+    - **R1.** (Meta)data are richly described with a plurality of accurate and relevant attributes.  
+        - **R1.1.** (Meta)data are released with a clear and accessible data usage license.  
+        - **R1.2.** (Meta)data are associated with detailed provenance.  
+        - **R1.3.** (Meta)data conform to domain-relevant community standards.
+        
+---
+
+#### Research Integrity {#RI}
+
+Research integrity refers to the commitment of researchers to act **honestly, reliably, respectfully**, and to be **accountable** for their actions throughout the research process.
+
+At Boise State University, the [Office of Research Compliance](https://www.boisestate.edu/research-compliance/) provides resources and guidance to support best practices in research integrity.
+
+---
+
+#### Next Generation Metrics {#NGSMet}
+
+The **Next Generation Metrics** pillar of Open Science aims to shift cultural thinking around how research is evaluated. It encourages moving beyond traditional metrics—such as citation counts and journal impact factors—toward more diverse, meaningful indicators of research quality and influence.
+
+These metrics, drawn from a variety of sources and describing different aspects of scholarly impact, can help us **gain a broader and more nuanced understanding of the significance and reach of research**.
+
+In this chapter, we demonstrate this topic with two examples:
+
+- [The San Francisco Declaration on Research Assessment](#DORA)
+- [Altmetric](#altmetric)
+
+##### The San Francisco Declaration on Research Assessment {#DORA}
+
+The [San Francisco Declaration on Research Assessment (DORA)](https://sfdora.org/) exemplifies the growing shift in how research quality is evaluated. Increasingly, institutions and funding bodies are supporting DORA and **openly rejecting the use of journal impact factors and other quantitative metrics** as primary indicators of research quality.
+
+Among many others, **Springer Nature** has endorsed DORA. You can view their specific commitments [here](https://www.springernature.com/gp/researchers/dora).
+
+##### Altmetric {#altmetric}
+
+Another example is [Altmetric](https://www.altmetric.com/), a tool that tracks and demonstrates the **reach and influence of research outputs**—particularly among key stakeholders—by focusing primarily on social media and other online platforms (Figure \@ref(fig:NGSMetrics)).
+
+
+```{r NGSMetrics, fig.alt="Screenshot of a journal article Metrics panel showing 1,062 total views (781 pageviews, 281 PDF downloads), a red line chart of monthly views peaking above 300, a Dimensions citation badge reading 2 total citations, and an Altmetric donut of 22 broken down into 1 news outlet, 1 blog, 10 tweets, and 7 Mendeley readers.", echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
+knitr::include_graphics("Figures/Metrics_example.png")
+```
+
+---
+
+#### Future of Scholarly Communication {#FSC}
+
+The future of scholarly communication is one of the most prominent pillars of Open Scholarship, as it aims to **shift the current academic publishing model toward fully Open Access**. We will explore this topic further in the section on Open Access and associated licenses below.
+
+---
+
+#### Citizen Science {#CS}
+
+Citizen Science refers to the **increased involvement of the public in the research process**, recognizing the invaluable insights that non-academic contributors can offer. These contributions often provide perspectives or data that researchers might not otherwise access. Examples of such initiatives include [eBird](https://ebird.org/home) and [iNaturalist](https://www.inaturalist.org/).
+
+Leveraging the internet, openly available tools, and local knowledge, citizen science is transforming how research is conducted. No longer limited to academic researchers, it encourages collaboration across society.
+
+@Wagenknecht2021 discuss this concept through a European Citizen Science project, while @Groom2017 reflect on its role in biodiversity research. Citizen science has the potential to significantly enhance your research—but it's important to be aware of its challenges. For more on this topic, refer to [this section in Chapter 3](#biodiv).
+
+---
+
+#### Education and Skills {#ES}
+
+This pillar focuses on **identifying researchers' training needs and addressing gaps in knowledge and skills related to Open Science**—such as making publications openly accessible, managing research data in alignment with the FAIR Principles (Figure \@ref(fig:FAIR)), and upholding research integrity.
+
+All researchers, regardless of career stage, should have access to training and professional development opportunities that support Open Science practices. Additionally, skills development should be extended to other stakeholders in the research ecosystem, including librarians, data managers, and the public, particularly in support of citizen science initiatives.
+
+At Boise State University, the [Albertsons Library](https://www.boisestate.edu/library/) offers resources, workshops, and seminars on these topics.
+
+---
+
+#### Rewards and Initiatives {#EI}
+
+**Promoting engagement with Open Science requires recognizing and rewarding the efforts of those who contribute to it.** This pillar addresses systemic barriers while advocating for best practices.
+
+A common barrier is the perceived lack of recognition for tasks such as managing research data or publishing open access. These efforts are often undervalued in traditional academic assessments, discouraging wider adoption of Open Science practices.
+
+Work under this pillar seeks to overcome these challenges and promote greater participation in Open Science. For more on current initiatives and reward systems, refer to [Chapter 3](#chap3).
+
+---
+
+---
+
+### The CARE Principles and Data Sovereignty {#CARE}
+
+In this section, we investigate both the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov), emphasizing how these concepts are closely connected.
+
+As noted by @Carroll2021:
+
+> *"while big data, open data, and Open Science increase access to complex and large datasets for innovation, discovery, and decision-making, Indigenous Peoples’ rights to control and access their data within these environments remain limited."*
+
+Integrating the [FAIR Principles](#FAIR) for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability while prioritizing people and purpose. This combined approach supports Indigenous Peoples’ rights and interests in their data throughout the data lifecycle (Figure \@ref(fig:CARE)).
+
+
+```{r CARE, fig.alt="Teal graphic with two rounded panels linked by circuit-board style traces: the upper panel spells FAIR with Findable, Accessible, Interoperable, Reusable beneath each letter, the word 'and' sits between them, and the lower panel spells CARE with Collective Benefit, Authority to Control, Responsibility, Ethics beneath each letter.", echo=FALSE, fig.cap="Be FAIR and CARE (source: https://www.gida-global.org/care).", fig.show="asis", out.width = '100%', fig.align="center"}
+knitr::include_graphics("Figures/BeFAIRandCARE.png")
+```
+
+#### The CARE Principles for Indigenous Data Governance {#CAREPrinc}
+
+The **CARE Principles** emphasize the importance of **people and purpose** in data governance, particularly for **Indigenous communities**. CARE stands for:
+
+- 🧩 **Collective Benefit**: Data ecosystems should be designed and operated in ways that enable **Indigenous Peoples to derive meaningful benefits** from data. This includes supporting governance, innovation, and community development.
+- 🛡 **Authority to Control**: **Indigenous Peoples have the right to control** the creation, collection, access, analysis, interpretation, management, dissemination, and reuse of data relating to their people, lands, and resources.
+- 📣 **Responsibility**: Researchers and data stewards must take **responsibility for how Indigenous data is used**, ensuring ethical practices and supporting capacity building within Indigenous communities.
+- ⚖️ **Ethics**: The use of Indigenous data must prioritize the **rights, dignity, and well-being** of Indigenous Peoples. This goes beyond formal compliance to include meaningful engagement and respect.
+
+> 📝 *The CARE Principles complement the FAIR Principles by adding a crucial human- and rights-centered lens to data governance.*
+
+Finally, the [United Nations Declaration on the Rights of Indigenous Peoples](https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html) affirms Indigenous Peoples’ rights and interests in data and their **authority to control** it. Access to *data for governance* is essential to support self-determination, and Indigenous nations should be actively involved in the *governance of data* to ensure ethical data use and reuse.
+
+#### Data Sovereignty {#datasov}
+
+The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We provide a definition here because it is especially important for this course, as data sovereignty can impact your data sharing protocols. More on this topic will be discussed in [Chapter 5](#partDM).
+
+**Data sovereignty is the idea that data are subject to the laws and governance structures of the nation where they are collected.** This concept is closely linked with data security, cloud computing, network sovereignty, and technological sovereignty. Unlike technological sovereignty, which is vaguely defined and often used as an umbrella term in policymaking, data sovereignty specifically concerns the governance of data itself.
+
+Data sovereignty is usually discussed in two contexts: Indigenous groups and their autonomy from post-colonial states, and the control of transnational data flows. With the rise of cloud computing, many countries have enacted laws governing data control and storage, reflecting measures of data sovereignty. More than 100 countries now have data sovereignty laws in place.
+
+In the context of self-sovereign identity (SSI), individuals can fully create and control their credentials, although nations may still issue digital identities within this framework.
+
+<hr style="border: 2px solid #333; margin: 2em 0;">
+
+---
+
+### Open Access: A Tool to Promote Open Science? {#openaccess}
+
+**Open Access (OA)** refers to a set of principles and practices that make research outputs freely available online, without access charges or other barriers (Figure \@ref(fig:EcolEvolCC)). While OA publications are free for users to read, researchers often pay publication fees—typically between **\$1,500 and \$2,500**—to make their work openly accessible.
+
+According to the 2001 definition of Open Access, it also involves **removing or reducing barriers to copying and reuse** by applying an open license. An **open license** allows others to reuse a creator’s work freely, in ways that are typically restricted by copyright, patent, or commercial licenses.
+
+Most open licenses are:
+
+- **Worldwide** in scope
+- **Royalty-free**
+- **Non-exclusive**
+- **Perpetual** (they do not expire)
+
+These characteristics ensure that research can be reused, adapted, and redistributed in alignment with the goals of Open Science.
+
+#### The Open Access Conundrum
+
+Since most Open Access (OA) journals rely on **publication fees paid by authors** to generate revenue, there is concern that some OA publishers may be motivated to **accept lower-quality papers and forgo rigorous peer review** in order to maximize profits.
+
+At the same time, **publication fees in prestigious OA journals can exceed \$5,000**, making this publishing model inaccessible for many researchers, particularly those without institutional funding or support.
+
+This situation has been described as the "**Open Access sequel to the Serials Crisis**" [@Khoo_2019]. The original *Serials Crisis* refers to the unsustainable pressure on library budgets caused by the rapid inflation of journal subscription costs. Open Access was initially proposed as a solution to this problem—by removing subscription barriers, research would remain accessible without ongoing costs. However, as @Khoo_2019 notes, both traditional subscription models and Open Access publishing **present their own challenges** and limitations.
+
+---
+
+---
+
+### Creative Commons Licenses {#CClicenses}
+
+Most Open Access journals use [Creative Commons (CC)](https://creativecommons.org/) licenses, so it is important that you and your co-authors understand their implications before submitting your manuscript—especially regarding potential commercial use of your work by third parties (Figure \@ref(fig:EcolEvolCC)).
+
+A CC license is a type of **public copyright license that enables the free distribution of a copyrighted work**. It allows authors to grant others the **right to share, use, and build upon their work** while retaining some control over how it is used.
+
+Creative Commons licenses provide flexibility; for example, authors can choose to allow only non-commercial uses. They also protect users and redistributors from copyright infringement claims, provided they follow the license terms set by the author.
+
+To help authors select the most appropriate license for their work, the Creative Commons initiative offers an [online tool](https://creativecommons.org/choose/), which I recommend consulting. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
+
+```{r EcolEvolCC, fig.alt="Screenshot of a journal masthead in teal type with an Open Access badge, listing the editors-in-chief, the online ISSN and Wiley copyright, and a closing note that articles accepted from 14 August 2012 carry a Creative Commons Attribution License while earlier ones carry an Attribution Non-Commercial License.", echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
+knitr::include_graphics("Figures/License_EcolEvol.png")
+```
+
+#### Available CC Licenses
+
+The Creative Commons licenses provided by the CC initiative are summarized in Figure \@ref(fig:CC).
+
+```{r CC, fig.alt="Dark slide titled Understanding CC Data License Options, with a vertical arrow on the left shading from green at the top labeled Most Open down to red at the bottom labeled Most Restrictive; alongside it a list running CC0 No Rights Reserved, CC BY, CC BY-SA, CC BY-NC-SA, and -ND NoDerivatives, matched on the right by the corresponding badge icons.", echo=FALSE, fig.cap="Overview of Creative Common licenses sorted from most open to most restrictive (provided by Andrew Child).", fig.show="asis", out.width = '100%', fig.align="center"}
+knitr::include_graphics("Figures/CC_licenses_comparison.png")
+```
+
+The description of these licenses is always presented in this format:
+
+1. **You are free to:**
+    - Share — copy and redistribute the material under specified conditions.
+    - Adapt — remix, transform, and build upon the material under specified conditions.
+2. **Under the following terms:**
+    - Attribution — give appropriate credit to the original author.
+    - No additional restrictions — you may not apply legal terms or technological measures that restrict others from doing anything the license permits.
+    
+Here is a list of some of the most commonly used CC licenses with URLs leading to their descriptions:
+
+- [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+- [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+- [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
+- [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+---
+
+## 🤝 Group Sharing and Discussions {#OSgroupwork}
 
 The three activities below are the core of this chapter. They run back to back, and each one builds on the last, so **form your pairs once at the start and stay in them throughout**.
 
@@ -4762,13 +5020,13 @@ The three activities below are the core of this chapter. They run back to back, 
   <p>The pairings are arbitrary, and that is the point: in the third activity you compare <b>the two principles you happen to own</b>, which is how these frameworks meet in practice. Nobody gets to choose a convenient pair.</p>
 </div>
 
-#### 👥 FAIR Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#FAIRactivity}
+### 👥 FAIR Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#FAIRactivity}
 
-##### 🎯 Learning Objective
+#### 🎯 Learning Objective
 
 Students collaboratively explore how the **FAIR Principles** apply to real-world research data and reflect on challenges and best practices for making data FAIR.
 
-##### 👥 Instructions
+#### 👥 Instructions
 
 1. **Work in your pair, on your assigned FAIR principle** from the table above.
 2. **Each of you should:**
@@ -4781,13 +5039,13 @@ Students collaboratively explore how the **FAIR Principles** apply to real-world
     - one **tip** or **best practice** for making data more FAIR.
 4. **Report to the class.** Four pairs, one minute each, so four minutes in total: keep to it.
 
-#### 👥 CARE Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#CAREactivity}
+### 👥 CARE Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#CAREactivity}
 
-##### 🎯 Learning Objective
+#### 🎯 Learning Objective
 
 Students collaboratively explore how the **CARE Principles** apply to data involving Indigenous Peoples and reflect on ethical, cultural, and governance considerations in data stewardship.
 
-##### 👥 Instructions
+#### 👥 Instructions
 
 1. **Same pairs, now on your assigned CARE principle** from the table above.
 2. **Each of you should:**
@@ -4800,13 +5058,13 @@ Students collaboratively explore how the **CARE Principles** apply to data invol
     - one **recommendation** for respecting this principle in research or data governance.
 4. **Report to the class**, again one minute per pair.
 
-#### 👥 FAIR & CARE Principles Comparison Activity <span style="color:dimgray;">(10 minutes)</span> {#FAIRCAREactivity}
+### 👥 FAIR & CARE Principles Comparison Activity <span style="color:dimgray;">(10 minutes)</span> {#FAIRCAREactivity}
 
-##### 🎯 Learning Objective
+#### 🎯 Learning Objective
 
 Students critically compare the **FAIR** and **CARE** Principles and explore how they can be applied together to support ethical, inclusive, and technically sound data practices.
 
-##### 👥 Instructions
+#### 👥 Instructions
 
 **You now have two principles you know well: your FAIR one and your CARE one.** This activity is about the relationship between those two specifically, so each pair is working on something different.
 
@@ -4825,243 +5083,6 @@ Students critically compare the **FAIR** and **CARE** Principles and explore how
 </div>
 
 ---
-
-## What are the Pillars of Open Science? {#pillars}
-
-The 7 pillars of Open Science are: 
-
-- [FAIR Data](#FAIR)
-- [Research Integrity](#RI)
-- [Next Generation Metrics](#NGSMet) 
-- [Future of Scholarly Communication](#FSC) 
-- [Citizen Science](#CS)
-- [Education and Skills](#ES)
-- [Rewards and Initiatives](#EI)
-
-### FAIR Data {#FAIR}
-
-The [FAIR Principles](https://doi.org/10.1038/sdata.2016.18) [@Wilkinson2016] guide researchers in ensuring that research outputs are (Figure \@ref(fig:FAIR)):
-
-- **F**indable: Research outputs should be **discoverable** by the broader academic community and the public.
-- **A**ccessible: Data should be accompanied by **unique identifiers**, metadata, and clear language, using standardized access protocols.
-- **I**nteroperable: Data and metadata should follow **recognized standards** that allow them to be shared and integrated across systems. Interoperability means that different tools, platforms, or systems can connect and communicate **seamlessly**, without extra effort from the user.
-- **R**eusable: Research outputs should be designed for **reuse and re-purposing**, allowing others to maximize their research potential.
-
-<div class="info">
-  <p><strong>💡 Why FAIR Matters:</strong></p>
-  <ul>
-    <li>Reduces barriers to accessing and using research outputs.</li>
-    <li>Helps secondary researchers find, understand, and reuse data to generate new insights.</li>
-    <li>Maximizes the value of existing research resources.</li>
-  </ul>
-</div>
-
-```{r FAIR, fig.alt="Four black-and-white icons in a row, each paired with a word: a magnifying glass for Findable, a hand tapping a screen for Accessible, three interlocking gears for Interoperable, and a recycling triangle for Reusable.", echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
-knitr::include_graphics("Figures/FAIR_data_principles.jpeg")
-```
-
-#### The FAIR Guiding Principles
-
-@Wilkinson2016 outline a set of guidelines that support the implementation of the FAIR Principles. These guidelines ensure that data and metadata are structured in a way that promotes discovery, access, integration, and reuse.
-
-1. **To be Findable:**
-    - **F1.** (Meta)data are assigned a globally unique and persistent identifier.  
-    - **F2.** Data are described with rich metadata (as defined by R1 below).  
-    - **F3.** Metadata clearly and explicitly include the identifier of the data they describe.  
-    - **F4.** (Meta)data are registered or indexed in a searchable resource.
-2. **To be Accessible:**
-    - **A1.** (Meta)data are retrievable by their identifier using a standardized communication protocol.  
-        - **A1.1.** The protocol is open, free, and universally implementable.  
-        - **A1.2.** The protocol allows for authentication and authorization, where necessary.  
-    - **A2.** Metadata remain accessible even when the data are no longer available.
-3. **To be Interoperable:**
-    - **I1.** (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.  
-    - **I2.** (Meta)data use vocabularies that themselves follow FAIR principles.  
-    - **I3.** (Meta)data include qualified references to other (meta)data.
-4. **To be Reusable:**
-    - **R1.** (Meta)data are richly described with a plurality of accurate and relevant attributes.  
-        - **R1.1.** (Meta)data are released with a clear and accessible data usage license.  
-        - **R1.2.** (Meta)data are associated with detailed provenance.  
-        - **R1.3.** (Meta)data conform to domain-relevant community standards.
-        
----
-
-### Research Integrity {#RI}
-
-Research integrity refers to the commitment of researchers to act **honestly, reliably, respectfully**, and to be **accountable** for their actions throughout the research process.
-
-At Boise State University, the [Office of Research Compliance](https://www.boisestate.edu/research-compliance/) provides resources and guidance to support best practices in research integrity.
-
----
-
-### Next Generation Metrics {#NGSMet}
-
-The **Next Generation Metrics** pillar of Open Science aims to shift cultural thinking around how research is evaluated. It encourages moving beyond traditional metrics—such as citation counts and journal impact factors—toward more diverse, meaningful indicators of research quality and influence.
-
-These metrics, drawn from a variety of sources and describing different aspects of scholarly impact, can help us **gain a broader and more nuanced understanding of the significance and reach of research**.
-
-In this chapter, we demonstrate this topic with two examples:
-
-- [The San Francisco Declaration on Research Assessment](#DORA)
-- [Altmetric](#altmetric)
-
-#### The San Francisco Declaration on Research Assessment {#DORA}
-
-The [San Francisco Declaration on Research Assessment (DORA)](https://sfdora.org/) exemplifies the growing shift in how research quality is evaluated. Increasingly, institutions and funding bodies are supporting DORA and **openly rejecting the use of journal impact factors and other quantitative metrics** as primary indicators of research quality.
-
-Among many others, **Springer Nature** has endorsed DORA. You can view their specific commitments [here](https://www.springernature.com/gp/researchers/dora).
-
-#### Altmetric {#altmetric}
-
-Another example is [Altmetric](https://www.altmetric.com/), a tool that tracks and demonstrates the **reach and influence of research outputs**—particularly among key stakeholders—by focusing primarily on social media and other online platforms (Figure \@ref(fig:NGSMetrics)).
-
-
-```{r NGSMetrics, fig.alt="Screenshot of a journal article Metrics panel showing 1,062 total views (781 pageviews, 281 PDF downloads), a red line chart of monthly views peaking above 300, a Dimensions citation badge reading 2 total citations, and an Altmetric donut of 22 broken down into 1 news outlet, 1 blog, 10 tweets, and 7 Mendeley readers.", echo=FALSE, fig.cap="Example of new metrics associated to publications to assess impact of research beyond the impact factor.", fig.show="asis", out.width = '60%', fig.align="center"}
-knitr::include_graphics("Figures/Metrics_example.png")
-```
-
----
-
-### Future of Scholarly Communication {#FSC}
-
-The future of scholarly communication is one of the most prominent pillars of Open Scholarship, as it aims to **shift the current academic publishing model toward fully Open Access**. We will explore this topic further in the section on Open Access and associated licenses below.
-
----
-
-### Citizen Science {#CS}
-
-Citizen Science refers to the **increased involvement of the public in the research process**, recognizing the invaluable insights that non-academic contributors can offer. These contributions often provide perspectives or data that researchers might not otherwise access. Examples of such initiatives include [eBird](https://ebird.org/home) and [iNaturalist](https://www.inaturalist.org/).
-
-Leveraging the internet, openly available tools, and local knowledge, citizen science is transforming how research is conducted. No longer limited to academic researchers, it encourages collaboration across society.
-
-@Wagenknecht2021 discuss this concept through a European Citizen Science project, while @Groom2017 reflect on its role in biodiversity research. Citizen science has the potential to significantly enhance your research—but it's important to be aware of its challenges. For more on this topic, refer to [this section in Chapter 3](#biodiv).
-
----
-
-### Education and Skills {#ES}
-
-This pillar focuses on **identifying researchers' training needs and addressing gaps in knowledge and skills related to Open Science**—such as making publications openly accessible, managing research data in alignment with the FAIR Principles (Figure \@ref(fig:FAIR)), and upholding research integrity.
-
-All researchers, regardless of career stage, should have access to training and professional development opportunities that support Open Science practices. Additionally, skills development should be extended to other stakeholders in the research ecosystem, including librarians, data managers, and the public, particularly in support of citizen science initiatives.
-
-At Boise State University, the [Albertsons Library](https://www.boisestate.edu/library/) offers resources, workshops, and seminars on these topics.
-
----
-
-### Rewards and Initiatives {#EI}
-
-**Promoting engagement with Open Science requires recognizing and rewarding the efforts of those who contribute to it.** This pillar addresses systemic barriers while advocating for best practices.
-
-A common barrier is the perceived lack of recognition for tasks such as managing research data or publishing open access. These efforts are often undervalued in traditional academic assessments, discouraging wider adoption of Open Science practices.
-
-Work under this pillar seeks to overcome these challenges and promote greater participation in Open Science. For more on current initiatives and reward systems, refer to [Chapter 3](#chap3).
-
----
-
-## Open Access: A Tool to Promote Open Science? {#openaccess}
-
-**Open Access (OA)** refers to a set of principles and practices that make research outputs freely available online, without access charges or other barriers (Figure \@ref(fig:EcolEvolCC)). While OA publications are free for users to read, researchers often pay publication fees—typically between **\$1,500 and \$2,500**—to make their work openly accessible.
-
-According to the 2001 definition of Open Access, it also involves **removing or reducing barriers to copying and reuse** by applying an open license. An **open license** allows others to reuse a creator’s work freely, in ways that are typically restricted by copyright, patent, or commercial licenses.
-
-Most open licenses are:
-
-- **Worldwide** in scope
-- **Royalty-free**
-- **Non-exclusive**
-- **Perpetual** (they do not expire)
-
-These characteristics ensure that research can be reused, adapted, and redistributed in alignment with the goals of Open Science.
-
-### The Open Access Conundrum
-
-Since most Open Access (OA) journals rely on **publication fees paid by authors** to generate revenue, there is concern that some OA publishers may be motivated to **accept lower-quality papers and forgo rigorous peer review** in order to maximize profits.
-
-At the same time, **publication fees in prestigious OA journals can exceed \$5,000**, making this publishing model inaccessible for many researchers, particularly those without institutional funding or support.
-
-This situation has been described as the "**Open Access sequel to the Serials Crisis**" [@Khoo_2019]. The original *Serials Crisis* refers to the unsustainable pressure on library budgets caused by the rapid inflation of journal subscription costs. Open Access was initially proposed as a solution to this problem—by removing subscription barriers, research would remain accessible without ongoing costs. However, as @Khoo_2019 notes, both traditional subscription models and Open Access publishing **present their own challenges** and limitations.
-
----
-
-## Creative Commons Licenses {#CClicenses}
-
-Most Open Access journals use [Creative Commons (CC)](https://creativecommons.org/) licenses, so it is important that you and your co-authors understand their implications before submitting your manuscript—especially regarding potential commercial use of your work by third parties (Figure \@ref(fig:EcolEvolCC)).
-
-A CC license is a type of **public copyright license that enables the free distribution of a copyrighted work**. It allows authors to grant others the **right to share, use, and build upon their work** while retaining some control over how it is used.
-
-Creative Commons licenses provide flexibility; for example, authors can choose to allow only non-commercial uses. They also protect users and redistributors from copyright infringement claims, provided they follow the license terms set by the author.
-
-To help authors select the most appropriate license for their work, the Creative Commons initiative offers an [online tool](https://creativecommons.org/choose/), which I recommend consulting. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
-
-```{r EcolEvolCC, fig.alt="Screenshot of a journal masthead in teal type with an Open Access badge, listing the editors-in-chief, the online ISSN and Wiley copyright, and a closing note that articles accepted from 14 August 2012 carry a Creative Commons Attribution License while earlier ones carry an Attribution Non-Commercial License.", echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
-knitr::include_graphics("Figures/License_EcolEvol.png")
-```
-
-### Available CC Licenses
-
-The Creative Commons licenses provided by the CC initiative are summarized in Figure \@ref(fig:CC).
-
-```{r CC, fig.alt="Dark slide titled Understanding CC Data License Options, with a vertical arrow on the left shading from green at the top labeled Most Open down to red at the bottom labeled Most Restrictive; alongside it a list running CC0 No Rights Reserved, CC BY, CC BY-SA, CC BY-NC-SA, and -ND NoDerivatives, matched on the right by the corresponding badge icons.", echo=FALSE, fig.cap="Overview of Creative Common licenses sorted from most open to most restrictive (provided by Andrew Child).", fig.show="asis", out.width = '100%', fig.align="center"}
-knitr::include_graphics("Figures/CC_licenses_comparison.png")
-```
-
-The description of these licenses is always presented in this format:
-
-1. **You are free to:**
-    - Share — copy and redistribute the material under specified conditions.
-    - Adapt — remix, transform, and build upon the material under specified conditions.
-2. **Under the following terms:**
-    - Attribution — give appropriate credit to the original author.
-    - No additional restrictions — you may not apply legal terms or technological measures that restrict others from doing anything the license permits.
-    
-Here is a list of some of the most commonly used CC licenses with URLs leading to their descriptions:
-
-- [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
-- [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
-- [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
-- [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-
----
-
-## The CARE Principles and Data Sovereignty {#CARE}
-
-In this section, we investigate both the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov), emphasizing how these concepts are closely connected.
-
-As noted by @Carroll2021:
-
-> *"while big data, open data, and Open Science increase access to complex and large datasets for innovation, discovery, and decision-making, Indigenous Peoples’ rights to control and access their data within these environments remain limited."*
-
-Integrating the [FAIR Principles](#FAIR) for scientific data with the CARE Principles for Indigenous Data Governance enhances machine actionability while prioritizing people and purpose. This combined approach supports Indigenous Peoples’ rights and interests in their data throughout the data lifecycle (Figure \@ref(fig:CARE)).
-
-
-```{r CARE, fig.alt="Teal graphic with two rounded panels linked by circuit-board style traces: the upper panel spells FAIR with Findable, Accessible, Interoperable, Reusable beneath each letter, the word 'and' sits between them, and the lower panel spells CARE with Collective Benefit, Authority to Control, Responsibility, Ethics beneath each letter.", echo=FALSE, fig.cap="Be FAIR and CARE (source: https://www.gida-global.org/care).", fig.show="asis", out.width = '100%', fig.align="center"}
-knitr::include_graphics("Figures/BeFAIRandCARE.png")
-```
-
-### The CARE Principles for Indigenous Data Governance {#CAREPrinc}
-
-The **CARE Principles** emphasize the importance of **people and purpose** in data governance, particularly for **Indigenous communities**. CARE stands for:
-
-- 🧩 **Collective Benefit**: Data ecosystems should be designed and operated in ways that enable **Indigenous Peoples to derive meaningful benefits** from data. This includes supporting governance, innovation, and community development.
-- 🛡 **Authority to Control**: **Indigenous Peoples have the right to control** the creation, collection, access, analysis, interpretation, management, dissemination, and reuse of data relating to their people, lands, and resources.
-- 📣 **Responsibility**: Researchers and data stewards must take **responsibility for how Indigenous data is used**, ensuring ethical practices and supporting capacity building within Indigenous communities.
-- ⚖️ **Ethics**: The use of Indigenous data must prioritize the **rights, dignity, and well-being** of Indigenous Peoples. This goes beyond formal compliance to include meaningful engagement and respect.
-
-> 📝 *The CARE Principles complement the FAIR Principles by adding a crucial human- and rights-centered lens to data governance.*
-
-Finally, the [United Nations Declaration on the Rights of Indigenous Peoples](https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html) affirms Indigenous Peoples’ rights and interests in data and their **authority to control** it. Access to *data for governance* is essential to support self-determination, and Indigenous nations should be actively involved in the *governance of data* to ensure ethical data use and reuse.
-
-### Data Sovereignty {#datasov}
-
-The CARE Principles (Figure \@ref(fig:CARE)) are directly connected to the concept of data sovereignty. We provide a definition here because it is especially important for this course, as data sovereignty can impact your data sharing protocols. More on this topic will be discussed in [Chapter 5](#partDM).
-
-**Data sovereignty is the idea that data are subject to the laws and governance structures of the nation where they are collected.** This concept is closely linked with data security, cloud computing, network sovereignty, and technological sovereignty. Unlike technological sovereignty, which is vaguely defined and often used as an umbrella term in policymaking, data sovereignty specifically concerns the governance of data itself.
-
-Data sovereignty is usually discussed in two contexts: Indigenous groups and their autonomy from post-colonial states, and the control of transnational data flows. With the rise of cloud computing, many countries have enacted laws governing data control and storage, reflecting measures of data sovereignty. More than 100 countries now have data sovereignty laws in place.
-
-In the context of self-sovereign identity (SSI), individuals can fully create and control their credentials, although nations may still issue digital identities within this framework.
-
-<hr style="border: 2px solid #333; margin: 2em 0;">
 
 # Chapt. 5 -- Data Management and Reproducible Code {#Chap5}
 ## Introduction
