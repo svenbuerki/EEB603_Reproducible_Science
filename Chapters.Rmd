@@ -4114,7 +4114,7 @@ By the end of this chapter, you will be able to:
 | **Total in class** | **70 min** | |
 | [Discuss Solutions to Mitigate Threats](#soltothreats) | 20 min | **Students, before class** |
 | [📰 Compare With a Real Journal](#comparejournal) | 10 min | **Students, before the next class** |
-| [🤝 Present both activities](#reportbacktop) | 10 min | **Students, at the start of the next class** |
+| [🤝 Report back on both activities](#reportbacktop) | 10 min | **Students, at the start of the next class** |
 
 ---
 
@@ -4125,7 +4125,8 @@ By the end of this chapter, you will be able to:
 3. [Discuss Solutions to Mitigate Threats to the Scientific Process](#soltothreats) <span style="color:dimgray;">(20 minutes, read at home before class)</span>
 4. [👥 Group Activity: Do Your Standards Hold?](#charterthreats) <span style="color:dimgray;">(30 minutes)</span>
 5. [The Transparency and Openness Promotion Guidelines](#TOP) <span style="color:dimgray;">(10 minutes)</span>
-6. [👥 Group Activity: Score Your Charter Against TOP](#chartertop) <span style="color:dimgray;">(10 minutes in class; the journal comparison is homework and both activities are presented next class)</span>
+6. [👥 Group Activity: Score Your Charter Against TOP](#chartertop) <span style="color:dimgray;">(10 minutes in class; the journal comparison is homework)</span>
+7. [🤝 Report Back on Both Activities](#reportbacktop) <span style="color:dimgray;">(10 minutes, at the start of the next class)</span>
 
 ---
 
@@ -4464,6 +4465,7 @@ For every threat you marked *partly* or *not covered*, write the clause that clo
 - Each new clause goes **under the section whose lead owns it**, marked with today's date, so the charter records what you learned and when.
 - The **Evaluation lead** opens a new **Evaluation** heading and writes the group's first standards for peer review and preprints.
 - Before you finish, read the new clauses aloud and ask the Chapter 1 question again: **could an outsider check this?**
+- **Keep one or two of these clauses to hand.** You will read them out, before and after, when you [report back next class](#reportspec).
 
 ---
 
@@ -4597,19 +4599,48 @@ For your journal, identify:
 
 That second one matters. Journal policy is a floor, not a ceiling, and a group is free to hold itself to more than its publisher asks.
 
-### 🤝 Present Both Activities <span style="color:dimgray;">(10 minutes, at the start of the next class)</span> {#reportbacktop}
+## 🤝 Report Back on Both Activities <span style="color:dimgray;">(10 minutes, at the start of the next class)</span> {#reportbacktop}
 
-**You do not report back today.** Each group presents at the **start of the next class**, taking about five minutes to cover **both** of today's activities. That gap is deliberate: it gives you the evening to finish the journal comparison and to say what you did about what you found, rather than describing a gap you noticed ten minutes earlier.
+**You do not report back today.** Each group presents at the **start of the next class**, taking **five minutes**, and covers **both** of today's activities. That gap is deliberate: it gives you the evening to finish the journal comparison and to say what you **did** about what you found, rather than describing a gap you noticed ten minutes earlier.
 
-**From [Do Your Standards Hold?](#charterthreats):**
+**Have the charter open and read from it.** I want to hear your actual clauses, in your actual words, not a description of them.
 
-1. The threat your charter handled **best**, and the clause that earned it.
-2. The gap that **surprised you most**, and the clause you wrote to close it.
+### What to report {#reportspec}
 
-**From [Score Your Charter Against TOP](#chartertop):**
+**1. One threat your charter already handled** <span style="color:dimgray;">(about 1 minute)</span>
 
-3. The standard where you scored **highest** and the one where you scored **lowest**.
-4. What your [journal comparison](#comparejournal) showed: one place the journal is stricter than your charter, and one place your charter is stricter than the journal.
+Name the threat, **read the clause that stops it word for word**, and say who outside your group could check whether you followed it.
+
+**2. One or two clauses you changed** <span style="color:dimgray;">(about 2 minutes, and this is the part that matters most)</span>
+
+For each clause, give four things:
+
+- the **threat or TOP practice** that exposed the gap;
+- **how the clause read before**, or "there was nothing there";
+- **how it reads now**;
+- what somebody outside the group would have to **do** to check it.
+
+A clause that moved from *"we will be transparent about our analysis"* to *"the analysis plan is committed to the repository before the data are unblinded"* is exactly the kind of change to show. **The before and after is the point**: it is the evidence that the charter changed rather than that you read about threats.
+
+**3. Your TOP result** <span style="color:dimgray;">(about 1.5 minutes)</span>
+
+- the practice where you scored **highest**, and the clause that earned it;
+- the practice where you scored **lowest** or **Not addressed**, and **the one clause you would write to move it up a single level**;
+- from your [journal comparison](#comparejournal): one place the journal is **stricter than you**, and one place **you are stricter than the journal**.
+
+**4. One sentence to finish** <span style="color:dimgray;">(about 30 seconds)</span>
+
+What would you tell somebody **joining your group next week** about what your charter now commits them to?
+
+<div class="disclaimer">
+  <p><strong>&#128161; What makes this a good report rather than a summary</strong></p>
+  <ul>
+    <li><b>Quote, do not paraphrase.</b> "We tightened our data clause" tells me nothing. Reading the old line and the new one tells me everything.</li>
+    <li><b>Do not narrate the activity.</b> I know what the activity was. What I do not know is what your charter now says.</li>
+    <li><b>"Not addressed" is a perfectly good answer</b>, and a charter written in week two that scores low on five practices is normal. <b>Naming which one you would fix first is the part that earns credit.</b></li>
+    <li><b>Disagreements are worth reporting.</b> If your group could not agree whose section owned outcome switching, say so and say how you settled it. That argument is the actual work of writing standards.</li>
+  </ul>
+</div>
 
 # Chapt. 4 -- Open Science and CARE Principles {#chap4}
 ## Challenge
