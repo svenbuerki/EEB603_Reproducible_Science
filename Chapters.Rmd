@@ -4656,7 +4656,7 @@ Today, funding agencies and journals are increasingly promoting Open Science, a 
 
 ## Aim
 
-This chapter aims to **explore how Open Science is promoted while recognizing when other principles, like the [CARE Principles](#CAREPrinc), must be applied to respect diverse perspectives, values, and data sovereignty**.
+This chapter aims to **explore how [Open Science](#WhatisOS) is promoted while recognizing when other principles, like the [CARE Principles](#CAREPrinc), must be applied to respect diverse perspectives, values, and [data sovereignty](#datasov)**.
 
 It also provides **solutions to address threats to the scientific process** (introduced in Chapters [1](#chap1) and [3](#chap3)) and **guidance on managing the data life cycle and responsibly sharing research**.
 
@@ -4766,7 +4766,7 @@ The [FAIR Principles](https://doi.org/10.1038/sdata.2016.18) [@Wilkinson2016] gu
 
 - **F**indable: Research outputs should be **discoverable** by the broader academic community and the public.
 - **A**ccessible: Data should be accompanied by **unique identifiers**, metadata, and clear language, using standardized access protocols.
-- **I**nteroperable: Data and metadata should follow **recognized standards** that allow them to be shared and integrated across systems. Interoperability means that different tools, platforms, or systems can connect and communicate **seamlessly**, without extra effort from the user.
+- **I**nteroperable: Data and metadata should follow **recognized standards** that allow them to be shared and integrated across systems, so that different tools and platforms can combine them **without a human translating between them first** (see [What interoperability actually means](#interop)).
 - **R**eusable: Research outputs should be designed for **reuse and re-purposing**, allowing others to maximize their research potential.
 
 <div class="info">
@@ -4776,6 +4776,28 @@ The [FAIR Principles](https://doi.org/10.1038/sdata.2016.18) [@Wilkinson2016] gu
     <li>Helps secondary researchers find, understand, and reuse data to generate new insights.</li>
     <li>Maximizes the value of existing research resources.</li>
   </ul>
+</div>
+
+<div class="disclaimer">
+  <p><strong>&#128161; What interoperability actually means</strong> <a name="interop"></a><span id="interop"></span></p>
+  <p>Of the four, this is the one that sounds like jargon, so here is the problem it solves. <b>You have a spreadsheet of plant occurrences and a colleague has another.</b> Yours has a column called <code>species</code>, theirs calls it <code>taxon</code>, and a third lab calls it <code>sci_name</code>. Your dates read <code>12/10/2026</code>, theirs <code>Oct 12 2026</code>. Your coordinates are in one column as <code>43.6N 116.2W</code>, theirs in two columns of decimal degrees.</p>
+  <p><b>Nothing here is wrong, and nothing can be merged.</b> Combining the two datasets means somebody sits down and translates one into the other, by hand, making judgement calls nobody records. Do that across a hundred labs and the cost is enormous; do it badly once and the errors are invisible afterwards.</p>
+  <p><b>Interoperability is the agreement that avoids that translation</b>: everybody writes the same thing the same way, decided in advance and published, so that two datasets can be put side by side by a machine.</p>
+</div>
+
+<div class="info">
+  <p><strong>&#128161; The standard your field already uses: Darwin Core</strong></p>
+  <p><a href="https://dwc.tdwg.org/">Darwin Core</a>, maintained by <a href="https://www.tdwg.org/">Biodiversity Information Standards (TDWG)</a>, is the vocabulary that biodiversity data are shared in. It fixes the spelling of each field once:</p>
+  <table>
+    <tr><th>What you are recording</th><th>Darwin Core term</th></tr>
+    <tr><td>The scientific name</td><td><code>scientificName</code></td></tr>
+    <tr><td>When it was observed or collected</td><td><code>eventDate</code></td></tr>
+    <tr><td>Where, in decimal degrees</td><td><code>decimalLatitude</code>, <code>decimalLongitude</code></td></tr>
+    <tr><td>Whether it is a specimen, an observation or a sequence</td><td><code>basisOfRecord</code></td></tr>
+    <tr><td>The identifier of this particular record</td><td><code>occurrenceID</code></td></tr>
+  </table>
+  <p><b>This is why <a href="https://www.gbif.org/">GBIF</a> works at all.</b> Billions of records, from thousands of museums, herbaria and field projects, can be searched together because each one arrives in the same vocabulary. Without it, GBIF would be a directory of incompatible spreadsheets.</p>
+  <p><b>And notice how the vocabulary satisfies the guidelines below.</b> Each term has a persistent identifier of its own, for example <code>http://rs.tdwg.org/dwc/terms/scientificName</code>, so a machine can look up what the field means rather than guess from its name. That is <b>I1</b> (a shared language) and <b>I2</b> (vocabularies that are themselves FAIR) in practice, not in the abstract.</p>
 </div>
 
 ```{r FAIR, fig.alt="Four black-and-white icons in a row, each paired with a word: a magnifying glass for Findable, a hand tapping a screen for Accessible, three interlocking gears for Interoperable, and a recycling triangle for Reusable.", echo=FALSE, fig.cap="The FAIR Principles (source: SangyaPundir, CC BY-SA 4.0).", fig.show="asis", out.width = '90%', fig.align="center"}
