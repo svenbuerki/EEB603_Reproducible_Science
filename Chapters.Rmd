@@ -5029,18 +5029,18 @@ The three activities below are the core of this chapter. They run back to back, 
   <p><b>These activities apply the two frameworks rather than introduce them</b>, so a pair that arrives without having read the definitions spends its fifteen minutes looking them up instead of thinking about them. The sections are short.</p>
 </div>
 
-<div class="info">
-  <p><strong>💡 Your pair, and the principles it owns</strong></p>
-  <p>There are <b>four pairs</b>, and both frameworks have exactly <b>four</b> components, so each pair owns one of each and keeps them for all three activities:</p>
-  <table>
-    <tr><th>Pair</th><th>FAIR principle</th><th>CARE principle</th></tr>
-    <tr><td><b>1</b></td><td>Findable</td><td>Collective Benefit</td></tr>
-    <tr><td><b>2</b></td><td>Accessible</td><td>Authority to Control</td></tr>
-    <tr><td><b>3</b></td><td>Interoperable</td><td>Responsibility</td></tr>
-    <tr><td><b>4</b></td><td>Reusable</td><td>Ethics</td></tr>
-  </table>
-  <p>The pairings are arbitrary, and that is the point: in the third activity you compare <b>the two principles you happen to own</b>, which is how these frameworks meet in practice. Nobody gets to choose a convenient pair.</p>
-</div>
+### 👥 Your Pair, and the Principles It Owns {#yourpairOS}
+
+Work in **four pairs**. Both frameworks have exactly **four** components, so each pair owns one of each and **keeps them for all three activities**.
+
+| Pair | FAIR principle | CARE principle |
+|---|---|---|
+| **Pair 1** | [Findable](#FAIR) | [Collective Benefit](#CAREPrinc) |
+| **Pair 2** | [Accessible](#FAIR) | [Authority to Control](#CAREPrinc) |
+| **Pair 3** | [Interoperable](#interop) | [Responsibility](#CAREPrinc) |
+| **Pair 4** | [Reusable](#FAIR) | [Ethics](#CAREPrinc) |
+
+The pairings are arbitrary, and that is the point: in the [third activity](#FAIRCAREactivity) you compare **the two principles you happen to own**, which is how these frameworks meet in practice. Nobody gets to choose a convenient pair.
 
 ### 👥 FAIR Principles Group Activity <span style="color:dimgray;">(15 minutes)</span> {#FAIRactivity}
 
@@ -5050,7 +5050,7 @@ Students collaboratively explore how the **FAIR Principles** apply to real-world
 
 #### 👥 Instructions
 
-1. **Work in your pair, on your assigned FAIR principle** from the table above.
+1. **Work in your pair, on your assigned FAIR principle** ([which one is mine?](#yourpairOS)).
 2. **Each of you should:**
     - Re-read the definition of your principle in [The FAIR Guiding Principles](#FAIR).
     - Think of a dataset (a survey, lab experiment results, environmental monitoring) and consider:
@@ -5069,7 +5069,7 @@ Students collaboratively explore how the **CARE Principles** apply to data invol
 
 #### 👥 Instructions
 
-1. **Same pairs, now on your assigned CARE principle** from the table above.
+1. **Same pairs, now on your assigned CARE principle** ([which one is mine?](#yourpairOS)).
 2. **Each of you should:**
     - Re-read the definition of your principle in [The CARE Principles for Indigenous Data Governance](#CAREPrinc).
     - Consider a dataset or scenario involving Indigenous data (health records, environmental monitoring, traditional knowledge) and discuss:
@@ -5090,7 +5090,7 @@ Students critically compare the **FAIR** and **CARE** Principles and explore how
 
 **You now have two principles you know well: your FAIR one and your CARE one.** This activity is about the relationship between those two specifically, so each pair is working on something different.
 
-1. **Still in your pair**, take the two principles you have spent the last half hour on and answer:
+1. **Still in your pair**, take the [two principles you own](#yourpairOS), the ones you have spent the last half hour on, and answer:
     - Do they **pull in the same direction**, or against each other?
     - Think of a dataset involving sensitive or Indigenous data. Applying **both** of your principles to it, what has to be decided that neither principle settles on its own?
     - If they conflict, **which one would you let win, and on what grounds?**
