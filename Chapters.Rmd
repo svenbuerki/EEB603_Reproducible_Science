@@ -4732,8 +4732,6 @@ This chapter is based on:
 
 ---
 
----
-
 ### What is Open Science? {#WhatisOS}
 
 The Organisation for Economic Co-operation and Development ([OECD](https://www.oecd.org/about/)) defines [Open Science](https://www.oecd.org/sti/inno/open-science.htm) as:
@@ -4743,8 +4741,6 @@ The Organisation for Economic Co-operation and Development ([OECD](https://www.o
 While this definition focuses on access to research outputs, several other organizations advocate for a broader view of Open Science. According to the [FOSTER Open Science initiative](https://www.fosteropenscience.eu/content/what-open-science-introduction), Open Science involves:
 
 > *“extending the principles of openness to the whole research cycle, fostering sharing and collaboration as early as possible, thus entailing a systemic change to the way science and research is done.”*
-
----
 
 ---
 
@@ -4902,8 +4898,6 @@ Work under this pillar seeks to overcome these challenges and promote greater pa
 
 ---
 
----
-
 ### The CARE Principles and Data Sovereignty {#CARE}
 
 In this section, we investigate both the [CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov), emphasizing how these concepts are closely connected.
@@ -4942,8 +4936,6 @@ Data sovereignty is usually discussed in two contexts: Indigenous groups and the
 
 In the context of self-sovereign identity (SSI), individuals can fully create and control their credentials, although nations may still issue digital identities within this framework.
 
-<hr style="border: 2px solid #333; margin: 2em 0;">
-
 ---
 
 ### Open Access: A Tool to Promote Open Science? {#openaccess}
@@ -4968,8 +4960,6 @@ Since most Open Access (OA) journals rely on **publication fees paid by authors*
 At the same time, **publication fees in prestigious OA journals can exceed \$5,000**, making this publishing model inaccessible for many researchers, particularly those without institutional funding or support.
 
 This situation has been described as the "**Open Access sequel to the Serials Crisis**" [@Khoo_2019]. The original *Serials Crisis* refers to the unsustainable pressure on library budgets caused by the rapid inflation of journal subscription costs. Open Access was initially proposed as a solution to this problem—by removing subscription barriers, research would remain accessible without ongoing costs. However, as @Khoo_2019 notes, both traditional subscription models and Open Access publishing **present their own challenges** and limitations.
-
----
 
 ---
 
@@ -5010,8 +5000,6 @@ Here is a list of some of the most commonly used CC licenses with URLs leading t
 - [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
 - [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
 - [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-
----
 
 ---
 
@@ -5104,7 +5092,7 @@ Students critically compare the **FAIR** and **CARE** Principles and explore how
   <p>FAIR pushes data towards being open and machine-readable. CARE asks who has the authority to decide that, and in whose interest. <b>Some pairs of principles genuinely cannot both be satisfied</b>, and saying so, with reasons, is a better answer than a comfortable one that pretends the tension away.</p>
 </div>
 
----
+<hr style="border: 2px solid #333; margin: 2em 0;">
 
 # Chapt. 5 -- Data Management and Reproducible Code {#Chap5}
 ## Introduction
