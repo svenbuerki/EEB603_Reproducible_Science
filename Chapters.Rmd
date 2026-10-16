@@ -4688,10 +4688,10 @@ By the end of this chapter, you will be able to:
 | [👥 CARE Principles Activity](#CAREactivity) | 15 min | **Students, 20 October** |
 | [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | **Not run in class this year** |
 
-**This chapter ran over two sittings.** The first four blocks were taught on **15 October**. The FAIR pairs did not get to report, so they do that at the **start of the 20 October session**, followed by the CARE pass and the CARE activity. [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) move again, to the [Chapter 6](#chap6) session, where they sit naturally beside getting published.
+**This chapter ran over two sittings.** The first four blocks were taught on **15 October**. The FAIR pairs did not get to report, so they do that at the **start of the 20 October session**, followed by the CARE pass and the CARE activity. [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) move to the [Chapter 6](#chap6outline) session, where they sit naturally beside getting published.
 
 **The [FAIR & CARE Comparison](#FAIRCAREactivity) is not run in class this year.** The material stays here and is worth reading: each pair already owns one FAIR and one CARE principle, so the comparison is something you can write in a few minutes rather than discuss.
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | **Instructor, at the start of the [Chapter 5 PART A](#partDM) session** |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | **Instructor, in the [Chapter 6](#chap6outline) session** |
 
 ---
 
@@ -4704,8 +4704,8 @@ By the end of this chapter, you will be able to:
 5. Quick pass over [the CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov) <span style="color:dimgray;">(3 minutes)</span>
 6. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
 7. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
-8. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
-9. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught at the start of the [Chapter 5 PART A](#partDM) session)</span>
+8. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught in the [Chapter 6](#chap6outline) session)</span>
+9. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught in the [Chapter 6](#chap6outline) session)</span>
 
 ---
 
@@ -7305,6 +7305,21 @@ This chapter is subdivided into two parts as follows:
 
 - [**PART A:**](#getpub) Getting published.
 - [**PART B:**](#writpub) Writing papers in R Markdown.
+
+## Class Outline {#chap6outline}
+
+**This session opens by finishing two things from earlier chapters.** Chapter 6 itself starts about 45 minutes in.
+
+| Block | Time | Who |
+|---|---|---|
+| [👥 Chapter 5 PART B, Steps 3, 4 and 5](#codestep3): report, write the clause, then merge into your charter | 25 min | Students, in 4 pairs then 2 groups |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4) | 15 min | Instructor |
+| *five-minute break* | 5 min | |
+| [PART A: Getting published](#getpub) | 25 min | Instructor |
+| **Total in class** | **70 min** | |
+| [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, with the [slides](#writpub) |
+
+**Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
 
 ## Getting published {#getpub}
 
