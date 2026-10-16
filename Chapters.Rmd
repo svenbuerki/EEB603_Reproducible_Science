@@ -4682,10 +4682,15 @@ By the end of this chapter, you will be able to:
 | Quick pass over [FAIR Data](#FAIR) | 3 min | Instructor |
 | [👥 FAIR Principles Activity](#FAIRactivity) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
-| Quick pass over [CARE](#CAREPrinc) and [Data Sovereignty](#datasov) | 3 min | Instructor |
-| [👥 CARE Principles Activity](#CAREactivity) | 15 min | Students, in 4 pairs |
-| [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | Students, in 4 pairs |
-| **Total in class** | **65 min** | |
+| **Total on 15 October** | **37 min** | |
+| [👥 FAIR pairs report back](#FAIRactivity) | 4 min | **Students, at the start of the 20 October session** |
+| Quick pass over [CARE](#CAREPrinc) and [Data Sovereignty](#datasov) | 3 min | **Instructor, 20 October** |
+| [👥 CARE Principles Activity](#CAREactivity) | 15 min | **Students, 20 October** |
+| [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | **Not run in class this year** |
+
+**This chapter ran over two sittings.** The first four blocks were taught on **15 October**. The FAIR pairs did not get to report, so they do that at the **start of the 20 October session**, followed by the CARE pass and the CARE activity. [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) move again, to the [Chapter 6](#chap6) session, where they sit naturally beside getting published.
+
+**The [FAIR & CARE Comparison](#FAIRCAREactivity) is not run in class this year.** The material stays here and is worth reading: each pair already owns one FAIR and one CARE principle, so the comparison is something you can write in a few minutes rather than discuss.
 | [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | **Instructor, at the start of the [Chapter 5 PART A](#partDM) session** |
 
 ---
@@ -5123,13 +5128,14 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 |---|---|---|
 | The seven stages of the life cycle, read in advance | 25 min | **Students, at home before class** |
 | [Set up your folder and script, and download the project](#setup5A) | 10 min | **Students, at home before class** |
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from Chapter 4 | 15 min | Instructor |
+| [👥 Chapter 4: FAIR pairs report back](#FAIRactivity) | 4 min | Students, in 4 pairs |
+| [👥 Chapter 4: CARE Principles Activity](#CAREactivity) | 15 min | Students, in 4 pairs |
 | [One Pass Over the Whole Cycle](#lifecyclespine) | 15 min | Instructor |
+| *five-minute break* | 5 min | |
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 5 min | Whole class |
 | [👥 Step 2: Build Your Log, then Diagnose Your Failure Class](#inheritstep2) | 20 min | Students, in 4 pairs |
-| *five-minute break* | 5 min | |
-| [👥 Step 3: Report What You Found](#inheritstep3) | 10 min | Students, in 4 pairs |
-| **Total in class** | **70 min** | |
+| **Total in class** | **64 min** | |
+| [👥 Step 3: Report What You Found](#inheritstep3) | 10 min | Students, **at the start of the PART B session** |
 | [👥 Step 4: Write the Clause That Would Have Caught It](#inheritstep4) | 8 min | Students, **at the start of the PART B session** |
 | [👥 Step 5: Merge Into Your Charter](#inheritstep5) | 5 min | Students, **at the start of the PART B session** |
 
@@ -6362,7 +6368,7 @@ Then work through the rest of the file:
 - Sort every file in the folder into three piles: **deposit openly**, **deposit with restricted access**, **never leaves the lab**. Justify the boundaries.
 - Choose a [repository](#datarepos) for the depositable material and state what it would require of you that this project cannot currently supply.
 
-#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(10 minutes)</span> {#inheritstep3}
+#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(10 minutes, at the start of the PART B session)</span> {#inheritstep3}
 
 **Three minutes per pair**, read straight off your knitted `Defect_log`. Report, in this order: the worst defect you found, whether it can still be repaired, **your pseudocode for repairing it**, and the practice that would have prevented it.
 
@@ -6462,13 +6468,13 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 |---|---|---|
 | [The four sections, read in advance](#preread5B) | 25 min | **Students, at home before class** |
 | [Set up your script and diagram the project](#setup5B) | 10 min | **Students, at home before class** |
-| [👥 PART A Steps 4 and 5](#inheritstep4): write the clause, then merge into your charter | 13 min | Students, in 4 pairs then 2 groups |
+| [👥 PART A Steps 3, 4 and 5](#inheritstep3): report, write the clause, then merge into your charter | 23 min | Students, in 4 pairs then 2 groups |
 | [One Pass Over the Workflow](#codespine), with the slides | 18 min | Instructor |
 | [👥 Step 1: Try to Run It](#codestep1) | 7 min | Whole class |
 | [👥 Step 2: Diagnose Your Failure Class](#codestep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
-| [👥 Step 3: Report What You Found](#codestep3) | 12 min | Students, in 4 pairs |
-| **Total in class** | **70 min** | |
+| **Total in class** | **68 min** | |
+| [👥 Step 3: Report What You Found](#codestep3) | 12 min | Students, **at the start of the [Chapter 6](#chap6) session** |
 | [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, **at the start of the [Chapter 6](#chap6) session** |
 | [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, **at the start of the [Chapter 6](#chap6) session** |
 
@@ -7249,7 +7255,7 @@ mean(d$mass, na.rm = TRUE)          #write this number down
 - **Nothing anywhere records which package versions were used.** Name the one function from [Document and Manage Software Dependencies](#docsoftdep) that fixes this, and say exactly where in a script it belongs.
 - There is no `LICENSE` file. **What are you, the inheritor, actually permitted to do with this code?** See [Software Licenses](#softwarelicenses).
 
-#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(12 minutes)</span> {#codestep3}
+#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(12 minutes, at the start of the Chapter 6 session)</span> {#codestep3}
 
 **Three minutes per pair**, read from your log: the worst defect, whether it can be repaired, your pseudocode for repairing it, and the standard that would have prevented it.
 
