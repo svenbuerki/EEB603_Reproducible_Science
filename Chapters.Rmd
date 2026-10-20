@@ -5135,9 +5135,7 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 5 min | Whole class |
 | [👥 Step 2: Build Your Log, then Diagnose Your Failure Class](#inheritstep2) | 20 min | Students, in 4 pairs |
 | **Total in class** | **64 min** | |
-| [👥 Step 3: Report What You Found](#inheritstep3) | 10 min | Students, **at the start of the PART B session** |
-| [👥 Step 4: Write the Clause That Would Have Caught It](#inheritstep4) | 8 min | Students, **at the start of the PART B session** |
-| [👥 Step 5: Merge Into Your Charter](#inheritstep5) | 5 min | Students, **at the start of the PART B session** |
+| [👥 Finish the Data Diagnosis](#inheritfollowup): Steps 3, 4 and 5 | 23 min | Students, **in the [PART B](#repcode) class** |
 
 ---
 
@@ -5327,7 +5325,7 @@ dir.create("Chapter_5")</code></pre>
 ### Class Outline {#chap5Aoutline}
 
 1. [One Pass Over the Whole Cycle](#lifecyclespine) <span style="color:dimgray;">(18 minutes)</span>
-2. [👥 Group Activity: Diagnose an Inherited Project](#inheritproject) <span style="color:dimgray;">(48 minutes, in five steps across two sessions)</span>
+2. [👥 Group Activity: Diagnose an Inherited Project](#inheritproject) <span style="color:dimgray;">(25 minutes, in two steps; [finished in PART B](#inheritfollowup))</span>
 
 That is the whole of the class. **Everything else in this part is reference material**, gathered under [Resources](#resources5A) below and organised stage by stage, so that you can find what you need quickly while you are diagnosing. The [Data Management Checklist](#data-management-checklist) at the end of it is the tool you will reach for most.
 
@@ -5890,7 +5888,7 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 ---
 
 
-### 👥 Group Activity: Diagnose an Inherited Project <span style="color:dimgray;">(48 minutes, in five steps across two sessions)</span> {#inheritproject}
+### 👥 Group Activity: Diagnose an Inherited Project <span style="color:dimgray;">(25 minutes, in two steps)</span> {#inheritproject}
 
 **You have just inherited this project.**
 
@@ -5915,9 +5913,41 @@ Earlier in this part you were asked a question (in [Benefits of Effective Data M
   <p><b>If either is missing, fix it now, in the first two minutes</b>, following <a href="#setup5A">the five setup steps</a>. Do not start reading the folder until both are in place, and do not borrow a neighbour's copy: you need it on your own machine for <a href="#inheritstep2">Step 2</a>.</p>
 </div>
 
-#### 🎯 Learning Objective
+#### 🎯 Learning Outcomes
 
-Students diagnose a mismanaged research project against the practices set out in this part, **record its defects in a form somebody else could act on**, judge which of them can still be repaired and which are permanently lost, and convert each defect into a standard in their group's [reproducibility charter](#FactorsActivity).
+By the end of this activity, students are able to:
+
+- [Read an unfamiliar project folder and describe what it holds](#inheritstep1) **before changing anything in it**
+- [Record defects in a log somebody else could act on](#buildlog), each one with the evidence that shows it is real
+- [Diagnose the failure class their pair owns](#inheritstep2) against the practices set out in this part
+- [Judge which defects can still be repaired and which are permanently lost](#fixpseudocode), and say what would have had to happen to prevent the loss
+- [Turn each defect into a standard in their group's charter](#inheritstep5) that somebody outside the group could check
+
+##### 🗺️ How This Activity Runs {#inheritmap}
+
+**Two steps today, three more in the next class.** You leave this session with a written diagnosis, not a finished activity.
+
+| | Step | What you do | Time | When |
+|---|---|---|---|---|
+| **1** | [Look at What You Have Been Given](#inheritstep1) | List the folder in R, learn what a listing can tell you, then answer three questions as a class | 5 min | **today** |
+| **2** | [Build Your Log, then Diagnose](#inheritstep2) | Start the `Defect_log`, then hunt the failure class your pair owns | 20 min | **today** |
+| **3** | [Report What You Found](#inheritstep3) | Each pair presents its failure class | 10 min | [PART B class](#inheritfollowup) |
+| **4** | [Write the Clause](#inheritstep4) | Turn one defect into a standard somebody could check | 8 min | [PART B class](#inheritfollowup) |
+| **5** | [Merge Into Your Charter](#inheritstep5) | The two pairs in each group reconcile their clauses | 5 min | [PART B class](#inheritfollowup) |
+
+**Reference, to look up when you need it rather than to read in order:**
+
+- [Your pair, and the failure class it owns](#yourpair) --- **find your pair here first**
+- [Importing a csv into R, and what you get back](#importcsv)
+- [Quick checks on any `data.frame`](#quickchecks)
+- [Writing the fix as pseudocode](#fixpseudocode)
+
+<div class="disclaimer">
+  <p><strong>&#128161; This activity does not finish today, and that is the design</strong></p>
+  <p>Today you work on the project's <b>data</b>: what it is, what is wrong with it, and what standard would have prevented each fault. In the <a href="#repcode">PART B class</a> you come back to <b>the same folder</b> and read its <b>code</b>, then <a href="#inheritfollowup">finish this activity</a> by turning today's findings into charter clauses.</p>
+  <p><b>The order matters.</b> A clause you write today is a promise: <i>we will name files consistently</i>, <i>we will keep the raw data untouched</i>. A promise is only as good as the chance somebody notices it was broken. <b>Code is what turns a promise into something that can be checked</b>: a script that reads from <code>01_Raw_Data/</code> fails loudly the day somebody edits the raw file, and a script that builds every figure from the data makes "which version is the master copy?" a question nobody has to ask.</p>
+  <p>So PART A tells you <b>what the rules should be</b>, and PART B shows you <b>what makes them hold</b>. Neither half is much use on its own, which is why the activity runs across both.</p>
+</div>
 
 <div class="info">
   <p><strong>💡 Today you diagnose. You do not repair</strong></p>
@@ -5950,6 +5980,14 @@ Work in **four pairs**. The project fails in four distinct ways, and each pair o
 **Nobody owns Planning.** That is not an oversight, and we will come back to it in Step 3.
 
 #### 🔍 Step 1: Look at What You Have Been Given <span style="color:dimgray;">(5 minutes)</span> {#inheritstep1}
+
+**Three moves, and you open no files in any of them.**
+
+1. **[List what you inherited](#listfolder)** --- one line of R returns the whole folder
+2. **[Read the listing](#readlisting)** --- what an extension, a name and a size can and cannot tell you
+3. **[Answer the three questions](#threeq)** --- as a class, with your evidence every time
+
+##### 1. List What You Inherited {#listfolder}
 
 **Before anyone opens a file**, get a view of the whole thing: every file, how big it is, and when it was last touched. **Do this in R, in the script you created [before class](#beforeclass5A)**, and keep working in that script for the rest of the session.
 
@@ -5989,7 +6027,7 @@ Messy_Project/sites_landowners.csv      331 2026-10-09 10:37:36
   <p><b>Use these alongside the R output, not instead of it.</b> Only the script remembers what you did.</p>
 </div>
 
-##### How to Read a Listing
+##### 2. Read the Listing {#readlisting}
 
 **You can get a long way before opening anything, if you read the listing deliberately.** You have three kinds of evidence and nothing else, and it is worth being clear about what each one can and cannot tell you:
 
@@ -6001,7 +6039,7 @@ Messy_Project/sites_landowners.csv      331 2026-10-09 10:37:36
 
 **A dataset is one set of observations**, however many files it has been saved into. Three files holding the same twelve measurements are one dataset in three versions, not three datasets. That distinction is the whole of the first question.
 
-##### The Three Questions
+##### 3. Answer the Three Questions {#threeq}
 
 Answer these as a class, from the listing alone, **and say what your evidence is every time**. An answer without its evidence is a guess, and part of the point of this exercise is learning to tell the two apart.
 
@@ -6380,65 +6418,9 @@ Then work through the rest of the file:
 - Sort every file in the folder into three piles: **deposit openly**, **deposit with restricted access**, **never leaves the lab**. Justify the boundaries.
 - Choose a [repository](#datarepos) for the depositable material and state what it would require of you that this project cannot currently supply.
 
-#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(10 minutes, at the start of the PART B session)</span> {#inheritstep3}
-
-**Three minutes per pair**, read straight off your knitted `Defect_log`. Report, in this order: the worst defect you found, whether it can still be repaired, **your pseudocode for repairing it**, and the practice that would have prevented it.
-
-**Read the pseudocode out.** It is the part the rest of the class learns most from, because it is where somebody else's defect becomes a procedure you could follow, and because the steps that make people argue are exactly the ones where the data cannot settle the question.
-
-**A defect you cannot fix still counts, and usually counts for more.** Nobody is expected to arrive with a solution. The question this step answers is *what is wrong with this project*, and a pair that says "this column imports as text, four values are unusable, and we do not yet know how to repair them" has done the job completely.
-
-Listen to the other three reports, because **you are adopting all four of their conclusions in Step 5**, not just your own.
-
-When all four pairs have reported, we return to the stage nobody was assigned:
-
-<div class="danger">
-  <p><strong>💡 Count how many of these defects are Planning failures</strong></p>
-  <p>Go through the four reports and ask, for each defect: <b>when could this have been prevented at no cost?</b> Nearly every answer is "before any data existed". A naming convention costs nothing to decide and a fortune to retrofit. A data dictionary written during digitisation takes an hour; reconstructed afterwards it is guesswork, and for the treatments in this project it is not possible at all.</p>
-  <p>This is why <b>Plan</b> sits at the hub of Figure \@ref(fig:LifeCycle) rather than at the start of the ring, and it is why a data management plan is a research instrument rather than paperwork for your funder.</p>
-</div>
-
-#### ✍️ Step 4: Write the Clause That Would Have Caught It <span style="color:dimgray;">(8 minutes, at the start of the PART B session)</span> {#inheritstep4}
-
-Your pair now writes **one clause** for your group's [reproducibility charter](#FactorsActivity): the standard that, had this student's lab held it, would have prevented the defect you reported.
-
-Hold it to the charter's own test, from Chapter 1:
-
-> A charter states what **this group will always do**. Each commitment is specific enough that somebody else can tell whether it was kept.
-
-So **"we will name our files sensibly" is not a clause.** It fails the test, because no one can tell whether it was kept. These pass:
-
-- *Raw data files are written once and never edited. All cleaning happens in a script that reads from `Data/raw/` and writes to `Data/processed/`.*
-- *Every dataset is accompanied by a `README.md` defining each column, its unit, and its missing-value code, written before analysis begins.*
-- *No dataset leaves the group until a named author has checked it for personal information and for coordinates of listed species.*
-
-**Deposit it before the step ends.** Put your clause, and your knitted defect log, in our shared Drive at [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), in a subfolder named for your pair. Four pairs, four subfolders, and you keep the same one for PART B.
-
-This is not administration. **Two of the four clauses will be written into a charter by people who were not in your pair**, and they cannot insert what they cannot read. A clause dictated across the room becomes four slightly different clauses in two charters; a clause deposited in writing becomes the same clause in both.
-
-If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note whose job this is: the [**Data lead**](#FactorsActivity) owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of all four failure classes. **If your group's Data lead section already covered the defect you found, say so in your report.** That is the best possible outcome of this exercise, and it means your charter was ambitious enough.
-
-#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes, at the start of the PART B session)</span> {#inheritstep5}
-
-**There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
-
-1. **Split into your two charter groups.** Each group is the two pairs that formed inside it: Pairs 1 and 2, or Pairs 3 and 4.
-2. **Open your charter**, which is a live document in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). You are revising it, not starting a new one.
-3. **Insert all four clauses** into the **Data lead** section. Two of them are your group's own and you can write them straight in. **The other two you read out of [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link)**, where the pairs that wrote them deposited them in [Step 4](#inheritstep4).
-4. **Reconcile the wording** with what your charter already says, and where a new clause contradicts an existing one, **resolve it now rather than keeping both**.
-
-<div class="info">
-  <p><strong>💡 Both charters should end up with the same four commitments</strong></p>
-  <p>Differently worded, perhaps, and sitting in a different order, but <b>the same four</b>. If one charter quietly ends up with three, the class has lost a finding, and the pair that found it has no way of knowing. <b>Before you leave, check that your Data lead section gained four clauses and not two.</b></p>
-</div>
-
-Chapter 1 promised you this:
-
-> *At the end of the semester you should be able to return to your charter and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.*
-
-**This is the first time that promise comes due.** Data management was one of the three domains your charter claimed to cover, and you have just spent a class finding out what it costs when it is absent.
-
 #### ⏭️ Where This Goes Next
+
+**You are half way through this activity.** The next class, [PART B on reproducible code](#repcode), opens by [finishing it](#inheritfollowup): you report your failure class, turn it into a clause, and merge it into your charter. **Bring the knitted log and the charter.**
 
 **Look down your knitted `Defect_log` before you leave.** Most of the rows describe something you can now *see* clearly and cannot yet *do* anything about: a column of measurements that imports as text, four different ways of writing "missing", three date formats, a derived variable with no formula.
 
@@ -6480,15 +6462,15 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 |---|---|---|
 | [The four sections, read in advance](#preread5B) | 25 min | **Students, at home before class** |
 | [Set up your script and diagram the project](#setup5B) | 10 min | **Students, at home before class** |
-| [👥 PART A Steps 3, 4 and 5](#inheritstep3): report, write the clause, then merge into your charter | 23 min | Students, in 4 pairs then 2 groups |
+| [👥 Finish the Data Diagnosis](#inheritfollowup): PART A's Steps 3, 4 and 5 | 23 min | Students, in 4 pairs then 2 groups |
 | [One Pass Over the Workflow](#codespine), with the slides | 18 min | Instructor |
 | [👥 Step 1: Try to Run It](#codestep1) | 7 min | Whole class |
 | [👥 Step 2: Diagnose Your Failure Class](#codestep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
 | **Total in class** | **68 min** | |
-| [👥 Step 3: Report What You Found](#codestep3) | 12 min | Students, **at the start of the [Chapter 6](#chap6) session** |
-| [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, **at the start of the [Chapter 6](#chap6) session** |
-| [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, **at the start of the [Chapter 6](#chap6) session** |
+| [👥 Step 3: Report What You Found](#codestep3) | 12 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
+| [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
+| [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
 
 ---
 
@@ -7145,6 +7127,77 @@ The instructor encourages students to discuss with their supervisors whether the
 
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
+
+### 👥 Group Activity (follow-up): Finish the Data Diagnosis <span style="color:dimgray;">(23 minutes)</span> {#inheritfollowup}
+
+**This finishes what you started in PART A.** In the [data management class](#inheritproject) your pair diagnosed one failure class in the inherited project and wrote it up in your `Defect_log`. You did not get to say it out loud, turn it into a standard, or put it into your charter. **That is what the first twenty minutes of today are for.**
+
+Bring two things: your **`Defect_log`**, knitted, and your group's **[reproducibility charter](#FactorsActivity)**.
+
+<div class="info">
+  <p><strong>&#128161; Why this is worth doing a session later rather than rushing it</strong></p>
+  <p>You have had a few days with the log. <b>Some of what looked like a catastrophe on the day turns out to be routine, and some of what you passed over turns out to matter more than you thought.</b> A diagnosis you can still defend after sleeping on it is worth more than one delivered while the folder is still open in front of you.</p>
+</div>
+
+#### 📢 Step 3: Report What You Found <span style="color:dimgray;">(10 minutes)</span> {#inheritstep3}
+
+**Three minutes per pair**, read straight off your knitted `Defect_log`. Report, in this order: the worst defect you found, whether it can still be repaired, **your pseudocode for repairing it**, and the practice that would have prevented it.
+
+**Read the pseudocode out.** It is the part the rest of the class learns most from, because it is where somebody else's defect becomes a procedure you could follow, and because the steps that make people argue are exactly the ones where the data cannot settle the question.
+
+**A defect you cannot fix still counts, and usually counts for more.** Nobody is expected to arrive with a solution. The question this step answers is *what is wrong with this project*, and a pair that says "this column imports as text, four values are unusable, and we do not yet know how to repair them" has done the job completely.
+
+Listen to the other three reports, because **you are adopting all four of their conclusions in Step 5**, not just your own.
+
+When all four pairs have reported, we return to the stage nobody was assigned:
+
+<div class="danger">
+  <p><strong>💡 Count how many of these defects are Planning failures</strong></p>
+  <p>Go through the four reports and ask, for each defect: <b>when could this have been prevented at no cost?</b> Nearly every answer is "before any data existed". A naming convention costs nothing to decide and a fortune to retrofit. A data dictionary written during digitisation takes an hour; reconstructed afterwards it is guesswork, and for the treatments in this project it is not possible at all.</p>
+  <p>This is why <b>Plan</b> sits at the hub of Figure \@ref(fig:LifeCycle) rather than at the start of the ring, and it is why a data management plan is a research instrument rather than paperwork for your funder.</p>
+</div>
+
+#### ✍️ Step 4: Write the Clause That Would Have Caught It <span style="color:dimgray;">(8 minutes)</span> {#inheritstep4}
+
+Your pair now writes **one clause** for your group's [reproducibility charter](#FactorsActivity): the standard that, had this student's lab held it, would have prevented the defect you reported.
+
+Hold it to the charter's own test, from Chapter 1:
+
+> A charter states what **this group will always do**. Each commitment is specific enough that somebody else can tell whether it was kept.
+
+So **"we will name our files sensibly" is not a clause.** It fails the test, because no one can tell whether it was kept. These pass:
+
+- *Raw data files are written once and never edited. All cleaning happens in a script that reads from `Data/raw/` and writes to `Data/processed/`.*
+- *Every dataset is accompanied by a `README.md` defining each column, its unit, and its missing-value code, written before analysis begins.*
+- *No dataset leaves the group until a named author has checked it for personal information and for coordinates of listed species.*
+
+**Deposit it before the step ends.** Put your clause, and your knitted defect log, in our shared Drive at [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), in a subfolder named for your pair. Four pairs, four subfolders, and you keep the same one for PART B.
+
+This is not administration. **Two of the four clauses will be written into a charter by people who were not in your pair**, and they cannot insert what they cannot read. A clause dictated across the room becomes four slightly different clauses in two charters; a clause deposited in writing becomes the same clause in both.
+
+If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note whose job this is: the [**Data lead**](#FactorsActivity) owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of all four failure classes. **If your group's Data lead section already covered the defect you found, say so in your report.** That is the best possible outcome of this exercise, and it means your charter was ambitious enough.
+
+#### 🤝 Step 5: Merge Into Your Charter <span style="color:dimgray;">(5 minutes)</span> {#inheritstep5}
+
+**There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
+
+1. **Split into your two charter groups.** Each group is the two pairs that formed inside it: Pairs 1 and 2, or Pairs 3 and 4.
+2. **Open your charter**, which is a live document in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). You are revising it, not starting a new one.
+3. **Insert all four clauses** into the **Data lead** section. Two of them are your group's own and you can write them straight in. **The other two you read out of [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link)**, where the pairs that wrote them deposited them in [Step 4](#inheritstep4).
+4. **Reconcile the wording** with what your charter already says, and where a new clause contradicts an existing one, **resolve it now rather than keeping both**.
+
+<div class="info">
+  <p><strong>💡 Both charters should end up with the same four commitments</strong></p>
+  <p>Differently worded, perhaps, and sitting in a different order, but <b>the same four</b>. If one charter quietly ends up with three, the class has lost a finding, and the pair that found it has no way of knowing. <b>Before you leave, check that your Data lead section gained four clauses and not two.</b></p>
+</div>
+
+Chapter 1 promised you this:
+
+> *At the end of the semester you should be able to return to your charter and find that you now know how to implement what you committed to today, and to judge whether you were ambitious enough.*
+
+**This is the first time that promise comes due.** Data management was one of the three domains your charter claimed to cover, and you have just spent a class finding out what it costs when it is absent.
+
+---
 
 ### 👥 Now Read the Code <span style="color:dimgray;">(47 minutes)</span> {#readthecode}
 
