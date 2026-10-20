@@ -5327,7 +5327,7 @@ dir.create("Chapter_5")</code></pre>
 ### Class Outline {#chap5Aoutline}
 
 1. [One Pass Over the Whole Cycle](#lifecyclespine) <span style="color:dimgray;">(18 minutes)</span>
-2. [👥 You Have Just Inherited This Project](#inheritproject) <span style="color:dimgray;">(50 minutes, in five steps)</span>
+2. [👥 Group Activity: Diagnose an Inherited Project](#inheritproject) <span style="color:dimgray;">(48 minutes, in five steps across two sessions)</span>
 
 That is the whole of the class. **Everything else in this part is reference material**, gathered under [Resources](#resources5A) below and organised stage by stage, so that you can find what you need quickly while you are diagnosing. The [Data Management Checklist](#data-management-checklist) at the end of it is the tool you will reach for most.
 
@@ -5890,7 +5890,9 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 ---
 
 
-### 👥 You Have Just Inherited This Project <span style="color:dimgray;">(50 minutes)</span> {#inheritproject}
+### 👥 Group Activity: Diagnose an Inherited Project <span style="color:dimgray;">(48 minutes, in five steps across two sessions)</span> {#inheritproject}
+
+**You have just inherited this project.**
 
 Earlier in this part you were asked a question (in [Benefits of Effective Data Management](#benefitsDM)):
 
@@ -5901,6 +5903,16 @@ Earlier in this part you were asked a question (in [Benefits of Effective Data M
 <div class="info">
   <p><strong>💡 This project is fictional, and every defect in it is deliberate</strong></p>
   <p>The measurements, the site coordinates and the names in the folder are invented for this exercise. Nothing describes a real person or a real population. <b>But none of the defects are exaggerated.</b> Every one of them is something your instructor has been handed in a real project.</p>
+</div>
+
+<div class="danger">
+  <p><strong>&#9888;&#65039; You cannot do this activity without the two things you set up before class</strong></p>
+  <p>Everything below works on a folder that has to be <b>already on your laptop</b>. If it is not, you will spend the activity downloading instead of diagnosing. You need:</p>
+  <ul>
+    <li><b>The project itself</b>, unzipped: <code>Chapter_5/Messy_Project/</code>, downloaded with your own script in <a href="#setup5A">What to Set Up on Your Computer Before Class</a>. <b>Leave it exactly as it came</b>: its mess is the exercise.</li>
+    <li><b>Your script</b>, <code>Chapter_5_data_management.R</code>, open in RStudio. Every command today goes in it, so that at the end of the session your own work is reproducible even though the project you are diagnosing is not.</li>
+  </ul>
+  <p><b>If either is missing, fix it now, in the first two minutes</b>, following <a href="#setup5A">the five setup steps</a>. Do not start reading the folder until both are in place, and do not borrow a neighbour's copy: you need it on your own machine for <a href="#inheritstep2">Step 2</a>.</p>
 </div>
 
 #### 🎯 Learning Objective
