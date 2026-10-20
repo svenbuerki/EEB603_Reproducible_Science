@@ -5058,7 +5058,7 @@ Students collaboratively explore how the **FAIR Principles** apply to real-world
 
 #### 🎯 Learning Objective
 
-Students collaboratively explore how the **CARE Principles** apply to data involving Indigenous Peoples and reflect on ethical, cultural, and governance considerations in data stewardship.
+Students collaboratively explore how the [**CARE Principles**](#CAREPrinc) apply to data involving Indigenous Peoples and reflect on ethical, cultural, and governance considerations in data stewardship.
 
 #### 👥 Instructions
 
@@ -6064,6 +6064,10 @@ Messy_Project/sites_landowners.csv      331 2026-10-09 10:37:36
 | The **size** | which files plausibly hold the *same* content, because near-identical sizes rarely happen by accident, and which file is unlike all the others | anything at all about whether the contents are correct |
 
 **A dataset is one set of observations**, however many files it has been saved into. Three files holding the same twelve measurements are one dataset in three versions, not three datasets. That distinction is the whole of the first question.
+
+**Apply it to this listing.** Four files could hold tabular data: `Data final v2 FINAL.xlsx`, `copy of data(1).csv`, `plot data 12-03-25.csv` and `sites_landowners.csv`. The first three are named as though they concern the same work, and their sizes are not far apart once you allow for the `.xlsx` carrying a spreadsheet's worth of overhead. **You cannot yet tell whether that makes them three datasets or one dataset saved three times**, and the listing will never tell you.
+
+**Why it matters more than tidiness.** If they *are* versions of one another, then this project contains **more than one recorded value for the same measurement**, and nothing in the folder says which one is right. A name like `v2 FINAL` is a claim about which is newest, not about which is correct, and `copy of` says only that somebody copied something. **Hold that question open**: you will open one of these files in [Step 2](#importcsv), and whoever owns [formats](#pair2) and [naming](#pair1) will be the ones to settle it.
 
 ###### Answer the Three Questions {#threeq}
 
