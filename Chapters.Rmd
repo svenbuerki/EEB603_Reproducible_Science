@@ -6020,10 +6020,13 @@ The sections in the third column are the ones you read before class: they are yo
 Add these lines to `Chapter_5_data_management.R`, below the download code, and run them:
 
 ```{r eval = FALSE, echo = TRUE}
-#What did we inherit? The size of each file in bytes, and when it was
-#last modified
+#What did we inherit? Keep two of the columns file.info() returns:
+#  size  = the file's size, in bytes
+#  mtime = modification time, when the file was last changed
 file.info(list.files("Messy_Project", full.names = TRUE))[, c("size", "mtime")]
 ```
+
+**`mtime` is R's name for *modification time***, the moment the file was last written to. `file.info()` returns several more columns; `[, c("size", "mtime")]` keeps just these two.
 
 **Why in R rather than by clicking around a folder?** Three reasons, and they are the reasons this chapter exists. It behaves identically on macOS, Windows and Linux, so nobody is held up by what is or is not installed. It puts the same answer in front of all eight of you, in the same form. And **it leaves a record**: by the end of this class your script will say what you inherited, what you found wrong with it, and what you did about it. **The student whose project you are holding kept no such record, which is most of why you are in this situation.**
 
