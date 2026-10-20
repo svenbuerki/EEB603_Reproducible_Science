@@ -4619,11 +4619,11 @@ That second one matters. Journal policy is a floor, not a ceiling, and a group i
 | **3** | [Score Your Charter Against TOP](#scoreyourselves) and the [journal comparison](#comparejournal) | Your highest and lowest practice, and the next clause you would write | 1.5 min |
 | **4** | Both | One sentence on where the charter stands now | 30 s |
 
-#### 1. One threat your charter already handled <span style="color:dimgray;">(1 minute, from [Testing Your Charter](#testcharter))</span>
+#### One threat your charter already handled <span style="color:dimgray;">(1 minute, from [Testing Your Charter](#testcharter))</span>
 
 Name the threat, **read the clause that stops it**, and say who outside your group could check whether you followed it.
 
-#### 2. One or two clauses you changed <span style="color:dimgray;">(2 minutes, from [Writing the Missing Clauses](#writemissing))</span>
+#### One or two clauses you changed <span style="color:dimgray;">(2 minutes, from [Writing the Missing Clauses](#writemissing))</span>
 
 **This is the centre of the report.** For each clause, four things:
 
@@ -4634,13 +4634,13 @@ Name the threat, **read the clause that stops it**, and say who outside your gro
 
 For example, a clause that moved from *"we will be transparent about our analysis"* to *"the analysis plan is committed to the repository before the data are unblinded"* shows the whole arc: a threat identified, a vague commitment found, and a checkable one written in its place.
 
-#### 3. Your TOP result <span style="color:dimgray;">(1.5 minutes, from [Score Yourselves](#scoreyourselves) and the [journal comparison](#comparejournal))</span>
+#### Your TOP result <span style="color:dimgray;">(1.5 minutes, from [Score Yourselves](#scoreyourselves) and the [journal comparison](#comparejournal))</span>
 
 - the practice where you scored **highest**, and the clause that earned it;
 - the practice where you scored **lowest** or **Not addressed**, and **the one clause you would write to move it up a single level**;
 - one place the journal is **stricter than you**, and one place **you are stricter than the journal**.
 
-#### 4. One sentence to finish <span style="color:dimgray;">(30 seconds)</span>
+#### One sentence to finish <span style="color:dimgray;">(30 seconds)</span>
 
 What would you tell somebody **joining your group next week** about what your charter now commits them to?
 
@@ -5897,23 +5897,27 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 
 ### 👥 Group Activity: Diagnose an Inherited Project <span style="color:dimgray;">(25 minutes)</span> {#inheritproject}
 
-#### 1. Aim {#inheritaim}
+#### Aim {#inheritaim}
 
+**You have inherited a research project, and your job is to review it against the data management practices set out in this part.** The project is [`Messy_Project`](#setup5A), the folder you downloaded before class. It belonged to a student who has left the lab: the data are observations that cost a field season, there is a manuscript half written, and the person who knows how any of it works is not answering email. **Everything you need is in that folder, or it is lost.**
 
-**You have just inherited this project.**
-
-Earlier in this part you were asked a question (in [Benefits of Effective Data Management](#benefitsDM)):
+This is the question from [Benefits of Effective Data Management](#benefitsDM) turned around on you:
 
 > *Would a colleague be able to take over my project tomorrow if I disappeared, or make sense of the data without talking to me?*
 
-**Today you are that colleague.** The folder you downloaded belongs to a student who has left the lab. The data are real observations that cost a field season, there is a manuscript half written, and the person who knows how any of it works is not answering email. Everything you need is in that folder, or it is lost.
+**Today you are that colleague**, and the answer is no. Your task has two halves:
+
+1. **Identify the defects.** A **defect** here is any property of the project that stops somebody other than its author from finding, reading, trusting or reusing the work: a file whose name does not say which version it is, a measurement stored with its unit inside the value, a variable nobody has defined, a dataset with no statement of who may see it. **A defect is not a matter of taste.** It is a place where the project departs from a practice this part sets out, which is why every finding has to name the practice it breaks.
+2. **Say what would fix it, and what cannot be fixed.** For each defect you write a **mitigation**: the repair, in [pseudocode](#fixpseudocode), where repair is still possible; and where it is not, a plain statement of what has been permanently lost and what would have had to happen earlier to prevent the loss. **That second kind is the more valuable finding**, because it is the one that changes how your own group works rather than how this folder looks.
+
+The output is a written record, your `Defect_log`, which becomes the evidence for the standards you add to your group's [reproducibility charter](#FactorsActivity).
 
 <div class="info">
   <p><strong>💡 This project is fictional, and every defect in it is deliberate</strong></p>
   <p>The measurements, the site coordinates and the names in the folder are invented for this exercise. Nothing describes a real person or a real population. <b>But none of the defects are exaggerated.</b> Every one of them is something your instructor has been handed in a real project.</p>
 </div>
 
-#### 2. Learning Outcomes
+#### Learning Outcomes {#inheritoutcomes}
 
 By the end of this activity, students are able to:
 
@@ -5923,7 +5927,7 @@ By the end of this activity, students are able to:
 - [Judge which defects can still be repaired and which are permanently lost](#fixpseudocode), and say what would have had to happen to prevent the loss
 - [Turn each defect into a standard in their group's charter](#inheritstep5) that somebody outside the group could check
 
-#### 3. Requirements {#inheritreq}
+#### Requirements {#inheritreq}
 
 **Two things have to be on your laptop before the activity starts.** Both were set up in [What to Set Up on Your Computer Before Class](#setup5A).
 
@@ -5937,19 +5941,17 @@ By the end of this activity, students are able to:
   <p><b>If either is missing, fix it now, in the first two minutes</b>, following <a href="#setup5A">the five setup steps</a>. Do not start reading the folder until both are in place, and do not borrow a neighbour's copy: you need it on your own machine for <a href="#inheritstep2">Step 2</a>.</p>
 </div>
 
-#### 4. Overview {#inheritoverview}
+#### Overview {#inheritoverview}
 
-##### How this activity runs {#inheritmap}
+**Four steps today, three in the next class.** You leave this session with a written diagnosis, not a finished activity.
 
-**Two steps today, three more in the next class.** You leave this session with a written diagnosis, not a finished activity.
-
-| | Step | What you do | Time | When |
+| | Step | Who | Time | When |
 |---|---|---|---|---|
-| **1** | [Look at What You Have Been Given](#inheritstep1) | List the folder in R, learn what a listing can tell you, then answer three questions as a class | 5 min | **today** |
-| **2** | [Build Your Log, then Diagnose](#inheritstep2) | Start the `Defect_log`, then hunt the [one kind of fault your pair owns](#yourpair) | 20 min | **today** |
-| **3** | [Report What You Found](#inheritstep3) | Each pair presents what it found | 10 min | [PART B class](#inheritfollowup) |
-| **4** | [Write the Clause](#inheritstep4) | Turn one defect into a standard somebody could check | 8 min | [PART B class](#inheritfollowup) |
-| **5** | [Merge Into Your Charter](#inheritstep5) | The two pairs in each group reconcile their clauses | 5 min | [PART B class](#inheritfollowup) |
+| **1** | [Look at what you have been given](#inheritstep1) | everyone | 5 min | **today** |
+| **2** | [Open a csv and see what you got back](#importcsv) | everyone | 5 min | **today** |
+| **3** | [Build your `Defect_log`](#buildlog) | everyone | 5 min | **today** |
+| **4** | [Diagnose the area your pair owns](#inheritstep2) | your pair | 10 min | **today** |
+| **5 to 7** | [Report, write the clause, merge into your charter](#inheritreporting) | your pair, then your group | 23 min | [PART B class](#inheritfollowup) |
 
 **Reference, to look up when you need it rather than to read in order:**
 
@@ -5958,18 +5960,11 @@ By the end of this activity, students are able to:
 - [Quick checks on any `data.frame`](#quickchecks)
 - [Writing the fix as pseudocode](#fixpseudocode)
 
-<div class="disclaimer">
-  <p><strong>&#128161; This activity does not finish today, and that is the design</strong></p>
-  <p>Today you work on the project's <b>data</b>: what it is, what is wrong with it, and what standard would have prevented each fault. In the <a href="#repcode">PART B class</a> you come back to <b>the same folder</b> and read its <b>code</b>, then <a href="#inheritfollowup">finish this activity</a> by turning today's findings into charter clauses.</p>
-  <p><b>The order matters.</b> A clause you write today is a promise: <i>we will name files consistently</i>, <i>we will keep the raw data untouched</i>. A promise is only as good as the chance somebody notices it was broken. <b>Code is what turns a promise into something that can be checked</b>: a script that reads from <code>01_Raw_Data/</code> fails loudly the day somebody edits the raw file, and a script that builds every figure from the data makes "which version is the master copy?" a question nobody has to ask.</p>
-  <p>So PART A tells you <b>what the rules should be</b>, and PART B shows you <b>what makes them hold</b>. Neither half is much use on its own, which is why the activity runs across both.</p>
-</div>
-
 <div class="info">
-  <p><strong>💡 Today you diagnose. You do not repair</strong></p>
-  <p><b>The skill being practised today is detection</b>, and it is the one that actually decides whether a dataset is trustworthy. A defect you cannot see is one you cannot fix, cannot warn anybody about, and cannot write a standard against. Most bad data does not announce itself: it loads without error, it analyses without complaint, and it produces a number that looks fine. <b>Everything downstream depends on somebody noticing first.</b></p>
-  <p><b>So nothing in this folder gets fixed today</b>, for two reasons. Diagnosis is usually the step that gets skipped: people start renaming files within a minute of opening a messy folder, before they understand what they are looking at, and destroy evidence doing it. And repairing data properly takes R skills we come to later.</p>
-  <p>So <b>you will keep this folder exactly as it is, and leave with a written record of what is wrong with it</b>. We pick that record up again in <a href="#chap7">Chapter 7</a> and in Chapter 8, where we import and tidy data with R, and these files are what we practise on. <b>The better your log today, the less guessing you do then.</b></p>
+  <p><strong>&#128161; Today you diagnose. You do not repair</strong></p>
+  <p><b>Bad data rarely announces itself</b>: it loads without error, it analyses without complaint, and it produces a number that looks fine. Everything downstream depends on somebody noticing first, which is why detection is the skill being practised today.</p>
+  <p><b>So keep the folder exactly as it is.</b> People start renaming files within a minute of opening a messy folder, before they understand what they are looking at, and destroy the evidence doing it. Repairing data properly also needs R skills we come to later, which is why your fixes are written as <a href="#fixpseudocode">pseudocode</a> rather than run.</p>
+  <p><b>One more reason the activity spans two classes.</b> A clause you write today is a promise: <i>we will keep the raw data untouched</i>. In the <a href="#repcode">PART B class</a> you read the same project's <b>code</b>, which is what turns a promise into something somebody can actually check.</p>
 </div>
 
 ##### Your pair, and the kind of fault it owns {#yourpair}
@@ -5999,7 +5994,7 @@ The sections in the third column are the ones you read before class: they are yo
 
 **Nobody owns Planning.** That is not an oversight, and we will come back to it in Step 3.
 
-#### 5. Step-by-Step Procedure {#inheritprocedure}
+#### Step-by-Step Procedure {#inheritprocedure}
 
 **Steps 1 to 3 are the same for everybody** and set the activity up: you look at what you inherited, you learn what R does to a file when it opens it, and you build the log you will record findings in. **Step 4 is your pair's own work.**
 
@@ -6018,7 +6013,7 @@ The sections in the third column are the ones you read before class: they are yo
 2. **[Read the listing](#readlisting)** --- what an extension, a name and a size can and cannot tell you
 3. **[Answer the three questions](#threeq)** --- as a class, with your evidence every time
 
-###### 1. List What You Inherited {#listfolder}
+###### List What You Inherited {#listfolder}
 
 **Before anyone opens a file**, get a view of the whole thing: every file, how big it is, and when it was last touched. **Do this in R, in the script you created [before class](#beforeclass5A)**, and keep working in that script for the rest of the session.
 
@@ -6058,7 +6053,7 @@ Messy_Project/sites_landowners.csv      331 2026-10-09 10:37:36
   <p><b>Use these alongside the R output, not instead of it.</b> Only the script remembers what you did.</p>
 </div>
 
-###### 2. Read the Listing {#readlisting}
+###### Read the Listing {#readlisting}
 
 **You can get a long way before opening anything, if you read the listing deliberately.** You have three kinds of evidence and nothing else, and it is worth being clear about what each one can and cannot tell you:
 
@@ -6070,7 +6065,7 @@ Messy_Project/sites_landowners.csv      331 2026-10-09 10:37:36
 
 **A dataset is one set of observations**, however many files it has been saved into. Three files holding the same twelve measurements are one dataset in three versions, not three datasets. That distinction is the whole of the first question.
 
-###### 3. Answer the Three Questions {#threeq}
+###### Answer the Three Questions {#threeq}
 
 Answer these as a class, from the listing alone, **and say what your evidence is every time**. An answer without its evidence is a guess, and part of the point of this exercise is learning to tell the two apart.
 
@@ -6095,11 +6090,7 @@ Answer these as a class, from the listing alone, **and say what your evidence is
 d <- read.csv("Messy_Project/copy of data(1).csv")
 ```
 
-Three things about that one line:
-
-- **The path is relative.** `read.csv()` looks for `Messy_Project/` inside whatever `getwd()` returns. If it cannot find the file, that is almost always the problem.
-- **The quotes do real work.** This file name contains spaces and brackets. Inside quotation marks R treats the whole thing as one piece of text and does not mind, which is the *only* reason this works. Outside quotation marks, a space ends the name. Hold on to that thought: it is [Pair 1](#pair1)'s subject.
-- **`<-` keeps the result.** Without it the file is printed once and thrown away. With it you have an object you can interrogate.
+**Look at the file name you just had to type**: `copy of data(1).csv`, with spaces and brackets in it. It works here only because it is inside quotation marks. **That is [Pair 1](#pair1)'s subject**, so if that is you, start noticing names now.
 
 **What you get back is a `data.frame`**, which is R's name for a table:
 
@@ -6257,21 +6248,7 @@ knitr::kable(defects,
 
 **Add a row to the csv, re-knit, and the table updates itself.** The document also counts your defects with [inline code](#inlinecode), so those numbers cannot go stale either. This is a small thing, and it is the whole principle of the course in miniature: *the report is derived from the data, not transcribed from it.*
 
-The csv arrives with one row already in it, which is both the format and the standard:
-
-| file | defect | repairable | fix_pseudocode | practice |
-|---|---|---|---|---|
-| `copy of data(1).csv` | `mass` holds a unit inside the value, `12.5 g`, so the whole column imports as text | Yes, but every value needs checking | see pseudocode below | Data Digitization: atomisation, one value per cell |
-
-The standard being: **be specific enough that somebody who has never seen this folder could act on your row.** "File names are bad" is not a row. Five things make a row useful:
-
-1. **Name the file.** Point at it, do not gesture at the folder.
-2. **Say what is wrong, concretely.** Quote the offending value or name.
-3. **Say whether it can still be repaired.** Some of this can. Some of it is gone for good, and **saying precisely which is the more valuable answer**, because it is the one that changes how people work in future.
-4. **Say how you would fix it, in pseudocode.** See below. This is the most useful column in the log.
-5. **Name the practice that would have prevented it**, and link the section. This column is where your charter clause comes from in [Step 4](#inheritstep4).
-
-**Spend the first five minutes of this step making those two files.** Build them, do not be given them: this is the same work as every R Markdown document you have produced since Chapter 2, and it is quick.
+**Spend the first five minutes of this step building the two files.** Build them, do not be given them: this is the same work as every R Markdown document you have produced since Chapter 2, and it is quick.
 
 **`Defect_log.csv`**, via `File > New File > Text File`, saved in `Chapter_5/`, containing one line to start with:
 
@@ -6353,11 +6330,25 @@ have prevented it. These are your strongest candidates for a charter clause.
 <p>Both complete files are in the course repository at <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/tree/master/Exercises/Chapter_5" target="_blank" rel="noopener noreferrer">Exercises/Chapter_5</a> if you want to compare yours against them, or if you run out of time and need a working copy to start from.</p>
 </details>
 
+**Now you know what to put in it.** The csv arrives with one row already in it, which is both the format and the standard:
+
+| file | defect | repairable | fix_pseudocode | practice |
+|---|---|---|---|---|
+| `copy of data(1).csv` | `mass` holds a unit inside the value, `12.5 g`, so the whole column imports as text | Yes, but every value needs checking | see pseudocode below | Data Digitization: atomisation, one value per cell |
+
+The standard being: **be specific enough that somebody who has never seen this folder could act on your row.** "File names are bad" is not a row. Five things make a row useful:
+
+1. **Name the file.** Point at it, do not gesture at the folder.
+2. **Say what is wrong, concretely.** Quote the offending value or name.
+3. **Say whether it can still be repaired.** Some of this can. Some of it is gone for good, and **saying precisely which is the more valuable answer**, because it is the one that changes how people work in future.
+4. **Say how you would fix it, in pseudocode.** See below. This is the most useful column in the log.
+5. **Name the practice that would have prevented it**, and link the section. This column is where your charter clause comes from in [Step 4](#inheritstep4).
+
 **Then move on to your own section below.** From here on, every defect you find goes into the csv as a row.
 
 ###### Write the Fix as Pseudocode <span style="color:dimgray;">(how to fill the <code>fix_pseudocode</code> column)</span> {#fixpseudocode}
 
-**You are not expected to know the R yet, and you do not need it to specify the repair.** [Pseudocode](#writepseudointro), which you met in Chapter 2, is a plain-language statement of the logic: the steps, in order, in the structure a program would take, written for a human rather than a machine. **It is the right output for today** because it separates *deciding what must happen* from *knowing which function does it*, and the first of those is the hard part.
+**Specifying a repair does not require knowing which R functions would carry it out**, which is just as well: the R for most of these comes in [Chapter 7](#chap7) and Chapter 8. [Pseudocode](#writepseudointro), which you met in Chapter 2, is a plain-language statement of the logic: the steps, in order, in the structure a program would take, written for a human rather than a machine. **It is the right output for today** because it separates *deciding what must happen* from *knowing which function does it*, and the first of those is the hard part.
 
 So for any defect where you can, add a numbered procedure. For the `mass` column, it might run:
 
@@ -6437,7 +6428,7 @@ Then work through the rest of the file:
 - Sort every file in the folder into three piles: **deposit openly**, **deposit with restricted access**, **never leaves the lab**. Justify the boundaries.
 - Choose a [repository](#datarepos) for the depositable material and state what it would require of you that this project cannot currently supply.
 
-#### 6. Reporting {#inheritreporting}
+#### Reporting {#inheritreporting}
 
 **You do not report today.** Reporting is the end of this activity, and it happens at the **start of the next class**, [PART B on reproducible code](#repcode), as [Finish the Data Diagnosis](#inheritfollowup). The gap is deliberate: it gives you a few days with the log, and a diagnosis you can still defend after sleeping on it is worth more than one delivered while the folder is still open in front of you.
 
@@ -7246,11 +7237,11 @@ Chapter 1 promised you this:
 
 ### 👥 Group Activity: Read the Code You Inherited <span style="color:dimgray;">(22 minutes)</span> {#readthecode}
 
-#### 1. Aim {#codeaim}
+#### Aim {#codeaim}
 
 In PART A you took this project apart and never once opened its code. **There are three R scripts in that folder and nobody in this room has read a line of them.** The person who wrote them is still not answering email, the manuscript is still half written, and one of the three is called `analysis_USE THIS ONE.R`.
 
-#### 2. Learning Outcomes {#codeoutcomes}
+#### Learning Outcomes {#codeoutcomes}
 
 By the end of this activity, students are able to:
 
@@ -7259,7 +7250,7 @@ By the end of this activity, students are able to:
 - Record each defect with **pseudocode for the repair**, as in [PART A](#fixpseudocode)
 - [Turn the defects into standards](#codestep4) in the **Analysis lead** section of their group's [charter](#FactorsActivity)
 
-#### 3. Requirements {#codereq}
+#### Requirements {#codereq}
 
 **Three things have to be on your laptop before the activity starts**, all set up in [What to Set Up on Your Computer Before Class](#setup5B).
 
@@ -7273,7 +7264,7 @@ By the end of this activity, students are able to:
   <p>You will also want <b>the <code>Defect_log</code> from PART A</b> open beside you: the code faults you are about to find are frequently the cause of the data faults you logged last week.</p>
 </div>
 
-#### 4. Overview {#codeoverview}
+#### Overview {#codeoverview}
 
 **Two steps today, three in the [Chapter 6](#chap6outline) class.** You leave this session with your findings recorded, and report them at the start of the next one.
 
@@ -7298,7 +7289,7 @@ By the end of this activity, students are able to:
 
 **You are adding to the same `Defect_log.csv`**, and giving `Defect_log.Rmd` a second section headed `# Code defects` with its own `kable()` chunk. Same five columns as before, same standard, and [pseudocode](#fixpseudocode) for the fix wherever you can write it.
 
-#### 5. Step-by-Step Procedure {#codeprocedure}
+#### Step-by-Step Procedure {#codeprocedure}
 
 **Step 1 is the same for everybody**, and it is deliberately the first thing you do: you find out whether the thing runs before you have any opinion about how it is written. **Step 2 is your pair's own work.**
 
@@ -7402,7 +7393,7 @@ mean(d$mass, na.rm = TRUE)          #write this number down
 - **Nothing anywhere records which package versions were used.** Name the one function from [Document and Manage Software Dependencies](#docsoftdep) that fixes this, and say exactly where in a script it belongs.
 - There is no `LICENSE` file. **What are you, the inheritor, actually permitted to do with this code?** See [Software Licenses](#softwarelicenses).
 
-#### 6. Reporting {#codereporting}
+#### Reporting {#codereporting}
 
 **You do not report today.** All three remaining steps run at the **start of the [Chapter 6](#chap6outline) class**. Bring your script, your notes and your group's [charter](#FactorsActivity).
 
