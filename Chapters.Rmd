@@ -6353,11 +6353,11 @@ file,defect,repairable,fix_pseudocode,practice
 
 </details>
 
-###### Generate the Data Dictionary Skeleton {#datadictionary}
+###### Generate the Metadata for This Dataset {#metadataskeleton}
 
-**A log says what is wrong. A data dictionary says what the data *are*,** and this project has none: that absence is itself one of the largest defects in the folder.
+**A log says what is wrong. [Metadata](#metadatasec) say what the data *are*,** and this project has none: that absence is itself one of the largest defects in the folder. What you build here is the **data-level** half of it, a row per variable, which is what [Data-Level Documentation](#data-level-documentation) calls a data dictionary.
 
-**Let R build the half it can.** Everything in the first five columns comes from the functions you ran in [Step 2](#importcsv). Add this to your script and run it:
+**Let R build the half it can.** Everything in the first five columns comes from the functions you ran in [Step 2](#importcsv). **R can describe the structure; only a person can supply the meaning.** Add this to your script and run it:
 
 ```{r eval = FALSE, echo = TRUE}
 #Build a data dictionary skeleton FROM THE DATA ITSELF.
@@ -6509,8 +6509,8 @@ Then work through the rest of the file:
 
 ###### Pair 3: Documentation and Metadata {#pair3}
 
-- **What are the three treatments?** The answer decides what the entire analysis means. Find it, or establish that it cannot be found.
-- Write out every column name in plain English, with its unit. **Which ones can you not do?**
+- **What are the three treatments?** The `trt` column of `copy of data(1).csv` holds 1, 2 and 3. What do those three numbers mean? Find the answer, or establish that it cannot be found.
+- **Fill in the `meaning`, `units`, `evidence` and `confidence` columns** of [`README_copy_of_data_1.csv`](#metadataskeleton) for every variable, not just yours. **Which ones can you not fill, and what would you have needed?**
 - `biomass_index` is a derived variable. **From which columns, by what formula?** Can you reproduce a single one of its values?
 - The missing-value code *is* recorded somewhere in this folder. Find it, and then explain why where it is recorded makes it almost useless.
 - `notes.txt` contains at least three facts that change how the data must be analysed. Identify them, and say where each one should have been recorded instead.
