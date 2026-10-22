@@ -5134,9 +5134,9 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 | *five-minute break* | 5 min | |
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 5 min | Whole class |
 | **Total on 20 October** | **44 min** | |
-| [👥 Step 2: Open a csv and See What You Got Back](#importcsv) | 5 min | Everyone, **22 October** |
-| [👥 Step 3: Build Your Defect Log](#buildlog) | 5 min | Everyone, **22 October** |
-| [👥 Step 4: Diagnose the Area Your Pair Owns](#inheritstep2) | 10 min | Students in 4 pairs, **22 October** |
+| [👥 Step 2: Open a csv and See What You Got Back](#importcsv) | 7 min | Live-coded together, **22 October** |
+| [👥 Step 3: Build Your Defect Log](#buildlog) | 8 min | Live-coded together, **22 October** |
+| [👥 Step 4: Diagnose the Area Your Pair Owns](#inheritstep2) | 20 min | Students in 4 pairs, **22 October** |
 | [👥 Report, clause and charter merge](#inheritfollowup) | with PART B | Students, **in the [Chapter 6](#chap6outline) class** |
 
 **PART A ran over one and a half classes.** On 20 October we reached the end of Step 1. **Steps 2 to 4 open the 22 October class**, and the reporting is merged with PART B's into [one round](#inheritfollowup) in the Chapter 6 session.
@@ -5325,6 +5325,28 @@ dir.create("Chapter_5")</code></pre>
 
 ---
 
+
+
+##### Step 6: Optional, Collect the Defect Log Templates {#setuplogtemplates}
+
+**You will build `Defect_log.csv` and `Defect_log.Rmd` yourself in [Step 3](#buildlog) of the activity**, and building them is the point: it is the same work as every R Markdown document you have produced since Chapter 2. **So do not start from the templates by default.**
+
+They exist for two situations: you want to check your own against a working copy, or the class is short of time and you need to get to the diagnosis. Both files are in the repository at [`Exercises/Chapter_5`](https://github.com/svenbuerki/EEB603_Reproducible_Science/tree/master/Exercises/Chapter_5).
+
+<details>
+<summary><b>&#9989; Solution: download both templates</b></summary>
+
+<p>Download both files:</p>
+  <ul>
+    <li><b><a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Defect_log.csv" target="_blank" rel="noopener noreferrer">Defect_log.csv</a></b> --- the header row and one worked example</li>
+    <li><b><a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Defect_log.Rmd" target="_blank" rel="noopener noreferrer">Defect_log.Rmd</a></b> --- the complete document, ready to knit</li>
+  </ul>
+  <p>On each page use the <b>Download raw file</b> button, and save both into your <code>Chapter_5</code> folder beside <code>Messy_Project/</code>.</p>
+
+<p><b>Then knit <code>Defect_log.Rmd</code> once.</b> It reads the csv, renders it with <code>kable()</code> and counts the rows with inline code, so a successful knit confirms the whole chain works before you have any findings to lose.</p>
+
+<p>The <code>.csv</code> arrives with the header row and one worked example underneath it, which is both the format and the standard a row has to meet.</p>
+</details>
 
 ### Class Outline {#chap5Aoutline}
 
@@ -5897,7 +5919,7 @@ The following checklist, adapted from the [UK Data Archive](https://www.ukdatase
 ---
 
 
-### 👥 Group Activity: Diagnose an Inherited Project <span style="color:dimgray;">(25 minutes)</span> {#inheritproject}
+### 👥 Group Activity: Diagnose an Inherited Project <span style="color:dimgray;">(40 minutes)</span> {#inheritproject}
 
 #### Aim {#inheritaim}
 
@@ -5950,9 +5972,9 @@ By the end of this activity, students are able to:
 | | Step | Who | Time | When |
 |---|---|---|---|---|
 | **1** | [Look at what you have been given](#inheritstep1) | everyone | 5 min | **today** |
-| **2** | [Open a csv and see what you got back](#importcsv) | everyone | 5 min | **today** |
-| **3** | [Build your `Defect_log`](#buildlog) | everyone | 5 min | **today** |
-| **4** | [Diagnose the area your pair owns](#inheritstep2) | your pair | 10 min | **today** |
+| **2** | [Open a csv and see what you got back](#importcsv) | together | 7 min | **today** |
+| **3** | [Build your `Defect_log`](#buildlog) | together | 8 min | **today** |
+| **4** | [Diagnose the area your pair owns](#inheritstep2) | your pair | 20 min | **today** |
 | **5 to 7** | [Report, write the clause, merge into your charter](#inheritreporting) | your pair, then your group | 23 min | [PART B class](#inheritfollowup) |
 
 **Reference, to look up when you need it rather than to read in order:**
@@ -5998,14 +6020,14 @@ The sections in the third column are the ones you read before class: they are yo
 
 #### Step-by-Step Procedure {#inheritprocedure}
 
-**Steps 1 to 3 are the same for everybody** and set the activity up: you look at what you inherited, you learn what R does to a file when it opens it, and you build the log you will record findings in. **Step 4 is your pair's own work.**
+**Steps 1 to 3 are the same for everybody** and set the activity up: you look at what you inherited, you learn what R does to a file when it opens it, and you build the log you will record findings in. **We do Steps 2 and 3 together**, with me writing the code at the front and you writing the same lines in your own script, so that nobody is held up by how much R they have met before. **Step 4 is your pair's own work.**
 
 | Step | What you do | Who | Time |
 |---|---|---|---|
 | [1](#inheritstep1) | Look at what you have been given | everyone | 5 min |
-| [2](#importcsv) | Open a csv in R and see what you actually got back | everyone | 5 min |
-| [3](#buildlog) | Build your `Defect_log` and learn the pseudocode convention | everyone | 5 min |
-| [4](#inheritstep2) | Diagnose the area your pair owns | your pair | 10 min |
+| [2](#importcsv) | Open a csv in R and see what you actually got back | together | 7 min |
+| [3](#buildlog) | Build your `Defect_log` | together | 8 min |
+| [4](#inheritstep2) | Diagnose the area your pair owns | your pair | 20 min |
 
 ##### Step 1: Look at What You Have Been Given <span style="color:dimgray;">(everyone, 5 minutes)</span> {#inheritstep1}
 
@@ -6087,7 +6109,7 @@ Answer these as a class, from the listing alone, **and say what your evidence is
   <p>That is deliberate, and it is not a trick. <b>You are expected to reach "I cannot tell, and here is exactly what I would need"</b>, because that is the real experience of inheriting somebody's project, and because naming the missing evidence is what you will turn into a charter clause in <a href="#inheritstep4">Step 4</a>. A pair that answers confidently here has usually stopped reading the listing and started guessing.</p>
 </div>
 
-##### Step 2: Open a csv in R and See What You Got Back <span style="color:dimgray;">(everyone, 5 minutes)</span> {#importcsv}
+##### Step 2: Open a csv in R and See What You Got Back <span style="color:dimgray;">(together, 7 minutes)</span> {#importcsv}
 
 **Everyone needs this, whatever your failure class**, because all four sections ask you to open at least one of these files. We use **base R only**: nothing to install, nothing to load.
 
@@ -6230,9 +6252,34 @@ biomass_index         notes
   <p>The fix is not clever code. It is <b>one documented missing-value code, written down where a reader will find it</b>, which is where <a href="#pair3">Pair 3</a> comes in.</p>
 </div>
 
+###### How to Record a Missing Value So That R Sees It {#missingcode}
+
+**R has exactly one missing value, and it is `NA`.** Everything else is data. This is what `read.csv()` makes of the codes people actually use:
+
+| What is in the file | What R makes of it |
+|---|---|
+| `NA` | **missing.** The only code `read.csv()` recognises by default |
+| an empty field | an empty string `""` in a text column, which is **not** missing |
+| `-999` | a number, and it will go into your mean |
+| `n/a`, `unknown`, `.` | a word, which also forces the whole column to text |
+
+**So there are two ways to get this right.**
+
+**Recording your own data: write `NA`.** Not blank, not `-999`, not a word. One code, used for every missing value in the dataset, whatever the reason it is missing.
+
+**Inheriting somebody else's: tell `read.csv()` what their code was**, which you can only do once you have found out, which is what `unique()` above is for:
+
+```{r eval = FALSE, echo = TRUE}
+#Everything listed here is read as NA instead of as data
+d <- read.csv("Messy_Project/copy of data(1).csv",
+              na.strings = c("NA", "", "-999", "n/a", "."))
+```
+
+**Then say so in the documentation.** A dataset with four missing-value codes effectively has none, because a reader cannot tell a measurement from a placeholder, and neither can R. **Recording *why* a value is missing is a separate job**: it belongs in a notes column or the data dictionary, not in the measurement cell. `-999` in a `mass` column is somebody trying to store a reason where a number should be.
+
 One last thing worth noticing, since you will reach for it constantly: run `summary(d)` and look at what it says about `mass`. It reports `Length:12`, `Class :character`, and **no mean, no range, no quartiles**, because you cannot take the mean of words. **The absence of the statistics is the signal.** When `summary()` goes quiet about a column you expected numbers from, that column is text, and you now know why.
 
-##### Step 3: Build Your Defect Log <span style="color:dimgray;">(everyone, 5 minutes)</span> {#buildlog}
+##### Step 3: Build Your Defect Log <span style="color:dimgray;">(together, 8 minutes)</span> {#buildlog}
 
 **Whatever your section asks, you are producing one thing: a written record.** Not a tidied folder, and not a mental note.
 
@@ -6241,21 +6288,7 @@ One last thing worth noticing, since you will reach for it constantly: run `summ
 - **`Defect_log.csv`** holds the findings, **one row per defect**, in five columns: `file`, `defect`, `repairable`, `fix_pseudocode`, `practice`. Edit it in RStudio, or in a spreadsheet if you save it back as csv.
 - **`Defect_log.Rmd`** is the document you knit and hand in. It reads the csv and renders it, so **you never type a finding twice and the document cannot disagree with the data**.
 
-The chunk doing the work is the one you wrote in [Insert Tables](#inserttable) in Chapter 2, using the packages and the pipe from [The R Packages and Syntax Used Here](#tablepkgs):
-
-```{r eval = FALSE, echo = TRUE}
-#The data live in the csv. This chunk only displays them.
-defects <- read.csv("Defect_log.csv")
-
-knitr::kable(defects,
-             caption = "Defects found in the inherited project.",
-             col.names = c("File(s)", "The defect", "Repairable?",
-                           "How we would fix it",
-                           "The practice that would have prevented it")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-```
-
-**Add a row to the csv, re-knit, and the table updates itself.** The document also counts your defects with [inline code](#inlinecode), so those numbers cannot go stale either. This is a small thing, and it is the whole principle of the course in miniature: *the report is derived from the data, not transcribed from it.*
+**The chunk that does it is the one you wrote in [Insert Tables](#inserttable)**: `read.csv()` into a data frame, then `kable()` to render it. **Add a row to the csv, re-knit, and the table updates itself**, which is the whole principle of this course in miniature: *the report is derived from the data, not transcribed from it*.
 
 **Spend the first five minutes of this step building the two files.** Build them, do not be given them: this is the same work as every R Markdown document you have produced since Chapter 2, and it is quick.
 
@@ -6276,70 +6309,32 @@ file,defect,repairable,fix_pseudocode,practice
 **Knit it now, while the log is still empty.** A document that works on an empty table will work on a full one, and a document first knitted at the end of class will fail at the worst possible moment. **If it will not knit, ask me now rather than at the report.**
 
 <details>
-<summary><b>✅ Solution</b></summary>
+<summary><b>&#9989; Solution: the two finished files</b></summary>
 
-<p><b>Defect_log.csv</b>, with the header row and the worked example underneath it:</p>
+<p>Rather than print them here, take them as files. The <code>.csv</code> is the header row plus one worked example; the <code>.Rmd</code> is complete and knits as it stands.</p>
 
-<pre><code>file,defect,repairable,fix_pseudocode,practice
-"copy of data(1).csv","mass holds a unit inside the value, 12.5 g, so the whole column imports as text","Yes, but every value needs checking","strip unit; comma to point; missing codes to NA; convert to numeric; CHECK the NA count","Data Digitization: atomisation, one value per cell"</code></pre>
 
-<p>Quote any field that itself contains a comma, as the two long fields above do, or the csv will gain columns you did not ask for. That is the same defect you will find in the inherited data.</p>
-
-<p><b>Defect_log.Rmd</b>:</p>
-
-<pre><code>---
-title: "Defect log: the project we inherited"
-author: "Your names here"
-date: "&#96;r Sys.Date()&#96;"
-output:
-  html_document:
-    toc: true
-    toc_float: true
----
-
-&#96;&#96;&#96;{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-
-library(knitr)
-library(kableExtra)
-library(magrittr)   # for the %&gt;% pipe
-&#96;&#96;&#96;
-
-# What we inherited
-
-One or two sentences: which project, which files, and which failure class
-your pair owns.
-
-# Defects we found
-
-&#96;&#96;&#96;{r defects}
-#The data live in the csv. This chunk only displays them.
-defects &lt;- read.csv("Defect_log.csv")
-
-knitr::kable(defects,
-             caption = "Defects found in the inherited project.",
-             col.names = c("File(s)", "The defect", "Repairable?",
-                           "How we would fix it",
-                           "The practice that would have prevented it")) %&gt;%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-&#96;&#96;&#96;
-
-# How many, and how bad
-
-- Defects logged: &#96;r nrow(defects)&#96;
-- Still repairable: &#96;r sum(grepl("^Yes", defects$repairable))&#96;
-- Permanently lost: &#96;r sum(!grepl("^Yes", defects$repairable))&#96;
-
-# What we could not fix, and what we would need
-
-Anything permanently lost, and the single piece of information that would
-have prevented it. These are your strongest candidates for a charter clause.
-</code></pre>
-
-<p>Both complete files are in the course repository at <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/tree/master/Exercises/Chapter_5" target="_blank" rel="noopener noreferrer">Exercises/Chapter_5</a> if you want to compare yours against them, or if you run out of time and need a working copy to start from.</p>
 </details>
 
-**Now you know what to put in it.** The csv arrives with one row already in it, which is both the format and the standard:
+**Then move on to your own section below.** From here on, every defect you find goes into the csv as a row.
+
+##### Step 4: Diagnose the Area Your Pair Owns <span style="color:dimgray;">(your pair, 20 minutes)</span> {#inheritstep2}
+
+**Now open things.** Work only on [your own area](#yourpair): if four pairs read the same files you will all find the same three obvious problems and miss everything else.
+
+**Twenty minutes, and one output: rows in your csv.** Roughly:
+
+| | | |
+|---|---|---|
+| **5 min** | Open the files [your brief](#yourpair) names, and look | |
+| **12 min** | Write a row for every defect you can evidence | [what a good row looks like](#goodrow) |
+| **3 min** | Re-knit the `.Rmd` and read your own table back | |
+
+**Aim for four or five rows you can defend, not fifteen you cannot.** A row somebody else could act on is worth more than a list of impressions.
+
+###### What a Good Row Looks Like {#goodrow}
+
+The csv arrives with one row already in it, which is both the format and the standard:
 
 | file | defect | repairable | fix_pseudocode | practice |
 |---|---|---|---|---|
@@ -6347,13 +6342,13 @@ have prevented it. These are your strongest candidates for a charter clause.
 
 The standard being: **be specific enough that somebody who has never seen this folder could act on your row.** "File names are bad" is not a row. Five things make a row useful:
 
-1. **Name the file.** Point at it, do not gesture at the folder.
-2. **Say what is wrong, concretely.** Quote the offending value or name.
-3. **Say whether it can still be repaired.** Some of this can. Some of it is gone for good, and **saying precisely which is the more valuable answer**, because it is the one that changes how people work in future.
-4. **Say how you would fix it, in pseudocode.** See below. This is the most useful column in the log.
-5. **Name the practice that would have prevented it**, and link the section. This column is where your charter clause comes from in [Step 4](#inheritstep4).
-
-**Then move on to your own section below.** From here on, every defect you find goes into the csv as a row.
+| Column | What it must say | The test |
+|---|---|---|
+| `file` | **Name the file.** Point at it, do not gesture at the folder | could a stranger open it? |
+| `defect` | **What is wrong, concretely.** Quote the offending value or name | is the evidence in the cell? |
+| `repairable` | **Yes, or gone for good.** Saying precisely which is the more valuable answer, because it is the one that changes how people work | would you bet on it? |
+| `fix_pseudocode` | **How you would fix it**, in [pseudocode](#fixpseudocode). The most useful column in the log | could somebody else implement it? |
+| `practice` | **The practice that would have prevented it**, with the section linked. This is where your charter clause comes from in [the reporting step](#inheritreporting) | does it name a practice, not a preference? |
 
 ###### Write the Fix as Pseudocode <span style="color:dimgray;">(how to fill the <code>fix_pseudocode</code> column)</span> {#fixpseudocode}
 
@@ -6383,10 +6378,6 @@ FOR the mass column:
 </div>
 
 Where you cannot write pseudocode, **say so and say why**. "No procedure exists: the treatment key was never written down, so no amount of code recovers what 1, 2 and 3 meant" is a complete and valuable entry. It is also the entry that will matter most in [Step 4](#inheritstep4).
-
-##### Step 4: Diagnose the Area Your Pair Owns <span style="color:dimgray;">(your pair, 10 minutes)</span> {#inheritstep2}
-
-**Now open things, and work only on your own area**, otherwise four pairs spend ten minutes finding the same obvious problem. Everything you find goes into the log as a row.
 
 ###### Pair 1: Naming and Organisation {#pair1}
 
@@ -6503,12 +6494,12 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 |---|---|---|
 | [The four sections, read in advance](#preread5B) | 25 min | **Students, at home before class** |
 | [Set up your script and diagram the project](#setup5B) | 10 min | **Students, at home before class** |
-| [👥 Chapter 5 PART A, Steps 2 to 4](#importcsv) | 20 min | Students, carried over from 20 October |
+| [👥 Chapter 5 PART A, Steps 2 to 4](#importcsv) | 35 min | Students, carried over from 20 October |
 | [One Pass Over the Workflow](#codespine), with the slides | 18 min | Instructor |
 | [👥 Step 1: Try to Run It](#codestep1) | 7 min | Whole class |
-| [👥 Step 2: Diagnose the Area Your Pair Owns](#codestep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
-| **Total in class** | **45 min** | |
+| **Total in class** | **65 min** | |
+| [👥 Step 2: Diagnose the Area Your Pair Owns](#codestep2) | 15 min | Students, **in the [Chapter 6](#chap6outline) class** |
 | [👥 Report, clause and charter merge](#inheritfollowup), **for the data and the code defects together** | 30 min | Students, **in the [Chapter 6](#chap6outline) class** |
 | [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
 | [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
