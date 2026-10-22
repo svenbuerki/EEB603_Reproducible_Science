@@ -6152,7 +6152,10 @@ Answer these as a class, from the listing alone, **and say what your evidence is
 ```{r eval = FALSE, echo = TRUE}
 #The path is relative to your working directory, which should be
 #Chapter_5
-d <- read.csv("Messy_Project/copy of data(1).csv")
+#Name the file once. The dictionary in Step 3 is named from this,
+#so there is one place to change if you point at another file.
+datafile <- "Messy_Project/copy of data(1).csv"
+d <- read.csv(datafile)
 ```
 
 **Look at the file name you just had to type**: `copy of data(1).csv`, with spaces and brackets in it. It works here only because it is inside quotation marks. **That is [Pair 1](#pair1)'s subject**, so if that is you, start noticing names now.
@@ -6349,6 +6352,66 @@ file,defect,repairable,fix_pseudocode,practice
 
 
 </details>
+
+###### Generate the Data Dictionary Skeleton {#datadictionary}
+
+**A log says what is wrong. A data dictionary says what the data *are*,** and this project has none: that absence is itself one of the largest defects in the folder.
+
+**Let R build the half it can.** Everything in the first five columns comes from the functions you ran in [Step 2](#importcsv). Add this to your script and run it:
+
+```{r eval = FALSE, echo = TRUE}
+#Build a data dictionary skeleton FROM THE DATA ITSELF.
+#R can fill the left-hand columns. It cannot fill the right-hand ones.
+dictionary <- data.frame(
+  variable   = names(d),
+  type       = sapply(d, class),
+  n_missing  = colSums(is.na(d)),
+  n_distinct = sapply(d, function(x) length(unique(x))),
+  example    = sapply(d, function(x) as.character(x[1])),
+  meaning    = "",
+  units      = "",
+  evidence   = "",
+  confidence = "",
+  row.names  = NULL,
+  stringsAsFactors = FALSE
+)
+
+#Name the dictionary after the file it documents, with the awkward
+#characters taken out: inheriting a bad name is how bad names spread.
+stem <- sub("\\.csv$", "", basename(datafile))
+stem <- gsub("[^A-Za-z0-9]+", "_", stem)
+stem <- gsub("^_|_$", "", stem)
+
+write.csv(dictionary, paste0("README_", stem, ".csv"), row.names = FALSE)
+```
+
+This is what comes back:
+
+```
+       variable      type n_missing n_distinct example
+1            V1   integer         0         12       1
+2            x2 character         0          4 3/12/25
+3          temp character         0          7    25°C
+4           trt   integer         0          3       1
+5          mass character         1         12  12.5 g
+6 biomass_index character         0         11    0.84
+7         notes character         0          9      ok
+```
+
+**Read it before you fill it in.** `trt` is an `integer` with three distinct values: three labels stored as numbers, which nothing will warn you about. `x2` has twelve rows and **four** distinct values, which is what three date formats look like from the outside.
+
+**You end up with `README_copy_of_data_1.csv`**, named after the file it documents so nobody has to guess which dataset it belongs to, and cleaned of the spaces and brackets rather than inheriting them. **Now fill the four empty columns by hand**, for the variables [your pair owns](#yourpair):
+
+| Column | What goes in it |
+|---|---|
+| `meaning` | what the variable is, in one line |
+| `units` | units, or the allowed values for a code |
+| `evidence` | **where you learned it**: a file, a line of a script, a sentence in `notes.txt` |
+| `confidence` | high, medium, or **none** |
+
+**The `evidence` column is the point.** Some you can fill: `mass` carries `g` in one value, and `notes.txt` says `-999 = didnt measure`. Some you cannot: `trt` is defined nowhere, because `notes.txt` says only *"trt as agreed w/ SB"* and SB is unreachable; `biomass_index` was *"calculated in the spreadsheet"* and that formula is gone.
+
+**Every cell you cannot fill is a row for your `Defect_log`.** A dictionary you are unable to complete is not a failed exercise: it is the diagnosis, and it is the most precise statement you can make of what this project lost.
 
 **Then move on to your own section below.** From here on, every defect you find goes into the csv as a row.
 
