@@ -105,6 +105,19 @@ The rubric covers the introduction and theoretical background, learning outcomes
 
 **Firm deadline:** your tutorial must reach me **one week before you teach it** --- your peers need that week to install packages and prepare. See the [schedule](Timetable.html) for your chapter's dates.
 
+### Where Each Tutorial Lives {#tutorialfolders}
+
+**Every tutorial has its own folder on the course Google Drive.** The group teaching a chapter uploads its material there one week before the class; everybody else **downloads it and works through it before that class**, which is the point of the one-week deadline.
+
+| Chapter | Folder | Taught in class |
+|---|---|---|
+| **Chapter 9** | [Tutorial material](https://drive.google.com/drive/folders/12SJOh-qvsr3w1unBgM1vTd39_IZzHOal?usp=drive_link) | 10 and 12 November |
+| **Chapter 10** | [Tutorial material](https://drive.google.com/drive/folders/1TUM1XNh_cRQJjqxTmJ3Knbp7pWsPQS0v?usp=drive_link) | 17 and 19 November |
+| **Chapter 12** | [Tutorial material](https://drive.google.com/drive/folders/1S2LpQ6CMu6lLbq-xdEyYdhhdmW4Ox9l2?usp=drive_link) | 1 and 3 December |
+| **Chapter 11** | [Tutorial material](https://drive.google.com/drive/folders/19o-oLicEFxHFYxFL65ue1OhaveVL0Cl7?usp=drive_link) | 8 and 10 December |
+
+**The order is 9, 10, 12, 11**, not numerical. Dates are confirmed in the [schedule](Timetable.html#deadlinesheader), which is the authority if these ever disagree.
+
 <a href="Evaluation_Forms/Bioinformatics_Tutorial_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Bioinformatics Tutorial rubric (pdf)</a>
 
 **Write it as a protocol.** The course chapters are deliberately built the same way: an explanation of why the skill matters, then a numbered step-by-step procedure, then a checkpoint so the reader can confirm it worked. You are asked to use that format. See [How These Tutorials Are Written](Chapters.html#protocolstyle) for what it looks like from the inside.

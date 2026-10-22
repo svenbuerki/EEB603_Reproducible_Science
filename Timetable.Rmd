@@ -245,7 +245,7 @@ i_upload <- i_upload[keep]
 
 # Dates on which each chapter's tutorial is taught in class
 taught <- vapply(chapters, function(ch) {
-  j <- grep(paste0("^Bioinfo\\. tutorial - Chap\\. ", ch, "$"), topic$Topic)
+  j <- grep(paste0("^Bioinfo\\. tutorial - Chap\\. ", ch, "\\b"), topic$Topic)
   if (!length(j)) return("TBC")
   paste(format(datesclass$Date[j], "%Y-%m-%d"), collapse = " & ")
 }, character(1))

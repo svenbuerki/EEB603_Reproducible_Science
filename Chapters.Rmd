@@ -5133,11 +5133,13 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 | [One Pass Over the Whole Cycle](#lifecyclespine) | 15 min | Instructor |
 | *five-minute break* | 5 min | |
 | [👥 Step 1: Look at What You Have Been Given](#inheritstep1) | 5 min | Whole class |
-| [👥 Step 2: Open a csv and See What You Got Back](#importcsv) | 5 min | Everyone |
-| [👥 Step 3: Build Your Defect Log](#buildlog) | 5 min | Everyone |
-| [👥 Step 4: Diagnose the Area Your Pair Owns](#inheritstep2) | 10 min | Students, in 4 pairs |
-| **Total in class** | **64 min** | |
-| [👥 Finish the Data Diagnosis](#inheritfollowup): Steps 3, 4 and 5 | 23 min | Students, **in the [PART B](#repcode) class** |
+| **Total on 20 October** | **44 min** | |
+| [👥 Step 2: Open a csv and See What You Got Back](#importcsv) | 5 min | Everyone, **22 October** |
+| [👥 Step 3: Build Your Defect Log](#buildlog) | 5 min | Everyone, **22 October** |
+| [👥 Step 4: Diagnose the Area Your Pair Owns](#inheritstep2) | 10 min | Students in 4 pairs, **22 October** |
+| [👥 Report, clause and charter merge](#inheritfollowup) | with PART B | Students, **in the [Chapter 6](#chap6outline) class** |
+
+**PART A ran over one and a half classes.** On 20 October we reached the end of Step 1. **Steps 2 to 4 open the 22 October class**, and the reporting is merged with PART B's into [one round](#inheritfollowup) in the Chapter 6 session.
 
 ---
 
@@ -6355,7 +6357,7 @@ The standard being: **be specific enough that somebody who has never seen this f
 
 ###### Write the Fix as Pseudocode <span style="color:dimgray;">(how to fill the <code>fix_pseudocode</code> column)</span> {#fixpseudocode}
 
-**Specifying a repair does not require knowing which R functions would carry it out**, which is just as well: the R for most of these comes in [Chapter 7](#chap7) and Chapter 8. [Pseudocode](#writepseudointro), which you met in Chapter 2, is a plain-language statement of the logic: the steps, in order, in the structure a program would take, written for a human rather than a machine. **It is the right output for today** because it separates *deciding what must happen* from *knowing which function does it*, and the first of those is the hard part.
+**Specifying a repair does not require knowing which R functions would carry it out**, which is just as well: the R for most of these is in [Chapter 7](#chap7), which is reference material you work through for your own project rather than a class we sit through. [Pseudocode](#writepseudointro), which you met in Chapter 2, is a plain-language statement of the logic: the steps, in order, in the structure a program would take, written for a human rather than a machine. **It is the right output for today** because it separates *deciding what must happen* from *knowing which function does it*, and the first of those is the hard part.
 
 So for any defect where you can, add a numbered procedure. For the `mass` column, it might run:
 
@@ -6393,7 +6395,7 @@ Where you cannot write pseudocode, **say so and say why**. "No procedure exists:
 - Two files are dated in their names. **What date does `plot data 12-03-25.csv` refer to?** Defend your answer.
 - There are three scripts. Judging by their names only, which would you run? Now open all three and say whether your choice was right.
 - The folder is flat. **Propose the directory structure this project should have had**, and say where each existing file goes in it. Compare your answer with the worked example in [Data Structure and Organisation of Files](#datastructorg).
-- **Write down** the naming convention you would impose, in one sentence, and show what **three** of these files would be called under it. **Do not actually rename anything**: the folder has to reach Chapter 7 in the state it arrived in.
+- **Write down** the naming convention you would impose, in one sentence, and show what **three** of these files would be called under it. **Do not actually rename anything**: the folder has to stay in the state it arrived in.
 
 ###### Pair 2: Formats and Atomisation {#pair2}
 
@@ -6464,7 +6466,7 @@ About **two minutes**, to the whole class:
 
 **That is the right place to be, and it is not an accident.** Noticing is the hard part and the part that is usually missing; the procedures are learnable once you know what you are looking for. Having spent a class watching `as.numeric()` quietly destroy five of twelve measurements, you now have a concrete reason to want the technique that prevents it, which is a far better position than meeting the technique first and wondering when it would ever matter.
 
-So keep the log, and **keep the folder exactly as it is**. In [Chapter 7](#chap7) and in Chapter 8 we come back to these same files and work through the procedures: importing data that does not want to be imported, finding and fixing the values R has misread, settling on one missing-value code, and getting a table into a shape an analysis can trust.
+So keep the log, and **keep the folder exactly as it is** while we are using it. [Chapter 7](#chap7) is where the procedures are written up, and it is yours to work through: importing data that does not want to be imported, finding and fixing the values R has misread, settling on one missing-value code, and getting a table into a shape an analysis can trust.
 
 **Your log is the task list for those exercises, and your pseudocode is the specification.** That is the ordinary order of work: decide what has to happen, write it down in a form a human can check, and only then find the functions that do it. Turning your own pseudocode into working R is a much better exercise than following somebody else's, because you already know why every step is there.
 
@@ -6501,13 +6503,13 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 |---|---|---|
 | [The four sections, read in advance](#preread5B) | 25 min | **Students, at home before class** |
 | [Set up your script and diagram the project](#setup5B) | 10 min | **Students, at home before class** |
-| [👥 Finish the Data Diagnosis](#inheritfollowup): PART A's Steps 3, 4 and 5 | 23 min | Students, in 4 pairs then 2 groups |
+| [👥 Chapter 5 PART A, Steps 2 to 4](#importcsv) | 20 min | Students, carried over from 20 October |
 | [One Pass Over the Workflow](#codespine), with the slides | 18 min | Instructor |
 | [👥 Step 1: Try to Run It](#codestep1) | 7 min | Whole class |
 | [👥 Step 2: Diagnose the Area Your Pair Owns](#codestep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
-| **Total in class** | **68 min** | |
-| [👥 Step 3: Report What You Found](#codestep3) | 12 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
+| **Total in class** | **45 min** | |
+| [👥 Report, clause and charter merge](#inheritfollowup), **for the data and the code defects together** | 30 min | Students, **in the [Chapter 6](#chap6outline) class** |
 | [👥 Step 4: Write the Clause](#codestep4) | 8 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
 | [👥 Step 5: Merge Into Your Charter](#codestep5) | 5 min | Students, **at the start of the [Chapter 6](#chap6outline) class** |
 
@@ -6544,7 +6546,7 @@ By the end of this part, students are able to:
 
 <div class="info">
   <p><strong>💡 These say <i>judge</i> and <i>diagnose</i> on purpose</strong></p>
-  <p>As in PART A, this class is about <b>detecting</b> problems rather than fixing them. You will specify every repair in <a href="#fixpseudocode">pseudocode</a>, and implement it in <a href="#chap7">Chapter 7</a> and Chapter 8. <b>Reading code critically is the skill that makes the fixing worth anything</b>, and it is the one nobody is taught.</p>
+  <p>As in PART A, this class is about <b>detecting</b> problems rather than fixing them. You will specify every repair in <a href="#fixpseudocode">pseudocode</a>, and implement it in your own project, with <a href="#chap7">Chapter 7</a> as the reference. <b>Reading code critically is the skill that makes the fixing worth anything</b>, and it is the one nobody is taught.</p>
 </div>
 
 ---
@@ -7442,7 +7444,7 @@ These pass:
 
 **Two threads leave this room.**
 
-Your pseudocode joins the data pseudocode from PART A as the task list for [Chapter 7](#chap7) and Chapter 8, where you will implement it: paths that work anywhere, a script that reads raw data and never writes over it, and coercion that fails loudly instead of quietly.
+Your pseudocode joins the data pseudocode from PART A as **the task list for your own individual project**, with [Chapter 7](#chap7) as the reference for how: paths that work anywhere, a script that reads raw data and never writes over it, and coercion that fails loudly instead of quietly.
 
 And in [Chapter 6](#chap6) the roles reverse. You have just spent an hour as the person who inherits somebody's code and has to decide whether to trust it. **That is exactly what a peer reviewer does**, and you now know how little an error-free run proves.
 
@@ -7463,12 +7465,15 @@ This chapter is subdivided into two parts as follows:
 
 | Block | Time | Who |
 |---|---|---|
-| [👥 Chapter 5 PART B, Steps 3, 4 and 5](#codestep3): report, write the clause, then merge into your charter | 25 min | Students, in 4 pairs then 2 groups |
+| [👥 Report, clause and charter merge](#inheritfollowup), **data and code defects together** | 30 min | Students, in 4 pairs then 2 groups |
 | [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4) | 15 min | Instructor |
 | *five-minute break* | 5 min | |
-| [PART A: Getting published](#getpub) | 25 min | Instructor |
-| **Total in class** | **70 min** | |
-| [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, with the [slides](#writpub) |
+| [PART A: Getting published](#getpub) | 20 min | Instructor |
+| **Total on 27 October** | **70 min** | |
+| [PART A: Getting published](#getpub), continued | 30 min | Instructor, **29 October** |
+| [PART B: Writing papers in R Markdown](#writpub) | 40 min | Instructor, **29 October** |
+
+**Chapter 6 runs over two classes**, 27 and 29 October. The first opens with the single reporting round that closes Chapter 5, then Open Access and Creative Commons carried over from Chapter 4, leaving 20 minutes to begin. **The second class is Chapter 6's own**, and it is why PART B on writing papers in R Markdown is taught rather than left as reading.
 
 **Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
 
