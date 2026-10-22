@@ -6350,6 +6350,14 @@ file,defect,repairable,fix_pseudocode,practice
 
 <p>Rather than print them here, take them as files. The <code>.csv</code> is the header row plus one worked example; the <code>.Rmd</code> is complete and knits as it stands.</p>
 
+<ul>
+  <li><b><a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Defect_log.csv" target="_blank" rel="noopener noreferrer">Defect_log.csv</a></b><br>
+      <code>https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Defect_log.csv</code></li>
+  <li><b><a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Defect_log.Rmd" target="_blank" rel="noopener noreferrer">Defect_log.Rmd</a></b><br>
+      <code>https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/Exercises/Chapter_5/Defect_log.Rmd</code></li>
+</ul>
+
+<p>On each page use the <b>Download raw file</b> button, and save both into your <code>Chapter_5</code> folder beside <code>Messy_Project/</code>. <b>Knit <code>Defect_log.Rmd</code> once after downloading</b>: it reads the csv, renders it with <code>kable()</code> and counts the rows with inline code, so a clean knit confirms the whole chain works.</p>
 
 </details>
 
