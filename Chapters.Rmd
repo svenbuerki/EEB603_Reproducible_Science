@@ -4993,6 +4993,12 @@ This situation has been described as the "**Open Access sequel to the Serials Cr
 
 Most Open Access journals use [Creative Commons (CC)](https://creativecommons.org/) licenses, so it is important that you and your co-authors understand their implications before submitting your manuscript—especially regarding potential commercial use of your work by third parties (Figure \@ref(fig:EcolEvolCC)).
 
+**Creative Commons defines the suite it maintains on its own [home page](https://creativecommons.org/):**
+
+> The CC licenses and public domain tools give everyone, from individuals to large institutions, a standardized way to grant the public permission to use their work under copyright law.
+
+Two words in that sentence carry most of the weight. **Standardized** is why a journal can name a licence in a single line and every reader in the world already knows what it permits, with no negotiation and no lawyer. **Under copyright law** is why a CC licence is not an alternative to copyright but an instrument of it: the licence works by exercising rights you already hold, which is also why **you can only license what you own**. And the suite covers more than the licences: the **public domain tools** are [CC0](https://creativecommons.org/publicdomain/zero/1.0/), with which you waive your rights entirely, and the Public Domain Mark, which labels work already free of copyright.
+
 A CC license is a type of **public copyright license that enables the free distribution of a copyrighted work**. It allows authors to grant others the **right to share, use, and build upon their work** while retaining some control over how it is used.
 
 Creative Commons licenses provide flexibility; for example, authors can choose to allow only non-commercial uses. They also protect users and redistributors from copyright infringement claims, provided they follow the license terms set by the author.
