@@ -6242,7 +6242,7 @@ str(d)
 | `names(d)` | what are the columns called |
 | `head(d)`, `tail(d)` | what do the first and the last rows look like. The *last* rows are where a truncated or half-finished file shows itself |
 | `summary(d)` | per column: range, quartiles and mean if numeric; length and type if not |
-| `unique(d$col)` | every distinct value in one column. **This is how you find the junk** |
+| `unique(d$col)` | every distinct value in one column. **This is how you find non-atomic values, and every spelling of missing** |
 | `table(d$col)` | how many times each value occurs. Add `useNA = "ifany"` to count the missing ones too |
 | `colSums(is.na(d))` | how many missing values per column, *as R understands missing* |
 | `sum(duplicated(d))` | how many rows are exact repeats of an earlier row |
@@ -7316,7 +7316,7 @@ By the end of this activity, students are able to:
 | Pair | In PART A you owned | Now you own | Your reference sections |
 |---|---|---|---|
 | [**Pair 1**](#codepair1) | the names and layout of the files | **Portability**: where the code expects things to be | [Code Portability](#codeport), [File System Structure](#orgprjrep) |
-| [**Pair 2**](#codepair2) | the junk inside the data | **Correctness**: what the code does with that junk | [Testing Scientific Code](#basiccodestdr), and defensive programming from [Chapter 2](#partE) |
+| [**Pair 2**](#codepair2) | the formats and the values inside the files | **Correctness**: what the code does with values it cannot read as numbers | [Testing Scientific Code](#basiccodestdr), and defensive programming from [Chapter 2](#partE) |
 | [**Pair 3**](#codepair3) | documentation and metadata | **Readability**: whether a human can follow it | [Naming](#basiccodestdr), [Commenting Code](#basiccodestdr), [Style Guides](#basiccodestdr), [Writing Functions](#basiccodestdr) |
 | [**Pair 4**](#codepair4) | preservation and sharing | **Workflow and dependencies**: what the code does to its own inputs, and whether it can be re-run at all | [Principles of a Good Analysis Workflow](#orgprjrep), [Dependencies](#docsoftdep), [Licenses](#softwarelicenses) |
 
@@ -7375,7 +7375,7 @@ Three questions, as a class:
   <p>You need <b>one</b> of the four. If you are unsure which pair you are, the <a href="#yourpaircode">table above</a> says.</p>
   <ul>
     <li><b>Pair 1</b> → <a href="#codepair1">Portability</a> <span style="color:dimgray;">(where the code expects things to be)</span></li>
-    <li><b>Pair 2</b> → <a href="#codepair2">Correctness</a> <span style="color:dimgray;">(what the code does with the junk you found)</span></li>
+    <li><b>Pair 2</b> → <a href="#codepair2">Correctness</a> <span style="color:dimgray;">(what the code does with the values it cannot read as numbers)</span></li>
     <li><b>Pair 3</b> → <a href="#codepair3">Readability</a> <span style="color:dimgray;">(whether a human can follow it)</span></li>
     <li><b>Pair 4</b> → <a href="#codepair4">Workflow and dependencies</a> <span style="color:dimgray;">(inputs, order, and re-running)</span></li>
   </ul>
@@ -7452,7 +7452,7 @@ Listen to all four reports. **You adopt all four pairs' conclusions in [Step 5](
 
 <div class="danger">
   <p><strong>&#128161; The number that should have stopped everything</strong></p>
-  <p>Pair 2 will have it. Run as written, with the junk left in and the coercion unchecked, this project's analysis reports a <b>mean body mass of &minus;133.87</b>. Negative. <b>Nobody noticed</b>, and the script's own comment says the paper's numbers came from it.</p>
+  <p>Pair 2 will have it. Run as written, with those values left in and the coercion unchecked, this project's analysis reports a <b>mean body mass of &minus;133.87</b>. Negative. <b>Nobody noticed</b>, and the script's own comment says the paper's numbers came from it.</p>
   <p>It gets worse on inspection. Only <b>7 of the 12 measurements</b> survived the coercion. <code>temp</code> was never converted, so <code>lm()</code> silently treated it as a category with seven levels, one of which is <code>22&plusmn;0.5</code>. The model estimates six parameters and is left with <b>one residual degree of freedom</b>.</p>
   <p><b>None of this produced an error.</b> One warning, easily scrolled past, and then a table of coefficients that looks exactly like a result. This is what the chapter means by trusting code: not "did it run" but "do I have any reason to believe the number".</p>
 </div>
