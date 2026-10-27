@@ -5176,7 +5176,7 @@ This part of Chapter 5 aims to **help students navigate data management** by fir
 
 **Reporting, in the [PART B](#repcode) class**
 
-There is no third table here, because the reporting is not a block of its own. It is [Steps 3 to 5 of Read the Code You Inherited](#codereporting), the activity that closes the PART B class: your pair reports its data defect and its code defect in the same three minutes, writes a clause for each, and merges both into your charter.
+There is no third table here, because the reporting is not a block of its own. It is [Steps 3 to 5 of Read the Code You Inherited](#codereporting), which open the **second** PART B class: your pair reports its data defect and its code defect in the same three minutes, writes a clause for each, and merges both into your charter.
 
 ---
 
@@ -6585,7 +6585,7 @@ So keep the log, and **keep the folder exactly as it is** while we are using it.
 
 This section of Chapter 5 aims to **introduce students to the principles and practices of reproducible coding**. It provides guidance on organizing projects, maintaining clean and transparent code, and managing software dependencies to support reproducible research workflows.
 
-**This part runs over one class, and most of it is group work.** In PART A you judged the *data* of a project you inherited. Here you judge its *code*, and it is the same project: three R scripts that nobody in the room has yet read a line of.
+**This part runs over two classes, and most of it is group work.** In PART A you judged the *data* of a project you inherited. Here you judge its *code*, and it is the same project: three R scripts that nobody in the room has yet read a line of.
 
 <div class="disclaimer">
   <p><strong>💡 Two things to do before class</strong></p>
@@ -6595,18 +6595,35 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
   </ol>
 </div>
 
+**Before class**
+
 | Block | Time | Who |
 |---|---|---|
 | [The four sections, read in advance](#preread5B) | 25 min | **Students, at home before class** |
 | [Set up your script and diagram the project](#setup5B) | 10 min | **Students, at home before class** |
+
+**Class 1 --- the workflow, and reading the code you inherited**
+
+| Block | Time | Who |
+|---|---|---|
 | [One Pass Over the Workflow](#codespine), with the slides | 12 min | Instructor |
 | [👥 Step 1: Try to Run It](#codestep1) | 7 min | Whole class |
-| [👥 Step 2: Diagnose the Area Your Pair Owns](#codestep2) | 15 min | Students, in 4 pairs |
 | *five-minute break* | 5 min | |
+| [👥 Step 2: Diagnose the Area Your Pair Owns](#codestep2) | 15 min | Students, in 4 pairs |
+| **Total in class** | **39 min** | |
+
+**Step 2 is finished at home.** Reading three scripts against a standard and writing down what fails takes longer than a quarter of an hour, and the rest of the session goes on the questions it raises.
+
+**Class 2 --- reporting, and the charter**
+
+| Block | Time | Who |
+|---|---|---|
 | [👥 Step 3: Report What You Found](#codestep3), **data and code defects together** | 15 min | Students, in 4 pairs |
-| [👥 Step 4: Write the Clause](#codestep4), one for the data and one for the code | 8 min | Students, in 4 pairs |
+| [👥 Step 4: Write the Clauses](#codestep4), one for the data and one for the code | 8 min | Students, in 4 pairs |
 | [👥 Step 5: Merge Into Your Charter](#codestep5) | 6 min | Students, in 2 groups |
-| **Total in class** | **68 min** | |
+| **Total** | **29 min** | |
+
+**That is the end of Chapter 5.** The rest of that class begins [Chapter 6](#chap6outline).
 
 ---
 
@@ -6692,10 +6709,17 @@ Work through [Now Diagram the Project You Inherited](#messystructure) in your ne
 
 ### Class Outline {#chap5Boutline}
 
-**This session has two blocks, and the second one closes the whole of Chapter 5.**
+**PART B runs over two classes**, and the activity is split between them.
+
+**Class 1**
 
 1. [One Pass Over the Workflow](#codespine) <span style="color:dimgray;">(12 minutes, instructor, with slides)</span>
-2. [👥 Group Activity: Read the Code You Inherited](#readthecode) <span style="color:dimgray;">(51 minutes in five steps, with the class break after Step 2; its [reporting round](#codereporting) also closes [PART A](#inheritproject))</span>
+2. [👥 Group Activity: Read the Code You Inherited](#readthecode), [Step 1](#codestep1) and [Step 2](#codestep2) <span style="color:dimgray;">(22 minutes; Step 2 is finished at home)</span>
+
+**Class 2**
+
+3. 👥 The same activity, [Steps 3 to 5](#codereporting) <span style="color:dimgray;">(29 minutes; this round also closes [PART A](#inheritproject), and it is the end of Chapter 5)</span>
+4. Then [Chapter 6](#chap6outline) begins
 
 **Everything else in this part is reference material**, gathered under [Resources](#resources5B) below. Your [pre-reading list](#preread5B) says which of it to read before class.
 
@@ -7266,7 +7290,7 @@ The instructor encourages students to discuss with their supervisors whether the
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
 
-### 👥 Group Activity: Read the Code You Inherited <span style="color:dimgray;">(51 minutes, plus the class break after Step 2)</span> {#readthecode}
+### 👥 Group Activity: Read the Code You Inherited <span style="color:dimgray;">(51 minutes, split across two classes)</span> {#readthecode}
 
 #### Aim {#codeaim}
 
@@ -7297,17 +7321,25 @@ By the end of this activity, students are able to:
 
 #### Overview {#codeoverview}
 
-**Five steps, all in this class**, with the break after Step 2. **Steps 3 to 5 also close [PART A](#inheritproject)**, because the data defects you logged there and the code defects you find today are rows in the same log and belong in the same report.
+**Five steps over two classes.** Steps 1 and 2 are the first class, and **Steps 3 to 5 open the second one**. Those three steps also close [PART A](#inheritproject), because the data defects you logged there and the code defects you find here are rows in the same log and belong in the same report.
+
+**Class 1**
 
 | | Step | What you do | Who | Time |
 |---|---|---|---|---|
 | **1** | [Try to Run It](#codestep1) | Attempt the script on your own machine and record what happens | whole class | 7 min |
 | **2** | [Diagnose your area](#codestep2) | Read the code for the one kind of fault your pair owns | your pair | 15 min |
-| | *five-minute break* | | | 5 min |
+
+**Step 2 is finished at home**, and your rows have to be in your knitted `Defect_log` before Class 2, because Step 3 is read straight off it.
+
+**Class 2**
+
+| | Step | What you do | Who | Time |
+|---|---|---|---|---|
 | **3** | [Report What You Found](#codestep3) | Your data defect and your code defect, read from the same log | your pair | 15 min |
-| **4** | [Write the Clause](#codestep4) | One clause for the data, one for the code | your pair | 8 min |
+| **4** | [Write the Clauses](#codestep4) | One clause for the data, one for the code | your pair | 8 min |
 | **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group | 6 min |
-| | **Total, with the break** | | | **56 min** |
+| | **Total** | | | **29 min** |
 
 ##### Your pair, and the kind of code fault it owns {#yourpaircode}
 
@@ -7428,12 +7460,12 @@ mean(d$mass, na.rm = TRUE)          #write this number down
 
 #### Reporting {#codereporting}
 
-**Reporting closes this class, and it closes [PART A](#inheritproject) with it.** Your pair reports two findings out of one log: the data defect you diagnosed in the data management class, and the code defect you diagnosed twenty minutes ago. Bring your script, your knitted `Defect_log` and your group's [charter](#FactorsActivity).
+**Reporting opens the second class of this part, and it closes [PART A](#inheritproject) as well.** Your pair reports two findings out of one log: the data defect you diagnosed in the data management class, and the code defect you diagnosed in [Step 2](#codestep2). Bring your script, your knitted `Defect_log` and your group's [charter](#FactorsActivity).
 
 <div class="info">
   <p><strong>&#128161; Why the data half waited for this class</strong></p>
   <p>You have had a few days with the log. <b>Some of what looked like a catastrophe on the day turns out to be routine, and some of what you passed over turns out to matter more than you thought.</b> A diagnosis you can still defend after sleeping on it is worth more than one delivered while the folder is still open in front of you.</p>
-  <p>The second reason is in front of you now. <b>The code faults you have just found are frequently the cause of the data faults you logged last week</b>, and reporting the two together is the only way that shows.</p>
+  <p>The second reason is in your log now. <b>The code faults you found in Step 2 are frequently the cause of the data faults you logged in PART A</b>, and reporting the two together is the only way that shows.</p>
 </div>
 
 ##### Step 3: Report What You Found <span style="color:dimgray;">(your pair, 15 minutes)</span> {#codestep3}
@@ -7549,27 +7581,26 @@ This chapter is subdivided into two parts as follows:
 
 ## Class Outline {#chap6outline}
 
-**Chapter 6 has one class of its own**, which opens with [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) carried over from Chapter 4. Whatever is not reached is assigned as reading.
+**Chapter 6 begins in the second half of the [Chapter 5 PART B](#repcode) class**, once the group activity there has closed, and it opens with [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) carried over from Chapter 4. **Whatever is not reached is assigned as reading**, which this time is most of the chapter.
 
 | Block | Time | Who |
 |---|---|---|
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4) | 15 min | Instructor |
+| [👥 Chapter 5 PART B, Steps 3 to 5](#codereporting) | 29 min | Students |
 | *five-minute break* | 5 min | |
-| [PART A: Getting published](#getpub) | 50 min | Instructor |
-| **Total in class** | **70 min** | |
-| [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, with the [slides](#writpub) |
-
-**Chapter 5 closes in its own PART B class**, not here: the reporting round moved back there once PART B needed a full session.
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4) | 15 min | Instructor |
+| [PART A: Getting published](#getpub), as far as we reach | 20 min | Instructor |
+| **Total in class** | **69 min** | |
+| The rest of [PART A](#getpub), and all of [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, with the slides in [Teaching Material](#teachmat6A) and [Teaching Material](#teachmat6B) |
 
 **Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
 
 ## Getting published {#getpub}
 
-### Learning outcome
+### Aim
 
-- Learn procedures to present your research and disseminate it through publications.
+This part of Chapter 6 aims to **introduce the procedures used to present research and disseminate it through publications**.
 
-To support the learning outcome, we will focus on discussing:
+To support that aim, we will focus on discussing:
 
 1. The importance of knowing the key conclusion that you want to communicate and revolve your publication around it.
 2. The steps towards getting your research published:
@@ -7578,9 +7609,26 @@ To support the learning outcome, we will focus on discussing:
     - Submitting your manuscript.
     - Acceptance and publication.
 
-### Literature and web resources
+### Resources {#resources6A}
 
-This chapter is mostly based on the following books, publications and web resources:
+#### Teaching Material {#teachmat6A}
+
+The presentation associated with this class is available here:
+
+```{r echo = F, results='asis'}
+embed_pdf("Chapters_files/Chapter_6_Getting_published.pdf", "4")
+```
+
+<div class="info">
+  <p><strong>&#128161; Best browser to view presentation</strong></p>
+  <ul>
+    <li>For optimal viewing of this presentation in full-screen presentation mode, the instructor recommends using Mozilla Firefox. Its built-in PDF viewer supports seamless full-screen display with easy navigation tools, making it ideal for presentations without the need for external plugins. Other browsers may not handle PDF presentation features as reliably.</li>
+  </ul>
+</div>
+
+#### Literature and Web Resources
+
+This part is mostly based on the following books, publications and web resources:
 
 **Books and Guides**
 
@@ -7600,10 +7648,6 @@ This chapter is mostly based on the following books, publications and web resour
 - CRediT (Contribution Roles Taxonomy): https://authorservices.wiley.com/author-resources/Journal-Authors/open-access/credit.html
 - Directory of Open Access journals: https://doaj.org/
 - The Wiley Author Webinars website is full of seminars covering topics such as: How to get published; How to write for scientific publications; Grant funding tips; Understand the peer review process; Improve article/publication discoverability; Ethics in publishing; Open Access; Time management skills. Available here: https://authorservices.wiley.com/author-resources/Journal-Authors/Prepare/webinars/index.html
-
-### Download presentation
-
-The presentation slides for Chapter 6 - part A can be downloaded [here](Chapters_files/Chapter_6_Getting_published.pdf).
 
 ### Why publish?
 
@@ -7884,13 +7928,30 @@ It might be then time to coordinate the publication of a press release or post t
 
 ## Writing papers in R Markdown {#writpub}
 
-### Download presentation
+### Aim
 
-The presentation slides for Chapter 6 - part B can be downloaded [here](Chapters_files/Chapter_6_writing_papers.pdf).
+This part of Chapter 6 aims to **show how a journal submission can be produced from R Markdown**, using templates that generate the LaTeX files journals require.
 
-### Literature and web resources
+### Resources {#resources6B}
 
-This chapter is mostly based on the following books and web resources:
+#### Teaching Material {#teachmat6B}
+
+The presentation associated with this class is available here:
+
+```{r echo = F, results='asis'}
+embed_pdf("Chapters_files/Chapter_6_writing_papers.pdf", "5")
+```
+
+<div class="info">
+  <p><strong>&#128161; Best browser to view presentation</strong></p>
+  <ul>
+    <li>For optimal viewing of this presentation in full-screen presentation mode, the instructor recommends using Mozilla Firefox. Its built-in PDF viewer supports seamless full-screen display with easy navigation tools, making it ideal for presentations without the need for external plugins. Other browsers may not handle PDF presentation features as reliably.</li>
+  </ul>
+</div>
+
+#### Literature and Web Resources
+
+This part is mostly based on the following books and web resources:
 
 - **Bookdown ebook on writing scientific papers:** https://bookdown.org/yihui/rmarkdown/journals.html
 
@@ -7900,7 +7961,7 @@ This chapter is mostly based on the following books and web resources:
 
 - **rticles R package GitHub repository:** https://github.com/rstudio/rticles
 
-### Software requirements
+#### Software Requirements
 
 To apply the approach described below make sure that you have a TeX distribution installed on your computer. More information on this topic is available in [Install R Markdown Software](#texdistr) (Chapter 2). You will also need to install the R *rticles* package as demonstrated in [The *rticles* package](#rticlespkg). 
 
