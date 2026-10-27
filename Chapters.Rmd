@@ -5003,6 +5003,8 @@ A CC license is a type of **public copyright license that enables the free distr
 
 Creative Commons licenses provide flexibility; for example, authors can choose to allow only non-commercial uses. They also protect users and redistributors from copyright infringement claims, provided they follow the license terms set by the author.
 
+**A CC licence is the right instrument for the article and for the data, and the wrong one for the code.** Software is licensed under a [software licence](#softwarelicenses) instead, which settles questions a CC licence does not address, such as what happens to derived works and whether any warranty is given. So a single submission can carry three licences: one on the paper, one on the deposited data, and one on the repository holding the code.
+
 To help authors select the most appropriate license for their work, the Creative Commons initiative offers an [online tool](https://creativecommons.org/choose/), which I recommend consulting. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, fig.alt="Screenshot of a journal masthead in teal type with an Open Access badge, listing the editors-in-chief, the online ISSN and Wiley copyright, and a closing note that articles accepted from 14 August 2012 carry a Creative Commons Attribution License while earlier ones carry an Attribution Non-Commercial License.", echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
@@ -7593,12 +7595,20 @@ This chapter is subdivided into two parts as follows:
 |---|---|---|
 | [👥 Chapter 5 PART B, Steps 3 to 5](#codereporting) | 29 min | Students |
 | *five-minute break* | 5 min | |
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4) | 15 min | Instructor |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4), with [Software Licenses](#softwarelicenses) from [Chapter 5](#repcode) beside them | 15 min | Instructor |
 | [PART A: Getting published](#getpub), as far as we reach | 20 min | Instructor |
 | **Total in class** | **69 min** | |
 | The rest of [PART A](#getpub), and all of [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, with the slides in [Teaching Material](#teachmat6A) and [Teaching Material](#teachmat6B) |
 
 **Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
+
+**And a paper is not the only thing you license.** Submitting one means licensing three different things, under three different instruments, which is why [Software Licenses](#softwarelicenses) is taught beside Creative Commons rather than left in Chapter 5:
+
+| What you license | Under what | Where it is covered |
+|---|---|---|
+| **the article** | a [Creative Commons licence](#CClicenses), usually chosen for you by the journal's [open access](#openaccess) route | [Chapter 4](#chap4) |
+| **the data** | a licence named in the deposit, where you also state [rights, licences and permissions](#reusingdata) | [Chapter 5 PART A](#partDM) |
+| **the code** | a [software licence](#softwarelicenses), which is a different kind of instrument and **absent by default** | [Chapter 5 PART B](#repcode) |
 
 ## Getting published {#getpub}
 
