@@ -7467,10 +7467,20 @@ When all four pairs have reported, we return as a class to the stage nobody was 
 
 ##### Step 4: Write the Clauses <span style="color:dimgray;">(your pair, 8 minutes)</span> {#codestep4}
 
-**Two clauses, one for each half of your report**, and they go into two different sections of your group's [charter](#FactorsActivity):
+**This is your pair's own work, and its raw material is the two diagnoses you have just reported.** You own one failure class in the data and one in the code, and **yours is the only pair that has read that part of this project closely**, so yours are the only clauses that can come out of it. The three other pairs are writing theirs at the same time, and you will read them in [Step 5](#codestep5).
 
-- **the data clause** into the **Data lead** section, which owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of the four PART A failure classes
-- **the code clause** into the **Analysis lead** section, which owns "code and statistics: the analysis plan, what is decided before the data are seen, and how an analysis is made re-runnable"
+**One clause from each of your two findings:**
+
+- **from the data defect you diagnosed in PART A**, into the **Data lead** section of your group's [charter](#FactorsActivity), which owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of the four PART A failure classes
+- **from the code defect you diagnosed in [Step 2](#codestep2)**, into the **Analysis lead** section, which owns "code and statistics: the analysis plan, what is decided before the data are seen, and how an analysis is made re-runnable"
+
+**A clause is not a description of your defect. It is the standard that would have prevented it**, which means the work of this step is one move: generalise. You said the middle column out loud in [Step 3](#codestep3), when you named the practice behind the fault:
+
+| What your pair found | The practice behind it | The clause you write |
+|---|---|---|
+| `setwd("/Users/jdoe/Desktop/stuff/Messy_Project")` on line 1 of two scripts | code has to run wherever the project is, not where its author kept it | *No script contains `setwd()`. Every script runs from the project root and uses relative paths only.* |
+
+Notice what survives the generalisation and what does not. **The clause does not mention `jdoe`, this project, or even this defect**: somebody joining your group next year can act on it without ever seeing `Messy_Project`. That is the test of whether you have written a standard rather than a complaint.
 
 The charter is in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). Hold both clauses to the charter's own test, from Chapter 1:
 
@@ -7486,12 +7496,11 @@ So **"we will name our files sensibly" is not a clause**, and neither is "we wil
 
 **For the code:**
 
-- *No script contains `setwd()`. Every script runs from the project root and uses relative paths only.*
 - *No script writes to a file that it reads.*
 - *Any coercion of a column is immediately followed by a check that the number of missing values has not changed, and the script stops if it has.*
 - *Every analysis script ends by recording `sessionInfo()` in the output.*
 
-**Deposit both before the step ends.** Your two clauses and your knitted defect log go into your pair's subfolder in [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), the same subfolder you used in PART A. Four pairs, four subfolders.
+**Deposit both before the step ends, with your pair's name on them.** Your two clauses and your knitted defect log go into your pair's subfolder in [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), the same subfolder you used in PART A. Four pairs, four subfolders.
 
 This is not administration. **Four of the eight clauses will be written into a charter by people who were not in your pair**, and they cannot insert what they cannot read. A clause dictated across the room becomes four slightly different clauses in two charters; a clause deposited in writing becomes the same clause in both.
 
