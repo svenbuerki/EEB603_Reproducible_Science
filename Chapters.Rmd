@@ -6020,7 +6020,7 @@ By the end of this activity, students are able to:
 | **2** | [Open a csv and see what you got back](#importcsv) | together | 7 min | **Class 2** |
 | **3** | [Build your `Defect_log`](#buildlog) | together | 8 min | **Class 2** |
 | **4** | [Diagnose the area your pair owns](#inheritstep2) | your pair | 20 min | **Class 2** |
-| **5 to 7** | [Report, write the clause, merge into your charter](#inheritreporting) | your pair, then your group | 29 min, with PART B's | **the [PART B](#repcode) class** |
+| **5 to 7** | [Report, write the clause, merge into your charter](#inheritreporting) | your pair, then your group | 45 min, with PART B's | **the [PART B](#repcode) class** |
 
 **Classes 1 and 2 are both this part's own sessions.** There is no Class 3: the reporting is [Steps 3 to 5 of the PART B activity](#codereporting), where your data defects are reported alongside the code defects from the same project.
 
@@ -6561,8 +6561,8 @@ About **two minutes**, to the whole class:
 | | Step | What you do | Time |
 |---|---|---|---|
 | **5** | [Report What You Found](#codestep3) | The four points above, and then your code defect | 15 min |
-| **6** | [Write the Clause](#codestep4) | One clause for the data defect, one for the code defect | 8 min |
-| **7** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | 6 min |
+| **6** | [Write the Clause](#codestep4) | One clause for the data defect, one for the code defect | 15 min |
+| **7** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | 15 min |
 
 ##### What you leave with, and where it goes
 
@@ -6627,9 +6627,9 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 | Block | Time | Who |
 |---|---|---|
 | [👥 Step 3: Report What You Found](#codestep3), **data and code defects together** | 15 min | Students, in 4 pairs |
-| [👥 Step 4: Write the Clauses](#codestep4), one for the data and one for the code | 8 min | Students, in 4 pairs |
-| [👥 Step 5: Merge Into Your Charter](#codestep5) | 6 min | Students, in 2 groups |
-| **Total** | **29 min** | |
+| [👥 Step 4: Write the Clauses](#codestep4), one for the data and one for the code | 15 min | Students, in 4 pairs |
+| [👥 Step 5: Merge Into Your Charter](#codestep5) | 15 min | Students, in 2 groups |
+| **Total** | **45 min** | |
 
 **That is the end of Chapter 5.** The rest of that class begins [Chapter 6](#chap6outline).
 
@@ -6726,7 +6726,7 @@ Work through [Now Diagram the Project You Inherited](#messystructure) in your ne
 
 **Class 2**
 
-3. 👥 The same activity, [Steps 3 to 5](#codereporting) <span style="color:dimgray;">(29 minutes; this round also closes [PART A](#inheritproject), and it is the end of Chapter 5)</span>
+3. 👥 The same activity, [Steps 3 to 5](#codereporting) <span style="color:dimgray;">(45 minutes; this round also closes [PART A](#inheritproject), and it is the end of Chapter 5)</span>
 4. Then [Chapter 6](#chap6outline) begins
 
 **Everything else in this part is reference material**, gathered under [Resources](#resources5B) below. Your [pre-reading list](#preread5B) says which of it to read before class.
@@ -7298,7 +7298,7 @@ The instructor encourages students to discuss with their supervisors whether the
 <hr style="border: 2px solid #333; margin: 2em 0;">
 
 
-### 👥 Group Activity: Read the Code You Inherited <span style="color:dimgray;">(51 minutes, split across two classes)</span> {#readthecode}
+### 👥 Group Activity: Read the Code You Inherited <span style="color:dimgray;">(67 minutes, split across two classes)</span> {#readthecode}
 
 #### Aim {#codeaim}
 
@@ -7345,9 +7345,9 @@ By the end of this activity, students are able to:
 | | Step | What you do | Who | Time |
 |---|---|---|---|---|
 | **3** | [Report What You Found](#codestep3) | Your data defect and your code defect, read from the same log | your pair | 15 min |
-| **4** | [Write the Clauses](#codestep4) | One clause for the data, one for the code | your pair | 8 min |
-| **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group | 6 min |
-| | **Total** | | | **29 min** |
+| **4** | [Write the Clauses](#codestep4) | One clause for the data, one for the code | your pair | 15 min |
+| **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group | 15 min |
+| | **Total** | | | **45 min** |
 
 ##### Your pair, and the kind of code fault it owns {#yourpaircode}
 
@@ -7505,7 +7505,7 @@ When all four pairs have reported, we return as a class to the stage nobody was 
   <p>This is why <b>Plan</b> sits at the hub of Figure \@ref(fig:LifeCycle) rather than at the start of the ring, and it is why a data management plan is a research instrument rather than paperwork for your funder.</p>
 </div>
 
-##### Step 4: Write the Clauses <span style="color:dimgray;">(your pair, 8 minutes)</span> {#codestep4}
+##### Step 4: Write the Clauses <span style="color:dimgray;">(your pair, 15 minutes)</span> {#codestep4}
 
 **This is your pair's own work, and its raw material is the two diagnoses you have just reported.** You own one failure class in the data and one in the code, and **yours is the only pair that has read that part of this project closely**, so yours are the only clauses that can come out of it. The three other pairs are writing theirs at the same time, and you will read them in [Step 5](#codestep5).
 
@@ -7546,7 +7546,7 @@ This is not administration. **Four of the eight clauses will be written into a c
 
 If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note one outcome worth hoping for: **if your group's charter already covered the defect you found, say so in your report.** That is the best possible result of this exercise, and it means your charter was ambitious enough.
 
-##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 6 minutes)</span> {#codestep5}
+##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 15 minutes)</span> {#codestep5}
 
 **There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
 
@@ -7589,16 +7589,29 @@ This chapter is subdivided into two parts as follows:
 
 ## Class Outline {#chap6outline}
 
-**Chapter 6 begins in the second half of the [Chapter 5 PART B](#repcode) class**, once the group activity there has closed, and it opens with [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) carried over from Chapter 4. **Whatever is not reached is assigned as reading**, which this time is most of the chapter.
+**Chapter 6 has no class of its own. It is split across two classes**, and neither of them is wholly its own, which is why there are two tables below.
+
+**Class 1 --- the licences**, in the last fifteen minutes of the [Chapter 5 PART B](#repcode) class, once the group activity there has closed
 
 | Block | Time | Who |
 |---|---|---|
-| [👥 Chapter 5 PART B, Steps 3 to 5](#codereporting) | 29 min | Students |
+| [👥 Chapter 5 PART B, Steps 3 to 5](#codereporting) | 45 min | Students |
 | *five-minute break* | 5 min | |
 | [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4), with [Software Licenses](#softwarelicenses) from [Chapter 5](#repcode) beside them | 15 min | Instructor |
-| [PART A: Getting published](#getpub), as far as we reach | 20 min | Instructor |
-| **Total in class** | **69 min** | |
-| The rest of [PART A](#getpub), and all of [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, with the slides in [Teaching Material](#teachmat6A) and [Teaching Material](#teachmat6B) |
+| **Total in class** | **65 min** | |
+
+**Class 2 --- getting published**, in the first twenty minutes of the following class, which is otherwise a work session on your bioinformatics tutorials
+
+| Block | Time | Who |
+|---|---|---|
+| [PART A: Getting published](#getpub): the four steps, from selecting a journal to acceptance | 20 min | Instructor |
+| Work session on the bioinformatics tutorials | rest of the class | Students |
+
+**Read PART A before that class.** Twenty minutes is a synthesis, not an introduction, and the section is long enough that it will not survive being read aloud to you.
+
+| | | |
+|---|---|---|
+| [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, it is not covered in class, with the slides in [Teaching Material](#teachmat6B) |
 
 **Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
 
