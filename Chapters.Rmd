@@ -7507,14 +7507,14 @@ When all four pairs have reported, we return as a class to the stage nobody was 
 
 ##### Step 4: Write the Clauses <span style="color:dimgray;">(your pair, 15 minutes)</span> {#codestep4}
 
-**This is your pair's own work, and its raw material is the two diagnoses you have just reported.** You own one failure class in the data and one in the code, and **yours is the only pair that has read that part of this project closely**, so yours are the only clauses that can come out of it. The three other pairs are writing theirs at the same time, and you will read them in [Step 5](#codestep5).
+**Work in your pair, and write two clauses from your own two findings.** All four pairs do this at the same time, so there are eight clauses in the room when the step ends. You will see the other six in [Step 5](#codestep5).
 
 **One clause from each of your two findings:**
 
-- **from the data defect you diagnosed in PART A**, into the **Data lead** section of your group's [charter](#FactorsActivity), which owns protocols, notes, file naming, storage, backup and metadata, which is precisely the territory of the four PART A failure classes
+- **from the data defect you diagnosed in PART A**, into the **Data lead** section of your group's [charter](#FactorsActivity), which owns protocols, notes, file naming, storage, backup and metadata
 - **from the code defect you diagnosed in [Step 2](#codestep2)**, into the **Analysis lead** section, which owns "code and statistics: the analysis plan, what is decided before the data are seen, and how an analysis is made re-runnable"
 
-**A clause is not a description of your defect. It is the standard that would have prevented it**, which means the work of this step is one move: generalise. You said the middle column out loud in [Step 3](#codestep3), when you named the practice behind the fault:
+**A clause is not a description of your defect. It is the standard that would have prevented it.** You already said the middle column out loud in [Step 3](#codestep3), when you named the practice behind the fault:
 
 | What your pair found | The practice behind it | The clause you write |
 |---|---|---|
@@ -7540,9 +7540,9 @@ So **"we will name our files sensibly" is not a clause**, and neither is "we wil
 - *Any coercion of a column is immediately followed by a check that the number of missing values has not changed, and the script stops if it has.*
 - *Every analysis script ends by recording `sessionInfo()` in the output.*
 
-**Deposit both before the step ends, with your pair's name on them.** Your two clauses and your knitted defect log go into your pair's subfolder in [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), the same subfolder you used in PART A. Four pairs, four subfolders.
+**Type both into the [`Clauses`](https://docs.google.com/spreadsheets/d/1nK4LA6lnjxn5nrbpsfq9hiYKQf7ij8vywdtwq3qbAuY/edit?usp=sharing) sheet before the step ends**, on your pair's row. Three cells: **what you found**, a line each on the data defect and the code defect, then the **data clause** and the **code clause** beside them, so that anybody reading the sheet can see whether the clause actually follows from the finding. It lives beside the charters in [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link), where your knitted `Defect_log` also goes, in your pair's subfolder from PART A.
 
-This is not administration. **Four of the eight clauses will be written into a charter by people who were not in your pair**, and they cannot insert what they cannot read. A clause dictated across the room becomes four slightly different clauses in two charters; a clause deposited in writing becomes the same clause in both.
+This is not administration. **Six of the eight clauses will be written into a charter by people who were not in your pair**, and they cannot insert what they cannot read. A clause dictated across the room becomes four slightly different clauses in two charters; a clause written down once becomes the same clause in both.
 
 If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note one outcome worth hoping for: **if your group's charter already covered the defect you found, say so in your report.** That is the best possible result of this exercise, and it means your charter was ambitious enough.
 
@@ -7552,7 +7552,7 @@ If you want more worked examples, there are [charter clause templates](#chartert
 
 1. **Split into your two charter groups.** Each group is the two pairs that formed inside it: Pairs 1 and 2, or Pairs 3 and 4.
 2. **Open your charter**, which is a live document in our shared Drive at [`Reproducible_Science > Chapters > Chapter_1 > Part_B`](https://drive.google.com/drive/folders/1l3ZwbVjiswHWdW38wt5Hd7VxS-_uHKOG?usp=drive_link). You are revising it, not starting a new one.
-3. **Insert all eight clauses**: the four data clauses into the **Data lead** section and the four code clauses into the **Analysis lead** section. Four of them are your group's own and you can write them straight in. **The other four you read out of [`Reproducible_Science > Chapters > Chapter_5`](https://drive.google.com/drive/folders/1t_yy4shc1mz1i4HdgdfJFus3l5dI_yam?usp=drive_link)**, where the pairs that wrote them deposited them in [Step 4](#codestep4).
+3. **Open the [`Clauses`](https://docs.google.com/spreadsheets/d/1nK4LA6lnjxn5nrbpsfq9hiYKQf7ij8vywdtwq3qbAuY/edit?usp=sharing) sheet and insert all eight**: the four data clauses into the **Data lead** section of your charter and the four code clauses into the **Analysis lead** section. **Copy the wording, do not retype it**, so that the pair who wrote a clause and the charter that adopts it say the same thing.
 4. **Reconcile the wording** with what your charter already says, and where a new clause contradicts an existing one, **resolve it now rather than keeping both**.
 
 <div class="info">
