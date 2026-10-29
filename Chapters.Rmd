@@ -5035,6 +5035,19 @@ Here is a list of some of the most commonly used CC licenses with URLs leading t
 - [Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/)
 - [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
+#### ShareAlike, and What Happens Without It {#sharealike}
+
+**ShareAlike (SA) is the only clause that says anything about the licence on the *next* version of your work**, and it is the Creative Commons equivalent of copyleft in software. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) requires anybody who remixes, transforms or builds upon your work to release that adaptation under the same licence. The permissions you granted travel with the work into every version downstream, which is the same logic as the GNU licences you will meet under [Software Licenses](#softwarelicenses).
+
+**Without SA, nothing travels.** Under plain [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) somebody can take your figure, adapt it, and publish the adaptation under any terms they choose: all rights reserved, paywalled, no further reuse. They owe you attribution and nothing more. Your own version stays CC BY, because the licence you granted cannot be revoked, but the adapted version that circulates is theirs and it can be closed. **CC BY is what most journals offer and most funders require**, so this is a consequence you should accept knowingly rather than discover afterwards.
+
+Figure \@ref(fig:FAIR) in this chapter is a worked example. It is CC BY-SA 4.0, which is why the caption names both the author and the licence, and why a redrawn version of it would have to be CC BY-SA 4.0 as well.
+
+Two things SA is often confused with:
+
+- **SA is not a ban on making money.** CC BY-SA permits commercial use, so a company may sell a product built on your work provided the adaptation stays CC BY-SA. The clause that forbids commercial use is **NonCommercial (NC)**, and it is separate (Figure \@ref(fig:CC)). If your concern is somebody charging for your work, NC is the clause you mean, and note that it also stops a colleague putting your figure in a paid textbook or course pack.
+- **SA is sticky, and that constrains you too.** Because an adaptation has to keep the licence, you cannot redraw a CC BY-SA figure for a paper that your journal will publish under CC BY. Check the licence of every borrowed figure before you build on it, not at proof stage.
+
 ---
 
 ## 🤝 Group Sharing and Discussions {#OSgroupwork}
