@@ -6573,9 +6573,9 @@ About **two minutes**, to the whole class:
 
 | | Step | What you do | Time |
 |---|---|---|---|
-| **5** | [Report What You Found](#codestep3) | The four points above, and then your code defect | 15 min |
+| **5** | [Report What You Found](#codestep3) | The four points above, and then your code defect | 20 min |
 | **6** | [Write the Clause](#codestep4) | One clause for the data defect, one for the code defect | 15 min |
-| **7** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | 15 min |
+| **7** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | 10 min |
 
 ##### What you leave with, and where it goes
 
@@ -6639,9 +6639,9 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 
 | Block | Time | Who |
 |---|---|---|
-| [👥 Step 3: Report What You Found](#codestep3), **data and code defects together** | 15 min | Students, in 4 pairs |
+| [👥 Step 3: Report What You Found](#codestep3), **data and code defects together** | 20 min | Students, in 4 pairs |
 | [👥 Step 4: Write the Clauses](#codestep4), one for the data and one for the code | 15 min | Students, in 4 pairs |
-| [👥 Step 5: Merge Into Your Charter](#codestep5) | 15 min | Students, in 2 groups |
+| [👥 Step 5: Merge Into Your Charter](#codestep5) | 10 min | Students, in 2 groups |
 | **Total** | **45 min** | |
 
 **That is the end of Chapter 5.** The rest of that class begins [Chapter 6](#chap6outline).
@@ -7357,9 +7357,9 @@ By the end of this activity, students are able to:
 
 | | Step | What you do | Who | Time |
 |---|---|---|---|---|
-| **3** | [Report What You Found](#codestep3) | Your data defect and your code defect, read from the same log | your pair | 15 min |
+| **3** | [Report What You Found](#codestep3) | Your data defect and your code defect, read from the same log | your pair | 20 min |
 | **4** | [Write the Clauses](#codestep4) | One clause for the data, one for the code | your pair | 15 min |
-| **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group | 15 min |
+| **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group | 10 min |
 | | **Total** | | | **45 min** |
 
 ##### Your pair, and the kind of code fault it owns {#yourpaircode}
@@ -7489,7 +7489,7 @@ mean(d$mass, na.rm = TRUE)          #write this number down
   <p>The second reason is in your log now. <b>The code faults you found in Step 2 are frequently the cause of the data faults you logged in PART A</b>, and reporting the two together is the only way that shows.</p>
 </div>
 
-##### Step 3: Report What You Found <span style="color:dimgray;">(your pair, 15 minutes)</span> {#codestep3}
+##### Step 3: Report What You Found <span style="color:dimgray;">(your pair, 20 minutes)</span> {#codestep3}
 
 **Three minutes per pair**, read straight off your knitted log, and cover **both** of your areas:
 
@@ -7559,7 +7559,7 @@ This is not administration. **Six of the eight clauses will be written into a ch
 
 If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note one outcome worth hoping for: **if your group's charter already covered the defect you found, say so in your report.** That is the best possible result of this exercise, and it means your charter was ambitious enough.
 
-##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 15 minutes)</span> {#codestep5}
+##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 10 minutes)</span> {#codestep5}
 
 **There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
 
