@@ -7623,7 +7623,7 @@ This chapter is subdivided into two parts as follows:
 | [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4), with [Software Licenses](#softwarelicenses) from [Chapter 5](#repcode) beside them | 15 min | Instructor |
 | **Total in class** | **20 min** | |
 
-The rest of that class is a work session on your bioinformatics tutorials.
+That class then spends five minutes on [checking raw data with an md5 checksum](#md5onefile), from [Chapter 7](#chap7outline), and the rest of it is a work session on your bioinformatics tutorials.
 
 **Read at home**
 
@@ -8143,9 +8143,9 @@ This chapter aims to **give you the procedures used to gather, import and organi
 By the end of this chapter, you will be able to:
 
 - [Create and work in an RStudio project](#rstudioprojects), so that a piece of work has its own working directory
-- [Import a csv file deposited on GitHub into R](#importcsvgithub), and say what a [SHA-1 hash](#sha1hash) identifies
-- [Generate a companion `MD5` file for your raw data and verify it from R](#md5check), so that an incomplete download or an edited file is **detected rather than analysed**
 - [Say what an md5 checksum is](#md5background), where sequence archives require one, and why a hash that is broken for digital signatures is still the right tool for detecting corruption
+- [Generate a companion `MD5` file for your raw data and verify it from R](#md5check), so that an incomplete download or an edited file is **detected rather than analysed**
+- [Import a csv file deposited on GitHub into R](#importcsvgithub), and say what a [SHA-1 hash](#sha1hash) identifies
 - [Retrieve the version of a csv attached to an earlier commit](#csvfromcommit)
 - [Download a whole GitHub repository as a `zip` archive](#downloadrepo), list what is inside it, and [extract selected files without decompressing all of it](#extractzip)
 - Manipulate files and directories from R to organise your project
@@ -8167,9 +8167,9 @@ By the end of this chapter, you will be able to:
 | Block | Time | Who |
 |---|---|---|
 | [Manage your work in an RStudio project](#rstudioprojects) | 10 min | Students, on their own |
-| [Import a csv from GitHub](#importcsvgithub), including [what a SHA-1 hash identifies](#sha1hash) | 20 min | Students, on their own |
 | [What md5 is, and where you will meet it](#md5background) | 8 min | **Read before the class above** |
 | [The md5 check over a whole folder](#md5folder), and the [Challenge](#md5challenge) | 12 min | Students, on their own |
+| [Import a csv from GitHub](#importcsvgithub), including [what a SHA-1 hash identifies](#sha1hash) | 20 min | Students, on their own |
 | [Retrieve a csv from an earlier commit](#csvfromcommit) | 10 min | Students, on their own |
 | [Download and process a whole repository](#downloadrepo) | 20 min | Students, on their own |
 | **Total** | **72 min** | |
@@ -8222,8 +8222,8 @@ This approach is aimed at demonstrating how you could access raw data deposited 
 
 In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedures to:
 
-1. Import comma-separated values format (`csv`) stored in GitHub repositories.
-2. Verify that the data you imported is the data you were given, using [md5 checksums](#md5check).
+1. Verify that a data file is the one you were given, and that it has not changed since, using [md5 checksums](#md5check).
+2. Import comma-separated values format (`csv`) stored in GitHub repositories.
 3. Download and process whole GitHub repositories saved in compressed `zip` format.
 
 ### List of R Functions Covered in This Chapter
@@ -8309,15 +8309,7 @@ Before starting coding, please do the following:
 1. Open RStudio and create a **New Project** in a **New Directory** entitled `EEB603_Chapter_07`.
 2. Open the new project and create and save a **new R script** entitled `01_Data_gathering.R`.
 
-## Importing csv files from GitHub into R {#importcsvgithub}
-
-Before delving into this subject, there are several topics that we need to cover.
-
-### The SHA-1 hash accession number {#sha1hash}
-
-With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. **Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded**. To support such feature, **each version of a file/data set is associated to a unique encrypted [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (Secure Hash Algorithm 1) hash accession number**. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set used in their analyses therefore supporting reproducibility.  
-
-### Checking Data Integrity with md5 {#md5check}
+## Checking Data Integrity with md5 {#md5check}
 
 **A download can arrive incomplete, and an open file can be saved back changed, and neither of those announces itself.** The file is still there, it still opens, and `read.csv()` still returns a data frame. What you need is a short piece of evidence, recorded while the data was in the state you intended, that can be re-checked at any point afterwards.
 
@@ -8330,10 +8322,10 @@ An **md5 checksum** is that evidence: a 32-character hash computed from the byte
 
 <div class="info">
   <p><strong>&#128161; md5 and SHA-1 answer different questions</strong></p>
-  <p><a href="#sha1hash">The SHA-1 hash in the previous section</a> is GitHub's: it identifies <b>a version of a file in a repository</b>, and Git assigns it. The md5 hash here is <b>yours</b>, and it identifies <b>the bytes sitting on your own disk</b>. The first lets you cite the version you used; the second lets you show that what you analysed is that version.</p>
+  <p><a href="#sha1hash">The SHA-1 hash you meet in the next section</a> is GitHub's: it identifies <b>a version of a file in a repository</b>, and Git assigns it. The md5 hash here is <b>yours</b>, and it identifies <b>the bytes sitting on your own disk</b>. The first lets you cite the version you used; the second lets you show that what you analysed is that version.</p>
 </div>
 
-#### Where md5 Comes From, and Where You Will Meet It {#md5background}
+### Where md5 Comes From, and Where You Will Meet It {#md5background}
 
 **md5 is the fifth of Ronald Rivest's Message Digest algorithms**, designed in 1991 to replace MD4 and published in April 1992 as [RFC 1321](https://www.rfc-editor.org/rfc/rfc1321.txt) from MIT and RSA Data Security. The specification's own word for the output is a **fingerprint**: input of any length in, 128 bits out, which is the 32 hexadecimal characters you have been looking at. Three properties make it useful here:
 
@@ -8360,7 +8352,7 @@ An **md5 checksum** is that evidence: a 32-character hash computed from the byte
 
 **The BAM and CRAM row is worth a second read**, because it is this section's idea one level up. Rather than trusting that two files named `hg38.fa` hold the same genome, the format records a digest **of the sequence** and compares that. A file name is a claim; a checksum is evidence. That distinction is the whole of [Chapter 5 PART A](#partDM) in one line.
 
-#### Step-by-Step Procedure <span style="color:dimgray;">(~12 minutes)</span>
+### Step-by-Step Procedure <span style="color:dimgray;">(~12 minutes)</span>
 
 Both functions live in the *tools* package, which **ships with R**, so there is nothing to install. It is not attached by default, which is why every call below is written `tools::`. Work in the project you created in [Getting started!](#getstarted7).
 
@@ -8384,7 +8376,7 @@ d <- data.frame(plant_id = c("A1", "A2", "A3"),
 write.csv(d, "01_Raw_Data/species_data.csv", row.names = FALSE)
 ```
 
-##### Example 1: one file <span style="color:dimgray;">(~5 minutes, in class)</span> {#md5onefile}
+#### Example 1: one file <span style="color:dimgray;">(~5 minutes, in class)</span> {#md5onefile}
 
 **1. Hash the file.** `tools::md5sum()` returns a **named** vector: the value is the hash and the name is the path you asked about.
 
@@ -8431,7 +8423,7 @@ file 'species_data.csv' is missing
   <p>Nothing is actually missing. <code>normalizePath("01_Raw_Data")</code> makes the path absolute and the check then works, and <code>dir = "."</code> works when the <code>MD5</code> file sits in your working directory. <b>A check that reports failure for the wrong reason is worse than no check</b>, because you learn to ignore it.</p>
 </div>
 
-##### Example 2: every file in the folder <span style="color:dimgray;">(~7 minutes, on your own)</span> {#md5folder}
+#### Example 2: every file in the folder <span style="color:dimgray;">(~7 minutes, on your own)</span> {#md5folder}
 
 **Raw data is rarely one file.** Work through this one yourself, after class. Nothing above changes except what you hand to `md5sum()`, because it is vectorised: give it many paths and you get many hashes back, still named.
 
@@ -8496,7 +8488,7 @@ a133cc888631b7c27badfa21ad5997ee *temperature.csv
 
 **Now `TRUE` means both files**, and that is the state you want your raw data folder to be in before you analyse anything out of it.
 
-#### Challenge <span style="color:dimgray;">(~5 minutes, on your own)</span> {#md5challenge}
+### Challenge <span style="color:dimgray;">(~5 minutes, on your own)</span> {#md5challenge}
 
 <div class="danger">
   <p><strong>&#128161; Break it on purpose</strong></p>
@@ -8534,6 +8526,15 @@ file 'species_data.csv' is missing
 </details>
 
 **From here on, do this with real data.** When you download the csv in the next section, and the whole repository [further down](#downloadrepo), write an `MD5` file beside what you receive. It costs two lines and it is the only way to be able to say, months later, that the file you analysed is the file you were given.
+
+
+## Importing csv files from GitHub into R {#importcsvgithub}
+
+Before delving into this subject, there are several topics that we need to cover.
+
+### The SHA-1 hash accession number {#sha1hash}
+
+With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. **Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded**. To support such feature, **each version of a file/data set is associated to a unique encrypted [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (Secure Hash Algorithm 1) hash accession number**. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set used in their analyses therefore supporting reproducibility.  
 
 ### How to retrieve the URL of a GitHub csv file?
 
