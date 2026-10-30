@@ -4672,9 +4672,7 @@ By the end of this chapter, you will be able to:
 - [Describe the purpose and use of Creative Commons licenses in scientific publications](#CClicenses)
 - [Understand the CARE Principles and data sovereignty, especially concerning Indigenous Peoples](#CARE)
 
-**This chapter is one class, and most of it is group work.** Three activities run back to back, which only works if you arrive having read the two frameworks they use. **That reading is the homework for this class**, and it is listed below.
-
-**This chapter runs over two classes.** The first takes the FAIR activity as far as the pairs' work; **the FAIR report back opens the second class**, followed by the CARE pass and the CARE activity.
+**This chapter runs over two classes, and most of it is group work.** Three activities run back to back, which only works if you arrive having read the two frameworks they use: **that reading is the homework**, and it is listed below. The first class takes the FAIR activity as far as the pairs' work; **the FAIR report back opens the second class**, followed by the CARE pass and the CARE activity.
 
 **Before class**
 
@@ -4707,12 +4705,11 @@ By the end of this chapter, you will be able to:
 | Block | Time | Who |
 |---|---|---|
 | [👥 FAIR & CARE Comparison](#FAIRCAREactivity) | 10 min | Reading, and a short written addition to your charter |
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | Instructor, in the [Chapter 6](#chap6outline) class |
+| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | Instructor, in [Chapter 6](#chap6outline)'s licence block |
 
-[Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) are taught in the [Chapter 6](#chap6outline) class, where they sit naturally beside getting published.
+[Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) are taught in [Chapter 6](#chap6outline)'s licence block, where they sit naturally beside getting published.
 
 **The [FAIR & CARE Comparison](#FAIRCAREactivity) is not run in class this year.** The material stays here and is worth reading: each pair already owns one FAIR and one CARE principle, so the comparison is something you can write in a few minutes rather than discuss.
-| [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses) | 15 min | **Instructor, in the [Chapter 6](#chap6outline) session** |
 
 ---
 
@@ -4725,8 +4722,8 @@ By the end of this chapter, you will be able to:
 5. Quick pass over [the CARE Principles](#CAREPrinc) and [Data Sovereignty](#datasov) <span style="color:dimgray;">(3 minutes)</span>
 6. [👥 CARE Principles Group Activity](#CAREactivity) <span style="color:dimgray;">(15 minutes)</span>
 7. [👥 FAIR & CARE Principles Comparison Activity](#FAIRCAREactivity) <span style="color:dimgray;">(10 minutes)</span>
-8. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught in the [Chapter 6](#chap6outline) session)</span>
-9. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught in the [Chapter 6](#chap6outline) session)</span>
+8. [Open Access: A Tool to Promote Open Science?](#openaccess) <span style="color:dimgray;">(8 minutes, taught in [Chapter 6](#chap6outline)'s licence block)</span>
+9. [Creative Commons Licenses](#CClicenses) <span style="color:dimgray;">(7 minutes, taught in [Chapter 6](#chap6outline)'s licence block)</span>
 
 ---
 
@@ -6575,7 +6572,7 @@ About **two minutes**, to the whole class:
 |---|---|---|---|
 | **5** | [Report What You Found](#codestep3) | The four points above, and then your code defect | 20 min |
 | **6** | [Write the Clause](#codestep4) | One clause for the data defect, one for the code defect | 15 min |
-| **7** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | 10 min |
+| **7** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | 10 min, **at home** |
 
 ##### What you leave with, and where it goes
 
@@ -6635,16 +6632,23 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 
 **Step 2 is finished at home.** Reading three scripts against a standard and writing down what fails takes longer than a quarter of an hour, and the rest of the session goes on the questions it raises.
 
-**Class 2 --- reporting, and the charter**
+**Class 2 --- reporting, and the clauses**
 
 | Block | Time | Who |
 |---|---|---|
 | [👥 Step 3: Report What You Found](#codestep3), **data and code defects together** | 20 min | Students, in 4 pairs |
 | [👥 Step 4: Write the Clauses](#codestep4), one for the data and one for the code | 15 min | Students, in 4 pairs |
-| [👥 Step 5: Merge Into Your Charter](#codestep5) | 10 min | Students, in 2 groups |
-| **Total** | **45 min** | |
+| **Total in class** | **35 min** | |
 
-**That is the end of Chapter 5.** The rest of that class begins [Chapter 6](#chap6outline).
+**After class**
+
+| Block | Time | Who |
+|---|---|---|
+| [👥 Step 5: Merge Into Your Charter](#codestep5) | 10 min | **Students, in 2 groups, at home** |
+
+**Step 5 is done at home**, because your charter is a live document and the clauses are copied out of the
+[`Clauses`](https://docs.google.com/spreadsheets/d/1nK4LA6lnjxn5nrbpsfq9hiYKQf7ij8vywdtwq3qbAuY/edit?usp=sharing) sheet rather than written from scratch. **We go over the charters briefly at the start of
+the next class**, which then begins [Chapter 6](#chap6outline) with the three licence families.
 
 ---
 
@@ -7359,8 +7363,13 @@ By the end of this activity, students are able to:
 |---|---|---|---|---|
 | **3** | [Report What You Found](#codestep3) | Your data defect and your code defect, read from the same log | your pair | 20 min |
 | **4** | [Write the Clauses](#codestep4) | One clause for the data, one for the code | your pair | 15 min |
-| **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group | 10 min |
-| | **Total** | | | **45 min** |
+| | **Total in class** | | | **35 min** |
+
+**Step 5 is done at home**, and the charters are reviewed at the start of the next class.
+
+| | Step | What you do | Who | Time |
+|---|---|---|---|---|
+| **5** | [Merge Into Your Charter](#codestep5) | The two pairs in each group reconcile all eight clauses | your group, **at home** | 10 min |
 
 ##### Your pair, and the kind of code fault it owns {#yourpaircode}
 
@@ -7559,7 +7568,9 @@ This is not administration. **Six of the eight clauses will be written into a ch
 
 If you want more worked examples, there are [charter clause templates](#chartertemplate) in Chapter 1. And note one outcome worth hoping for: **if your group's charter already covered the defect you found, say so in your report.** That is the best possible result of this exercise, and it means your charter was ambitious enough.
 
-##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 10 minutes)</span> {#codestep5}
+##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 10 minutes, at home)</span> {#codestep5}
+
+**This step is homework, and it is the last thing Chapter 5 asks of you.** Your charter is a live document, so the group does not need to be in one room to do it, and the clauses are already written: they are in the sheet. **We go over the charters briefly at the start of the next class.**
 
 **There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
 
@@ -7602,29 +7613,26 @@ This chapter is subdivided into two parts as follows:
 
 ## Class Outline {#chap6outline}
 
-**Chapter 6 has no class of its own. It is split across two classes**, and neither of them is wholly its own, which is why there are two tables below.
+**Only the licences are taught in class. The rest of Chapter 6 is read at home.** The licence block opens the work session that follows the [Chapter 5 PART B](#repcode) classes, together with a short look at the charters those classes produced.
 
-**Class 1 --- the licences**, in the last fifteen minutes of the [Chapter 5 PART B](#repcode) class, once the group activity there has closed
+**In class --- the licences**
 
 | Block | Time | Who |
 |---|---|---|
-| [👥 Chapter 5 PART B, Steps 3 to 5](#codereporting) | 45 min | Students |
-| *five-minute break* | 5 min | |
+| A short pass over the clauses you wrote into your charters in [Step 5](#codestep5) | 5 min | Students, in 2 groups |
 | [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4), with [Software Licenses](#softwarelicenses) from [Chapter 5](#repcode) beside them | 15 min | Instructor |
-| **Total in class** | **65 min** | |
+| **Total in class** | **20 min** | |
 
-**Class 2 --- getting published**, in the first twenty minutes of the following class, which is otherwise a work session on your bioinformatics tutorials
+The rest of that class is a work session on your bioinformatics tutorials.
+
+**Read at home**
 
 | Block | Time | Who |
 |---|---|---|
-| [PART A: Getting published](#getpub): the four steps, from selecting a journal to acceptance | 20 min | Instructor |
-| Work session on the bioinformatics tutorials | rest of the class | Students |
+| [PART A: Getting published](#getpub): the four steps, from selecting a journal to acceptance, with the slides in [Teaching Material](#teachmat6A) | 30 min | Students, at home |
+| [PART B: Writing papers in R Markdown](#writpub), with the slides in [Teaching Material](#teachmat6B) | 20 min | Students, at home |
 
-**Read PART A before that class.** Twenty minutes is a synthesis, not an introduction, and the section is long enough that it will not survive being read aloud to you.
-
-| | | |
-|---|---|---|
-| [PART B: Writing papers in R Markdown](#writpub) | | **Read at home**, it is not covered in class, with the slides in [Teaching Material](#teachmat6B) |
+**Why this part of the chapter is reading rather than class time.** It is a sequence of procedures: choose a journal, write to its requirements, submit, answer the reviewers. None of it needs a room, and both decks are embedded in the page, so reading it loses nothing. **Bring your questions to any class after you have read it.**
 
 **Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
 
@@ -8122,17 +8130,132 @@ knitr::include_graphics("Figures/Data_interactions.png")
 
 Here, we are providing methods and R functions that are applied to manage your projects and gather, convert and clean your data. Ultimately these tools will be applied to document and produce the raw data at the basis of your research.
 
-## Learning outcomes
+## Aim
 
-- Creating RStudio projects to manage your reproducible project.
-- Importing `csv` files deposited on GitHub into R. 
-- Learning about SHA-1 hash accession numbers and their usage to retrieve `csv` files associated to specific GitHub `commit` events.
-- Downloading whole GitHub repository (in `zip` format) on your computer.
-- Listing all files in a compressed `zip` file.
-- Extracting and saving selected files from a `zip` file without decompressing it.
-- Manipulating files and directories to organize your project.
+This chapter aims to **give you the procedures used to gather, import and organise data with R**, so that the raw data behind a piece of research is something another person can obtain, verify and reuse.
 
-## Managing projects in RStudio
+**It is written to be worked through on your own**, at the console, in a project of your own. Every section is a short procedure with the code beside it.
+
+---
+
+## Learning Outcomes
+
+By the end of this chapter, you will be able to:
+
+- [Create and work in an RStudio project](#rstudioprojects), so that a piece of work has its own working directory
+- [Import a csv file deposited on GitHub into R](#importcsvgithub), and say what a [SHA-1 hash](#sha1hash) identifies
+- [Generate a companion `MD5` file for your raw data and verify it from R](#md5check), so that an incomplete download or an edited file is **detected rather than analysed**
+- [Say what an md5 checksum is](#md5background), where sequence archives require one, and why a hash that is broken for digital signatures is still the right tool for detecting corruption
+- [Retrieve the version of a csv attached to an earlier commit](#csvfromcommit)
+- [Download a whole GitHub repository as a `zip` archive](#downloadrepo), list what is inside it, and [extract selected files without decompressing all of it](#extractzip)
+- Manipulate files and directories from R to organise your project
+
+---
+
+## Class Outline {#chap7outline}
+
+**Almost all of this chapter is worked through on your own.** It is the reference you implement your own project against, and it is where the earlier chapters point when they say that a repair belongs in Chapter 7: the pseudocode you wrote for somebody else's broken project in [Chapter 5](#Chap5) is implemented with the procedures below.
+
+**One block is done in class**
+
+| Block | Time | Who |
+|---|---|---|
+| [Checking data integrity with md5](#md5check), the [single-file example](#md5onefile) | 5 min | Instructor, with the class |
+
+**Everything else, on your own**
+
+| Block | Time | Who |
+|---|---|---|
+| [Manage your work in an RStudio project](#rstudioprojects) | 10 min | Students, on their own |
+| [Import a csv from GitHub](#importcsvgithub), including [what a SHA-1 hash identifies](#sha1hash) | 20 min | Students, on their own |
+| [What md5 is, and where you will meet it](#md5background) | 8 min | **Read before the class above** |
+| [The md5 check over a whole folder](#md5folder), and the [Challenge](#md5challenge) | 12 min | Students, on their own |
+| [Retrieve a csv from an earlier commit](#csvfromcommit) | 10 min | Students, on their own |
+| [Download and process a whole repository](#downloadrepo) | 20 min | Students, on their own |
+| **Total** | **72 min** | |
+
+---
+
+## Resources {#resources7}
+
+**Everything you need in order to work through this chapter is in this section.** The R packages and the GitHub repositories used below are listed here, so set them up before you start.
+
+### Literature and Web Resources
+
+This chapter is mostly based on the following book and web resources:
+
+- @Gandrud2015 --- the book whose chapter 6 the approach taken here follows.
+- [Using RStudio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) --- the documentation behind [Managing projects in RStudio](#rstudioprojects).
+- [*readxl*](https://readxl.tidyverse.org/) [@readxl] --- for importing `xls` and `xlsx` files rather than `csv`.
+- [SHA-1](https://en.wikipedia.org/wiki/SHA-1) --- the hash Git uses to identify a version of a file.
+- [MD5](https://en.wikipedia.org/wiki/MD5) --- the hash used in [Checking Data Integrity](#md5check) to verify a file's contents.
+
+---
+
+The R packages and GitHub repositories used in this chapter are listed below. **Make sure they are all set up before you start**, because every section from [Getting started!](#getstarted7) onwards assumes them.
+
+### Software Requirements {#software7}
+
+Most of the functions that we will be using in this chapter are base R functions installed (by default) in the *utils* package [@utils].  However, the following R package (and its dependencies) has to be installed on your computer prior to starting this tutorial: *repmis* [@repmis]. In the event that you wanted to import `xsl` or `xlsx` files into R, you would also have to install the *readxl* package [@readxl]. 
+
+### Data and Repositories {#data7}
+
+#### EEB603_Reproducible_Science repository
+
+This repository is dedicated to this course and is used to demonstrate the procedure to import `csv` files into R from GitHub repositories. More specifically, we will be importing different versions of the file (`Timetable_EEB603_topic_tasks.csv`) at the origin of the [Timetable](Timetable.html) to study procedure associated to file versioning in GitHub. It is located at this URL (Uniform Resource Locator): 
+
+- https://github.com/svenbuerki/EEB603_Reproducible_Science 
+
+#### Sagebrush_rooting_in_vitro_prop
+
+This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository on your local computer and then extracting all `csv` files in the `01_Raw_Data/` folder and saving them on your local computer using R (see Figure \@ref(fig:GitHubRawDatashot) for more details on file content). 
+
+```{r GitHubRawDatashot, fig.alt="Screenshot of a GitHub folder listing for the 01_Raw_Data directory of the Sagebrush_rooting_in_vitro_prop repository, with a header row showing the last commit and a table of eight files including five block CSVs, Phenotypes_sagebrush_in_vitro.csv, and Survival_height_clones.csv, each with its commit message and age.", echo=FALSE, fig.cap="Snapshot showing files in the 01_Raw_Data folder that we will be targeting in the GitHub repository.", fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("Figures/GitHub_01_Raw_data.png")
+```
+
+This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
+
+- https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
+
+### Overview of Methods Applied in This Chapter
+
+In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedures to:
+
+1. Import comma-separated values format (`csv`) stored in GitHub repositories.
+2. Verify that the data you imported is the data you were given, using [md5 checksums](#md5check).
+3. Download and process whole GitHub repositories saved in compressed `zip` format.
+
+### List of R Functions Covered in This Chapter
+
+The list of major R functions covered in this chapter are provided in the Table below.
+
+```{r funcTab, eval = T, echo=F, warning = FALSE, message=FALSE}
+###~~~
+#Read in csv with functions
+###~~~
+funcTab <- read.csv("Data/Functions_Chapter_06.csv") 
+
+###~~~
+#Produce final table
+###~~~
+
+#Order table (alphabetically)
+funcTab <- funcTab[order(funcTab$Function),]
+rownames(funcTab) <- NULL
+###~~~
+#Plot timetable in doc
+###~~~
+#Plot table
+DT::datatable(funcTab, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Blfrtip', buttons = c('copy', 'csv', 'excel', 'pdf', 'print')), rownames= FALSE) %>%
+  DT::formatStyle('Function', fontWeight = 'bold')
+
+#knitr::kable(as.data.frame(lex), caption = "Lexicon of terms used in this course.") %>%
+#  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+``` 
+
+## Managing projects in RStudio {#rstudioprojects}
 
 RStudio projects (`.Rproj`) allow users to manage their project, more specifically by dividing their work into multiple contexts, each with their own working directory, workspace, history, and source documents.
 
@@ -8179,84 +8302,238 @@ Additional information on RStudio projects can be found here:
 
 https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
 
-## Bioinformatic dependencies and data repositories
-
-The list of R packages and GitHub repositories used in this chapter are listed below. Please make sure you have all these set-up before starting reading and completing the material presented in this chapter.
-
-### R packages
-
-Most of the functions that we will be using in this chapter are base R functions installed (by default) in the *utils* package [@utils].  However, the following R package (and its dependencies) has to be installed on your computer prior to starting this tutorial: *repmis* [@repmis]. In the event that you wanted to import `xsl` or `xlsx` files into R, you would also have to install the *readxl* package [@readxl]. 
-
-### GitHub repositories used in this chapter
-
-#### EEB603_Reproducible_Science repository
-
-This repository is dedicated to this course and is used to demonstrate the procedure to import `csv` files into R from GitHub repositories. More specifically, we will be importing different versions of the file (`Timetable_EEB603_topic_tasks.csv`) at the origin of the [Timetable](Timetable.html) to study procedure associated to file versioning in GitHub. It is located at this URL (Uniform Resource Locator): 
-
-- https://github.com/svenbuerki/EEB603_Reproducible_Science 
-
-#### Sagebrush_rooting_in_vitro_prop
-
-This repository is associated to @Barron2020 and is used to demonstrate procedure to download whole GitHub repositories. We will be downloading the whole repository on your local computer and then extracting all `csv` files in the `01_Raw_Data/` folder and saving them on your local computer using R (see Figure \@ref(fig:GitHubRawDatashot) for more details on file content). 
-
-```{r GitHubRawDatashot, fig.alt="Screenshot of a GitHub folder listing for the 01_Raw_Data directory of the Sagebrush_rooting_in_vitro_prop repository, with a header row showing the last commit and a table of eight files including five block CSVs, Phenotypes_sagebrush_in_vitro.csv, and Survival_height_clones.csv, each with its commit message and age.", echo=FALSE, fig.cap="Snapshot showing files in the 01_Raw_Data folder that we will be targeting in the GitHub repository.", fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("Figures/GitHub_01_Raw_data.png")
-```
-
-This approach is aimed at demonstrating how you could access raw data deposited on GitHub. The repository is located at this URL: 
-
-- https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop
-
-## Overview of methods applied in this chapter
-
-In this chapter, we will be focusing on learning procedures to import data from the internet focusing on GitHub. More precisely, we will be learning procedures to:
-
-1. Import comma-separated values format (`csv`) stored in GitHub repositories.
-2. Download and process whole GitHub repositories saved in compressed `zip` format.
-
-## List of R functions covered in this chapter
-
-The list of major R functions covered in this chapter are provided in the Table below.
-
-```{r funcTab, eval = T, echo=F, warning = FALSE, message=FALSE}
-###~~~
-#Read in csv with functions
-###~~~
-funcTab <- read.csv("Data/Functions_Chapter_06.csv") 
-
-###~~~
-#Produce final table
-###~~~
-
-#Order table (alphabetically)
-funcTab <- funcTab[order(funcTab$Function),]
-rownames(funcTab) <- NULL
-###~~~
-#Plot timetable in doc
-###~~~
-#Plot table
-DT::datatable(funcTab, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Blfrtip', buttons = c('copy', 'csv', 'excel', 'pdf', 'print')), rownames= FALSE) %>%
-  DT::formatStyle('Function', fontWeight = 'bold')
-
-#knitr::kable(as.data.frame(lex), caption = "Lexicon of terms used in this course.") %>%
-#  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
-``` 
-
-## Getting started!
+## Getting started! {#getstarted7}
 
 Before starting coding, please do the following:
 
-1. Open RStudio and create a **New Project** in a **New Directory** entitled `EEB603_Chapter_06`.
+1. Open RStudio and create a **New Project** in a **New Directory** entitled `EEB603_Chapter_07`.
 2. Open the new project and create and save a **new R script** entitled `01_Data_gathering.R`.
 
-## Importing csv files from GitHub into R
+## Importing csv files from GitHub into R {#importcsvgithub}
 
 Before delving into this subject, there are several topics that we need to cover.
 
-### The SHA-1 hash accession number
+### The SHA-1 hash accession number {#sha1hash}
 
 With the growing popularity of GitHub, several authors are depositing their data sets on GitHub and you might would like to access those for your research. **Since Git and GitHub are supporting version control, it is important to report the exact version of the file or data set that you have downloaded**. To support such feature, **each version of a file/data set is associated to a unique encrypted [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (Secure Hash Algorithm 1) hash accession number**. This means that if the file changes (because the owner of the repository updated it), its SHA-1 hash accession number will change. Such feature allows users to referring to the exact file/data set used in their analyses therefore supporting reproducibility.  
+
+### Checking Data Integrity with md5 {#md5check}
+
+**A download can arrive incomplete, and an open file can be saved back changed, and neither of those announces itself.** The file is still there, it still opens, and `read.csv()` still returns a data frame. What you need is a short piece of evidence, recorded while the data was in the state you intended, that can be re-checked at any point afterwards.
+
+An **md5 checksum** is that evidence: a 32-character hash computed from the bytes of a file. Change one character of the file and the hash changes completely. Two uses follow, and they are why this section is here:
+
+1. **It tells you a download arrived intact.** Compare the hash of what landed on your disk with the hash the provider published.
+2. **It tells you your raw data has not been touched since.** [Chapter 5](#partDM) asked you to treat `01_Raw_Data/` as written once and never again. **A checksum is how that claim gets checked rather than asserted.**
+
+**The convention is a companion file named `MD5`** sitting beside the data, with one line per file: the hash, a space, an asterisk, then the file name. R's own packages ship exactly this file, which is why the function that verifies it is already installed on your machine.
+
+<div class="info">
+  <p><strong>&#128161; md5 and SHA-1 answer different questions</strong></p>
+  <p><a href="#sha1hash">The SHA-1 hash in the previous section</a> is GitHub's: it identifies <b>a version of a file in a repository</b>, and Git assigns it. The md5 hash here is <b>yours</b>, and it identifies <b>the bytes sitting on your own disk</b>. The first lets you cite the version you used; the second lets you show that what you analysed is that version.</p>
+</div>
+
+#### Where md5 Comes From, and Where You Will Meet It {#md5background}
+
+**md5 is the fifth of Ronald Rivest's Message Digest algorithms**, designed in 1991 to replace MD4 and published in April 1992 as [RFC 1321](https://www.rfc-editor.org/rfc/rfc1321.txt) from MIT and RSA Data Security. The specification's own word for the output is a **fingerprint**: input of any length in, 128 bits out, which is the 32 hexadecimal characters you have been looking at. Three properties make it useful here:
+
+- **Deterministic.** The same bytes give the same digest on any machine, in any language, in any year. That is why a hash a sequencing centre computed in 2019 still means something on your laptop today.
+- **Fixed length.** A 2 GB `fastq` and a three-line `csv` both reduce to 32 characters, so the record costs nothing to store, publish or paste into a methods section.
+- **Avalanche.** Change one bit and about half the output bits change. **There is no such thing as two digests being nearly the same**: they either match or they do not.
+
+<div class="danger">
+  <p><strong>&#128161; md5 is broken, and it is still the right tool for this job</strong></p>
+  <p>RFC 1321 was written for <b>digital signatures</b>, and for that purpose md5 is dead. Dobbertin found a collision in its compression function in 1996, practical attacks followed in the mid-2000s, and <a href="https://www.rfc-editor.org/rfc/rfc6151.html">RFC 6151</a> (2011) states that md5 is no longer acceptable where collision resistance is required.</p>
+  <p><b>A collision is two files deliberately built to share a digest.</b> It takes an adversary who wants to deceive you, and it is <b>not what goes wrong with research data</b>. What goes wrong is a transfer that stopped at 94&percnt;, a disk that flipped a bit, a file opened in Excel and saved back. <b>None of those produces a collision</b>, so md5 catches every one of them, which is why the archives below still ask for it.</p>
+  <p><b>The rule:</b> use md5 to detect <b>accident</b>, never to prove <b>authenticity</b>. If you need the second, for signing a release or storing credentials, use SHA-256 or better and not md5.</p>
+</div>
+
+**Where you will meet it.** A checksum is not a classroom exercise; it is part of the ordinary paperwork of sequence data.
+
+| Where | What it is for |
+|---|---|
+| **Sequencing facilities** | A `fastq` delivery ships with a `.md5` file. Checking it after the transfer is how you discover that a 40 GB download truncated, **before** you spend a week aligning it |
+| **[ENA](https://ena-docs.readthedocs.io/en/latest/submit/fileprep/preparation.html) submissions** | An md5 per file is **required** in the manifest (`forward_file_md5`, `reverse_file_md5`) and must be **lower case**, so the archive can confirm your upload completed without error |
+| **NCBI genomes FTP** | Every assembly directory carries an [`md5checksums.txt`](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/md5checksums.txt) covering its data files. The current human reference, GRCh38.p14, lists 1,388 of them |
+| **BAM and CRAM** | The `@SQ` header's **`M5`** tag is the md5 of the reference **sequence** itself, uppercased with gaps and spaces removed ([SAM specification](https://samtools.github.io/hts-specs/SAMv1.pdf)). Optional in SAM and BAM, **mandatory in CRAM**, which uses it to locate the right reference |
+| **R packages** | Every CRAN package ships an `MD5` file, and that is what `checkMD5sums()` was written to verify |
+
+**The BAM and CRAM row is worth a second read**, because it is this section's idea one level up. Rather than trusting that two files named `hg38.fa` hold the same genome, the format records a digest **of the sequence** and compares that. A file name is a claim; a checksum is evidence. That distinction is the whole of [Chapter 5 PART A](#partDM) in one line.
+
+#### Step-by-Step Procedure <span style="color:dimgray;">(~12 minutes)</span>
+
+Both functions live in the *tools* package, which **ships with R**, so there is nothing to install. It is not attached by default, which is why every call below is written `tools::`. Work in the project you created in [Getting started!](#getstarted7).
+
+<div class="disclaimer">
+  <p><strong>&#128161; How this one runs</strong></p>
+  <p><b>Read <a href="#md5background">Where md5 Comes From</a> first.</b> My five minutes in class are the mechanism, not an introduction to hashing.</p>
+  <p><b><a href="#md5onefile">Example 1, on a single file, is done together in class.</a></b> It is the whole mechanism in three lines, and it is short.</p>
+  <p><b><a href="#md5folder">Example 2 and the <a href="#md5challenge">Challenge</a> are yours to work through afterwards.</b> Example 2 repeats Example 1 over a whole folder, which is the form you will actually use, and the Challenge breaks the check on purpose so that you have seen it fail before it matters.</p>
+</div>
+
+**First, put a raw data file in place.** Any csv will do; this one is made from scratch so that the exercise does not depend on a download.
+
+```{r eval = FALSE}
+###~~~
+# Create the raw data folder and a small csv standing in for your own data
+###~~~
+dir.create("01_Raw_Data", showWarnings = FALSE)
+
+d <- data.frame(plant_id = c("A1", "A2", "A3"),
+                mass_g   = c(10.2, 11.5, 9.8))
+write.csv(d, "01_Raw_Data/species_data.csv", row.names = FALSE)
+```
+
+##### Example 1: one file <span style="color:dimgray;">(~5 minutes, in class)</span> {#md5onefile}
+
+**1. Hash the file.** `tools::md5sum()` returns a **named** vector: the value is the hash and the name is the path you asked about.
+
+```{r eval = FALSE}
+hashes <- tools::md5sum("01_Raw_Data/species_data.csv")
+hashes
+```
+
+```
+      01_Raw_Data/species_data.csv
+"2a4868210cf93dabb09d2777993380a4"
+```
+
+**Your hash need not be the one printed here**, because a text file's bytes are not identical on every operating system. That is not a problem: **a checksum is only ever compared with one computed from the same file**, never with somebody else's.
+
+**2. Write the companion `MD5` file.** One line, in the order the checker expects: the hash, a space, an asterisk, then the file name. `basename()` drops the folder, so the manifest describes the file *relative to the folder it sits in* and stays valid if the folder is copied elsewhere.
+
+```{r eval = FALSE}
+writeLines(paste0(hashes, " *", basename(names(hashes))), "01_Raw_Data/MD5")
+```
+
+```
+2a4868210cf93dabb09d2777993380a4 *species_data.csv
+```
+
+**3. Verify it.** `tools::checkMD5sums()` reads the `MD5` file in the folder you give it, re-hashes what is there, and compares the two.
+
+```{r eval = FALSE}
+tools::checkMD5sums(dir = normalizePath("01_Raw_Data"))
+```
+
+```
+[1] TRUE
+```
+
+**`TRUE` is the only answer that means all is well.** The function returns `FALSE` when something is missing or changed, and **`NA` when it cannot find an `MD5` file at all**, so in a script write `isTRUE(tools::checkMD5sums(...))`: a manifest that has gone missing should fail the check, not pass it.
+
+<div class="danger">
+  <p><strong>&#128161; Pass <code>dir</code> an absolute path, or <code>"."</code></strong></p>
+  <p><code>checkMD5sums()</code> changes directory into <code>dir</code> and then lists <code>dir</code> again from inside it, so a <b>relative</b> path other than <code>"."</code> finds nothing at all and the function reports <b>every file as missing</b>:</p>
+  <pre><code>tools::checkMD5sums(dir = "01_Raw_Data")
+file 'species_data.csv' is missing
+[1] FALSE</code></pre>
+  <p>Nothing is actually missing. <code>normalizePath("01_Raw_Data")</code> makes the path absolute and the check then works, and <code>dir = "."</code> works when the <code>MD5</code> file sits in your working directory. <b>A check that reports failure for the wrong reason is worse than no check</b>, because you learn to ignore it.</p>
+</div>
+
+##### Example 2: every file in the folder <span style="color:dimgray;">(~7 minutes, on your own)</span> {#md5folder}
+
+**Raw data is rarely one file.** Work through this one yourself, after class. Nothing above changes except what you hand to `md5sum()`, because it is vectorised: give it many paths and you get many hashes back, still named.
+
+**1. Add a second data file**, so that the folder holds two.
+
+```{r eval = FALSE}
+temp <- data.frame(site   = c("S1", "S2"),
+                   temp_c = c(22.4, 19.8))
+write.csv(temp, "01_Raw_Data/temperature.csv", row.names = FALSE)
+```
+
+**2. Run the check again before you change anything else.** Think about what it should say, then run it.
+
+```{r eval = FALSE}
+tools::checkMD5sums(dir = normalizePath("01_Raw_Data"))
+```
+
+```
+[1] TRUE
+```
+
+<div class="danger">
+  <p><strong>&#128161; It said <code>TRUE</code>, and there is a file it has never heard of</strong></p>
+  <p><b><code>checkMD5sums()</code> only checks the files the manifest lists.</b> It will tell you that a listed file has <b>changed</b> or gone <b>missing</b>, and it is completely blind to a file that was <b>added</b>. The manifest you wrote in Example 1 names one file, that file is intact, so the answer is honestly <code>TRUE</code>.</p>
+  <p>This is worth knowing before you rely on it: <b>the check is only as complete as the list</b>. Whenever the contents of the folder change on purpose, the manifest has to be rewritten, which is exactly what the next step does.</p>
+</div>
+
+**3. Hash everything at once.** `list.files()` builds the paths and `md5sum()` takes all of them in one call.
+
+```{r eval = FALSE}
+###~~~
+# Every csv in the raw data folder, in one call
+###~~~
+files <- list.files("01_Raw_Data", pattern = "\\.csv$", full.names = TRUE)
+files
+
+hashes <- tools::md5sum(files)
+hashes
+```
+
+```
+[1] "01_Raw_Data/species_data.csv" "01_Raw_Data/temperature.csv"
+
+      01_Raw_Data/species_data.csv        01_Raw_Data/temperature.csv
+"2a4868210cf93dabb09d2777993380a4" "a133cc888631b7c27badfa21ad5997ee"
+```
+
+**4. Rewrite the manifest and verify.** The line that writes the file is **the same line as in Example 1**: `paste0()` is vectorised too, so it produces one line per file without a loop.
+
+```{r eval = FALSE}
+writeLines(paste0(hashes, " *", basename(names(hashes))), "01_Raw_Data/MD5")
+
+tools::checkMD5sums(dir = normalizePath("01_Raw_Data"))
+```
+
+```
+2a4868210cf93dabb09d2777993380a4 *species_data.csv
+a133cc888631b7c27badfa21ad5997ee *temperature.csv
+
+[1] TRUE
+```
+
+**Now `TRUE` means both files**, and that is the state you want your raw data folder to be in before you analyse anything out of it.
+
+#### Challenge <span style="color:dimgray;">(~5 minutes, on your own)</span> {#md5challenge}
+
+<div class="danger">
+  <p><strong>&#128161; Break it on purpose</strong></p>
+  <ul>
+    <li>Open <code>01_Raw_Data/species_data.csv</code>, change one mass value, and save it. A spreadsheet or a text editor is fine, and so is doing it from R.</li>
+    <li>Run <code>tools::checkMD5sums()</code> again. What does it return, and what does it print?</li>
+    <li>Now delete the file and run the check a third time. Is the message the same one?</li>
+    <li><b>Then answer this:</b> you have changed the data and the check has told you so. Which of the two files do you now fix, and what does that tell you about when the <code>MD5</code> file should be written?</li>
+  </ul>
+</div>
+
+<details>
+<summary><b>&#9989; Solution</b></summary>
+
+**An edited file comes back `FALSE`, with the file named:**
+
+```
+file 'species_data.csv' has the wrong MD5 checksum
+[1] FALSE
+```
+
+**A deleted file comes back `FALSE` too, but the message is different**, and the difference matters: `is missing` tells you the file is gone, while `has the wrong MD5 checksum` tells you the file is there and is not what it was.
+
+```
+file 'species_data.csv' is missing
+[1] FALSE
+```
+
+**Which file do you fix?** Neither, until you know what happened. The checksum has not told you that the data is wrong; it has told you that **the data and its record of itself disagree**. Either the file changed when it should not have, in which case you restore it, or the change was intended, in which case the `MD5` file is now out of date and you regenerate it deliberately.
+
+**So the `MD5` file is written once, when the raw data arrives, and regenerated only on purpose.** Regenerating it every time you run the analysis makes it agree with whatever is on disk, which means it can never disagree, which means it is no longer evidence of anything. That is the whole mechanism, and it is the same argument as [treating raw data as read-only](#partDM): a record that updates itself to match reality cannot detect reality changing.
+
+**One more thing worth noticing.** Re-saving a csv from Excel changes its bytes even when you change no value, so the hash changes. That is not a false alarm. It is the check doing its job, and it is exactly the defect [Pair 4 diagnosed in Chapter 5](#codepair4).
+
+</details>
+
+**From here on, do this with real data.** When you download the csv in the next section, and the whole repository [further down](#downloadrepo), write an `MD5` file beside what you receive. It costs two lines and it is the only way to be able to say, months later, that the file you analysed is the file you were given.
 
 ### How to retrieve the URL of a GitHub csv file?
 
@@ -8310,7 +8587,7 @@ print(csvTimeTable)
 
 *source_data()* will always download the most recent version of the file from the master branch and return its unique SHA-1 hash. However, you could also download a prior version of the file by providing its specific SHA-1 hash associated to a previous `commit`.
 
-### Retrieving csv from previous commit
+### Retrieving csv from previous commit {#csvfromcommit}
 
 Retrieving the `csv` file associated to a specific `commit` can be done by applying the following approach (here using the same example than above):
 
@@ -8349,7 +8626,7 @@ print(csvTimeTableOld)
 ```
 6. You can see here that the SHA-1 hash is different from our previous download confirming that the files are different.
 
-## Downloading and processing GitHub repositories
+## Downloading and processing GitHub repositories {#downloadrepo}
 
 Before being able to download a GitHub repository and work with its files into R, you have to find the URL pointing to the compressed `zip` file containing all the files for the target repository. In this section, we will demonstrate how to obtain this information by using the [Sagebrush_rooting_in_vitro_prop GitHub repository](https://github.com/svenbuerki/Sagebrush_rooting_in_vitro_prop). As mentioned above, we will be downloading the whole repository and then extract all the `csv` files in the `01_Raw_Data/` folder (see Figure \@ref(fig:GitHubRawDatashot)). 
 
@@ -8397,7 +8674,7 @@ if(file.exists("Data/GitHubRepoSagebrush.zip") == TRUE){
 }
 ```
 
-### Extracting raw data from compressed GitHub repository 
+### Extracting raw data from compressed GitHub repository {#extractzip}
 
 Compressed files can be quite large and you might would like to avoid decompressing them, but rather accessing target files and only decompressing those. Here, we are practicing such approach by using `GitHubRepoSagebrush.zip` and targeting `csv` files in the `01_Raw_Data/` folder.   
 

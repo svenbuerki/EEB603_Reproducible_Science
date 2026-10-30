@@ -14,3 +14,8 @@ strsplit,base,Split the Elements of a Character Vector
 grepl,base,Pattern Matching and Replacement
 paste,base,Concatenate Strings
 which,base,Which indices are TRUE?
+md5sum,tools,Compute the 32-character MD5 checksum of one or more files
+checkMD5sums,tools,Check files in a directory against the hashes recorded in its companion MD5 file
+writeLines,base,Write lines of text to a file
+normalizePath,base,"Express a file path in absolute, canonical form"
+list.files,base,List the files in a directory
