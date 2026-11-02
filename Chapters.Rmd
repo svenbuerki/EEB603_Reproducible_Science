@@ -4737,7 +4737,8 @@ This chapter is based on:
 - Altmetric: https://www.altmetric.com/
 - BSU Office of Research Compliance: https://www.boisestate.edu/research-compliance/
 - CARE Principles: https://www.gida-global.org/care
-- Creative Common: https://creativecommons.org/
+- Creative Commons: https://creativecommons.org/
+- Creative Commons License Chooser, the tool for picking a licence: https://creativecommons.org/chooser/
 - DORA Declaration: https://sfdora.org/
 - FAIR Principles: https://www.go-fair.org/fair-principles/
 - LERU Roadmap for Open Science: https://www.leru.org/publications/open-science-and-its-role-in-universities-a-roadmap-for-cultural-change#
@@ -5002,7 +5003,7 @@ Creative Commons licenses provide flexibility; for example, authors can choose t
 
 **A CC licence is the right instrument for the article and for the data, and the wrong one for the code.** Software is licensed under a [software licence](#softwarelicenses) instead, which settles questions a CC licence does not address, such as what happens to derived works and whether any warranty is given. So a single submission can carry three licences: one on the paper, one on the deposited data, and one on the repository holding the code.
 
-To help authors select the most appropriate license for their work, the Creative Commons initiative offers an [online tool](https://creativecommons.org/choose/), which I recommend consulting. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
+To help authors select the most appropriate license for their work, the Creative Commons initiative offers an online tool, the [**CC License Chooser**](https://creativecommons.org/chooser/), which I recommend consulting and which is listed under [Resources](#chap4) for this chapter. It asks you four questions and gives you the licence, its badge and the html to paste. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
 ```{r EcolEvolCC, fig.alt="Screenshot of a journal masthead in teal type with an Open Access badge, listing the editors-in-chief, the online ISSN and Wiley copyright, and a closing note that articles accepted from 14 August 2012 carry a Creative Commons Attribution License while earlier ones carry an Attribution Non-Commercial License.", echo=FALSE, fig.cap="Front page of Ecology and Evolution, an open access journal publishing articles under the Creative Common licensing system.", fig.show="asis", out.width = '80%', fig.align="center"}
 knitr::include_graphics("Figures/License_EcolEvol.png")
@@ -6647,8 +6648,9 @@ This section of Chapter 5 aims to **introduce students to the principles and pra
 | [👥 Step 5: Merge Into Your Charter](#codestep5) | 10 min | **Students, in 2 groups, at home** |
 
 **Step 5 is done at home**, because your charter is a live document and the clauses are copied out of the
-[`Clauses`](https://docs.google.com/spreadsheets/d/1nK4LA6lnjxn5nrbpsfq9hiYKQf7ij8vywdtwq3qbAuY/edit?usp=sharing) sheet rather than written from scratch. **We go over the charters briefly at the start of
-the next class**, which then begins [Chapter 6](#chap6outline) with the three licence families.
+[`Clauses`](https://docs.google.com/spreadsheets/d/1nK4LA6lnjxn5nrbpsfq9hiYKQf7ij8vywdtwq3qbAuY/edit?usp=sharing) sheet rather than written from scratch. **Each group presents its eight clauses at the start of
+the next class**, followed by a short class discussion. That class then begins [Chapter 6](#chap6outline) with the
+three licence families.
 
 ---
 
@@ -7570,7 +7572,7 @@ If you want more worked examples, there are [charter clause templates](#chartert
 
 ##### Step 5: Merge Into Your Charter <span style="color:dimgray;">(your group, 10 minutes, at home)</span> {#codestep5}
 
-**This step is homework, and it is the last thing Chapter 5 asks of you.** Your charter is a live document, so the group does not need to be in one room to do it, and the clauses are already written: they are in the sheet. **We go over the charters briefly at the start of the next class.**
+**This step is homework, and it is the last thing Chapter 5 asks of you.** Your charter is a live document, so the group does not need to be in one room to do it, and the clauses are already written: they are in the sheet. **At the start of the next class each group presents the eight clauses now in its charter, and we discuss them as a class.** That is why the count matters: if one charter arrives with six, the class has lost a finding and the pair who found it will not know.
 
 **There are two charters and four pairs, so the clauses have to travel.** The mechanism is:
 
@@ -7613,17 +7615,17 @@ This chapter is subdivided into two parts as follows:
 
 ## Class Outline {#chap6outline}
 
-**Only the licences are taught in class. The rest of Chapter 6 is read at home.** The licence block opens the work session that follows the [Chapter 5 PART B](#repcode) classes, together with a short look at the charters those classes produced.
+**Only the licences are taught in class. The rest of Chapter 6 is read at home.** The licence block opens the work session that follows the [Chapter 5 PART B](#repcode) classes, after each group has presented the clauses those classes produced.
 
 **In class --- the licences**
 
 | Block | Time | Who |
 |---|---|---|
-| A short pass over the clauses you wrote into your charters in [Step 5](#codestep5) | 5 min | Students, in 2 groups |
+| [👥 Present your clauses](#codestep5): each group reads out the eight now in its charter, then a short class discussion | 10 min | Students, in 2 groups |
 | [Open Access](#openaccess) and [Creative Commons Licenses](#CClicenses), carried over from [Chapter 4](#chap4), with [Software Licenses](#softwarelicenses) from [Chapter 5](#repcode) beside them | 15 min | Instructor |
-| **Total in class** | **20 min** | |
+| **Total in class** | **25 min** | |
 
-That class then spends five minutes on [checking raw data with an md5 checksum](#md5onefile), from [Chapter 7](#chap7outline), and the rest of it is a work session on your bioinformatics tutorials.
+That class then spends ten minutes **introducing** [the md5 integrity check](#md5onefile) from [Chapter 7](#chap7outline), as [Exercise 1](#md5onefile) together, with [Exercise 2](#md5folder) left as homework. The rest of the class is a work session on your bioinformatics tutorials.
 
 **Read at home**
 
@@ -8160,7 +8162,7 @@ By the end of this chapter, you will be able to:
 
 | Block | Time | Who |
 |---|---|---|
-| [💻 Exercise 1: one file](#md5onefile), from [Checking Data Integrity with md5](#md5check) | 5 min | Instructor, with the class |
+| [💻 Exercise 1: one file](#md5onefile), from [Checking Data Integrity with md5](#md5check) | 10 min | Instructor, with the class |
 
 **Everything else, on your own**
 
@@ -8173,7 +8175,7 @@ By the end of this chapter, you will be able to:
 | [Import a csv from GitHub](#importcsvgithub), including [what a SHA-1 hash identifies](#sha1hash) | 20 min | Students, on their own |
 | [Retrieve a csv from an earlier commit](#csvfromcommit) | 10 min | Students, on their own |
 | [Download and process a whole repository](#downloadrepo) | 20 min | Students, on their own |
-| **Total** | **77 min** | |
+| **Total** | **85 min** | |
 
 ---
 
@@ -8399,7 +8401,7 @@ Both functions used below live in the *tools* package, which **ships with R**, s
 
 | | Exercise | What you do | Who | Time |
 |---|---|---|---|---|
-| **1** | [One File](#md5onefile) | Hash a csv, write its companion `MD5` file, verify it | **Together, in class** | ~5 min |
+| **1** | [One File](#md5onefile) | Hash a csv, write its companion `MD5` file, verify it | **Together, in class** | ~10 min |
 | **2** | [Every File in a Folder](#md5folder) | The same thing over a whole folder, then [break the check on purpose](#md5challenge) | **On your own, afterwards** | ~12 min |
 
 **Exercise 1 is the whole mechanism in three lines.** Exercise 2 is the form you will actually use, because raw data is rarely one file, and its [Challenge](#md5challenge) makes the check fail so that you have seen that happen before it matters on your own data.
@@ -8407,11 +8409,11 @@ Both functions used below live in the *tools* package, which **ships with R**, s
 <div class="disclaimer">
   <p><strong>&#128161; Two things before Exercise 1</strong></p>
   <p><b>1. <a href="#getstarted7">Getting Started</a> must already be done</b>, not done during the exercise: the <code>Chapter_7</code> project, the <code>Chapter_7_data_gathering.R</code> script inside it, and <code>getwd()</code> ending in <code>Chapter_7</code>. Five minutes.</p>
-  <p><b>2. <a href="#md5background">Where md5 Comes From</a> is the reading.</b> My five minutes in class are the mechanism, not an introduction to hashing.</p>
+  <p><b>2. <a href="#md5background">Where md5 Comes From</a> is the reading.</b> My ten minutes in class are the mechanism, not an introduction to hashing.</p>
   <p><b>Type both exercises into your script</b>, not straight into the console, so that you finish with a record of what you ran and can re-run it from the top.</p>
 </div>
 
-### Exercise 1: One File <span style="color:dimgray;">(~5 minutes, in class)</span> {#md5onefile}
+### Exercise 1: One File <span style="color:dimgray;">(~10 minutes, in class)</span> {#md5onefile}
 
 **1. Put a raw data file in place.** Any csv will do; this one is made from scratch so that the exercise does not depend on a download. It goes in a new `01_Raw_Data/` folder **inside `Chapter_7/`**, numbered the way [Numbering the Flow](#numberflow) in Chapter 5 asks: the leading zero is there so that the listing sorts in the order the work happens.
 
