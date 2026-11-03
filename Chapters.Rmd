@@ -4977,6 +4977,8 @@ Most open licenses are:
 
 These characteristics ensure that research can be reused, adapted, and redistributed in alignment with the goals of Open Science.
 
+**Open Access is implemented through licensing.** The declaration is the intent; **the licence is the mechanism**, and without one a paper that is free to read is still not free to reuse. The family used for it is [**Creative Commons**](#CClicenses), which most Open Access journals apply to the article, and which is the next section.
+
 #### The Open Access Conundrum
 
 Since most Open Access (OA) journals rely on **publication fees paid by authors** to generate revenue, there is concern that some OA publishers may be motivated to **accept lower-quality papers and forgo rigorous peer review** in order to maximize profits.
@@ -5001,7 +5003,19 @@ A CC license is a type of **public copyright license that enables the free distr
 
 Creative Commons licenses provide flexibility; for example, authors can choose to allow only non-commercial uses. They also protect users and redistributors from copyright infringement claims, provided they follow the license terms set by the author.
 
-**A CC licence is the right instrument for the article and for the data, and the wrong one for the code.** Software is licensed under a [software licence](#softwarelicenses) instead, which settles questions a CC licence does not address, such as what happens to derived works and whether any warranty is given. So a single submission can carry three licences: one on the paper, one on the deposited data, and one on the repository holding the code.
+**A CC licence is the right instrument for the article and for the data, and the wrong one for the code.** Software is licensed under a [software licence](#softwarelicenses) instead, which settles questions a CC licence does not address, such as what happens to derived works and whether any warranty is given.
+
+**So one submission carries three licences, and this course studies all three**, because a paper released under an open licence with its data unlicensed and its code carrying nothing at all is open in name only:
+
+| What you license | Under what | Where we cover it |
+|---|---|---|
+| **the article** | a [Creative Commons licence](#CClicenses), usually set by the journal's open access route, and [ShareAlike](#sharealike) decides what happens to adaptations | this chapter |
+| **the data** | usually a [Creative Commons licence](#CClicenses) as well, at the permissive end, chosen when you deposit in a **repository**, alongside the [rights, licences and permissions](#reusingdata) you record with it | [Chapter 5 PART A](#partDM) |
+| **the code** | a [software licence](#softwarelicenses), a different kind of instrument, and **absent by default** | [Chapter 5 PART B](#repcode) |
+
+**Two things about the data row.** First, **most repositories either require a CC licence or default to one**, and usually the most permissive: Dryad requires **CC0**, figshare defaults to CC0, and GBIF accepts only CC0, CC BY or CC BY-NC. The reason is worth knowing, because it is the one place where licensing data differs from licensing a paper: **a licence works by exercising copyright, and raw facts are generally not copyrightable**, so a waiver like CC0 settles more than a licence can. Second, **the sequence archives are the exception**: GenBank, the SRA and ENA attach **no licence at all**, stating instead that no use restrictions are placed on sequence records. What you record there is provenance and terms of use, not a licence.
+
+**The licence is not chosen once at the end.** It governs what a reader may do with each piece, so it belongs in the plan, which is why it appears in your data management plan in [Chapter 5](#partDM) rather than only at submission.
 
 To help authors select the most appropriate license for their work, the Creative Commons initiative offers an online tool, the [**CC License Chooser**](https://creativecommons.org/chooser/), which I recommend consulting and which is listed under [Resources](#chap4) for this chapter. It asks you four questions and gives you the licence, its badge and the html to paste. For more detailed information on CC licenses, see this [Wikipedia page](https://en.wikipedia.org/wiki/Creative_Commons_license).
 
@@ -7638,13 +7652,7 @@ That class then spends ten minutes **introducing** [the md5 integrity check](#md
 
 **Open Access and Creative Commons land in the right place here.** They were written for [Chapter 4](#chap4), but choosing where to publish is a Chapter 6 question: [selecting your journal](#getpub) includes deciding whether it is open access, what that costs, and what licence your work carries once it is out.
 
-**And a paper is not the only thing you license.** Submitting one means licensing three different things, under three different instruments, which is why [Software Licenses](#softwarelicenses) is taught beside Creative Commons rather than left in Chapter 5:
-
-| What you license | Under what | Where it is covered |
-|---|---|---|
-| **the article** | a [Creative Commons licence](#CClicenses), usually chosen for you by the journal's [open access](#openaccess) route | [Chapter 4](#chap4) |
-| **the data** | a licence named in the deposit, where you also state [rights, licences and permissions](#reusingdata) | [Chapter 5 PART A](#partDM) |
-| **the code** | a [software licence](#softwarelicenses), which is a different kind of instrument and **absent by default** | [Chapter 5 PART B](#repcode) |
+**And a paper is not the only thing you license.** Submitting one means licensing **three** different things under three different instruments, which is why [Software Licenses](#softwarelicenses) is taught beside Creative Commons rather than left in Chapter 5. The three are set out in [one table](#openaccess), under Open Access in Chapter 4: the **article** takes a [Creative Commons licence](#CClicenses), the **data** usually takes a CC licence too, at the permissive end, chosen in the [repository](#reusingdata) you deposit it in, and the **code** takes a [software licence](#softwarelicenses), which is **absent by default**.
 
 ## Getting published {#getpub}
 
