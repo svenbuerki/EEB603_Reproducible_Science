@@ -8170,7 +8170,7 @@ By the end of this chapter, you will be able to:
 |---|---|---|
 | [Manage your work in an RStudio project](#rstudioprojects) | 10 min | Students, on their own |
 | [Set up your `Chapter_7` project and script](#getstarted7) | 5 min | **Do this before the class above** |
-| [What md5 is, and where you will meet it](#md5background) | 8 min | **Read before the class above** |
+| [Background: what md5 is, and where you will meet it](#md5background) | 8 min | **Read before the class above** |
 | [💻 Exercise 2: every file in a folder](#md5folder), and its [Challenge](#md5challenge) | 12 min | Students, on their own |
 | [Import a csv from GitHub](#importcsvgithub), including [what a SHA-1 hash identifies](#sha1hash) | 20 min | Students, on their own |
 | [Retrieve a csv from an earlier commit](#csvfromcommit) | 10 min | Students, on their own |
@@ -8356,7 +8356,7 @@ getwd()   #must end in Chapter_7
 
 **A download can arrive incomplete, and an open file can be saved back changed, and neither of those announces itself.** The file is still there, it still opens, and `read.csv()` still returns a data frame. What you need is a short piece of evidence, recorded while the data was in the state you intended, that can be re-checked at any point afterwards.
 
-An **md5 checksum** is that evidence: a 32-character hash computed from the bytes of a file. Change one character of the file and the hash changes completely. Two uses follow, and they are why this section is here:
+An **md5 checksum** is that evidence: a 32-character **hash** of the bytes of a file (a *hash function* takes input of any size and returns a short, fixed-size value computed from it). Change one character of the file and the hash changes completely. Two uses follow, and they are why this section is here:
 
 1. **It tells you a download arrived intact.** Compare the hash of what landed on your disk with the hash the provider published.
 2. **It tells you your raw data has not been touched since.** [Chapter 5](#partDM) asked you to treat `01_Raw_Data/` as written once and never again. **A checksum is how that claim gets checked rather than asserted.**
@@ -8368,13 +8368,34 @@ An **md5 checksum** is that evidence: a 32-character hash computed from the byte
   <p><a href="#sha1hash">The SHA-1 hash you meet in the next section</a> is GitHub's: it identifies <b>a version of a file in a repository</b>, and Git assigns it. The md5 hash here is <b>yours</b>, and it identifies <b>the bytes sitting on your own disk</b>. The first lets you cite the version you used; the second lets you show that what you analysed is that version.</p>
 </div>
 
-### Where md5 Comes From, and Where You Will Meet It {#md5background}
+### Background: What md5 Is {#md5background}
 
-**md5 is the fifth of Ronald Rivest's Message Digest algorithms**, designed in 1991 to replace MD4 and published in April 1992 as [RFC 1321](https://www.rfc-editor.org/rfc/rfc1321.txt) from MIT and RSA Data Security. The specification's own word for the output is a **fingerprint**: input of any length in, 128 bits out, which is the 32 hexadecimal characters you have been looking at. Three properties make it useful here:
+#### How It Works, in a Nutshell {#md5nutshell}
 
-- **Deterministic.** The same bytes give the same digest on any machine, in any language, in any year. That is why a hash a sequencing centre computed in 2019 still means something on your laptop today.
-- **Fixed length.** A 2 GB `fastq` and a three-line `csv` both reduce to 32 characters, so the record costs nothing to store, publish or paste into a methods section.
-- **Avalanche.** Change one bit and about half the output bits change. **There is no such thing as two digests being nearly the same**: they either match or they do not.
+**md5 is a hash function.** It does not compress the file, encrypt it or describe it. **It reduces it**, to the same 128 bits whatever went in. Three steps, specified in [RFC 1321](https://www.rfc-editor.org/rfc/rfc1321.txt):
+
+1. **It reads the file in blocks of 64 bytes.** The last block is padded so that every block is full, and **the length of the file is written into that padding**, so two files of different lengths cannot be made to agree by adding trailing space.
+2. **It carries a running state of 128 bits**: four 32-bit numbers, starting from fixed constants. Each block is stirred into that state by **64 operations in four rounds**, each one adding a piece of the block, adding a constant taken from the sine function, mixing three of the four state words through a nonlinear function, and rotating the bits. The state the block started from is then added back in, and **the next block starts from the result**, so every byte of the file reaches the end.
+3. **When the last block is done, that state is the digest.** 128 bits, written as the 32 hexadecimal characters you have been looking at.
+
+**Two consequences are what make it useful.**
+
+**It runs one way only.** Computing the digest of a file takes milliseconds; recovering the file from the digest is not something anybody can do, because the output is 128 bits whatever went in and almost everything has been thrown away. That is also why a digest is safe to publish beside your data: **it is evidence about the file without being a copy of it.**
+
+**Changing one character changes most of the digest, not a little of it.** These two files are twelve bytes each and differ in one character:
+
+| The file | Its md5 |
+|:---|:---|
+| a csv holding the single value `10.2` | `a235e47ed05a1462405c66e29f98dcf8` |
+| the same csv holding `10.3` | `703a752b91a6e80a99edd75831ee2f1d` |
+
+**71 of the 128 bits differ**, which is 55 % of them. So **there is no such thing as two digests being nearly the same**, and you never have to judge how different is too different: they match or they do not.
+
+#### Where It Comes From
+
+**md5 is the fifth of Ronald Rivest's Message Digest algorithms**, designed in 1991 to replace MD4 and published in April 1992 as RFC 1321, from MIT and RSA Data Security. The specification's own word for the output is a **fingerprint**.
+
+**It is also deterministic**, which is the property the rest of this section rests on: the same bytes give the same digest on any machine, in any language, in any year. That is why a hash a sequencing centre computed in 2019 still means something on your laptop today, and why a 2 GB `fastq` and a three-line `csv` both reduce to 32 characters you can paste into a methods section.
 
 <div class="danger">
   <p><strong>&#128161; md5 is broken, and it is still the right tool for this job</strong></p>
@@ -8383,7 +8404,9 @@ An **md5 checksum** is that evidence: a 32-character hash computed from the byte
   <p><b>The rule:</b> use md5 to detect <b>accident</b>, never to prove <b>authenticity</b>. If you need the second, for signing a release or storing credentials, use SHA-256 or better and not md5.</p>
 </div>
 
-**Where you will meet it.** A checksum is not a classroom exercise; it is part of the ordinary paperwork of sequence data.
+#### Where You Will Meet It
+
+**A checksum is not a classroom exercise; it is part of the ordinary paperwork of sequence data.**
 
 | Where | What it is for |
 |---|---|
@@ -8409,7 +8432,7 @@ Both functions used below live in the *tools* package, which **ships with R**, s
 <div class="disclaimer">
   <p><strong>&#128161; Two things before Exercise 1</strong></p>
   <p><b>1. <a href="#getstarted7">Getting Started</a> must already be done</b>, not done during the exercise: the <code>Chapter_7</code> project, the <code>Chapter_7_data_gathering.R</code> script inside it, and <code>getwd()</code> ending in <code>Chapter_7</code>. Five minutes.</p>
-  <p><b>2. <a href="#md5background">Where md5 Comes From</a> is the reading.</b> My ten minutes in class are the mechanism, not an introduction to hashing.</p>
+  <p><b>2. <a href="#md5background">Background: What md5 Is</a> is the reading.</b> My ten minutes in class are the mechanism, not an introduction to hashing.</p>
   <p><b>Type both exercises into your script</b>, not straight into the console, so that you finish with a record of what you ran and can re-run it from the top.</p>
 </div>
 
