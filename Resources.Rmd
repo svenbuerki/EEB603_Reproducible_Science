@@ -64,27 +64,37 @@ There are **two** things you might be citing, and they are not the same object:
 
 ## Ready to paste
 
-Copy whichever you need into your `.bib` file, **and change `urldate` to the date you actually consulted it**:
+**Use the first one unless you have a reason not to.** The course materials are archived on Zenodo and have a **DOI**, which is the citation that will still work in ten years, whatever happens to the web addresses.
 
 ```
+@misc{buerki2026materials,
+  author = {Buerki, Sven},
+  title  = {{EEB 603 Reproducible Science: course materials}},
+  year   = {2026},
+  doi    = {10.5281/zenodo.24139921},
+  url    = {https://doi.org/10.5281/zenodo.24139921}
+}
+
 @misc{buerki2026website,
   author  = {Buerki, Sven},
-  title   = {{EEB} 603 Reproducible Science: course website},
+  title   = {{EEB 603 Reproducible Science: course website}},
   year    = {2026},
   url     = {https://svenbuerki.github.io/EEB603_Reproducible_Science/},
   urldate = {2026-11-11}
 }
-
-@misc{buerki2026repo,
-  author  = {Buerki, Sven},
-  title   = {{EEB} 603 Reproducible Science: course materials and source},
-  year    = {2026},
-  url     = {https://github.com/svenbuerki/EEB603_Reproducible_Science},
-  urldate = {2026-11-11}
-}
 ```
 
-Then cite them in your text as `[@buerki2026website]` and `[@buerki2026repo]`.
+Cite them in your text as `[@buerki2026materials]` and `[@buerki2026website]`. **If you use the second one, change `urldate` to the date you actually consulted the site.**
+
+| Use | When |
+|---|---|
+| **the DOI entry** | you used the chapters, data or example projects. **This is the normal case** |
+| the website entry | you are citing the live site specifically, for instance something that is only on the web version |
+
+<div class="info">
+  <p><strong>&#128161; There are two DOIs, and the one above is the right one for you</strong></p>
+  <p><code>10.5281/zenodo.24139921</code> is the <b>concept DOI</b>: it always resolves to the most recent archived version, so your reference does not go stale when the course is updated. The <b>version DOI</b> <code>10.5281/zenodo.24139922</code> points at release <code>v1.0.1</code> and nothing else. <b>Use the version DOI when exactness matters</b>, which is the same argument this course makes about recording package versions: cite what you actually used.</p>
+</div>
 
 **The repository also carries a `CITATION.cff` file**, which is why GitHub shows a **Cite this repository** button on [its page](https://github.com/svenbuerki/EEB603_Reproducible_Science). That button will generate BibTeX and APA for you, and it is the habit to copy: a repository that says how to cite it gets cited correctly.
 
@@ -108,6 +118,7 @@ These are not style preferences. Each one was checked by knitting the entry and 
 1. **Use `url = {...}`, never `howpublished = {\url{...}}`.** With `howpublished`, the URL is **silently dropped** from the reference list: the entry still renders, it just no longer says where the thing is. This is the single most common reason a web citation comes out unusable.
 2. **Add `urldate = {YYYY-MM-DD}`.** A website is a living document. The access date is what tells a reader which version you saw.
 3. **`version` and `note` are ignored** by most styles, so do not put the version there. If you need to name a version, put it in the title.
+4. **Protect your capitalisation with double braces.** Most journal styles, including this course's, apply **sentence case** to titles: they lowercase everything they were not told to leave alone. Written as `title = {EEB 603 Reproducible Science}` it comes out as *"EEB 603 reproducible science"*. Wrapping the whole title in a second pair of braces, `title = {{EEB 603 Reproducible Science}}`, renders it exactly as you typed it. **This matters for your own references too**: a species name, a gene symbol or an acronym in a title will be quietly lowercased unless you protect it.
 
 ## Use the course CSL {#whichcsl}
 
@@ -119,15 +130,15 @@ csl: AmJBot.csl
 
 **This matters more than it sounds.** Many journal styles print nothing at all to locate a website, so the same `.bib` entry that works here becomes a dead reference in another style. Tested with the entries above:
 
-| Citation style | Does the reference say where to find it? |
-|---|---|
-| **`AmJBot.csl`, the course style** | **yes, URL and access date** |
-| IEEE | yes, URL and access date |
-| APA, Chicago author-date | yes, URL, no access date |
-| Nature | only if the item has a **DOI** |
-| Ecology, New Phytologist, Elsevier-Harvard, the official American Journal of Botany style | **no. Author, year and title only** |
+| Citation style | With the **DOI** entry | With the **website** entry |
+|---|---|---|
+| **`AmJBot.csl`, the course style** | **yes** | **yes**, with the access date |
+| IEEE | yes | yes, with the access date |
+| APA, Chicago author-date | yes | yes, no access date |
+| Nature, Elsevier-Harvard | **yes** | no |
+| Ecology, New Phytologist, the official American Journal of Botany style | **no** | **no** |
 
-So if your tutorial is written in one of the styles in the last row, the citation will render and still leave your reader with no way to find what you cited. **For course materials, use `AmJBot.csl`.**
+**Two things to read off that table.** The DOI entry works in six of the nine styles tested and the website entry in four, which is the practical reason to prefer the DOI. And three styles print **nothing** that locates the work in either case, so if your tutorial uses one of them the citation renders and still leaves your reader stuck. **For course materials, use `AmJBot.csl`.**
 
 <div class="info">
   <p><strong>&#128161; Note that the course <code>AmJBot.csl</code> is not the standard American Journal of Botany style</strong></p>

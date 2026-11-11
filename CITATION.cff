@@ -2,9 +2,6 @@
 # GitHub reads this file and shows a "Cite this repository" button on the
 # repository page, which produces BibTeX and APA for the visitor.
 #
-# TO FINISH: once the repository is archived on Zenodo, add the DOI under
-# identifiers, and set version to the release tag.
-#
 # Zenodo reads this file (it has no .zenodo.json, which would take precedence),
 # so these values become the metadata of the archived record.
 cff-version: 1.2.0
@@ -29,7 +26,15 @@ authors:
 license: CC-BY-4.0
 repository-code: "https://github.com/svenbuerki/EEB603_Reproducible_Science"
 url: "https://svenbuerki.github.io/EEB603_Reproducible_Science/"
-version: "Fall 2026"
+version: "v1.0.1"
+date-released: "2026-11-11"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24139921"
+    description: "Concept DOI: always resolves to the latest archived version."
+  - type: doi
+    value: "10.5281/zenodo.24139922"
+    description: "Version DOI for the v1.0.1 release."
 keywords:
   - reproducible research
   - R Markdown

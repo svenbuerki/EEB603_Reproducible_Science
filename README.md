@@ -1,5 +1,7 @@
 # EEB 603 — Reproducible Science
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24139921.svg)](https://doi.org/10.5281/zenodo.24139921)
+
 ## Overview
 
 This repository contains all course materials, code, data, and teaching resources for **EEB 603 — Reproducible Science**, taught by **Dr. Sven Buerki** at Boise State University.
@@ -105,7 +107,15 @@ This repository is maintained by the course instructor. Students enrolled in the
 
 ## Citation
 
-If you use materials from this repository in your own teaching or research, please cite it. **GitHub's "Cite this repository" button** on this page reads [`CITATION.cff`](CITATION.cff) and will generate BibTeX or APA for you.
+**This repository is archived on Zenodo and has a DOI.** Cite it with:
+
+> Buerki, S. (2026). *EEB 603 Reproducible Science: course materials*. Zenodo. https://doi.org/10.5281/zenodo.24139921
+
+That is the **concept DOI**, which always resolves to the most recent archived release. Use the
+**version DOI** when it matters exactly which release you used: `v1.0.1` is
+[`10.5281/zenodo.24139922`](https://doi.org/10.5281/zenodo.24139922).
+
+**GitHub's "Cite this repository" button** on this page reads [`CITATION.cff`](CITATION.cff) and will generate BibTeX or APA for you.
 
 Ready-to-paste BibTeX, and the reason the `csl` you choose matters, are on the course website under [**How to Cite These Materials**](https://svenbuerki.github.io/EEB603_Reproducible_Science/Resources.html#howtocite).
 
