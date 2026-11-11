@@ -26,6 +26,11 @@ authors:
 license: CC-BY-4.0
 repository-code: "https://github.com/svenbuerki/EEB603_Reproducible_Science"
 url: "https://svenbuerki.github.io/EEB603_Reproducible_Science/"
+# doi is the top-level key GitHub uses to build the citation it shows in the
+# "Cite this repository" panel. Without it, that panel falls back to the
+# repository URL. It is the CONCEPT DOI, so the citation always points at the
+# newest archived version. Bare DOI, not the doi.org URL, as the schema requires.
+doi: "10.5281/zenodo.24139921"
 version: "v1.0.1"
 date-released: "2026-11-11"
 identifiers:
