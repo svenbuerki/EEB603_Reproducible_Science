@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sven Buerki - Boise State University" />
 
-<meta name="date" content="2026-09-18" />
+<meta name="date" content="2026-11-11" />
 
 <title>EEB 603 – Reproducible Science</title>
 
@@ -371,7 +371,7 @@ div.tocify {
 <h1 class="title toc-ignore">EEB 603 – Reproducible Science</h1>
 <h3 class="subtitle">Resources</h3>
 <h4 class="author">Sven Buerki - Boise State University</h4>
-<h4 class="date">2026-09-18</h4>
+<h4 class="date">2026-11-11</h4>
 
 </div>
 
@@ -389,19 +389,162 @@ $(document).ready(function() {
 <h1><span class="header-section-number">1</span> Introduction</h1>
 <p>The field of reproducible science as implemented in <a href="https://rstudio.com/">RStudio</a> is moving very fast and it is hard to keep up with new R packages and tools. The instructor is attempting at providing students with relevant online resources to complement class materials.</p>
 </div>
-<div id="podcast" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Podcast</h1>
+<div id="howtocite" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> How to Cite These Materials</h1>
+<p><strong>If you use this course’s chapters, data or example projects in your own work, cite them.</strong> That includes your bioinformatics tutorial: the rubric asks for references, and material you took from here is a reference like any other.</p>
+<p>There are <strong>two</strong> things you might be citing, and they are not the same object:</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>What you used</th>
+<th>Cite</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>the chapters, as you read them</td>
+<td>the <strong>course website</strong></td>
+<td>it is the published, readable version</td>
+</tr>
+<tr class="even">
+<td>the source, the data, the example projects</td>
+<td>the <strong>GitHub repository</strong></td>
+<td>it is the thing that holds the files you ran</td>
+</tr>
+</tbody>
+</table>
+<div id="ready-to-paste" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Ready to paste</h2>
+<p>Copy whichever you need into your <code>.bib</code> file, <strong>and change <code>urldate</code> to the date you actually consulted it</strong>:</p>
+<pre><code>@misc{buerki2026website,
+  author  = {Buerki, Sven},
+  title   = {{EEB} 603 Reproducible Science: course website},
+  year    = {2026},
+  url     = {https://svenbuerki.github.io/EEB603_Reproducible_Science/},
+  urldate = {2026-11-11}
+}
+
+@misc{buerki2026repo,
+  author  = {Buerki, Sven},
+  title   = {{EEB} 603 Reproducible Science: course materials and source},
+  year    = {2026},
+  url     = {https://github.com/svenbuerki/EEB603_Reproducible_Science},
+  urldate = {2026-11-11}
+}</code></pre>
+<p>Then cite them in your text as <code>[@buerki2026website]</code> and <code>[@buerki2026repo]</code>.</p>
+<p><strong>The repository also carries a <code>CITATION.cff</code> file</strong>, which is why GitHub shows a <strong>Cite this repository</strong> button on <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science">its page</a>. That button will generate BibTeX and APA for you, and it is the habit to copy: a repository that says how to cite it gets cited correctly.</p>
+</div>
+<div id="licence" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> What you may reuse</h2>
+<p><strong>Two licences cover this course, because it holds two kinds of thing.</strong></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>What</th>
+<th>Licence</th>
+<th>Full terms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Prose and teaching material</strong>: chapter text, figures, slides, rubrics, schedule</td>
+<td><a href="https://creativecommons.org/licenses/by/4.0/"><strong>CC BY 4.0</strong></a></td>
+<td><a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE-CC-BY-4.0.md"><code>LICENSE-CC-BY-4.0.md</code></a></td>
+</tr>
+<tr class="even">
+<td><strong>Code</strong>: scripts, R chunks, functions, the site build</td>
+<td><a href="https://www.gnu.org/licenses/agpl-3.0.en.html"><strong>GNU AGPL v3.0</strong></a></td>
+<td><a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE.md"><code>LICENSE.md</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>CC BY 4.0 asks three things of you</strong>: credit the author, link to the licence, and say if you changed anything. You may adapt the material, and you may use it commercially. So you are free to reuse a chapter in your own teaching, provided you say where it came from, and the BibTeX above is how you do that.</p>
+<p><strong>This is the split from <a href="Chapters.html#CClicenses">Creative Commons Licenses</a> applied to this course itself</strong>: a CC licence for what you read, a software licence for what you run. A single licence covering both would mean using the wrong instrument for half of it.</p>
+</div>
+<div id="three-rules-that-decide-whether-your-reference-is-usable" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Three rules that decide whether your reference is usable</h2>
+<p>These are not style preferences. Each one was checked by knitting the entry and reading the output:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Use <code>url = {...}</code>, never <code>howpublished = {\url{...}}</code>.</strong> With <code>howpublished</code>, the URL is <strong>silently dropped</strong> from the reference list: the entry still renders, it just no longer says where the thing is. This is the single most common reason a web citation comes out unusable.</li>
+<li><strong>Add <code>urldate = {YYYY-MM-DD}</code>.</strong> A website is a living document. The access date is what tells a reader which version you saw.</li>
+<li><strong><code>version</code> and <code>note</code> are ignored</strong> by most styles, so do not put the version there. If you need to name a version, put it in the title.</li>
+</ol>
+</div>
+<div id="whichcsl" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Use the course CSL</h2>
+<p><strong>Declare <code>AmJBot.csl</code> in your YAML</strong>, the same file every document in this course uses. It is in the <a href="https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/AmJBot.csl">repository root</a>:</p>
+<pre><code>csl: AmJBot.csl</code></pre>
+<p><strong>This matters more than it sounds.</strong> Many journal styles print nothing at all to locate a website, so the same <code>.bib</code> entry that works here becomes a dead reference in another style. Tested with the entries above:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Citation style</th>
+<th>Does the reference say where to find it?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>AmJBot.csl</code>, the course style</strong></td>
+<td><strong>yes, URL and access date</strong></td>
+</tr>
+<tr class="even">
+<td>IEEE</td>
+<td>yes, URL and access date</td>
+</tr>
+<tr class="odd">
+<td>APA, Chicago author-date</td>
+<td>yes, URL, no access date</td>
+</tr>
+<tr class="even">
+<td>Nature</td>
+<td>only if the item has a <strong>DOI</strong></td>
+</tr>
+<tr class="odd">
+<td>Ecology, New Phytologist, Elsevier-Harvard, the official American Journal of Botany style</td>
+<td><strong>no. Author, year and title only</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So if your tutorial is written in one of the styles in the last row, the citation will render and still leave your reader with no way to find what you cited. <strong>For course materials, use <code>AmJBot.csl</code>.</strong></p>
+<div class="info">
+<p>
+<strong>💡 Note that the course <code>AmJBot.csl</code> is not the standard American Journal of Botany style</strong>
+</p>
+<p>
+The official style from the <a href="https://github.com/citation-style-language/styles" target="_blank" rel="noopener">CSL repository</a> drops URLs for web material; the copy in this course does not. If you download “American Journal of Botany” from Zotero’s style repository you will get different output from everybody else in the class. <b>Use the file in the course repository.</b>
+</p>
+</div>
+<p><strong>And the course’s own recurring lesson applies here too: read the knitted output, not the <code>.bib</code>.</strong> A citation problem is invisible in the source and obvious in the reference list.</p>
+</div>
+</div>
+<div id="podcast" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Podcast</h1>
 <p>The challenge of reproducing results from ten-year-old code:</p>
 <ul>
 <li><a href="https://www.nature.com/articles/d41586-020-02484-1" class="uri">https://www.nature.com/articles/d41586-020-02484-1</a></li>
 </ul>
 </div>
-<div id="library-of-open-access-books" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Library of open-access books</h1>
+<div id="library-of-open-access-books" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Library of open-access books</h1>
 <p>Please find <a href="https://bookdown.org">here</a> a suite of open-access books written with the R <a href="https://github.com/rstudio/bookdown"><em>bookdown</em> package</a>, which are relevant to the EEB603 - Reproducible Science course.</p>
 </div>
-<div id="r-keypoints" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> R keypoints</h1>
+<div id="r-keypoints" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> R keypoints</h1>
 <p>Here are three important points for R coding:</p>
 <ol style="list-style-type: decimal">
 <li>R’s basic <strong>data types</strong> are <u>character</u>, <u>numeric</u>, <u>integer</u>, <u>complex</u>, and <u>logical</u>. Read more about R data types <a href="https://www.w3schools.com/r/r_data_types.asp">here</a>.</li>
@@ -409,15 +552,15 @@ $(document).ready(function() {
 <li>R <strong>objects</strong> may have attributes, such as name, dimension, and class. Read more about R objects <a href="https://rstudio-education.github.io/hopr/r-objects.html">here</a>.</li>
 </ol>
 </div>
-<div id="r-markdown" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> R Markdown</h1>
+<div id="r-markdown" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> R Markdown</h1>
 <p>Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>. Please find below additional key resources on this topic:</p>
 <ul>
 <li><strong>R Markdown: The Definitive Guide:</strong> <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></li>
 </ul>
 </div>
-<div id="writing-books-and-complexlarge-documents" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Writing books and complex/large documents</h1>
+<div id="writing-books-and-complexlarge-documents" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Writing books and complex/large documents</h1>
 <p>R Markdown can be used to produce basic HTML, PDF, and Word documents; however, more complex and larger projects can become difficult to manage in a single R Markdown file. The <em>bookdown</em> package addresses this limitation, and offers several key improvements:</p>
 <ul>
 <li>Books and reports can be built from multiple R Markdown files.</li>
@@ -426,17 +569,17 @@ $(document).ready(function() {
 </ul>
 <p>A book dedicated to this topic can be accessed <a href="https://bookdown.org/yihui/bookdown/">here</a> and the package can be downloaded <a href="https://CRAN.R-project.org/package=bookdown">here</a>.</p>
 </div>
-<div id="notebook" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Notebook</h1>
+<div id="notebook" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Notebook</h1>
 <p>An R Notebook is an R Markdown document with chunks that can be executed independently and interactively, with output visible immediately beneath the input.</p>
 <p>You can create a new notebook in RStudio with the menu command <code>File -&gt; New File -&gt; R Notebook</code>, or by using the <code>html_notebook</code> output type in your document’s YAML metadata.</p>
 </div>
-<div id="homework-assignments-on-rpubs" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Homework assignments on RPubs</h1>
+<div id="homework-assignments-on-rpubs" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Homework assignments on RPubs</h1>
 <p>A huge number of homework assignments have been published to the website <a href="https://RPubs.com" class="uri">https://RPubs.com</a> (a free publishing platform provided by RStudio), which shows that R Markdown is easy and convenient enough for students to do their homework assignments. As a TA or GA, you might even consider asking your students to complete their homework using R Markdown and publishing them on RPubs!</p>
 </div>
-<div id="journals" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Journals</h1>
+<div id="journals" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Journals</h1>
 <p>Submitting scientific manuscripts written in R Markdown is still challenging; however the R <a href="https://cran.r-project.org/web/packages/rticles/index.html"><em>rticles</em> package</a> was designed to simplify the creation of documents that conform to submission standards for academic journals. The package provides a suite of custom R Markdown LaTeX formats and templates for the following journals/publishers that are relevant to the EEB program:</p>
 <ul>
 <li>Biometrics articles</li>
@@ -452,12 +595,12 @@ $(document).ready(function() {
 <li>Taylor &amp; Francis articles</li>
 </ul>
 </div>
-<div id="preparing-literature" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Preparing literature</h1>
+<div id="preparing-literature" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Preparing literature</h1>
 <p>The <a href="https://www.doi2bib.org/">doi2bib</a> web tool allows you to generate BibTex formatted literature from DOIs.</p>
 </div>
-<div id="interactive-tutorials" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> Interactive tutorials</h1>
+<div id="interactive-tutorials" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Interactive tutorials</h1>
 <p>The R <a href="https://cran.r-project.org/web/packages/learnr/index.html"><em>learnr</em> package</a> allows to turn R Markdown documents into interactive tutorials. Tutorials consist of content along with interactive components for checking and reinforcing understanding. Tutorials can include any or all of the following:</p>
 <ul>
 <li>Narrative, figures, illustrations, and equations.</li>
@@ -468,18 +611,18 @@ $(document).ready(function() {
 </ul>
 <p>Please see the full documentation (with examples) at this url: <a href="https://rstudio.github.io/learnr/" class="uri">https://rstudio.github.io/learnr/</a></p>
 </div>
-<div id="fair-and-care-principles" class="section level1" number="12">
-<h1><span class="header-section-number">12</span> FAIR and CARE Principles</h1>
+<div id="fair-and-care-principles" class="section level1" number="13">
+<h1><span class="header-section-number">13</span> FAIR and CARE Principles</h1>
 <ul>
 <li>ResearchHub: <a href="https://research-hub.auckland.ac.nz/guide-to-managing-research-data/ethics-integrity-and-compliance/the-fair-and-care-principles-for-research-data" class="uri">https://research-hub.auckland.ac.nz/guide-to-managing-research-data/ethics-integrity-and-compliance/the-fair-and-care-principles-for-research-data</a></li>
 </ul>
 </div>
-<div id="special-issue-on-reproducibility-and-research-integrity" class="section level1" number="13">
-<h1><span class="header-section-number">13</span> Special Issue on Reproducibility and Research Integrity</h1>
+<div id="special-issue-on-reproducibility-and-research-integrity" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> Special Issue on Reproducibility and Research Integrity</h1>
 <p><em>BMC Research Notes</em> published a special issue on Reproducibility and research integrity in 2022. You can consult all the publications <a href="https://www.biomedcentral.com/collections/reproducibility">here</a>.</p>
 </div>
-<div id="publications" class="section level1" number="14">
-<h1><span class="header-section-number">14</span> Publications</h1>
+<div id="publications" class="section level1" number="15">
+<h1><span class="header-section-number">15</span> Publications</h1>
 <p>Here is a list of publications used in this course</p>
 <p>[1] L. Allen, J. Scott, A. Brand, et al. “Publishing: Credit where
 credit is due”. In: <em>Nature</em> 508 (2014), pp. 312-313. DOI:
@@ -549,120 +692,125 @@ Gandrud. 2nd. CRC Press, 2015, p. 294. ISBN: 1466572841.</p>
 <p>[18] C. Gandrud. <em>repmis: Miscellaneous Tools for Reproducible
 Research</em>. R package version 0.5. 2016.
 <a href="https://CRAN.R-project.org/package=repmis" class="uri">https://CRAN.R-project.org/package=repmis</a>.</p>
-<p>[19] Q. Groom, L. Weatherdon, and I. R. Geijzendorffer. “Is citizen
+<p>[19] S. Grant, K. S. Corker, D. Mellor, et al. “TOP 2025: An update to
+the Transparency and Openness Promotion Guidelines”. In: <em>Research
+Integrity and Peer Review</em> 11 (2026), p. 40. DOI:
+10.1186/s41073-026-00223-0.
+<a href="https://doi.org/10.1186/s41073-026-00223-0" class="uri">https://doi.org/10.1186/s41073-026-00223-0</a>.</p>
+<p>[20] Q. Groom, L. Weatherdon, and I. R. Geijzendorffer. “Is citizen
 science an open science in the case of biodiversity observations?” In:
 <em>Journal of Applied Ecology</em> 54.2 (2017), pp. 612-617. DOI:
 <a href="https://doi.org/10.1111/1365-2664.12767" class="uri">https://doi.org/10.1111/1365-2664.12767</a>. eprint:
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2664.12767" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2664.12767</a>.
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.12767" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.12767</a>.</p>
-<p>[20] Y. Guangchuang, S. D. K., Z. Huachen, et al. “ggtree: an r package
+<p>[21] Y. Guangchuang, S. D. K., Z. Huachen, et al. “ggtree: an r package
 for visualization and annotation of phylogenetic trees with their
 covariates and other associated data”. In: <em>Methods in Ecology and
 Evolution</em> 8.1 (2017), pp. 28-36. DOI: 10.1111/2041-210X.12628. eprint:
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.12628" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.12628</a>.
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12628" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12628</a>.</p>
-<p>[21] J. Hester, G. Csárdi, H. Wickham, et al. <em>remotes: R Package
+<p>[22] J. Hester, G. Csárdi, H. Wickham, et al. <em>remotes: R Package
 Installation from Remote Repositories, Including GitHub</em>. R package
 version 2.1.0. 2019. <a href="https://github.com/r-lib/remotes#readme" class="uri">https://github.com/r-lib/remotes#readme</a>.</p>
-<p>[22] N. L. Kerr. “HARKing: Hypothesizing After the Results are Known”.
+<p>[23] N. L. Kerr. “HARKing: Hypothesizing After the Results are Known”.
 In: <em>Personality and Social Psychology Review</em> 2.3 (1998), pp. 196-217.
 <a href="https://doi.org/10.1207/s15327957pspr0203_4" class="uri">https://doi.org/10.1207/s15327957pspr0203_4</a>.</p>
-<p>[23] S. Y. Khoo. “Article Processing Charge Hyperinflation and Price
+<p>[24] S. Y. Khoo. “Article Processing Charge Hyperinflation and Price
 Insensitivity: An Open Access Sequel to the Serials Crisis”. In: <em>LIBER
 Quarterly: The Journal of the Association of European Research
 Libraries</em> 29.1 (May. 2019), p. 1–18. DOI: 10.18352/lq.10280.
 <a href="https://liberquarterly.eu/article/view/10729" class="uri">https://liberquarterly.eu/article/view/10729</a>.</p>
-<p>[24] F. Markowetz. “Five selfish reasons to work reproducibly”. In:
+<p>[25] F. Markowetz. “Five selfish reasons to work reproducibly”. In:
 <em>Genome Biology</em> 16.1 (Dec. 2015), p. 274. ISSN: 1474-760X. DOI:
 10.1186/s13059-015-0850-7. <a href="https://doi.org/10.1186/s13059-015-0850-7" class="uri">https://doi.org/10.1186/s13059-015-0850-7</a>.</p>
-<p>[25] M. R. Munafo, B. A. Nosek, D. V. M. Bishop, et al. “A manifesto
+<p>[26] M. R. Munafo, B. A. Nosek, D. V. M. Bishop, et al. “A manifesto
 for reproducible science”. English. In: <em>Nature human behaviour</em> 1.0021
 (Jan. 2017), p. 0021. ISSN: 2397-3374. DOI: 10.1038/s41562-016-0021.</p>
-<p>[26] E. National Academies of Sciences and Medicine. <em>Reproducibility
+<p>[27] E. National Academies of Sciences and Medicine. <em>Reproducibility
 and Replicability in Science</em>. Washington, DC: The National Academies
 Press, 2019. ISBN: 978-0-309-48616-3. DOI: 10.17226/25303.
 <a href="https://nap.nationalacademies.org/catalog/25303/reproducibility-and-replicability-in-science" class="uri">https://nap.nationalacademies.org/catalog/25303/reproducibility-and-replicability-in-science</a>.</p>
-<p>[27] B. A. Nosek, G. Alter, G. C. Banks, et al. “Promoting an open
+<p>[28] B. A. Nosek, G. Alter, G. C. Banks, et al. “Promoting an open
 research culture”. In: <em>Science</em> 348.6242 (2015), pp. 1422-1425. ISSN:
 0036-8075. DOI: 10.1126/science.aab2374. eprint:
 <a href="http://science.sciencemag.org/content/348/6242/1422.full.pdf" class="uri">http://science.sciencemag.org/content/348/6242/1422.full.pdf</a>.
 <a href="http://science.sciencemag.org/content/348/6242/1422" class="uri">http://science.sciencemag.org/content/348/6242/1422</a>.</p>
-<p>[28] B. A. Nosek, C. R. Ebersole, A. C. DeHaven, et al. “The
+<p>[29] B. A. Nosek, C. R. Ebersole, A. C. DeHaven, et al. “The
 preregistration revolution”. In: <em>Proceedings of the National Academy
 of Sciences</em> 115.11 (2018), pp. 2600-2606. ISSN: 0027-8424. DOI:
 10.1073/pnas.1708274114. eprint:
 <a href="http://www.pnas.org/content/115/11/2600.full.pdf" class="uri">http://www.pnas.org/content/115/11/2600.full.pdf</a>.
 <a href="http://www.pnas.org/content/115/11/2600" class="uri">http://www.pnas.org/content/115/11/2600</a>.</p>
-<p>[29] B. A. Nosek, J. R. Spies, and M. Motyl. “Scientific Utopia: II.
+<p>[30] B. A. Nosek, J. R. Spies, and M. Motyl. “Scientific Utopia: II.
 Restructuring Incentives and Practices to Promote Truth Over
 Publishability”. In: <em>Perspectives on Psychological Science</em> 7.6
 (2012), pp. 615-631. DOI: 10.1177/1745691612459058.
 <a href="https://doi.org/10.1177/1745691612459058" class="uri">https://doi.org/10.1177/1745691612459058</a>.</p>
-<p>[30] R. D. Peng and S. C. Hicks. “Reproducible Research: A
+<p>[31] R. D. Peng and S. C. Hicks. “Reproducible Research: A
 Retrospective”. In: <em>Annual Review of Public Health</em> 42.1 (2021). PMID:
 33467923, pp. 79-93. DOI: 10.1146/annurev-publhealth-012420-105110.
-eprint: <a href="https://doi.org/10.1146/annurev-publhealth-012420-105110" class="uri">https://doi.org/10.1146/annurev-publhealth-012420-105110</a></p>
-<p>. <a href="https://doi.org/10.1146/annurev-publhealth-012420-105110" class="uri">https://doi.org/10.1146/annurev-publhealth-012420-105110</a>.</p>
-<p>[31] R Core Team. <em>foreign: Read Data Stored by ‘Minitab’, ‘S’, ‘SAS’,
+eprint: <a href="https://doi.org/10.1146/annurev-publhealth-012420-105110" class="uri">https://doi.org/10.1146/annurev-publhealth-012420-105110</a>.
+<a href="https://doi.org/10.1146/annurev-publhealth-012420-105110" class="uri">https://doi.org/10.1146/annurev-publhealth-012420-105110</a>.</p>
+<p>[32] R Core Team. <em>foreign: Read Data Stored by ‘Minitab’, ‘S’, ‘SAS’,
 ‘SPSS’, ‘Stata’, ‘Systat’, ‘Weka’, ‘dBase’, …</em> R package version
 0.8-75. 2020. <a href="https://CRAN.R-project.org/package=foreign" class="uri">https://CRAN.R-project.org/package=foreign</a>.</p>
-<p>[32] R Core Team. <em>R: A Language and Environment for Statistical
+<p>[33] R Core Team. <em>R: A Language and Environment for Statistical
 Computing</em>. R Foundation for Statistical Computing. Vienna, Austria,
 2019. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
-<p>[33] RStudio Team. <em>RStudio: Integrated Development Environment for R</em>.
+<p>[34] RStudio Team. <em>RStudio: Integrated Development Environment for R</em>.
 RStudio, PBC.. Boston, MA, 2020. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
-<p>[34] D. Sarewitz. “The pressure to publish pushes down quality”. In:
+<p>[35] D. Sarewitz. “The pressure to publish pushes down quality”. In:
 <em>Nature</em> 533.7602 (May. 2016), pp. 147-147. DOI: 10.1038/533147a.
 <a href="https://doi.org/10.1038/533147a" class="uri">https://doi.org/10.1038/533147a</a>.</p>
-<p>[35] J. F. Smith, T. H. Parker, S. Nakagawa, et al. “Promoting
+<p>[36] J. F. Smith, T. H. Parker, S. Nakagawa, et al. “Promoting
 Transparency in Evolutionary Biology and Ecology”. In: <em>Systematic
 Botany</em> 41.3 (Jul. 2016), pp. 495-497. ISSN: 0363-6445. DOI:
 10.1600/036364416X692262.
 <a href="http://www.bioone.org/doi/abs/10.1600/036364416X692262" class="uri">http://www.bioone.org/doi/abs/10.1600/036364416X692262</a>.</p>
-<p>[36] D. E. Soltis, V. B. Smocovitis, K. K. Pham, et al. “Rethinking the
+<p>[37] D. E. Soltis, V. B. Smocovitis, K. K. Pham, et al. “Rethinking the
 Ph.D. dissertation in botany: Widening the circle”. In: <em>American
 Journal of Botany</em> 110.3 (2023), p. e16136. DOI:
 <a href="https://doi.org/10.1002/ajb2.16136" class="uri">https://doi.org/10.1002/ajb2.16136</a>. eprint:
 <a href="https://bsapubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ajb2.16136" class="uri">https://bsapubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ajb2.16136</a>.
 <a href="https://bsapubs.onlinelibrary.wiley.com/doi/abs/10.1002/ajb2.16136" class="uri">https://bsapubs.onlinelibrary.wiley.com/doi/abs/10.1002/ajb2.16136</a>.</p>
-<p>[37] A. Trisovic, M. K. Lau, T. Pasquier, et al. “A large-scale study
+<p>[38] A. Trisovic, M. K. Lau, T. Pasquier, et al. “A large-scale study
 on research code quality and execution”. In: <em>Scientific Data</em> 9.1
 (Feb. 2022), p. 60. ISSN: 2052-4463. DOI: 10.1038/s41597-022-01143-6.
 <a href="https://doi.org/10.1038/s41597-022-01143-6" class="uri">https://doi.org/10.1038/s41597-022-01143-6</a>.</p>
-<p>[38] J. Troudet, R. Vignes-Lebbe, P. Grandcolas, et al. “The Increasing
+<p>[39] J. Troudet, R. Vignes-Lebbe, P. Grandcolas, et al. “The Increasing
 Disconnection of Primary Biodiversity Data from Specimens: How Does It
 Happen and How to Handle It?” In: <em>Systematic Biology</em> (2018), p.
 syy044. DOI: 10.1093/sysbio/syy044. eprint:
 /oup/backfile/content_public/journal/sysbio/pap/10.1093_sysbio_syy044/3/syy044.pdf.
 <a href="http://dx.doi.org/10.1093/sysbio/syy044" class="uri">http://dx.doi.org/10.1093/sysbio/syy044</a>.</p>
-<p>[39] K. Wagenknecht, T. Woods, F. G. Sanz, et al. “EU-Citizen.Science:
+<p>[40] K. Wagenknecht, T. Woods, F. G. Sanz, et al. “EU-Citizen.Science:
 A Platform for Mainstreaming Citizen Science and Open Science in
 Europe”. In: <em>Data Intelligence</em> 3.1 (Feb. 2021), pp. 136-149. ISSN:
 2641-435X. DOI: 10.1162/dint_a_00085. eprint:
-<a href="https://direct.mit.edu/dint/article-pdf/3/1/136/1893818/dint\_a\_00085.pdf" class="uri">https://direct.mit.edu/dint/article-pdf/3/1/136/1893818/dint\_a\_00085.pdf</a>.
-<a href="https://doi.org/10.1162/dint%5C_a%5C_00085" class="uri">https://doi.org/10.1162/dint%5C_a%5C_00085</a>.</p>
-<p>[40] A. S. Wagner, L. K. Waite, M. Wierzba, et al. “FAIRly big: A
+<a href="https://direct.mit.edu/dint/article-pdf/3/1/136/1893818/dint_a_00085.pdf" class="uri">https://direct.mit.edu/dint/article-pdf/3/1/136/1893818/dint_a_00085.pdf</a>.
+<a href="https://doi.org/10.1162/dint_a_00085" class="uri">https://doi.org/10.1162/dint_a_00085</a>.</p>
+<p>[41] A. S. Wagner, L. K. Waite, M. Wierzba, et al. “FAIRly big: A
 framework for computationally reproducible processing of large-scale
 data”. In: <em>Scientific Data</em> 9.1 (Mar. 2022), p. 80. ISSN: 2052-4463.
 DOI: 10.1038/s41597-022-01163-2.
 <a href="https://doi.org/10.1038/s41597-022-01163-2" class="uri">https://doi.org/10.1038/s41597-022-01163-2</a>.</p>
-<p>[41] H. Wickham. <em>Advanced R</em>. Chapman &amp; Hall/CRC The R Series. Taylor
+<p>[42] H. Wickham. <em>Advanced R</em>. Chapman &amp; Hall/CRC The R Series. Taylor
 &amp; Francis, 2014. ISBN: 9781466586963.
 <a href="https://books.google.com/books?id=PFHFNAEACAAJ" class="uri">https://books.google.com/books?id=PFHFNAEACAAJ</a>.</p>
-<p>[42] H. Wickham and J. Bryan. <em>readxl: Read Excel Files</em>. R package
+<p>[43] H. Wickham and J. Bryan. <em>readxl: Read Excel Files</em>. R package
 version 1.3.1. 2019. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
-<p>[43] H. Wickham and G. Grolemund. <em>R for Data Science: Import, Tidy,
+<p>[44] H. Wickham and G. Grolemund. <em>R for Data Science: Import, Tidy,
 Transform, Visualize, and Model Data</em>. 1st. O’Reilly Media, Inc., 2017.
 ISBN: 1491910399, 9781491910399. <a href="http://r4ds.had.co.nz" class="uri">http://r4ds.had.co.nz</a>.</p>
-<p>[44] M. D. Wilkinson, M. Dumontier, I. J. Aalbersberg, et al. “The FAIR
+<p>[45] M. D. Wilkinson, M. Dumontier, I. J. Aalbersberg, et al. “The FAIR
 Guiding Principles for scientific data management and stewardship”. In:
 <em>Scientific Data</em> 3.1 (Mar. 2016), p. 160018. ISSN: 2052-4463. DOI:
 10.1038/sdata.2016.18. <a href="https://doi.org/10.1038/sdata.2016.18" class="uri">https://doi.org/10.1038/sdata.2016.18</a>.</p>
-<p>[45] J. W. Williams, A. Taylor, K. A. Tolley, et al. “Shifts to open
+<p>[46] J. W. Williams, A. Taylor, K. A. Tolley, et al. “Shifts to open
 access with high article processing charges hinder research equity and
 careers”. In: <em>Journal of Biogeography</em> 50.9 (Jul. 2023), pp.
 1485-1489. DOI: 10.1111/jbi.14697. <a href="https://doi.org/10.1111/jbi.14697" class="uri">https://doi.org/10.1111/jbi.14697</a>.</p>
-<p>[46] J. M. A. Wojahn, S. J. Galla, A. E. Melton, et al. “G2PMineR: A
+<p>[47] J. M. A. Wojahn, S. J. Galla, A. E. Melton, et al. “G2PMineR: A
 Genome to Phenome Literature Review Approach”. In: <em>Genes</em> 12.2 (Feb.
 2021), p. 293. DOI: 10.3390/genes12020293.
 <a href="https://doi.org/10.3390/genes12020293" class="uri">https://doi.org/10.3390/genes12020293</a>.</p>
@@ -670,87 +818,58 @@ Genome to Phenome Literature Review Approach”. In: <em>Genes</em> 12.2 (Feb.
 
 </div>
 </div>
-<div id="appendix-1" class="section level1 appendix" number="15">
-<h1><span class="header-section-number">15</span> Appendix 1</h1>
+<div id="appendix-1" class="section level1 appendix" number="16">
+<h1><span class="header-section-number">16</span> Appendix 1</h1>
 <p>Citations of all R packages used to generate this report.</p>
 <p>[1] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rmarkdown: Dynamic
 Documents for R</em>. R package version 2.30. 2025.
 <a href="https://github.com/rstudio/rmarkdown" class="uri">https://github.com/rstudio/rmarkdown</a>.</p>
-<p>[2] J. Allaire, Y. Xie, C. Dervieux, et al. <em>rticles: Article Formats
-for R Markdown</em>. R package version 0.27. 2024.
-<a href="https://github.com/rstudio/rticles" class="uri">https://github.com/rstudio/rticles</a>.</p>
-<p>[3] S. M. Bache and H. Wickham. <em>magrittr: A Forward-Pipe Operator for
-R</em>. R package version 2.0.4. 2025. <a href="https://magrittr.tidyverse.org" class="uri">https://magrittr.tidyverse.org</a>.</p>
-<p>[4] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
+<p>[2] C. Boettiger. <em>knitcitations: Citations for Knitr Markdown Files</em>.
 R package version 1.0.12. 2021.
 <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>.</p>
-<p>[5] J. Cheng, C. Sievert, B. Schloerke, et al. <em>htmltools: Tools for
-HTML</em>. R package version 0.5.9. 2025.
-<a href="https://github.com/rstudio/htmltools" class="uri">https://github.com/rstudio/htmltools</a>.</p>
-<p>[6] R. Francois and D. Hernangómez. <em>bibtex: Bibtex Parser</em>. R package
-version 0.5.1. 2023. <a href="https://github.com/ropensci/bibtex" class="uri">https://github.com/ropensci/bibtex</a>.</p>
-<p>[7] C. Gandrud. <em>repmis: Miscellaneous Tools for Reproducible
-Research</em>. R package version 0.5.1. 2025.
-<a href="https://CRAN.R-project.org/package=repmis" class="uri">https://CRAN.R-project.org/package=repmis</a>.</p>
-<p>[8] C. Glur. <em>data.tree: General Purpose Hierarchical Data Structure</em>.
-R package version 1.2.0. 2025. <a href="https://github.com/gluc/data.tree" class="uri">https://github.com/gluc/data.tree</a>.</p>
-<p>[9] R. Iannone and O. Roy. <em>DiagrammeR: Graph/Network Visualization</em>. R
-package version 1.0.11. 2024.
-<a href="https://rich-iannone.github.io/DiagrammeR/" class="uri">https://rich-iannone.github.io/DiagrammeR/</a>.</p>
-<p>[10] M. C. Koohafkan. <em>kfigr: Integrated Code Chunk Anchoring and
+<p>[3] M. C. Koohafkan. <em>kfigr: Integrated Code Chunk Anchoring and
 Referencing for R Markdown Documents</em>. R package version 1.2.1. 2021.
 <a href="https://github.com/mkoohafkan/kfigr" class="uri">https://github.com/mkoohafkan/kfigr</a>.</p>
-<p>[11] R. Lesur. <em>klippy: Copy to Clipboard Buttons for R Markdown HTML
-Documents</em>. R package version 0.0.0.9500. 2026.
-<a href="https://rlesur.github.io/klippy" class="uri">https://rlesur.github.io/klippy</a>.</p>
-<p>[12] Y. Qiu. <em>prettydoc: Creating Pretty Documents from R Markdown</em>. R
-package version 0.4.1. 2021. <a href="https://github.com/yixuan/prettydoc" class="uri">https://github.com/yixuan/prettydoc</a>.</p>
-<p>[13] R Core Team. <em>R: A Language and Environment for Statistical
+<p>[4] R Core Team. <em>R: A Language and Environment for Statistical
 Computing</em>. R Foundation for Statistical Computing. Vienna, Austria,
 2025. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
-<p>[14] K. Ren and K. Russell. <em>formattable: Create Formattable Data
-Structures</em>. R package version 0.2.1. 2021.
-<a href="https://renkun-ken.github.io/formattable/" class="uri">https://renkun-ken.github.io/formattable/</a>.</p>
-<p>[15] H. Wickham, J. Bryan, M. Barrett, et al. <em>usethis: Automate
-Package and Project Setup</em>. R package version 3.2.1. 2025.
+<p>[5] H. Wickham, J. Bryan, M. Barrett, et al. <em>usethis: Automate Package
+and Project Setup</em>. R package version 3.2.1. 2025.
 <a href="https://usethis.r-lib.org" class="uri">https://usethis.r-lib.org</a>.</p>
-<p>[16] H. Wickham, R. François, L. Henry, et al. <em>dplyr: A Grammar of
-Data Manipulation</em>. R package version 1.2.1. 2026.
+<p>[6] H. Wickham, R. François, L. Henry, et al. <em>dplyr: A Grammar of Data
+Manipulation</em>. R package version 1.2.1. 2026.
 <a href="https://dplyr.tidyverse.org" class="uri">https://dplyr.tidyverse.org</a>.</p>
-<p>[17] H. Wickham, J. Hester, W. Chang, et al. <em>devtools: Tools to Make
+<p>[7] H. Wickham, J. Hester, W. Chang, et al. <em>devtools: Tools to Make
 Developing R Packages Easier</em>. R package version 2.4.6. 2025.
 <a href="https://devtools.r-lib.org/" class="uri">https://devtools.r-lib.org/</a>.</p>
-<p>[18] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
+<p>[8] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
 Markdown</em>. Boca Raton, Florida: Chapman and Hall/CRC, 2016. ISBN:
 978-1138700109. <a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a>.</p>
-<p>[19] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
+<p>[9] Y. Xie. <em>bookdown: Authoring Books and Technical Documents with R
 Markdown</em>. R package version 0.46. 2025.
 <a href="https://github.com/rstudio/bookdown" class="uri">https://github.com/rstudio/bookdown</a>.</p>
-<p>[20] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
+<p>[10] Y. Xie. <em>Dynamic Documents with R and knitr</em>. 2nd. ISBN
 978-1498716963. Boca Raton, Florida: Chapman and Hall/CRC, 2015.
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.</p>
-<p>[21] Y. Xie. <em>formatR: Format R Code Automatically</em>. R package version
+<p>[11] Y. Xie. <em>formatR: Format R Code Automatically</em>. R package version
 1.14. 2023. <a href="https://github.com/yihui/formatR" class="uri">https://github.com/yihui/formatR</a>.</p>
-<p>[22] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
+<p>[12] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in
 R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V.
 Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and
 Hall/CRC, 2014.</p>
-<p>[23] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
+<p>[13] Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
 Generation in R</em>. R package version 1.50. 2025.
 <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>.</p>
-<p>[24] Y. Xie and J. Allaire. <em>tufte: Tufte’s Styles for R Markdown
+<p>[14] Y. Xie and J. Allaire. <em>tufte: Tufte’s Styles for R Markdown
 Documents</em>. R package version 0.14.0. 2025.
 <a href="https://github.com/rstudio/tufte" class="uri">https://github.com/rstudio/tufte</a>.</p>
-<p>[25] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
+<p>[15] Y. Xie, J. Allaire, and G. Grolemund. <em>R Markdown: The Definitive
 Guide</em>. Boca Raton, Florida: Chapman and Hall/CRC, 2018. ISBN:
 9781138359338. <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.</p>
-<p>[26] Y. Xie, J. Cheng, X. Tan, et al. <em>DT: A Wrapper of the JavaScript
-Library DataTables</em>. R package version 0.34.0. 2025.
-<a href="https://github.com/rstudio/DT" class="uri">https://github.com/rstudio/DT</a>.</p>
-<p>[27] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. Boca
+<p>[16] Y. Xie, C. Dervieux, and E. Riederer. <em>R Markdown Cookbook</em>. Boca
 Raton, Florida: Chapman and Hall/CRC, 2020. ISBN: 9780367563837.
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook</a>.</p>
-<p>[28] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
+<p>[17] H. Zhu. <em>kableExtra: Construct Complex Table with kable and Pipe
 Syntax</em>. R package version 1.4.0. 2024.
 <a href="http://haozhu233.github.io/kableExtra/" class="uri">http://haozhu233.github.io/kableExtra/</a>.</p>
 </div>

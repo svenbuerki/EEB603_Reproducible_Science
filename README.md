@@ -88,13 +88,26 @@ This repository is maintained by the course instructor. Students enrolled in the
 
 ## License
 
-The material in this repository is released under the **GNU Affero General Public License v3.0**. Please see [`LICENSE.md`](LICENSE.md) for the full terms.
+**Two licences apply, because this repository holds two kinds of thing.**
+
+| What | Licence | Full terms |
+|---|---|---|
+| **Code**: scripts, R chunks, functions, the site build | **GNU Affero General Public License v3.0** | [`LICENSE.md`](LICENSE.md) |
+| **Prose and teaching material**: chapter text, figures, slides, rubrics, schedule | **Creative Commons Attribution 4.0 International (CC BY 4.0)** | [`LICENSE-CC-BY-4.0.md`](LICENSE-CC-BY-4.0.md) |
+
+**Which version of the AGPL.** The code is licensed under the GNU Affero General Public License, **either version 3 of the License, or (at your option) any later version**.
+
+**Why two.** A software licence settles questions prose does not raise, such as what happens to derived works and whether any warranty is given, while a Creative Commons licence is the instrument readers and journals expect for written material. Applying one licence to both would mean using the wrong instrument for half the repository, which is the distinction the course itself teaches in [Creative Commons Licenses](https://svenbuerki.github.io/EEB603_Reproducible_Science/Chapters.html#CClicenses).
+
+**What CC BY 4.0 asks of you** if you reuse the teaching material: credit the author, link the licence, and say if you changed anything. You may use it commercially and you may adapt it. The example project in [`Project_ID/`](Project_ID/) carries its own `LICENSE` file.
 
 ---
 
 ## Citation
 
-If you use materials from this repository in your own teaching or research, please cite the course appropriately, with links back to this repository and the course website.
+If you use materials from this repository in your own teaching or research, please cite it. **GitHub's "Cite this repository" button** on this page reads [`CITATION.cff`](CITATION.cff) and will generate BibTeX or APA for you.
+
+Ready-to-paste BibTeX, and the reason the `csl` you choose matters, are on the course website under [**How to Cite These Materials**](https://svenbuerki.github.io/EEB603_Reproducible_Science/Resources.html#howtocite).
 
 ---
 

@@ -1,0 +1,35 @@
+# Citation metadata for this repository, in Citation File Format 1.2.0.
+# GitHub reads this file and shows a "Cite this repository" button on the
+# repository page, which produces BibTeX and APA for the visitor.
+#
+# TO FINISH: add your ORCID under authors (orcid: "https://orcid.org/0000-...")
+# and, once the repository is archived on Zenodo, add the DOI under identifiers.
+#
+# license lists both licences that apply: CC-BY-4.0 for the prose and teaching
+# material, AGPL-3.0-or-later for the code. Change it to AGPL-3.0-only if you
+# mean to grant that version and no later one.
+cff-version: 1.2.0
+message: "If you use these course materials, please cite them as follows."
+title: "EEB 603 Reproducible Science: course materials"
+abstract: >-
+  Course materials for EEB 603 Reproducible Science at Boise State University:
+  the syllabus, the schedule, seven chapters of tutorials on reproducible
+  research with R, R Markdown and Git, the assessment rubrics, and the data and
+  example projects the exercises are built on.
+type: software
+authors:
+  - family-names: Buerki
+    given-names: Sven
+    affiliation: "Department of Biological Sciences, Boise State University"
+license:
+  - CC-BY-4.0
+  - AGPL-3.0-or-later
+repository-code: "https://github.com/svenbuerki/EEB603_Reproducible_Science"
+url: "https://svenbuerki.github.io/EEB603_Reproducible_Science/"
+version: "Fall 2026"
+keywords:
+  - reproducible research
+  - R Markdown
+  - open science
+  - data management
+  - teaching materials

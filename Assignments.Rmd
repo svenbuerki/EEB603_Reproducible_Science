@@ -120,6 +120,8 @@ The rubric covers the introduction and theoretical background, learning outcomes
 
 <a href="Evaluation_Forms/Bioinformatics_Tutorial_Evaluation_Form.pdf" class="btn btn-primary" target="_blank" rel="noopener">Bioinformatics Tutorial rubric (pdf)</a>
 
+**Cite the course materials you build on.** If your tutorial uses a chapter, a dataset or an example project from here, that is a reference, and the rubric asks for references. [How to Cite These Materials](Resources.html#howtocite) gives you the BibTeX to paste and says **which `csl` to declare**, which matters: several common journal styles print no URL at all for a website, so the citation renders but your reader cannot find what you cited.
+
 **Write it as a protocol.** The course chapters are deliberately built the same way: an explanation of why the skill matters, then a numbered step-by-step procedure, then a checkpoint so the reader can confirm it worked. You are asked to use that format. See [How These Tutorials Are Written](Chapters.html#protocolstyle) for what it looks like from the inside.
 
 ## Teaching the Bioinformatics Tutorial --- 100 points

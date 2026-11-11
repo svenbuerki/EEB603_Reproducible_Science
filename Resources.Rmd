@@ -51,6 +51,91 @@ knitr::write_bib(.packages(), file = 'packages.bib')
 
 The field of reproducible science as implemented in [RStudio](https://rstudio.com/) is moving very fast and it is hard to keep up with new R packages and tools. The instructor is attempting at providing students with relevant online resources to complement class materials.   
 
+# How to Cite These Materials {#howtocite}
+
+**If you use this course's chapters, data or example projects in your own work, cite them.** That includes your bioinformatics tutorial: the rubric asks for references, and material you took from here is a reference like any other.
+
+There are **two** things you might be citing, and they are not the same object:
+
+| What you used | Cite | Why |
+|---|---|---|
+| the chapters, as you read them | the **course website** | it is the published, readable version |
+| the source, the data, the example projects | the **GitHub repository** | it is the thing that holds the files you ran |
+
+## Ready to paste
+
+Copy whichever you need into your `.bib` file, **and change `urldate` to the date you actually consulted it**:
+
+```
+@misc{buerki2026website,
+  author  = {Buerki, Sven},
+  title   = {{EEB} 603 Reproducible Science: course website},
+  year    = {2026},
+  url     = {https://svenbuerki.github.io/EEB603_Reproducible_Science/},
+  urldate = {2026-11-11}
+}
+
+@misc{buerki2026repo,
+  author  = {Buerki, Sven},
+  title   = {{EEB} 603 Reproducible Science: course materials and source},
+  year    = {2026},
+  url     = {https://github.com/svenbuerki/EEB603_Reproducible_Science},
+  urldate = {2026-11-11}
+}
+```
+
+Then cite them in your text as `[@buerki2026website]` and `[@buerki2026repo]`.
+
+**The repository also carries a `CITATION.cff` file**, which is why GitHub shows a **Cite this repository** button on [its page](https://github.com/svenbuerki/EEB603_Reproducible_Science). That button will generate BibTeX and APA for you, and it is the habit to copy: a repository that says how to cite it gets cited correctly.
+
+## What you may reuse {#licence}
+
+**Two licences cover this course, because it holds two kinds of thing.**
+
+| What | Licence | Full terms |
+|---|---|---|
+| **Prose and teaching material**: chapter text, figures, slides, rubrics, schedule | [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/) | [`LICENSE-CC-BY-4.0.md`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE-CC-BY-4.0.md) |
+| **Code**: scripts, R chunks, functions, the site build | [**GNU AGPL v3.0**](https://www.gnu.org/licenses/agpl-3.0.en.html) | [`LICENSE.md`](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/LICENSE.md) |
+
+**CC BY 4.0 asks three things of you**: credit the author, link to the licence, and say if you changed anything. You may adapt the material, and you may use it commercially. So you are free to reuse a chapter in your own teaching, provided you say where it came from, and the BibTeX above is how you do that.
+
+**This is the split from [Creative Commons Licenses](Chapters.html#CClicenses) applied to this course itself**: a CC licence for what you read, a software licence for what you run. A single licence covering both would mean using the wrong instrument for half of it.
+
+## Three rules that decide whether your reference is usable
+
+These are not style preferences. Each one was checked by knitting the entry and reading the output:
+
+1. **Use `url = {...}`, never `howpublished = {\url{...}}`.** With `howpublished`, the URL is **silently dropped** from the reference list: the entry still renders, it just no longer says where the thing is. This is the single most common reason a web citation comes out unusable.
+2. **Add `urldate = {YYYY-MM-DD}`.** A website is a living document. The access date is what tells a reader which version you saw.
+3. **`version` and `note` are ignored** by most styles, so do not put the version there. If you need to name a version, put it in the title.
+
+## Use the course CSL {#whichcsl}
+
+**Declare `AmJBot.csl` in your YAML**, the same file every document in this course uses. It is in the [repository root](https://github.com/svenbuerki/EEB603_Reproducible_Science/blob/master/AmJBot.csl):
+
+```
+csl: AmJBot.csl
+```
+
+**This matters more than it sounds.** Many journal styles print nothing at all to locate a website, so the same `.bib` entry that works here becomes a dead reference in another style. Tested with the entries above:
+
+| Citation style | Does the reference say where to find it? |
+|---|---|
+| **`AmJBot.csl`, the course style** | **yes, URL and access date** |
+| IEEE | yes, URL and access date |
+| APA, Chicago author-date | yes, URL, no access date |
+| Nature | only if the item has a **DOI** |
+| Ecology, New Phytologist, Elsevier-Harvard, the official American Journal of Botany style | **no. Author, year and title only** |
+
+So if your tutorial is written in one of the styles in the last row, the citation will render and still leave your reader with no way to find what you cited. **For course materials, use `AmJBot.csl`.**
+
+<div class="info">
+  <p><strong>&#128161; Note that the course <code>AmJBot.csl</code> is not the standard American Journal of Botany style</strong></p>
+  <p>The official style from the <a href="https://github.com/citation-style-language/styles" target="_blank" rel="noopener">CSL repository</a> drops URLs for web material; the copy in this course does not. If you download "American Journal of Botany" from Zotero's style repository you will get different output from everybody else in the class. <b>Use the file in the course repository.</b></p>
+</div>
+
+**And the course's own recurring lesson applies here too: read the knitted output, not the `.bib`.** A citation problem is invisible in the source and obvious in the reference list.
+
 # Podcast
 
 The challenge of reproducing results from ten-year-old code:
